@@ -1,0 +1,1764 @@
+spring 学习
+
+	1.什么是spring
+		spring 是分层的JavaSE/EE轻量级应用开源框架，已控制反转IOC和面向切面编程AOP为核心，提供了展现层SpringMVC,
+		和持久层Srping JDBC以及事务管理等。
+
+	2.特点
+		方便解耦，简化开发
+			spring提供ioc容器，可以将对象之间的依赖关系交给spring控制，避免硬编码所造成的过度程序耦合。
+
+		AOP编程支持
+			通过spring提供的aop功能，用户可以轻松的进行面向切面编程
+
+		声明事务的支持
+			用户可以通过spring来管理事务，提升开发效率
+
+		方便程序的测试
+			可以使用非容器的依赖的编程方式进行几乎所有的测试工作，在spring中，测试不再是
+			昂贵的操作，而是随手可做的事
+		方便集成各种优秀的框架
+			spring不排斥各种优秀的框架，相反spring可以降低各种框架的使用难度。如可以集成（struts、Hibernate）
+		
+		降低JavaEE API的使用难度
+			如JDBC、JavaMail、远程调用等
+		spring源码设计精妙、结构清晰，研究源码可以快速提升Java技术水平和开发应用水平
+
+
+
+---
+
+spring 
+
+ioc
+bean
+	spring中所有由它管理的对象都叫bean
+aop
+
+
+资源地址：
+	http://spring.io/
+	http://projects.spring.io/spring-framework
+
+spring是什么
+	spring是一个开源框架，为了解决企业应用开发的复杂性而创建的，但现在不止应用于企业应用。
+	同时是一个轻量级的控制反转ioc和面向切面编程的容器框架
+	轻量：从大小与开销对于spring都是轻量的
+	通过控制反转ioc的技术达到松耦合
+	提供面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统服务进行内聚性的开发
+	包含并管理应用对象的配置和生命周期，这个意义是容器
+	将简单的组件配置组合成复杂的应用，这个意义是框架
+
+spring带来了复杂的JavaEE的春天
+
+
+spring的作用
+	容器
+	提供了多中技术的支持
+	aop(事务管理，日志)
+	提供了众多的应用的辅助类（JDBC Template）
+	对主流框架的良好的支持
+
+适用范围
+	构建企业应用（springmvc+spring+hibernate/mybatis）
+	单独使用bean容器（bean管理）
+	单独使用aop进行切面编程
+	其他 spring功能，如对消息的支持
+	
+
+
+
+
+什么是框架：
+	框架就是定制一套规范或者规则（思想），大家在该规范或思想下进行工作，或者说
+	使用别人打好的舞台，你来做表演
+
+框架于类库的区别
+	框架一般是封装了逻辑的，高内聚的，类库则是松散的工具集合
+	框架一般似乎专注于某一领域，类库则是更通用的
+
+
+
+
+IOC
+
+接口面向接口编程
+	接口：是一种沟通中的说明，接口是一种对外部的说明名，声明了那些方法对外部是公开的
+	面向接口的编程的好处就是，接口的实现的具体的变动不会影响各层的调用，这一点在公共服务中尤其重要
+	”面向接口编程“中的“接口”是用于隐藏具体实现和实现多态的组件
+什么是IOC
+
+	IOC控制反转，控制权的转移，应用程序本身不负责依赖对象的创建和维护，而是有外部容器的创建和维护
+	（就像我们需要房子，不是自己去画图纸，建房子而是去请开发商去做，或房屋中介住房）
+	什么被反转了内——————》获的对象的过程被反转了，依赖注入
+Spring的Bean配置
+	Spring的IOC容器中所有的对象都成为bean
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<!-- name中的user可以取别名    scope="prototype" 或singleton="false"可以设置为非单例模式 -->
+	<bean name="user,user2" class="com.briup.spring.ioc.bean.User">
+		<property name="id" value="1"/>
+		<property name="name" value="tom"/>
+		<property name="age" value="20"/>
+		<property name="gender" value="male"/>
+	</bean>
+
+
+	使用方式：spring提供两种方式配置
+	一种是xml配置，一种是注解
+
+
+
+		
+</beans>
+
+Bean的初始化
+	Bean容器的初始化
+	两个基础包：
+		org.springframework.beans
+		org.springframework.context
+		BeanFactory提供配置结构和基本功能，加载并初始化Bean
+		ApplicationContext保存了Bean对象并在spring中被广泛使用
+		
+
+	bean容器的初始化：
+		文件	FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("F:/workspace/appcontext.xml");
+			ApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap1/coll.xml");
+			BeanFactory factory = new ClassPathXmlApplicationContext("com/briup/spring/chap1/ioc.xml");
+
+		web应用中：
+	<!-- 配置contextConfigLocation指定spring将要使用的配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:action.xml,classpath:dao.xml,classpath:service.xml</param-value>
+	</context-param>
+	<!--  配置listner让spring读取配置文件-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+spring的常用注入方式
+
+	spring注入值的是在启动spring容器加载bean配置的时候，完成对变量的赋值行为
+	常用的两种注入方式：
+		-设值注入
+		-构造注入
+
+
+		设值注入：
+
+
+			基本类型设值注入
+		<property name="为类中属性", value为注入的值>
+			<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<!-- name中的user可以取别名    scope="prototype" 或singleton="false"可以设置为非单例模式 -->
+	<bean name="user,user2" class="com.briup.spring.ioc.bean.User">
+		<property name="id" value="1"/>
+		<property name="name" value="tom"/>
+		<property name="age" value="20"/>
+		<property name="gender" value="male"/>
+	</bean>	
+</beans>
+		
+			类类型设值注入
+
+	<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<!-- service中提供memberDao属性的getxx Setxx方式就可以自动注入进来
+		注意MemberDao应该是在IMemberServiceImpl中是一个接口的引用
+	-->
+	<bean name="memberService" class="com.briup.run.service.impl.IMemberServiceImpl">
+		<property name="memberDao" ref="memberDao"></property>
+
+	</bean>
+
+		<bean name="memberDao" class="com.briup.run.dao.impl.IMemberDaoImpl">
+		
+	</bean>
+
+	</beans>
+
+
+构造注入：
+
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean name="teacher" class="com.briup.spring.ioc.bean.Teacher">
+		<!--  1.按照属性名赋值 ，调用有参数的构造器，顺序是参数顺序-->
+		<constructor-arg name="id" value="1"/> <!-- person(int id,String name, String gender) -->
+		<constructor-arg name="name" value="tom"/>
+		<constructor-arg name="gender" value="male"/>
+		<!-- 2.index从0开始，按照属性在构造器中出现的顺序赋值 索引值是构造器中的属性顺序 -->
+		<!-- <constructor-arg index="0" value="2"/>
+		<constructor-arg index="1" value="jack"/>
+		<constructor-arg index="2" value="male"/> -->
+		<!-- 3.按照类型进行赋值，如果出现相同的类型，按照属性在构造器中出现的顺序进行复制 -->
+	<!-- 	<constructor-arg type="int" value="3"/>
+		<constructor-arg type="String" value="rose"/>
+		<constructor-arg type="String" value="female"/> -->
+	</bean>
+	
+		
+</beans>
+
+
+Teach.java
+package com.briup.spring.ioc.bean;
+
+import java.io.Serializable;
+
+public class Teacher implements Serializable{
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String name;
+	private String gender;
+
+	public Teacher(int id, String name, String gender) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gender = gender;
+	}
+
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", name=" + name + ", gender=" + gender
+				+ "]";
+	}
+}
+
+
+
+
+
+
+Bean
+
+Bean配置项
+Bean的作用域
+Bean的生命周期
+Bean的自动装配
+Resources和ResourceLoader
+
+
+
+Bean配置项
+Id
+Class
+Constructor arguments
+Properties
+Autowiring mode
+lazy-initializatoin mode
+Initialization/destruction method
+
+
+
+Bean作用域
+singeton:单利模式，指的是Bean容器中只存在一份
+Propertype：每次请求创建新的实例，destory方式不生效
+request:每次http请求创建一个实例，且仅在当前request生效
+session:同上，每次http请求创建一个实例，且仅在当前sesson生效
+
+set.xml
+<bean name="beanScope" class="com.briup.spring.ioc.bean.User" scope="prototype">
+		<property name="id" value="1"/>
+		<property name="name" value="tom"/>
+		<property name="age" value="20"/>
+		<property name="gender" value="male"/>
+	</bean>
+
+	//测试
+
+	BeanFactory factory = new ClassPathXmlApplicationContext("com/briup/spring/chap1/set.xml");
+	User user = (User) factory.getBean("user"); 
+	User user2 = (User) factory.getBean("user");
+	System.out.println(user == user2);//true -- 所以默认单例 
+	
+	--这是可以控制的在配置文件中 bean scope="prototype"-->会变成原型模式 这时结果会是false
+
+
+Bean的声明周期
+
+	定义
+	初始化
+	使用
+	销毁
+
+
+	   <!-- 调用set方法赋值后会调用myInit方法    myDestory方法最后调用-->
+	<bean name="life" class="com.briup.spring.ioc.bean.Life" init-method="myInit" destroy-method="myDestory">
+		<property name="name" value="tom"></property>
+	</bean>
+
+
+	package com.briup.spring.ioc.bean;
+
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+
+public class Life implements BeanNameAware,BeanFactoryAware{
+	private String name;
+	
+	public Life(){//一加载就会调到用
+		System.out.println("调用无参构造器");
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		System.out.println("调用setName方法");
+		this.name = name;
+	}
+	
+	public void myInit() {
+		System.out.println("调用myInit方法");
+	}
+	
+	public void myDestory(){
+		System.out.println("调用myDestory方法");
+	}
+
+	@Override
+	public void setBeanFactory(BeanFactory arg0) throws BeansException {
+		System.out.println("调用setBeanFactory方法");
+		
+	}
+
+	@Override
+	public void setBeanName(String arg0) {
+		System.out.println("调用setBeanName方法");
+	}
+	
+	
+	测试
+	@Test
+	public void life(){//springBean的生命周期	
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap2/life.xml");
+		Life life = ac.getBean("life",Life.class);
+		System.out.println(life);
+		ac.destroy();
+	}
+	/**
+	 * 调用无参构造器
+调用setName方法
+调用setBeanName方法
+调用setBeanFactory方法
+调用myInit方法
+com.briup.spring.ioc.bean.Life@4f0b5b
+调用myDestory方法
+AfterClass 标注的方法 会最后执行
+
+	 * 
+	 * */
+}
+
+
+
+
+Aware 感知
+	spring中提供了一些Aware结尾的接口，实现类Aware接口的bean在初始化之后，可以获取相应的资源
+
+	ApplicationContextAware
+	BeanNameAware
+
+
+
+	<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+<!-- name中的user可以取别名    scope="prototype" 或singleton="false"可以设置为非单例模式 -->
+	<bean name="applicationAawareTest" class="com.briup.spring.aop.bean.AwareTest">
+	
+	</bean>
+		
+</beans>
+
+
+如实现ApplicationContextAware可以获取容器中项相关资源
+package com.briup.spring.aop.bean;
+
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class AwareTest implements ApplicationContextAware{
+
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		System.out.println(applicationContext.getBean(AwareTest.class));
+	}
+
+}
+
+
+@Test
+	public void AwareTest(){
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap1/aware.xml");
+		AwareTest awareTest = ac.getBean("applicationAawareTest",AwareTest.class);
+		System.out.println(awareTest);
+	}
+
+
+
+
+
+
+
+
+-------------Bean管理的注解实现
+
+
+Classpath扫描与组件管理
+类的自动检测与注册Bean
+<context:annotation-config/>
+@Component, @Repository, @Service, @Constroller
+@Required
+@Autowired
+@Qualifier
+@Resource
+
+
+
+classpatp扫描与组件管理：
+从Spring3.0开始，Spring JavaConfig项目提供了很多特性，包括使用java而不是XML定义Bean,比如
+@Configuration, @Bean, @Import, @DependsOn
+@Component是Spring中的一个通用注解，可以用于任何Bean,相当于注解的超类,如果不知道位于那个层，一般使用该注解
+@Repository, @Service, @Controller是更具有针对性的注解
+- @Repository,通常用于注解DAO,即持久层的注解
+- @Service,通常用于追注解Service类，即服务层
+- @Controller通常用于注解Controller，即控制层（MVC）
+
+
+
+类的自动检测以及Bean的注册
+spring可以自动检测类并注解Bean到ApplicationContext中
+
+
+为了能够检测这些类，并注册相应的Bean,需要下面内容
+
+  <!--context:component-scan包含context:annotation-config的全部功能，通常使用前者后，不再使用后者
+      	 context:component-scan一般用于基于类的注解（包括成员变量或成员方法的注解），但是context:annotation-config只能在完成bean注册后，去处理bean类中的
+      	 成员变量或成员方法的注解
+      	  basp-package指向扫描那个包下的注解类
+      	
+       -->
+   
+      <context:component-scan base-package="spring.aop.bean.annotation"></context:component-scan>
+
+
+
+过滤注解：
+
+ 
+      <!--默认情况下，spring中自动发现并被注册bean的条件是：
+      	使用@Component, @Repository, @Service, @Constroller其中之一的注解
+      	或者使用基于@Component的自定义注解
+      	
+      	可以通过过滤器修改上边的行为，如下边的例子XML配置忽略所有@Repository注解并用“stub”代替
+        -->
+       <context:component-scan base-package="spring.aop.bean.annotation">
+       		<!--  -->
+       		<context:include-filter type="regex" expression=".*Stub.*Repository"/>
+       		<!-- 排除@Repository注解 -->
+       		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+       </context:component-scan>
+
+
+
+使用注解定义Bean
+
+扫描过程中组件自动检测，那么Bean名称是有BeanNameGenerator生成的( @Component, @Repository, @Service, @Controller
+都会有个name属性用于显示设置BeanName)
+
+//显示设置beanName,相当于在xml配置bean的是id的值
+@Service("myMoveLister")
+public class simpleLlister{
+//..
+}
+
+
+//设置beanName默认使用类名，首字母小写作为beanName
+@Repository
+public class MovieFinderImpl implements MovieFinder{
+	
+}
+
+可以自定义bean命名策略，实现BeanNameGenerator接口，这里一定要包含一个无参数的构造器
+   <context:component-scan base-package="spring.aop.bean.MyNameGenerator"></context:component-scan>
+
+
+
+作用域的注解Scope
+通常情况下自动查找的Spring组件，其Scope是singleton,其Spring2.5提供了Scope的注解 @Scope
+
+
+@Scope("prototype")  //括号中指定Scope的范围,默认
+@Repository
+public class MovieFinderImpl implements MovieFinder{
+
+}
+
+也可以自定义scope策略，实现ScopeMetadataResolver接口并提供一无参数的构造器
+
+ <context:component-scan base-package="spring.aop.bean.MyScopeResolver"></context:component-scan>
+
+
+代理方式：
+
+可以使用scoped-proxy属性指定代理，有三个值可选：on,interfaces,targetClass
+<context:component-scan base-package="spring.aop.bean"
+	scoped-proxy="interfaces"></context:component-scan>
+
+
+
+
+
+
+bean注解的使用
+<context:component-scan base-package="com.briup.spring.aop.bean.annotation"></context:component-scan>
+       
+
+BeanAnnotation.java
+
+//由于不知道其作用于DAO或Service所以使用通用注解
+//@Component -->默认使用类名小写作为bean的name
+@Scope("prototype") //括号中为Scope的范围,这里设置为原型模式
+@Component("beanAnnotation")
+public class BeanAnnotation {
+	
+	public void say(String arg){
+		System.out.println("BeanAnnotation: "+arg);
+	}
+
+}
+
+
+测试：
+
+@Test
+	public void testAnnotation(){
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/annotation.xml");
+		//@Component没有value值，默认使用类名首字母小写作为bean的id
+		BeanAnnotation beanAnnotation1  = ac.getBean("beanAnnotation",BeanAnnotation.class);
+		BeanAnnotation beanAnnotation2  = ac.getBean("beanAnnotation",BeanAnnotation.class);
+		System.out.println(beanAnnotation1);
+		System.out.println(beanAnnotation2);
+		//
+		//com.briup.spring.aop.bean.annotation.BeanAnnotation@1598d5f
+		//com.briup.spring.aop.bean.annotation.BeanAnnotation@505fd8
+	}
+	
+
+
+
+@Required
+
+	@Required注解使用于注解bean属性的setter方法
+	这个注解仅仅标识，受影响的bean属性必须在配置时被填充，通过bean定义或通过自动装配一个明确的属性值
+
+	这个注解不是很常见
+	pulic class simpleMovieLister{
+	
+		private MoiveFinder movieFinder;
+
+
+		@Required
+		public void setMovieFinder(MovieFinder movieFinder){
+			this.movieFinder  = movieFinder;
+		}
+		//..
+	}
+
+
+
+@Autowried
+不使用该注解的情况下，想要spring为你注入值，需要为被注入值的属性提供getter,setter方法
+@Autowried对属性进行注解的时候，我们可以省略getter,setter方法，通过对应的bean的类型，对属性值注入
+@Autowried对seter方法进行注解的时候，可以注入对应的值
+@Autowried对构造器进行注解的时候，可以通过类型找到对应的bean注入
+@Autowried可以将 @Autowried为”传统“的setter方法代替 @Required
+@Autowried自动注入，会去容器中按照类型查找对应的bean注入
+
+
+
+pulic class simpleMovieLister{
+	
+		private MoiveFinder movieFinder;
+
+
+		@Autowried
+		public void setMovieFinder(MovieFinder movieFinder){
+			this.movieFinder  = movieFinder;
+		}
+		//..
+}
+
+同时 @Autowried可以用于构造器或成员变量
+pulic class MovieRreCommender{
+	
+		成员变量中
+		@Autowried
+		private MovieCatalog movieCatalog;
+
+		private CustomerPreferenceDao customerPreferenceDao;
+
+
+		//构造器中
+		@Autowried
+		public MovieRreCommender(CustomerPreferenceDao customerPreferenceDao){
+			this.CustomerPreferenceDao  = CustomerPreferenceDao;
+		}
+		
+}
+
+
+注意：
+默认情况下，如果因找不到合适的bean将会导致autowiring失败抛出异常，可以通过下边
+这种方式避免
+
+pulic class simpleMovieLister{
+	
+		private MoiveFinder movieFinder;
+
+
+		@Autowried(requried=false)//指明该属性不是必须的，找不到的情况下不会抛出异常
+		public void setMovieFinder(MovieFinder movieFinder){
+			this.movieFinder  = movieFinder;
+		}
+		//..
+}
+
+每一类中只能有一个构造器被标记为requried=ture
+建议将 @Autowired的必要属性时，使用 @Requried注解
+
+
+
+使用 @Autowired注解
+属性注入
+setter注入
+构造注入
+
+下边的3中方式的作用都是一样的，一般使用第一种属性注入，可以省略setter  getter
+
+	//使用autowired 注入成员属性的值，可以省略getxx setxx方法
+	@Autowired
+	private InjeactionDAO injeactionDAO;
+	
+	
+	//setter注入同上边作用一样
+	@Autowired
+	public void setInjeactionDAO(InjeactionDAO injeactionDAO) {
+		this.injeactionDAO = injeactionDAO;
+	}
+	
+	//构造注入同属性注入一样
+	@Autowired
+	public InjeactionServiceImpl(InjeactionDAO injeactionDAO) {
+		this.injeactionDAO = injeactionDAO;
+	}
+
+
+
+使用 @Autowired注解可以方便的注解那些众所周知的解析依赖性接口
+比如说：BeanFacotry,ApplicationContext,Environment,ResourceLoader,ApplicaiontEventPublisher, MessageSource等
+
+
+	pulic class simpleMovieLister{
+	
+		@Autowired
+		private AplicationContext context;
+
+		public simpleMovieLister(){}
+	
+	}
+
+上边的案例使用autowired注解ApplicationContext，这样我们就可以活ApplicatioinContext容器总的bean对象
+
+
+使用 @Autowired将容器中相关类型的bean注入到一个集合或数组中
+
+private Set<MovieCatalog> movieCatalog;
+
+@Autowired
+public void setMovieCatalog(Set<MovieCatalog> movieCatalog){
+	this.movieCatalog = movieCatalog;
+}
+
+上边案例，使用 @Autowired将applicationContext容器中所有类型为MoviceCtalog.class的bean注入到Set集合中
+
+
+可以用于key为Stringd的Map，String为所有baen的id,value为所有MoviceCatalog-> bean的对象
+private Map<String,MovieCatalog> movieCatalog;
+
+@Autowired
+public void setMovieCatalog(Map<String,MovieCatalog> movieCatalog){
+	this.movieCatalog = movieCatalog;
+}
+
+
+如果希望数组有序，可以让bean实现org.springframework.core.Ordered接口或使用 @Order注解
+
+
+注意：
+@Autowired是由Spring BeanPostProcessor处理的，所以不能再自己的BeanPostProcessor或BeanFactoryProcessor类型中使用
+该注解，这些类型必须通过XML或spring的 @Bean注解加载
+
+
+下边实现map注入，和list注入，并排序
+
+@Order(1)
+@Component
+public class BeanImplOne implements BeanInterface {
+
+}
+
+@Order(2)  //Order排序注解只对list,或数组集合有效括号里边是排序顺序
+@Component
+public class BeanImplTwo implements BeanInterface {
+
+}
+
+
+package com.briup.spring.aop.bean.annotation;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class BeanInvoker {
+	
+	@Autowired //该注解会将所有的BeanInterface类型的bean注入到该list中
+	//如果bean有 @Order注解可以实现排序
+	private List<BeanInterface> list;
+	
+	//该注解会将所有的BeanInterface类型的bean注入到该map中，key值为bean的名字
+	//是String类型，map类型无排序可言
+	@Autowired
+	private Map<String, BeanInterface> map;
+	
+	public void print(){
+		if(list != null && 0 != list.size()){
+			System.out.println("list...");
+			for(BeanInterface beanInterface:list){
+				System.out.println(beanInterface.getClass().getName());
+			}
+		}
+		if(map != null && 0 != map.size()){
+			System.out.println("map...");
+			Set<Entry<String, BeanInterface>> entrySet = map.entrySet();
+			for(Entry<String, BeanInterface> entry: entrySet){
+				System.out.println(entry.getKey()+"--"+entry.getValue().getClass().getName());
+			}
+		}
+	}
+}
+
+测试：
+
+@Test
+public void testAutowired2(){
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/annotation.xml");
+		BeanInvoker beanInvoker = (BeanInvoker) ac.getBean("beanInvoker");
+		beanInvoker.print();
+}
+
+结果：
+list...
+com.briup.spring.aop.bean.annotation.BeanImplOne
+com.briup.spring.aop.bean.annotation.BeanImplTwo
+map...
+beanImplOne--com.briup.spring.aop.bean.annotation.BeanImplOne
+beanImplTwo--com.briup.spring.aop.bean.annotation.BeanImplTwo
+
+
+
+
+@Qualifier--配合 @Autowired
+
+如果使用 @Autowired自动装配可能存在多个相同类型的bean的时候，可以使用spring的 @Qualifier
+注解缩小注解范围（或指定唯一），也可以用于指定单独的构造参数的方法参数
+可以适用于注解集合类型的变量
+
+案例：
+
+public class MovieRecommander{
+	@Autowired
+	@Qualifier("beanName")
+	private MovieCatalog movieCatalog;
+
+	private CustomerPreferenceDao customerPreferenceDao;
+
+	public void prepare(@Qualifier("beanName")CustomerPreferenceDao customerPreferenceDao){
+		this.customerPreferenceDao = customerPreferenceDao;
+	}
+}
+
+上边的案例：假设MovieCatalog在容器中存在多个相同的类型的情况下，可以结合使用 @Qualifier("beanName")
+指定一个bean的id注入到该属性中，可以在方法的参数中使用
+
+package com.briup.spring.aop.bean.annotation;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class BeanInvoker {
+	
+	@Autowired
+	private List<BeanInterface> list;
+	
+	@Autowired
+	private Map<String, BeanInterface> map;
+	
+	@Autowired
+	@Qualifier("beanImplOne")  //BeanInterface有两个子类，所以存在多可@Autowired存在多个bean，所以需要配合@Qualifier("beanName")注入那个
+	private BeanInterface beanInterface;
+	
+	public void print(){
+		if(list != null && 0 != list.size()){
+			System.out.println("list...");
+			for(BeanInterface beanInterface:list){
+				System.out.println(beanInterface.getClass().getName());
+			}
+		}
+		if(map != null && 0 != map.size()){
+			System.out.println("map...");
+			Set<Entry<String, BeanInterface>> entrySet = map.entrySet();
+			for(Entry<String, BeanInterface> entry: entrySet){
+				System.out.println(entry.getKey()+"--"+entry.getValue().getClass().getName());
+			}
+		}
+		
+		System.out.println(beanInterface);
+	}
+}
+
+结果：
+list...
+com.briup.spring.aop.bean.annotation.BeanImplOne
+com.briup.spring.aop.bean.annotation.BeanImplTwo
+map...
+beanImplOne--com.briup.spring.aop.bean.annotation.BeanImplOne
+beanImplTwo--com.briup.spring.aop.bean.annotation.BeanImplTwo
+com.briup.spring.aop.bean.annotation.BeanImplOne@1a3f9e4
+
+
+
+@Resource注解：
+
+@Resource注解是JSR-250定义注解，也比较常用，作用于 @Autowired的作用一致
+
+@Resource的作用相当于@Autowired，只不过@Autowired按byType自动注入，
+而@Resource默认按 byName自动注入罢了。
+@Resource有两个属性是比较重要的，分是name和type，
+Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。
+所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。
+　　@Resource装配顺序
+　　1. 如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常
+　　2. 如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常
+　　3. 如果指定了type，则从上下文中找到类型匹配的唯一bean进行装配，找不到或者找到多个，都会抛出异常
+　　4. 如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配； 
+
+
+
+
+
+
+基于java的容器注解 @Bean
+
+@Bean标识一个用于配置和初始化一个由SpringIoc容器管理的新对象的方法，类型于XML配置文件中的<bean/>
+可以在Spring的 @Compenet注解的类中使用的地方使用 @Bean注解任何方法（一般使用中不建议与 @Compenet一起使用）
+而是与 @Configuration使用
+
+@Configuration   //相当于配置文件
+public class Appconfig{
+	
+	@Bean
+	public Myservice myservice(){
+		return new MyServiceImpl();
+	}
+	/*
+		对比基于XML文件中的配置效果类似
+		<bean id="myservice" class="com.xxx.service.MyserviceImpl"></bean>
+	*/
+}
+
+
+
+<bean name="life" class="com.briup.spring.ioc.bean.Life" init-method="myInit" destroy-method="myDestory">
+		<property name="name" value="tom"></property>
+</bean>
+
+
+public class Foo{
+	public void init(){
+	
+	}
+}
+
+public class Bar{
+	public void cleanup(){
+	
+	}
+}
+
+@Configuration 
+public class Appconfig{
+	
+	@Bean(name="life")  //定义bean的name
+	public Life life(){
+		return new Life();
+	}
+
+	@Bean(initMethod="init") //在初始化Foo的时候，会调用Foo.java中的init方法
+	public Foo foo(){
+		return new Foo();
+	}	
+	
+	@Bean(destoryMethod=“cleanup”) //在销毁Bar的时候会调用Bar.java中的cleanup中的方法
+	public Bar bar(){
+		return new Bar();
+	}
+}
+
+
+案例实现：
+@Configuration
+public class StoreConfig {
+
+	@Bean(name="beanImplOne")  //如果没有指定Bean的name属性，则bean的name默认为方法的名称
+	public BeanInterface getBeanInterface(){
+		return new BeanImplOne();
+	}
+}
+
+
+案例2：连接数据库
+
+<!-- 加载db.properties文件 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+      http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd" >
+     
+     <!-- 加载db.properties文件 -->
+       <context:property-placeholder location="classpath:db.properties"/>
+       
+</beans>
+
+注解支持
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+      http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd" >
+       <!-- 加载db.properties文件 -->
+       <context:property-placeholder location="classpath:db.properties"/>
+       <!--context:component-scan包含context:annotation-config的全部功能，通常使用前者后，不再使用后者
+       <context:component-scan base-package="com.briup.spring.aop.bean.annotation"></context:component-scan>
+
+</beans>
+
+案例：
+
+@Configuration
+@ImportResource("classpath:com/briup/spring/chap4/config.xml")  //指定配置文件的路径
+public class MyConnection {
+	
+	
+	@Value("${jdbc.url}")  //基本类型的变量使用@Value注解(括号里边是注入的值)  ，这是使用${是读取配db.properties中的值}
+	private String url;
+	
+	@Value("${jdbc.username}")  //默认取的是当前操作系统用户的名称，可以在db.properties定义username的时候使用jdbc.username
+	private String userName;
+	
+	@Value("${jdbc.password}")
+	private String password;
+	
+	@Bean(name="myDriverManager")
+	public MyDriverManager MyDriverManager(){
+		return new MyDriverManager(url,userName,password);
+	}
+
+}
+
+
+public class MyDriverManager {
+	
+	public MyDriverManager(String url, String userName, String password){
+		System.out.println("url :"+url);
+		System.out.println("userName :"+userName);
+		System.out.println("password :"+password);
+	}
+
+}
+
+
+测试：
+ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/annotation.xml");
+System.out.println(ac.getBean("myDriverManager"));
+结果：
+url :jdbc:oracle:thin:@localhost:1521:XE
+userName :caojx
+password :caojx
+com.briup.spring.aop.bean.annotation.MyDriverManager@152b54b
+
+
+@Bean  和 @Scope组合使用
+@Bean(name="myDriverManager")
+@Scope("prototype")
+public MyDriverManager MyDriverManager(){
+	return new MyDriverManager(url,userName,password);
+}
+
+@Bean(name="myDriverManager")
+@Scope("singleton")
+public MyDriverManager MyDriverManager(){
+	return new MyDriverManager(url,userName,password);
+}
+
+
+
+JSR-250支持
+@Resource注解是JSR-250定义注解，也比较常用，作用于 @Autowired的作用一致
+
+@Resource的作用相当于@Autowired，只不过@Autowired按byType自动注入，
+而@Resource默认按 byName自动注入罢了。
+@Resource有两个属性是比较重要的，分是name和type，
+Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。
+所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。
+　　@Resource装配顺序
+　　1. 如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常
+　　2. 如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常
+　　3. 如果指定了type，则从上下文中找到类型匹配的唯一bean进行装配，找不到或者找到多个，都会抛出异常
+　　4. 如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配； 
+    5. 如果 @Resource用于方法中，默认使用方法名作为beanName,指定名字则使用名字
+
+
+
+   
+ @Resource的处理是由ApplicationContext中的CommonAnnotationBeanPostProecssor发现并处理的
+
+CommonAnnotationBeanPostProecssor不仅支持 @Resource注解，还支持 @PostConstruct初始回调
+和 @PreDestory销毁回调，前提是CommonAnnotationBeanPostProecssor是在ApplicationContext中注册的
+	
+
+
+
+
+spring对JSR的注解支持
+
+@Resource
+
+@PostConstrct  初始化回掉
+
+@PreDetory   销毁回调用
+
+@Inject 等效于 @Autowired
+
+@Named 与 @Compenet等效
+
+
+
+package com.briup.spring.aop.bean.annotation.service;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.briup.spring.aop.bean.annotation.dao.JsrDAO;
+
+@Service
+public class JsrService {
+	
+	@Resource
+	private JsrDAO jsrDAO;
+	
+	@Resource  //作用与上边一样
+	public void setJsrDAO(JsrDAO jsrDAO){
+		this.jsrDAO = jsrDAO;
+	}
+	
+	public void save(){
+		jsrDAO.save();
+	}
+	
+	@PostConstruct
+	public void init(){
+		System.out.println("jsr Service init");
+	}
+	
+	@PreDestroy
+	public void destory(){
+		System.out.println("jsr Service destory");
+	}
+	
+	/**
+	 * 
+	 * jsr Service init
+		com.briup.spring.aop.bean.annotation.service.JsrService@7dc4cb
+		jsr Service destory
+	 * */
+	
+}
+
+	
+
+
+
+
+spring Aop
+
+
+什么是aop:Aspect Oriented Programming的缩写，面向切面编程，通过预编译和动态大力实现程序功能的
+统一维护的一种技术
+
+主要功能：日志记录，性能统计，安全控制，事务处理，异常处理等
+
+
+Aop实现的方式
+
+	预编译
+	-AspectJ  完整的面向切面编程解决方案--》spring不是完整的解决方案，不过spring提供比较好的实现方式
+	
+	运行期间动态代理（JDK动态代理，CGLib动态代理）
+	-SpringAop,JbossAop
+
+
+AOP的相关概念
+
+	切面（Aspect）一个关注点的模块化，这个关注点可能会横切多个对象
+	连接点（Joinpoint）程序执行过程中某个特定的连接点
+	通知（Advice） 在切面的某个特的连接点上执行的动作
+	切入点（Pointcut）匹配连接的断言，在Aop中通知和一个切入点表达式关联
+	引入（Intruduction） 在不修改类代码的前提下，为类添加新的方法和属性
+	目标对象（Target Object） 被一个或者多个切面所通知的对象
+	Aop代理（AOP Proxy） AOP框架创建的对象，用来实现切面契约（aspect contract）（包括方法执行等）
+	织入（Weaving）把切面连接到其他的应用程序类型或者对象上，并创建一个被通知的对象，氛围：编译时织入，类加载时织入，执行时织入
+
+
+
+通知类型（Advice）
+	前置通知（before advice） 在某个连接点（jion point）之前执行的通知，但不能阻止连接点前的执行（除非抛出一个异常）
+
+	返回后通知（after returning advice）在某个连接点（jion point）正常执行完后执行通知
+
+	抛出异常通知（after throwing advice） 在方法异常退出时执行的通知
+
+	后通知（after(finally) advice）在方法抛出异常退出时候的执行通知（不管正常返回还是异常退出）
+
+	环绕通知（around advice) 包围一个连接点（jion point)的通知
+
+
+
+Spring框架中的AOP用途
+	提供了声明的企业服务，特别是EJB的替代服务的声明
+	允许用户控制自己的方面，以完成OOP和AOP的互补使用
+
+	OOP：模拟真实的世界，一切皆是对象
+
+
+Spring Aop的实现
+
+	纯java实现，无需特殊的编译过程，不需要控制类的加载器层次
+	目前只支持方法的执行的连接点（通知Spring Bean某个方法执行）
+	不是为了提供完整AOP实现；而是侧重于一种AOP于IOC容器之间的整合，SpringAOP不会AspectJ（完整的AOP解决方案）竞争。
+
+
+有接口和无接口的Spring Aop实现
+
+	Spring AOP 默认使用标准的JavaSE动态代理作为AOP代理，这使得任何接口（或者集合）都可以被代理
+	Spring AOP 中也可以使用CGLIB代理（如果一个业务对象没有实现一个接口）
+	有接口的：使用JDK的动态里
+	无接口的：使用CGLIB代理
+
+
+
+
+基于容器的AOP实现
+aspect
+
+Spring所有的切面通知都必须放在一个<aop:config>内（可以配置多个<aop:config>元素），每一个<aop:config>可以包含pointcut,adviso
+和spect元素（注意这些元素的出现是由顺序的）
+
+
+
+切入点pointcut
+
+	execution(public * *(..)) 切入点为执行所有的public方式时
+	execution(* set*(..)) 切入点执行所有的set开始的方法时
+	execution(* com.xyz.service.Account.*(..)) 切入点执行Account类的所有方法时
+	execution(* com.xyz.service..(..))切入点执行com.xyz.service包下的所有方法时
+	execution(* com.xyz.service...(..)) 切入点执行com.xyz.service包以及其子包的所有的方法时
+	
+	上边这种方式aspectj和springaop通用的，其他方式可以自己查找资料
+
+案例：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	
+	<!-- 切面类 -->
+	<bean id="myAspect" class="com.briup.spring.aop.bean.annotation.aop.MyAspect"></bean>
+	
+	<!-- 业务类 -->
+	<bean id="aspectBiz" class="com.briup.spring.aop.bean.annotation.aop.AspectBiz"></bean>
+	<!-- aop配置 可以配置多个-->
+	<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名包含Biz的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法-->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
+
+
+切面类：
+
+/*
+ * 声明一个切面类
+ * */
+public class MyAspect {
+	
+	public void before(){
+		System.out.println("aspect before");
+	}
+
+}
+
+
+业务类：
+
+//业务类
+public class AspectBiz {
+	
+	public void biz(){
+		System.out.println("Aspect biz");
+	}
+
+}
+
+
+测试：
+
+	@Test
+	public void aspectBefore(){
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/spring-aop-schema-advice.xml");
+		AspectBiz aspectBiz = (AspectBiz) ac.getBean("aspectBiz");
+		aspectBiz.biz();
+	}
+	
+结果：
+
+aspect before
+Aspect biz
+
+
+
+
+配置；
+
+<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法 在执行切入点指定的方法之前执行 -->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+			<!-- 返回之后的通知 -->
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+
+
+切面类：
+
+/*
+ * 声明一个切面类
+ * */
+public class MyAspect {
+	
+	public void before(){
+		System.out.println("aspect before");
+	}
+
+	public void afterReturning(){
+		System.out.println("aspect afterReturning");
+	}
+	
+}
+
+
+测试：
+
+
+结果：
+
+aspect before
+Aspect biz
+aspect afterReturning
+
+
+
+
+配置：
+
+<!-- aop配置 可以配置多个-->
+	<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法 在执行切入点指定的方法之前执行 -->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+			<!-- 返回之后的通知 -->
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+			<!--  -->
+			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+
+
+切面类：
+
+/*
+ * 声明一个切面类
+ * */
+public class MyAspect {
+	
+	public void before(){
+		System.out.println("aspect before");
+	}
+
+	public void afterReturning(){
+		System.out.println("aspect afterReturning");
+	}
+	
+	public void afteThrowing(){
+		System.out.println("aspect afteThrowing");
+	}
+}
+
+
+业务类：
+	public void biz(){
+		System.out.println("Aspect biz");
+		throw new RuntimeException(); //出现异常的时候afteThrowing才会执行
+	}
+
+
+结果：
+aspect before
+Aspect biz
+aspect afteThrowing 
+
+上边的结果由于抛出异常后，不会正常的返回所有没有aspect afterReturning输出
+
+
+after(finally) advice 
+
+
+<!-- aop配置 可以配置多个-->
+	<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法 在执行切入点指定的方法之前执行 -->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+			<!-- 返回之后的通知 -->
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+			<!--  -->
+			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
+			<!-- after(finally) advice 不管是否抛出异常，最后都会执行的方法 -->
+			<aop:after method="after" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+
+
+切面类：
+/*
+ * 声明一个切面类
+ * */
+public class MyAspect {
+	
+	public void before(){
+		System.out.println("aspect before");
+	}
+
+	public void afterReturning(){
+		System.out.println("aspect afterReturning");
+	}
+	
+	public void afteThrowing(){
+		System.out.println("aspect afteThrowing");
+	}
+	
+	public void after(){
+		System.out.println("aspect after(finally)");
+	}
+}
+
+
+//业务类
+public class AspectBiz {
+	
+	public void biz(){
+		System.out.println("Aspect biz");
+		throw new RuntimeException();
+	}
+}
+
+测试：
+
+结果：
+aspect before
+Aspect biz
+aspect afteThrowing
+aspect after(finally)
+
+
+如果业务类如下：没有异常，
+//业务类
+public class AspectBiz {
+	
+	public void biz(){
+		System.out.println("Aspect biz");
+		
+	}
+
+}
+
+结果：
+aspect before
+Aspect biz
+aspect after(finally)
+
+
+
+
+
+配置：
+
+<!-- aop配置 可以配置多个-->
+	<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法 在执行切入点指定的方法之前执行 -->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+			<!-- 返回之后的通知 -->
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+			<!--  -->
+			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
+			<!-- after(finally) advice 不管是否抛出异常，最后都会执行的方法 -->
+			<aop:after method="after" pointcut-ref="myPointcut"/>
+			<!-- adroun advice 环绕通知，方法的第一参数必须是ProceedingJjoinPoint类型 -->
+			<aop:around method="around" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+
+
+切面类：
+package com.briup.spring.aop.bean.annotation.aop;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+/*
+ * 声明一个切面类
+ * */
+public class MyAspect {
+	
+	public void before(){
+		System.out.println("aspect before");
+	}
+
+	public void afterReturning(){
+		System.out.println("aspect afterReturning");
+	}
+	
+	public void afteThrowing(){
+		System.out.println("aspect afteThrowing");
+	}
+	
+	public void after(){
+		System.out.println("aspect after(finally)");
+	}
+	
+	public void around(ProceedingJoinPoint joinPoint){
+		Object object = null;
+		try{
+			System.out.println("aspect around 1"); //方法执行前
+			object = joinPoint.proceed();  //代表业务方法的执行
+			System.out.println("aspect around 1"); //方法执行后
+		}catch(Throwable e){
+			e.printStackTrace();
+		}
+	}
+}
+
+
+测试：
+
+结果：
+aspect around 1
+Aspect biz
+aspect around 1
+
+
+
+环绕通知的参数传递：
+
+配置文件：
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	
+	<!-- 切面类 -->
+	<bean id="myAspect" class="com.briup.spring.aop.bean.annotation.aop.MyAspect"></bean>
+	
+	<!-- 业务类 -->
+	<bean id="aspectBiz" class="com.briup.spring.aop.bean.annotation.aop.AspectBiz"></bean>
+	<!-- aop配置 可以配置多个-->
+	<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法 在执行切入点指定的方法之前执行 -->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+			<!-- 返回之后的通知 -->
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+			<!--  -->
+			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
+			<!-- after(finally) advice 不管是否抛出异常，最后都会执行的方法 -->
+			<aop:after method="after" pointcut-ref="myPointcut"/>
+			<!-- adroun advice 环绕通知，方法的第一参数必须是ProceedingJjoinPoint类型 -->
+			<!-- <aop:around method="around" pointcut-ref="myPointcut"/> -->
+			
+			<!-- 参数传递  -->
+			<aop:around method="aroundInit" pointcut="execution(* com.briup.spring.aop.bean.annotation.aop.AspectBiz.init(String,int))
+			and args(bizName,times)"/>
+		</aop:aspect>
+	</aop:config>
+</beans>
+
+业务类:
+//业务类
+public class AspectBiz {
+	
+	public void biz(){
+		System.out.println("Aspect biz");
+	}
+	
+	public void init(String bizName,int times){
+		System.out.println("aspectBiz init:"+bizName+"  "+times);
+	}
+
+}
+
+切面类：
+
+package com.briup.spring.aop.bean.annotation.aop;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+/*
+ * 声明一个切面类
+ * */
+public class MyAspect {
+	
+	public void before(){
+		System.out.println("aspect before");
+	}
+
+	public void afterReturning(){
+		System.out.println("aspect afterReturning");
+	}
+	
+	public void afteThrowing(){
+		System.out.println("aspect afteThrowing");
+	}
+	
+	public void after(){
+		System.out.println("aspect after(finally)");
+	}
+	
+	public void around(ProceedingJoinPoint joinPoint){
+		Object object = null;
+		try{
+			System.out.println("aspect around 1"); //方法执行前
+			object = joinPoint.proceed();  //代表业务方法的执行
+			System.out.println("aspect around 2"); //方法执行后
+		}catch(Throwable e){
+			e.printStackTrace();
+		}
+	}
+	
+	//AOP中参数的传递
+	public void aroundInit(ProceedingJoinPoint joinPoint,String bizName,int times){
+		System.out.println(bizName+"--"+times);
+		Object object = null;
+		try{
+			System.out.println("aspect around 1"); //方法执行前
+			object = joinPoint.proceed();  //代表业务方法的执行
+			System.out.println("aspect around 1"); //方法执行后
+		}catch(Throwable e){
+			e.printStackTrace();
+		}
+	}
+}
+
+测试：
+	@Test
+	public void aspectAround(){
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/spring-aop-schema-advice.xml");
+		AspectBiz aspectBiz = (AspectBiz) ac.getBean("aspectBiz");
+		aspectBiz.init("init", 3);
+	}
+
+结果：
+aspect before
+init--3
+aspect around 1
+aspectBiz init:init  3
+aspect around 1
+aspect after(finally)
+aspect afterReturning
+AfterClass 标注的方法 会最后执行
+
+
+
+
+Advisor  
+
+Advisor就像一个小的自包含，只有一个advice
+切面吱声通过一个bean标识，并且必须实现一个advice接口，同时advisor也可以很好的利用aspectJ的切入点表达式
+
+Spring通过配置文件中 <aop:advisor>元素支持advisor实际使用中，大多数情况下它会和transactional advice配合使用
+
+为了定义一个advisor的优先级一边让advice可以有序，可以使用order属性定义advisor的顺序
+
+
+使用案例：
+	<aop:config>
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+		<aop:pointcut expression="execution(* com.xyz.myapp.service..(..))" id="businessService"/>
+		<!-- advisor--->
+		<aop:advisor pointcut-ref="businessService" advice-ref="tx-advice"/>
+	</aop:config>
+
+	<tx:advice id="tx-adivce">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED"/>
+		</tx:attributes>
+	</tx:advice>
+
+
+事务的使用：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	
+	 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<!-- 扫描注解支持 -->
+	<context:component-scan base-package="spring.aop.bean.annotation"></context:component-scan>
+	
+	<bean name="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation">
+			<!-- 路径位于src下 -->
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	
+	<!-- 事物配置 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- advisor配置 配置事务处理的Bean,定义切面（advice） 
+		由于getxxx,queryxxx,findxxx不涉及事务，可以设置read-only为true
+	-->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="del*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- aop配置 -->
+	<aop:config>
+	<!-- 给impl包下的所有的方法配置adivce -->
+		<aop:pointcut expression="excution(* com.briup.spring.aop.bean.annotation.service.impl..(..))" id="serviceMethod" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"  />
+	</aop:config>
+
+</beans>
