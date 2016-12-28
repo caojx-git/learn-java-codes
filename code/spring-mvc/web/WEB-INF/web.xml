@@ -3,4 +3,38 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <!--方式一，不指定springmvc配置文件的路径默认
+    器默认读取/WEB-INF/<servlet-name>-servlet.xml文件
+    -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <!-- springMVC的入口，分发器，管家 ,分发器默认读取/WEB-INF/<servlet-name>-servlet.xml文件-->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- tomcat启动的时候，springmvc也初始化 -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等  -->
+    </servlet-mapping>
+
+    <!--方式二，手动指定springmvc配置文件的路径-->
+
+    <!--<servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 读取指定目录下的配置文件，名字可以改变
+            *表示加载该目录以及子目录下的所有springmvc-servlet.xml
+            不加*只会加载指定路径下的指定文件
+        &ndash;&gt;
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:configs/springmvc-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>&lt;!&ndash; /表示拦截所有请求，也可以 *.do   *.html 等  &ndash;&gt;
+    </servlet-mapping>-->
 </web-app>
