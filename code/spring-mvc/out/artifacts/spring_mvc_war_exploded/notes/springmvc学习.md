@@ -215,14 +215,11 @@ HelloWorldController返回数据后，在welcome.jsp中进行接收
 ```java
 package com.learn.controller;
 
-import org.apache.commons.logging.impl.WeakHashtable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by caojx on 16-12-28.
@@ -248,15 +245,10 @@ public class HelloWorldController implements Controller {
         * String modelName
         * Object modelObject
         * */
-        Map<String,Object> map = new HashMap<String, Object>();
-        map.put("map1","小明1");
-        map.put("map2","小明2");
-        map.put("map3","小明3");
-        map.put("map4","小明4");
-        return new ModelAndView("/jsp/welcome","map",map);
+        String result = "这是返回的数据result";
+        return new ModelAndView("/jsp/welcome","result",result); //
     }
 }
-
 ```
 
 ####4.2welcome.jsp
@@ -269,7 +261,6 @@ public class HelloWorldController implements Controller {
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>HelloWorldController</title>
@@ -278,18 +269,15 @@ public class HelloWorldController implements Controller {
     hello springmvc
 
     <h1>返回的数据</h1>
-    <c:forEach items="${map}" var="m">
-        ${m.key}----${m.value}<br/>
-    </c:forEach>
+    ${result}
 </body>
 </html>
 ```
 ####4.3结果
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-result1.png)
 
 
 
-###五.spring MultiActionController 实现在一个Controller中写多个方法
+4.spring MultiActionController 实现在一个Controller中写多个方法
 
 
 	步骤1：写一个Controller类extends MultiActionController
@@ -324,7 +312,7 @@ public class HelloWorldController implements Controller {
 		action的值就是请求方法
 
 
-###六.spring mvc对静态资源的访问
+5.spring mvc对静态资源的访问
 
 	由于我们在web.xml中配置了如下，会拦截所有的请求，对于静态资源的话，浏览器是会重新发送一次请求，也会被拦截
 	我们有没有写Controller处理这些静态资源的请求，所以我们需要在springmvc-serlvet.xml中添加
@@ -348,7 +336,7 @@ public class HelloWorldController implements Controller {
 		</body>
 
 
-###七.spring注解配置
+6.spring注解配置
 	
 	springmvc-annotation-servlet.xml
 
