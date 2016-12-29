@@ -200,6 +200,26 @@ public class HelloWorldController implements Controller {
         </bean>
 </beans>
 ```  
+
+####3.6 添加tomcat服务器
+Edit Configurations
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add.png)
+
+点击"+",找到tomcat
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add2.png)
+
+Name：取个名字，随便，图中可以看出有错，这个因为没有Deployment(tomcat中还没有部署项目)
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add3.png)
+
+点击fix或Deployment，部署项目，点击中间的"+"
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add4.png)
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add5.png)
+
+点击Apply-->ok-->运行
+
 ####3.6 结果
 
 ![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-result.png)
@@ -323,66 +343,328 @@ public class HelloWorldController implements Controller {
 	步骤5：启动web服务器，访问http://localhost:8888/springmvc2/test1/multi?action=add
 		action的值就是请求方法
 
+####5.1 MultiController.java
+
+```java
+package com.learn.controller;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Created by caojx on 16-12-29.
+ * 实现在一个Controller中写多个方法,需要extends MultiActionController
+ */
+public class MultiController extends MultiActionController{
+
+    /**
+    * 基于配置文件xml实现的多方法Controller中方法的参数必须有两个参数,基于注解的时候不用
+    * @param httpServletRequest
+    * @param httpServletResponse
+    * */
+    public ModelAndView add(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        System.out.println("---------add---------");
+        return new ModelAndView("/jsp/multi","method","add");
+    }
+
+    public ModelAndView update(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        System.out.println("---------update---------");
+        return new ModelAndView("/jsp/multi","method","update");
+    }
+
+}
+
+```
+
+####5.2multi.jsp
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>多方法Controller</title>
+</head>
+<body>
+    <h1>多方法Controller</h1>
+    本次请求的方法是${method}
+</body>
+</html>
+```
+
+####5.3 springmvc-serlvet.xml
+
+这里主要添加方法参数解析器
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置bean,name的值将来会作为访问路径-->
+    <bean name="/test/helloworld" class="com.learn.controller.HelloWorldController"></bean>
+    <!--2.一个controller中些多个方法-->
+    <!--配置bean
+        引入方法参数解析器
+    -->
+    <bean name="/test1/multi" class="com.learn.controller.MultiController">
+        <property name="methodNameResolver">
+            <ref bean="paramMethodResolver"></ref>
+        </property>
+    </bean>
+    <!--
+          配置参数方法解析器     action为方法参数名
+         http://localhost:8888/springmvc2/test1/multi?action=update
+      -->
+    <bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName" value="action"></property>
+    </bean>
+
+    <!--配置视图解析器，springMVC需要在配置文件这中配置试图解析器才正常解析视图-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property><!--指定jsp路径所在的前面一部分路径（前缀）-->
+        <property name="suffix" value=".jsp"></property><!--试图视图资源的后缀，我这里使用jsp-->
+    </bean>
+</beans>
+```
+
+####5.4 结果
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-multi.png)
+
+项目结构图：
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-project.png)
 
 ###六.spring mvc对静态资源的访问
 
-	由于我们在web.xml中配置了如下，会拦截所有的请求，对于静态资源的话，浏览器是会重新发送一次请求，也会被拦截
-	我们有没有写Controller处理这些静态资源的请求，所以我们需要在springmvc-serlvet.xml中添加
+	由于我们在web.xml中配置了如下，会拦截所有的请求，对于静态资源的话，浏览器会重新发送一次请求，也会被拦截
+	我们又没有写Controller处理这些静态资源的请求，所以会造成静态资源访问不到。
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等 这样的话就只会拦截到.do 或*.html请求 -->
 	</servlet-mapping>
 
-
 	在springmvc-serlvet.xml中添加，我们就可以顺利访问到我们的静态资源
-	<!-- 对静态资源的访问   声明在/imgs/** 的所有资源都不要拦截-->
+	<!-- 对静态资源的访问   声明在/imgs/** 的所有资源都不要拦截
+	     **表示/imgs/下边以及子文件夹下的所有静态资源
+	-->
 	<mvc:resources location="/imgs/" mapping="/imgs/**"/>
-
 
 	html部
 		<body>
 			<h2>访问图片</h2>
 			<div>
-		<		img alt="图片未找到" src="../imgs/05.jpg">
+		        <img alt="图片未找到" src="../imgs/05.jpg">
 			</div>
 		</body>
 
 
+####6.1 StaticController.java
+
+StaticController，是一个多方法Controller，img方法返回视图的路径
+```java
+package com.learn.controller;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Created by caojx on 16-12-29.
+ */
+public class StaticController extends MultiActionController{
+
+    /*
+    * 返回static.jsp的视图路径
+    * */
+    public ModelAndView img(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+        return new ModelAndView("/jsp/static");
+    }
+}
+
+```
+####6.2static.jsp
+```jsp
+<%--
+  Created by IntelliJ IDEA.
+  User: caojx
+  Date: 16-12-29
+  Time: 下午10:34
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>静态资源-图片的访问</title>
+</head>
+<body>
+    <h1>图片的访问</h1>
+    <div>
+        <img src="/images/05.jpg" alt="图片找不到">
+    </div>
+</body>
+</html>
+```
+####6.3springmvc-servlet.xml
+添加对静态资源的处理
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--配置bean,name的值将来会作为访问路径-->
+    <bean name="/test/helloworld" class="com.learn.controller.HelloWorldController"></bean>
+
+    <!--2.一个controller中些多个方法-->
+
+    <!--配置bean
+        引入方法参数解析器
+    -->
+    <bean name="/test1/multi" class="com.learn.controller.MultiController">
+        <property name="methodNameResolver">
+            <ref bean="paramMethodResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+          配置参数方法解析器     action为方法参数名
+         http://localhost:8888/springmvc2/test1/multi?action=update
+      -->
+    <bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName" value="action"></property>
+    </bean>
+
+    <!--3.配置对静态资源的访问-->
+
+    <!--配置bean，需要引入方法参数解析器-->
+    <bean name="/test2/img" class="com.learn.controller.StaticController">
+        <property name="methodNameResolver">
+            <ref bean="paramMethodResolver"></ref>
+        </property>
+    </bean>
+
+    <!--配置某些路径下的资源不进行拦截
+        配置对静态资源的处理
+    -->
+    <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
+
+    <!--配置视图解析器，springMVC需要在配置文件这中配置试图解析器才正常解析视图-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property><!--指定jsp路径所在的前面一部分路径（前缀）-->
+        <property name="suffix" value=".jsp"></property><!--试图视图资源的后缀，我这里使用jsp-->
+    </bean>
+</beans>
+```
+
+####6.4 结果
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-img.png)
+
+
 ###七.spring注解配置
 	
-	springmvc-annotation-servlet.xml
+之前使用的都是xml配置方式，其实springmvc使用最多的是注解方式，使用起来非常简单方便
+这里我们使用一个新的springmvc的配置文件springmvc-annotation-servlet.xml，之前的那个咱时不用了
+    
+####7.1 web.xml
+在web.xml修改springmvc需要的配置文件所在的路径指向springmvc-annotaion-servlet.xml  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--方式一，使用默认配置
+    默认读取的springmvc配置文件为/WEB-INF/<servlet-name>-servlet.xml
+    -->
+  <!--  <servlet>
+        <servlet-name>springmvc</servlet-name>
+        &lt;!&ndash; springMVC的入口，分发器，管家 ,分发器默认读取/WEB-INF/<servlet-name>-servlet.xml文件&ndash;&gt;
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 1表示tomcat启动的时候，springmvc也初始化 &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>&lt;!&ndash; /表示拦截所有请求，也可以 *.do   *.html 等  &ndash;&gt;
+    </servlet-mapping>-->
 
-	3.0之前
+
+    <!--方式二，手动指定springmvc配置文件的路径
+        推荐使用这种方式
+    -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 读取指定目录下的配置文件，名字可以改变
+            *表示加载该目录以及子目录下的所有springmvc-servlet.xml
+            不加*只会加载指定路径下的指定文件
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                classpath*:configs/springmvc-annotaion-servlet.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等  -->
+    </servlet-mapping>
+</web-app>
+```
+    
+####7.2 springmvc-annotation-servlet.xml
+
+对于springmvc-annotation-servlet.xml 添加注解的支持在spring3.0之前和3.0之后写法上有点不同
+    
+ **3.0之前**
+    
 	<!-- 注解扫描包 ,扫描该包下的所有Controller-->
-	<context:component-scan base-package="com.mcao.web.controller.annotation" />
-
+	<context:component-scan base-package="com.learn.controller.annotation" />
 	
-	<!-- 负责根据url找方法   -->
+	<!-- 开启springmvc注解，根据扫描包和url找类   -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
+	<!-- 开启springmvc注解，负责根据url找方法   -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
-	根据扫描包和url找类
-	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
 
 	<!-- 配置视图解析器 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/jsps/"></property><!-- 前缀/代码项目跟目录 -->
+		<property name="prefix" value="/WEB-INF/views/"></property><!-- 前缀/代码项目跟目录 -->
 		<property name="suffix" value=".jsp"></property><!--后缀 -->
 	</bean>
 
 	
-	3.0之后
-	<!--开启注解  3.0之后-->
+**3.0之后**
+开启注解变得非常简单，只需要配置一行就可以开启注解了
+
+    <!-- 注解扫描包 ,扫描该包下的所有Controller-->
+    <context:component-scan base-package="com.learn.controller.annotation" />
+	<!--开启springmvc注解  3.0之后-->
 	<mvc:annotation-driven/>
 
-	
-	扫描包下边的类的注解配置
+    <!-- 配置视图解析器 -->
+    <bean id="viewResolver"
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="prefix" value="/WEB-INF/views/"></property><!-- 前缀/代码项目跟目录 -->
+    	<property name="suffix" value=".jsp"></property><!--后缀 -->
+    </bean>
 
-	步骤1：定义一个普通的类 配置注解@Controller //使用注解标示为一个Controller
-	步骤2：配置请求映射@RequestMapping("/user2")  //配置该类的url的路经
-	步骤3：方法的返回值为逻辑视图名或者ModeAndView
 
+####7.3 springmvc注解类的实现
 
-	
+步骤1：定义一个普通的类 配置注解@Controller //使用注解标示为一个Controller
+步骤2：配置请求映射@RequestMapping("/user2")  //配置该类的url的路经
+步骤3：方法的返回值为逻辑视图名或者ModeAndView
+
 
 	@Controller //使用注解标示为一个Controller
 	@RequestMapping("/user2")  //配置该类的url的路经
