@@ -339,7 +339,7 @@ public class HelloWorldController implements Controller {
 	<mvc:resources location="/imgs/" mapping="/imgs/**"/>
 
 
-	html部分：
+	html部
 		<body>
 			<h2>访问图片</h2>
 			<div>

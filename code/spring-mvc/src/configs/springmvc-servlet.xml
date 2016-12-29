@@ -5,6 +5,28 @@
 
     <!--配置bean,name的值将来会作为访问路径-->
     <bean name="/test/helloworld" class="com.learn.controller.HelloWorldController"></bean>
+
+    <!--2.一个controller中些多个方法-->
+
+    <!--配置bean
+        引入方法参数解析器
+    -->
+    <bean name="/test1/multi" class="com.learn.controller.MultiController">
+        <property name="methodNameResolver">
+            <ref bean="paramMethodResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+          配置参数方法解析器     action为方法参数名
+         http://localhost:8888/springmvc2/test1/multi?action=update
+      -->
+    <bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName" value="action"></property>
+    </bean>
+
+
+
     <!--配置视图解析器，springMVC需要在配置文件这中配置试图解析器才正常解析视图-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"></property><!--指定jsp路径所在的前面一部分路径（前缀）-->
