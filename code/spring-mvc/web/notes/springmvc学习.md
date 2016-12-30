@@ -567,7 +567,7 @@ public class StaticController extends MultiActionController{
 ![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-img.png)
 
 
-###七.spring注解配置
+###七.springmvc注解配置
 	
 之前使用的都是xml配置方式，其实springmvc使用最多的是注解方式，使用起来非常简单方便
 这里我们使用一个新的springmvc的配置文件springmvc-annotation-servlet.xml，之前的那个咱时不用了
@@ -642,6 +642,37 @@ public class StaticController extends MultiActionController{
 		<property name="suffix" value=".jsp"></property><!--后缀 -->
 	</bean>
 
+springmvc-annotation-servlet.xml 3.0之前内容
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--3.0之前使用springmvc注解-->
+    <!--开启扫描包-->
+    <context:component-scan base-package="com.learn.annotaion"></context:component-scan>
+    <!--3.0之前开启springmvc注解支持-->
+    <!-- 开启springmvc注解，根据扫描包和url找类   -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
+    <!-- 开启springmvc注解，负责根据url找方法   -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
+    
+
+    <!--配置对静态资源进行放行，不拦截-->
+    <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
+
+    <!--配置视图解析器，springMVC需要在配置文件这中配置试图解析器才正常解析视图-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property><!--指定jsp路径所在的前面一部分路径（前缀）-->
+        <property name="suffix" value=".jsp"></property><!--试图视图资源的后缀，我这里使用jsp-->
+    </bean>
+</beans>
+```
+
 	
 **3.0之后**
 开启注解变得非常简单，只需要配置一行就可以开启注解了
@@ -658,74 +689,446 @@ public class StaticController extends MultiActionController{
     	<property name="suffix" value=".jsp"></property><!--后缀 -->
     </bean>
 
+springmvc-annotation-servlet.xml 3.0之后的内容
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-####7.3 springmvc注解类的实现
+    <!--3.0之前使用springmvc注解-->
+    <!--开启扫描包-->
+    <context:component-scan base-package="com.learn.annotaion"></context:component-scan>
+    <!--3.0之后使用springmvc注解-->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <!--配置对静态资源进行放行，不拦截-->
+    <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
+
+    <!--配置视图解析器，springMVC需要在配置文件这中配置试图解析器才正常解析视图-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property><!--指定jsp路径所在的前面一部分路径（前缀）-->
+        <property name="suffix" value=".jsp"></property><!--试图视图资源的后缀，我这里使用jsp-->
+    </bean>
+</beans>
+```
+
+####7.3 springmvc注解类实现
 
 步骤1：定义一个普通的类 配置注解@Controller //使用注解标示为一个Controller
-步骤2：配置请求映射@RequestMapping("/user2")  //配置该类的url的路经
+步骤2：配置请求映射@RequestMapping("/user")  //配置该类的url的路经
 步骤3：方法的返回值为逻辑视图名或者ModeAndView
 
+UserController.java 内容
 
-	@Controller //使用注解标示为一个Controller
-	@RequestMapping("/user2")  //配置该类的url的路经
-	public class UserController2 {
+```java
+package com.learn.annotaion;
 
-	@RequestMapping("/addUser")  //value的值为url地址
-	public ModelAndView addUser(){
-		String result = "this is addUser----优化版";
-		return new ModelAndView("annotation","result",result);
-	}
-	//一般不是涉及一些安全性的东西不需要配置请求方式，就是GET,POST都可以
-	//@RequestMapping(value="/delUser",method=RequestMethod.GET)  
-	@RequestMapping("/delUser")
-	public ModelAndView deleteUser(){
-		String result = "this is deleteUser----优化版";
-		return new ModelAndView("annotation","result",result);
-	}
-	
-	//直接返回路经
-	@RequestMapping("/toUser")
-	public String toUer(HttpServletRequest request){
-		String result = "this is toUser----优化版";
-		request.setAttribute("result", result);
-		return "annotation";
-	}
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+/**
+ * Description:
+ * springmvc注解类的实现,可以通过如下简单步骤实现
+ * 步骤1：定义一个普通的类 配置注解@Controller //使用注解标示为一个Controller
+ * 步骤2：配置请求映射@RequestMapping("/user")  //配置该类的url的路经
+ * 步骤3：方法的返回值为逻辑视图名或者ModeAndView
+ * 提示：基于注解的Controller是可以些多个方法的
+ * Created by caojx on 16-12-29.
+ */
+@Controller
+public class UserController {
+
+    /**
+     * Description:添加用户方法，直接返回试图和数据，使用@RequestMapping设置访问路径
+     * value设置访问路径的值，默认是这个
+     * method设置请求方式，一般是不限至请求方式的，设置了请求方式，则只会接受设置的方式的请求，不设置的话没有限制
+     * 提示：这里方法addUser中并没有参数HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse，
+     * 这两个参数在使用注解的时候是非必须的。
+     * @return ModelAndView
+     */
+    @RequestMapping(value="/user/addUser",method = RequestMethod.GET)
+    public ModelAndView addUser(){
+        System.out.println("-------addUser---------");
+        return new ModelAndView("/jsp/annotation","result","addUser");
+    }
+    
+    /**
+     * Description:删除用户，直接返回视图路径和数据
+     * @return ModelAndView
+     * */
+    @RequestMapping(value="/user/deleteUser",method = RequestMethod.GET)
+    public ModelAndView deleteUser(){
+        System.out.println("-------deleteUser---------");
+        return new ModelAndView("/jsp/annotation","result","deleteUser");
+    }
 }
+```
+
+####7.4 运行
+
+提示：使用jdk1.8的使用出现如下错误，换成jdk1.7运行就可以正常
+ 严重: Context initialization failed
+    org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/mnt/sda3/learn/code/spring-mvc/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/com/learn/annotaion/UserController.class]; nested exception is java.lang.IllegalArgumentException
+    	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:281)
+        ....
+ 
+ 运行结果：
+ 
+ ![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-annotation1.png)
+
+
+####7.5对springmvc注解进行优化
+上边的注解案例中UserController.java类中注解还有很多地方使用起来还是有点别扭，这里对其进行优化一下
+
+```java
+package com.learn.annotaion;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ * Description:
+ * 优化springmvc注解类UserController2.java
+ * Created by caojx on 16-12-29.
+ */
+@Controller
+@RequestMapping("/user2")
+public class UserController2 {
+
+    /**
+     * Description:添加用户方法，直接返回试图和数据，使用@RequestMapping设置访问路径
+     * value设置访问路径的值，默认是这个,所以可以不用显示写value=""
+     * method设置请求方式，一般是不限至请求方式的，不限至
+     * @return ModelAndView
+     */
+    @RequestMapping("/addUser") //由于每个方法RequestMapping("/user2/addUser"),都会出现user2，我们将user2移动到类体注解中
+    public ModelAndView addUser(){
+        System.out.println("-------addUser 优化版---------");
+        return new ModelAndView("/jsp/annotation","result","addUser");
+    }
+
+    /**
+     * Description:删除用户，直接返回视图路径和数据
+     * @return ModelAndView
+     * */
+    @RequestMapping("/deleteUser")
+    public ModelAndView deleteUser(){
+        System.out.println("-------deleteUser 优化版---------");
+        return new ModelAndView("/jsp/annotation","result","deleteUser");
+    }
+
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @param httpServletRequest
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(HttpServletRequest httpServletRequest){
+        String result = "this is toUser----优化版";
+        httpServletRequest.setAttribute("result", result);
+        return "/jsp/annotation";
+    }
+
+}
+
+```
+
+####7.6 优化后的访问结果
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-annotation2.png)
+
+
+
+
+##八.springmvc参数传递
 	
-	
+###8.1修改编码，加强对中文的支持
+前台页面向后台提交参数的时候，中文经常出现乱码问题，可以检查一下下边的配置。
+1.检查项目的编码是否为UTF-8
+2.设置tomcat服务的编码，在server.xml文件中修改为如下
+  <Connector URIEncoding="UTF-8" port="8888" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+3.在web.xml中添加编码过滤配置设置为UTF-8，这里使用springmvc的编码过滤
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--方式一，使用默认配置
+    默认读取的springmvc配置文件为/WEB-INF/<servlet-name>-servlet.xml
+    -->
+  <!--  <servlet>
+        <servlet-name>springmvc</servlet-name>
+        &lt;!&ndash; springMVC的入口，分发器，管家 ,分发器默认读取/WEB-INF/<servlet-name>-servlet.xml文件&ndash;&gt;
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 1表示tomcat启动的时候，springmvc也初始化 &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>&lt;!&ndash; /表示拦截所有请求，也可以 *.do   *.html 等  &ndash;&gt;
+    </servlet-mapping>-->
+
+    <!--方式二，手动指定springmvc配置文件的路径
+        推荐使用这种方式
+    -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 读取指定目录下的配置文件，名字可以改变
+            *表示加载该目录以及子目录下的所有springmvc-servlet.xml
+            不加*只会加载指定路径下的指定文件
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                classpath*:configs/springmvc-annotaion-servlet.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等  -->
+    </servlet-mapping>
+
+    <!--编码过滤,使用spring的编码过滤类-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name><!--设置为那种编码-->
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name><!--是否强制过滤-->
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--那种请求需要编码过滤,这里对所有的请求进行编码过滤-->
+    </filter-mapping>
+</web-app>
+```
+
+###8.2参数的几种传递方式
 
 
-7.springmvc参数传递
-	
-	1.通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
 
-	如：前台页面
-		<form action="/springmvc6/user/data/addUser">
-		姓名：<input type="text" name="userName"> 
-		年龄：<input type="text" name="age"> 
-		<input type="button" value="提交" onclick="addUser()">
-		</form>
+####8.2.1前台页面参数名与方法参数名称一致
+1.通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
+这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式
+#####8.2.1.1 addUser.jsp
+添加用户页面，参数名与后台页面保持一致
 
-		方法
-		@RequestMapping("/addUser")  //value的值为url地址
-		public String addUser(String userName,String age,HttpServletRequest request){ //参数名与前台页面一直，springmvc会将值注入
-			request.setAttribute("userName", userName);
-			request.setAttribute("age", age);
-			return "userManager";
-		}
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>springmvc参数传递添加用户</title>
+    <script type="text/javascript">
+        function addUser() {
+            var form = document.forms[0];
+            form.action = "/data/addUser";
+            form.method = "get";
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+<h1>添加用户</h1>
+<form action="">
+    姓名：<input type="text" name="userName"/>
+    年龄：<input type="text" name="age"/>
+    <input type="submit" value="添加" onclick="addUser()">
+</form>
+</body>
+</html>
+```
+#####8.2.1.2 userManager.jsp
+后台方法接收到addUser.jsp页面的参数后，将参数返回到该页面中展示
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>用户管理</title>
+</head>
+<body>
+    <h1>用户管理</h1>
+    姓名：===>${userName}
+    年龄：===>${age}
+</body>
+</html>
+```
 
-		
+#####8.2.1.3DataController.java
+```java
+/**
+ * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
+ * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+ * Created by caojx on 16-12-30.
+ */
+@Controller
+@RequestMapping("/data")
+public class DataController {
 
-	2.通过实体类，注入，实体类中提供gett.. sett
+    /**
+     * Description:添加用户方法，直接返回试图
+     * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+     * @return String
+     */
+    @RequestMapping("/addUser")
+    public String addUser(String userName,String age,HttpServletRequest httpServletRequest){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        httpServletRequest.setAttribute("userName",userName);
+        httpServletRequest.setAttribute("age",age);
+        return "/jsp/userManager";
+    }
 
-	
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(){
+        return "/jsp/addUser";
+    }
+
+}
+```
+#####8.2.1.4 结果
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param1.png)
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param2.png)
+
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param3.png)
 
 
 
+####8.2.2通过实体类注入，实体类中提供getter.. setter
 
+#####8.2.2.1User.java
+```java
+package com.learn.entity;
 
+/**
+ * Description: 用户实体类
+ * Created by caojx on 16-12-30.
+ */
+public class User {
 
+    private String userName;
+    private String age;
 
+    public String getUserName() {
+        return userName;
+    }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-  
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+}
+
+```
+
+#####8.2.2.2 DataController 添加实体类方式的参数传入
+
+方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+
+```java
+/**
+ * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
+ * 方式一：前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+ * 方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+ * Created by caojx on 16-12-30.
+ */
+@Controller
+@RequestMapping("/data")
+public class DataController {
+
+    /**
+     * Description:添加用户方法，直接返回试图
+     * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+     * @return String
+     */
+    @RequestMapping("/addUser")
+    public String addUser(String userName,String age,HttpServletRequest httpServletRequest){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        httpServletRequest.setAttribute("userName",userName);
+        httpServletRequest.setAttribute("age",age);
+        return "/jsp/userManager";
+    }
+
+    /**
+     * Description:添加用户方法，直接返回试图
+     * 通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+     * @return String
+     */
+    @RequestMapping("/addUser2")
+    public String addUser2(User user, HttpServletRequest httpServletRequest){
+        System.out.println("-------addUser 接收的参数--userName:"+user.getUserName()+"--age:"+user.getAge());
+        //将接受的参数返回到用户管理页面
+        httpServletRequest.setAttribute("userName",user.getUserName());
+        httpServletRequest.setAttribute("age",user.getAge());
+        return "/jsp/userManager";
+    }
+
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(){
+        return "/jsp/addUser";
+    }
+
+}
+```
+
+#####8.2.2.3 addUser.jsp
+修改action的路径为/data/addUser2
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>springmvc参数传递添加用户</title>
+    <script type="text/javascript">
+        function addUser() {
+            var form = document.forms[0];
+            form.action = "/data/addUser2";
+            form.method = "get";
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+<h1>添加用户</h1>
+<form action="">
+    姓名：<input type="text" name="userName"/>
+    年龄：<input type="text" name="age"/>
+
+    <input type="submit" value="添加" onclick="addUser()">
+</form>
+</body>
+</html>
+```
