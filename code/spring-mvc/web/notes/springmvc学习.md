@@ -922,11 +922,14 @@ public class UserController2 {
 
 ###8.2参数的几种传递方式
 
+**方式一:通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
+这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式**
 
+**方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
 
 ####8.2.1前台页面参数名与方法参数名称一致
-1.通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
-这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式
+**方式一:通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
+这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式**
 #####8.2.1.1 addUser.jsp
 添加用户页面，参数名与后台页面保持一致
 
@@ -1052,7 +1055,7 @@ public class User {
 
 #####8.2.2.2 DataController 添加实体类方式的参数传入
 
-方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+**方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
 
 ```java
 /**
@@ -1132,3 +1135,145 @@ public class DataController {
 </body>
 </html>
 ```
+
+结果与之前的一致，这里就不再提供截图了。
+
+###8.3传递json数据
+json数据格式是web开发中一种常用数据传递格式，这里我们使用一个简单的案例来演示对json数据的传递
+
+
+####8.3.1json.jsp页面
+将参数提交到后台页面，然后接受后台返回的参数
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <script type="text/javascript" src="/js/common/jquery-1.7.1.min.js"></script>
+    <title>json的数据传递</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#add").click(function () {
+                var userName = $("#userName").attr("value")
+                var age = $("#age").attr("value");
+                var user = {
+                    "userName":userName,
+                    "age":age
+                };
+
+                $.ajax({
+                    url:"/data/addUserJson",
+                    type:"post",
+                    data:user,
+                    success:function (data) {
+                        alert("userName"+data.userName+"-----age:"+data.age);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>添加用户</h1>
+    姓名：<input type="text" id="userName"/>
+    年龄：<input type="text" id="age"/>
+    <input type="button" id="add" value="添加">
+</body>
+</html>
+
+```
+####8.3.2DataController.java
+
+addJson方法用户接受页面参数，和给页面返回数据
+
+```java
+package com.learn.annotaion;
+
+import com.learn.entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+
+/**
+ * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
+ * 方式一：前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+ * 方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+ * Created by caojx on 16-12-30.
+ */
+@Controller
+@RequestMapping("/data")
+public class DataController {
+
+    /**
+     * Description:添加用户方法，直接返回试图
+     * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+     * @return String
+     */
+    @RequestMapping("/addUser")
+    public String addUser(String userName,String age,HttpServletRequest httpServletRequest){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        httpServletRequest.setAttribute("userName",userName);
+        httpServletRequest.setAttribute("age",age);
+        return "/jsp/userManager";
+    }
+
+    /**
+     * Description:添加用户方法，直接返回试图
+     * 通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+     * @return String
+     */
+    @RequestMapping("/addUser2")
+    public String addUser2(User user, HttpServletRequest httpServletRequest){
+        System.out.println("-------addUser 接收的参数--userName:"+user.getUserName()+"--age:"+user.getAge());
+        //将接受的参数返回到用户管理页面
+        httpServletRequest.setAttribute("userName",user.getUserName());
+        httpServletRequest.setAttribute("age",user.getAge());
+        return "/jsp/userManager";
+    }
+
+    /**
+     * Description:添加用户方法，使用json方式
+     * 通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+     * 前台页面使用json方式传递数据
+     * @return String
+     */
+    @RequestMapping("/addUserJson")
+    public String addJson(User user, HttpServletResponse httpServletResponse){
+        System.out.println("-------addUserJson 接收的参数--userName:"+user.getUserName()+"--age:"+user.getAge());
+        //将接受到参数返回给json页面,其实返回json数据常用的写法使用JSONObject和JSONArray
+        String result = "{\"userName\":\" "+ user.getUserName() +" \",\"age\":\" "+ user.getAge()+" \"}";
+        httpServletResponse.setContentType("application/json");
+        PrintWriter out = null;
+        try{
+            out = httpServletResponse.getWriter();
+            out.print(result);
+            out.flush();
+            out.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return "/jsp/json";
+    }
+
+
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(){
+        //return "/jsp/addUser";
+        return "/jsp/json";
+    }
+
+}
+```
+
+####8.3.4结果
+![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-json.png);

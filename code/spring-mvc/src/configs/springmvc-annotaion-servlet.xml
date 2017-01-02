@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+    <!--3.0之前使用springmvc注解-->
     <!--开启扫描包-->
-    <mvc:component-scan base-package="com.learn.annotaion"></mvc:component-scan>
-    <!--3.0之前开启springmvc注解支持-->
-    <!-- 开启springmvc注解，根据扫描包和url找类   -->
-    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
-    <!-- 开启springmvc注解，负责根据url找方法   -->
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
-
-    <!--3.0之后-->
-
+    <context:component-scan base-package="com.learn.annotaion"></context:component-scan>
+    <!--3.0之后使用springmvc注解-->
+    <mvc:annotation-driven></mvc:annotation-driven>
     <!--配置对静态资源进行放行，不拦截-->
     <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
