@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--配置bean,name的值将来会作为访问路径-->
+    <bean name="/test/helloworld" class="com.learn.controller.HelloWorldController"></bean>
+
+    <!--2.一个controller中些多个方法-->
+
+    <!--配置bean
+        引入方法参数解析器
+    -->
+    <bean name="/test1/multi" class="com.learn.controller.MultiController">
+        <property name="methodNameResolver">
+            <ref bean="paramMethodResolver"></ref>
+        </property>
+    </bean>
+
+    <!--
+          配置参数方法解析器     action为方法参数名
+         http://localhost:8888/springmvc2/test1/multi?action=update
+      -->
+    <bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+        <property name="paramName" value="action"></property>
+    </bean>
+
+    <!--3.配置对静态资源的访问-->
+
+    <!--配置bean,需要引入方法参数解析器-->
+    <bean name="/test2/img" class="com.learn.controller.StaticController">
+        <property name="methodNameResolver">
+            <ref bean="paramMethodResolver"></ref>
+        </property>
+    </bean>
+
+    <!--配置某些路径下的资源不进行拦截
+        配置对静态资源的处理
+    -->
+    <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
+
+    <!--配置视图解析器，springMVC需要在配置文件这中配置试图解析器才正常解析视图-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property><!--指定jsp路径所在的前面一部分路径（前缀）-->
+        <property name="suffix" value=".jsp"></property><!--试图视图资源的后缀，我这里使用jsp-->
+    </bean>
+</beans>
