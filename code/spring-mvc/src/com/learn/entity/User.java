@@ -7,7 +7,7 @@ package com.learn.entity;
 public class User {
 
     private String userName;
-    private String age;
+    private int age;
 
     public String getUserName() {
         return userName;
@@ -17,11 +17,11 @@ public class User {
         this.userName = userName;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }

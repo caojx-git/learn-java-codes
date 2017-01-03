@@ -12,7 +12,7 @@
     <script type="text/javascript">
         function addUser() {
             var form = document.forms[0];
-            form.action = "/data/addUser2";
+            form.action = "/data2/addUser3";
             form.method = "get";
             form.submit();
         }

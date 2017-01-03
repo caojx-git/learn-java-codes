@@ -697,7 +697,6 @@ springmvc-annotation-servlet.xml 3.0之后的内容
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--3.0之前使用springmvc注解-->
     <!--开启扫描包-->
     <context:component-scan base-package="com.learn.annotaion"></context:component-scan>
     <!--3.0之后使用springmvc注解-->
@@ -849,6 +848,7 @@ public class UserController2 {
 
 
 ##八.springmvc参数传递
+
 	
 ###8.1修改编码，加强对中文的支持
 前台页面向后台提交参数的时候，中文经常出现乱码问题，可以检查一下下边的配置。
@@ -920,17 +920,24 @@ public class UserController2 {
 </web-app>
 ```
 
-###8.2参数的几种传递方式
+###8.2参数的几种传递方式（前台到后台，后台到前台）
+
+>前台到后台的参数传递
 
 **方式一:通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
 这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式**
 
-**方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
+**方式二：当前台页面的参数名与后台的方法参数不一致时，使用@RequestParam注解，绑定参数**
 
-####8.2.1前台页面参数名与方法参数名称一致
+**方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
+
+####8.2.1前台页面参数名与方法参数名称一致（之前台到后台）
 **方式一:通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
 这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式**
-#####8.2.1.1 addUser.jsp
+
+**方式二：当前台页面的参数名与后台的方法参数不一致时，使用@RequestParam注解，绑定参数**
+
+#####8.2.1.1 addUser.jsp（之前台到后台）
 添加用户页面，参数名与后台页面保持一致
 
 ```jsp
@@ -957,7 +964,7 @@ public class UserController2 {
 </body>
 </html>
 ```
-#####8.2.1.2 userManager.jsp
+#####8.2.1.2 userManager.jsp（之前台到后台）
 后台方法接收到addUser.jsp页面的参数后，将参数返回到该页面中展示
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -973,11 +980,12 @@ public class UserController2 {
 </html>
 ```
 
-#####8.2.1.3DataController.java
+#####8.2.1.3DataController.java（之前台到后台）
 ```java
 /**
  * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
- * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+ * 1.前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
+ * 2.当前台页面的参数名与后台的方法参数不一致时，使用@RequestParam注解，绑定参数，这种方式使用的比较多
  * Created by caojx on 16-12-30.
  */
 @Controller
@@ -985,6 +993,7 @@ public class UserController2 {
 public class DataController {
 
     /**
+     * 方式一
      * Description:添加用户方法，直接返回试图
      * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
      * @return String
@@ -998,6 +1007,27 @@ public class DataController {
         return "/jsp/userManager";
     }
 
+     /**
+      * 方式二
+      * Description:添加用户的方法，
+      * 前台页面和后台方法参数名不一致，使用@RequestParam注解绑定参数，这种方式相比第一种方式更为常用
+      * required的默认值为true，表示必须的参数
+      * @param name 用户名
+      * @param age 年龄
+      * @param httpServletRequest
+      * @return
+      */
+      @RequestMapping("/addUser2")
+      public String addUser2(@RequestParam(value = "userName",required = true) String name,
+                                @RequestParam(value = "age",required = true) int age,
+                                HttpServletRequest httpServletRequest){
+          System.out.println("-------addUser 接收的参数--name:"+name+"--age:"+name);
+          //将接受的参数返回到用户管理页面
+          httpServletRequest.setAttribute("userName",name);
+          httpServletRequest.setAttribute("age",age);
+          return "/jsp/userManager";
+      }
+
     /**
      * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
      * @return String
@@ -1009,7 +1039,7 @@ public class DataController {
 
 }
 ```
-#####8.2.1.4 结果
+#####8.2.1.4 结果（之前台到后台）
 
 ![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param1.png)
 
@@ -1019,9 +1049,9 @@ public class DataController {
 
 
 
-####8.2.2通过实体类注入，实体类中提供getter.. setter
+####8.2.2通过实体类注入，实体类中提供getter.. setter（之前台到后台）
 
-#####8.2.2.1User.java
+#####8.2.2.1User.java（之前台到后台）
 ```java
 package com.learn.entity;
 
@@ -1053,15 +1083,16 @@ public class User {
 
 ```
 
-#####8.2.2.2 DataController 添加实体类方式的参数传入
+#####8.2.2.2 DataController 添加实体类方式的参数传入（之前台到后台）
 
-**方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
+**方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
 
 ```java
 /**
  * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
  * 方式一：前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
- * 方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+ * 方式二：当前台页面的参数名与后台的方法参数不一致时，使用@RequestParam注解，绑定参数
+ * 方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
  * Created by caojx on 16-12-30.
  */
 @Controller
@@ -1069,6 +1100,7 @@ public class User {
 public class DataController {
 
     /**
+     * 方式一
      * Description:添加用户方法，直接返回试图
      * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
      * @return String
@@ -1082,13 +1114,35 @@ public class DataController {
         return "/jsp/userManager";
     }
 
+     /**
+      * 方式二
+      * Description:添加用户的方法，
+      * 前台页面和后台方法参数名不一致，使用@RequestParam注解绑定参数，这种方式相比第一种方式更为常用
+      * required的默认值为true，表示必须的参数
+      * @param name 用户名
+      * @param age 年龄
+      * @param httpServletRequest
+      * @return
+      */
+      @RequestMapping("/addUser2")
+      public String addUser2(@RequestParam(value = "userName",required = true) String name,
+                                    @RequestParam(value = "age",required = true) int age,
+                                    HttpServletRequest httpServletRequest){
+          System.out.println("-------addUser 接收的参数--name:"+name+"--age:"+name);
+          //将接受的参数返回到用户管理页面
+          httpServletRequest.setAttribute("userName",name);
+          httpServletRequest.setAttribute("age",age);
+          return "/jsp/userManager";
+      }
+          
     /**
+     * 方式三
      * Description:添加用户方法，直接返回试图
      * 通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
      * @return String
      */
-    @RequestMapping("/addUser2")
-    public String addUser2(User user, HttpServletRequest httpServletRequest){
+    @RequestMapping("/addUser3")
+    public String addUser3(User user, HttpServletRequest httpServletRequest){
         System.out.println("-------addUser 接收的参数--userName:"+user.getUserName()+"--age:"+user.getAge());
         //将接受的参数返回到用户管理页面
         httpServletRequest.setAttribute("userName",user.getUserName());
@@ -1108,7 +1162,7 @@ public class DataController {
 }
 ```
 
-#####8.2.2.3 addUser.jsp
+#####8.2.2.3 addUser.jsp（之前台到后台）
 修改action的路径为/data/addUser2
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -1118,7 +1172,7 @@ public class DataController {
     <script type="text/javascript">
         function addUser() {
             var form = document.forms[0];
-            form.action = "/data/addUser2";
+            form.action = "/data/addUser3";
             form.method = "get";
             form.submit();
         }
@@ -1138,11 +1192,11 @@ public class DataController {
 
 结果与之前的一致，这里就不再提供截图了。
 
-###8.3传递json数据
+###8.3传递json数据（之前台到后台）
 json数据格式是web开发中一种常用数据传递格式，这里我们使用一个简单的案例来演示对json数据的传递
 
 
-####8.3.1json.jsp页面
+####8.3.1json.jsp页面（之前台到后台）
 将参数提交到后台页面，然后接受后台返回的参数
 
 ```jsp
@@ -1183,7 +1237,7 @@ json数据格式是web开发中一种常用数据传递格式，这里我们使�
 </html>
 
 ```
-####8.3.2DataController.java
+####8.3.2DataController.java（之前台到后台）
 
 addJson方法用户接受页面参数，和给页面返回数据
 
@@ -1193,16 +1247,18 @@ package com.learn.annotaion;
 import com.learn.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
+
 /**
  * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
  * 方式一：前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
- * 方式二：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
+ * 方式二：当前台页面的参数名与后台的方法参数不一致时，使用@RequestParam注解，绑定参数
+ * 方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
  * Created by caojx on 16-12-30.
  */
 @Controller
@@ -1210,6 +1266,7 @@ import java.io.PrintWriter;
 public class DataController {
 
     /**
+     * 方式一
      * Description:添加用户方法，直接返回试图
      * 前台页面中的参数名与方法中的参数名一致，springmvc就自动将参数值注入进来
      * @return String
@@ -1224,18 +1281,41 @@ public class DataController {
     }
 
     /**
+     * 方式二
+     * Description:添加用户的方法，
+     * 前台页面和后台方法参数名不一致，使用@RequestParam注解绑定参数，这种方式相比第一种方式更为常用
+     * required的默认值为true，表示必须的参数
+     * @param name 用户名
+     * @param age 年龄
+     * @param httpServletRequest
+     * @return
+     */
+    @RequestMapping("/addUser2")
+    public String addUser2(@RequestParam(value = "userName",required = true) String name,
+                           @RequestParam(value = "age",required = true) int age,
+                           HttpServletRequest httpServletRequest){
+        System.out.println("-------addUser 接收的参数--name:"+name+"--age:"+name);
+        //将接受的参数返回到用户管理页面
+        httpServletRequest.setAttribute("userName",name);
+        httpServletRequest.setAttribute("age",age);
+        return "/jsp/userManager";
+    }
+
+    /**
+     * 方式三
      * Description:添加用户方法，直接返回试图
      * 通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中
      * @return String
      */
-    @RequestMapping("/addUser2")
-    public String addUser2(User user, HttpServletRequest httpServletRequest){
+    @RequestMapping("/addUser3")
+    public String addUser3(User user, HttpServletRequest httpServletRequest){
         System.out.println("-------addUser 接收的参数--userName:"+user.getUserName()+"--age:"+user.getAge());
         //将接受的参数返回到用户管理页面
         httpServletRequest.setAttribute("userName",user.getUserName());
         httpServletRequest.setAttribute("age",user.getAge());
         return "/jsp/userManager";
     }
+
 
     /**
      * Description:添加用户方法，使用json方式
@@ -1246,7 +1326,7 @@ public class DataController {
     @RequestMapping("/addUserJson")
     public String addJson(User user, HttpServletResponse httpServletResponse){
         System.out.println("-------addUserJson 接收的参数--userName:"+user.getUserName()+"--age:"+user.getAge());
-        //将接受到参数返回给json页面,其实返回json数据常用的写法使用JSONObject和JSONArray
+        //将接受到参数返回给json页面,其实返回json数据常用的写法使用JSONObject和JSONArray或者是将阿从看json
         String result = "{\"userName\":\" "+ user.getUserName() +" \",\"age\":\" "+ user.getAge()+" \"}";
         httpServletResponse.setContentType("application/json");
         PrintWriter out = null;
@@ -1273,11 +1353,175 @@ public class DataController {
     }
 
 }
+
 ```
 
-####8.3.4结果
+####8.3.4结果（之前台到后台）
 ![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-json.png);
 
+###8.4参数的几种传递方式(后台到前台的参数传递)
+>后台到前台的参数传递
+
+springmvc支持的返回方式有，ModelAndView,Model,ModelMap,Map,List,View,String,void
+
+
+#####8.4.1DataController2.java(后台到前台的参数传递)
+
+其中ModelAndView，Model,ModelMap，View这些基本的方式就不再介绍了，这里主要介绍一下返回Map，list，String（jsonString方式）。
+
+```java
+package com.learn.annotaion;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.learn.entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Description:springmvc将Controller中返回的数据，交给页面
+ * springmvc支持的返回方式有，ModelAndView,Model,ModelMap,Map,List,View,String,void
+ * 其中ModelAndView，Model,ModelMap，View就不再介绍了，这里主要介绍一下返回Map，list，String
+ * Created by caojx on 16-12-30.
+ */
+@Controller
+@RequestMapping("/data2")
+public class DataController2 {
+
+    /**
+     * 方式一，返回Map
+     * Description:将接受到的参数通过Map方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * @return Map
+     */
+    @RequestMapping("/addUser")
+    @ResponseBody
+    public Map<String,Object> addUser(@RequestParam(value = "userName",required = true) String userName,
+                                      @RequestParam(value = "age",required = true)int age){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+       Map<String,Object> map = new HashMap<String,Object>();
+       map.put("userName",userName);
+       map.put("age",age);
+       return map;
+    }
+
+    /**
+     * 方式二，返回List
+     * Description:将接受到的参数通过list方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * @return List
+     */
+    @RequestMapping("/addUser2")
+    @ResponseBody
+    public List<User> addUser2(@RequestParam(value = "userName",required = true) String userName,
+                         @RequestParam(value = "age",required = true)int age){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        List<User> users = new ArrayList<User>();
+        User user = new User();
+        user.setUserName(userName);
+        user.setAge(age);
+        users.add(user);
+        return users;
+    }
+
+    /**
+     * 方式三，使用jackson，返回jsonString
+     * Description:将接受到的参数通过jsonString方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * 需要新增3个jar包支持
+     * jackson-annotationsxxx.jar
+     * jackson-corexxx.jar
+     * jackson-databindxxx.jar
+     * 
+     * json字符串中有中文的时候，容易出现乱码问题，可以在@RequestMapping中添加produces = "application/json;charset=UTF-8"对编码进行处理，
+     * 也可时在springmvc配置文件中使用拦截器的方式实现，我个人比较喜欢拦截器的方式，使用拦截器的方式，就不用每次都在@RequestMapping中写produces。
+     * @return List
+     */
+    @RequestMapping(value = "/addUser3",produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String addUser3(@RequestParam(value = "userName",required = true) String userName,
+                               @RequestParam(value = "age",required = true)int age) throws JsonProcessingException {
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        User user = new User();
+        user.setUserName(userName);
+        user.setAge(age);
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonString = objectMapper.writeValueAsString(user);
+        return jsonString;
+    }
+
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(){
+        return "/jsp/addUser";
+    }
+
+}
+```
+
+在返回jsonString的时候出现了中文乱码，解决方法
+
+1.在@RequestMapping中添加produces = "application/json;charset=UTF-8"，如下：
+```java
+@RequestMapping(value = "/addUser3",produces = "application/json;charset=UTF-8")
+     @ResponseBody
+     public String addUser3(@RequestParam(value = "userName",required = true) String userName,
+                                @RequestParam(value = "age",required = true)int age) throws JsonProcessingException {
+         System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+         //将接受的参数返回到用户管理页面
+         User user = new User();
+         user.setUserName(userName);
+         user.setAge(age);
+         ObjectMapper objectMapper = new ObjectMapper();
+         String jsonString = objectMapper.writeValueAsString(user);
+         return jsonString;
+     }
+```
+
+这种方式需要在每个出现乱码的请求方法中添加produces = "application/json;charset=UTF-8
+
+2.使用拦截器的方式实现,在开启注解的时候添加配置编码过滤，一般是设置StringHttpMessageConverter，推荐使用这种方式，
+这样就不用每次在@RequestMapping中添加produces = "application/json;charset=UTF-8"了
+```xml
+ <mvc:annotation-driven>
+        <!--下边是对返回的字符编码做过滤，通过拦截器的方式
+        由于我在使用jackjson返回中文的时候，出现了乱码，为了防止返回中文字符的时候乱码，一般使用拦截器的方式去实现。
+        -->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+
+    </mvc:annotation-driven>
+```
 
 
 ##九.SpringMVC文件上传

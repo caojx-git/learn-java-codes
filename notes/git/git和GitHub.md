@@ -98,9 +98,10 @@ $ cat README.md
 ## 第一次修改内容
 ####推送到远程仓库
 推送你的新分支与数据到某个远端仓库命令:
->git push [alias] [branch]
+>git push [-u] [alias] [branch]
 
-以上命令将你的 [branch] 分支推送成为 [alias] 远程仓库上的 [branch] 分支，实例如下。
+以上命令将你的 [branch] 分支推送成为 [alias] 远程仓库上的 [branch] 分支，一般会使用-u
+实例如下。
 >$ touch runoob-test.txt      # 添加文件
 $ git add runoob-test.txt 
 $ git commit -m "添加到远程"
@@ -109,7 +110,7 @@ master 69e702d] 添加到远程
  create mode 100644 runoob-test.txt
 
 
->$ git push origin master    # 推送到 Github
+>$ git push -u origin master    # 推送到 Github
 重新回到我们的 Github 仓库，可以看到文件以及提交上来了：
 
 ####删除远程仓库
