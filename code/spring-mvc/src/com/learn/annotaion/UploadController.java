@@ -17,6 +17,7 @@ import java.util.Iterator;
  * Description:文件上传Controller配置，需要在配置文件中配置multipartResolver
  * i且需要两个jar包
  * 方式一：使用参数CommonsMultipartFile接受的方法
+ * 方式二：使用springmvc的MultipartHttpServletRequest，这中方式效率更快。
  * Created by caojx on 17-1-2.
  */
 @Controller

@@ -14,7 +14,9 @@
     <context:component-scan base-package="com.learn.annotaion"></context:component-scan>
     <!--3.0之后使用springmvc注解-->
     <mvc:annotation-driven>
-        <!--下边是对返回的字符编码做过滤-->
+        <!--下边是对返回的字符编码做过滤，通过拦截器的方式
+        由于我在使用jackjson返回中文的时候，出现了乱码，为了防止返回中文字符的时候乱码，一般使用拦截器的方式去实现。
+        -->
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter">
                 <property name="supportedMediaTypes">

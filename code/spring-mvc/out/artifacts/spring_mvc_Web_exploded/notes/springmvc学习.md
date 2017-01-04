@@ -1365,6 +1365,340 @@ public class DataController {
 springmvc支持的返回方式有，ModelAndView,Model,ModelMap,Map,List,View,String,void
 
 
+#####8.4.1DataController2.java(后台到前台的参数传递)
+
+其中ModelAndView，Model,ModelMap，View这些基本的方式就不再介绍了，这里主要介绍一下返回Map，list，String（jsonString方式）。
+
+```java
+package com.learn.annotaion;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.learn.entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Description:springmvc将Controller中返回的数据，交给页面
+ * springmvc支持的返回方式有，ModelAndView,Model,ModelMap,Map,List,View,String,void
+ * 其中ModelAndView，Model,ModelMap，View就不再介绍了，这里主要介绍一下返回Map，list，String
+ * Created by caojx on 16-12-30.
+ */
+@Controller
+@RequestMapping("/data2")
+public class DataController2 {
+
+    /**
+     * 方式一，返回Map
+     * Description:将接受到的参数通过Map方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * @return Map
+     */
+    @RequestMapping("/addUser")
+    @ResponseBody
+    public Map<String,Object> addUser(@RequestParam(value = "userName",required = true) String userName,
+                                      @RequestParam(value = "age",required = true)int age){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+       Map<String,Object> map = new HashMap<String,Object>();
+       map.put("userName",userName);
+       map.put("age",age);
+       return map;
+    }
+
+    /**
+     * 方式二，返回List
+     * Description:将接受到的参数通过list方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * @return List
+     */
+    @RequestMapping("/addUser2")
+    @ResponseBody
+    public List<User> addUser2(@RequestParam(value = "userName",required = true) String userName,
+                         @RequestParam(value = "age",required = true)int age){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        List<User> users = new ArrayList<User>();
+        User user = new User();
+        user.setUserName(userName);
+        user.setAge(age);
+        users.add(user);
+        return users;
+    }
+
+    /**
+     * 方式三，使用jackson，返回jsonString
+     * Description:将接受到的参数通过jsonString方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * 需要新增3个jar包支持
+     * jackson-annotationsxxx.jar
+     * jackson-corexxx.jar
+     * jackson-databindxxx.jar
+     * 
+     * json字符串中有中文的时候，容易出现乱码问题，可以在@RequestMapping中添加produces = "application/json;charset=UTF-8"对编码进行处理，
+     * 也可时在springmvc配置文件中使用拦截器的方式实现，我个人比较喜欢拦截器的方式，使用拦截器的方式，就不用每次都在@RequestMapping中写produces。
+     * @return List
+     */
+    @RequestMapping(value = "/addUser3",produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String addUser3(@RequestParam(value = "userName",required = true) String userName,
+                               @RequestParam(value = "age",required = true)int age) throws JsonProcessingException {
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        User user = new User();
+        user.setUserName(userName);
+        user.setAge(age);
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonString = objectMapper.writeValueAsString(user);
+        return jsonString;
+    }
+
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(){
+        return "/jsp/addUser";
+    }
+
+}
+```
+
+在返回jsonString的时候出现了中文乱码，解决方法
+
+1.在@RequestMapping中添加produces = "application/json;charset=UTF-8"，如下：
+```java
+@RequestMapping(value = "/addUser3",produces = "application/json;charset=UTF-8")
+     @ResponseBody
+     public String addUser3(@RequestParam(value = "userName",required = true) String userName,
+                                @RequestParam(value = "age",required = true)int age) throws JsonProcessingException {
+         System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+         //将接受的参数返回到用户管理页面
+         User user = new User();
+         user.setUserName(userName);
+         user.setAge(age);
+         ObjectMapper objectMapper = new ObjectMapper();
+         String jsonString = objectMapper.writeValueAsString(user);
+         return jsonString;
+     }
+```
+
+这种方式需要在每个出现乱码的请求方法中添加produces = "application/json;charset=UTF-8
+
+2.使用拦截器的方式实现,在开启注解的时候添加配置编码过滤，一般是设置StringHttpMessageConverter，推荐使用这种方式，
+这样就不用每次在@RequestMapping中添加produces = "application/json;charset=UTF-8"了
+```xml
+ <mvc:annotation-driven>
+        <!--下边是对返回的字符编码做过滤，通过拦截器的方式
+        由于我在使用jackjson返回中文的时候，出现了乱码，为了防止返回中文字符的时候乱码，一般使用拦截器的方式去实现。
+        -->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+
+    </mvc:annotation-driven>
+```
 
 
 ##九.SpringMVC文件上传
+
+###9.1springmvc-annotaion-servlet.xml
+
+添加文件上传解析器
+
+```xml
+<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property><!--文件编码-->
+        <property name="maxUploadSize" value="1048576000"></property><!--文件最大值-->
+        <property name="maxInMemorySize" value="40960"></property><!--文件缓存大小-->
+    </bean>
+```
+
+###9.2DataController2.java
+
+这里使用两种方式上传文件
+
+```java
+package com.learn.annotaion;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.learn.entity.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Description:springmvc将Controller中返回的数据，交给页面
+ * springmvc支持的返回方式有，ModelAndView,Model,ModelMap,Map,List,View,String,void
+ * 其中ModelAndView，Model,ModelMap，View就不再介绍了，这里主要介绍一下返回Map，list，String
+ * Created by caojx on 16-12-30.
+ */
+@Controller
+@RequestMapping("/data2")
+public class DataController2 {
+
+    /**
+     * 方式一，返回Map
+     * Description:将接受到的参数通过Map方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * @return Map
+     */
+    @RequestMapping("/addUser")
+    @ResponseBody
+    public Map<String,Object> addUser(@RequestParam(value = "userName",required = true) String userName,
+                                      @RequestParam(value = "age",required = true)int age){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+       Map<String,Object> map = new HashMap<String,Object>();
+       map.put("userName",userName);
+       map.put("age",age);
+       return map;
+    }
+
+    /**
+     * 方式二，返回List
+     * Description:将接受到的参数通过list方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * @return List
+     */
+    @RequestMapping("/addUser2")
+    @ResponseBody
+    public List<User> addUser2(@RequestParam(value = "userName",required = true) String userName,
+                         @RequestParam(value = "age",required = true)int age){
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        List<User> users = new ArrayList<User>();
+        User user = new User();
+        user.setUserName(userName);
+        user.setAge(age);
+        users.add(user);
+        return users;
+    }
+
+    /**
+     * 方式三，使用jackson，返回jsonString
+     * Description:将接受到的参数通过jsonString方式返回,返回这种数据类型需要添加@ResponseBody，说明这是一个响应体。
+     * 需要新增3个jar包支持
+     * jackson-annotationsxxx.jar
+     * jackson-corexxx.jar
+     * jackson-databindxxx.jar
+     *
+     * json字符串中有中文的时候，容易出现乱码问题，可以在@RequestMapping中添加produces = "application/json;charset=UTF-8"对编码进行处理，
+     * 也可时在springmvc配置文件中使用拦截器的方式实现，我个人比较喜欢拦截器的方式，使用拦截器的方式，就不用每次都在@RequestMapping中写produces。
+     * @return List
+     */
+    @RequestMapping(value = "/addUser3",produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String addUser3(@RequestParam(value = "userName",required = true) String userName,
+                               @RequestParam(value = "age",required = true)int age) throws JsonProcessingException {
+        System.out.println("-------addUser 接收的参数--userName:"+userName+"--age:"+age);
+        //将接受的参数返回到用户管理页面
+        User user = new User();
+        user.setUserName(userName);
+        user.setAge(age);
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonString = objectMapper.writeValueAsString(user);
+        return jsonString;
+    }
+
+    /**
+     * Description:直接返回视图路径，返回类型可有为String，返回的数据可以放置到httpServletRequest中
+     * @return String
+     */
+    @RequestMapping("/toUser")
+    public String toUer(){
+        return "/jsp/addUser";
+    }
+
+}
+
+```
+
+###9.3upload.jsp
+
+上传文件的时候，需要设置一下form表单的enctype：有下边3个值
+
+multipart/form-data 在发送前编码所有字符（默认）
+
+application/x-www-form-urlencoded 不对字符编码，在使用包含文件上传空间的表单时，必须使用该值
+
+text/plain 空格转换为“+”加号，但不对特殊字符编码
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <script type="text/javascript" src="/js/common/jquery-1.7.1.min.js"></script>
+    <title>springmvc文件上传</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <h1>文件上传</h1>
+    <%--
+    上传文件的时候，需要设置一下form表单的enctype：有下边3个值
+    multipart/form-data 在发送前编码所有字符（默认）
+    application/x-www-form-urlencoded 不对字符编码，在使用包含文件上传空间的表单时，必须使用该值
+    text/plain 空格转换为“+”加号，但不对特殊字符编码
+    --%>
+    <form  name="userForm" enctype="multipart/form-data" action="/file/upload2" method="post">
+        选择文件：<input type="file" name="file"/>
+        <input type="submit" value="上传">
+    </form>
+</body>
+</html>
+```
+
+##十.springmvc和spring的集成
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
