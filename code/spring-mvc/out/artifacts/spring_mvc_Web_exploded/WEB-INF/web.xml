@@ -3,6 +3,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <!--
+    web.xml的加载顺序
+    1.context-param
+    2.listener
+    3.filter
+    4.servlet
+    -->
+
+
+    <!--spring集成，设置spring配置文件所在的路径-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath*:configs/applicationContext.xml
+        </param-value>
+    </context-param>
+    
+    <!--spring集成配置listener，负责加载spring的配置文件-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!--springmvc集成-->
+    
     <!--方式一，使用默认配置
     默认读取的springmvc配置文件为/WEB-INF/<servlet-name>-servlet.xml
     -->
