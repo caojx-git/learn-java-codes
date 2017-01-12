@@ -1683,11 +1683,189 @@ text/plain 空格转换为“+”加号，但不对特殊字符编码
 
 ##十.springmvc和spring的集成
 
+springmvc集成spring的时候，主要需要在web.xml中配置ContextLoaderListener
+Listener:org.springframework.web.context.ContextLoaderListener 主要是用来加载spring所需药的配置文件
+
+###10.1web.xml文件的修改
+添加ContextLoaderListener Listener配置
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--
+    web.xml的加载顺序
+    1.context-param
+    2.listener
+    3.filter
+    4.servlet
+    -->
 
 
+    <!--spring集成，设置spring配置文件所在的路径
+        注意：这里不用添加上springmvc的配置文件，因为springmvc会处理自己的配置文件
+    -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath*:configs/applicationContext.xml
+        </param-value>
+    </context-param>
+    
+    <!--spring集成配置listener，负责加载spring的配置文件-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!--springmvc集成-->
+    
+    <!--方式一，使用默认配置
+    默认读取的springmvc配置文件为/WEB-INF/<servlet-name>-servlet.xml
+    -->
+  <!--  <servlet>
+        <servlet-name>springmvc</servlet-name>
+        &lt;!&ndash; springMVC的入口，分发器，管家 ,分发器默认读取/WEB-INF/<servlet-name>-servlet.xml文件&ndash;&gt;
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 1表示tomcat启动的时候，springmvc也初始化 &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>&lt;!&ndash; /表示拦截所有请求，也可以 *.do   *.html 等  &ndash;&gt;
+    </servlet-mapping>-->
 
 
+    <!--方式二，手动指定springmvc配置文件的路径
+        推荐使用这种方式
+    -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 读取指定目录下的配置文件，名字可以改变
+            *表示加载该目录以及子目录下的所有springmvc-servlet.xml
+            不加*只会加载指定路径下的指定文件
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                classpath*:configs/springmvc-servlet.xml,
+                classpath*:configs/springmvc-annotaion-servlet.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等  -->
+    </servlet-mapping>
 
+    <!--编码过滤,使用spring的编码过滤类-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name><!--设置为那种编码-->
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name><!--是否强制过滤-->
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--那种请求需要编码过滤,这里对所有的请求进行编码过滤-->
+    </filter-mapping>
+</web-app>
+```
+
+###10.2 applicationContext.xml
+新建applicationContext.xml对对spring进行配置，这里简单的配置一个bean
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置bean-->
+    <bean id="springManager" class="com.learn.annotaion.SpringManager"></bean>
+</beans>
+```
+###10.3 ISpring.java
+定义springManager的服务接口
+
+```java
+public interface ISpring {
+    public String get();
+}
+```
+###10.4 SpringManager.java
+
+用户实现ISpring接口，实现一些简单的操作
+
+```java
+public class SpringManager implements ISpring {
+
+    @Override
+    public String get() {
+        System.out.println("---------------I am SpringManager-----");
+        return "I am getMethod";
+    }
+}
+```
+###10.5 SpringController.java
+
+```java
+package com.learn.annotaion;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
+
+/**
+ * Description:对spring的集成,SpringController用户测试SpringMVC与spring的集成
+ * Created by caojx on 17-1-8.
+ */
+@Controller
+@RequestMapping("/spring")
+public class SpringController {
+
+    //使用注解获取SpringManager的实例,@Resource注解里边使用的值是application.xml配置的对应bean的id或name值
+    @Resource(name="springManager")
+    private ISpring springManager;
+
+    /**
+     * Description:用户返回配置成功的页面
+     * @return
+     */
+    @RequestMapping("/get")
+    public String get(){
+        System.out.println(springManager.get()+"0000000");
+        return "/jsp/success2";
+    }
+}
+```
+
+###10.6success2.jsp
+spring配置成功后，跳转到该页面
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>spring集成success</title>
+</head>
+<body>
+spring集成成功！
+</body>
+</html>
+```
+###10.7结果
+
+![](/home/caojx/learn/notes/images/spring/springmvc/spring/springmvc-spring1.png)
+
+###10.8spring与springmvc的上下文关系
 
 
 

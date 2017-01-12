@@ -12,7 +12,9 @@
     -->
 
 
-    <!--spring集成，设置spring配置文件所在的路径-->
+    <!--spring集成，设置spring配置文件所在的路径
+        注意：这里不用添加上springmvc的配置文件，因为springmvc会处理自己的配置文件
+    -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
