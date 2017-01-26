@@ -332,3 +332,17 @@ Codename:	Core
 
 
 ##四、Linux文件与目录管理
+
+###7.1.1目录的相关操作
+>cd:切换目录
+pwd：显示当前目录
+mkdir：新建一个新的目录
+rmdir：删除一个空的目录
+
+###7.1.2关于文件路径变量：$PATH
+我们知道，在查看文件的属性的命令为ls的完整文件名为:/bin/ls(这个是绝对路径)，“为什么我们可以在任何地方执行/bin/ls命令呢？”为什么我们在任何目录下输入ls就可以显示出一些信息，而不会说是，/bin/ls命令呢?，这是因为我们定义了环境变量$PATH的作用。。
+当我们执行一个命令的时候，如ls，系统会依照PATH变量的设置去每个PATH定义的目录下查询文件名为ls的可执行文件，如果PATH定义目录中含有多个名为ls的可执行文件，那么就执行先查询到的。
+
+>查看那些目录被定义出来了：echo $PATH
+>[caojx@localhost ~]$ echo $PATH
+/usr/local/apache-tomcat-7.0.67/bin:/usr/local/apache-maven-3.3.9/bin:/usr/local/nginx-1.8.0/sbin:/u01/app/oracle/product/11.2.0/xe/bin:/usr/local/idea-IU-163.7743.44/bin:/usr/java/jdk1.8.0_112/bin:/usr/java/jdk1.8.0_112/jre/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/caojx/.local/bin:/home/caojx/bin

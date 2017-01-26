@@ -96,6 +96,13 @@ hello[^hello]
 分割线只要另外起一行，输入连续的三个*开头就可以了
     
 *** 
+
+
+
+>表格
+
+
+
 参考文章：
 1. http://www.cnblogs.com/hnrainll/p/3514637.html
 2. http://www.jianshu.com/p/1e402922ee32/
