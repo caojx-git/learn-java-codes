@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53b1478a-2d52-4e1d-b154-f7f381eb1d78" name="Default" comment="">
+    <list default="true" id="53b1478a-2d52-4e1d-b154-f7f381eb1d78" name="Default" comment="完成springmvc集成spring">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata.keystream" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata.keystream.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata.values.at" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata_i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/_metadata_/metadata_i.len" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/antlr-2.7.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/aopalliance.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/dom4j-1.6.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/hibernate-commons-annotations-4.0.1.Final.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/hibernate-core-4.1.6.Final.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/javassist-3.15.0-GA.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.0.Final.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/ojdbc14.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/storage.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/learn/controller/UserController3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/learn/dao/IUserDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/learn/dao/impl/UserDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/learn/service/IUserManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/learn/service/impl/UserManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/configs/hibernate.cfg.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/configs/spring-datasource.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/jsp/addUser3.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/jsp/success3.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/views/jsp/userManager3.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/com/learn/annotaion/SpringController.class" afterPath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/com/learn/annotaion/SpringController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/com/learn/entity/User.class" afterPath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/com/learn/entity/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/spring-mvc/com/learn/annotaion/SpringController.class" afterPath="$PROJECT_DIR$/out/production/spring-mvc/com/learn/annotaion/SpringController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/spring-mvc/com/learn/entity/User.class" afterPath="$PROJECT_DIR$/out/production/spring-mvc/com/learn/entity/User.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/configs/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/configs/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/configs/springmvc-annotaion-servlet.xml" afterPath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/configs/springmvc-annotaion-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/notes/springmvc学习.md" afterPath="$PROJECT_DIR$/out/artifacts/spring_mvc_Web_exploded/notes/springmvc学习.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/learn/annotaion/SpringController.java" afterPath="$PROJECT_DIR$/src/com/learn/annotaion/SpringController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/spring-mvc/configs/applicationContext.xml" afterPath="$PROJECT_DIR$/out/production/spring-mvc/configs/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/spring-mvc/configs/springmvc-annotaion-servlet.xml" afterPath="$PROJECT_DIR$/out/production/spring-mvc/configs/springmvc-annotaion-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/learn/entity/User.java" afterPath="$PROJECT_DIR$/src/com/learn/entity/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/configs/applicationContext.xml" afterPath="$PROJECT_DIR$/src/configs/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/configs/springmvc-annotaion-servlet.xml" afterPath="$PROJECT_DIR$/src/configs/springmvc-annotaion-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/notes/springmvc学习.md" afterPath="$PROJECT_DIR$/web/notes/springmvc学习.md" />
     </list>
@@ -27,117 +67,23 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="spring-mvc" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="SpringController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/SpringController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="41" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ISpring.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/ISpring.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="springmvc学习.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/notes/springmvc学习.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="428">
-                <caret line="1883" column="0" lean-forward="true" selection-start-line="1883" selection-start-column="0" selection-end-line="1883" selection-end-column="0" />
-                <folding>
-                  <marker date="1484229348954" expanded="true" signature="1859:2614" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="2110:2434" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="2456:2602" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="2871:4510" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="3087:3166" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="3177:3735" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="3750:3790" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="3807:4326" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="3960:4076" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="4100:4264" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="4349:4498" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="22340:23655" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="23456:23646" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="31884:32084" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="32085:32121" ph="@{...}" />
-                  <marker date="1484229348954" expanded="true" signature="32157:32282" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="32406:32673" ph="{...}" />
-                  <marker date="1484229348954" expanded="true" signature="32680:32925" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="33209:33477" ph="{...}" />
-                  <marker date="1484229348954" expanded="true" signature="33483:33588" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="33645:33655" ph=" { " />
-                  <marker date="1484229348954" expanded="true" signature="33677:33683" ph=" }" />
-                  <marker date="1484229348954" expanded="true" signature="34056:34118" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="34225:34236" ph=" { " />
-                  <marker date="1484229348954" expanded="true" signature="34252:34258" ph=" }" />
-                  <marker date="1484229348954" expanded="true" signature="34304:34315" ph=" { " />
-                  <marker date="1484229348954" expanded="true" signature="34340:34346" ph=" }" />
-                  <marker date="1484229348954" expanded="true" signature="34374:34385" ph=" { " />
-                  <marker date="1484229348954" expanded="true" signature="34396:34402" ph=" }" />
-                  <marker date="1484229348954" expanded="true" signature="34438:34449" ph=" { " />
-                  <marker date="1484229348954" expanded="true" signature="34464:34470" ph=" }" />
-                  <marker date="1484229348954" expanded="true" signature="49039:49291" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="49385:50006" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="50008:50240" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="50241:50278" ph="@{...}" />
-                  <marker date="1484229348954" expanded="true" signature="50315:50435" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="50440:50485" ph="@{...}" />
-                  <marker date="1484229348954" expanded="true" signature="50681:50944" ph="{...}" />
-                  <marker date="1484229348954" expanded="true" signature="50837:50852" ph="&lt;~&gt;" />
-                  <marker date="1484229348954" expanded="true" signature="50950:51073" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="51078:51124" ph="@{...}" />
-                  <marker date="1484229348954" expanded="true" signature="51300:51609" ph="{...}" />
-                  <marker date="1484229348954" expanded="true" signature="51453:51459" ph="&lt;~&gt;" />
-                  <marker date="1484229348954" expanded="true" signature="51615:52076" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="52081:52179" ph="@{...}" />
-                  <marker date="1484229348954" expanded="true" signature="52389:52751" ph="{...}" />
-                  <marker date="1484229348954" expanded="true" signature="52757:52862" ph="/**...*/" />
-                  <marker date="1484229348954" expanded="true" signature="52919:52929" ph=" { " />
-                  <marker date="1484229348954" expanded="true" signature="52951:52957" ph=" }" />
-                  <marker date="1484229348954" expanded="true" signature="54201:57169" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="54413:54497" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="54511:54597" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="54619:54794" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="54696:54773" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="54860:54971" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="55014:55088" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="55098:55649" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="55663:55709" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="55725:56327" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="55875:55985" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="56008:56267" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="56093:56245" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="56349:56495" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="56540:56995" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="56703:56830" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="56851:56981" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="57016:57158" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="57362:57663" ph="..." />
-                  <marker date="1484229348954" expanded="true" signature="57926:58036" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,6 +91,8 @@
         <option value="Jsp File" />
         <option value="HTML File" />
         <option value="spring-beans.schema" />
+        <option value="Tag Library Descriptor" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -154,10 +102,14 @@
       <find>MappingJackson2JsonView</find>
       <find>ContentNegotiatingViewResolver</find>
       <find>springmvc</find>
+      <find>sessionFactory</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -185,10 +137,8 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/json.jsp" />
         <option value="$PROJECT_DIR$/src/com/learn/controller/UploadController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/upload.jsp" />
-        <option value="$PROJECT_DIR$/src/com/learn/entity/User.java" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/DataController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/addUser.jsp" />
-        <option value="$PROJECT_DIR$/src/configs/springmvc-annotaion-servlet.xml" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/DataController2.java" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/UploadController.java" />
         <option value="$PROJECT_DIR$/src/com/learn/test/TestThread.java" />
@@ -197,11 +147,26 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/success.jsp" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/ISpring.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/success2.jsp" />
-        <option value="$PROJECT_DIR$/src/configs/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/Test.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/SpringManager.java" />
         <option value="$PROJECT_DIR$/src/com/learn/annotaion/SpringController.java" />
+        <option value="$PROJECT_DIR$/src/configs/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/com/learn/entity/User.java" />
+        <option value="$PROJECT_DIR$/web/hibernate.cfg" />
+        <option value="$PROJECT_DIR$/src/configs/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/com/learn/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/addUser2.jsp" />
+        <option value="$PROJECT_DIR$/src/configs/springmvc-annotaion-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/com/learn/dao/IUserDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/learn/service/IUserManager.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/success3.jsp" />
+        <option value="$PROJECT_DIR$/src/com/learn/dao/impl/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/learn/service/impl/UserManager.java" />
+        <option value="$PROJECT_DIR$/src/configs/spring-datasource.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/learn/controller/UserController3.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/jsp/userManager3.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/console.sql" />
         <option value="$PROJECT_DIR$/web/notes/springmvc学习.md" />
       </list>
     </option>
@@ -249,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -289,7 +255,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -303,67 +269,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-mvc" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="learn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="annotaion" />
+              <option name="myItemId" value="jsp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.34382284" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -373,18 +302,19 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/configs" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.learn.annotaion" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/WEB-INF/views/jsp" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
       <recent name="$PROJECT_DIR$/web/notes" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.learn.annotaion" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/configs" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.springmvc-run">
@@ -887,7 +817,14 @@
       <workItem from="1484037761067" duration="266000" />
       <workItem from="1484038842190" duration="2165000" />
       <workItem from="1484057844377" duration="2239000" />
-      <workItem from="1484228949229" duration="419000" />
+      <workItem from="1484228949229" duration="5289000" />
+      <workItem from="1484658056806" duration="5499000" />
+      <workItem from="1484663750352" duration="6252000" />
+      <workItem from="1484706098557" duration="203000" />
+      <workItem from="1484882023945" duration="770000" />
+      <workItem from="1485444018926" duration="652000" />
+      <workItem from="1485447100023" duration="466000" />
+      <workItem from="1485447672656" duration="614000" />
     </task>
     <task id="LOCAL-00001" summary="完成springmvc基于xml文件的配置">
       <created>1483025189498</created>
@@ -942,7 +879,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72504000" />
+    <option name="totallyTimeSpent" value="91830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -955,7 +892,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -965,11 +902,11 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5416667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3888889" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -978,8 +915,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2673716" sideWeight="0.48265895" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30966768" sideWeight="0.48265895" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.260574" sideWeight="0.517341" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -989,6 +926,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1028,7 +966,7 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1037,212 +975,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/common/jquery-1.7.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="2578" column="0" lean-forward="false" selection-start-line="2578" selection-start-column="0" selection-end-line="2578" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/userManager.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/learn/controller/MultiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/multipart/commons/CommonsMultipartResolver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/learn/controller/HelloWorldController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="34" column="12" lean-forward="true" selection-start-line="29" selection-start-column="6" selection-end-line="34" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/multipart/commons/CommonsMultipartFile.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.7.0_80/src.zip!/java/io/FileOutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="294" column="19" lean-forward="false" selection-start-line="294" selection-start-column="19" selection-end-line="294" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/annotation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="20" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/servlet-api.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/multipart/MultipartRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/multipart/MultipartHttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="83" lean-forward="false" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.0.RELEASE.jar!/org/springframework/web/servlet/view/json/MappingJackson2JsonView.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="26" column="59" lean-forward="true" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/learn/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/bind/annotation/RequestParam.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/json.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/jackson-databind-2.2.3.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="959" column="18" lean-forward="false" selection-start-line="959" selection-start-column="18" selection-end-line="959" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/bind/annotation/ResponseBody.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/DataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/configs/springmvc-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-3.2.0.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/DefaultAnnotationHandlerMapping.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/org/springframework/http/converter/StringHttpMessageConverter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/addUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/upload.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.7.0_80/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1926">
-          <caret line="140" column="6" lean-forward="false" selection-start-line="140" selection-start-column="6" selection-end-line="140" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/learn/test/TestThread.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/test.html" />
-    <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/ISpring.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/success.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/DataController2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -1259,21 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/UserController2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/configs/springmvc-annotaion-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/Test.java" />
     <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/SpringManager.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1286,14 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/configs/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1322,14 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="26" column="71" lean-forward="true" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1520,7 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1528,86 +1228,249 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-jdbc-3.2.0.RELEASE.jar!/org/springframework/jdbc/datasource/AbstractDriverBasedDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-jdbc-3.2.0.RELEASE.jar!/org/springframework/jdbc/datasource/DriverManagerDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/java/jdk1.7.0_80/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7476">
+          <caret line="116" column="6" lean-forward="false" selection-start-line="116" selection-start-column="6" selection-end-line="116" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/hibernate.cfg.tld" />
+    <entry file="file://$PROJECT_DIR$/src/configs/hibernate.cfg.xml.tld" />
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/spring-orm-3.2.0.RELEASE.jar!/org/springframework/orm/hibernate4/LocalSessionFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="38" column="18" lean-forward="false" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/hibernate.cfg" />
+    <entry file="file://$PROJECT_DIR$/web/hibernate.cfg.xml" />
+    <entry file="file://$PROJECT_DIR$/src/configs/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/ojdbc14.jar!/oracle/jdbc/driver/OracleDriver.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/controller/StaticController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/springmvc-annotaion-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/dao/IUserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/service/IUserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/success3.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/dao/impl/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/service/impl/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configs/spring-datasource.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/annotaion/UserController2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/learn/controller/UserController3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="41" column="44" lean-forward="false" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/userManager.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/static.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/multi.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/json.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/annotation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/addUser3.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/addUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-163">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/jsp/userManager3.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/babf3930/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/MYORACLE.TEST">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="ROWID" enabled="false" />
+          </column-attributes>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/babf3930/3e41b593-a0ff-49b2-a2bc-3bc5a03e1346/MYORACLE.T_USER">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/notes/springmvc学习.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="428">
-            <caret line="1883" column="0" lean-forward="true" selection-start-line="1883" selection-start-column="0" selection-end-line="1883" selection-end-column="0" />
-            <folding>
-              <marker date="1484229348954" expanded="true" signature="1859:2614" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="2110:2434" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="2456:2602" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="2871:4510" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="3087:3166" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="3177:3735" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="3750:3790" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="3807:4326" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="3960:4076" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="4100:4264" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="4349:4498" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="22340:23655" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="23456:23646" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="31884:32084" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="32085:32121" ph="@{...}" />
-              <marker date="1484229348954" expanded="true" signature="32157:32282" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="32406:32673" ph="{...}" />
-              <marker date="1484229348954" expanded="true" signature="32680:32925" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="33209:33477" ph="{...}" />
-              <marker date="1484229348954" expanded="true" signature="33483:33588" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="33645:33655" ph=" { " />
-              <marker date="1484229348954" expanded="true" signature="33677:33683" ph=" }" />
-              <marker date="1484229348954" expanded="true" signature="34056:34118" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="34225:34236" ph=" { " />
-              <marker date="1484229348954" expanded="true" signature="34252:34258" ph=" }" />
-              <marker date="1484229348954" expanded="true" signature="34304:34315" ph=" { " />
-              <marker date="1484229348954" expanded="true" signature="34340:34346" ph=" }" />
-              <marker date="1484229348954" expanded="true" signature="34374:34385" ph=" { " />
-              <marker date="1484229348954" expanded="true" signature="34396:34402" ph=" }" />
-              <marker date="1484229348954" expanded="true" signature="34438:34449" ph=" { " />
-              <marker date="1484229348954" expanded="true" signature="34464:34470" ph=" }" />
-              <marker date="1484229348954" expanded="true" signature="49039:49291" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="49385:50006" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="50008:50240" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="50241:50278" ph="@{...}" />
-              <marker date="1484229348954" expanded="true" signature="50315:50435" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="50440:50485" ph="@{...}" />
-              <marker date="1484229348954" expanded="true" signature="50681:50944" ph="{...}" />
-              <marker date="1484229348954" expanded="true" signature="50837:50852" ph="&lt;~&gt;" />
-              <marker date="1484229348954" expanded="true" signature="50950:51073" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="51078:51124" ph="@{...}" />
-              <marker date="1484229348954" expanded="true" signature="51300:51609" ph="{...}" />
-              <marker date="1484229348954" expanded="true" signature="51453:51459" ph="&lt;~&gt;" />
-              <marker date="1484229348954" expanded="true" signature="51615:52076" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="52081:52179" ph="@{...}" />
-              <marker date="1484229348954" expanded="true" signature="52389:52751" ph="{...}" />
-              <marker date="1484229348954" expanded="true" signature="52757:52862" ph="/**...*/" />
-              <marker date="1484229348954" expanded="true" signature="52919:52929" ph=" { " />
-              <marker date="1484229348954" expanded="true" signature="52951:52957" ph=" }" />
-              <marker date="1484229348954" expanded="true" signature="54201:57169" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="54413:54497" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="54511:54597" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="54619:54794" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="54696:54773" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="54860:54971" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="55014:55088" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="55098:55649" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="55663:55709" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="55725:56327" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="55875:55985" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="56008:56267" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="56093:56245" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="56349:56495" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="56540:56995" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="56703:56830" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="56851:56981" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="57016:57158" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="57362:57663" ph="..." />
-              <marker date="1484229348954" expanded="true" signature="57926:58036" ph="{...}" />
-            </folding>
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="357">
+            <caret line="1910" column="0" lean-forward="true" selection-start-line="1910" selection-start-column="0" selection-end-line="1910" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>

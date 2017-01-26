@@ -11,7 +11,7 @@
   <!--  <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>-->
 
     <!--开启扫描包-->
-    <context:component-scan base-package="com.learn.annotaion"></context:component-scan>
+    <context:component-scan base-package="com.learn"></context:component-scan>
     <!--3.0之后使用springmvc注解-->
     <mvc:annotation-driven>
         <!--下边是对返回的字符编码做过滤，通过拦截器的方式

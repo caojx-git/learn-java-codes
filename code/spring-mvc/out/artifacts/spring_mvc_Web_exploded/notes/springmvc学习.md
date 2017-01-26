@@ -1867,16 +1867,44 @@ spring集成成功！
 
 ###10.8spring与springmvc的上下文关系
 
+spring可以理解成为一个对象的容器，对象都装载到spring容器中，而spring的上下文Context（也可以理解为容器）
+获取到该上下文对象后就可以获取到spring中装载的bean了。
+
+代码片段
+```java
+    @RequestMapping("/get")
+    public String get(HttpServletRequest request){
+        //获取spring的上线文对象
+        WebApplicationContext webApplicationContext1 = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+        //获取springmvc的上下文对象
+        WebApplicationContext webApplicationContext2 = RequestContextUtils.getWebApplicationContext(request);
+
+        //获取到上下文对象后，就可以获取上下问文中的bean
+        ISpring springManager2 = (ISpring) webApplicationContext2.getBean("springManager");
+
+        System.out.println(springManager.get());
+        System.out.println(springManager2.get());
+        return "/jsp/success2";
+    }
+```
 
 
+##十一、spring与Hibernate4集成
 
 
+###11.1 添加spring集成hibernate4所需要的jar
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-jar.png)
 
+###11.2 Hibernate五大对象
+在hibernate中，可以说是围绕着这一下五大对象展开的，集成在spring中后，就交给spring对这五大对象进行管理。
 
+Configuration,相当于hibernate的上下文
 
+SessionFactory，hibernate中的重量级对象，一般一个数据库只对应一个SessionFactory,主要用于管理Session
 
+Session，轻量级对象，用于对数据库做增删改查。
 
+Transaction，事物对象，用于管理事物。
 
-
-
+Query和Criteria
 

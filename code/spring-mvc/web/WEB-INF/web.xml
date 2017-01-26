@@ -18,10 +18,11 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath*:configs/applicationContext.xml
+            classpath*:configs/applicationContext.xml,
+            classpath*:configs/spring-datasource.xml
         </param-value>
     </context-param>
-    
+
     <!--spring集成配置listener，负责加载spring的配置文件-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -85,5 +86,15 @@
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern><!--那种请求需要编码过滤,这里对所有的请求进行编码过滤-->
+    </filter-mapping>
+
+    <!---->
+    <filter>
+        <filter-name>openSession</filter-name>
+        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>openSession</filter-name>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 </web-app>

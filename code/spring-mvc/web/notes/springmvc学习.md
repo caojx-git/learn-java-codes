@@ -1889,14 +1889,24 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 ```
 
 
+##十一、spring与Hibernate4集成
 
 
+###11.1 添加spring集成hibernate4所需要的jar
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-jar.png)
 
+###11.2 Hibernate五大对象
+在hibernate中，可以说是围绕着这一下五大对象展开的，集成在spring中后，就交给spring对这五大对象进行管理。
 
+Configuration,相当于hibernate的上下文
 
+SessionFactory，hibernate中的重量级对象，一般一个数据库只对应一个SessionFactory,主要用于管理Session
 
+Session，轻量级对象，用于对数据库做增删改查。
 
+Transaction，事物对象，用于管理事物。
 
+Query和Criteria
 
 
 

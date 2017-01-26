@@ -1,0 +1,10 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--实体类映射,使用注解的方式的时候使用class-->
+        <mapping class="com.learn.entity.User"></mapping>
+    </session-factory>
+</hibernate-configuration>
