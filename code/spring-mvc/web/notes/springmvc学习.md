@@ -1891,6 +1891,8 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 
 ##十一、spring与Hibernate4集成
 
+这部分主要是扩展功能，不是springmvc中的部分，这里主要实现一个小案例，集成springmvc+spring+hibernate4进行
+集成，实现一个小的增删改查功能,其中的代码就不进行过多的分析。
 
 ###11.1 添加spring集成hibernate4所需要的jar
 ![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-jar.png)
@@ -1907,6 +1909,721 @@ Session，轻量级对象，用于对数据库做增删改查。
 Transaction，事物对象，用于管理事物。
 
 Query和Criteria
+
+集成hibernate的时候，Configuration,SessionFactory,Transaction都是交给spring进行管理的。
+####11.3 spring集成hibernate4的配置文件spring-datasource.xml
+
+新建的spring-datasource.xml文件中主要是对数据源，sessionFactory，事务进行配置。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--数据源配置-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--配置连接数据库中的参数-->
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+        <property name="username" value="myoracle"></property>
+        <property name="password" value="myoracle"></property>
+    </bean>
+
+    <!--配置SessionFactory,用于管理创建Session的，这个也是Spring为我们提供好了-->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties"><!--配置管理hibernate的一些属性-->
+            <props>
+                <!--配置数据库方言，便于让hibernate将转成正确的sql，因为不同的数据库sql语句的设计上是存在差异的，
+                就好比不同地方的人说不同的方言。而Hibernate呢，它会所有的“方言”，我们要做的，就是告诉它，我们需要它说哪种“方言”-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+                <!--
+                create：
+每次加载hibernate时都会删除上一次的生成的表，然后根据你的model类再重新来生成新表，哪怕两次没有任何改变也要这样执行，这就是导致数据库表数据丢失的一个重要原因。
+create-drop ：
+每次加载hibernate时根据model类生成表，但是sessionFactory一关闭,表就自动删除。
+update：
+最常用的属性，第一次加载hibernate时根据model类会自动建立起表的结构（前提是先建立好数据库），以后加载hibernate时根据 model类自动更新表结构，即使表结构改变了但表中的行仍然存在不会删除以前的行。要注意的是当部署到服务器后，表结构是不会被马上建立起来的，是要等 应用第一次运行起来后才会。
+validate ：
+每次加载hibernate时，验证创建数据库表结构，只会和数据库中的表进行比较，不会创建新表，但是会插入新值。
+                -->
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.show_sql">true</prop><!--是否打印sql语句-->
+                <prop key="hibernate.format_sql">true</prop><!--是否格式化sql语句-->
+              <!--  <prop key="hibernate.current_session_context_class">thread</prop>-->
+            </props>
+        </property>
+        <property name="configLocations"><!--加载hibernate的配置文件-->
+            <list>
+                <value>
+                    classpath*:configs/hibernate.cfg.xml
+                </value>
+            </list>
+        </property>
+    </bean>
+
+    <!--配置事物管理器-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property><!--一般一个事物管理一个sessionFactory-->
+    </bean>
+
+    <!--配置代理事物-->
+    <bean id="transactionBase" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" lazy-init="true" abstract="true">
+        <property name="transactionManager" ref="transactionManager"></property><!--事物管理器-->
+        <property name="transactionAttributes"><!--配置事物的描述，在那些地方需要加事物-->
+            <props>
+                <prop key="add*">PROPAGATION_REQUIRED,-Exception</prop><!--支持当前事务，如果当前没有事务，就新建一个事务。这是最常见的选择。(就比如上边的场景，methoda假如有事务
+                                                                           	则使用methoda的使用，假如methoda没有则新建一个事务),如果出现异常，事物就回滚-->
+                <prop key="update*">PROPAGATION_REQUIRED,-Exception</prop>
+                <prop key="insert*">PROPAGATION_REQUIRED,-Exception</prop>
+                <prop key="modify*">PROPAGATION_REQUIRED,-Exception</prop>
+                <prop key="get*">PROPAGATION_NEVER,-Exception</prop><!--查询以非事物的方式进行-->
+            </props>
+        </property>
+    </bean>
+</beans>
+```
+
+####11.4 hibernate.cfg.xml 文件
+
+这个文件主要是配置试题类的映射文件所在位置。
+
+```xml
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--实体类映射,使用注解的方式的时候使用class-->
+        <mapping class="com.learn.entity.User"></mapping>
+    </session-factory>
+</hibernate-configuration>
+```
+####11.5 User.java
+
+```java
+package com.learn.entity;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
+
+/**
+ * Description: 用户实体类
+ * Created by caojx on 16-12-30.
+ */
+@Entity//使用javax中的注解，扩展性更强
+@Table(name = "t_user")
+public class User {
+
+    @Id
+    @GeneratedValue(generator = "system-uuid") //注解生成策略
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @Column(length = 32)
+    private String id;
+    @Column(length = 25)
+    private String userName;
+    @Column(length = 24)
+    private int age;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+}
+
+```
+
+#### 11.6 DAO层IUserDao.java接口和UserDAO实现类
+ 
+ IUserDao.java接口
+ 
+ ```java
+package com.learn.dao;
+
+import com.learn.entity.User;
+
+import java.util.List;
+
+/**
+ * Description:springmvc+spring+hibernate
+ * Created by caojx on 17-1-17.
+ */
+public interface IUserDAO {
+
+    /**
+     *添加用户
+     */
+    public void addUser(User user);
+
+    /**
+     *查询用户
+     */
+    public List<User> getAllUser();
+
+    /**
+     *删除用户
+     */
+    public boolean delUser(String id);
+
+    /**
+     * 查询单个用户
+     * */
+    public User getUser(String id);
+
+    /**
+     * 更新用户信息
+     * */
+    public boolean updateUser(User user);
+}
+
+```
+
+UserDao实现类
+
+```java
+package com.learn.dao.impl;
+
+import com.learn.dao.IUserDAO;
+import com.learn.entity.User;
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+
+import java.util.List;
+
+
+/**
+ * Description:springmvc+spring+hibernate
+ * Created by caojx on 17-1-17.
+ */
+public class UserDAO implements IUserDAO {
+
+    private SessionFactory sessionFactory;
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    /**
+     * 添加用户
+     */
+    @Override
+    public void addUser(User user) {
+        sessionFactory.getCurrentSession().save(user);
+    }
+
+
+    /**
+     * 查询用户
+     */
+    @Override
+    public List<User> getAllUser() {
+        String hql = "from User";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        return query.list();
+    }
+
+    /**
+     * 删除用户
+     */
+    @Override
+    public boolean delUser(String id) {
+        String hql = "delete User u where u.id=?";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setString(0, id);
+        return (query.executeUpdate() > 0);
+    }
+
+    /**
+     * 查询单个用户信息
+     */
+    @Override
+    public User getUser(String id) {
+        String hql = "from User u where u.id = ?";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setString(0, id);
+        return (User) query.uniqueResult();
+    }
+
+    /**
+     * 更新用户信息
+     */
+    @Override
+    public boolean updateUser(User user) {
+        String hql = "update User u set u.userName = ? , u.age = ? where u.id =?";
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);
+        query.setString(0, user.getUserName());
+        query.setInteger(1, user.getAge());
+        query.setString(2, user.getId());
+        return (query.executeUpdate() > 0);
+    }
+}
+```
+
+####11.7 service层业务逻辑层IUserManager.java和实现类UserManger.java
+
+IUserManager.java接口
+
+```java
+package com.learn.service;
+
+import com.learn.entity.User;
+
+import java.util.List;
+
+/**
+ * Description:
+ * Created by caojx on 17-1-17.
+ */
+public interface IUserManager {
+
+    /**
+     * 添加用户
+     * */
+    public void addUser(User user);
+
+    /**
+     * 查询所有用户
+     * */
+    public List<User> getAllUser();
+
+    /**
+     * 删除用户
+     * */
+    public boolean delUser(String id);
+
+    /**
+     * 查询单个用户
+     * */
+    public User getUser(String id);
+
+    /**
+     * 更新用户信息
+     * */
+    public boolean updateUser(User user);
+}
+```
+
+UserManager.java实现类
+
+```java
+package com.learn.service.impl;
+
+import com.learn.dao.IUserDAO;
+import com.learn.entity.User;
+import com.learn.service.IUserManager;
+
+import java.util.List;
+
+
+/**
+ * Description:
+ * Created by caojx on 17-1-17.
+ */
+public class UserManager implements IUserManager {
+
+
+    private IUserDAO userDAO;
+
+    public IUserDAO getUserDAO() {
+        return userDAO;
+    }
+
+    public void setUserDAO(IUserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+    /**
+     * 添加用户
+     * */
+    @Override
+    public void addUser(User user) {
+        userDAO.addUser(user);
+    }
+
+    /**
+     * 获取用户
+     * */
+    @Override
+    public List<User> getAllUser() {
+        return userDAO.getAllUser();
+    }
+
+    /**
+     * 删除用户
+     * */
+    @Override
+    public boolean delUser(String id) {
+        return userDAO.delUser(id);
+    }
+
+    /**
+     *查询单个用户
+     */
+    @Override
+    public User getUser(String id) {
+        return userDAO.getUser(id);
+    }
+
+    /**
+     * 更新用户信息
+     * */
+    @Override
+    public boolean updateUser(User user) {
+        return userDAO.updateUser(user);
+    }
+
+}
+```
+
+####11.8 applicationContext.xml 对Dao和Service进行配置
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+    <!--配置userDAO-->
+    <bean id="userDAO" class="com.learn.dao.impl.UserDAO">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!--配置userManger-->
+    <bean id="userManagerBase" class="com.learn.service.impl.UserManager">
+        <property name="userDAO" ref="userDAO"></property>
+    </bean>
+
+    <!--配置代理userManager-->
+    <bean id="userManager" parent="transactionBase">
+        <property name="target" ref="userManagerBase"></property>
+    </bean>
+</beans>
+```
+
+####11.9 实现UserController3.java
+
+```java
+package com.learn.controller;
+
+import com.learn.entity.User;
+import com.learn.service.IUserManager;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
+import java.util.List;
+
+/**
+ * Description:springmvc+spring+hibernate
+ * Created by caojx on 17-1-17.
+ */
+@Controller
+@RequestMapping("/user3")
+public class UserController3 {
+
+    @Resource(name = "userManager")
+    private IUserManager userManager;
+
+    /**
+     * Description:调转到添加用户界面
+     *
+     * @return
+     */
+    @RequestMapping("/toAddUser3")
+    public String toAddUser() {
+        return "jsp/addUser3";
+    }
+
+    /**
+     * 添加用户
+     */
+    @RequestMapping("/addUser3")
+    public String addUser(User user) {
+        userManager.addUser(user);
+        //return "/jsp/success3";
+        return "redirect:/user3/getAllUser";//springmvc url重定向，将url重定向到用户查询方法中，这种方式不太提倡，这里只是说明一下有这种用法。
+    }
+
+    /**
+     * 查询用户
+     */
+    @RequestMapping("/getAllUser")
+    public String getAllUser(HttpServletRequest httpServletRequest) {
+        List<User> users = userManager.getAllUser();
+        httpServletRequest.setAttribute("users", users);
+        return "/jsp/userManager3";
+    }
+
+    /**
+     * 删除用户
+     */
+    @RequestMapping("/delUser3")
+    public void delUser(String id, HttpServletResponse httpServletResponse) {
+        String result = "{\"result\":\"error\"}";
+        if (userManager.delUser(id)) {
+            result = "{\"result\":\"success\"}";
+        }
+        PrintWriter out = null;
+        httpServletResponse.setContentType("application/json"); //这里说明了返回数据的类型是json类型，返回其他类型前台会接受不到
+        try {
+            out = httpServletResponse.getWriter();
+            out.write(result);
+            out.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            out.close();
+        }
+    }
+
+    /**
+     * 查询单个实体,并将数据返回到编辑页面
+     */
+    @RequestMapping("/getUser3")
+    public String getUser(String id, HttpServletRequest httpServletRequest) {
+        User user = userManager.getUser(id);
+        httpServletRequest.setAttribute("user", user);
+        return "/jsp/editUser";
+    }
+
+    /**
+     * 更新用户信息
+     */
+    @RequestMapping("/updateUser3")
+    public String updateUser(User user, HttpServletRequest httpServletRequest) {
+        if (userManager.updateUser(user)) {//更新后将更新的数据返回给页面
+            user = userManager.getUser(user.getId());
+            httpServletRequest.setAttribute("user", user);
+            return "/jsp/editUser";
+        } else {
+            return "/jsp/error";
+        }
+    }
+}
+```
+
+####11.10 userManager.jsp
+
+```jsp
+<%--
+  Created by IntelliJ IDEA.
+  User: caojx
+  Date: 16-12-30
+  Time: 下午5:36
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <script type="text/javascript" src="/js/common/jquery-1.7.1.min.js"></script>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+        function del(id){
+            $.get("/user3/delUser3?id=" + id,function(data){
+                if("success" == data.result){
+                    alert("删除成功!");
+                    window.location.reload();//刷新界面
+                }else{
+                    alert("删除失败!")
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>编辑</th>
+            </tr>
+        <c:if test="${!empty users}">
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <td>${user.userName}</td>
+                    <td>${user.age}</td>
+                    <td>
+                        <a href="/user3/getUser3?id=${user.id}">编辑</a>
+                        <a href="javascript:del('${user.id}')">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </c:if>
+        </tbody>
+    </table>
+</body>
+</html>
+```
+####11.12 web.xml中对OpenSessionInViewFilter进行配置
+
+当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，hibernate会自动关闭session，
+这样,当要使用子数据的时候，系统会抛出lazyinit的错误，这时就需要使用spring提供的 OpenSessionInViewFilter,
+OpenSessionInViewFilter主要是保持Session状态知道request将全部页面发送到客户端，这样就可以解决延迟加载带来的问题
+
+参考：http://sunshengleissl126.lofter.com/post/1cc7caf7_4d8187b
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--
+    web.xml的加载顺序
+    1.context-param
+    2.listener
+    3.filter
+    4.servlet
+    -->
+
+
+    <!--spring集成，设置spring配置文件所在的路径
+        注意：这里不用添加上springmvc的配置文件，因为springmvc会处理自己的配置文件
+    -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath*:configs/applicationContext.xml,
+            classpath*:configs/spring-datasource.xml
+        </param-value>
+    </context-param>
+
+    <!--spring集成配置listener，负责加载spring的配置文件-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!--springmvc集成-->
+    
+    <!--方式一，使用默认配置
+    默认读取的springmvc配置文件为/WEB-INF/<servlet-name>-servlet.xml
+    -->
+  <!--  <servlet>
+        <servlet-name>springmvc</servlet-name>
+        &lt;!&ndash; springMVC的入口，分发器，管家 ,分发器默认读取/WEB-INF/<servlet-name>-servlet.xml文件&ndash;&gt;
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 1表示tomcat启动的时候，springmvc也初始化 &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>&lt;!&ndash; /表示拦截所有请求，也可以 *.do   *.html 等  &ndash;&gt;
+    </servlet-mapping>-->
+
+
+    <!--方式二，手动指定springmvc配置文件的路径
+        推荐使用这种方式
+    -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 读取指定目录下的配置文件，名字可以改变
+            *表示加载该目录以及子目录下的所有springmvc-servlet.xml
+            不加*只会加载指定路径下的指定文件
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                classpath*:configs/springmvc-servlet.xml,
+                classpath*:configs/springmvc-annotaion-servlet.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等  -->
+    </servlet-mapping>
+
+    <!--编码过滤,使用spring的编码过滤类-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name><!--设置为那种编码-->
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name><!--是否强制过滤-->
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--那种请求需要编码过滤,这里对所有的请求进行编码过滤-->
+    </filter-mapping>
+
+    <!--
+    当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，hibernate会自动关闭session，
+    这样,当要使用子数据的时候，系统会抛出lazyinit的错误，这时就需要使用spring提供的 OpenSessionInViewFilter,
+    OpenSessionInViewFilter主要是保持Session状态知道request将全部页面发送到客户端，这样就可以解决延迟加载带来的问题
+
+    参考：http://sunshengleissl126.lofter.com/post/1cc7caf7_4d8187b
+    -->
+    <filter>
+        <filter-name>openSession</filter-name>
+        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>openSession</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
+```
+不配至OpenSessionInViewFilter，会出现如下图中的错误
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png)
+
+添加用户
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-addUser.png)
+
+编辑用户
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit1.png)
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit2.png)
+
+删除用户
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-delete.png)
+
+
+
+
+
 
 
 

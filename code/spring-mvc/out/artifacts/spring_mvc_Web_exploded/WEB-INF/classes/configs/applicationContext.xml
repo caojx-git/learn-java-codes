@@ -10,11 +10,13 @@
     <bean id="userDAO" class="com.learn.dao.impl.UserDAO">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+
     <!--配置userManger-->
     <bean id="userManagerBase" class="com.learn.service.impl.UserManager">
         <property name="userDAO" ref="userDAO"></property>
     </bean>
 
+    <!--配置代理userManager-->
     <bean id="userManager" parent="transactionBase">
         <property name="target" ref="userManagerBase"></property>
     </bean>

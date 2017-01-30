@@ -88,7 +88,13 @@
         <url-pattern>/*</url-pattern><!--那种请求需要编码过滤,这里对所有的请求进行编码过滤-->
     </filter-mapping>
 
-    <!---->
+    <!--
+    当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，hibernate会自动关闭session，
+    这样,当要使用子数据的时候，系统会抛出lazyinit的错误，这时就需要使用spring提供的 OpenSessionInViewFilter,
+    OpenSessionInViewFilter主要是保持Session状态知道request将全部页面发送到客户端，这样就可以解决延迟加载带来的问题
+
+    参考：http://sunshengleissl126.lofter.com/post/1cc7caf7_4d8187b
+    -->
     <filter>
         <filter-name>openSession</filter-name>
         <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>

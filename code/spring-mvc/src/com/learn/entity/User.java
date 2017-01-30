@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(generator = "system-uuid")
+    @GeneratedValue(generator = "system-uuid") //注解生成策略
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
     @Column(length = 32)
     private String id;

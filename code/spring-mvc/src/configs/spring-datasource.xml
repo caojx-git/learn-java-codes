@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--数据源配置文件-->
+    <!--数据源配置-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <!--配置连接数据库中的参数-->
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>

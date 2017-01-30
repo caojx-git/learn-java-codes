@@ -9,22 +9,38 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>用户管理</title>
+    <script type="text/javascript" src="/js/common/jquery-1.7.1.min.js"></script>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+        function del(id){
+            $.get("/user3/delUser3?id=" + id,function(data){
+                if("success" == data.result){
+                    alert("删除成功!");
+                    window.location.reload();//刷新界面
+                }else{
+                    alert("删除失败!")
+                }
+            });
+        }
+    </script>
 </head>
 <body>
-本次请求的方法是${result}
-    <table>
+    <table border="1">
         <tbody>
             <tr>
                 <th>姓名</th>
                 <th>年龄</th>
+                <th>编辑</th>
             </tr>
-
         <c:if test="${!empty users}">
             <c:forEach items="${users}" var="user">
                 <tr>
-                    <td>${user.userName }</td>
-                    <td>${user.age }</td>
+                    <td>${user.userName}</td>
+                    <td>${user.age}</td>
+                    <td>
+                        <a href="/user3/getUser3?id=${user.id}">编辑</a>
+                        <a href="javascript:del('${user.id}')">删除</a>
+                    </td>
                 </tr>
             </c:forEach>
         </c:if>
