@@ -101,8 +101,18 @@ hello[^hello]
 
 >表格
 
+使用markdown画表格,默认靠左，”:“放在右边靠右显示，”：“在两边，居中显示
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 
 
 参考文章：
 1. http://www.cnblogs.com/hnrainll/p/3514637.html
 2. http://www.jianshu.com/p/1e402922ee32/
+3. http://www.jianshu.com/p/sTeAbC

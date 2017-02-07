@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright 2009-2012 the original author or authors. Licensed under the 
+	Apache License, Version 2.0 (the "License"); you may not use this file except 
+	in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License. -->
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<properties>
+		<property name="dialect" value="oracle" />
+	</properties>
+	<!-- 拦截器可以有很多，就像代购公司有很多每一个公司都需要注册，下边就是注册 -->
+	<plugins>
+		<plugin interceptor="com.imooc.interceptor.PageInterceptor2">
+			<property name="test" value="interceptor" /><!-- property中的值可以在拦截器中的setProperties中拿到 -->
+		</plugin>
+	</plugins>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC">
+				<property name="" value="" />
+			</transactionManager>
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<!-- <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/> -->
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="username" value="caojx" />
+				<property name="password" value="caojx" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="com/imooc/config/sqlxml/Message.xml" />
+		<mapper resource="com/imooc/config/sqlxml/CommandContent.xml" />
+		<mapper resource="com/imooc/config/sqlxml/Command.xml" />
+	</mappers>
+
+</configuration>
