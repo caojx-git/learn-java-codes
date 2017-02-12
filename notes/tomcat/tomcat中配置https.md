@@ -1,4 +1,7 @@
-#一、tomcat中配置https
+
+[toc]
+
+##一、tomcat中配置https
 参考文章：http://blog.sina.com.cn/s/blog_618592ea01012q40.html
 
 HTTPS（全称：Hyper Text Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL（即https是http+ssl协议组成的），因此加密的详细内容就需要SSL。 它是一个URI scheme（抽象标识符体系），句法类同http:体系。用于安全的HTTP数据传输。https:URL表明它使用了HTTP，但HTTPS存在不同于HTTP的默认端口及一个加密/身份验证层（在HTTP与TCP之间）。这个系统的最初研发由网景公司(Netscape)进行，并内置于其浏览器Netscape Navigator中，提供了身份验证与加密通讯方法。现在它被广泛用于万维网上安全敏感的通讯，例如交易支付方面。
@@ -58,7 +61,7 @@ A  ----------------------------------------------------------------> B
 
 您的组织单位名称是什么?，您的组织名称是什么?您所在的城市或区域名称是什么?您所的省/市/自治区名称是什么?该单位的双字母国家/地区代码是什么?，这些都可以不填写。
 
-#二、tomcat中配置https,加密连接器
+##二、tomcat中配置https,加密连接器
 
 ###2.1环境
 Windows
