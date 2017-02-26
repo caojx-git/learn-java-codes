@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="MYORACLE">
+      <ObjectId>52</ObjectId>
+      <IntrospectionTimestamp>2017-02-01.11:46:22</IntrospectionTimestamp>
+      <CreatedTimestamp>2016-12-12.20:50:50</CreatedTimestamp>
+      <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="CTXSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="XDB">
+      <ObjectId>34</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="ANONYMOUS">
+      <ObjectId>35</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="MDSYS">
+      <ObjectId>42</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="HR">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="FLOWS_FILES">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>45</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="APEX_040000">
+      <ObjectId>47</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="DIP">
+      <ObjectId>48</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORACLE_OCM">
+      <ObjectId>49</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="DBSNMP">
+      <ObjectId>50</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="APPQOSSYS">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <table id="20" parent="2" name="MESSAGE">
+      <ObjectId>21292</ObjectId>
+      <CreatedTimestamp>2017-02-01.11:46:21</CreatedTimestamp>
+      <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
+    </table>
+    <table id="21" parent="2" name="TEST">
+      <ObjectId>20438</ObjectId>
+      <CreatedTimestamp>2016-12-12.20:50:50</CreatedTimestamp>
+      <ModifiedTimestamp>2016-12-12.20:50:50</ModifiedTimestamp>
+    </table>
+    <table id="22" parent="2" name="T_USER">
+      <ObjectId>21278</ObjectId>
+      <CreatedTimestamp>2017-01-30.17:17:08</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-30.17:17:08</ModifiedTimestamp>
+    </table>
+    <column id="23" parent="20" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="20" name="COMMAND">
+      <Position>2</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="20" name="DESCRIPTION">
+      <Position>3</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="20" name="CONTENT">
+      <Position>4</Position>
+      <DataType>VARCHAR2(200)|0</DataType>
+    </column>
+    <index id="27" parent="20" name="MESSAGE_PK_ID">
+      <ObjectId>21293</ObjectId>
+      <CreatedTimestamp>2017-02-01.11:46:21</CreatedTimestamp>
+      <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="20" name="MESSAGE_PK_ID">
+      <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>MESSAGE_PK_ID</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="21" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR2(20)|0</DataType>
+    </column>
+    <column id="30" parent="21" name="AGE">
+      <Position>2</Position>
+      <DataType>NUMBER(5)|0</DataType>
+    </column>
+    <column id="31" parent="21" name="GENDER">
+      <Position>3</Position>
+      <DataType>CHAR(1)|0</DataType>
+    </column>
+    <check id="32" parent="21" name="SYS_C007261">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2016-12-12.20:50:50</ModifiedTimestamp>
+      <ColNames>GENDER</ColNames>
+      <Predicate>gender in(&apos;男&apos;,&apos;女&apos;)</Predicate>
+    </check>
+    <column id="33" parent="22" name="ID">
+      <Position>1</Position>
+      <DataType>VARCHAR2(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="34" parent="22" name="AGE">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+    </column>
+    <column id="35" parent="22" name="USERNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+    </column>
+    <index id="36" parent="22" name="SYS_C007427">
+      <ObjectId>21279</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2017-01-30.17:17:08</CreatedTimestamp>
+      <ModifiedTimestamp>2017-01-30.17:17:08</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="22" name="SYS_C007427">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2017-01-30.17:17:08</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C007427</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

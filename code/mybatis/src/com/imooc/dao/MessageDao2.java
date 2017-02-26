@@ -13,7 +13,7 @@ import java.util.List;
  * Description:和Message表相关的数据库操作
  * Created by caojx on 17-2-1.
  */
-public class MessageDao {
+public class MessageDao2 {
 
 
     /**

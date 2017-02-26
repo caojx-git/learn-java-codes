@@ -4,6 +4,7 @@ package com.imooc.bean;
  * 与消息表对应的实体类
  */
 public class Message {
+
 	/**
 	 * 主键
 	 */
