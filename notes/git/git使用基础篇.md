@@ -96,7 +96,9 @@ git diff –cached得到的是从(3)到(2)的变化
 git diff HEAD得到的是从(3)到(1)的变化
 
 下面2张图可以直观的帮助你理解：
-![](/home/caojx/learn/notes/images/git/git-operate1.png)
+
+![](../images/git/git-operate1.png)
+
 ![](/home/caojx/learn/notes/images/git/git-operate2.png)
 
 文章链接：
