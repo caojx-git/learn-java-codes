@@ -1,8 +1,8 @@
-##简明 Git 命令速查表（中文版）
+## 简明 Git 命令速查表（中文版）
 
 >笔记来自实验楼整理
 
-###创建
+### 创建
 
 复制一个已创建的仓库:
 >$ git clone ssh://user@domain.com/repo.git
@@ -10,7 +10,7 @@
 创建一个新的本地仓库:
 >$ git init
 
-###本地修改
+### 本地修改
 
 显示工作路径下已修改的文件：
 >>$ git status
@@ -45,7 +45,7 @@
 git checkout branch2
 git stash pop
 
-###搜索
+### 搜索
 
 从当前目录的所有文件中查找文本内容：
 >$ git grep "Hello"
@@ -54,7 +54,7 @@ git stash pop
 >$ git grep "Hello" v2.5
 
 
-###提交历史
+### 提交历史
 
 从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：
 >$ git log
@@ -71,7 +71,7 @@ git stash pop
 谁，在什么时间，修改了文件的什么内容：
 >$ git blame <file>
 
-###分支与标签
+### 分支与标签
 
 列出所有的分支：
 >$ git branch
@@ -94,7 +94,7 @@ git stash pop
 给当前版本打标签：
 >$ git tag <tag-name>
 
-###更新与发布
+### 更新与发布
 
 列出当前配置的远程端：
 >$ git remote -v
@@ -125,7 +125,7 @@ git stash pop
 发布标签:
 >$ git push --tags
 
-###合并与重置
+### 合并与重置
 
 将分支合并到当前HEAD中：
 >$ git merge <branch>
@@ -147,7 +147,7 @@ git stash pop
 >$ git add <resolved-file>
 >$ git rm <resolved-file>
 
-###撤销
+### 撤销
 
 放弃工作目录下的所有修改：
 >$ git reset --hard HEAD
