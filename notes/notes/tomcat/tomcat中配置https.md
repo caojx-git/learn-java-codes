@@ -7,7 +7,7 @@
 HTTPS（全称：Hyper Text Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL（即https是http+ssl协议组成的），因此加密的详细内容就需要SSL。 它是一个URI scheme（抽象标识符体系），句法类同http:体系。用于安全的HTTP数据传输。https:URL表明它使用了HTTP，但HTTPS存在不同于HTTP的默认端口及一个加密/身份验证层（在HTTP与TCP之间）。这个系统的最初研发由网景公司(Netscape)进行，并内置于其浏览器Netscape Navigator中，提供了身份验证与加密通讯方法。现在它被广泛用于万维网上安全敏感的通讯，例如交易支付方面。
 
 与http区别:
-　   一、https协议需要到ca申请证书，一般免费证书很少，需要交费。
+一、https协议需要到ca申请证书，一般免费证书很少，需要交费。
 二、http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。
 三、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。       
 四、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。
@@ -282,9 +282,10 @@ maxThreads="150" SSLEnabled="true" scheme="https" secure="true" clientAuth="fals
 再次启动tomcat，输入http://localhost:8888 就会自动跳转到https://localhost:8443
 
 
->以下内容没有测试，来自http://licg1234.blog.163.com/blog/static/13908233320121165356868/
-
 #四、为客户端生成证书
+
+以下内容没有测试，来自http://licg1234.blog.163.com/blog/static/13908233320121165356868/
+
  
 为浏览器生成证书，以便让服务器来验证它。为了能将证书顺利导入至IE和Firefox，证书格式应该是PKCS12，因此，使用如下命令生成：
  
