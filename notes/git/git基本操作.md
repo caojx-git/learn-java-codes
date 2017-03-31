@@ -1,5 +1,7 @@
 ##Git 基本操作
 Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。本章将对有关创建与提交你的项目快照的命令作介绍。
+
+![](/home/caojx/learn/notes/images/git/git-command.jpg)
 ###获取与创建项目命令
 >git init
 

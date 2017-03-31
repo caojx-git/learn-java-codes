@@ -1,7 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d09ea4b3-2b3b-40e7-8081-7cb0212a2b02" name="Default" comment="" />
+    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="git 常用命令">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/login.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/blogs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/CentOS7中安装git.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git仓库创建.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git分支管理.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git和GitHub.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git基本操作.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git工作区暂存区和版本库.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git工作流程.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git服务器搭建.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git查看历史命令.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/git/git标签.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/idea/IDEA中无法正常使用Subversion.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/idea/IntelliJ IDEA中找不到Suberversion解决方案.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/idea/Intllij_IDEA快捷键.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/area.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/git-process.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/git-remote.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/git-settings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/git-sshkey.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/github-modify.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/github-project.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/github-repository.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/github-repository2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/git/github-repository3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/idea/idea-subversion.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/idea/idea-subversion2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/idea/markdown_idea1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/idea/markdown_idea2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/linux/bc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/linux/bc2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/linux/cal.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/linux/file-qx.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/linux/man-date.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/markdown/haroopad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-ListServlet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-deleteOne1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-deleteOne2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-jar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-list1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-list2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-list4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-list5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-list6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-list7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-log4j.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-log4j2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-param1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-param2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-project1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-project2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-project3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-project4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/mybatis/mybatis-project5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/hibernate/spring-hibernate-addUser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/hibernate/spring-hibernate-delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/hibernate/spring-hibernate-jar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/spring/springmvc-spring1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-annoresult.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-annotation1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-annotation2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-helloworld.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-img.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-jar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-jar2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-json.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-multi.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-param1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-param2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-param3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-project.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-result.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-result1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-sourceroot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-tomcat-add.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-tomcat-add2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-tomcat-add3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-tomcat-add4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-tomcat-add5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-tomcat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-web.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-webxml.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-webxml2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/spring/springmvc/springmvc-welcome.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/tomcat/tomcat-hostmanager.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/tomcat/tomcat-hostmanager2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/tomcat/tomcatstart-https1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/tomcat/tomcatstart-https2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/tomcat/生成证书.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/images/tomcat/非对称加密.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/java/Java注解编程.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/json/json在java中的使用.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/json/json手动转map和list.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/linux/500 Illegal PORT command的问题(主被动模式).md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/linux/CentOS7中IDEA或WPS无法切换中文输入法解决方案.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/linux/linux学习.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/linux/linux常用命令.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/linux/vmware网络设置.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/markdown/haroopad安装.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/markdown/markdown入门.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/maven/IDEA建立maven项目.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/maven/maven的使用.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/maven/ IDEA下创建多模块maven项目.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/mybatis/Mybatis参数传递.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/mybatis/Mybatis面向接口编程.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/mybatis/mybatis分页实现.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/mybatis/mybatis批量添加实现.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/mysql/MySQL安装方法及简单配置.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/mysql/MySQL运行原理与基础架构.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/notes.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/oracle/ SQL表连接查询(inner join、full join、left join、right join).docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/oracle/PLSQL.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/oracle/oracle忘记密码.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/oracle/oracle触发器.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/oracle/sql中where 1=1 与1=0的作用.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/spring/Spring-AOP.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/spring/Spring-IoC.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/spring/springmvc学习.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/spring/spring中事物管理.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/spring/spring中的事物管理.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/spring/spring学习.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/tomcat/ Tomcat原理详解和各种集群的实现.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/tomcat/tomcat中配置https.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/tomcat/使用tomcat的hostmanger.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/tools/CentOS7中IDEA或WPS无法切换中文输入法解决方案.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/tools/腾讯云+校园计划.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/xmind/Xmind新手入门教程.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/xmind/foruok.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/xmind/learn.xmind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/正则表达式/人人都看的懂得正则表达式.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/正则表达式/正则表达式-基础篇.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/正则表达式/正则表达式大全.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MySQL/MySQL安装方法及简单配置.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MySQL/MySQL运行原理与基础架构.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib1.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib2.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib3.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib4.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/misc.xml" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/mybatis.iml" afterPath="$PROJECT_DIR$/../code/mybatis/mybatis.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/spring-mvc.iml" afterPath="$PROJECT_DIR$/../code/spring-mvc/spring-mvc.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git/git基本操作.md" afterPath="$PROJECT_DIR$/git/git基本操作.md" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,9 +168,46 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="blogs.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogs.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="git基本操作.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/git/git基本操作.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="38">
+                <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/git/git基本操作.md" />
+      </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -31,6 +222,7 @@
     <option name="width" value="1368" />
     <option name="height" value="707" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -46,7 +238,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -73,36 +265,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.34382284" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/git" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -484,17 +663,25 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d09ea4b3-2b3b-40e7-8081-7cb0212a2b02" name="Default" comment="" />
-      <created>1490972450377</created>
+      <changelist id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="" />
+      <created>1490973663090</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1490972450377</updated>
-      <workItem from="1490972454197" duration="76000" />
+      <updated>1490973663090</updated>
+      <workItem from="1490973666649" duration="372000" />
     </task>
+    <task id="LOCAL-00001" summary="git 常用命令">
+      <created>1490973845562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1490973845562</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76000" />
+    <option name="totallyTimeSpent" value="372000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
@@ -508,8 +695,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -520,8 +707,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -536,8 +723,33 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git 常用命令" />
+    <option name="LAST_COMMIT_MESSAGE" value="git 常用命令" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/blogs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/git/git基本操作.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="38">
+            <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
