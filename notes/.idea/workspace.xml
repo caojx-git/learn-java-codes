@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="git 常用命令">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/login.zip" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/.idea/misc.xml" afterPath="" />
@@ -142,8 +141,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/正则表达式/人人都看的懂得正则表达式.docx" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/正则表达式/正则表达式-基础篇.docx" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../learn/notes/正则表达式/正则表达式大全.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MySQL/MySQL安装方法及简单配置.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/MySQL/MySQL运行原理与基础架构.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib1.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/libraries/lib2.xml" afterPath="$PROJECT_DIR$/../.idea/libraries/lib2.xml" />
@@ -154,7 +151,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/mybatis.iml" afterPath="$PROJECT_DIR$/../code/mybatis/mybatis.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/spring-mvc.iml" afterPath="$PROJECT_DIR$/../code/spring-mvc/spring-mvc.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git/git基本操作.md" afterPath="$PROJECT_DIR$/git/git基本操作.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -668,7 +664,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1490973663090</updated>
-      <workItem from="1490973666649" duration="372000" />
+      <workItem from="1490973666649" duration="406000" />
     </task>
     <task id="LOCAL-00001" summary="git 常用命令">
       <created>1490973845562</created>
@@ -677,11 +673,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490973845562</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="测试">
+      <created>1490974060075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1490974060075</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="372000" />
+    <option name="totallyTimeSpent" value="406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
@@ -725,7 +728,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git 常用命令" />
-    <option name="LAST_COMMIT_MESSAGE" value="git 常用命令" />
+    <MESSAGE value="测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

@@ -1,28 +1,12 @@
 <component name="libraryTable">
   <library name="lib2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-webmvc-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-jms-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-core-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-jdbc-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/servlet-api.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-instrument-tomcat-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-tx-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-instrument-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-beans-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-expression-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-aop-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/jstl.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-webmvc-portlet-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-context-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/standard-1.1.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-test-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-aspects-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-orm-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-context-support-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/spring-oxm-3.2.0.RELEASE.jar!/" />
-      <root url="jar://$PROJECT_DIR$/code/spring-mvc/out/artifacts/spring_mvc_war_exploded/WEB-INF/lib/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/mybatis-3.2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/ojdbc14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/log4j-1.2.17.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
