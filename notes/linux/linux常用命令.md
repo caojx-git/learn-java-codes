@@ -49,7 +49,7 @@ zh_CN.UTF-8
  -h, --help       显示此帮助并退出
 
 
-![cal](/home/caojx/learn/notes/images/linux/cal.png)
+![cal](../images/linux/cal.png)
 
 默认显示本月的日期
 
@@ -60,12 +60,12 @@ zh_CN.UTF-8
 linux中提供了一个计算程序，bc，在命令中输入bc后，就可以进行简单的运算
 支持 +、-、*、/、^、%, quit离开
 
-![bc](/home/caojx/learn/notes/images/linux/bc.png)
+![bc](../images/linux/bc.png)
 
 
 bc进入计算器后，就可以进行运行输出结果，但是上边的10/100结果是0，因为bc默认只输出整数部分，如果要输出小数，在bc中执行命令scale=number，number表示要输出小数点后的位数。
 
-![bc](/home/caojx/learn/notes/images/linux/bc2.png)
+![bc](../images/linux/bc2.png)
 
 ###2.3 Linux系统的在线求助man page 与info page
 
@@ -74,7 +74,7 @@ bc进入计算器后，就可以进行运行输出结果，但是上边的10/100
 案例
 >man date
 
-![](/home/caojx/learn/notes/images/linux/man-date.png)
+![](../images/linux/man-date.png)
 
 上边的只是部分截图，一般来说man page的内容分为如下几个部分
 代号 --------------------------- 内容说明
@@ -206,7 +206,7 @@ r:read,读权限  4
 w:write,写权限  2
 x:可执行权限  1
 
-![文件权限](/home/caojx/learn/notes/images/linux/file-qx.png)
+![文件权限](../images/linux/file-qx.png)
 
 提示：显示完整的时间格式ls -l --full-time
 

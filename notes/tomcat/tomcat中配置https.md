@@ -19,7 +19,7 @@ SSL协议:
 SSL协议位于TCP/IP协议与各种应用层协议之间，是一种国际标准的加密及身份认证通信协议,为TCP提供一个可靠的端到端的安全服务，为两个通讯个体之间提供保密性和完整性(身份鉴别)。SSL协议可分为两层：SSL记录协议（SSL Record Protocol）：它建立在可靠的传输协议（如TCP）之上，为高层协议提供数据封装、压缩、加密等基本功能的支持。SSL握手协议（SSL Handshake Protocol）：它建立在SSL记录协议之上，用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。
 
 ###1.1非对称加密
-![](/home/caojx/learn/notes/images/tomcat/非对称加密.png)
+![](../images/tomcat/非对称加密.png)
 
 比如说：A需要给B发送数据，A会产生一个公钥和一个私钥（公钥私钥有个特点，公钥加密的数据只能私钥解，私钥加密的数据只能公钥解），A将会拿到B的公钥对需要发送给A的数据进行加密，这样B是使用自己私钥就可对数据进行解密，发送数据的时候，使用的就是加密后的数据。
 
@@ -54,7 +54,7 @@ A  ----------------------------------------------------------------> B
 （1）    生成证书的时间，如果IE客户端所在机器的时间早于证书生效时间，或者晚于有效时间，IE会提示“该安全证书已到期或还未生效”
 （2）    如果IE提示“安全证书上的名称无效或者与站点名称不匹配”，则是由生成证书时填写的服务器所在主机的域名“您的名字与姓氏是什么？”/“What is your first and last name?”不正确引起的
 
-![](/home/caojx/learn/notes/images/tomcat/生成证书.png)
+![](../images/tomcat/生成证书.png)
 
 >注意：其中秘钥库口令（即密码）至少6为，这里不会显示，我输入了123456
 您的名字与姓氏是什么?，这里不是填写你的名字或姓名，而是说你为那个网站生成数字证书。
@@ -236,9 +236,9 @@ keystorePass 证书的主密码
 </Server>
 ```
 ###2.3 启动tomcat
-![](/home/caojx/learn/notes/images/tomcat/tomcatstart-https1.png)
+![](../images/tomcat/tomcatstart-https1.png)
 点击继续前往localhost
-![](/home/caojx/learn/notes/images/tomcat/tomcatstart-https2.png)
+![](../images/tomcat/tomcatstart-https2.png)
 
 提示：http://localhost:8888同样是可以访问的，因为我们同时配置了http和https连接
 如果使用linux的话，https是不能直接开启的，还需要手动配置

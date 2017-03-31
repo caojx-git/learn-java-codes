@@ -7,10 +7,10 @@
 下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：
 
 
-![](/home/caojx/learn/notes/images/git/area.jpg)
+![](../images/git/area.jpg)
 下面2张图可以直观的帮助你理解：
-![](/home/caojx/learn/notes/images/git/git-operate1.png)
-![](/home/caojx/learn/notes/images/git/git-operate2.png)
+![](../images/git/git-operate1.png)
+![](../images/git/git-operate2.png)
 
 
 图中左侧为工作区，右侧为版本库。在版本库中标记为 "index" 的区域是暂存区（stage, index），标记为 "master" 的是 master 分支所代表的目录树。

@@ -9,4 +9,4 @@ Git一般工作流程如下：
 在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。
 下图展示了 Git 的工作流程：
 
-![git-process](/home/caojx/learn/notes/images/git/git-process.png)
+![git-process](../images/git/git-process.png)

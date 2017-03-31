@@ -13,10 +13,10 @@ Git 并不像 SVN 那样有个中心服务器。
 
 后面的 your_email@youremail.com 改为你在 github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开 id_rsa.pub，复制里面的 key。
 回到 github 上，进入 Account => Settings（账户配置）。
-![](/home/caojx/learn/notes/images/git/git-settings.png)
+![](../images/git/git-settings.png)
 
 左边选择 SSH and GPG keys，然后点击 New SSH key 按钮,title 设置标题，可以随便填，粘贴在你电脑上生成的 key。
-![](/home/caojx/learn/notes/images/git/git-sshkey.png)
+![](../images/git/git-sshkey.png)
 添加成功后界面如下所示
 
 为了验证是否成功，输入以下命令：
@@ -25,12 +25,12 @@ Hi tianqixin! You've successfully authenticated, but GitHub does not provide she
 
 以下命令说明我们已成功连上 Github。
 之后登录后点击" New repository " 如下图所示：
-![](/home/caojx/learn/notes/images/git/github-repository.jpg)
+![](../images/git/github-repository.jpg)
 之后在在Repository name 填入 runoob-git-test(远程仓库名) ，其他保持默认设置，点击"Create repository"按钮，就成功地创建了一个新的Git仓库：
-![](/home/caojx/learn/notes/images/git/github-repository2.jpg)
+![](../images/git/github-repository2.jpg)
 创建成功后，显示如下信息：
 
-![](/home/caojx/learn/notes/images/git/github-repository3.jpg)
+![](../images/git/github-repository3.jpg)
 以上信息告诉我们可以从这个仓库克隆出新的仓库，也可以把本地仓库的内容推送到GitHub仓库。
 现在，我们根据 GitHub 的提示，在本地的仓库下运行命令：
 >$ mkdir runoob-git-test                     # 创建测试目录
@@ -51,7 +51,7 @@ $ git push -u origin master
 
 以下命令请根据你在Github成功创建新仓库的地方复制，而不是根据我提供的命令，因为我们的Github用户名不一样，仓库名也不一样。
 接下来我们返回 Github 创建的仓库，就可以看到文件已上传到 Github上：
-![](/home/caojx/learn/notes/images/git/github-project.jpg)
+![](../images/git/github-project.jpg)
 ####查看当前的远程库
 要查看当前配置有哪些远程仓库，可以用命令：
 >git remote
@@ -76,7 +76,7 @@ Git 有两个命令用来提取远程仓库的更新。
 该命令就是在执行 git fetch 之后紧接着执行 git merge 远程分支到你所在的任意分支。
 假设你配置好了一个远程仓库，并且你想要提取更新的数据，你可以首先执行 git fetch [alias] 告诉 Git 去获取它有你没有的数据，然后你可以执行 git merge [alias]/[branch] 以将服务器上的任何更新（假设有人这时候推送到服务器了）合并到你的当前分支。
 接下来我们在 Github 上点击" README.md" 并在线修改它:
-![](/home/caojx/learn/notes/images/git/github-modify.jpg)
+![](../images/git/github-modify.jpg)
 然后我们在本地更新修改。
 >$ git fetch origin
 remote: Counting objects: 3, done.

@@ -1,9 +1,9 @@
 #一、使用Tomcat HostManager管理平台
 
 1.1进入tomcat首页
-![](/home/caojx/learn/notes/images/tomcat/tomcat-hostmanager.png)
+![](../images/tomcat/tomcat-hostmanager.png)
 这里需要输入用户名和密码，这里还没有配置，所以不知道
-![](/home/caojx/learn/notes/images/tomcat/tomcat-hostmanager2.png)
+![](../images/tomcat/tomcat-hostmanager2.png)
 
 1.2配置用户名密码
 修改/usr/local/apache-tomcat-7.0.67/conf/tomcat-users.xml文件

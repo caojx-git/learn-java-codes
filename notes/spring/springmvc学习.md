@@ -33,20 +33,20 @@ d.最终展现给客户端--》图片、pdf文档、html页面、xml、json数�
 	
 >File->new Project->Java->JavaEE->Web Application-->工程名/工程保存位置
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-web.png)
+![](../images/spring/springmvc/springmvc-web.png)
 	
 ####3.2 导入Springmvc中需要的jar包
 Project Structure->Project Settings->Moules->Add(jar包的路径)
 这里添加jar的方式跟Eclipse有点不同，但是思想都是一样的。
 我这里将jar添加到WEB-INF的lib下边（lib目录不存在需要手动建立）
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-jar.png)
+![](../images/spring/springmvc/springmvc-jar.png)
 
 提示：项目相关的配置都在Project Settings里边设置，不仅是jar，这个新建的项目常常需要检查这里的配置是都正确
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-jar2.png)
+![](../images/spring/springmvc/springmvc-jar2.png)
 	
 注意Facets中的Source Roots：下边的内容要打勾，不然会找不到类
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-sourceroot.png)
+![](../images/spring/springmvc/springmvc-sourceroot.png)
 	
 ####3.3web.xml配置
 对于web工程来说，项目中用到的web框架基本都需要在这里配置，springmvc同样如此，web.xml是springmvc
@@ -58,7 +58,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 
 默认方式所在的路径
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-webxml.png)
+![](../images/spring/springmvc/springmvc-webxml.png)
 
 内容：
 ```xml
@@ -87,7 +87,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 **b.将springmvc配置文件配置到指定的路径下 如放置到src/configs下**
 指定路径方式的截图
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-webxml2.png)
+![](../images/spring/springmvc/springmvc-webxml2.png)
 
 推荐使用指定路径的方式
 
@@ -141,7 +141,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 
 路径如图：
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-welcome.png)
+![](../images/spring/springmvc/springmvc-welcome.png)
 
 内容：
 ```jsp
@@ -206,25 +206,25 @@ public class HelloWorldController implements Controller {
 ####3.6 添加tomcat服务器
 Edit Configurations
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add.png)
+![](../images/spring/springmvc/springmvc-tomcat-add.png)
 
 点击"+",找到tomcat
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add2.png)
+![](../images/spring/springmvc/springmvc-tomcat-add2.png)
 
 Name：取个名字，随便，图中可以看出有错，这个因为没有Deployment(tomcat中还没有部署项目)
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add3.png)
+![](../images/spring/springmvc/springmvc-tomcat-add3.png)
 
 点击fix或Deployment，部署项目，点击中间的"+"
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add4.png)
+![](../images/spring/springmvc/springmvc-tomcat-add4.png)
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-tomcat-add5.png)
+![](../images/spring/springmvc/springmvc-tomcat-add5.png)
 
 点击Apply-->ok-->运行
 
 ####3.6 结果
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-result.png)
+![](../images/spring/springmvc/springmvc-result.png)
 
 
 
@@ -307,7 +307,7 @@ public class HelloWorldController implements Controller {
 </html>
 ```
 ####4.3结果
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-result1.png)
+![](../images/spring/springmvc/springmvc-result1.png)
 
 
 
@@ -433,11 +433,11 @@ public class MultiController extends MultiActionController{
 
 ####5.4 结果
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-multi.png)
+![](../images/spring/springmvc/springmvc-multi.png)
 
 项目结构图：
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-project.png)
+![](../images/spring/springmvc/springmvc-project.png)
 
 ###六.spring mvc对静态资源的访问
 
@@ -566,7 +566,7 @@ public class StaticController extends MultiActionController{
 ```
 
 ####6.4 结果
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-img.png)
+![](../images/spring/springmvc/springmvc-img.png)
 
 
 ###七.springmvc注解配置
@@ -780,7 +780,7 @@ public class UserController {
  
  运行结果：
  
- ![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-annotation1.png)
+ ![](../images/spring/springmvc/springmvc-annotation1.png)
 
 
 ####7.5对springmvc注解进行优化
@@ -844,7 +844,7 @@ public class UserController2 {
 ```
 
 ####7.6 优化后的访问结果
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-annotation2.png)
+![](../images/spring/springmvc/springmvc-annotation2.png)
 
 
 
@@ -1043,11 +1043,11 @@ public class DataController {
 ```
 #####8.2.1.4 结果（之前台到后台）
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param1.png)
+![](../images/spring/springmvc/springmvc-param1.png)
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param2.png)
+![](../images/spring/springmvc/springmvc-param2.png)
 
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-param3.png)
+![](../images/spring/springmvc/springmvc-param3.png)
 
 
 
@@ -1359,7 +1359,7 @@ public class DataController {
 ```
 
 ####8.3.4结果（之前台到后台）
-![](/home/caojx/learn/notes/images/spring/springmvc/springmvc-json.png);
+![](../images/spring/springmvc/springmvc-json.png);
 
 ###8.4参数的几种传递方式(后台到前台的参数传递)
 >后台到前台的参数传递
@@ -1865,7 +1865,7 @@ spring集成成功！
 ```
 ###10.7结果
 
-![](/home/caojx/learn/notes/images/spring/springmvc/spring/springmvc-spring1.png)
+![](../images/spring/springmvc/spring/springmvc-spring1.png)
 
 ###10.8spring与springmvc的上下文关系
 
@@ -1897,7 +1897,7 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 集成，实现一个小的增删改查功能,其中的代码就不进行过多的分析。
 
 ###11.1 添加spring集成hibernate4所需要的jar
-![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-jar.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-jar.png)
 
 ###11.2 Hibernate五大对象
 在hibernate中，可以说是围绕着这一下五大对象展开的，集成在spring中后，就交给spring对这五大对象进行管理。
@@ -2606,21 +2606,21 @@ OpenSessionInViewFilter主要是保持Session状态知道request将全部页面�
 ```
 不配至OpenSessionInViewFilter，会出现如下图中的错误
 
-![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png)
 
 添加用户
 
-![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-addUser.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-addUser.png)
 
 编辑用户
 
-![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit1.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-edit1.png)
 
-![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit2.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-edit2.png)
 
 删除用户
 
-![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-delete.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-delete.png)
 
 
 

@@ -32,7 +32,7 @@
 
  在终端中输入命令 haroopad
  如下图所示，就是haroopad 效果图
- ![](/home/caojx/learn/notes/images/markdown/haroopad.png)
+ ![](../images/markdown/haroopad.png)
 
  使用haroopad打开xxx.md文件
  终端中输入：haroopad  xxx.md文件所在路径

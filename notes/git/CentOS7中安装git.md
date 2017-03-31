@@ -58,10 +58,10 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQHKGR8FQJJMPjTQoOgYyFxPCTWs/u8PA0GbwzG4kO
 
 右上角->Settings->SSH and GPG keys->New SSH Key->将 cat ~/。ssh/id_rsa.pub的内容复制到Key中->Add Key
 
-![settings](/home/caojx/learn/notes/images/git/git-settings.png)
+![settings](../images/git/git-settings.png)
 
 
-![sshkey](/home/caojx/learn/notes/images/git/git-sshkey.png)
+![sshkey](../images/git/git-sshkey.png)
 ###测试是否成功
 
 >在本机控制台中执行命令
@@ -172,7 +172,7 @@ git reset log：恢复到历史版本。
 git remoote add < name > < url > 
 name 为给url取的别名，url为远端仓库的地址，如下图所示
 
-![](/home/caojx/learn/notes/images/git/git-remote.png)
+![](../images/git/git-remote.png)
 
 [user@localhost git_repository]$ git remoote add springmvc https://github.com/caojx-git/springmvc.git
 
