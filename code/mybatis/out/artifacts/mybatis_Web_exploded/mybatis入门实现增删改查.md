@@ -1350,8 +1350,8 @@ public class MessageDao {
             sqlSession.delete("com.imooc.bean.Message.deleteOne",id);
             sqlSession.commit();
         }catch (Exception e){
-            logger.error("删除Message出错",e);
-            throw new Exception("查询Message出错",e);
+            logger.error("删除单条Message出错",e);
+            throw new Exception("删除单条Message出错",e);
         }finally {
             if(sqlSession != null){
                 sqlSession.close();
@@ -1447,7 +1447,7 @@ public class DeleteOneServlet extends HttpServlet{
             req.setAttribute("retMsg", "删除失败");
         }finally{
             //向页面跳转list.action实现第页面进行刷新
-            req.getRequestDispatcher("/list.action").forward(req, resp);
+            resp.sendRedirect("/list.action");
         }
 
     }
@@ -1495,9 +1495,14 @@ public class DeleteOneServlet extends HttpServlet{
 	</servlet-mapping>
 </web-app>
 ```
-
 ####4.1.6运行
+这里我们删除第9条数据，指令为查看的
+![](/home/caojx/learn/notes/images/mybatis/mybatis-deleteOne1.png)
+删除后
+![](/home/caojx/learn/notes/images/mybatis/mybatis-deleteOne2.png)
 
+****
+###4.2消息批量删除
 
 
 ##五、实现自动回复功能

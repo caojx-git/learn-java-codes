@@ -1892,7 +1892,7 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 ##十一、spring与Hibernate4集成
 
 这部分主要是扩展功能，不是springmvc中的部分，这里主要实现一个小案例，集成springmvc+spring+hibernate4进行
-集成，实现一个小的增删改查功能。
+集成，实现一个小的增删改查功能,其中的代码就不进行过多的分析。
 
 ###11.1 添加spring集成hibernate4所需要的jar
 ![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-jar.png)
@@ -2431,3 +2431,199 @@ public class UserController3 {
     }
 }
 ```
+
+####11.10 userManager.jsp
+
+```jsp
+<%--
+  Created by IntelliJ IDEA.
+  User: caojx
+  Date: 16-12-30
+  Time: 下午5:36
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+    <script type="text/javascript" src="/js/common/jquery-1.7.1.min.js"></script>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+        function del(id){
+            $.get("/user3/delUser3?id=" + id,function(data){
+                if("success" == data.result){
+                    alert("删除成功!");
+                    window.location.reload();//刷新界面
+                }else{
+                    alert("删除失败!")
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>编辑</th>
+            </tr>
+        <c:if test="${!empty users}">
+            <c:forEach items="${users}" var="user">
+                <tr>
+                    <td>${user.userName}</td>
+                    <td>${user.age}</td>
+                    <td>
+                        <a href="/user3/getUser3?id=${user.id}">编辑</a>
+                        <a href="javascript:del('${user.id}')">删除</a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </c:if>
+        </tbody>
+    </table>
+</body>
+</html>
+```
+####11.12 web.xml中对OpenSessionInViewFilter进行配置
+
+当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，hibernate会自动关闭session，
+这样,当要使用子数据的时候，系统会抛出lazyinit的错误，这时就需要使用spring提供的 OpenSessionInViewFilter,
+OpenSessionInViewFilter主要是保持Session状态知道request将全部页面发送到客户端，这样就可以解决延迟加载带来的问题
+
+参考：http://sunshengleissl126.lofter.com/post/1cc7caf7_4d8187b
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--
+    web.xml的加载顺序
+    1.context-param
+    2.listener
+    3.filter
+    4.servlet
+    -->
+
+
+    <!--spring集成，设置spring配置文件所在的路径
+        注意：这里不用添加上springmvc的配置文件，因为springmvc会处理自己的配置文件
+    -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath*:configs/applicationContext.xml,
+            classpath*:configs/spring-datasource.xml
+        </param-value>
+    </context-param>
+
+    <!--spring集成配置listener，负责加载spring的配置文件-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <!--springmvc集成-->
+    
+    <!--方式一，使用默认配置
+    默认读取的springmvc配置文件为/WEB-INF/<servlet-name>-servlet.xml
+    -->
+  <!--  <servlet>
+        <servlet-name>springmvc</servlet-name>
+        &lt;!&ndash; springMVC的入口，分发器，管家 ,分发器默认读取/WEB-INF/<servlet-name>-servlet.xml文件&ndash;&gt;
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        &lt;!&ndash; 1表示tomcat启动的时候，springmvc也初始化 &ndash;&gt;
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern>&lt;!&ndash; /表示拦截所有请求，也可以 *.do   *.html 等  &ndash;&gt;
+    </servlet-mapping>-->
+
+
+    <!--方式二，手动指定springmvc配置文件的路径
+        推荐使用这种方式
+    -->
+    <servlet>
+        <servlet-name>springmvc</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 读取指定目录下的配置文件，名字可以改变
+            *表示加载该目录以及子目录下的所有springmvc-servlet.xml
+            不加*只会加载指定路径下的指定文件
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                classpath*:configs/springmvc-servlet.xml,
+                classpath*:configs/springmvc-annotaion-servlet.xml
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等  -->
+    </servlet-mapping>
+
+    <!--编码过滤,使用spring的编码过滤类-->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name><!--设置为那种编码-->
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name><!--是否强制过滤-->
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern><!--那种请求需要编码过滤,这里对所有的请求进行编码过滤-->
+    </filter-mapping>
+
+    <!--
+    当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，hibernate会自动关闭session，
+    这样,当要使用子数据的时候，系统会抛出lazyinit的错误，这时就需要使用spring提供的 OpenSessionInViewFilter,
+    OpenSessionInViewFilter主要是保持Session状态知道request将全部页面发送到客户端，这样就可以解决延迟加载带来的问题
+
+    参考：http://sunshengleissl126.lofter.com/post/1cc7caf7_4d8187b
+    -->
+    <filter>
+        <filter-name>openSession</filter-name>
+        <filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>openSession</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
+```
+不配至OpenSessionInViewFilter，会出现如下图中的错误
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png)
+
+添加用户
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-addUser.png)
+
+编辑用户
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit1.png)
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-edit2.png)
+
+删除用户
+
+![](/home/caojx/learn/notes/images/spring/springmvc/hibernate/spring-hibernate-delete.png)
+
+
+
+
+
+
+
+

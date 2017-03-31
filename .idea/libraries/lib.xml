@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/ojdbc14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/mybatis-3.2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

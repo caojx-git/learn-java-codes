@@ -1501,7 +1501,7 @@ public class DeleteOneServlet extends HttpServlet{
 删除后
 ![](/home/caojx/learn/notes/images/mybatis/mybatis-deleteOne2.png)
 
-
+****
 ###4.2消息批量删除
 
 
