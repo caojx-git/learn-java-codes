@@ -41,9 +41,9 @@
 >$ git commit --amend
 
 把当前分支中未提交的修改移动到其他分支
->git stash
-git checkout branch2
-git stash pop
+>git stash  
+git checkout branch2  
+git stash pop  
 
 ### 搜索
 

@@ -28,6 +28,9 @@ Git通常有两种方式来进行初始化:
 
 ### 3、常用命令
 
+主要命令如图：
+![](../images/git/git-command.jpg)
+
 基本命令
 * git init ：初始化仓库
 * git add \<filename\> ：添加未跟踪文件到暂存区 或 添加修改的文件到暂存区
