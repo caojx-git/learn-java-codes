@@ -11,22 +11,22 @@
  
  ## 安装haroopad
  
- 1. 解压haroopad-v0.13.1-x64.tar.gz
- cd /usr/local/src
- sudo mkdir haroopad
- sudo tar -zxvf haroopad-v0.13.1-x64.tar.gz -C haroopad
- 2. 之后会出现如下内容
-  control.tar.gz 
-  data.tar.gz  
-  debian-binary
- 3. 解压 data.tar.gz，并将其子目录下边的内容拷贝到 “/” 目录下
- tar zxvf data.tar.gz
- sudo cp -r ./usr /
+ 1. 解压haroopad-v0.13.1-x64.tar.gz  
+ cd /usr/local/src  
+ sudo mkdir haroopad  
+ sudo tar -zxvf haroopad-v0.13.1-x64.tar.gz -C haroopad  
+ 2. 之后会出现如下内容  
+  control.tar.gz   
+  data.tar.gz    
+  debian-binary  
+ 3. 解压 data.tar.gz，并将其子目录下边的内容拷贝到 “/” 目录下  
+ tar zxvf data.tar.gz  
+ sudo cp -r ./usr /  
 
- 4. 解压control.tar.gz，并赋予755权限
- tar zxf control.tar.gz
- chmod 755 postinst
- sudo ./postinst
+ 4. 解压control.tar.gz，并赋予755权限  
+ tar zxf control.tar.gz  
+ chmod 755 postinst  
+ sudo ./postinst  
 
 ### 运行haroopad
 
