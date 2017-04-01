@@ -28,41 +28,39 @@ Git不仅仅是个版本控制系统，它也是个内容管理系统(CMS),工�
 由于git是ssh传输协议的，我们是git与服务器进行交互之前必须配置好ssh协议，设置如下：
 
 
->[user@localhost ~]$ ssh-keygen -t rsa -C "you_email@example.com"->这里是你的github登录邮箱
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/caojx/.ssh/id_rsa): --》这里输入回车
-Enter passphrase (empty for no passphrase):  --》输入提交代码的密码（可以为空，建议），输入的时候不会显示
-Enter same passphrase again:   #再次确认密码（可以为空，建议）
-Your identification has been saved in /home/caojx/.ssh/id_rsa.
-Your public key has been saved in /home/caojx/.ssh/id_rsa.pub.
-The key fingerprint is:
-8c:7a:8e:8c:46:fd:3a:fa:84:25:d9:57:fa:1b:5d:ad 389715062@qq.com
-The key's randomart image is:
-+--[ RSA 2048]----+
-|                 |
-|                 |
-|        .        |
-|   o   =     .   |
-|  o.o + S   . .  |
-|  .+.o . . . .   |
-| .. o.. o . E    |
-|  .+.+.  o       |
-| .oo=o. .        |
-+-----------------+
+>[user@localhost ~]$ ssh-keygen -t rsa -C "you_email@example.com"->这里是你的github登录邮箱  
+Generating public/private rsa key pair.  
+Enter file in which to save the key (/home/caojx/.ssh/id_rsa): --》这里输入回车  
+Enter passphrase (empty for no passphrase):  --》输入提交代码的密码（可以为空，建议），输入的时候不会显示      
+Enter same passphrase again:   #再次确认密码（可以为空，建议）  
+Your identification has been saved in /home/caojx/.ssh/id_rsa.  
+Your public key has been saved in /home/caojx/.ssh/id_rsa.pub.  
+The key fingerprint is:  
+8c:7a:8e:8c:46:fd:3a:fa:84:25:d9:57:fa:1b:5d:ad 389715062@qq.com    
+The key's randomart image is:    
++--[ RSA 2048]----+    
+|                 |  
+|                 |  
+|        .        |  
+|   o   =     .   |  
+|  o.o + S   . .  |  
+|  .+.o . . . .   |  
+| .. o.. o . E    |  
+|  .+.+.  o       |  
+| .oo=o. .        |  
++-----------------+  
 
 ### 运行ssh-add ~/.ssh/id_rsa
 
->[user@localhost ~]$ ssh-add ~/.ssh/id_rsa
-
-> Enter passphrase for /home/caojx/.ssh/id_rsa:  --》这里输入passphrase(密码)
-
-> Identity added: /home/caojx/.ssh/id_rsa (/home/caojx/.ssh/id_rsa)
+>[user@localhost ~]$ ssh-add ~/.ssh/id_rsa  
+Enter passphrase for /home/caojx/.ssh/id_rsa:  --》这里输入passphrase(密码)    
+Identity added: /home/caojx/.ssh/id_rsa (/home/caojx/.ssh/id_rsa)  
 
 ### GitHub的ssh-key设置
 查看 ~/.ssh/id_rsa.pub内容，这个内容在后边需要复制到GitHub的ssh-key设置中
 
->[user@localhost ~]$ cat ~/.ssh/id_rsa.pub
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQHKGR8FQJJMPjTQoOgYyFxPCTWs/u8PA0GbwzG4kOIZVz7aL9GJ4YPL57qkrR28jV1uJLumDDqPZVljTLu9kd63C5OEO0gg3gxnfnOcmY3XRABG9qm935BUcxkPGo+VpccyHAF9YRinR+59lQgTvnUPqGnXrBPe9HUbwXLkrdfzfCKr8oyEJXc2rGKv4GwVxTyTrqfc7uMdRONsLP/NGd1zr0gWw8sHrx0PDGLveCxYg9cHhmUsGWtfWSe4l8gCcIlhprRdg3YV1fbWb04uwpbugM5ZkoEYuqttNtZac5aNjnSuWayiQkMFQkL5Qx708L4J/qbVMz3q/t9LzCWHaX you_email@example.com
+>[user@localhost ~]$ cat ~/.ssh/id_rsa.pub    
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQHKGR8FQJJMPjTQoOgYyFxPCTWs/u8PA0GbwzG4kOIZVz7aL9GJ4YPL57qkrR28jV1uJLumDDqPZVljTLu9kd63C5OEO0gg3gxnfnOcmY3XRABG9qm935BUcxkPGo+VpccyHAF9YRinR+59lQgTvnUPqGnXrBPe9HUbwXLkrdfzfCKr8oyEJXc2rGKv4GwVxTyTrqfc7uMdRONsLP/NGd1zr0gWw8sHrx0PDGLveCxYg9cHhmUsGWtfWSe4l8gCcIlhprRdg3YV1fbWb04uwpbugM5ZkoEYuqttNtZac5aNjnSuWayiQkMFQkL5Qx708L4J/qbVMz3q/t9LzCWHaX you_email@example.com    
 
 >登录GitHub
 
@@ -74,14 +72,14 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQHKGR8FQJJMPjTQoOgYyFxPCTWs/u8PA0GbwzG4kO
 ![sshkey](../images/git/git-sshkey.png)
 ### 测试是否成功
 
->在本机控制台中执行命令
-ssh -T git@gitHub.com
+>在本机控制台中执行命令  
+ssh -T git@gitHub.com  
 
->[user@localhost ~]$ ssh -T git@gitHub.com
-The authenticity of host 'github.com (192.30.253.112)' can't be established.
-RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+>[user@localhost ~]$ ssh -T git@gitHub.com    
+The authenticity of host 'github.com (192.30.253.112)' can't be established.  
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.  
+Are you sure you want to continue connecting (yes/no)? yes  
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.    
 
 这里会要你输入提交代码的密码，出现上边这个就说明你成功了。
 
@@ -101,9 +99,9 @@ Git 提供了一个叫做 git config 的工具，专门用来配置或读取相�
 ### 用户信息
 
 Git 为你的每一个提交都记录你的名字与电子邮箱地址，所以第一步需要配置用户名和邮箱地址。
-配置个人的用户名称和电子邮件地址：
->$ git config --global user.name "caojx"
->$ git config --global user.email you_email@example.com
+配置个人的用户名称和电子邮件地址：  
+>$ git config --global user.name "caojx"  
+>$ git config --global user.email you_email@example.com  
 
 如果用了 --global 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。
 如果要在某个特定的项目中使用其他名字或者电邮，只要去掉 --global 选项重新配置即可，新的设定保存在当前项目的 .git/config 文件里。
@@ -125,10 +123,10 @@ Git 可以理解 kdiff3，tkdiff，meld，xxdiff，emerge，vimdiff，gvimdiff�
 ### 查看配置信息
 
 要检查已有的配置信息，可以使用 git config --list 命令：
->$ git config --list
-http.postbuffer=2M
-user.name=runoob
-user.email=test@runoob.com
+>$ git config --list  
+http.postbuffer=2M  
+user.name=runoob  
+user.email=test@runoob.com  
 
 有时候会看到重复的变量名，那就说明它们来自不同的配置文件（比如 /etc/gitconfig 和 ~/.gitconfig），不过最终 Git 实际采用的是最后一个。
 
@@ -136,14 +134,14 @@ user.email=test@runoob.com
 >vim ~/.gitconfig 
 
 显示内容如下所示：
->[http]
-    postBuffer = 2M
-[user]
-    name = caojx
-    email = your_email@example.com
+>[http]  
+    postBuffer = 2M  
+[user]  
+    name = caojx  
+    email = your_email@example.com  
     
 也可以直接查阅某个环境变量的设定，只要把特定的名字跟在后面即可，像这样：
->$ git config user.name
+>$ git config user.name  
 runoob
 
 参考文章：
