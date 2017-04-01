@@ -1,21 +1,21 @@
 
 
-#Markdown-入门
+# Markdown-入门
 [原文连接](http://www.jianshu.com/p/1e402922ee32/)
 
-###导语
+### 导语
 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
 由于使用起来非常简单，几分钟就可以入门，Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很
 多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。
 完全采用Markdown编辑器的博客平台有Ghost和Typecho。
-###在Intellij IDEA中添加markdown插件
+### 在Intellij IDEA中添加markdown插件
 settings->plugins->搜索markdown->安装markdown Navigator
 ![markdown_idea1](../images/idea/markdown_idea1.png)
 
 安装完成后提示重启IDEA，新建fileName.md就可以使用markDown进行写作了。
 ![markdown_idea2](../images/idea/markdown_idea2.png)
 
-###Markdown语法
+### Markdown语法
 
 >标题
 
@@ -29,12 +29,12 @@ H4 :#### 四级标题<br/>
 H5 :##### 五级标题<br/>
 H6 :###### 六级标题<br/>
 >>标题效果
-#一级标题
-##二级标题
-###三级标题
-####四级标题
-#####五级标题
-######六级标题
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
 
 >列表
 
