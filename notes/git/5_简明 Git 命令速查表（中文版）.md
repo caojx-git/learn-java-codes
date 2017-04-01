@@ -118,9 +118,9 @@ git stash pop
 >$ git push remote <remote> <branch>
 
 删除远程端分支：
->$ git push <remote> :<branch> (since Git v1.5.0)
-或
->git push <remote> --delete <branch> (since Git v1.7.0)
+>$ git push <remote> :<branch> (since Git v1.5.0)  
+或  
+>git push <remote> --delete <branch> (since Git v1.7.0)  
 
 发布标签:
 >$ git push --tags
@@ -144,8 +144,8 @@ git stash pop
 >$ git mergetool
 
 在编辑器中手动解决冲突后，标记文件为已解决冲突
->$ git add <resolved-file>
->$ git rm <resolved-file>
+>$ git add <resolved-file>  
+>$ git rm <resolved-file>  
 
 ### 撤销
 

@@ -81,22 +81,22 @@ vgit pull：从远程抓取分支，如果有冲突，要先处理冲突
 
 4、一些命令的过程理解
 
->将 Current working directory 记为 工作目录(1) 
-将 Index file 记为 暂存区(2) 
-将 Git repository 记为 代码仓库(3)
+>将 Current working directory 记为 工作目录(1)   
+将 Index file 记为 暂存区(2)   
+将 Git repository 记为 代码仓库(3)  
 
 他们之间的提交层次关系是 (1) -> (2) -> (3)
 
->git add完成的是(1) -> (2) 
-git commit完成的是(2) -> (3)
-git commit -a两者的直接结合
+>git add完成的是(1) -> (2)   
+git commit完成的是(2) -> (3)  
+git commit -a两者的直接结合  
 
 从时间上看，可以认为(1)是最新的代码，(2)比较旧，(3)更旧
 按时间排序就是 (1) <- (2) <- (3)
 
->it diff得到的是从(2)到(1)的变化 
-git diff –cached得到的是从(3)到(2)的变化 
-git diff HEAD得到的是从(3)到(1)的变化
+>it diff得到的是从(2)到(1)的变化   
+git diff –cached得到的是从(3)到(2)的变化   
+git diff HEAD得到的是从(3)到(1)的变化  
 
 下面2张图可以直观的帮助你理解：
 

@@ -17,7 +17,7 @@ commit d7e734640da06055e107eaf29cf350b3f1de1c2c
 Author: w3cschool <w3c@w3cschool.cc>  
 Date:   Sun Mar 1 14:48:57 2015 +0800  
     changed the site  
-commit 556f0a0637978097b82287ac665a717623b21f3f  
+commit 556f0a0637978097b82287ac665a717623b21f3f    
 Author: w3cschool <w3c@w3cschool.cc>  
 Date:   Sun Mar 1 14:40:34 2015 +0800  
     removed test2.txt  
@@ -43,37 +43,37 @@ d7e7346 changed the site
 \* 556f0a0 removed test2.txt  
 \* 2e082b7 add test2.txt  
 \* 048598f add test.txt  
-\* 85fc7e7 test comment from w3cschool.cc  
+\* 85fc7e7 test comment from w3cschool.cc    
 
 现在我们可以更清楚明了地看到何时工作分叉、又何时归并。
 你也可以用 '--reverse'参数来逆向显示所有日志。
 >$ git log --reverse --oneline  
-85fc7e7 test comment from w3cschool.cc  
+85fc7e7 test comment from w3cschool.cc    
 048598f add test.txt  
 2e082b7 add test2.txt  
 556f0a0 removed test2.txt  
 d7e7346 changed the site  
 14b4dca 新增加一行  
-88afe0e Merge branch 'change_site'  
+88afe0e Merge branch 'change_site'    
 
 如果只想查找指定用户的提交日志可以使用命令：git log --author , 例如，比方说我们要找 Git 源码中 Linus 提交的部分：
 
 >$ git log --author=Linus --oneline -5  
-81b50f3 Move 'builtin-*' into a 'builtin/' subdirectory  
+81b50f3 Move 'builtin-*' into a 'builtin/' subdirectory    
 3bb7256 make "index-pack" a built-in  
-377d027 make "git pack-redundant" a built-in  
-b532581 make "git unpack-file" a built-in  
-112dd51 make "mktag" a built-in  
+377d027 make "git pack-redundant" a built-in    
+b532581 make "git unpack-file" a built-in    
+112dd51 make "mktag" a built-in    
 
 如果你要指定日期，可以执行几个选项：--since 和 --before，但是你也可以用 --until 和 --after。
 例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 --no-merges 选项以隐藏合并提交）：
->$ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges  
+>$ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges    
 5469e2d Git 1.7.1-rc2  
-d43427d Documentation/remote-helpers: Fix typos and improve language  
+d43427d Documentation/remote-helpers: Fix typos and improve language      
 272a36b Fixup: Second argument may be any arbitrary string  
 b6c8d2d Documentation/remote-helpers: Add invocation section  
 5ce4f4e Documentation/urls: Rewrite to accomodate transport::address  
 00b84e9 Documentation/remote-helpers: Rewrite description  
-03aa87e Documentation: Describe other situations where -z affects git diff  
+03aa87e Documentation: Describe other situations where -z affects git diff      
 77bc694 rebase-interactive: silence warning when no commits rewritten  
 636db2c t3301: add tests to use --format="%N"  

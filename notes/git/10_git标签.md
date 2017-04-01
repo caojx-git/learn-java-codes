@@ -6,10 +6,10 @@
 
 当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。
 现在，注意当我们执行 git log --decorate 时，我们可以看到我们的标签了：
->$ git log --oneline --decorate --graph
-*   88afe0e (HEAD, tag: v1.0, master) Merge branch 'change_site'  
-|\  
-| * d7e7346 (change_site) changed the site  
+>$ git log --oneline --decorate --graph  
+*   88afe0e (HEAD, tag: v1.0, master) Merge branch 'change_site'    
+|\    
+| * d7e7346 (change_site) changed the site    
 * | 14b4dca 新增加一行  
 |/  
 * 556f0a0 removed test2.txt  
@@ -21,7 +21,7 @@
 例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：
 >$ git tag -a v0.9 85fc7e7  
 $ git log --oneline --decorate --graph  
-*   88afe0e (HEAD, tag: v1.0, master) Merge branch 'change_site'  
+*   88afe0e (HEAD, tag: v1.0, master) Merge branch 'change_site'    
 |\    
 | * d7e7346 (change_site) changed the site  
 * | 14b4dca 新增加一行  
