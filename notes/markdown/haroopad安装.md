@@ -1,15 +1,15 @@
- ###install haroopad on linux by tar.gz
+ ### install haroopad on linux by tar.gz
  ***
  [原文连接](http://blog.csdn.net/lxbwolf/article/details/52804074)
  
  >Haroopad 是一款覆盖三大主流桌面系统的编辑器，支持 Windows、Mac OS X 和 Linux多个平台，安装简单，方便，对中文支持很好（很多网友还推荐ReText的，但是ReText在linux平台安装比较复杂)。
  
- ##下载haroopad
+ ## 下载haroopad
  
  
  wget https://bitbucket.org/rhiokim/haroopad-download/downloads/haroopad-v0.13.1-x64.tar.gz
  
- ##安装haroopad
+ ## 安装haroopad
  
  1. 解压haroopad-v0.13.1-x64.tar.gz
  cd /usr/local/src
@@ -28,7 +28,7 @@
  chmod 755 postinst
  sudo ./postinst
 
-###运行haroopad
+### 运行haroopad
 
  在终端中输入命令 haroopad
  如下图所示，就是haroopad 效果图
