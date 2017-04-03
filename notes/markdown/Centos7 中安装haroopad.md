@@ -1,5 +1,5 @@
  ### install haroopad on linux by tar.gz
- ***
+ 
  [原文连接](http://blog.csdn.net/lxbwolf/article/details/52804074)
  
  >Haroopad 是一款覆盖三大主流桌面系统的编辑器，支持 Windows、Mac OS X 和 Linux多个平台，安装简单，方便，对中文支持很好（很多网友还推荐ReText的，但是ReText在linux平台安装比较复杂)。
