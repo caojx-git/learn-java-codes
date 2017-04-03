@@ -2,6 +2,8 @@
 
 >笔记来自实验楼整理
 
+[原文链接](https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=215698435&idx=1&sn=c3db8ef05960bd99f22869c64b050503&scene=20#rd)
+
 ### 创建
 
 复制一个已创建的仓库:
@@ -170,5 +172,3 @@ git stash pop
 将HEAD重置到上一次提交的版本，并保留未提交的本地修改：
 >$ git reset --keep <commit>
 
-文章链接：
-https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=215698435&idx=1&sn=c3db8ef05960bd99f22869c64b050503&scene=20#rd

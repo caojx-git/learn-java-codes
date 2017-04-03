@@ -1,4 +1,7 @@
 ## Git 查看提交历史
+
+[原文连接](http://www.runoob.com/git/git-commit-history.html)
+
 在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。
 针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下：
 >$ git log  

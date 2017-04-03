@@ -1,5 +1,8 @@
-内容来自http://www.runoob.com/git/git-workflow.html
+
 ### Git 工作流程
+
+[原文链接](http://www.runoob.com/git/git-workflow.html)
+
 Git一般工作流程如下：
 克隆 Git 资源作为工作目录。
 在克隆的资源上添加或修改文件。

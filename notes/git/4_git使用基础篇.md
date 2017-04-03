@@ -1,6 +1,10 @@
 ## Git使用基础篇
 
+
 >笔记来自实验楼整理
+
+[原文链接](https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=215698435&idx=3&sn=7b7f7f833b4f721422dfe0aa75c32942&scene=20#rd
+)
 
 ### 1、Git是什么
 
@@ -103,6 +107,3 @@ git diff HEAD得到的是从(3)到(1)的变化
 ![](../images/git/git-operate1.png)
 
 ![](../images/git/git-operate2.png)
-
-文章链接：
-https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=215698435&idx=3&sn=7b7f7f833b4f721422dfe0aa75c32942&scene=20#rd

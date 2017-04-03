@@ -1,4 +1,7 @@
 ## Git 服务器搭建
+
+[原文链接](http://www.runoob.com/git/git-server.html)
+
 Github 公开的项目是免费的，但是如果你不想让其他人看到你的项目就需要收费。
 这时我们就需要自己搭建一台Git服务器作为私有仓库使用。
 接下来我们将以 Centos 为例搭建 Git 服务器。

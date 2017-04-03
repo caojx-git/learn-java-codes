@@ -1,4 +1,7 @@
 ## Git 工作区、暂存区和版本库
+
+[原文链接](http://www.runoob.com/git/git-workspace-index-repo.html)
+
 基本概念
 我们先来理解下Git 工作区、暂存区和版本库概念
 * **工作区：**就是你在电脑里能看到的目录。

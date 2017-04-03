@@ -1,4 +1,7 @@
 ## Git 创建仓库
+
+[原文链接](http://www.runoob.com/git/git-create-repository.html)
+
 本章节我们将为大家介绍如何创建一个 Git 仓库。
 你可以使用一个已经存在的目录作为Git仓库。
 >git init

@@ -1,4 +1,7 @@
 ## Git 远程仓库(Github)
+
+[原文链接](http://www.runoob.com/git/git-remote-repo.html)
+
 Git 并不像 SVN 那样有个中心服务器。
 目前我们使用到的 Git 命令都是在本地执行，如果你想通过 Git 分享你的代码或者与其他开发人员合作。 你就需要将数据放到一台其他开发人员能够连接的服务器上。
 本例使用了 Github 作为远程仓库，你可以先阅读我们的 Github 简明教程。
