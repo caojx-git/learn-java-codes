@@ -106,6 +106,6 @@ TTL选择10分钟即可（即在DNS服务器缓存中的刷新时间）
 
 参考：
 
-http://blog.csdn.net/lucahan/article/details/51713486
-http://jingyan.baidu.com/article/0bc808fc2c6a851bd485b92a.html
-http://bbs.qcloud.com/thread-8022-1-1.html
+http://blog.csdn.net/lucahan/article/details/51713486  
+http://jingyan.baidu.com/article/0bc808fc2c6a851bd485b92a.html  
+http://bbs.qcloud.com/thread-8022-1-1.html  
