@@ -1,9 +1,10 @@
 ## 1基于腾讯云的域名绑定与tomcat部署
 
 ### 1.1注册域名
-进入腾讯云主机官网，依次选择：云产品->域名服务->域名注册
+进入腾讯云主机官网，依次选择：**云产品->域名服务->域名注册**
 ![](../images/tool/tengxuyun/txy-register1.png)
 ![](../images/tool/tengxuyun/txy-register2.png)
+
 输入你想要注册的域名进行测试，看看是否已经被别人注册了，比如这里使用【www.couplus.com】进行测试，可以看到.com域名和.cn域名已经被使用了，我们选择.org的域名加入购物车，点击立即购买
 
 ![](../images/tool/tengxuyun/txy-register3.png)
