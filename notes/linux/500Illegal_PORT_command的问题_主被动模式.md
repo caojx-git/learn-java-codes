@@ -1,4 +1,6 @@
-转载自：http://blog.sina.com.cn/s/blog_5cdb72780100jwjt.html
+
+[原文链接](http://blog.sina.com.cn/s/blog_5cdb72780100jwjt.html)
+
 500 Illegal PORT command的问题（主被动模式） 
 在windows的dos窗口用FTP命令去连时，可以登录，但使用ls等命令时，出现：
 500 Illegal PORT command.
