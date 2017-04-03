@@ -8,10 +8,6 @@
 
 
 ![](../images/git/area.jpg)
-下面2张图可以直观的帮助你理解：
-![](../images/git/git-operate1.png)
-![](../images/git/git-operate2.png)
-
 
 图中左侧为工作区，右侧为版本库。在版本库中标记为 "index" 的区域是暂存区（stage, index），标记为 "master" 的是 master 分支所代表的目录树。
 
@@ -33,3 +29,8 @@
 6. 当执行 "git checkout HEAD ** . **" 或者 "git checkout HEAD - - < file >" 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。** 这个命令也是极具危险性的 **，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改
 
 7. 当执行“git checkout”时，汇总显示工作区域，暂存区与HEAD的差异，这个命令等同于“git checkout HEAD”,与第5，6差异在于一个"."或“--”
+
+
+下面2张图可以直观的帮助你理解：
+![](../images/git/git-operate1.png)
+![](../images/git/git-operate2.png)
