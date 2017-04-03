@@ -1004,7 +1004,7 @@ log4j.logger.org.apache=INFO
 >语法
 其语法为：  
 log4j.rootLogger = [ level ] , appenderName1, appenderName2, …  
-level: 是日志记录的优先级，分为OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL或  
+level: 是日志记录的优先级，分为OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、ALL或  
 者您定义的级别。Log4j建议只使用四个级别，优 先级从高到低分别是ERROR、WARN、INFO、DEBUG。通过在这里定义的级别，您可以控制到应用程序中相应级别的日志信息的开关。比如在这里定 义了INFO级别，则应用程序中所有DEBUG级别的日志信息将不被打印出来。  
 appenderName: 就是指定日志信息输出到哪个地方。您可以同时指定多个输出目的地。  
 例如：log4j.rootLogger＝info,A1,B2,C3
@@ -1017,7 +1017,7 @@ log4j.rootLogger为根logger，这个必须配置,用于指定默认的输出级
 
 DEBUG表示输出级别
 
-级别有8中，级别从小到大 ALL<RACE<DEBUG<INFO<WARN<ERROR<FATAL<OFF，只有大于和等于设置的级别的日志才会输出
+级别有8中，级别从小到大 ALL<TRACE<DEBUG<INFO<WARN<ERROR<FATAL<OFF，只有大于和等于设置的级别的日志才会输出
 这里设置DEBUG级别，表示DEBUG，INFO，WARN，ERROR，FATAL级别的信息都会被输出
 
 各个级别表示的含义
@@ -1060,7 +1060,7 @@ log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n 自定�
 其中空格 []都会被原样输出
 >%d 表示日志产生的时间<br/>
  %t 表示产生日志的线程名称<br/>
- %p 表示日志的级别，%5p,表示级别信息会占用5个字符位置，不足5位字符使用空格补齐，%-5p，其中表示又对齐。<<br/>
+ %p 表示日志的级别，%5p,表示级别信息会占用5个字符位置，不足5位字符使用空格补齐，%-5p，其中表示右对齐。<<br/>
  %c 表示出书日志的全类名<br/>
  %m 表示输出的附加信息<br/>
  %n 表示换行<br/>
@@ -1068,7 +1068,7 @@ log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n 自定�
 %p: 输出日志信息优先级，即DEBUG，INFO，WARN，ERROR，FATAL,  
 %d: 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyyy MM dd HH:mm:ss,SS}，输出类似：2002年10月18日 22：10：28，921  
 %r: 输出自应用启动到输出该log信息耗费的毫秒数  
-%c: 输出日志信息所属的类目，通常就是所在类的全名  
+%c: 输出日志信息所属的类，通常就是所在类的全名  
 %t: 输出产生该日志事件的线程名  
 %l: 输出日志事件的发生位置，相当于%C.%M(%F:%L)的组合,包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main (TestLog4.java:10)  
 %x: 输出和当前线程相关联的NDC(嵌套诊断环境),尤其用到像java servlets这样的多客户多线程的应用中。  
@@ -1085,7 +1085,7 @@ log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n 自定�
 
 
 
-#### 3.4制定的特别包的输出级别
+#### 3.4指定的特别包的输出级别
 
 配置某个包下的特殊的输出级别
 log4j.logger.org.apache=INFO，这里log4j.logger是固定的，org.apache表示需要特殊处理的包的输出级别为INFO
