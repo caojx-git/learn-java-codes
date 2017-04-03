@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="tomcat中配置https">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tomcat/ssh-protocl.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/linux/.~inux学习.docx" />
+    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-link1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-link2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-register1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-register2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-register3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-register4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-resolve1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-resolve2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-resolve3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-resolve4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-resolve5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-securityGroup1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-securityGroup2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-securityGroup3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-securityGroup4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-securityGroup5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/tool/tengxuyun/txy-tomcat-result.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.md" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/linux/.~inux学习.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tomcat/tomcat中配置https.md" afterPath="$PROJECT_DIR$/tomcat/tomcat中配置https.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,18 +38,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="非对称加密.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/images/tomcat/非对称加密.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tomcat中配置https.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tomcat中配置https.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tomcat/tomcat中配置https.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="67">
+              <first_editor relative-caret-position="190">
                 <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
                 <folding>
                   <marker date="1491188640436" expanded="true" signature="3364:4144" ph="..." />
@@ -74,6 +84,21 @@
                   <marker date="1491188640436" expanded="true" signature="11364:11471" ph="..." />
                   <marker date="1491188640436" expanded="true" signature="11495:11578" ph="..." />
                   <marker date="1491188640436" expanded="true" signature="12976:13204" ph="..." />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="基于腾讯云的域名绑定与tomcat部署.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+                <folding>
+                  <marker date="1491190478043" expanded="true" signature="1810:1888" ph="..." />
                 </folding>
               </first_editor>
               <second_editor />
@@ -143,6 +168,7 @@
         <option value="$PROJECT_DIR$/markdown/haroopad安装.md" />
         <option value="$PROJECT_DIR$/markdown/markdown入门.md" />
         <option value="$PROJECT_DIR$/tomcat/tomcat中配置https.md" />
+        <option value="$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.md" />
       </list>
     </option>
   </component>
@@ -196,21 +222,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tomcat" />
+              <option name="myItemId" value="tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tengxuyun" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -225,24 +245,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tomcat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -280,6 +282,7 @@
       <recent name="$PROJECT_DIR$/images/git" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/tool/tengxuyun" />
       <recent name="$PROJECT_DIR$/images/git" />
     </key>
   </component>
@@ -683,7 +686,7 @@
       <workItem from="1491063193600" duration="74000" />
       <workItem from="1491114724063" duration="111000" />
       <workItem from="1491146850824" duration="814000" />
-      <workItem from="1491181891308" duration="5510000" />
+      <workItem from="1491181891308" duration="7382000" />
     </task>
     <task id="LOCAL-00001" summary="git 常用命令">
       <created>1490973845562</created>
@@ -853,11 +856,18 @@
       <option name="project" value="LOCAL" />
       <updated>1491187686939</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="tomcat中配置https笔记更新">
+      <created>1491188661307</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1491188661307</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14744000" />
+    <option name="totallyTimeSpent" value="16616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
@@ -878,7 +888,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32175228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2734139" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -921,11 +931,16 @@
     <MESSAGE value="Centos7中安装haroopad" />
     <MESSAGE value="更新markdown入门笔记" />
     <MESSAGE value="tomcat中配置https" />
-    <option name="LAST_COMMIT_MESSAGE" value="tomcat中配置https" />
+    <MESSAGE value="tomcat中配置https笔记更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="tomcat中配置https笔记更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/git/2_git和GitHub.md">
@@ -1318,7 +1333,7 @@
     <entry file="file://$PROJECT_DIR$/tomcat/tomcat中配置https.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="67">
+          <first_editor relative-caret-position="190">
             <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
             <folding>
               <marker date="1491188640436" expanded="true" signature="3364:4144" ph="..." />
@@ -1360,6 +1375,19 @@
               <marker date="1491188640436" expanded="true" signature="11364:11471" ph="..." />
               <marker date="1491188640436" expanded="true" signature="11495:11578" ph="..." />
               <marker date="1491188640436" expanded="true" signature="12976:13204" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
+            <folding>
+              <marker date="1491190478043" expanded="true" signature="1810:1888" ph="..." />
             </folding>
           </first_editor>
           <second_editor />
