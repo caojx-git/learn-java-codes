@@ -498,4 +498,4 @@ public class ParameterTest {
 ```
 #### 3.2.2 JUnit参数化设置测试结果
 
-![](images/junit-parameter.png)
+![](images/junit4-parameter.png)
