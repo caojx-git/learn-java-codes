@@ -2,7 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maven/maven的使用.docx" afterPath="$PROJECT_DIR$/maven/maven的使用.docx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit-parameter.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-JunitFlowTest-run.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-autocreateTest.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-eclipse-keyamp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-idea-keymap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-idea-plugins.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-project1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-run1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-suit1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/images/junit4-testfailure.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-JunitFlowTest-run.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-autocreateTest.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-eclipse-keyamp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-idea-keymap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-idea-plugins.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-parameter.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-project1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-run1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-suit1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/junit4/junit4-testfailure.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/.idea/artifacts/learn_junit4_Web_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/main/java/pers/java/caojx/learn/junit4/util/Calculate.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/CalculateTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/ErrorAndFailureTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/JunitAnnotation.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/JunitFlowTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/ParameterTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/SuiteTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest1.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/junit4/junit4使用.md" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/spring-mvc/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../code/mybatis/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../code/spring-mvc/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../code/spring-mvc/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/spring-mvc.iml" afterPath="$PROJECT_DIR$/../code/spring-mvc/spring-mvc.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,7 +58,129 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="springmvc学习.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="519">
+                <caret line="2631" column="0" lean-forward="false" selection-start-line="2631" selection-start-column="0" selection-end-line="2631" selection-end-column="0" />
+                <folding>
+                  <marker date="1490977691681" expanded="true" signature="1761:2516" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="2012:2336" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="2358:2504" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="2752:4391" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="2968:3047" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="3058:3616" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="3631:3671" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="3688:4207" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="3841:3957" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="3981:4145" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="4230:4379" ph="..." />
+                  <marker date="1490977691681" expanded="false" signature="13716:13933" ph="..." />
+                  <marker date="1490977691681" expanded="true" signature="13935:13975" ph="/**...*/" />
+                  <marker date="1490977691681" expanded="true" signature="14185:14240" ph="{...}" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="junit4使用.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/junit4/junit4使用.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="32">
+                <caret line="475" column="4" lean-forward="false" selection-start-line="475" selection-start-column="4" selection-end-line="475" selection-end-column="4" />
+                <folding>
+                  <marker date="1491231807390" expanded="true" signature="768:911" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="1016:1112" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="1171:1181" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="1194:1200" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="1239:1249" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="1262:1268" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="1307:1317" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="1330:1336" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="1373:1383" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="1396:1402" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="1538:1640" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="1642:1742" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="1777:2131" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="2167:2177" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="2219:2225" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="2231:2262" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="2303:2313" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="2360:2366" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="2372:2403" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="2444:2454" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="2501:2507" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="2513:2542" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="2581:2591" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="2636:2642" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="3215:3328" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="3330:3426" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="3468:3643" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="3679:3689" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="3731:3737" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="3777:3787" ph=" { " />
+                  <marker date="1491231807390" expanded="true" signature="3832:3838" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="3999:4046" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="4048:4145" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="4180:4396" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="4473:4534" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="4613:4674" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="4729:4785" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="4842:4897" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="4952:5009" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="5069:5131" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="5191:5253" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="5311:5371" ph="{...}" />
+                  <marker date="1491231807390" expanded="false" signature="5548:5658" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="5660:5757" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="false" signature="6249:6260" ph=" { " />
+                  <marker date="1491231807390" expanded="false" signature="6306:6312" ph=" }" />
+                  <marker date="1491231807390" expanded="true" signature="6319:6370" ph="@{...}" />
+                  <marker date="1491231807390" expanded="true" signature="6399:6489" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="6495:6552" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="6610:6750" ph="{...}" />
+                  <marker date="1491231807390" expanded="false" signature="7216:7296" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="7298:7395" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="7396:7518" ph="@{...}" />
+                  <marker date="1491231807390" expanded="false" signature="7863:7868" ph=" { " />
+                  <marker date="1491231807390" expanded="false" signature="7911:7914" ph=" }" />
+                  <marker date="1491231807390" expanded="false" signature="8046:8051" ph=" { " />
+                  <marker date="1491231807390" expanded="false" signature="8094:8097" ph=" }" />
+                  <marker date="1491231807390" expanded="false" signature="8230:8235" ph=" { " />
+                  <marker date="1491231807390" expanded="false" signature="8278:8281" ph=" }" />
+                  <marker date="1491231807390" expanded="false" signature="8486:8778" ph="..." />
+                  <marker date="1491231807390" expanded="true" signature="8780:8879" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="9232:9333" ph="{...}" />
+                  <marker date="1491231807390" expanded="true" signature="9339:9391" ph="/**...*/" />
+                  <marker date="1491231807390" expanded="true" signature="9451:9565" ph="{...}" />
+                  <marker date="1491231807390" expanded="false" signature="9606:9617" ph=" { " />
+                  <marker date="1491231807390" expanded="false" signature="9677:9683" ph=" }" />
+                </folding>
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1_CentOS7中安装git.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/git/1_CentOS7中安装git.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="152">
+                <caret line="71" column="10" lean-forward="false" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="24" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -81,6 +243,8 @@
         <option value="$PROJECT_DIR$/markdown/markdown入门.md" />
         <option value="$PROJECT_DIR$/tomcat/tomcat中配置https.md" />
         <option value="$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.md" />
+        <option value="$PROJECT_DIR$/junit4/junit4学习.md" />
+        <option value="$PROJECT_DIR$/junit4/junit4使用.md" />
       </list>
     </option>
   </component>
@@ -94,7 +258,7 @@
     <option name="x" value="-1" />
     <option name="y" value="28" />
     <option name="width" value="1368" />
-    <option name="height" value="707" />
+    <option name="height" value="741" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -112,6 +276,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -134,15 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tengxuyun" />
+              <option name="myItemId" value="junit4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -157,6 +316,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="junit4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -176,9 +353,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,6 +364,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/junit4" />
+      <recent name="$PROJECT_DIR$/images/junit4" />
       <recent name="$PROJECT_DIR$/images/tomcat" />
       <recent name="$PROJECT_DIR$/images/git" />
     </key>
@@ -599,7 +775,11 @@
       <workItem from="1491114724063" duration="111000" />
       <workItem from="1491146850824" duration="814000" />
       <workItem from="1491181891308" duration="8173000" />
-      <workItem from="1491201222379" duration="5000" />
+      <workItem from="1491201222379" duration="33000" />
+      <workItem from="1491208368322" duration="1104000" />
+      <workItem from="1491225937615" duration="17000" />
+      <workItem from="1491225982735" duration="623000" />
+      <workItem from="1491231212996" duration="608000" />
     </task>
     <task id="LOCAL-00001" summary="git 常用命令">
       <created>1490973845562</created>
@@ -797,14 +977,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491190708773</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="更新maven笔记">
+      <created>1491201245689</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1491201245689</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17412000" />
+    <option name="totallyTimeSpent" value="19792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
+    <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -815,20 +1002,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27719033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28851965" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -868,7 +1055,8 @@
     <MESSAGE value="tomcat中配置https笔记更新" />
     <MESSAGE value="添加笔记基于腾讯云的域名绑定与tomcat部署" />
     <MESSAGE value="修改基于腾讯云的域名绑定与tomcat部署的显示样式" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改基于腾讯云的域名绑定与tomcat部署的显示样式" />
+    <MESSAGE value="更新maven笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新maven笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -879,6 +1067,84 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1490977691681" expanded="true" signature="1761:2516" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2012:2336" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2358:2504" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2752:4391" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2968:3047" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3058:3616" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3631:3671" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3688:4207" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3841:3957" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3981:4145" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="4230:4379" ph="..." />
+              <marker date="1490977691681" expanded="false" signature="13716:13933" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="13935:13975" ph="/**...*/" />
+              <marker date="1490977691681" expanded="true" signature="14185:14240" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1490977691681" expanded="true" signature="1761:2516" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2012:2336" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2358:2504" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2752:4391" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2968:3047" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3058:3616" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3631:3671" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3688:4207" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3841:3957" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3981:4145" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="4230:4379" ph="..." />
+              <marker date="1490977691681" expanded="false" signature="13716:13933" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="13935:13975" ph="/**...*/" />
+              <marker date="1490977691681" expanded="true" signature="14185:14240" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding>
+              <marker date="1490977691681" expanded="true" signature="1761:2516" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2012:2336" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2358:2504" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2752:4391" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2968:3047" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3058:3616" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3631:3671" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3688:4207" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3841:3957" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3981:4145" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="4230:4379" ph="..." />
+              <marker date="1490977691681" expanded="false" signature="13716:13933" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="13935:13975" ph="/**...*/" />
+              <marker date="1490977691681" expanded="true" signature="14185:14240" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/git/2_git和GitHub.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1035,16 +1301,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/idea/Intellij Idea中找不到suberversion解决方案.md" />
     <entry file="file://$PROJECT_DIR$/linux/500 Illegal PORT command的问题(主被动模式).md" />
-    <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="49934">
-            <caret line="2631" column="0" lean-forward="false" selection-start-line="2631" selection-start-column="0" selection-end-line="2631" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/CentOS7中IDEA或WPS无法切换中文输入法解决方案.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1190,16 +1446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/git/1_CentOS7中安装git.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="-1923">
-            <caret line="30" column="84" lean-forward="true" selection-start-line="30" selection-start-column="84" selection-end-line="30" selection-end-column="84" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/git/2_git和GitHub.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1260,6 +1506,121 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="190">
             <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="519">
+            <caret line="2631" column="0" lean-forward="false" selection-start-line="2631" selection-start-column="0" selection-end-line="2631" selection-end-column="0" />
+            <folding>
+              <marker date="1490977691681" expanded="true" signature="1761:2516" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2012:2336" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2358:2504" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2752:4391" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="2968:3047" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3058:3616" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3631:3671" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3688:4207" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3841:3957" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="3981:4145" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="4230:4379" ph="..." />
+              <marker date="1490977691681" expanded="false" signature="13716:13933" ph="..." />
+              <marker date="1490977691681" expanded="true" signature="13935:13975" ph="/**...*/" />
+              <marker date="1490977691681" expanded="true" signature="14185:14240" ph="{...}" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/git/1_CentOS7中安装git.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="152">
+            <caret line="71" column="10" lean-forward="false" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="24" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junit4/junit4使用.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="32">
+            <caret line="475" column="4" lean-forward="false" selection-start-line="475" selection-start-column="4" selection-end-line="475" selection-end-column="4" />
+            <folding>
+              <marker date="1491231807390" expanded="true" signature="768:911" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="1016:1112" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="1171:1181" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="1194:1200" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="1239:1249" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="1262:1268" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="1307:1317" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="1330:1336" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="1373:1383" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="1396:1402" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="1538:1640" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="1642:1742" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="1777:2131" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="2167:2177" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="2219:2225" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="2231:2262" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="2303:2313" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="2360:2366" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="2372:2403" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="2444:2454" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="2501:2507" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="2513:2542" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="2581:2591" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="2636:2642" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="3215:3328" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="3330:3426" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="3468:3643" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="3679:3689" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="3731:3737" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="3777:3787" ph=" { " />
+              <marker date="1491231807390" expanded="true" signature="3832:3838" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="3999:4046" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="4048:4145" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="4180:4396" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="4473:4534" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="4613:4674" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="4729:4785" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="4842:4897" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="4952:5009" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="5069:5131" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="5191:5253" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="5311:5371" ph="{...}" />
+              <marker date="1491231807390" expanded="false" signature="5548:5658" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="5660:5757" ph="/**...*/" />
+              <marker date="1491231807390" expanded="false" signature="6249:6260" ph=" { " />
+              <marker date="1491231807390" expanded="false" signature="6306:6312" ph=" }" />
+              <marker date="1491231807390" expanded="true" signature="6319:6370" ph="@{...}" />
+              <marker date="1491231807390" expanded="true" signature="6399:6489" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="6495:6552" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="6610:6750" ph="{...}" />
+              <marker date="1491231807390" expanded="false" signature="7216:7296" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="7298:7395" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="7396:7518" ph="@{...}" />
+              <marker date="1491231807390" expanded="false" signature="7863:7868" ph=" { " />
+              <marker date="1491231807390" expanded="false" signature="7911:7914" ph=" }" />
+              <marker date="1491231807390" expanded="false" signature="8046:8051" ph=" { " />
+              <marker date="1491231807390" expanded="false" signature="8094:8097" ph=" }" />
+              <marker date="1491231807390" expanded="false" signature="8230:8235" ph=" { " />
+              <marker date="1491231807390" expanded="false" signature="8278:8281" ph=" }" />
+              <marker date="1491231807390" expanded="false" signature="8486:8778" ph="..." />
+              <marker date="1491231807390" expanded="true" signature="8780:8879" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="9232:9333" ph="{...}" />
+              <marker date="1491231807390" expanded="true" signature="9339:9391" ph="/**...*/" />
+              <marker date="1491231807390" expanded="true" signature="9451:9565" ph="{...}" />
+              <marker date="1491231807390" expanded="false" signature="9606:9617" ph=" { " />
+              <marker date="1491231807390" expanded="false" signature="9677:9683" ph=" }" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
