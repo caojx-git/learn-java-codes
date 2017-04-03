@@ -1,10 +1,10 @@
 [toc]
 
-##一、mybatis入门实现增删改查
+## 一、mybatis入门实现增删改查
 这里我们使用mybatis去实现一个自动回复机器人的功能的实现。
 
 
-###1.1实现页面跳转
+### 1.1实现页面跳转
 #### 1.1.1 ListServlet.java实现页面跳转 
 
 在src下边新建com.imooc.servlet包，将ListServlet.java类放在这个包下
@@ -35,7 +35,7 @@ public class ListServlet extends HttpServlet {
 ```
 项目结构图
 
-![mybatis project](/home/caojx/learn/notes/images/mybatis/mybatis-project1.png)
+![mybatis project](images/mybatis-project1.png)
 
 
 #### 1.1.2 list.jsp页面
@@ -147,9 +147,9 @@ list.jsp页面用于展示页面列表，这个文件放在WEB-INF/jsp/back/list
 ```
 
 项目结构图
-![](/home/caojx/learn/notes/images/mybatis/mybatis-project2.png)
+![](images/mybatis-project2.png)
 
-####1.1.3 web.xml文件
+#### 1.1.3 web.xml文件
 
 ```xml
 
@@ -174,15 +174,15 @@ list.jsp页面用于展示页面列表，这个文件放在WEB-INF/jsp/back/list
 	</servlet-mapping>
 ```
 
-####1.1.4 结果
+#### 1.1.4 结果
 
 下图是占时没有从数据库中获取数据，所以列表页面是空的
-![](/home/caojx/learn/notes/images/mybatis/mybatis-list1.png)
+![](images/mybatis-list1.png)
 
 
-###1.2 建表和连接数据库
+### 1.2 建表和连接数据库
 
-####1.2.1 建表
+#### 1.2.1 建表
 
 新建db包，在下边建立db.sql数据库文件，文件内容如下
 
@@ -213,7 +213,7 @@ INSERT INTO message VALUES (0018, '电影', '近日上映大片', '《忍者神�
 INSERT INTO message VALUES (0017, '彩票', '中奖号码', '查啥呀查,你不会中奖的！');
 ```
 
-####1.2.2 建立Message.java基础类
+#### 1.2.2 建立Message.java基础类
 
 ```java
 package com.imooc.bean;
@@ -268,9 +268,9 @@ public class Message {
 
 项目结构图
 
-![](/home/caojx/learn/notes/images/mybatis/mybatis-project3.png)
+![](images/mybatis-project3.png)
 
-####1.2.3 ListServlet.java 从数据库中查询数据
+#### 1.2.3 ListServlet.java 从数据库中查询数据
 
 ```java
 package com.imooc.servlet;
@@ -328,11 +328,11 @@ public class ListServlet extends HttpServlet {
 ```
 
 结果
-![](/home/caojx/learn/notes/images/mybatis/mybatis-list2.png)
+![](images/mybatis-list2.png)
 
-###1.3 列表查询
+### 1.3 列表查询
 
-####1.3.1 ListServlet.java接受页面传过来的参数，实现条件查询
+#### 1.3.1 ListServlet.java接受页面传过来的参数，实现条件查询
 
 ```java
 package com.imooc.servlet;
@@ -416,14 +416,14 @@ public class ListServlet extends HttpServlet {
 ```
 
 结果
-![](/home/caojx/learn/notes/images/mybatis/mybatis-list4.png)
+![](images/mybatis-list4.png)
 
 
-###1.4 代码重构
+### 1.4 代码重构
 
 上面的代码，没有分层，在正规的项目开发中还需要对代码进行分层
 
-####1.4.1新建Dao层和Service业务逻辑层
+#### 1.4.1新建Dao层和Service业务逻辑层
 
 1.MessageDao.java
 
@@ -600,19 +600,19 @@ public class ListServlet extends HttpServlet {
 
 结果：
 
-![](/home/caojx/learn/notes/images/mybatis/mybatis-project4.png)
-![](/home/caojx/learn/notes/images/mybatis/mybatis-list5.png)
+![](images/mybatis-project4.png)
+![](images/mybatis-list5.png)
 
 
-##二、开始使用mybatis
+## 二、开始使用mybatis
 
 
-###2.1.1准备jar包
+### 2.1.1准备jar包
 
-![](/home/caojx/learn/notes/images/mybatis/mybatis-jar.png)
+![](images/mybatis-jar.png)
 
 
-####2.1.2 使用mybatis连接数据库
+#### 2.1.2 使用mybatis连接数据库
 
 使用mybatis连接数据库，会获取到一个SqlSession对象，这个对象的如下作用是
 
@@ -632,7 +632,7 @@ public class ListServlet extends HttpServlet {
 
 3.通过SqlSessionFactory打开一个数据库会话
 
-####2.1.3 Configuration.xml mybatis核心配置文件
+#### 2.1.3 Configuration.xml mybatis核心配置文件
 
 mybatis与hiberante类似，也有一个核心配置文件，这个配置文件名默认为
 Configuration.xml，这个文件主要配置数据库连接的相关信息，实体类映射文件，
@@ -679,7 +679,7 @@ Configuration.xml，这个文件主要配置数据库连接的相关信息，实
 </configuration>
 ```
 
-####2.1.4 DBAccess.java连接数据库的工具类
+#### 2.1.4 DBAccess.java连接数据库的工具类
 
 这个类，主要用于mybatis读取配置文件，获取SqlSession，新建DBAccess.java类
 
@@ -720,7 +720,7 @@ public class DBAccess {
 }
 ```
 
-####2.1.5 MessageDao.java
+#### 2.1.5 MessageDao.java
 
 这里使用mybatis数据库进行查询，修改MessageDao.java的内容
  
@@ -775,7 +775,7 @@ public class MessageDao {
 }
 ```
 
-####2.1.6 Message.xml
+#### 2.1.6 Message.xml
 
 使用mybatis的时候，一般每个实体类会对应一个sql配置文件，查询的sql写在配置文件中，这里与使用
 hibernate不同。
@@ -831,18 +831,18 @@ hibernate不同。
 </mapper>
 ```
 项目结构图
-![](/home/caojx/learn/notes/images/mybatis/mybatis-project5.png)
+![](images/mybatis-project5.png)
 
 结果
-![](/home/caojx/learn/notes/images/mybatis/mybatis-list6.png)
+![](images/mybatis-list6.png)
 
 
-###2.2动态sql拼接
+### 2.2动态sql拼接
 
 在前边，我们已经可以正常的使用mybatis了，不过查询条件还没有传入到配置文件的sql中,我们可以将查询
 条件设置到某个对象中，在配置文件中动态的拼接出来。
 
-####2.2.1 MessageDao.java
+#### 2.2.1 MessageDao.java
 
 对这个类进行修改，将查询参数传入到sql中
 
@@ -905,9 +905,9 @@ public class MessageDao {
 
 mybatis中主要使用ognl表达式获取parameterType中传入的参数值，规则如下
 
-![](/home/caojx/learn/notes/images/mybatis/mybatis-param1.png)
+![](images/mybatis-param1.png)
 
-![](/home/caojx/learn/notes/images/mybatis/mybatis-param2.png)
+![](images/mybatis-param2.png)
 
 Message.xml文件
 
@@ -979,10 +979,10 @@ Message.xml文件
 
 查询结果
 
-![](/home/caojx/learn/notes/images/mybatis/mybatis-list7.png)
+![](images/mybatis-list7.png)
 
 
-##三、配置log4j日志输出
+## 三、配置log4j日志输出
 
 配置log4j的时候，我们只需要将jar包和配置文件放到相应的位置，就可以看到mybatis输出sql语句了。
 我们将log4j的配置文件log4jfile.properties文件放到src目录下,mybaits就会识别出我们使用的是那种日志包，mybatis中
@@ -1009,7 +1009,7 @@ level: 是日志记录的优先级，分为OFF、FATAL、ERROR、WARN、INFO、D
 appenderName: 就是指定日志信息输出到哪个地方。您可以同时指定多个输出目的地。  
 例如：log4j.rootLogger＝info,A1,B2,C3
 
-####3.1日志的输出级别
+#### 3.1日志的输出级别
 log4j.rootLogger=DEBUG,Console,file 用于说明日志输出的级别，位置
 
 其中
@@ -1031,7 +1031,7 @@ DEBUG表示输出级别
   TRACE 为比DEBUG更细粒度的事件信息  
   ALL 为最低等级，将打开所有级别的日志 
 
-####3.2日志的输出位置
+#### 3.2日志的输出位置
 Console，表示输出的位置是控制台
 不过输出位置，并不是完全由这里决定的，主要的是由类log4j.appender.Console=org.apache.log4j.ConsoleAppender决定
 Console只是一个标识符号，没有什么意义，只要与log4j.appender.Console中最后一个单词对应即可，即
@@ -1053,7 +1053,7 @@ log4j.rootLogger=DEBUG,A,B,C,..
  4.org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）  
  5.org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
 
-####3.3日志的输出格式
+#### 3.3日志的输出格式
 log4j.appender.Console.layout=org.apache.log4j.PatternLayout是布局类
 
 log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n 自定义输出格式
@@ -1085,12 +1085,12 @@ log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n 自定�
 
 
 
-####3.4制定的特别包的输出级别
+#### 3.4制定的特别包的输出级别
 
 配置某个包下的特殊的输出级别
 log4j.logger.org.apache=INFO，这里log4j.logger是固定的，org.apache表示需要特殊处理的包的输出级别为INFO
 
-####3.5 配中多个输出模式
+#### 3.5 配中多个输出模式
 
 ```properties
 log4j.rootLogger=DEBUG,Console,file
@@ -1116,7 +1116,7 @@ log4j.appender.file.MaxFileSize=10MB
 log4j.logger.mylogger这种自定义日志组件的可以配置多个。
 注意：=号两边不能有空格，有时候文件中不能写入内容，确认自己没有写错的话，换一个路径看一下。
 
-####3.6 使用
+#### 3.6 使用
 ```java
 package com.imooc.servlet;
 
@@ -1176,12 +1176,12 @@ public class ListServlet extends HttpServlet {
 }
 
 ```
-####3.6 日志输出
+#### 3.6 日志输出
 
 运行项目后我们将会在控制台
-![](/home/caojx/learn/notes/images/mybatis/mybatis-log4j.png)
+![](images/mybatis-log4j.png)
 在文件中看日志输出
-![](/home/caojx/learn/notes/images/mybatis/mybatis-log4j2.png)
+![](images/mybatis-log4j2.png)
 
 
 推荐文章：
@@ -1190,11 +1190,11 @@ http://blog.csdn.net/hu_shengyang/article/details/6754031<br/>
 http://swiftlet.net/archives/683<br/>
 
 
-##四、实现单条信息删除和批量删除
+## 四、实现单条信息删除和批量删除
 
-###4.1消息单条删除
+### 4.1消息单条删除
 
-####4.1.1Message.xml
+#### 4.1.1Message.xml
 
 数据单条删除先在Message.xml文件中添加删除的sql配置，	删除单条消息只需要传入messageId，即传入一个参数，为基本类型。
 基本数据类型：只能传入一个。通过#{参数名}或者是#{_parameter} 即可获取传入的值,
@@ -1277,7 +1277,7 @@ http://swiftlet.net/archives/683<br/>
 
 </mapper>
 ```
-####4.1.2 MessageDao
+#### 4.1.2 MessageDao
 
 添加deleteOne方法，对消息进行单条删除
 ```java
@@ -1363,7 +1363,7 @@ public class MessageDao {
 
 ```
 
-####4.1.3MessageService.java
+#### 4.1.3MessageService.java
 
 同样添加deleteOne方法
 ```java
@@ -1405,7 +1405,7 @@ public class MessageService {
 }
 ```
 
-####4.1.4 DeleteOneServlet.java
+#### 4.1.4 DeleteOneServlet.java
 
 ```java
 package com.imooc.servlet;
@@ -1461,7 +1461,7 @@ public class DeleteOneServlet extends HttpServlet{
 
 ```
 
-####4.1.5web.xml
+#### 4.1.5web.xml
 配置deleteOne.action
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1495,22 +1495,22 @@ public class DeleteOneServlet extends HttpServlet{
 	</servlet-mapping>
 </web-app>
 ```
-####4.1.6运行
+#### 4.1.6运行
 这里我们删除第9条数据，指令为查看的
-![](/home/caojx/learn/notes/images/mybatis/mybatis-deleteOne1.png)
+![](images/mybatis-deleteOne1.png)
 删除后
-![](/home/caojx/learn/notes/images/mybatis/mybatis-deleteOne2.png)
+![](images/mybatis-deleteOne2.png)
 
 ****
-###4.2消息批量删除
+### 4.2消息批量删除
 
 
-##五、实现自动回复功能
+## 五、实现自动回复功能
 
 
-##六、一对一，一对多
+## 六、一对一，一对多
 
-##七、常用标签
+## 七、常用标签
 
 
 
