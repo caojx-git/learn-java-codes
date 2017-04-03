@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="learn-junit4:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/learn_junit4_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="learn-junit4/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="learn-junit4" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
