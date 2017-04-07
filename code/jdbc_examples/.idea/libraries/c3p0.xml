@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="c3p0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../jar/jdbc/c3p0" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../jar/jdbc/dbcp/commons-dbcp2-2.1.1/apidocs" />
+      <root url="file://$PROJECT_DIR$/../jar/jdbc/dbcp/commons-logging-1.2/apidocs" />
+      <root url="file://$PROJECT_DIR$/../jar/jdbc/dbcp/commons-pool2-2.4.2/apidocs" />
+    </JAVADOC>
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../jar/jdbc/c3p0" recursive="false" />
+  </library>
+</component>
