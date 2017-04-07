@@ -849,10 +849,10 @@ public class UserController2 {
 
 
 
-##八.springmvc参数传递
+### 八.springmvc参数传递
 
 	
-### 8.1修改编码，加强对中文的支持
+#### 8.1修改编码，加强对中文的支持
 前台页面向后台提交参数的时候，中文经常出现乱码问题，可以检查一下下边的配置。
 1.检查项目的编码是否为UTF-8
 2.设置tomcat服务的编码，在server.xml文件中修改为如下
@@ -922,7 +922,7 @@ public class UserController2 {
 </web-app>
 ```
 
-### 8.2参数的几种传递方式（前台到后台，后台到前台）
+#### 8.2参数的几种传递方式（前台到后台，后台到前台）
 
 >前台到后台的参数传递
 
@@ -933,7 +933,7 @@ public class UserController2 {
 
 **方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
 
-####  8.2.1前台页面参数名与方法参数名称一致（之前台到后台）
+#####  8.2.1前台页面参数名与方法参数名称一致（之前台到后台）
 **方式一:通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
 这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式**
 
@@ -1194,11 +1194,11 @@ public class DataController {
 
 结果与之前的一致，这里就不再提供截图了。
 
-### 8.3传递json数据（之前台到后台）
+#### 8.3传递json数据（之前台到后台）
 json数据格式是web开发中一种常用数据传递格式，这里我们使用一个简单的案例来演示对json数据的传递
 
 
-####  8.3.1json.jsp页面（之前台到后台）
+#####  8.3.1json.jsp页面（之前台到后台）
 将参数提交到后台页面，然后接受后台返回的参数
 
 ```jsp
@@ -1526,9 +1526,13 @@ public class DataController2 {
 ```
 
 
-##九.SpringMVC文件上传
+### 九.SpringMVC文件上传
 
-### 9.1springmvc-annotaion-servlet.xml
+使用springmvc文件上传功能需要添加两个jar包  
+com.springsource.org.apache.commons.fileupload-1.2.0.jar  
+com.springsource.org.apache.commons.io-1.4.0.jar  
+
+#### 9.1springmvc-annotaion-servlet.xml
 
 添加文件上传解析器
 
@@ -1540,7 +1544,7 @@ public class DataController2 {
     </bean>
 ```
 
-### 9.2DataController2.java
+#### 9.2DataController2.java
 
 这里使用两种方式上传文件
 
@@ -1649,7 +1653,7 @@ public class DataController2 {
 
 ```
 
-### 9.3upload.jsp
+#### 9.3upload.jsp
 
 上传文件的时候，需要设置一下form表单的enctype：有下边3个值
 
@@ -1683,12 +1687,12 @@ text/plain 空格转换为“+”加号，但不对特殊字符编码
 </html>
 ```
 
-##十.springmvc和spring的集成
+### 十.springmvc和spring的集成
 
 springmvc集成spring的时候，主要需要在web.xml中配置ContextLoaderListener
 Listener:org.springframework.web.context.ContextLoaderListener 主要是用来加载spring所需药的配置文件
 
-### 10.1web.xml文件的修改
+#### 10.1web.xml文件的修改
 添加ContextLoaderListener Listener配置
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1782,7 +1786,7 @@ Listener:org.springframework.web.context.ContextLoaderListener 主要是用来�
 </web-app>
 ```
 
-### 10.2 applicationContext.xml
+#### 10.2 applicationContext.xml
 新建applicationContext.xml对对spring进行配置，这里简单的配置一个bean
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1794,7 +1798,7 @@ Listener:org.springframework.web.context.ContextLoaderListener 主要是用来�
     <bean id="springManager" class="com.learn.annotaion.SpringManager"></bean>
 </beans>
 ```
-### 10.3 ISpring.java
+#### 10.3 ISpring.java
 定义springManager的服务接口
 
 ```java
@@ -1802,7 +1806,7 @@ public interface ISpring {
     public String get();
 }
 ```
-### 10.4 SpringManager.java
+#### 10.4 SpringManager.java
 
 用户实现ISpring接口，实现一些简单的操作
 
@@ -1816,7 +1820,7 @@ public class SpringManager implements ISpring {
     }
 }
 ```
-### 10.5 SpringController.java
+#### 10.5 SpringController.java
 
 ```java
 package com.learn.annotaion;
@@ -1850,7 +1854,7 @@ public class SpringController {
 }
 ```
 
-### 10.6success2.jsp
+#### 10.6success2.jsp
 spring配置成功后，跳转到该页面
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -1863,11 +1867,11 @@ spring集成成功！
 </body>
 </html>
 ```
-### 10.7结果
+#### 10.7结果
 
 ![](../images/spring/springmvc/spring/springmvc-spring1.png)
 
-### 10.8spring与springmvc的上下文关系
+#### 10.8spring与springmvc的上下文关系
 
 spring可以理解成为一个对象的容器，对象都装载到spring容器中，而spring的上下文Context（也可以理解为容器）
 获取到该上下文对象后就可以获取到spring中装载的bean了。
@@ -1891,15 +1895,15 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 ```
 
 
-##十一、spring与Hibernate4集成
+### 十一、spring与Hibernate4集成
 
 这部分主要是扩展功能，不是springmvc中的部分，这里主要实现一个小案例，集成springmvc+spring+hibernate4进行
 集成，实现一个小的增删改查功能,其中的代码就不进行过多的分析。
 
-### 11.1 添加spring集成hibernate4所需要的jar
+#### 11.1 添加spring集成hibernate4所需要的jar
 ![](../images/spring/springmvc/hibernate/spring-hibernate-jar.png)
 
-### 11.2 Hibernate五大对象
+#### 11.2 Hibernate五大对象
 在hibernate中，可以说是围绕着这一下五大对象展开的，集成在spring中后，就交给spring对这五大对象进行管理。
 
 Configuration,相当于hibernate的上下文
