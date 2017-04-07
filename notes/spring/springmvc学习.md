@@ -1,8 +1,8 @@
 [toc]
 
-#SpringMVC
+# SpringMVC
 
-###一.Spring MVC 优点
+### 一.Spring MVC 优点
 	
    Spring MVC 和其他的Web框架一样，基于MVC设计理念
    采用松散耦合可拔插组件结构，比其他MVC框架更具有哦灵活性和扩展性。
@@ -10,7 +10,7 @@
    是Spring3.0最出彩的功能之一，此外Spring MVC在数据绑定、视图解析、本地化
    以及静态资源处理都有许多不俗的表现。它在框架的设计上已经超越了Struts、webwork
    等框架。
-###二.工作原理
+### 二.工作原理
 
 a.DispathcerServlet是其核心，相当于Spring MVC中的大管家。在web.xml中配置后，拦截所有的HTTP请求
 
@@ -25,17 +25,17 @@ c.DispatcherServelt得到真正视图对象View后，就使用View和ModeAndView
 d.最终展现给客户端--》图片、pdf文档、html页面、xml、json数据等
 
 
-###三.快速入门(基于xml配置)
+### 三.快速入门(基于xml配置)
 提示：springmvc实现主要有两种写法，xml配置和注解，注解是主流，这里先说xml配置方式的实现，后边
 再使用注解的方式。
 	
-####3.1 新建在IDEA中创建JavaEE Web工程
+####  3.1 新建在IDEA中创建JavaEE Web工程
 	
 >File->new Project->Java->JavaEE->Web Application-->工程名/工程保存位置
 
 ![](../images/spring/springmvc/springmvc-web.png)
 	
-####3.2 导入Springmvc中需要的jar包
+####  3.2 导入Springmvc中需要的jar包
 Project Structure->Project Settings->Moules->Add(jar包的路径)
 这里添加jar的方式跟Eclipse有点不同，但是思想都是一样的。
 我这里将jar添加到WEB-INF的lib下边（lib目录不存在需要手动建立）
@@ -48,7 +48,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 注意Facets中的Source Roots：下边的内容要打勾，不然会找不到类
 ![](../images/spring/springmvc/springmvc-sourceroot.png)
 	
-####3.3web.xml配置
+####  3.3web.xml配置
 对于web工程来说，项目中用到的web框架基本都需要在这里配置，springmvc同样如此，web.xml是springmvc
 的入口。
 
@@ -137,7 +137,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 ```
 
 
-####3.4 welcom.jsp
+####  3.4 welcom.jsp
 
 路径如图：
 
@@ -159,7 +159,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 </html>
 ```
 
-####3.4 HelloWorldController.java
+####  3.4 HelloWorldController.java
 ```java
 package com.learn.controller;
 
@@ -187,7 +187,7 @@ public class HelloWorldController implements Controller {
 }
 ```
 
-####3.5 springmvc配置文件springmvc-servlet.xml
+####  3.5 springmvc配置文件springmvc-servlet.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -203,7 +203,7 @@ public class HelloWorldController implements Controller {
 </beans>
 ```  
 
-####3.6 添加tomcat服务器
+####  3.6 添加tomcat服务器
 Edit Configurations
 
 ![](../images/spring/springmvc/springmvc-tomcat-add.png)
@@ -222,17 +222,17 @@ Name：取个名字，随便，图中可以看出有错，这个因为没有Depl
 
 点击Apply-->ok-->运行
 
-####3.6 结果
+####  3.6 结果
 
 ![](../images/spring/springmvc/springmvc-result.png)
 
 
 
-###四.数据传递
+### 四.数据传递
 
 HelloWorldController返回数据后，在welcome.jsp中进行接收
 
-####4.1HelloWorldController.java
+####  4.1HelloWorldController.java
 
 ```java
 package com.learn.controller;
@@ -281,7 +281,7 @@ public class HelloWorldController implements Controller {
 
 ```
 
-####4.2welcome.jsp
+####  4.2welcome.jsp
 ```jsp
 <%--
   Created by IntelliJ IDEA.
@@ -306,12 +306,12 @@ public class HelloWorldController implements Controller {
 </body>
 </html>
 ```
-####4.3结果
+####  4.3结果
 ![](../images/spring/springmvc/springmvc-result1.png)
 
 
 
-###五.spring MultiActionController 实现在一个Controller中写多个方法
+### 五.spring MultiActionController 实现在一个Controller中写多个方法
 
 
 	步骤1：写一个Controller类extends MultiActionController
@@ -345,7 +345,7 @@ public class HelloWorldController implements Controller {
 	步骤5：启动web服务器，访问http://localhost:8888/springmvc2/test1/multi?action=add
 		action的值就是请求方法
 
-####5.1 MultiController.java
+####  5.1 MultiController.java
 
 ```java
 package com.learn.controller;
@@ -381,7 +381,7 @@ public class MultiController extends MultiActionController{
 
 ```
 
-####5.2multi.jsp
+####  5.2multi.jsp
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -395,7 +395,7 @@ public class MultiController extends MultiActionController{
 </html>
 ```
 
-####5.3 springmvc-serlvet.xml
+####  5.3 springmvc-serlvet.xml
 
 这里主要添加方法参数解析器
 
@@ -431,7 +431,7 @@ public class MultiController extends MultiActionController{
 </beans>
 ```
 
-####5.4 结果
+####  5.4 结果
 
 ![](../images/spring/springmvc/springmvc-multi.png)
 
@@ -439,7 +439,7 @@ public class MultiController extends MultiActionController{
 
 ![](../images/spring/springmvc/springmvc-project.png)
 
-###六.spring mvc对静态资源的访问
+### 六.spring mvc对静态资源的访问
 
 	由于我们在web.xml中配置了如下，会拦截所有的请求，对于静态资源的话，浏览器会重新发送一次请求，也会被拦截
 	我们又没有写Controller处理这些静态资源的请求，所以会造成静态资源访问不到。
@@ -463,7 +463,7 @@ public class MultiController extends MultiActionController{
 		</body>
 
 
-####6.1 StaticController.java
+####  6.1 StaticController.java
 
 StaticController，是一个多方法Controller，img方法返回视图的路径
 ```java
@@ -489,7 +489,7 @@ public class StaticController extends MultiActionController{
 }
 
 ```
-####6.2static.jsp
+####  6.2static.jsp
 ```jsp
 <%--
   Created by IntelliJ IDEA.
@@ -511,7 +511,7 @@ public class StaticController extends MultiActionController{
 </body>
 </html>
 ```
-####6.3springmvc-servlet.xml
+####  6.3springmvc-servlet.xml
 添加对静态资源的处理
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -565,16 +565,16 @@ public class StaticController extends MultiActionController{
 </beans>
 ```
 
-####6.4 结果
+####  6.4 结果
 ![](../images/spring/springmvc/springmvc-img.png)
 
 
-###七.springmvc注解配置
+### 七.springmvc注解配置
 	
 之前使用的都是xml配置方式，其实springmvc使用最多的是注解方式，使用起来非常简单方便
 这里我们使用一个新的springmvc的配置文件springmvc-annotation-servlet.xml，之前的那个咱时不用了
     
-####7.1 web.xml
+####  7.1 web.xml
 在web.xml修改springmvc需要的配置文件所在的路径指向springmvc-annotaion-servlet.xml  
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -623,7 +623,7 @@ public class StaticController extends MultiActionController{
 </web-app>
 ```
     
-####7.2 springmvc-annotation-servlet.xml
+####  7.2 springmvc-annotation-servlet.xml
 
 对于springmvc-annotation-servlet.xml 添加注解的支持在spring3.0之前和3.0之后写法上有点不同
     
@@ -716,7 +716,7 @@ springmvc-annotation-servlet.xml 3.0之后的内容
 </beans>
 ```
 
-####7.3 springmvc注解类实现
+####  7.3 springmvc注解类实现
 
 步骤1：定义一个普通的类 配置注解@Controller //使用注解标示为一个Controller
 步骤2：配置请求映射@RequestMapping("/user")  //配置该类的url的路经
@@ -770,7 +770,7 @@ public class UserController {
 }
 ```
 
-####7.4 运行
+####  7.4 运行
 
 提示：使用jdk1.8的使用出现如下错误，换成jdk1.7运行就可以正常
  严重: Context initialization failed
@@ -783,7 +783,7 @@ public class UserController {
  ![](../images/spring/springmvc/springmvc-annotation1.png)
 
 
-####7.5对springmvc注解进行优化
+####  7.5对springmvc注解进行优化
 上边的注解案例中UserController.java类中注解还有很多地方使用起来还是有点别扭，这里对其进行优化一下
 
 ```java
@@ -843,7 +843,7 @@ public class UserController2 {
 
 ```
 
-####7.6 优化后的访问结果
+####  7.6 优化后的访问结果
 ![](../images/spring/springmvc/springmvc-annotation2.png)
 
 
@@ -852,7 +852,7 @@ public class UserController2 {
 ##八.springmvc参数传递
 
 	
-###8.1修改编码，加强对中文的支持
+### 8.1修改编码，加强对中文的支持
 前台页面向后台提交参数的时候，中文经常出现乱码问题，可以检查一下下边的配置。
 1.检查项目的编码是否为UTF-8
 2.设置tomcat服务的编码，在server.xml文件中修改为如下
@@ -922,7 +922,7 @@ public class UserController2 {
 </web-app>
 ```
 
-###8.2参数的几种传递方式（前台到后台，后台到前台）
+### 8.2参数的几种传递方式（前台到后台，后台到前台）
 
 >前台到后台的参数传递
 
@@ -933,13 +933,13 @@ public class UserController2 {
 
 **方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
 
-####8.2.1前台页面参数名与方法参数名称一致（之前台到后台）
+####  8.2.1前台页面参数名与方法参数名称一致（之前台到后台）
 **方式一:通过前台页面的属性名与后台方法中的方法参数保持一样就可以将参数值注入进来
 这种方式比较简单，当参数前台界面传递的参数比较少的时候，使用这种方式**
 
 **方式二：当前台页面的参数名与后台的方法参数不一致时，使用@RequestParam注解，绑定参数**
 
-#####8.2.1.1 addUser.jsp（之前台到后台）
+#####   8.2.1.1 addUser.jsp（之前台到后台）
 添加用户页面，参数名与后台页面保持一致
 
 ```jsp
@@ -966,7 +966,7 @@ public class UserController2 {
 </body>
 </html>
 ```
-#####8.2.1.2 userManager.jsp（之前台到后台）
+#####   8.2.1.2 userManager.jsp（之前台到后台）
 后台方法接收到addUser.jsp页面的参数后，将参数返回到该页面中展示
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -982,7 +982,7 @@ public class UserController2 {
 </html>
 ```
 
-#####8.2.1.3DataController.java（之前台到后台）
+#####   8.2.1.3DataController.java（之前台到后台）
 ```java
 /**
  * Description:springmvc中参数的传递,接收页面传递到Controller中的参数
@@ -1041,7 +1041,7 @@ public class DataController {
 
 }
 ```
-#####8.2.1.4 结果（之前台到后台）
+#####   8.2.1.4 结果（之前台到后台）
 
 ![](../images/spring/springmvc/springmvc-param1.png)
 
@@ -1051,9 +1051,9 @@ public class DataController {
 
 
 
-####8.2.2通过实体类注入，实体类中提供getter.. setter（之前台到后台）
+####  8.2.2通过实体类注入，实体类中提供getter.. setter（之前台到后台）
 
-#####8.2.2.1User.java（之前台到后台）
+#####   8.2.2.1User.java（之前台到后台）
 ```java
 package com.learn.entity;
 
@@ -1085,7 +1085,7 @@ public class User {
 
 ```
 
-#####8.2.2.2 DataController 添加实体类方式的参数传入（之前台到后台）
+#####   8.2.2.2 DataController 添加实体类方式的参数传入（之前台到后台）
 
 **方式三：通过实体类注入进来，实体类中的属性名与前台页面中保持一致且实体中提供了getter，setter方法，springmvc就可以将参数注入到实体中**
 
@@ -1164,7 +1164,7 @@ public class DataController {
 }
 ```
 
-#####8.2.2.3 addUser.jsp（之前台到后台）
+#####   8.2.2.3 addUser.jsp（之前台到后台）
 修改action的路径为/data/addUser2
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -1194,11 +1194,11 @@ public class DataController {
 
 结果与之前的一致，这里就不再提供截图了。
 
-###8.3传递json数据（之前台到后台）
+### 8.3传递json数据（之前台到后台）
 json数据格式是web开发中一种常用数据传递格式，这里我们使用一个简单的案例来演示对json数据的传递
 
 
-####8.3.1json.jsp页面（之前台到后台）
+####  8.3.1json.jsp页面（之前台到后台）
 将参数提交到后台页面，然后接受后台返回的参数
 
 ```jsp
@@ -1239,7 +1239,7 @@ json数据格式是web开发中一种常用数据传递格式，这里我们使�
 </html>
 
 ```
-####8.3.2DataController.java（之前台到后台）
+####  8.3.2DataController.java（之前台到后台）
 
 addJson方法用户接受页面参数，和给页面返回数据
 
@@ -1358,16 +1358,16 @@ public class DataController {
 
 ```
 
-####8.3.4结果（之前台到后台）
+####  8.3.4结果（之前台到后台）
 ![](../images/spring/springmvc/springmvc-json.png);
 
-###8.4参数的几种传递方式(后台到前台的参数传递)
+### 8.4参数的几种传递方式(后台到前台的参数传递)
 >后台到前台的参数传递
 
 springmvc支持的返回方式有，ModelAndView,Model,ModelMap,Map,List,View,String,void
 
 
-#####8.4.1DataController2.java(后台到前台的参数传递)
+#####   8.4.1DataController2.java(后台到前台的参数传递)
 
 其中ModelAndView，Model,ModelMap，View这些基本的方式就不再介绍了，这里主要介绍一下返回Map，list，String（jsonString方式）。
 
@@ -1528,7 +1528,7 @@ public class DataController2 {
 
 ##九.SpringMVC文件上传
 
-###9.1springmvc-annotaion-servlet.xml
+### 9.1springmvc-annotaion-servlet.xml
 
 添加文件上传解析器
 
@@ -1540,7 +1540,7 @@ public class DataController2 {
     </bean>
 ```
 
-###9.2DataController2.java
+### 9.2DataController2.java
 
 这里使用两种方式上传文件
 
@@ -1649,7 +1649,7 @@ public class DataController2 {
 
 ```
 
-###9.3upload.jsp
+### 9.3upload.jsp
 
 上传文件的时候，需要设置一下form表单的enctype：有下边3个值
 
@@ -1688,7 +1688,7 @@ text/plain 空格转换为“+”加号，但不对特殊字符编码
 springmvc集成spring的时候，主要需要在web.xml中配置ContextLoaderListener
 Listener:org.springframework.web.context.ContextLoaderListener 主要是用来加载spring所需药的配置文件
 
-###10.1web.xml文件的修改
+### 10.1web.xml文件的修改
 添加ContextLoaderListener Listener配置
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1782,7 +1782,7 @@ Listener:org.springframework.web.context.ContextLoaderListener 主要是用来�
 </web-app>
 ```
 
-###10.2 applicationContext.xml
+### 10.2 applicationContext.xml
 新建applicationContext.xml对对spring进行配置，这里简单的配置一个bean
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -1794,7 +1794,7 @@ Listener:org.springframework.web.context.ContextLoaderListener 主要是用来�
     <bean id="springManager" class="com.learn.annotaion.SpringManager"></bean>
 </beans>
 ```
-###10.3 ISpring.java
+### 10.3 ISpring.java
 定义springManager的服务接口
 
 ```java
@@ -1802,7 +1802,7 @@ public interface ISpring {
     public String get();
 }
 ```
-###10.4 SpringManager.java
+### 10.4 SpringManager.java
 
 用户实现ISpring接口，实现一些简单的操作
 
@@ -1816,7 +1816,7 @@ public class SpringManager implements ISpring {
     }
 }
 ```
-###10.5 SpringController.java
+### 10.5 SpringController.java
 
 ```java
 package com.learn.annotaion;
@@ -1850,7 +1850,7 @@ public class SpringController {
 }
 ```
 
-###10.6success2.jsp
+### 10.6success2.jsp
 spring配置成功后，跳转到该页面
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -1863,11 +1863,11 @@ spring集成成功！
 </body>
 </html>
 ```
-###10.7结果
+### 10.7结果
 
 ![](../images/spring/springmvc/spring/springmvc-spring1.png)
 
-###10.8spring与springmvc的上下文关系
+### 10.8spring与springmvc的上下文关系
 
 spring可以理解成为一个对象的容器，对象都装载到spring容器中，而spring的上下文Context（也可以理解为容器）
 获取到该上下文对象后就可以获取到spring中装载的bean了。
@@ -1896,10 +1896,10 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 这部分主要是扩展功能，不是springmvc中的部分，这里主要实现一个小案例，集成springmvc+spring+hibernate4进行
 集成，实现一个小的增删改查功能,其中的代码就不进行过多的分析。
 
-###11.1 添加spring集成hibernate4所需要的jar
+### 11.1 添加spring集成hibernate4所需要的jar
 ![](../images/spring/springmvc/hibernate/spring-hibernate-jar.png)
 
-###11.2 Hibernate五大对象
+### 11.2 Hibernate五大对象
 在hibernate中，可以说是围绕着这一下五大对象展开的，集成在spring中后，就交给spring对这五大对象进行管理。
 
 Configuration,相当于hibernate的上下文
@@ -1913,7 +1913,7 @@ Transaction，事物对象，用于管理事物。
 Query和Criteria
 
 集成hibernate的时候，Configuration,SessionFactory,Transaction都是交给spring进行管理的。
-####11.3 spring集成hibernate4的配置文件spring-datasource.xml
+####  11.3 spring集成hibernate4的配置文件spring-datasource.xml
 
 新建的spring-datasource.xml文件中主要是对数据源，sessionFactory，事务进行配置。
 
@@ -1987,7 +1987,7 @@ validate ：
 </beans>
 ```
 
-####11.4 hibernate.cfg.xml 文件
+####  11.4 hibernate.cfg.xml 文件
 
 这个文件主要是配置试题类的映射文件所在位置。
 
@@ -2003,7 +2003,7 @@ validate ：
     </session-factory>
 </hibernate-configuration>
 ```
-####11.5 User.java
+####  11.5 User.java
 
 ```java
 package com.learn.entity;
@@ -2057,7 +2057,7 @@ public class User {
 
 ```
 
-#### 11.6 DAO层IUserDao.java接口和UserDAO实现类
+####   11.6 DAO层IUserDao.java接口和UserDAO实现类
  
  IUserDao.java接口
  
@@ -2187,7 +2187,7 @@ public class UserDAO implements IUserDAO {
 }
 ```
 
-####11.7 service层业务逻辑层IUserManager.java和实现类UserManger.java
+####  11.7 service层业务逻辑层IUserManager.java和实现类UserManger.java
 
 IUserManager.java接口
 
@@ -2303,7 +2303,7 @@ public class UserManager implements IUserManager {
 }
 ```
 
-####11.8 applicationContext.xml 对Dao和Service进行配置
+####  11.8 applicationContext.xml 对Dao和Service进行配置
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -2328,7 +2328,7 @@ public class UserManager implements IUserManager {
 </beans>
 ```
 
-####11.9 实现UserController3.java
+####  11.9 实现UserController3.java
 
 ```java
 package com.learn.controller;
@@ -2434,7 +2434,7 @@ public class UserController3 {
 }
 ```
 
-####11.10 userManager.jsp
+####  11.10 userManager.jsp
 
 ```jsp
 <%--
@@ -2488,7 +2488,7 @@ public class UserController3 {
 </body>
 </html>
 ```
-####11.12 web.xml中对OpenSessionInViewFilter进行配置
+####  11.12 web.xml中对OpenSessionInViewFilter进行配置
 
 当hibernate+spring配合使用的时候，如果设置了lazy=true,那么在读取数据的时候，当读取了父数据后，hibernate会自动关闭session，
 这样,当要使用子数据的时候，系统会抛出lazyinit的错误，这时就需要使用spring提供的 OpenSessionInViewFilter,
