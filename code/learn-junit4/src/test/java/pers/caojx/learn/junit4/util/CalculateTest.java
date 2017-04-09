@@ -17,7 +17,7 @@ public class CalculateTest {
      * 测试add方法,使用junit中的Test注解,建议方法命名以test开头
      * 断言测试assertEquals(Expected,Actual) 第一个参数的期待值，第二个参数是实际值
      *
-     * 1.测试方法上必须是哟该你@Test进行注解
+     * 1.测试方法上必须使用@Test进行注解
      * 2.测试方法必须使用public void进行修饰，不能带返回值
      * 3.应该新建一个测试目录来存放我们的测试代码
      * 4.测试类的包应该和被测试类保持一致
