@@ -1,0 +1,286 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	font-color:#3e3e3e;
+}
+
+ul, li {
+	list-style: none;
+}
+
+.box {
+	background: url(../images/8.jpg);
+	width: 100%;
+	height: 800px;
+}
+
+.nav {
+	background: #333;
+	padding: 10px;
+}
+
+.boxside {
+	background: yellowgreen;
+}
+
+.login-box {
+	background: lightblue;
+	padding: 20px;
+	position: fixed;
+	right: 100px;
+	top: 100px
+}
+
+.list-tab {
+	border-bottom: 1px #efefef solid;
+}
+
+.list-tab p {
+	display: inline-block;
+	padding: 10px 40px;
+}
+
+.list-tab p:first-child {
+	border-bottom: 3px #24AFDC solid;
+	color: #24AFDC
+}
+
+.con {
+	background: #24AFDC;
+	padding-left: 50px;
+	padding-right: 25px;
+	margin-top: 20px;
+	position: relative;
+}
+
+.con input {
+	width: 100%;
+	padding: 10px;
+}
+
+/*
+.icon {
+	background: #999999;
+}
+*/
+
+span {
+	display: block;
+	position: absolute;
+	left: 15px;
+	top: 10px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.forget {
+	display: block;
+	text-align: right;
+	padding: 20px 0px;
+	color: #555;
+}
+
+.btn-blue {
+	padding: 10px;
+	background-color: #24AFDC;
+	text-align: center;
+	border-radius: 6px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.text-center {
+	text-align: center;
+	color: #666;
+}
+
+/*左边样式*/
+.home .left-side {
+	position: absolute;
+	padding-top: 40px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: auto;
+	width: 68px;
+	background: #3c4d68;
+}
+
+.home .file-sidebar {
+	position: absolute;
+	padding-top: 58px;
+	top: 0;
+	bottom: 0;
+	right: auto;
+	left: 68px;
+	width: 220px;
+	background: #ebebeb;
+}
+
+.home .file-list-side {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	bottom: 0;
+	left: 288px;
+	right: 0;
+	background: #f8f8f8!important;
+	border-left: 1px solid #ddd;
+}
+
+.member-avatar{
+    width: 100% !important;
+}
+
+.member-avatar li{
+    width: 100%;
+    height:auto;
+    text-align: center;
+    list-style: none !important;
+}
+
+.member-avatar .icon{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    width: 0px;
+    color: #59a9e9;
+    -webkit-transition: font-size 0.25s ease-out 0s;
+    -moz-transition: font-size 0.25s ease-out 0s;
+    transition: font-size 0.25s ease-out 0s;
+}
+
+.member-avatar .name {
+    text-align: center;
+    color: #b1b7c2;
+}
+
+.menu{
+	position: relative;
+	width: 68px;
+	height: 70px;
+	top: 200px;
+	padding-top: 100px;
+}
+
+.menu-lists{
+    width: 100% !important;
+}
+
+.menu-lists li{
+    float:left;
+    width: 100%;
+    height:auto;
+    text-align: center;
+    list-style: none !important;
+}
+
+.menu-lists .name {
+    text-align: center;
+    color: #b1b7c2;
+}
+
+.menu-lists .icon{
+    font-size: 35px;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+    width: 0px;
+    color: #b1b7c2;
+    -webkit-transition: font-size 0.25s ease-out 0s;
+    -moz-transition: font-size 0.25s ease-out 0s;
+    transition: font-size 0.25s ease-out 0s;
+}
+
+/*文件搜索栏*/
+.file-list-head {
+	padding: 10px;
+	margin-left: 40px;
+	padding-top: 20px;
+}
+
+.file-search-box div {
+	margin-top: 5px;
+	margin-left: 10px;
+	padding-left: 10px;
+}
+
+.file-search-box select {
+	width: 100px;
+}
+
+.operator-box {
+	margin-top: 10px;
+	padding-left: 52px;
+}
+
+/*
+.file-search-box {
+	margin-top: 10px;
+	padding: 5px;
+}
+
+!*表单下边的input样式*!
+.file-search-box input{
+	width: 240px;
+	padding: 2px;
+	margin: 2px;
+	font-weight: 600;
+	color: #666;
+}
+
+!*搜索表单中字体颜色*!
+.file-search-box label{
+	display: inline-block;
+	width: 58px;
+	padding: 4px;
+	margin-left: 10px;
+	max-width: 100%;
+	font-weight: 700;
+	color: #333;
+}
+
+!*表单中下兰菜单的样式*!
+.file-search-box select {
+	width: 110px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.83);
+}
+
+!*确认按钮样式*!
+.file-search-box .btn {
+	width: 90px;
+	background-color: #448de8!important;
+	margin-left: 15px;
+}
+
+operator-box label {
+	position: relative;
+	left: 20px;
+	bottom: 27px;
+	width: 80px;
+	margin-left: 25px;
+}
+
+.operator-box .icon {
+	background: #f8f8f8;
+	position: relative;
+	margin-right: 45px;
+	margin-left: 18px;
+	padding: 5px;
+	padding-right: -3px;
+	margin-top: 21px;
+	font-weight: 600;
+}
+
+.operator-box a:hover{
+	background: #549beb;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}*/

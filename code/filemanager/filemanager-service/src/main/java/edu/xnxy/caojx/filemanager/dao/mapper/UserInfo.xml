@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2012 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.xnxy.caojx.filemanager.dao.IUserInfoDAO">
+
+    <select id="get" parameterType="map" resultType="edu.xnxy.caojx.filemanager.entity.UserInfo">
+        select * from user_info where 1 = 1
+        <if test="userId != null">
+            and user_id = #{userId}
+        </if>
+        <if test="userIdCard != null">
+            and user_id_card = #{userIdCard}
+        </if>
+        and rec_status = 1
+    </select>
+
+    <insert id="insert" parameterType="map">
+        insert into user_info (user_id, user_id_card, user_name, user_password, user_gender, user_age,
+        user_title, user_college, user_profession, user_class, user_address, user_email, user_phone_number,
+        create_date, rec_status, ext1, ext2, ext3)
+        VALUES
+        (#{userId}, #{userIdCard}, #{userName}, #{userPassword}, #{userGender}, #{userAge},
+         #{userTitle}, #{userCollege}, #{userProfession}, #{userClass}, #{userAddress}, #{userEmail}, #{userPhoneNumber},
+         #{createDate}, #{recStatus}, #{ext1}, #{ext2}, #{ext3});
+    </insert>
+
+    <update id="update" parameterType="map">
+        update user_info
+        <set>
+            <if test="userPassword != null">#{userPassword}</if>
+            <if test="userGender != null">#{userGender}</if>
+            <if test="userAge != null">#{userAge}</if>
+            <if test="userTitle != null">#{userTitle}</if>
+            <if test="userCollege != null">#{userCollege}</if>
+            <if test="userProfession != null">#{userProfession}</if>
+            <if test="userClass != null">#{userClass}</if>
+            <if test="userAddress != null">#{userAddress}</if>
+            <if test="userEmail != null">#{userEmail}</if>
+            <if test="userPhoneNumber != null">#{userPhoneNumber}</if>
+            <if test="recStatus != null">#{recStatus}</if>
+            <if test="ext1 != null">#{ext1}</if>
+            <if test="ext2 != null">#{ext2}</if>
+            <if test="ext3 != null">#{ext3}</if>
+        </set>
+        where 1 = 1
+        <if test="userId != null">
+            and user_id = #{userId}
+        </if>
+        <if test="userIdCard != null">
+            and user_id_card = #{userIdCard}
+        </if>
+        and rec_status = 1
+    </update>
+
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/filemanager.iml" filepath="$PROJECT_DIR$/filemanager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/filemanager-backend/filemanager-backend.iml" filepath="$PROJECT_DIR$/filemanager-backend/filemanager-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/filemanager-common/filemanager-common.iml" filepath="$PROJECT_DIR$/filemanager-common/filemanager-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/filemanager-service/filemanager-service.iml" filepath="$PROJECT_DIR$/filemanager-service/filemanager-service.iml" />
+    </modules>
+  </component>
+</project>
