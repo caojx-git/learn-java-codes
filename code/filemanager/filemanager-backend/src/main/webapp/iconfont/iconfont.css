@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1492221984791'); /* IE9*/
-  src: url('iconfont.eot?t=1492221984791#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1492221984791') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1492221984791') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1492221984791#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1492498421398'); /* IE9*/
+  src: url('iconfont.eot?t=1492498421398#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1492498421398') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1492498421398') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1492498421398#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -23,7 +23,7 @@
 
 .icon-iconfontexcel:before { content: "\e622"; }
 
-.icon-tongxunlu:before { content: "\e61d"; }
+.icon-touxiang1:before { content: "\e649"; }
 
 .icon-refurbish:before { content: "\e754"; }
 
@@ -33,9 +33,15 @@
 
 .icon-yuedu:before { content: "\e6bc"; }
 
+.icon-shoucang:before { content: "\e606"; }
+
+.icon-shouc01:before { content: "\e61f"; }
+
 .icon-lianjie:before { content: "\e8d3"; }
 
 .icon-iconfont89:before { content: "\e752"; }
+
+.icon-bianji:before { content: "\e624"; }
 
 .icon-xiaoxi:before { content: "\e615"; }
 
@@ -57,23 +63,19 @@
 
 .icon-gengduo-copy:before { content: "\e600"; }
 
-.icon-wenjian:before { content: "\e64b"; }
+.icon-yonghuguanli1:before { content: "\e611"; }
+
+.icon-file:before { content: "\e63e"; }
 
 .icon-yuan:before { content: "\e601"; }
-
-.icon-4:before { content: "\e603"; }
 
 .icon-history:before { content: "\e602"; }
 
 .icon-word:before { content: "\e66b"; }
-
-.icon-touxiang1:before { content: "\e607"; }
 
 .icon-txt:before { content: "\e717"; }
 
 .icon-sousuo_sousuo:before { content: "\e67b"; }
 
 .icon-pdf:before { content: "\e641"; }
-
-.icon-xueyuantouxiang:before { content: "\e658"; }
 

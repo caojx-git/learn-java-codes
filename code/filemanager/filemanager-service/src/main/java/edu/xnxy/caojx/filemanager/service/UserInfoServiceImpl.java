@@ -1,12 +1,16 @@
 package edu.xnxy.caojx.filemanager.service;
 
 import edu.xnxy.caojx.filemanager.dao.IUserInfoDAO;
+import edu.xnxy.caojx.filemanager.entity.FileManagerSysBaseType;
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Description: 用户信息维护u业务实现类
@@ -69,13 +73,25 @@ public class UserInfoServiceImpl implements IUserInfoService {
      * @return
      * @throws Exception
      */
-    public void saveUserInfo(UserInfo userInfo) throws Exception {
+    public Map<String,Object> saveUserInfo(UserInfo userInfo) throws Exception {
+        UserInfo userInfo1 = null;
+        Map<String,Object> resultMap = null;
         try {
-            userInfoDAO.insert(userInfo);
+            resultMap = new HashMap<String, Object>();
+            userInfo1 = userInfoDAO.get(userInfo);
+            if(userInfo1 == null){
+                userInfoDAO.insert(userInfo);
+                resultMap.put("status","0");
+                resultMap.put("msg","注册成功");
+            }else {
+                resultMap.put("status","1");
+                resultMap.put("msg","该用户已经存在");
+            }
         } catch (Exception e) {
             log.error("新增用户失败",e);
             throw new RuntimeException("新增用户失败",e);
         }
+        return resultMap;
     }
 
     /**
@@ -91,4 +107,5 @@ public class UserInfoServiceImpl implements IUserInfoService {
             throw new RuntimeException("更新用户信息失败",e);
         }
     }
+
 }

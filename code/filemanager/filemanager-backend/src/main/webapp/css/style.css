@@ -16,11 +16,6 @@ ul, li {
 	height: 800px;
 }
 
-.nav {
-	background: #333;
-	padding: 10px;
-}
-
 .boxside {
 	background: yellowgreen;
 }
@@ -60,11 +55,6 @@ ul, li {
 	padding: 10px;
 }
 
-/*
-.icon {
-	background: #999999;
-}
-*/
 
 span {
 	display: block;
@@ -84,6 +74,7 @@ span {
 
 .btn-blue {
 	padding: 10px;
+	margin-bottom: 15px;
 	background-color: #24AFDC;
 	text-align: center;
 	border-radius: 6px;
@@ -108,54 +99,15 @@ span {
 	background: #3c4d68;
 }
 
-.home .file-sidebar {
-	position: absolute;
-	padding-top: 58px;
-	top: 0;
-	bottom: 0;
-	right: auto;
-	left: 68px;
-	width: 220px;
-	background: #ebebeb;
-}
-
 .home .file-list-side {
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	bottom: 0;
-	left: 288px;
+	left: 68px;
 	right: 0;
 	background: #f8f8f8!important;
 	border-left: 1px solid #ddd;
-}
-
-.member-avatar{
-    width: 100% !important;
-}
-
-.member-avatar li{
-    width: 100%;
-    height:auto;
-    text-align: center;
-    list-style: none !important;
-}
-
-.member-avatar .icon{
-    font-size: 35px;
-    margin-top: 20px;
-    margin-left: 15px;
-    margin-bottom: 0px;
-    width: 0px;
-    color: #59a9e9;
-    -webkit-transition: font-size 0.25s ease-out 0s;
-    -moz-transition: font-size 0.25s ease-out 0s;
-    transition: font-size 0.25s ease-out 0s;
-}
-
-.member-avatar .name {
-    text-align: center;
-    color: #b1b7c2;
 }
 
 .menu{
@@ -217,70 +169,10 @@ span {
 	padding-left: 52px;
 }
 
-/*
-.file-search-box {
-	margin-top: 10px;
-	padding: 5px;
+.file-list-box tbody tr:hover{
+    background: #B4D2F6;
 }
 
-!*表单下边的input样式*!
-.file-search-box input{
-	width: 240px;
-	padding: 2px;
-	margin: 2px;
-	font-weight: 600;
-	color: #666;
+.file-list-box tbody tr{
+    border: 1px solid #b1b7c2;
 }
-
-!*搜索表单中字体颜色*!
-.file-search-box label{
-	display: inline-block;
-	width: 58px;
-	padding: 4px;
-	margin-left: 10px;
-	max-width: 100%;
-	font-weight: 700;
-	color: #333;
-}
-
-!*表单中下兰菜单的样式*!
-.file-search-box select {
-	width: 110px;
-	text-align: center;
-	color: rgba(0, 0, 0, 0.83);
-}
-
-!*确认按钮样式*!
-.file-search-box .btn {
-	width: 90px;
-	background-color: #448de8!important;
-	margin-left: 15px;
-}
-
-operator-box label {
-	position: relative;
-	left: 20px;
-	bottom: 27px;
-	width: 80px;
-	margin-left: 25px;
-}
-
-.operator-box .icon {
-	background: #f8f8f8;
-	position: relative;
-	margin-right: 45px;
-	margin-left: 18px;
-	padding: 5px;
-	padding-right: -3px;
-	margin-top: 21px;
-	font-weight: 600;
-}
-
-.operator-box a:hover{
-	background: #549beb;
-}
-
-hr {
-	margin-top: 20px;
-	margin-bottom: 10px;
-}*/

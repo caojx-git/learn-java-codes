@@ -2,7 +2,7 @@ package edu.xnxy.caojx.filemanager.service;
 
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
 
-import java.util.concurrent.ExecutionException;
+import java.util.Map;
 
 /**
  * Description: 用户信息维护业务接口
@@ -35,7 +35,7 @@ public interface IUserInfoService {
      * @return
      * @throws Exception
      */
-    public void saveUserInfo(UserInfo userInfo) throws Exception;
+    public Map<String,Object> saveUserInfo(UserInfo userInfo) throws Exception;
 
     /**
      * 更新用户信息

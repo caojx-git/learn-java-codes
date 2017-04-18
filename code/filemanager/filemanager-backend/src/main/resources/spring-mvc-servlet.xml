@@ -42,7 +42,7 @@
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources mapping="/iconfont/**" location="/iconfont/"></mvc:resources>
     <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>
-    <mvc:resources mapping="/**" location="/WEB-INF/views/html/"></mvc:resources>
+    <mvc:resources mapping="/**" location="/WEB-INF/views/"></mvc:resources>
 
     <!--配置视图解析器-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -49,7 +49,7 @@
             <param-value>UTF-8</param-value>
         </init-param>
         <init-param>
-            <param-name>forceEncoding</param-name><!--是否强制过滤-->
+            <param-name>forceEncoding</param-name><!--是否强制过滤forceEncoding-->
             <param-value>true</param-value>
         </init-param>
     </filter>

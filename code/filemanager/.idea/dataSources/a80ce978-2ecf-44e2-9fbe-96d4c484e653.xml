@@ -4,10 +4,10 @@
     <root id="1"/>
     <schema id="2" parent="1" name="MYORACLE">
       <ObjectId>52</ObjectId>
-      <IntrospectionTimestamp>2017-04-10.22:03:46</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-04-17.19:43:54</IntrospectionTimestamp>
       <CreatedTimestamp>2016-12-12.20:50:50</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-10.22:03:46</ModifiedTimestamp>
-      <CommentsHash>36368733134808</CommentsHash>
+      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
+      <CommentsHash>70338502833913</CommentsHash>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -83,9 +83,9 @@
       <ModifiedTimestamp>2016-12-12.20:50:50</ModifiedTimestamp>
     </table>
     <table id="24" parent="2" name="T_USER">
-      <ObjectId>21420</ObjectId>
-      <CreatedTimestamp>2017-02-05.19:09:40</CreatedTimestamp>
-      <ModifiedTimestamp>2017-02-05.19:09:40</ModifiedTimestamp>
+      <ObjectId>22744</ObjectId>
+      <CreatedTimestamp>2017-04-12.18:44:55</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
     </table>
     <table id="25" parent="2" name="USER_INFO">
       <ObjectId>22729</ObjectId>
@@ -253,48 +253,54 @@ CODE_ID</ColNames>
       <Position>3</Position>
       <DataType>VARCHAR2(25)|0</DataType>
     </column>
-    <index id="55" parent="24" name="SYS_C007463">
-      <ObjectId>21421</ObjectId>
+    <index id="55" parent="24" name="SYS_C007629">
+      <ObjectId>22745</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2017-02-05.19:09:40</CreatedTimestamp>
-      <ModifiedTimestamp>2017-02-05.19:09:40</ModifiedTimestamp>
+      <CreatedTimestamp>2017-04-12.18:44:55</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
       <TablespaceName>SYSTEM</TablespaceName>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="56" parent="24" name="SYS_C007463">
+    <key id="56" parent="24" name="SYS_C007629">
       <NameSurrogate>1</NameSurrogate>
-      <ModifiedTimestamp>2017-02-05.19:09:40</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
       <ColNames>ID</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>SYS_C007463</UnderlyingIndexName>
+      <UnderlyingIndexName>SYS_C007629</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <column id="57" parent="25" name="USER_ID">
       <Position>1</Position>
+      <Comment>用户编号</Comment>
       <DataType>NUMBER(12)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="58" parent="25" name="USER_ID_CARD">
       <Position>2</Position>
+      <Comment>用户省份证号</Comment>
       <DataType>VARCHAR2(18)|0</DataType>
     </column>
     <column id="59" parent="25" name="USER_NAME">
       <Position>3</Position>
+      <Comment>用户名</Comment>
       <DataType>VARCHAR2(40)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="60" parent="25" name="USER_PASSWORD">
       <Position>4</Position>
+      <Comment>用户密码</Comment>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="61" parent="25" name="USER_GENDER">
       <Position>5</Position>
+      <Comment>用户性别</Comment>
       <DataType>NUMBER(1)|0</DataType>
     </column>
     <column id="62" parent="25" name="USER_AGE">
       <Position>6</Position>
+      <Comment>用户年龄</Comment>
       <DataType>NUMBER(3)|0</DataType>
     </column>
     <column id="63" parent="25" name="USER_TITLE">
@@ -304,52 +310,63 @@ CODE_ID</ColNames>
     </column>
     <column id="64" parent="25" name="USER_COLLEGE">
       <Position>8</Position>
+      <Comment>学院</Comment>
       <DataType>NUMBER(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="65" parent="25" name="USER_PROFESSION">
       <Position>9</Position>
+      <Comment>专业</Comment>
       <DataType>NUMBER(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="66" parent="25" name="USER_CLASS">
       <Position>10</Position>
+      <Comment>班级</Comment>
       <DataType>NUMBER(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="67" parent="25" name="USER_ADDRESS">
       <Position>11</Position>
+      <Comment>地址</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
     <column id="68" parent="25" name="USER_EMAIL">
       <Position>12</Position>
+      <Comment>邮箱</Comment>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="69" parent="25" name="USER_PHONE_NUMBER">
       <Position>13</Position>
+      <Comment>手机号</Comment>
       <DataType>NUMBER(11)|0</DataType>
     </column>
     <column id="70" parent="25" name="CREATE_DATE">
       <Position>14</Position>
+      <Comment>创建日期</Comment>
       <DataType>DATE|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="71" parent="25" name="REC_STATUS">
       <Position>15</Position>
+      <Comment>是否有效，1有效，0无效</Comment>
       <DataType>NUMBER(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
     <column id="72" parent="25" name="EXT1">
       <Position>16</Position>
+      <Comment>扩展字段1</Comment>
       <DataType>NUMBER(8)|0</DataType>
     </column>
     <column id="73" parent="25" name="EXT2">
       <Position>17</Position>
+      <Comment>扩展字段2</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
     <column id="74" parent="25" name="EXT3">
       <Position>18</Position>
+      <Comment>扩展字段3</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
     <index id="75" parent="25" name="USER_INFO_PK">

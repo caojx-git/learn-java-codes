@@ -13,12 +13,12 @@ public class FileManagerSysBaseType implements Serializable {
     /**
      * 类型编号
      */
-    private Integer codeType;
+    private String codeType;
 
     /**
      * 编码
      */
-    private Integer codeId;
+    private String codeId;
 
     /**
      * 名称
@@ -45,19 +45,19 @@ public class FileManagerSysBaseType implements Serializable {
      */
     private String ext3;
 
-    public Integer getCodeType() {
+    public String getCodeType() {
         return codeType;
     }
 
-    public void setCodeType(Integer codeType) {
+    public void setCodeType(String codeType) {
         this.codeType = codeType;
     }
 
-    public Integer getCodeId() {
+    public String getCodeId() {
         return codeId;
     }
 
-    public void setCodeId(Integer codeId) {
+    public void setCodeId(String codeId) {
         this.codeId = codeId;
     }
 

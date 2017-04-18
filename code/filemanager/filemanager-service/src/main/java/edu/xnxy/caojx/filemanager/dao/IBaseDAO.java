@@ -2,6 +2,7 @@ package edu.xnxy.caojx.filemanager.dao;
 
 import org.apache.ibatis.annotations.Param;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -31,14 +32,14 @@ public interface IBaseDAO<T> {
     /**
      *
      */
-    public Integer insert(T t) throws Exception;
+    public Integer insert(T t) throws SQLException;
 
     /**
      * 更新一条记录
      *
      * @param t
      */
-    public Integer update(T t) throws Exception;
+    public Integer update(T t) throws SQLException;
 
     /**
      * 删除一条记录
@@ -46,7 +47,7 @@ public interface IBaseDAO<T> {
      * @param t
      * @return
      */
-    public Integer delete(T t) throws Exception;
+    public Integer delete(T t) throws SQLException;
 
 
 }

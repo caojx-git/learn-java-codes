@@ -1,12 +1,12 @@
 /*系统-常量信息定义表*/
 create table filemanager_sys_base_type(
-  code_type number(8) not null,
-  code_id number(8) not null,
-  code_name varchar2(32) not null,
+  code_type VARCHAR2(8) not null,
+  code_id VARCHAR2(8) not null,
+  code_name varchar2(64) not null,
   notes varchar2(128),
   ext1 number(8),
-  ext2 varchar2(32),
-  ext3 varchar2(32),
+  ext2 varchar2(128),
+  ext3 varchar2(128),
   constraint filemanager_sys_base_type_pk primary key(code_type, code_id)
 );
 
@@ -26,7 +26,7 @@ create table user_info(
   user_name varchar2(32) not null,
   user_password varchar2(32) not null,
   user_gender number(1) check(user_gender in(0,1)),
-  user_age number(3),
+  user_age number(3) not null,
   user_title number(8) not null,
   user_college number(8) not null,
   user_profession number(8) not null,
