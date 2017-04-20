@@ -1,7 +1,9 @@
+DROP  table filemanager_sys_base_type;
+DROP TABLE user_info;
 /*系统-常量信息定义表*/
 create table filemanager_sys_base_type(
-  code_type VARCHAR2(8) not null,
-  code_id VARCHAR2(8) not null,
+  code_type number(8) not null,
+  code_id number(8) not null,
   code_name varchar2(64) not null,
   notes varchar2(128),
   ext1 number(8),
@@ -22,15 +24,12 @@ comment on column filemanager_sys_base_type.ext3 is '扩展字段3';
 /*实体-用户信息实体类*/
 create table user_info(
   user_id number(12) constraint user_info_pk primary key,
-  user_id_card varchar2(18),
   user_name varchar2(32) not null,
   user_password varchar2(32) not null,
   user_gender number(1) check(user_gender in(0,1)),
   user_age number(3) not null,
-  user_title number(8) not null,
-  user_college number(8) not null,
-  user_profession number(8) not null,
-  user_class number(8) not null,
+  college_id number(8) not null,
+  manager number(1) check(manager in(0,1)),
   user_address varchar2(128),
   user_email varchar2(32) not null,
   user_phone_number number(11),
@@ -43,15 +42,12 @@ create table user_info(
 );
 
 comment on column user_info.user_id is '用户编号';
-comment on column user_info.user_id_card is '用户省份证号';
 comment on column user_info.user_name is '用户名';
 comment on column user_info.user_password is '用户密码';
 comment on column user_info.user_gender is '用户性别';
 comment on column user_info.user_age is '用户年龄';
-comment on column user_info.user_college is '学院';
-comment on column user_info.user_profession is '专业';
-comment on column user_info.user_class is '班级';
-comment on column user_info.user_address is '地址';
+comment on column user_info.college_id is '学院';
+comment on column user_info.manager is '是否是管理员,1是，0否';
 comment on column user_info.user_email is '邮箱';
 comment on column user_info.user_phone_number is '手机号';
 comment on column user_info.create_date is '创建日期';
@@ -60,6 +56,7 @@ comment on column user_info.ext1 is '扩展字段1';
 comment on column user_info.ext2 is '扩展字段2';
 comment on column user_info.ext3 is '扩展字段3';
 comment on column user_info.rec_status is '是否有效，1有效，0无效';
+
 
 
 /*用户关系表*/
@@ -83,7 +80,7 @@ create table file_info(
     file_id number(12) constraint file_info_pk primary key,
     user_id number(12),
     file_name varchar2(32) not null,
-    file_path varchar2(128) not null,
+    path_code number(8) not null,
     file_type number(8),
     create_date date not null,
     notes varchar2(128),
@@ -96,7 +93,7 @@ create table file_info(
 comment on column file_info.file_id is '文件编号';
 comment on column file_info.user_id is '上传者编号';
 comment on column file_info.file_name is '文件名称';
-comment on column file_info.file_path is '文件保存路径';
+comment on column file_info.path_code is '文件保存路径编码';
 comment on column file_info.file_type is '文件类型';
 comment on column file_info.create_date is '文件上传时间';
 comment on column file_info.notes is '注释';

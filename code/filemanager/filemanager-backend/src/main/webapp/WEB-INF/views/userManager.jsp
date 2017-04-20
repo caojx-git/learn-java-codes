@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: caojx
+  Date: 17-4-20
+  Time: 上午10:01
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>湘南云库</title>
     <link rel="icon" href="/images/xnxy.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/iconfont/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
 <div class="home">
@@ -31,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="userManager.html">
+                    <a href="/userManager/userManagerPage.do">
                         <div class="icon iconfont icon-yonghuguanli1"></div>
                         <div class="name">用户管理</div>
                     </a>
@@ -46,86 +53,74 @@
     </div>
     <div class="file-list-side">
         <div class="file-search-box">
-            <form class="form form-inline">
+            <form class="form form-inline" action="/userManager/userInfoList.do" method="post">
                 <div class="row">
                     <div class="form-group">
-                        <label for="name">文件编号</label>
-                        <input type="text" class="form-control" id="fileName" placeholder="请输入文件名称">
+                        <label for="userId">用户编号</label>
+                        <input type="text" class="form-control" id="userId" name="userId" placeholder="请输入用户编号">
                     </div>
                     <div class="form-group">
-                        <label for="name">文件名</label>
-                        <input type="text" class="form-control" id="fileType" placeholder="请输入文件名称">
+                        <label for="userName">用户名</label>
+                        <input type="text" class="form-control" id="userName" name="userName" placeholder="请输入用户名称">
                     </div>
                     <div class="form-group">
-                        <label for="name">文件类型</label>
-                        <select>
-                            <option>小明</option>
-                            <option>小红</option>
-                            <option>小王</option>
+                        <label for="collegeId">学院</label>
+                        <select id="collegeId" name="collegeId">
+                            <c:forEach items="${requestScope.collegeList}" var="item">
+                                <option value="${item.codeId}">${item.codeName}</option>
+                            </c:forEach>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="name">上传者</label>
-                        <select>
-                            <option>小明</option>
-                            <option>小红</option>
-                            <option>小王</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary">查询</button>
+                        <input type="submit" class="btn btn-primary" value="查询"/>
+                        <a class="btn btn-primary" href="/userManager/addUserPage.do">新增</a>
                     </div>
                 </div>
             </form>
         </div>
-        <br/>
         <br/>
         <div class="file-list-box">
             <table class="table table-hover">
                 <thead>
                 <tr>
                     <th class="col-md-2 text-left"></th>
-                    <th class="col-md-3 text-left">文件编号</th>
-                    <th class="col-md-1 text-center">文件名称</th>
+                    <th class="col-md-3 text-left">用户编号</th>
+                    <th class="col-md-1 text-center">用户名</th>
                     <th class="col-md-1 text-center">学院</th>
-                    <th class="col-md-1 text-center">上传者</th>
                     <th class="col-md-1 text-center">编辑</th>
                     <th class="col-md-1 text-center">删除</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="text-left">
-                        <div class="icon iconfont icon-touxiang1"></div>
-                    </td>
-                    <td class="text-left">
-                        <a>
-                            20170121
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        小明
-                    </td>
-                    <td class="text-center">
-                        软件与通信工程学院
-                    </td>
-                    <td class="text-center">
-                        老师
-                    </td>
-                    <td class="text-center">
-                        <a>
-                            <div class="icon iconfont icon-bianji"></div>
-                        </a>
-                    </td>
-                    <td class="text-center">
-                        <a>
-                            <div class="icon iconfont icon-shanchu"></div>
-                        </a>
-                    </td>
-                </tr>
+                <c:forEach items="${requestScope.userInfoList}" var="userInfo">
+                    <tr>
+                        <td class="text-left">
+                            <div class="icon iconfont icon-touxiang1"></div>
+                        </td>
+                        <td class="text-left">
+                                ${userInfo.userId}
+                        </td>
+                        <td class="text-center">
+                                ${userInfo.userName}
+                        </td>
+                        <td class="text-center">
+                                ${userInfo.collegeId}
+                        </td>
+                        <td class="text-center">
+                            <a href="/userManager/editUserInfo.do?userId=${userInfo.userId}">
+                                <div class="icon iconfont icon-bianji"></div>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a>
+                                <div class="icon iconfont icon-shanchu"></div>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>
+
                 </tbody>
             </table>
-
         </div>
         <div class='page fix'>
             共 <b>4</b> 条

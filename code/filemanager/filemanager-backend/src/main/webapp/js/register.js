@@ -2,10 +2,6 @@ $(document).ready(function () {
     var userInfo = {};
     var selectObj = {};
 
-    var register = function () {
-
-    }
-
     var initParam = function () {
         userInfo = {
             userId: $('#userId').val(),

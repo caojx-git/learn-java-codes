@@ -1,7 +1,8 @@
 package edu.xnxy.caojx.filemanager.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.sql.Types;
+import java.util.Date;
 
 /**
  * Description: 用户基础信息实体类
@@ -16,10 +17,6 @@ public class UserInfo implements Serializable {
      */
     private Long userId;
 
-    /**
-     * 身份证编号
-     */
-    private String userIdCard;
 
     /**
      * 用户名称
@@ -42,24 +39,14 @@ public class UserInfo implements Serializable {
     private Integer userAge;
 
     /**
-     * 用户职称
-     */
-    private String userTitle;
-
-    /**
      * 学院
      */
-    private String userCollege;
+    private Long collegeId;
 
     /**
-     * 专业
+     * 是否是管理员 1是，0否
      */
-    private String userProfession;
-
-    /**
-     * 班级
-     */
-    private String userClass;
+    private Integer manager;
 
     /**
      * 住址
@@ -74,17 +61,12 @@ public class UserInfo implements Serializable {
     /**
      * 联系方式，手机号
      */
-    private Long userPhoneNumber;
+    private String userPhoneNumber;
 
     /**
      * 创建时间
      */
     private Date createDate;
-
-    /**
-     * 是否有效
-     */
-    private Integer recStatus;
 
     /**
      * 扩展字段1
@@ -101,6 +83,11 @@ public class UserInfo implements Serializable {
      */
     private String ext3;
 
+    /**
+     * 是否有效
+     */
+    private Integer recStatus;
+
 
     public Long getUserId() {
         return userId;
@@ -108,14 +95,6 @@ public class UserInfo implements Serializable {
 
     public void setUserId(Long userId) {
         this.userId = userId;
-    }
-
-    public String getUserIdCard() {
-        return userIdCard;
-    }
-
-    public void setUserIdCard(String userIdCard) {
-        this.userIdCard = userIdCard;
     }
 
     public String getUserName() {
@@ -150,36 +129,20 @@ public class UserInfo implements Serializable {
         this.userAge = userAge;
     }
 
-    public String getUserTitle() {
-        return userTitle;
+    public Long getCollegeId() {
+        return collegeId;
     }
 
-    public void setUserTitle(String userTitle) {
-        this.userTitle = userTitle;
+    public void setCollegeId(Long collegeId) {
+        this.collegeId = collegeId;
     }
 
-    public String getUserCollege() {
-        return userCollege;
+    public Integer getManager() {
+        return manager;
     }
 
-    public void setUserCollege(String userCollege) {
-        this.userCollege = userCollege;
-    }
-
-    public String getUserProfession() {
-        return userProfession;
-    }
-
-    public void setUserProfession(String userProfession) {
-        this.userProfession = userProfession;
-    }
-
-    public String getUserClass() {
-        return userClass;
-    }
-
-    public void setUserClass(String userClass) {
-        this.userClass = userClass;
+    public void setManager(Integer manager) {
+        this.manager = manager;
     }
 
     public String getUserAddress() {
@@ -198,11 +161,11 @@ public class UserInfo implements Serializable {
         this.userEmail = userEmail;
     }
 
-    public Long getUserPhoneNumber() {
+    public String getUserPhoneNumber() {
         return userPhoneNumber;
     }
 
-    public void setUserPhoneNumber(Long userPhoneNumber) {
+    public void setUserPhoneNumber(String userPhoneNumber) {
         this.userPhoneNumber = userPhoneNumber;
     }
 
@@ -212,14 +175,6 @@ public class UserInfo implements Serializable {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
-    }
-
-    public Integer getRecStatus() {
-        return recStatus;
-    }
-
-    public void setRecStatus(Integer recStatus) {
-        this.recStatus = recStatus;
     }
 
     public Integer getExt1() {
@@ -246,27 +201,32 @@ public class UserInfo implements Serializable {
         this.ext3 = ext3;
     }
 
+    public Integer getRecStatus() {
+        return recStatus;
+    }
+
+    public void setRecStatus(Integer recStatus) {
+        this.recStatus = recStatus;
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +
                 "userId=" + userId +
-                ", userIdCard='" + userIdCard + '\'' +
                 ", userName='" + userName + '\'' +
                 ", userPassword='" + userPassword + '\'' +
                 ", userGender=" + userGender +
                 ", userAge=" + userAge +
-                ", userTitle='" + userTitle + '\'' +
-                ", userCollege='" + userCollege + '\'' +
-                ", userProfession='" + userProfession + '\'' +
-                ", userClass='" + userClass + '\'' +
+                ", collegeId=" + collegeId +
+                ", manager=" + manager +
                 ", userAddress='" + userAddress + '\'' +
                 ", userEmail='" + userEmail + '\'' +
-                ", userPhoneNumber=" + userPhoneNumber +
+                ", userPhoneNumber='" + userPhoneNumber + '\'' +
                 ", createDate=" + createDate +
-                ", recStatus=" + recStatus +
                 ", ext1=" + ext1 +
                 ", ext2='" + ext2 + '\'' +
                 ", ext3='" + ext3 + '\'' +
+                ", recStatus=" + recStatus +
                 '}';
     }
 }

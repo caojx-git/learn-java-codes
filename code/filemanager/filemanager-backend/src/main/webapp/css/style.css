@@ -6,6 +6,10 @@
 	font-color:#3e3e3e;
 }
 
+.error{
+	color:red;
+}
+
 ul, li {
 	list-style: none;
 }
@@ -175,4 +179,10 @@ span {
 
 .file-list-box tbody tr{
     border: 1px solid #b1b7c2;
+}
+
+
+.btn-register{
+	margin-left: 180px;
+	margin-top: 15px;
 }

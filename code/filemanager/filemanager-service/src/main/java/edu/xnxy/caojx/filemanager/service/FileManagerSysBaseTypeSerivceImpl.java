@@ -23,7 +23,7 @@ public class FileManagerSysBaseTypeSerivceImpl implements IFileManagerSysBaseTyp
     private IFilemanagerSysBaseTypeDAO filemanagerSysBaseTypeDAO;
 
     @Override
-    public List<FileManagerSysBaseType> listFileManagerSysBaseType(String codeType, String codeId) {
+    public List<FileManagerSysBaseType> listFileManagerSysBaseType(Long codeType, Long codeId) {
         List<FileManagerSysBaseType> fileManagerSysBaseTypeList = null;
         FileManagerSysBaseType fileManagerSysBaseType = null;
         try {

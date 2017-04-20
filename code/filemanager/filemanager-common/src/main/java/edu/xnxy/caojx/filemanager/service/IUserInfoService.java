@@ -2,6 +2,7 @@ package edu.xnxy.caojx.filemanager.service;
 
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,11 +16,11 @@ public interface IUserInfoService {
     /**
      * 用户登录
      * @param userId
-     * @param password
+     * @param userPassword
      * @return
      * @throws Exception
      */
-    public UserInfo login(Long userId, String password) throws Exception;
+    public UserInfo login(Long userId, String userPassword) throws Exception;
 
     /**
      * 查询用户
@@ -30,12 +31,20 @@ public interface IUserInfoService {
     public UserInfo getUserInfo(UserInfo userInfo) throws Exception;
 
     /**
+     * 查询用户信息
+     * @param userInfo
+     * @return
+     * @throws Exception
+     */
+    public List<UserInfo> listUserInfo(UserInfo userInfo) throws Exception;
+
+    /**
      * 新增用户
      * @param userInfo
      * @return
      * @throws Exception
      */
-    public Map<String,Object> saveUserInfo(UserInfo userInfo) throws Exception;
+    public void saveUserInfo(UserInfo userInfo) throws Exception;
 
     /**
      * 更新用户信息

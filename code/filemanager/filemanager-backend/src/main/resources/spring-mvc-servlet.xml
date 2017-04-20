@@ -42,7 +42,15 @@
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources mapping="/iconfont/**" location="/iconfont/"></mvc:resources>
     <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>
-    <mvc:resources mapping="/**" location="/WEB-INF/views/"></mvc:resources>
+    <mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"></mvc:resources>
+
+    <!--4.0文件上传解析器配置-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property><!--文件编码-->
+        <property name="maxUploadSize" value="1048576000"></property><!--文件最大值-->
+        <property name="maxInMemorySize" value="40960"></property><!--文件缓存大小-->
+    </bean>
+
 
     <!--配置视图解析器-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

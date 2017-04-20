@@ -13,5 +13,5 @@ import java.util.List;
 public interface IFileManagerSysBaseTypeService {
 
 
-    public List<FileManagerSysBaseType> listFileManagerSysBaseType(String codeType, String codeId);
+    public List<FileManagerSysBaseType> listFileManagerSysBaseType(Long codeType, Long codeId);
 }
