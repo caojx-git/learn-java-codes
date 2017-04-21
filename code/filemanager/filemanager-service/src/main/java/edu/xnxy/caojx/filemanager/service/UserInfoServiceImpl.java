@@ -108,7 +108,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
             }
         } catch (Exception e) {
             log.error("新增用户失败", e);
-            throw new RuntimeException("新增用户失败", e);
+            throw new RuntimeException(e.getMessage(),e);
         }
     }
 
@@ -120,6 +120,23 @@ public class UserInfoServiceImpl implements IUserInfoService {
      */
     public void updateUserInfo(UserInfo userInfo) throws Exception {
         try {
+            userInfoDAO.update(userInfo);
+        } catch (Exception e) {
+            log.error("更新用户信息失败", e);
+            throw new RuntimeException("更新用户信息失败", e);
+        }
+    }
+
+    /**
+     * 删除用户信息，注意并不是真的删除，只是将rec_status=0
+     *
+     * @param userInfo
+     * @throws Exception
+     */
+    @Override
+    public void removeUserInfo(UserInfo userInfo) throws Exception {
+        try {
+            userInfo.setRecStatus(0);
             userInfoDAO.update(userInfo);
         } catch (Exception e) {
             log.error("更新用户信息失败", e);

@@ -53,6 +53,12 @@ public interface IUserInfoService {
      */
     public void updateUserInfo(UserInfo userInfo) throws Exception;
 
+    /**
+     * 删除用户信息，注意并不是真的删除，只是将rec_status=0
+     * @param userInfo
+     * @throws Exception
+     */
+    public void removeUserInfo(UserInfo userInfo) throws Exception;
 
 }
 

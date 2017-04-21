@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +23,7 @@ import java.util.Map;
  * Description: 用户管理Controller
  *
  * @author caojx
- * Created by caojx on 2017年04月20 上午9:59:59
+ *         Created by caojx on 2017年04月20 上午9:59:59
  */
 @Controller
 @RequestMapping("/userManager")
@@ -37,76 +38,131 @@ public class UserManagerController {
     private IUserInfoService userInfoService;
 
     @RequestMapping("/userManagerPage.do")
-    public String showUserManagerPage(HttpServletRequest request){
-        List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L,null);
-        request.setAttribute("collegeList",collegeList);
-        return "userManager";
+    public ModelAndView showUserManagerPage(HttpServletRequest request) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        try {
+            List<UserInfo> userInfoList = userInfoService.listUserInfo(new UserInfo());
+            resultMap.put("status", 0);
+            resultMap.put("userInfoList", userInfoList);
+        } catch (Exception e) {
+            log.error("用户信息加载失败", e);
+            resultMap.put("status", 0);
+            resultMap.put("message", "用户信息加载出错");
+        }
+        return new ModelAndView("userManager", resultMap);
+    }
+
+    @RequestMapping("/loadCollegeList.do")
+    @ResponseBody
+    public Map<String, Object> loadCollegeList(HttpServletRequest request) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L, null);
+        resultMap.put("status", 0);
+        resultMap.put("collegeList", collegeList);
+        return resultMap;
     }
 
     @RequestMapping("/addUserPage.do")
-    public String showAddUserPage(HttpServletRequest request){
-        try {
-            List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L,null);
-            List<UserInfo> userInfoList = userInfoService.listUserInfo(new UserInfo());
-            request.setAttribute("userInfoList",userInfoList);
-            request.setAttribute("collegeList",collegeList);
-        } catch (Exception e) {
-           log.error("获取用户信息出错",e);
-        }
+    public String showAddUserPage() {
         return "addUser";
+    }
+
+    @RequestMapping("/viewUserPage.do")
+    public ModelAndView showViewUserPage(UserInfo userInfo, HttpServletRequest request) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        try {
+            userInfo = userInfoService.getUserInfo(userInfo);
+            resultMap.put("status", 0);
+            resultMap.put("userInfo", userInfo);
+        } catch (Exception e) {
+            log.error("获取用户信息失败", e);
+            resultMap.put("status", 1);
+            resultMap.put("message", "获取用户信息失败");
+        }
+        return new ModelAndView("viewUser", resultMap);
     }
 
     @RequestMapping("/addUser.do")
     @ResponseBody
-    public Map<String,Object> addUser(UserInfo userInfo) {
+    public Map<String, Object> addUser(UserInfo userInfo) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
             userInfoService.saveUserInfo(userInfo);
-            resultMap.put("status",0);
-            resultMap.put("message","注册成功");
+            resultMap.put("status", 0);
+            resultMap.put("message", "注册成功");
         } catch (Exception e) {
             log.error("注册失败", e);
-            resultMap.put("status",1);
-            resultMap.put("message",e.getMessage());
+            resultMap.put("status", 1);
+            resultMap.put("message", e.getMessage());
         }
         return resultMap;
     }
 
     @RequestMapping("/userInfoList.do")
-    public String listUserInfo(UserInfo userInfo,HttpServletRequest request){
+    public ModelAndView listUserInfo(UserInfo userInfo) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L,null);
             List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo);
-            request.setAttribute("userInfoList",userInfoList);
-            request.setAttribute("collegeList",collegeList);
+            resultMap.put("status", 0);
+            resultMap.put("userInfoList", userInfoList);
         } catch (Exception e) {
             log.error("查询失败", e);
+            resultMap.put("status", 1);
+            resultMap.put("message", "查询失败");
+
         }
-        return "userManager";
+        return new ModelAndView("userManager", resultMap);
     }
 
     @RequestMapping("/editUserInfo.do")
-    public String editUserInfo(UserInfo userInfo,HttpServletRequest request){
+    public ModelAndView editUserInfo(UserInfo userInfo, HttpServletRequest request) {
+        Map<String, Object> resultMap = null;
         try {
-            List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L,null);
-            UserInfo userInfo1= userInfoService.getUserInfo(userInfo);
-            request.setAttribute("collegeList",collegeList);
-            request.setAttribute("userInfo1",userInfo1);
+            resultMap = new HashMap<String, Object>();
+            HttpSession session = request.getSession();
+            userInfo = userInfoService.getUserInfo(userInfo);
+            if (session.getAttribute("collegeList") == null) {
+                List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L, null);
+                session.setAttribute("collegeList", collegeList);
+            }
+            resultMap.put("status", 0);
+            resultMap.put("userInfo", userInfo);
         } catch (Exception e) {
+            resultMap.put("status", 1);
+            resultMap.put("message", "获取用户信息失败");
             log.error("查询用户信息失败", e);
         }
-        return "editUser";
+        return new ModelAndView("editUser", resultMap);
     }
 
     @RequestMapping("/saveUserInfo.do")
-    public String saveUserInfo(UserInfo userInfo,HttpServletRequest request){
+    @ResponseBody
+    public Map<String, Object> saveUserInfo(UserInfo userInfo) {
+        Map<String, Object> resultMap = null;
         try {
+            resultMap = new HashMap<String, Object>();
             userInfoService.updateUserInfo(userInfo);
-            request.setAttribute("userInfo1",userInfo);
+            resultMap.put("status", 0);
         } catch (Exception e) {
+            resultMap.put("status", 1);
+            resultMap.put("message", "保存用户信息失败");
             log.error("保存用户信息失败", e);
         }
-        return "editUser";
+        return resultMap;
     }
 
+    @RequestMapping("/removeUserInfo.do")
+    public ModelAndView removeUserInfo(UserInfo userInfo) {
+        Map<String, Object> resultMap = null;
+        try {
+            resultMap = new HashMap<String, Object>();
+            userInfoService.removeUserInfo(userInfo);
+            resultMap.put("status", 0);
+        } catch (Exception e) {
+            resultMap.put("status", 1);
+            resultMap.put("message", "删除用户信息失败");
+            log.error("删除用户信息失败", e);
+        }
+        return new ModelAndView("userManager", resultMap);
+    }
 }

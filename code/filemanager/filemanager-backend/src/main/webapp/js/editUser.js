@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     var userInfo = {};
-    var selectObj = {};
 
     var initParam = function () {
         userInfo = {
@@ -16,19 +15,6 @@ $(document).ready(function () {
             collegeId: $("#collegeId").val(),
             manager: $("#manager").val(),
         }
-    }
-
-    var clearFormValue = function () {
-        $("#userId").val("");
-        $("#userName").val("");
-        $("#userPassword").val("");
-        $("#userAge").val("");
-        $("input[type=radio]:checked").val("");
-        $("#userEmail").val("");
-        $("#userAddress").val("");
-        $("#userPhoneNumber").val("");
-        $("#collegeId").val("");
-        $("#manager").val("");
     }
 
     var validate = function () {
@@ -76,12 +62,11 @@ $(document).ready(function () {
                     type: "post",
                     data: userInfo,
                     success: function (data) {
-                       /* if (data.status == "0") {
-                            alert("添加成功");
-                            window.location.reload();
+                        if (data.status == "0") {
+                            alert("保存成功");
                         } else {
                             alert(data.message);
-                        }*/
+                        }
                     }
                 });
             }
@@ -93,9 +78,9 @@ $(document).ready(function () {
             initParam();
             validate();
         });
-        
+
         $("#cancelBtn").click(function () {
-            history.back(-1);
+            location.href="/userManager/userManagerPage.do";
         });
     }
 

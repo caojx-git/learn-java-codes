@@ -1,5 +1,6 @@
 package edu.xnxy.caojx.filemanager.web;
 
+import edu.xnxy.caojx.filemanager.entity.FileManagerSysBaseType;
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
 import edu.xnxy.caojx.filemanager.service.IFileManagerSysBaseTypeService;
 import edu.xnxy.caojx.filemanager.service.IUserInfoService;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -54,8 +56,10 @@ public class LoginController {
         String path = "index";
         Map resultMap = new HashMap<String, Object>();
         try {
+            List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L, null);
             UserInfo userInfo = userInfoService.login(Long.valueOf(userId.trim()), userPassword);
             request.getSession().setAttribute("userInfo",userInfo);
+            request.getSession().setAttribute("collegeList",collegeList);
             resultMap.put("status", "0");
             resultMap.put("userInfo", userInfo);
         } catch (Exception e) {

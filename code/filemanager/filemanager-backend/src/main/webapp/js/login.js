@@ -4,9 +4,11 @@ $(document).ready(function () {
 
     var validate = function () {
         if ($("#userId").val() == "" || $("#userId").val() == null) {
+            alert("请输入用户编号");
             return false;
         }
         if ($("#userPassword").val() == "" || $("#userPassword").val() == null) {
+            alert("请输入密码");
             return false;
         }
         return true;

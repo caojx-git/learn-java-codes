@@ -27,7 +27,7 @@
                 <ul>
                     <a>
                         <div class="icon iconfont icon-touxiang"></div>
-                        <div class="name">曹建祥</div>
+                        <div class="name">${sessionScope.userInfo.userName}</div>
                     </a>
                 </ul>
                 <li>
@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.html">
+                    <a href="login.jsp">
                         <div class="icon iconfont icon-file"></div>
                         <div class="name">文件</div>
                     </a>
@@ -61,20 +61,20 @@
             <form class="form form-inline">
                 <div class="row">
                     <div class="form-group">
-                        <label for="name">文件名</label>
+                        <label for="fileName">文件名</label>
                         <input type="text" class="form-control" id="fileName" placeholder="请输入文件名称">
                     </div>
                     <div class="form-group">
-                        <label for="name">文件名</label>
+                        <label for="fileType">文件名</label>
                         <input type="text" class="form-control" id="fileType" placeholder="请输入文件名称">
                     </div>
                     <div class="form-group">
-                        <label for="name">开始时间</label>
-                        <input type="date" class="form-control" placeholder="请输入起始时间">
+                        <label for="startTime">开始时间</label>
+                        <input type="date" class="form-control" id="startTime" placeholder="请输入起始时间">
                     </div>
                     <div class="form-group">
-                        <label for="name">结束时间</label>
-                        <input type="date" class="form-control" placeholder="请输入结束时间">
+                        <label for="endTime">结束时间</label>
+                        <input type="date" class="form-control" id="endTime" placeholder="请输入结束时间">
                     </div>
                 </div>
                 <div class="row">

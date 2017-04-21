@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     var userInfo = {};
-    var selectObj = {};
 
     var initParam = function () {
         userInfo = {
@@ -22,6 +21,7 @@ $(document).ready(function () {
         $("#userId").val("");
         $("#userName").val("");
         $("#userPassword").val("");
+        $("#confirm_userPassword").val("");
         $("#userAge").val("");
         $("input[type=radio]:checked").val("");
         $("#userEmail").val("");
@@ -78,7 +78,7 @@ $(document).ready(function () {
                     success: function (data) {
                         if (data.status == "0") {
                             alert("添加成功");
-                            window.location.reload();
+                            clearFormValue();
                         } else {
                             alert(data.message);
                         }
@@ -93,7 +93,7 @@ $(document).ready(function () {
             initParam();
             validate();
         });
-        
+
         $("#cancelBtn").click(function () {
             history.back(-1);
         });

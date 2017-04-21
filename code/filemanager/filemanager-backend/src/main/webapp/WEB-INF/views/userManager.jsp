@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/iconfont/iconfont.css"/>
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/common/jquery-1.8.3.min.js"></script>
+  <%--  <script type="text/javascript" src="/js/userManager.js"></script>--%>
 </head>
 <body>
 <div class="home">
@@ -23,6 +25,7 @@
                 <ul>
                     <a>
                         <div class="icon iconfont icon-touxiang"></div>
+                        <div class="name">${sessionScope.userInfo.userName}</div>
                     </a>
                 </ul>
                 <li>
@@ -53,7 +56,7 @@
     </div>
     <div class="file-list-side">
         <div class="file-search-box">
-            <form class="form form-inline" action="/userManager/userInfoList.do" method="post">
+            <form class="form form-inline" action="/userManager/userInfoList.do">
                 <div class="row">
                     <div class="form-group">
                         <label for="userId">用户编号</label>
@@ -66,9 +69,18 @@
                     <div class="form-group">
                         <label for="collegeId">学院</label>
                         <select id="collegeId" name="collegeId">
-                            <c:forEach items="${requestScope.collegeList}" var="item">
+                            <option value="">所有</option>
+                            <c:forEach items="${sessionScope.collegeList}" var="item">
                                 <option value="${item.codeId}">${item.codeName}</option>
                             </c:forEach>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="manager">管理员</label>
+                        <select id="manager" name="manager">
+                            <option value="">所有</option>
+                            <option value="0">否</option>
+                            <option value="1">是</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -87,24 +99,32 @@
                     <th class="col-md-3 text-left">用户编号</th>
                     <th class="col-md-1 text-center">用户名</th>
                     <th class="col-md-1 text-center">学院</th>
+                    <th class="col-md-1 text-center">管理员</th>
                     <th class="col-md-1 text-center">编辑</th>
+                    <th class="col-md-1 text-center">查看</th>
                     <th class="col-md-1 text-center">删除</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                 <c:forEach items="${requestScope.userInfoList}" var="userInfo">
                     <tr>
                         <td class="text-left">
                             <div class="icon iconfont icon-touxiang1"></div>
                         </td>
                         <td class="text-left">
-                                ${userInfo.userId}
+                              ${userInfo.userId}
                         </td>
                         <td class="text-center">
                                 ${userInfo.userName}
                         </td>
                         <td class="text-center">
-                                ${userInfo.collegeId}
+                            <c:forEach items="${sessionScope.collegeList}" var="item">
+                               <c:if test="${item.codeId == userInfo.collegeId}">${item.codeName}</c:if>
+                            </c:forEach>
+                        </td>
+                        <td class="text-center">
+                          <c:if test="${userInfo.manager == 0}">否</c:if>
+                          <c:if test="${userInfo.manager == 1}">是</c:if>
                         </td>
                         <td class="text-center">
                             <a href="/userManager/editUserInfo.do?userId=${userInfo.userId}">
@@ -112,13 +132,17 @@
                             </a>
                         </td>
                         <td class="text-center">
-                            <a>
+                            <a href="/userManager/viewUserPage.do?userId=${userInfo.userId}">
+                                <div class="icon iconfont icon-shanchu"></div>
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/userManager/removeUserInfo.do?userId=${userInfo.userId}">
                                 <div class="icon iconfont icon-shanchu"></div>
                             </a>
                         </td>
                     </tr>
                 </c:forEach>
-
                 </tbody>
             </table>
         </div>

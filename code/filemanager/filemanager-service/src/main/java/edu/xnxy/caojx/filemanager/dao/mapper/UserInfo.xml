@@ -56,10 +56,13 @@
             and user_id = #{entity.userId}
         </if>
         <if test="entity.userName != null and entity.userName != ''">
-            and user_name = #{entity.userName}
+            and user_name like CONCAT(CONCAT('%',#{entity.userName}),'%')
         </if>
         <if test="entity.collegeId != null">
             and college_id = #{entity.collegeId}
+        </if>
+        <if test="entity.manager != null">
+            and manager = #{entity.manager}
         </if>
         and rec_status = 1
     </select>
@@ -79,18 +82,18 @@
     <update id="update" parameterType="map">
         update user_info
         <set>
-            <if test="userPassword != null">user_password=#{userPassword},</if>
+            <if test="userPassword != null and userPassword != ''">user_password=#{userPassword},</if>
             <if test="userGender != null">user_gender=#{userGender},</if>
             <if test="userAge != null">user_age=#{userAge},</if>
             <if test="collegeId != null">college_id=#{collegeId},</if>
             <if test="manager != null">manager=#{manager},</if>
-            <if test="userAddress != null">user_address=#{userAddress},</if>
-            <if test="userEmail != null">user_email=#{userEmail},</if>
-            <if test="userPhoneNumber != null">user_phone_number=#{userPhoneNumber},</if>
+            <if test="userAddress != null and userAddress != ''">user_address=#{userAddress},</if>
+            <if test="userEmail != null and userEmail != ''">user_email=#{userEmail},</if>
+            <if test="userPhoneNumber != null and userPhoneNumber != ''">user_phone_number=#{userPhoneNumber},</if>
             <if test="recStatus != null">rec_status=#{recStatus},</if>
             <if test="ext1 != null">ext1=#{ext1},</if>
-            <if test="ext2 != null">ext2=#{ext2},</if>
-            <if test="ext3 != null">ext3#{ext3},</if>
+            <if test="ext2 != null and ext2 != ''">ext2=#{ext2},</if>
+            <if test="ext3 != null and ext3 != ''">ext3#{ext3},</if>
         </set>
         where 1 = 1
         <if test="userId != null">

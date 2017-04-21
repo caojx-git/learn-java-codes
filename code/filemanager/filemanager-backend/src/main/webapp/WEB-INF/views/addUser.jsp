@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>新增用户</title>
@@ -93,7 +92,7 @@
     <div class="from-group form-inline">
         <label class="col-sm-2  control-label">学院</label>
         <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-            <c:forEach items="${requestScope.collegeList}" var="collegeInfo">
+            <c:forEach items="${sessionScope.collegeList}" var="collegeInfo">
                 <option value="${collegeInfo.codeId}">${collegeInfo.codeName}</option>
             </c:forEach>
         </select>
