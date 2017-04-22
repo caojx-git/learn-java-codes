@@ -16,7 +16,6 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="/js/common/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/js/common/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/js/addUser.js"></script>
 </head>
 <body>
 <h3 class="form-title col-sm-offset-1">新增用户</h3>
@@ -90,25 +89,37 @@
         </div>
     </div>
     <div class="from-group form-inline">
-        <label class="col-sm-2  control-label">学院</label>
-        <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-            <c:forEach items="${sessionScope.collegeList}" var="collegeInfo">
-                <option value="${collegeInfo.codeId}">${collegeInfo.codeName}</option>
-            </c:forEach>
-        </select>
-        <label class=" col-sm-1 control-label">管理员</label>
-        <select class="col-sm-1 form-control" id="manager" name="manager">
-            <option value="0" checked>否</option>
-            <option value="1">是</option>
-        </select>
-
+        <c:if test="${sessionScope.userInfo.managerType == 1}">
+            <label class="col-sm-2  control-label">学院</label>
+            <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
+                <c:forEach items="${sessionScope.collegeList}" var="item">
+                    <option value="${item.codeId}">${item.codeName}</option>
+                </c:forEach>
+            </select>
+            <label class=" col-sm-1 control-label">管理员</label>
+            <select class="col-sm-1 form-control" id="manager" name="manager">
+                <option value="0" checked>否</option>
+                <option value="2">是</option>
+            </select>
+        </c:if>
+        <c:if test="${sessionScope.userInfo.managerType != 1}">
+            <label class="col-sm-2  control-label">学院</label>
+            <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
+                <c:forEach items="${sessionScope.collegeList}" var="item">
+                    <c:if test="${sessionScope.userInfo.collegeId == item.codeId}">
+                        <option value="${item.codeId}">${item.codeName}</option>
+                    </c:if>
+                </c:forEach>
+            </select>
+        </c:if>
     </div>
     <div class="form-group form-inline col-sm-12">
         <div class="btn-register">
             <button type="button" class="btn btn-primary" id="cancelBtn">取消</button>
-            <button type="submit" class="btn btn-primary" id="saveBtn">注册</button>
+            <button type="submit" class="btn btn-primary" id="saveBtn">新增</button>
         </div>
     </div>
 </form>
+<script type="text/javascript" src="/js/addUser.js"></script>
 </body>
 </html>

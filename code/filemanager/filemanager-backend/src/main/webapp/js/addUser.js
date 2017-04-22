@@ -2,7 +2,10 @@ $(document).ready(function () {
 
     var userInfo = {};
 
-    var initParam = function () {
+    /**
+     * 获取表单数据
+     */
+    var getDate = function () {
         userInfo = {
             userId: $("#userId").val(),
             userName: $("#userName").val(),
@@ -17,6 +20,9 @@ $(document).ready(function () {
         }
     }
 
+    /**
+     * 清理表单数据
+     */
     var clearFormValue = function () {
         $("#userId").val("");
         $("#userName").val("");
@@ -31,6 +37,9 @@ $(document).ready(function () {
         $("#manager").val("");
     }
 
+    /**
+     * 验证表单数据
+     */
     var validate = function () {
         $("#signupForm").validate({
             rules: {
@@ -71,34 +80,44 @@ $(document).ready(function () {
                 collegeId: "请选择所属的学院"
             },
             submitHandler: function () {
-                $.ajax({
-                    url: "/userManager/addUser.do",
-                    type: "post",
-                    data: userInfo,
-                    success: function (data) {
-                        if (data.status == "0") {
-                            alert("添加成功");
-                            clearFormValue();
-                        } else {
-                            alert(data.message);
+                if (window.confirm("是否新增用户?")) {
+                    $.ajax({
+                        url: "/userManager/addUser.do",
+                        type: "post",
+                        data: userInfo,
+                        success: function (data) {
+                            if (data.status == "0") {
+                                alert("添加成功");
+                                clearFormValue();
+                            } else {
+                                alert(data.message);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }
 
+    /**
+     * 初始化事件
+     */
     var initEvent = function () {
+        //保存用户
         $("#saveBtn").bind("click", function () {
-            initParam();
+            getDate();
             validate();
         });
 
+        //取消
         $("#cancelBtn").click(function () {
             history.back(-1);
         });
-    }
+    };
 
+    /**
+     * 初始化
+     */
     var init = function () {
         initEvent();
     }

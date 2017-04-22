@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="/js/common/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/js/common/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/js/editUser.js"></script>
+
 </head>
 <body>
 <h3 class="form-title col-sm-offset-1">编辑用户</h3>
@@ -37,14 +37,14 @@
                    value="${requestScope.userInfo.userName}" placeholder="请输入用户姓名">
         </div>
     </div>
-<%--    <div class="form-group">
-        <label class="col-sm-2 control-label">密码</label>
-        <div class="col-sm-4">
-            <input type="password" class="form-control" id="userPassword" name="userPassword"
-                   value="${requestScope.userInfo.userPassword}"
-                   placeholder="密码">
-        </div>
-    </div>--%>
+    <%--    <div class="form-group">
+            <label class="col-sm-2 control-label">密码</label>
+            <div class="col-sm-4">
+                <input type="password" class="form-control" id="userPassword" name="userPassword"
+                       value="${requestScope.userInfo.userPassword}"
+                       placeholder="密码">
+            </div>
+        </div>--%>
     <div class="form-group">
         <label class="col-sm-2 control-label">年龄</label>
         <div class="col-sm-4">
@@ -94,38 +94,41 @@
                    placeholder="手机号">
         </div>
     </div>
-    <div class="from-group form-inline">
-        <label class="col-sm-2 control-label">学院</label>
-        <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-            <c:forEach items="${sessionScope.collegeList}" var="collegeInfo">
+        <div class="from-group form-inline">
+            <label class="col-sm-2 control-label">学院</label>
+            <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
+                <c:forEach items="${sessionScope.collegeList}" var="item">
+                    <c:if test="${requestScope.userInfo.collegeId == item.codeId}">
+                        <option value="${item.codeId}" selected>${item.codeName}</option>
+                    </c:if>
+                </c:forEach>
+            </select>
+            <label class=" col-sm-1 control-label">管理员</label>
+            <select class="col-sm-1 form-control" id="manager" name="manager">
                 <c:choose>
-                    <c:when test="${requestScope.userInfo.collegeId == collegeInfo.codeId}">
-                        <option value="${collegeInfo.codeId}" selected>${collegeInfo.codeName}</option>
+                    <c:when test="${sessionScope.userInfo.managerType ==1 }">
+                        <option value="0" selected>否</option>
+                        <option value="1">是</option>
                     </c:when>
                     <c:otherwise>
-                        <option value="${collegeInfo.codeId}">${collegeInfo.codeName}</option>
+                        <c:if test="${requestScope.userInfo.manager == 1}">
+                            <option value="1" selected>是</option>
+                        </c:if>
+                        <c:if test="${requestScope.userInfo.manager == 0}">
+                            <option value="0" selected>否</option>
+                        </c:if>
                     </c:otherwise>
                 </c:choose>
-            </c:forEach>
-        </select>
-        <label class=" col-sm-1 control-label">管理员</label>
-        <select class="col-sm-1 form-control" id="manager" name="manager">
-            <c:if test="${requestScope.userInfo.manager == 1}">
-                <option value="0">否</option>
-                <option value="1" selected>是</option>
-            </c:if>
-            <c:if test="${requestScope.userInfo.manager == 0}">
-                <option value="0" selected>否</option>
-                <option value="1">是</option>
-            </c:if>
-        </select>
-    </div>
+
+            </select>
+        </div>
     <div class="form-group form-inline col-sm-12">
         <div class="btn-register">
             <button type="button" class="btn btn-primary" id="cancelBtn">返回</button>
-            <button class="btn btn-primary" id="saveBtn">保存</button>
+            <button type="submit" class="btn btn-primary" id="saveBtn">保存</button>
         </div>
     </div>
 </form>
+<script type="text/javascript" src="/js/editUser.js"></script>
 </body>
 </html>

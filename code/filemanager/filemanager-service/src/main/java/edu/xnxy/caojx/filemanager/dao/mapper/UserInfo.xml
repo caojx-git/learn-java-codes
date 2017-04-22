@@ -31,6 +31,7 @@
         <result column="user_age" jdbcType="NUMERIC" property="userAge"></result>
         <result column="college_id" jdbcType="NUMERIC" property="collegeId"></result>
         <result column="manager" jdbcType="NUMERIC" property="manager"></result>
+        <result column="manager_type" jdbcType="NUMERIC" property="managerType"></result>
         <result column="user_address" jdbcType="VARCHAR" property="userAddress"></result>
         <result column="user_email" jdbcType="VARCHAR" property="userEmail"></result>
         <result column="user_phone_number" jdbcType="VARCHAR" property="userPhoneNumber"></result>
@@ -69,14 +70,14 @@
 
     <insert id="insert" parameterType="map">
         insert into user_info (user_id, user_name, user_password, user_gender, user_age,
-        college_id, manager, user_address, user_email, user_phone_number,
+        college_id, manager, manager_type, user_address, user_email, user_phone_number,
         create_date, rec_status, ext1, ext2, ext3)
         VALUES
         (#{userId, jdbcType=NUMERIC}, #{userName, jdbcType=VARCHAR}, #{userPassword, jdbcType=VARCHAR},
         #{userGender, jdbcType=NUMERIC}, #{userAge, jdbcType=NUMERIC}, #{collegeId ,jdbcType=NUMERIC},
-        #{manager, jdbcType=NUMERIC}, #{userAddress ,jdbcType=VARCHAR}, #{userEmail, jdbcType=VARCHAR},
-        #{userPhoneNumber ,jdbcType=VARCHAR},#{createDate, jdbcType=TIMESTAMP}, #{recStatus, jdbcType=NUMERIC},
-        #{ext1, jdbcType=NUMERIC}, #{ext2, jdbcType=VARCHAR}, #{ext3, jdbcType=VARCHAR})
+        #{manager, jdbcType=NUMERIC}, #{managerType, jdbcType=NUMERIC}, #{userAddress ,jdbcType=VARCHAR},
+        #{userEmail, jdbcType=VARCHAR}, #{userPhoneNumber ,jdbcType=VARCHAR},#{createDate, jdbcType=TIMESTAMP},
+        #{recStatus, jdbcType=NUMERIC}, #{ext1, jdbcType=NUMERIC}, #{ext2, jdbcType=VARCHAR}, #{ext3, jdbcType=VARCHAR})
     </insert>
 
     <update id="update" parameterType="map">
@@ -87,6 +88,7 @@
             <if test="userAge != null">user_age=#{userAge},</if>
             <if test="collegeId != null">college_id=#{collegeId},</if>
             <if test="manager != null">manager=#{manager},</if>
+            <if test="managerType != null">manager_type=#{managerType},</if>
             <if test="userAddress != null and userAddress != ''">user_address=#{userAddress},</if>
             <if test="userEmail != null and userEmail != ''">user_email=#{userEmail},</if>
             <if test="userPhoneNumber != null and userPhoneNumber != ''">user_phone_number=#{userPhoneNumber},</if>

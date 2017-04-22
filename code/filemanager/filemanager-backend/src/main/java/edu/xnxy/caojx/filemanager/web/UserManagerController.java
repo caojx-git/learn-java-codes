@@ -41,7 +41,13 @@ public class UserManagerController {
     public ModelAndView showUserManagerPage(HttpServletRequest request) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
-            List<UserInfo> userInfoList = userInfoService.listUserInfo(new UserInfo());
+            HttpSession session = request.getSession();
+            UserInfo userInfo = new UserInfo();
+            UserInfo userInfo1 = (UserInfo) session.getAttribute("userInfo");
+            if (userInfo1.getManagerType() != 1){
+                userInfo.setCollegeId(userInfo1.getCollegeId());
+            }
+            List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo);
             resultMap.put("status", 0);
             resultMap.put("userInfoList", userInfoList);
         } catch (Exception e) {
@@ -84,9 +90,14 @@ public class UserManagerController {
 
     @RequestMapping("/addUser.do")
     @ResponseBody
-    public Map<String, Object> addUser(UserInfo userInfo) {
+    public Map<String, Object> addUser(UserInfo userInfo,HttpServletRequest request) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
+            HttpSession session = request.getSession();
+            UserInfo userInfo1 = (UserInfo) session.getAttribute("userInfo");
+            if (userInfo1.getManagerType() != 1){
+                userInfo.setManager(0);
+            }
             userInfoService.saveUserInfo(userInfo);
             resultMap.put("status", 0);
             resultMap.put("message", "注册成功");
@@ -99,9 +110,14 @@ public class UserManagerController {
     }
 
     @RequestMapping("/userInfoList.do")
-    public ModelAndView listUserInfo(UserInfo userInfo) {
+    public ModelAndView listUserInfo(UserInfo userInfo, HttpServletRequest request) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
+            HttpSession session = request.getSession();
+            UserInfo userInfo1 = (UserInfo) session.getAttribute("userInfo");
+            if (userInfo1.getManagerType() != 1){
+                userInfo.setCollegeId(userInfo1.getCollegeId());
+            }
             List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo);
             resultMap.put("status", 0);
             resultMap.put("userInfoList", userInfoList);

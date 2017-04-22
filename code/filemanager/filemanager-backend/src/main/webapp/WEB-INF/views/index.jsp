@@ -25,7 +25,7 @@
         <div class="menu-lists">
             <ul>
                 <ul>
-                    <a>
+                    <a href="/userManager/editUserInfo.do?userId=${sessionScope.userInfo.userId}">
                         <div class="icon iconfont icon-touxiang"></div>
                         <div class="name">${sessionScope.userInfo.userName}</div>
                     </a>

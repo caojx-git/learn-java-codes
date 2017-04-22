@@ -17,7 +17,6 @@ public class UserInfo implements Serializable {
      */
     private Long userId;
 
-
     /**
      * 用户名称
      */
@@ -49,6 +48,11 @@ public class UserInfo implements Serializable {
     private Integer manager;
 
     /**
+     * 管理员权限 1超级管理员，2普通管理员
+     */
+    private Integer managerType;
+
+    /**
      * 住址
      */
     private String userAddress;
@@ -67,6 +71,11 @@ public class UserInfo implements Serializable {
      * 创建时间
      */
     private Date createDate;
+
+    /**
+     * 备注
+     */
+    private String notes;
 
     /**
      * 扩展字段1
@@ -145,6 +154,14 @@ public class UserInfo implements Serializable {
         this.manager = manager;
     }
 
+    public Integer getManagerType() {
+        return managerType;
+    }
+
+    public void setManagerType(Integer managerType) {
+        this.managerType = managerType;
+    }
+
     public String getUserAddress() {
         return userAddress;
     }
@@ -175,6 +192,14 @@ public class UserInfo implements Serializable {
 
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     public Integer getExt1() {
@@ -219,6 +244,7 @@ public class UserInfo implements Serializable {
                 ", userAge=" + userAge +
                 ", collegeId=" + collegeId +
                 ", manager=" + manager +
+                ", managerType=" + managerType +
                 ", userAddress='" + userAddress + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", userPhoneNumber='" + userPhoneNumber + '\'' +

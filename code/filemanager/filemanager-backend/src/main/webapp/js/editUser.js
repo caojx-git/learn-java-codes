@@ -1,8 +1,14 @@
 $(document).ready(function () {
 
+    /**
+     * 用户信息对象
+     */
     var userInfo = {};
 
-    var initParam = function () {
+    /**
+     * 获取用户信息
+     */
+    var getDate = function () {
         userInfo = {
             userId: $("#userId").val(),
             userName: $("#userName").val(),
@@ -15,8 +21,11 @@ $(document).ready(function () {
             collegeId: $("#collegeId").val(),
             manager: $("#manager").val(),
         }
-    }
+    };
 
+    /**
+     * 验证用户信息
+     */
     var validate = function () {
         $("#signupForm").validate({
             rules: {
@@ -38,7 +47,6 @@ $(document).ready(function () {
                 },
                 userAddress: "required",
                 userPhoneNumber: "required",
-                collegeId: "required",
             },
 
             messages: {
@@ -54,38 +62,46 @@ $(document).ready(function () {
                 userEmail: "请输入正确的邮箱地址格式",
                 userAddress: "请输入住址",
                 userPhoneNumber: "请输入您的联系方式",
-                collegeId: "请选择所属的学院"
             },
             submitHandler: function () {
-                $.ajax({
-                    url: "/userManager/saveUserInfo.do",
-                    type: "post",
-                    data: userInfo,
-                    success: function (data) {
-                        if (data.status == "0") {
-                            alert("保存成功");
-                        } else {
-                            alert(data.message);
+                if (window.confirm("是否要修改用户信息?")) {
+                    $.ajax({
+                        url: "/userManager/saveUserInfo.do",
+                        type: "post",
+                        data: userInfo,
+                        success: function (data) {
+                            if (data.status == "0") {
+                                alert("保存成功");
+                            } else {
+                                alert(data.message);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
-    }
+    };
 
+    /**
+     * 初始化事件
+     */
     var initEvent = function () {
         $("#saveBtn").bind("click", function () {
-            initParam();
+            getDate();
             validate();
         });
 
         $("#cancelBtn").click(function () {
-            location.href="/userManager/userManagerPage.do";
+            location.href = "/userManager/userManagerPage.do";
         });
-    }
+    };
 
+    /**
+     * 初始化
+     */
     var init = function () {
         initEvent();
-    }
+    };
+
     init();
 });

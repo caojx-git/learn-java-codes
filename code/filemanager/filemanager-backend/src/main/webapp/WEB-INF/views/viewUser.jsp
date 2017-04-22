@@ -87,19 +87,21 @@
             <c:forEach items="${sessionScope.collegeList}" var="collegeInfo">
                 <c:choose>
                     <c:when test="${requestScope.userInfo.collegeId == collegeInfo.codeId}">
-                        <option value="${collegeInfo.codeId}" selected readonly="true">${collegeInfo.codeName}</option>
+                        <option value="${collegeInfo.codeId}" selected>${collegeInfo.codeName}</option>
                     </c:when>
                 </c:choose>
             </c:forEach>
         </select>
         <label class=" col-sm-1 control-label">管理员</label>
-        <select class="col-sm-1 form-control" id="manager" name="manager" readonly="true">
-            <c:if test="${requestScope.userInfo.manager == 1}">
-                <option value="1" selected>是</option>
-            </c:if>
-            <c:if test="${requestScope.userInfo.manager == 0}">
-                <option value="0" selected>否</option>
-            </c:if>
+        <select class="col-sm-1 form-control" id="manager" name="manager">
+            <c:choose>
+                <c:when test="${requestScope.userInfo.manager == 1}">
+                    <option value="1" selected>是</option>
+                </c:when>
+                <c:otherwise>
+                    <option value="0" selected>否</option>
+                </c:otherwise>
+            </c:choose>
         </select>
     </div>
     <div class="form-group form-inline col-sm-12">

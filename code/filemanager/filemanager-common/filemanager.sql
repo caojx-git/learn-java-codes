@@ -28,8 +28,9 @@ create table user_info(
   user_password varchar2(32) not null,
   user_gender number(1) check(user_gender in(0,1)),
   user_age number(3) not null,
-  college_id number(8) not null,
-  manager number(1) check(manager in(0,1)),
+  college_id number(8),
+  manager number(1),
+  manager_type number(1),
   user_address varchar2(128),
   user_email varchar2(32) not null,
   user_phone_number number(11),
@@ -47,7 +48,8 @@ comment on column user_info.user_password is '用户密码';
 comment on column user_info.user_gender is '用户性别';
 comment on column user_info.user_age is '用户年龄';
 comment on column user_info.college_id is '学院';
-comment on column user_info.manager is '是否是管理员,1是，0否';
+comment on column user_info.manager is '管理员,0否，1是';
+comment on column user_info.manager_type is '管理员类型，1超级管理员，2普通管理员';
 comment on column user_info.user_email is '邮箱';
 comment on column user_info.user_phone_number is '手机号';
 comment on column user_info.create_date is '创建日期';

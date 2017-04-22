@@ -6,9 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<% String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -18,12 +15,10 @@
 <link rel="stylesheet" href="/css/style.css"/>
 <link rel="stylesheet" href="/iconfont/iconfont.css"/>
 <script type="text/javascript" src="/js/common/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="/js/common/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/js/login.js"></script>
 <body>
 <div class="box">
     <div class="boxside">
-        <form id="sigininForm" action="/user/login.do" method="post">
+        <form id="sigininForm">
             <div class="login-box">
                 <div class="con">
                     <span class="iconfont icon-touxiang"></span>
@@ -39,6 +34,7 @@
         </form>
     </div>
 </div>
+<script type="text/javascript" src="/js/login.js"></script>
 </body>
 </html>
 

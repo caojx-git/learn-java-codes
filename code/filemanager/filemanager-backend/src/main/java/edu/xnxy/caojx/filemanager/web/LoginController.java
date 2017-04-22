@@ -52,8 +52,8 @@ public class LoginController {
     }
 
     @RequestMapping("/login.do")
-    public ModelAndView login(@RequestParam("userId") String userId, @RequestParam("userPassword") String userPassword,HttpServletRequest request) {
-        String path = "index";
+    @ResponseBody
+    public Map<String,Object> login(@RequestParam("userId") String userId, @RequestParam("userPassword") String userPassword,HttpServletRequest request) {
         Map resultMap = new HashMap<String, Object>();
         try {
             List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L, null);
@@ -63,12 +63,11 @@ public class LoginController {
             resultMap.put("status", "0");
             resultMap.put("userInfo", userInfo);
         } catch (Exception e) {
-            path = "login";
             resultMap.put("status", "1");
             resultMap.put("message", e.getMessage());
             log.error("获取下拉框数据出错", e);
         }
-        return new ModelAndView(path, resultMap);
+        return resultMap;
     }
 
     @RequestMapping("/getSysBaseType")
