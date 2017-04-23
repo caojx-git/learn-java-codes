@@ -1,6 +1,7 @@
 package edu.xnxy.caojx.filemanager.service;
 
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
+import edu.xnxy.caojx.filemanager.mybatis.mapper.pagination.PageParameter;
 
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,14 @@ public interface IUserInfoService {
      * @throws Exception
      */
     public List<UserInfo> listUserInfo(UserInfo userInfo) throws Exception;
+
+    /**
+     * 查询用户信息,带分页
+     * @param userInfo
+     * @return
+     * @throws Exception
+     */
+    public List<UserInfo> listUserInfo(UserInfo userInfo, PageParameter page) throws Exception;
 
     /**
      * 新增用户

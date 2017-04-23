@@ -1,5 +1,6 @@
 package edu.xnxy.caojx.filemanager.dao;
 
+import edu.xnxy.caojx.filemanager.mybatis.mapper.pagination.PageParameter;
 import org.apache.ibatis.annotations.Param;
 
 import java.sql.SQLException;
@@ -9,7 +10,7 @@ import java.util.List;
  * Description: Dao层接口基础接口
  *
  * @author caojx
- * Created by caojx on 2017年04月10 下午10:52:52
+ *         Created by caojx on 2017年04月10 下午10:52:52
  */
 public interface IBaseDAO<T> {
 
@@ -28,6 +29,14 @@ public interface IBaseDAO<T> {
      * @return
      */
     public List<T> query(@Param("entity") T t);
+
+    /**
+     * 查询多条记录，带分页
+     *
+     * @param t
+     * @return
+     */
+    public List<T> query(@Param("entity") T t, @Param("page") PageParameter page);
 
     /**
      *

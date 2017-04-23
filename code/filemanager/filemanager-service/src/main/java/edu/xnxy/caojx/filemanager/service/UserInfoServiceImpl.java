@@ -2,6 +2,7 @@ package edu.xnxy.caojx.filemanager.service;
 
 import edu.xnxy.caojx.filemanager.dao.IUserInfoDAO;
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
+import edu.xnxy.caojx.filemanager.mybatis.mapper.pagination.PageParameter;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -80,6 +81,26 @@ public class UserInfoServiceImpl implements IUserInfoService {
         List<UserInfo> userInfoList = null;
         try {
             userInfoList = userInfoDAO.query(userInfo);
+        } catch (Exception e) {
+            log.error("查询用户信息失败", e);
+            throw new RuntimeException("查询用户信息失败", e);
+        }
+        return userInfoList;
+    }
+
+    /**
+     * 查询用户信息,带分页
+     *
+     * @param userInfo
+     * @param page
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<UserInfo> listUserInfo(UserInfo userInfo, PageParameter page) throws Exception {
+        List<UserInfo> userInfoList = null;
+        try {
+            userInfoList = userInfoDAO.query(userInfo,page);
         } catch (Exception e) {
             log.error("查询用户信息失败", e);
             throw new RuntimeException("查询用户信息失败", e);

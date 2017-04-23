@@ -2,6 +2,7 @@ package edu.xnxy.caojx.filemanager.web;
 
 import edu.xnxy.caojx.filemanager.entity.FileManagerSysBaseType;
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
+import edu.xnxy.caojx.filemanager.mybatis.mapper.pagination.PageParameter;
 import edu.xnxy.caojx.filemanager.service.IFileManagerSysBaseTypeService;
 import edu.xnxy.caojx.filemanager.service.IUserInfoService;
 import org.apache.log4j.Logger;
@@ -44,18 +45,20 @@ public class UserManagerController {
             HttpSession session = request.getSession();
             UserInfo userInfo = new UserInfo();
             UserInfo userInfo1 = (UserInfo) session.getAttribute("userInfo");
-            if (userInfo1.getManagerType() != 1){
+            if (userInfo1.getManagerType() != 1) {
                 userInfo.setCollegeId(userInfo1.getCollegeId());
             }
-            List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo);
+            PageParameter page = new PageParameter();
+            List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo,page);
             resultMap.put("status", 0);
+            resultMap.put("page",page);
             resultMap.put("userInfoList", userInfoList);
         } catch (Exception e) {
             log.error("用户信息加载失败", e);
             resultMap.put("status", 0);
             resultMap.put("message", "用户信息加载出错");
         }
-        return new ModelAndView("userManager", resultMap);
+        return new ModelAndView("userManager",resultMap);
     }
 
     @RequestMapping("/loadCollegeList.do")
@@ -90,12 +93,12 @@ public class UserManagerController {
 
     @RequestMapping("/addUser.do")
     @ResponseBody
-    public Map<String, Object> addUser(UserInfo userInfo,HttpServletRequest request) {
+    public Map<String, Object> addUser(UserInfo userInfo, HttpServletRequest request) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
             HttpSession session = request.getSession();
             UserInfo userInfo1 = (UserInfo) session.getAttribute("userInfo");
-            if (userInfo1.getManagerType() != 1){
+            if (userInfo1.getManagerType() != 1) {
                 userInfo.setManager(0);
             }
             userInfoService.saveUserInfo(userInfo);
@@ -110,17 +113,23 @@ public class UserManagerController {
     }
 
     @RequestMapping("/userInfoList.do")
-    public ModelAndView listUserInfo(UserInfo userInfo, HttpServletRequest request) {
+    public ModelAndView listUserInfo(UserInfo userInfo, HttpServletRequest request, PageParameter page) {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         try {
             HttpSession session = request.getSession();
             UserInfo userInfo1 = (UserInfo) session.getAttribute("userInfo");
-            if (userInfo1.getManagerType() != 1){
+            if (userInfo1.getManagerType() != 1) {
                 userInfo.setCollegeId(userInfo1.getCollegeId());
             }
-            List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo);
+            List<UserInfo> userInfoList = userInfoService.listUserInfo(userInfo, page);
             resultMap.put("status", 0);
             resultMap.put("userInfoList", userInfoList);
+            resultMap.put("userId", userInfo.getUserId());
+            resultMap.put("userName", userInfo.getUserName());
+            resultMap.put("collegeId", userInfo.getCollegeId());
+            resultMap.put("manager", userInfo.getManager());
+            resultMap.put("userInfoList", userInfoList);
+            resultMap.put("page",page);
         } catch (Exception e) {
             log.error("查询失败", e);
             resultMap.put("status", 1);

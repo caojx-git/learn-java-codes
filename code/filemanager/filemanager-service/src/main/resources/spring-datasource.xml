@@ -62,6 +62,7 @@ http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
     <!--mybatis-配置sqlsessionFactory，spring会自动扫描映射文件所在的路径-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!--自动扫描mapping.xml文件-->
         <property name="mapperLocations">
             <value>classpath*:edu/xnxy/caojx/filemanager/dao/mapper/*.xml</value>
