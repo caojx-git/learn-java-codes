@@ -46,11 +46,6 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping("/indexPage.do")
-    public String showIndexPage() {
-        return "index";
-    }
-
     @RequestMapping("/login.do")
     @ResponseBody
     public Map<String,Object> login(@RequestParam("userId") String userId, @RequestParam("userPassword") String userPassword,HttpServletRequest request) {

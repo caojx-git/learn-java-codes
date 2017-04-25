@@ -24,18 +24,20 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-multiselect.css" type="text/css"/>
     <link rel="stylesheet" href="/bootstrap/css/prettify.css" type="text/css"/>
-    <script type="text/javascript" src="/js/fileupload.js"></script>
-
 </head>
 <body>
 <h3 class="form-title col-sm-offset-2">文件上传</h3>
 <hr/>
-<form class="form-horizontal" enctype="multipart/form-data" action="/file/fileUpload.do" method="post">
+<form class="form-horizontal" enctype="multipart/form-data" action="/file/fileUpload.do" method="post" id="fileUploadForm">
+
+    <input type="text" hidden="hidden" id="userId" name="userId" value="${sessionScope.userInfo.userId}">
+    <input type="text" hidden="hidden" id="collegeId" name="collegeId" value="${sessionScope.userInfo.collegeId}">
+
     <div class="form-group">
         <label class="sr-only col-sm-2 control-label" for="file">文件输入</label>
         <input type="file" id="file" name="file">
     </div>
-    <div class="form-group form-inline">
+    <%--<div class="form-group form-inline">
         <label class="col-sm-2 control-label">不给谁看</label>
         <div class="col-sm-offset-2">
             <select class="multiselect" multiple="multiple" id="userId">
@@ -50,14 +52,15 @@
                 </c:forEach>
             </select>
         </div>
-    </div>
+    </div>--%>
     <div class="form-group">
         <label class="col-sm-2 control-label">描述</label>
         <div class="col-sm-4">
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" id="notes" name="notes"></textarea>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary col-sm-offset-2" id="uploadBtn">上传</button>
+    <button type="button" class="btn btn-primary col-sm-offset-2" id="uploadBtn">上传</button>
 </form>
+<script type="text/javascript" src="/js/fileupload.js"></script>
 </body>
 </html>

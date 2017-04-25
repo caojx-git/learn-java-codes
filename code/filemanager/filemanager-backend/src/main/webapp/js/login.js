@@ -42,7 +42,7 @@ $(document).ready(function () {
                     data:userInfo,
                     success:function (data) {
                         if(data.status == 0){
-                            location.href = "/user/indexPage.do";
+                            location.href = "/main/indexPage.do";
                         }else {
                             alert(data.message);
                         }

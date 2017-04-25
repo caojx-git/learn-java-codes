@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
-  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.0">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.1">
     <root id="1"/>
     <schema id="2" parent="1" name="MYORACLE">
       <ObjectId>52</ObjectId>
-      <IntrospectionTimestamp>2017-04-17.19:43:54</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2017-04-24.17:00:40</IntrospectionTimestamp>
       <CreatedTimestamp>2016-12-12.20:50:50</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
-      <CommentsHash>70338502833913</CommentsHash>
+      <ModifiedTimestamp>2017-04-24.16:57:06</ModifiedTimestamp>
+      <CommentsHash>72805425625061</CommentsHash>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -62,111 +62,196 @@
     <schema id="19" parent="1" name="XS$NULL">
       <ObjectId>2147483638</ObjectId>
     </schema>
-    <table id="20" parent="2" name="FILEMANAGER_SYS_BASE_TYPE">
-      <ObjectId>22727</ObjectId>
-      <CreatedTimestamp>2017-04-10.22:02:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-10.22:02:28</ModifiedTimestamp>
+    <sequence id="20" parent="2" name="SEQ_DONE_CODE">
+      <ObjectId>23188</ObjectId>
+      <CreatedTimestamp>2017-04-24.16:43:38</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-24.16:43:38</ModifiedTimestamp>
+      <SequenceIdentity>1..999999999</SequenceIdentity>
+    </sequence>
+    <table id="21" parent="2" name="FILEMANAGER_SYS_BASE_TYPE">
+      <ObjectId>23052</ObjectId>
+      <CreatedTimestamp>2017-04-20.09:26:05</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-20.09:26:05</ModifiedTimestamp>
     </table>
-    <table id="21" parent="2" name="MESSAGE">
+    <table id="22" parent="2" name="FILE_INFO">
+      <ObjectId>23189</ObjectId>
+      <CreatedTimestamp>2017-04-24.16:57:06</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-24.16:57:06</ModifiedTimestamp>
+    </table>
+    <table id="23" parent="2" name="MESSAGE">
       <ObjectId>21292</ObjectId>
       <CreatedTimestamp>2017-02-01.11:46:21</CreatedTimestamp>
       <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
     </table>
-    <table id="22" parent="2" name="PERSON">
+    <table id="24" parent="2" name="PERSON">
       <ObjectId>21385</ObjectId>
       <CreatedTimestamp>2017-02-03.12:30:45</CreatedTimestamp>
       <ModifiedTimestamp>2017-02-03.12:30:45</ModifiedTimestamp>
     </table>
-    <table id="23" parent="2" name="TEST">
+    <table id="25" parent="2" name="TEST">
       <ObjectId>20438</ObjectId>
       <CreatedTimestamp>2016-12-12.20:50:50</CreatedTimestamp>
       <ModifiedTimestamp>2016-12-12.20:50:50</ModifiedTimestamp>
     </table>
-    <table id="24" parent="2" name="T_USER">
-      <ObjectId>22744</ObjectId>
-      <CreatedTimestamp>2017-04-12.18:44:55</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
+    <table id="26" parent="2" name="T_USER">
+      <ObjectId>23058</ObjectId>
+      <CreatedTimestamp>2017-04-20.11:04:07</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-20.11:04:07</ModifiedTimestamp>
     </table>
-    <table id="25" parent="2" name="USER_INFO">
-      <ObjectId>22729</ObjectId>
-      <CreatedTimestamp>2017-04-10.22:03:46</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-10.22:03:46</ModifiedTimestamp>
+    <table id="27" parent="2" name="USER_INFO">
+      <ObjectId>23089</ObjectId>
+      <CreatedTimestamp>2017-04-22.21:46:15</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-22.21:46:15</ModifiedTimestamp>
     </table>
-    <column id="26" parent="20" name="CODE_TYPE">
+    <column id="28" parent="21" name="CODE_TYPE">
       <Position>1</Position>
       <Comment>类型编码</Comment>
       <DataType>NUMBER(8)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="20" name="CODE_ID">
+    <column id="29" parent="21" name="CODE_ID">
       <Position>2</Position>
       <Comment>编号</Comment>
       <DataType>NUMBER(8)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="20" name="CODE_NAME">
+    <column id="30" parent="21" name="CODE_NAME">
       <Position>3</Position>
       <Comment>名称</Comment>
       <DataType>VARCHAR2(64)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="29" parent="20" name="NOTES">
+    <column id="31" parent="21" name="NOTES">
       <Position>4</Position>
       <Comment>注释</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
-    <column id="30" parent="20" name="EXT1">
+    <column id="32" parent="21" name="EXT1">
       <Position>5</Position>
       <Comment>扩展字段1</Comment>
       <DataType>NUMBER(8)|0</DataType>
     </column>
-    <column id="31" parent="20" name="EXT2">
+    <column id="33" parent="21" name="EXT2">
       <Position>6</Position>
-      <Comment>扩展字段1</Comment>
+      <Comment>扩展字段2</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
-    <column id="32" parent="20" name="EXT3">
+    <column id="34" parent="21" name="EXT3">
       <Position>7</Position>
-      <Comment>扩展字段1</Comment>
+      <Comment>扩展字段3</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
-    <index id="33" parent="20" name="FILEMANAGER_SYS_BASE_TYPE_PK">
-      <ObjectId>22728</ObjectId>
-      <CreatedTimestamp>2017-04-10.22:02:28</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-10.22:02:28</ModifiedTimestamp>
+    <index id="35" parent="21" name="FILEMANAGER_SYS_BASE_TYPE_PK">
+      <ObjectId>23053</ObjectId>
+      <CreatedTimestamp>2017-04-20.09:26:05</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-20.09:26:05</ModifiedTimestamp>
       <TablespaceName>SYSTEM</TablespaceName>
       <ColNames>CODE_TYPE
 CODE_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="34" parent="20" name="FILEMANAGER_SYS_BASE_TYPE_PK">
-      <ModifiedTimestamp>2017-04-10.22:02:28</ModifiedTimestamp>
+    <key id="36" parent="21" name="FILEMANAGER_SYS_BASE_TYPE_PK">
+      <ModifiedTimestamp>2017-04-20.09:26:05</ModifiedTimestamp>
       <ColNames>CODE_TYPE
 CODE_ID</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>FILEMANAGER_SYS_BASE_TYPE_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="21" name="ID">
+    <column id="37" parent="22" name="FILE_ID">
+      <Position>1</Position>
+      <Comment>文件编号</Comment>
+      <DataType>NUMBER(12)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="22" name="USER_ID">
+      <Position>2</Position>
+      <Comment>上传者编号</Comment>
+      <DataType>NUMBER(12)|0</DataType>
+    </column>
+    <column id="39" parent="22" name="FILE_NAME">
+      <Position>3</Position>
+      <Comment>文件名称</Comment>
+      <DataType>VARCHAR2(128 byte)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="22" name="PATH_CODE">
+      <Position>4</Position>
+      <Comment>文件保存路径编码</Comment>
+      <DataType>NUMBER(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="22" name="FILE_TYPE">
+      <Position>5</Position>
+      <Comment>文件类型</Comment>
+      <DataType>NUMBER(8)|0</DataType>
+    </column>
+    <column id="42" parent="22" name="CREATE_DATE">
+      <Position>6</Position>
+      <Comment>文件上传时间</Comment>
+      <DataType>DATE|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="22" name="NOTES">
+      <Position>7</Position>
+      <Comment>注释</Comment>
+      <DataType>VARCHAR2(128 byte)|0</DataType>
+    </column>
+    <column id="44" parent="22" name="EXT1">
+      <Position>8</Position>
+      <Comment>扩展字段1</Comment>
+      <DataType>NUMBER(8)|0</DataType>
+    </column>
+    <column id="45" parent="22" name="EXT2">
+      <Position>9</Position>
+      <Comment>扩展字段2</Comment>
+      <DataType>VARCHAR2(32)|0</DataType>
+    </column>
+    <column id="46" parent="22" name="EXT3">
+      <Position>10</Position>
+      <Comment>扩展字段3</Comment>
+      <DataType>VARCHAR2(32)|0</DataType>
+    </column>
+    <column id="47" parent="22" name="REC_STATUS">
+      <Position>11</Position>
+      <Comment>是否有效，1有效，0无效</Comment>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <index id="48" parent="22" name="FILE_INFO_PK">
+      <ObjectId>23190</ObjectId>
+      <CreatedTimestamp>2017-04-24.16:57:06</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-24.16:57:06</ModifiedTimestamp>
+      <TablespaceName>SYSTEM</TablespaceName>
+      <ColNames>FILE_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="22" name="FILE_INFO_PK">
+      <ModifiedTimestamp>2017-04-24.16:57:06</ModifiedTimestamp>
+      <ColNames>FILE_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>FILE_INFO_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="23" name="ID">
       <Position>1</Position>
       <DataType>NUMBER(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="21" name="COMMAND">
+    <column id="51" parent="23" name="COMMAND">
       <Position>2</Position>
       <DataType>VARCHAR2(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="21" name="DESCRIPTION">
+    <column id="52" parent="23" name="DESCRIPTION">
       <Position>3</Position>
       <DataType>VARCHAR2(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="21" name="CONTENT">
+    <column id="53" parent="23" name="CONTENT">
       <Position>4</Position>
       <DataType>VARCHAR2(200)|0</DataType>
     </column>
-    <index id="39" parent="21" name="MESSAGE_PK_ID">
+    <index id="54" parent="23" name="MESSAGE_PK_ID">
       <ObjectId>21293</ObjectId>
       <CreatedTimestamp>2017-02-01.11:46:21</CreatedTimestamp>
       <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
@@ -174,38 +259,38 @@ CODE_ID</ColNames>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="40" parent="21" name="MESSAGE_PK_ID">
+    <key id="55" parent="23" name="MESSAGE_PK_ID">
       <ModifiedTimestamp>2017-02-01.11:46:21</ModifiedTimestamp>
       <ColNames>ID</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>MESSAGE_PK_ID</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="41" parent="22" name="ID">
+    <column id="56" parent="24" name="ID">
       <Position>1</Position>
       <DataType>VARCHAR2(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="22" name="ADDRESS">
+    <column id="57" parent="24" name="ADDRESS">
       <Position>2</Position>
       <DataType>VARCHAR2(255)|0</DataType>
     </column>
-    <column id="43" parent="22" name="IDCARD">
+    <column id="58" parent="24" name="IDCARD">
       <Position>3</Position>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="44" parent="22" name="NAME">
+    <column id="59" parent="24" name="NAME">
       <Position>4</Position>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="45" parent="22" name="PHONE">
+    <column id="60" parent="24" name="PHONE">
       <Position>5</Position>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="46" parent="22" name="SYS_C007443">
+    <index id="61" parent="24" name="SYS_C007443">
       <ObjectId>21386</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2017-02-03.12:30:45</CreatedTimestamp>
@@ -214,7 +299,7 @@ CODE_ID</ColNames>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="47" parent="22" name="SYS_C007443">
+    <key id="62" parent="24" name="SYS_C007443">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2017-02-03.12:30:45</ModifiedTimestamp>
       <ColNames>ID</ColNames>
@@ -222,171 +307,163 @@ CODE_ID</ColNames>
       <UnderlyingIndexName>SYS_C007443</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="48" parent="23" name="NAME">
+    <column id="63" parent="25" name="NAME">
       <Position>1</Position>
       <DataType>VARCHAR2(20)|0</DataType>
     </column>
-    <column id="49" parent="23" name="AGE">
+    <column id="64" parent="25" name="AGE">
       <Position>2</Position>
       <DataType>NUMBER(5)|0</DataType>
     </column>
-    <column id="50" parent="23" name="GENDER">
+    <column id="65" parent="25" name="GENDER">
       <Position>3</Position>
       <DataType>CHAR(1)|0</DataType>
     </column>
-    <check id="51" parent="23" name="SYS_C007261">
+    <check id="66" parent="25" name="SYS_C007261">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2016-12-12.20:50:50</ModifiedTimestamp>
       <ColNames>GENDER</ColNames>
       <Predicate>gender in(&apos;男&apos;,&apos;女&apos;)</Predicate>
     </check>
-    <column id="52" parent="24" name="ID">
+    <column id="67" parent="26" name="ID">
       <Position>1</Position>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="53" parent="24" name="AGE">
+    <column id="68" parent="26" name="AGE">
       <Position>2</Position>
       <DataType>NUMBER(10)|0</DataType>
     </column>
-    <column id="54" parent="24" name="USERNAME">
+    <column id="69" parent="26" name="USERNAME">
       <Position>3</Position>
       <DataType>VARCHAR2(25)|0</DataType>
     </column>
-    <index id="55" parent="24" name="SYS_C007629">
-      <ObjectId>22745</ObjectId>
+    <index id="70" parent="26" name="SYS_C007713">
+      <ObjectId>23059</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2017-04-12.18:44:55</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
+      <CreatedTimestamp>2017-04-20.11:04:07</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-20.11:04:07</ModifiedTimestamp>
       <TablespaceName>SYSTEM</TablespaceName>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="56" parent="24" name="SYS_C007629">
+    <key id="71" parent="26" name="SYS_C007713">
       <NameSurrogate>1</NameSurrogate>
-      <ModifiedTimestamp>2017-04-12.18:44:55</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-04-20.11:04:07</ModifiedTimestamp>
       <ColNames>ID</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>SYS_C007629</UnderlyingIndexName>
+      <UnderlyingIndexName>SYS_C007713</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="57" parent="25" name="USER_ID">
+    <column id="72" parent="27" name="USER_ID">
       <Position>1</Position>
       <Comment>用户编号</Comment>
       <DataType>NUMBER(12)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="58" parent="25" name="USER_ID_CARD">
+    <column id="73" parent="27" name="USER_NAME">
       <Position>2</Position>
-      <Comment>用户省份证号</Comment>
-      <DataType>VARCHAR2(18)|0</DataType>
-    </column>
-    <column id="59" parent="25" name="USER_NAME">
-      <Position>3</Position>
       <Comment>用户名</Comment>
-      <DataType>VARCHAR2(40)|0</DataType>
+      <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="60" parent="25" name="USER_PASSWORD">
-      <Position>4</Position>
+    <column id="74" parent="27" name="USER_PASSWORD">
+      <Position>3</Position>
       <Comment>用户密码</Comment>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="61" parent="25" name="USER_GENDER">
-      <Position>5</Position>
+    <column id="75" parent="27" name="USER_GENDER">
+      <Position>4</Position>
       <Comment>用户性别</Comment>
       <DataType>NUMBER(1)|0</DataType>
     </column>
-    <column id="62" parent="25" name="USER_AGE">
-      <Position>6</Position>
+    <column id="76" parent="27" name="USER_AGE">
+      <Position>5</Position>
       <Comment>用户年龄</Comment>
       <DataType>NUMBER(3)|0</DataType>
-    </column>
-    <column id="63" parent="25" name="USER_TITLE">
-      <Position>7</Position>
-      <DataType>NUMBER(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="64" parent="25" name="USER_COLLEGE">
-      <Position>8</Position>
+    <column id="77" parent="27" name="COLLEGE_ID">
+      <Position>6</Position>
       <Comment>学院</Comment>
-      <DataType>NUMBER(2)|0</DataType>
-      <NotNull>1</NotNull>
+      <DataType>NUMBER(8)|0</DataType>
     </column>
-    <column id="65" parent="25" name="USER_PROFESSION">
+    <column id="78" parent="27" name="MANAGER">
+      <Position>7</Position>
+      <Comment>管理员,0否，1是</Comment>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="79" parent="27" name="MANAGER_TYPE">
+      <Position>8</Position>
+      <Comment>管理员权限，1超级管理员，2普通管理员</Comment>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="80" parent="27" name="USER_ADDRESS">
       <Position>9</Position>
-      <Comment>专业</Comment>
-      <DataType>NUMBER(2)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="66" parent="25" name="USER_CLASS">
-      <Position>10</Position>
-      <Comment>班级</Comment>
-      <DataType>NUMBER(2)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="67" parent="25" name="USER_ADDRESS">
-      <Position>11</Position>
-      <Comment>地址</Comment>
       <DataType>VARCHAR2(128 byte)|0</DataType>
     </column>
-    <column id="68" parent="25" name="USER_EMAIL">
-      <Position>12</Position>
+    <column id="81" parent="27" name="USER_EMAIL">
+      <Position>10</Position>
       <Comment>邮箱</Comment>
       <DataType>VARCHAR2(32)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="25" name="USER_PHONE_NUMBER">
-      <Position>13</Position>
+    <column id="82" parent="27" name="USER_PHONE_NUMBER">
+      <Position>11</Position>
       <Comment>手机号</Comment>
       <DataType>NUMBER(11)|0</DataType>
     </column>
-    <column id="70" parent="25" name="CREATE_DATE">
-      <Position>14</Position>
+    <column id="83" parent="27" name="CREATE_DATE">
+      <Position>12</Position>
       <Comment>创建日期</Comment>
       <DataType>DATE|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="71" parent="25" name="REC_STATUS">
+    <column id="84" parent="27" name="NOTES">
+      <Position>13</Position>
+      <Comment>注释</Comment>
+      <DataType>VARCHAR2(128 byte)|0</DataType>
+    </column>
+    <column id="85" parent="27" name="EXT1">
+      <Position>14</Position>
+      <Comment>扩展字段1</Comment>
+      <DataType>NUMBER(8)|0</DataType>
+    </column>
+    <column id="86" parent="27" name="EXT2">
       <Position>15</Position>
+      <Comment>扩展字段2</Comment>
+      <DataType>VARCHAR2(32)|0</DataType>
+    </column>
+    <column id="87" parent="27" name="EXT3">
+      <Position>16</Position>
+      <Comment>扩展字段3</Comment>
+      <DataType>VARCHAR2(32)|0</DataType>
+    </column>
+    <column id="88" parent="27" name="REC_STATUS">
+      <Position>17</Position>
       <Comment>是否有效，1有效，0无效</Comment>
       <DataType>NUMBER(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="72" parent="25" name="EXT1">
-      <Position>16</Position>
-      <Comment>扩展字段1</Comment>
-      <DataType>NUMBER(8)|0</DataType>
-    </column>
-    <column id="73" parent="25" name="EXT2">
-      <Position>17</Position>
-      <Comment>扩展字段2</Comment>
-      <DataType>VARCHAR2(128 byte)|0</DataType>
-    </column>
-    <column id="74" parent="25" name="EXT3">
-      <Position>18</Position>
-      <Comment>扩展字段3</Comment>
-      <DataType>VARCHAR2(128 byte)|0</DataType>
-    </column>
-    <index id="75" parent="25" name="USER_INFO_PK">
-      <ObjectId>22730</ObjectId>
-      <CreatedTimestamp>2017-04-10.22:03:46</CreatedTimestamp>
-      <ModifiedTimestamp>2017-04-10.22:03:46</ModifiedTimestamp>
+    <index id="89" parent="27" name="USER_INFO_PK">
+      <ObjectId>23090</ObjectId>
+      <CreatedTimestamp>2017-04-22.21:46:15</CreatedTimestamp>
+      <ModifiedTimestamp>2017-04-22.21:46:15</ModifiedTimestamp>
       <TablespaceName>SYSTEM</TablespaceName>
       <ColNames>USER_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="76" parent="25" name="USER_INFO_PK">
-      <ModifiedTimestamp>2017-04-10.22:03:46</ModifiedTimestamp>
+    <key id="90" parent="27" name="USER_INFO_PK">
+      <ModifiedTimestamp>2017-04-22.21:46:15</ModifiedTimestamp>
       <ColNames>USER_ID</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>USER_INFO_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <check id="77" parent="25" name="SYS_C007616">
+    <check id="91" parent="27" name="SYS_C007755">
       <NameSurrogate>1</NameSurrogate>
-      <ModifiedTimestamp>2017-04-10.22:03:46</ModifiedTimestamp>
+      <ModifiedTimestamp>2017-04-22.21:46:15</ModifiedTimestamp>
       <ColNames>USER_GENDER</ColNames>
       <Predicate>user_gender in(0,1)</Predicate>
     </check>

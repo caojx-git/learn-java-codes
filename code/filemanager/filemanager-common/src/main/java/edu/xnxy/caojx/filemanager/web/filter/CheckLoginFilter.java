@@ -1,7 +1,6 @@
 package edu.xnxy.caojx.filemanager.web.filter;
 
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
-import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -18,42 +17,21 @@ import java.io.IOException;
  * Created by caojx on 2017年04月23 下午10:48:48
  */
 public class CheckLoginFilter extends HandlerInterceptorAdapter {
+
     @Override
-    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        HttpSession session = httpServletRequest.getSession();
+    public void postHandle(HttpServletRequest request, HttpServletResponse response,
+                           Object obj, ModelAndView mav) throws Exception {
+        response.sendRedirect("/user/loginPage.do");
+    }
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
+                             Object obj) throws Exception {
+        HttpSession session = request.getSession();
         UserInfo userInfo = (UserInfo) session.getAttribute("userInfo");
-        String currentURL = httpServletRequest.getRequestURI();
-        if(!("/user/loginPage.do".equals(currentURL)) && userInfo == null){
+        if(userInfo == null){
             return true;
         }
         return false;
     }
-
-    @Override
-    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-        httpServletResponse.sendRedirect("/user/loginPage.do");
-    }
-
-    @Override
-    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
-    }
-
-
-
-   /* @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-
-        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-        HttpSession session = httpServletRequest.getSession();
-        UserInfo userInfo = (UserInfo) session.getAttribute("userInfo");
-        String currentURL = httpServletRequest.getRequestURI();
-        if(!("/user/loginPage.do".equals(currentURL)) && userInfo == null){
-            HttpServletResponse response = (HttpServletResponse) servletResponse;
-            response.sendRedirect("/user/loginPage.do");
-            return;
-        }
-        filterChain.doFilter(servletRequest,servletResponse);
-        return;
-    }*/
 }

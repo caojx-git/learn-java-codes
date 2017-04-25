@@ -1,5 +1,5 @@
-DROP  table filemanager_sys_base_type;
-DROP TABLE user_info;
+drop  table filemanager_sys_base_type;
+drop table user_info;
 /*系统-常量信息定义表*/
 create table filemanager_sys_base_type(
   code_type number(8) not null,
@@ -80,8 +80,9 @@ comment on column user_relation_info.ext3 is '扩展字段3';
 /*文件表*/
 create table file_info(
     file_id number(12) constraint file_info_pk primary key,
-    user_id number(12),
-    file_name varchar2(32) not null,
+    college_id number(8),
+    user_id number(12) not null,
+    file_name varchar2(128) not null,
     path_code number(8) not null,
     file_type number(8),
     create_date date not null,
@@ -89,10 +90,11 @@ create table file_info(
     ext1 number(8),
     ext2 varchar2(32),
     ext3 varchar2(32),
-    rec_status number(1)
+    rec_status number(1) not null
 );
 
 comment on column file_info.file_id is '文件编号';
+comment on column file_info.college_id is '学院编号';
 comment on column file_info.user_id is '上传者编号';
 comment on column file_info.file_name is '文件名称';
 comment on column file_info.path_code is '文件保存路径编码';
@@ -115,10 +117,20 @@ create table authority_relation_info(
   constraint authority_relation_info_pk primary key(file_id,user_id)
 );
 
-COMMENT ON COLUMN authority_relation_info.file_id IS '文件编号';
-COMMENT ON COLUMN authority_relation_info.user_id IS '用户编号';
-COMMENT ON COLUMN authority_relation_info.author_code IS '权限值';
-COMMENT ON COLUMN authority_relation_info.ext1 IS '扩展字段1';
-COMMENT ON COLUMN authority_relation_info.ext2 IS '扩展字段2';
-COMMENT ON COLUMN authority_relation_info.ext3 IS '扩展字段3';
+comment on column authority_relation_info.file_id is '文件编号';
+comment on column authority_relation_info.user_id is '用户编号';
+comment on column authority_relation_info.author_code is '权限值';
+comment on column authority_relation_info.ext1 is '扩展字段1';
+comment on column authority_relation_info.ext2 is '扩展字段2';
+comment on column authority_relation_info.ext3 is '扩展字段3';
+
+/**
+ * 获取序列号
+ */
+create sequence seq_done_code
+increment by 1
+start with 1
+maxvalue 999999999;
+
+select seq_done_code.nextval from dual;
 

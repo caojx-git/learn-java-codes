@@ -13,14 +13,6 @@
     <!--开启扫描包-->
     <context:component-scan base-package="edu.xnxy.caojx.filemanager"/>
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <!-- 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller -->
-            <mvc:mapping path="/**" />
-            <bean class="edu.xnxy.caojx.filemanager.web.filter.CheckLoginFilter"></bean>
-        </mvc:interceptor>
-        <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 -->
-    </mvc:interceptors>
 
     <!--开启springmvc注解-->
     <mvc:annotation-driven>
@@ -51,7 +43,23 @@
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources mapping="/iconfont/**" location="/iconfont/"></mvc:resources>
     <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>
-    <mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"></mvc:resources>
+    <!--    <mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"></mvc:resources>-->
+
+<!--    &lt;!&ndash;拦截判断用户是否登录&ndash;&gt;
+    <mvc:interceptors>
+        <mvc:interceptor>
+            &lt;!&ndash; 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller &ndash;&gt;
+            <mvc:mapping path="/userManager/**"></mvc:mapping>
+            <mvc:mapping path="/main/**"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/iconfont/**"/>
+            <mvc:exclude-mapping path="/bootstrap/**"/>
+            <bean class="edu.xnxy.caojx.filemanager.web.filter.CheckLoginFilter"></bean>
+        </mvc:interceptor>
+        &lt;!&ndash; 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 &ndash;&gt;
+    </mvc:interceptors>-->
 
     <!--4.0文件上传解析器配置-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

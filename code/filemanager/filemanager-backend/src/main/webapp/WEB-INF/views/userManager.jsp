@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="index.html">
+                    <a href="/main/indexPage.do">
                         <div class="icon iconfont icon-file"></div>
                         <div class="name">文件</div>
                     </a>
