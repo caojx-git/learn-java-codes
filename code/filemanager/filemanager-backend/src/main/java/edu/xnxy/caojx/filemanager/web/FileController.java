@@ -199,7 +199,7 @@ public class FileController {
 
             //如果是pdf，swf,map3，map4直接返回文件名
             String suffixName = fileName.substring(fileName.lastIndexOf("."));
-            if(!"pdf".equals(suffixName) || !"swf".equals(suffixName) || !"map3".equals(suffixName)|| !"map4".equals(suffixName)){
+            if(".pdf".equals(suffixName) || ".swf".equals(suffixName) || ".map3".equals(suffixName)|| ".map4".equals(suffixName) || ".flac".equals(suffixName) || ".rar".equals(suffixName) || ".zip".equals(suffixName)){
                 httpServletRequest.setAttribute("previewPath", fileName);
             }else { //其他文件格式转换成pdf
                 String sourceFile = sourceBasePath + fileName;

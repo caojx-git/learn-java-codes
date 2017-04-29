@@ -46,7 +46,11 @@ $(document).ready(function () {
                     email: true
                 },
                 userAddress: "required",
-                userPhoneNumber: "required",
+                userPhoneNumber:  {
+                    required:true,
+                    maxlength:11,
+                    digits:true
+                }
             },
 
             messages: {
@@ -61,7 +65,7 @@ $(document).ready(function () {
                 userGender: "请选择性别",
                 userEmail: "请输入正确的邮箱地址格式",
                 userAddress: "请输入住址",
-                userPhoneNumber: "请输入您的联系方式",
+                userPhoneNumber: "联系方式不合法或为空",
             },
             submitHandler: function () {
                 if (window.confirm("是否要修改用户信息?")) {

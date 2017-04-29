@@ -78,7 +78,7 @@
             AND CREATE_DATE &gt; to_date(#{startDate},'yyyy-MM-dd')
         </if>
         <if test="endDate != null and endDate != ''">
-            AND CREATE_DATE &lt;= to_date(${endDate},'yyyy-MM-dd')
+            AND CREATE_DATE &lt;= to_date(#{endDate},'yyyy-MM-dd')
         </if>
 
         <if test="userName != null and userName != ''">

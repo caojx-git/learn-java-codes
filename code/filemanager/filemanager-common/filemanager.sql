@@ -7,7 +7,7 @@ CREATE TABLE filemanager_sys_base_type (
   ext1      NUMBER(8),
   ext2      VARCHAR2(128),
   ext3      VARCHAR2(128),
-  CONSTRAINT filemanager_sys_base_type_pk PRIMARY KEY (code_type, code_id)
+  CONSTRAINT FILEMANAGER_SYS_BASE_TYPE_PK PRIMARY KEY (code_type, code_id)
 );
 
 COMMENT ON COLUMN filemanager_sys_base_type.code_type IS '类型编码';
@@ -21,7 +21,7 @@ COMMENT ON COLUMN filemanager_sys_base_type.ext3 IS '扩展字段3';
 
 /*实体-用户信息实体类*/
 CREATE TABLE user_info (
-  user_id           NUMBER(12) CONSTRAINT user_info_pk PRIMARY KEY,
+  user_id           NUMBER(12) CONSTRAINT USER_INFO_PK PRIMARY KEY,
   user_name         VARCHAR2(32) NOT NULL,
   user_password     VARCHAR2(32) NOT NULL,
   user_gender       NUMBER(1) CHECK (user_gender IN (0, 1)),
