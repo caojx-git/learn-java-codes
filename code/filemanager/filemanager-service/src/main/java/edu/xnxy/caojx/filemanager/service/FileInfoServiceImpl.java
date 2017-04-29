@@ -3,15 +3,13 @@ package edu.xnxy.caojx.filemanager.service;
 import edu.xnxy.caojx.filemanager.dao.IFileInfoDAO;
 import edu.xnxy.caojx.filemanager.entity.FileInfo;
 import edu.xnxy.caojx.filemanager.mybatis.mapper.pagination.PageParameter;
+import edu.xnxy.caojx.filemanager.util.Office2PDFUtil;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.sql.SQLException;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Description:文件管理业务实现类
@@ -36,7 +34,11 @@ public class FileInfoServiceImpl implements IFileInfoService {
     @Override
     public List<FileInfo> listFileInfo(FileInfo fileInfo) throws Exception {
         List<FileInfo> fileInfoList = null;
-        fileInfoList = fileInfoDAO.query(fileInfo);
+        try {
+            fileInfoList = fileInfoDAO.query(fileInfo);
+        } catch (Exception e) {
+            log.error("获取文件列表异常",e);
+            throw  new Exception("获取文件列表异常",e);        }
         return fileInfoList;
     }
 
@@ -50,7 +52,12 @@ public class FileInfoServiceImpl implements IFileInfoService {
     @Override
     public List<FileInfo> listFileInfo(FileInfo fileInfo, PageParameter page) throws Exception {
         List<FileInfo> fileInfoList = null;
-        fileInfoList = fileInfoDAO.query(fileInfo, page);
+        try{
+            fileInfoList = fileInfoDAO.query(fileInfo, page);
+        }catch (Exception e){
+            log.error("获取文件列表异常",e);
+            throw  new Exception("获取文件列表异常",e);
+        }
         return fileInfoList;
     }
 
@@ -68,13 +75,14 @@ public class FileInfoServiceImpl implements IFileInfoService {
      * @throws Exception
      */
     @Override
-    public List<FileInfo> listFileInfo(String fileName, String startDate, String endDate, String collegeId, String userName, PageParameter page) throws Exception {
+    public List<FileInfo> listFileInfo(String fileName, String startDate, String endDate, Long collegeId, String userName, PageParameter page) throws Exception {
         List<FileInfo> fileInfoList = null;
-        Long collegeVale = null;
-        if(!"".equals(collegeId)){
-            collegeVale = Long.valueOf(collegeId.trim()).longValue();
+        try{
+            fileInfoList = fileInfoDAO.listFileInfo(fileName, collegeId, startDate, endDate, userName, page);
+        }catch (Exception e){
+            log.error("获取文件列表异常-带分页",e);
+            throw  new Exception("获取文件列表异常-带分页",e);
         }
-        fileInfoList = fileInfoDAO.listFileInfo(fileName, collegeVale, startDate, endDate, userName, page);
         return fileInfoList;
     }
 
@@ -103,11 +111,25 @@ public class FileInfoServiceImpl implements IFileInfoService {
     @Override
     public void removeFileInfo(FileInfo fileInfo) throws Exception {
         try {
-            fileInfoDAO.delete(fileInfo);
+            fileInfoDAO.update(fileInfo);
         } catch (SQLException e) {
             log.error("删除文件信息异常", e);
             throw new RuntimeException("删除文件信息异常", e);
-
         }
+    }
+
+    /**
+     * 文件在线预览，将文件转为pdf
+     * @param sourceFile 源文件路径
+     * @param destFile 目标文件路径
+     * @return true转换成功，false转换失败
+     * @throws Exception
+     */
+    public boolean getPDFPath(String sourceFile,String destFile) throws Exception{
+        int result = Office2PDFUtil.office2PDF(sourceFile,destFile);
+        if(result == 0){
+            return true;
+        }
+        return false;
     }
 }

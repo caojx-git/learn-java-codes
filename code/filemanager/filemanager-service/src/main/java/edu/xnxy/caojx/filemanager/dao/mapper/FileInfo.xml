@@ -66,7 +66,7 @@
         and rec_status = 1
     </select>
 
-    <select id="listFileInfo" parameterType="java.util.Map" resultMap="FileInfo">
+    <select id="listFileInfo" parameterType="map" resultMap="FileInfo">
         select * from file_info where 1 = 1
         <if test="fileName != null and fileName != ''">
             AND FILE_NAME like CONCAT(CONCAT('%',#{fileName}),'%')
@@ -99,19 +99,19 @@
     </insert>
 
     <update id="update" parameterType="map">
-        update table file_info
+        update file_info
         <set>
             <if test="recStatus != null">rec_status=#{recStatus},</if>
         </set>
         where 1 = 1
         <if test="fileId != null">
-            and fileId = #{fileId}
+            and file_id = #{fileId}
         </if>
         <if test="collegeId != null">
             and college_id = ${collegeId}
         </if>
         <if test="userId != null">
-            and userId = #{userId}
+            and user_id = #{userId}
         </if>
         and rec_status = 1
     </update>

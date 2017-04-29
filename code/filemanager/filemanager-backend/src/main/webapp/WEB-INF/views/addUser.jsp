@@ -92,7 +92,7 @@
         <c:if test="${sessionScope.userInfo.managerType == 1}">
             <label class="col-sm-2  control-label">学院</label>
             <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-                <c:forEach items="${sessionScope.collegeList}" var="item">
+                <c:forEach items="${applicationScope.collegeList}" var="item">
                     <option value="${item.codeId}">${item.codeName}</option>
                 </c:forEach>
             </select>
@@ -102,12 +102,12 @@
                 <option value="2">是</option>
             </select>
         </c:if>
-        <c:if test="${sessionScope.userInfo.managerType != 1}">
+        <c:if test="${sessionScope.userInfo.managerType != 1 && sessionScope.userInfo.manager == 1}">
             <label class="col-sm-2  control-label">学院</label>
             <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-                <c:forEach items="${sessionScope.collegeList}" var="item">
+                <c:forEach items="${applicationScope.collegeList}" var="item">
                     <c:if test="${sessionScope.userInfo.collegeId == item.codeId}">
-                        <option value="${item.codeId}">${item.codeName}</option>
+                        <option value="${item.codeId}" selected>${item.codeName}</option>
                     </c:if>
                 </c:forEach>
             </select>
@@ -120,6 +120,6 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="/js/addUser.js"></script>
 </body>
+<script type="text/javascript" src="/js/addUser.js"></script>
 </html>

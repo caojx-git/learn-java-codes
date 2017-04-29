@@ -18,6 +18,7 @@ import javax.jws.soap.SOAPBinding;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -38,48 +39,40 @@ public class LoginController {
     @Resource
     private IUserInfoService userInfoService;
 
-    @Resource
-    private IFileManagerSysBaseTypeService fileManagerSysBaseTypeService;
-
     @RequestMapping("/loginPage.do")
     public String showLoginPage() {
         return "login";
     }
 
+    /**
+     * Description:用户登录
+     *
+     * @param userId       用户编号
+     * @param userPassword 用户密码
+     * @param request
+     * @return
+     */
     @RequestMapping("/login.do")
     @ResponseBody
-    public Map<String,Object> login(@RequestParam("userId") String userId, @RequestParam("userPassword") String userPassword,HttpServletRequest request) {
+    public Map<String, Object> login(Long userId, String userPassword, HttpServletRequest request) {
         Map resultMap = new HashMap<String, Object>();
         try {
-            List<FileManagerSysBaseType> collegeList = fileManagerSysBaseTypeService.listFileManagerSysBaseType(1002L, null);
-            UserInfo userInfo = userInfoService.login(Long.valueOf(userId.trim()), userPassword);
-            request.getSession().setAttribute("userInfo",userInfo);
-            request.getSession().setAttribute("collegeList",collegeList);
-            resultMap.put("status", "0");
-            resultMap.put("userInfo", userInfo);
+            if (userId != null && userPassword != null && !"".equals(userPassword)) {
+                UserInfo userInfo = userInfoService.login(userId, userPassword);
+                if (userInfo != null) {
+                    resultMap.put("status", 0);
+                    resultMap.put("userInfo", userInfo);
+                    request.getSession().setAttribute("userInfo", userInfo);
+                } else {
+                    resultMap.put("status", 1);
+                    resultMap.put("message", "用户不存在");
+                }
+            }
         } catch (Exception e) {
-            resultMap.put("status", "1");
-            resultMap.put("message", e.getMessage());
-            log.error("获取下拉框数据出错", e);
+            log.error("登录失败", e);
+            resultMap.put("status", 1);
+            resultMap.put("message", "用户非法或密码错误");
         }
         return resultMap;
     }
-
-    @RequestMapping("/getSysBaseType")
-    @ResponseBody
-    public Map<String, Object> getSysBaseType(@RequestParam("codeType") String codeType, @RequestParam("codeId") String codeId, HttpServletRequest httpServletRequest) {
-        Map<String, Object> resultMap = null;
-        try {
-            resultMap = new HashMap<String, Object>();
-            resultMap.put("result", fileManagerSysBaseTypeService.listFileManagerSysBaseType(Long.valueOf(codeType.trim()), Long.valueOf(codeId)));
-            resultMap.put("status", "0");
-        } catch (Exception e) {
-            resultMap.put("status", "1");
-            resultMap.put("message", "获取下拉框数据出错");
-            log.error("获取下拉框数据出错", e);
-        }
-        httpServletRequest.getSession().setAttribute("map", resultMap);
-        return resultMap;
-    }
-
 }

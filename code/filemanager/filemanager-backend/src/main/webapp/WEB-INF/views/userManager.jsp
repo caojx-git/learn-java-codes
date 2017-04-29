@@ -7,9 +7,12 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+%>
 <html>
 <head>
-    <title>湘南云库</title>
+    <title>用户管理</title>
     <link rel="icon" href="/images/xnxy.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/iconfont/iconfont.css"/>
@@ -23,32 +26,34 @@
         <div class="menu-lists">
             <ul>
                 <ul>
-                    <a href="/userManager/editUserInfo.do?userId=${sessionScope.userInfo.userId}">
+                    <a href="<%=basePath%>/filter/userManager/editUserInfoPage.do?userId=${sessionScope.userInfo.userId}">
                         <div class="icon iconfont icon-touxiang"></div>
                         <div class="name">${sessionScope.userInfo.userName}</div>
                     </a>
                 </ul>
                 <li>
-                    <a href="myCollection.html">
+                    <a href="<%=basePath%>/filter/fileCollection/listCollectionInfo.do?userId=${sessionScope.userInfo.userId}">
                         <div class="icon iconfont icon-shoucang"></div>
                         <div class="name">收藏</div>
                     </a>
                 </li>
                 <li>
-                    <a href="/main/indexPage.do">
+                    <a href="<%=basePath%>/filter/file/listFileInfo.do">
                         <div class="icon iconfont icon-file"></div>
                         <div class="name">文件</div>
                     </a>
                 </li>
-                <li>
-                    <a href="/userManager/userManagerPage.do">
-                        <div class="icon iconfont icon-yonghuguanli1"></div>
-                        <div class="name">用户管理</div>
-                    </a>
-                </li>
+                <c:if test="${sessionScope.userInfo.manager == 1}">
+                    <li>
+                        <a href="<%=basePath%>/filter/userManager/userManagerPage.do">
+                            <div class="icon iconfont icon-yonghuguanli1"></div>
+                            <div class="name">用户管理</div>
+                        </a>
+                    </li>
+                </c:if>
                 <li style="margin-top: 140px;">
-                    <a href="#">
-                        <div style="font-size: 25px;padding-left: 10px" class="icon iconfont icon-gengduo-copy"></div>
+                    <a href="<%=basePath%>/filter/user/logout.do">
+                        <div style="font-size: 25px;padding-left: 10px" class="icon iconfont icon-tuichu"></div>
                     </a>
                 </li>
             </ul>
@@ -56,23 +61,26 @@
     </div>
     <div class="file-list-side">
         <div class="file-search-box">
-            <form class="form form-inline" action="/userManager/userInfoList.do" id="userManagerForm" method="post">
+            <form class="form form-inline" action="<%=basePath%>/filter/userManager/userInfoList.do"
+                  id="userManagerForm" method="post">
                 <input type="hidden" name="currentPage" id="currentPage" value="${page.currentPage}"/>
                 <div class="row">
                     <div class="form-group">
                         <label for="userId">用户编号</label>
-                        <input type="text" class="form-control" id="userId" name="userId" value="${requestScope.userId}" placeholder="请输入用户编号">
+                        <input type="text" class="form-control" id="userId" name="userId" value="${requestScope.userId}"
+                               placeholder="请输入用户编号">
                     </div>
                     <div class="form-group">
                         <label for="userName">用户名</label>
-                        <input type="text" class="form-control" id="userName" name="userName" value="${requestScope.userName}" placeholder="请输入用户名称">
+                        <input type="text" class="form-control" id="userName" name="userName"
+                               value="${requestScope.userName}" placeholder="请输入用户名称">
                     </div>
                     <c:if test="${sessionScope.userInfo.managerType == 1}">
                         <div class="form-group">
                             <label for="collegeId">学院</label>
                             <select id="collegeId" name="collegeId">
                                 <option value="">所有</option>
-                                <c:forEach items="${sessionScope.collegeList}" var="item">
+                                <c:forEach items="${applicationScope.collegeList}" var="item">
                                     <c:choose>
                                         <c:when test="${collegeId == item.codeId}">
                                             <option value="${item.codeId}" selected>${item.codeName}</option>
@@ -109,23 +117,24 @@
                     </c:if>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="查询"/>
-                        <a class="btn btn-primary" href="/userManager/addUserPage.do">新增</a>
+                        <a class="btn btn-primary" href="<%=basePath%>/filter/userManager/addUserPage.do">新增</a>
                     </div>
                 </div>
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th class="col-md-2 text-left"></th>
-                        <th class="col-md-3 text-left">用户编号</th>
-                        <th class="col-md-1 text-center">用户名</th>
-                        <th class="col-md-1 text-center">学院</th>
-                        <th class="col-md-1 text-center">管理员</th>
-                        <th class="col-md-1 text-center">编辑</th>
-                        <th class="col-md-1 text-center">查看</th>
-                        <th class="col-md-1 text-center">删除</th>
-                    </tr>
-                    </thead>
-                    <tbody id="tbody">
+                <div class="file-list-box">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="col-md-1 text-left"></th>
+                            <th class="col-md-1 text-left">用户编号</th>
+                            <th class="col-md-1 text-center">用户名</th>
+                            <th class="col-md-2 text-center">学院</th>
+                            <th class="col-md-1 text-center">管理员</th>
+                            <th class="col-md-1 text-center">编辑</th>
+                            <th class="col-md-1 text-center">查看</th>
+                            <th class="col-md-1 text-center">删除</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
                         <c:forEach items="${requestScope.userInfoList}" var="userInfo">
                             <tr>
                                 <td class="text-left">
@@ -138,7 +147,7 @@
                                         ${userInfo.userName}
                                 </td>
                                 <td class="text-center">
-                                    <c:forEach items="${sessionScope.collegeList}" var="item">
+                                    <c:forEach items="${applicationScope.collegeList}" var="item">
                                         <c:if test="${item.codeId == userInfo.collegeId}">${item.codeName}</c:if>
                                     </c:forEach>
                                 </td>
@@ -147,26 +156,27 @@
                                     <c:if test="${userInfo.manager == 1|| userInfo.manager == 2}">是</c:if>
                                 </td>
                                 <td class="text-center">
-                                    <a href="/userManager/editUserInfo.do?userId=${userInfo.userId}">
+                                    <a href="<%=basePath%>/filter/userManager/editUserInfoPage.do?userId=${userInfo.userId}">
                                         <div class="icon iconfont icon-bianji"></div>
                                     </a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="/userManager/viewUserPage.do?userId=${userInfo.userId}">
+                                    <a href="<%=basePath%>/filter/userManager/viewUserPage.do?userId=${userInfo.userId}">
                                         <div class="icon iconfont icon-chakan"></div>
                                     </a>
                                 </td>
                                 <td class="text-center">
                                     <c:if test="${sessionScope.userInfo.userId != userInfo.userId}">
-                                        <a href="/userManager/removeUserInfo.do?userId=${userInfo.userId}">
+                                        <a href="javascript:removeUser(${userInfo.userId})">
                                             <div class="icon iconfont icon-shanchu"></div>
                                         </a>
                                     </c:if>
                                 </td>
                             </tr>
                         </c:forEach>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
                 <div class='page fix'>
                     共 <b>${page.totalCount}</b> 条
                     共<b>${page.totalPage }</b>页
@@ -187,6 +197,6 @@
         <br/>
     </div>
 </div>
-<script type="text/javascript" src="/js/userManager.js"></script>
 </body>
+<script type="text/javascript" src="/js/userManager.js"></script>
 </html>

@@ -7,6 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+%>
 <html>
 <head>
     <title>用户信息查看</title>
@@ -84,7 +87,7 @@
     <div class="from-group form-inline">
         <label class="col-sm-2 control-label">学院</label>
         <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-            <c:forEach items="${sessionScope.collegeList}" var="collegeInfo">
+            <c:forEach items="${applicationScope.collegeList}" var="collegeInfo">
                 <c:choose>
                     <c:when test="${requestScope.userInfo.collegeId == collegeInfo.codeId}">
                         <option value="${collegeInfo.codeId}" selected>${collegeInfo.codeName}</option>
@@ -106,7 +109,7 @@
     </div>
     <div class="form-group form-inline col-sm-12">
         <div class="btn-register">
-            <button type="button" class="btn btn-primary" onclick="location.href='/userManager/userManagerPage.do'">返回</button>
+            <button type="button" class="btn btn-primary" onclick="location.href='<%=basePath%>/filter/userManager/userManagerPage.do'">返回</button>
         </div>
     </div>
 </form>

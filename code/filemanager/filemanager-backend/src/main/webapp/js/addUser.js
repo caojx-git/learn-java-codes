@@ -82,7 +82,7 @@ $(document).ready(function () {
             submitHandler: function () {
                 if (window.confirm("是否新增用户?")) {
                     $.ajax({
-                        url: "/userManager/addUser.do",
+                        url: "/filter/userManager/addUser.do",
                         type: "post",
                         data: userInfo,
                         success: function (data) {

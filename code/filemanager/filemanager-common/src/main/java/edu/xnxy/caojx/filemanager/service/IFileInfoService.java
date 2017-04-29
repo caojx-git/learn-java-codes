@@ -42,7 +42,7 @@ public interface IFileInfoService {
      * @throws Exception
      */
     public List<FileInfo> listFileInfo(String fileName, String startDate,
-                                       String endDate, String collegeId, String userName,
+                                       String endDate, Long collegeId, String userName,
                                        PageParameter page) throws Exception;
 
     /**
@@ -56,6 +56,17 @@ public interface IFileInfoService {
      * 清理文件信息
      *
      * @param fileInfo
+     * @throws Exception
      */
     public void removeFileInfo(FileInfo fileInfo) throws Exception;
+
+
+    /**
+     * 文件在线预览，将文件转为pdf
+     * @param sourceFile 源文件路径
+     * @param destFile 目标文件路径
+     * @return true转换成功，false转换失败
+     * @throws Exception
+     */
+    public boolean getPDFPath(String sourceFile,String destFile) throws Exception;
 }

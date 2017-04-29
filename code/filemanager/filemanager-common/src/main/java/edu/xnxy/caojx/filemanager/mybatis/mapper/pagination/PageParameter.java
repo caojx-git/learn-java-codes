@@ -36,7 +36,15 @@ public class PageParameter {
         totalPageTemp += plus;
         // 如果总页数小于0显示第一页
         if (totalPageTemp <= 0) {
-            totalPageTemp += 1;
+            totalPageTemp = 1;
+        }
+        //如果当前页数小于0，显示第一页
+        if(this.currentPage < 0){
+            this.currentPage =1;
+        }
+        //如果当前页数大于总页数，显示最后一页
+        if(this.currentPage > totalPageTemp){
+             this.currentPage = totalPageTemp;
         }
         this.totalPage = totalPageTemp;
     }

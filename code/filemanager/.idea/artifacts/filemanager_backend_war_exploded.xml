@@ -43,6 +43,16 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.7" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.7" />
+          <element id="library" level="project" name="Maven: com.artofsolving:jodconverter:2.2.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.4.3" />
+          <element id="library" level="project" name="Maven: org.openoffice:juh:2.3.0" />
+          <element id="library" level="project" name="Maven: org.openoffice:jurt:2.3.0" />
+          <element id="library" level="project" name="Maven: org.openoffice:ridl:2.3.0" />
+          <element id="library" level="project" name="Maven: org.openoffice:unoil:2.3.0" />
+          <element id="library" level="project" name="Maven: org.artofsolving.jodconverter:jodconverter-core:3.0-beta-4" />
+          <element id="library" level="project" name="Maven: commons-cli:commons-cli:1.2" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

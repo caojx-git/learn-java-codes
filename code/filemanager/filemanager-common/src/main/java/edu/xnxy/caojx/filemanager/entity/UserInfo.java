@@ -73,6 +73,16 @@ public class UserInfo implements Serializable {
     private Date createDate;
 
     /**
+     * 有效编码
+     */
+    private String validataCode;
+
+    /**
+     * 失效时间，毫秒数
+     */
+    private Long outDate;
+
+    /**
      * 备注
      */
     private String notes;
@@ -194,6 +204,22 @@ public class UserInfo implements Serializable {
         this.createDate = createDate;
     }
 
+    public String getValidataCode() {
+        return validataCode;
+    }
+
+    public void setValidataCode(String validataCode) {
+        this.validataCode = validataCode;
+    }
+
+    public Long getOutDate() {
+        return outDate;
+    }
+
+    public void setOutDate(Long outDate) {
+        this.outDate = outDate;
+    }
+
     public String getNotes() {
         return notes;
     }
@@ -249,6 +275,9 @@ public class UserInfo implements Serializable {
                 ", userEmail='" + userEmail + '\'' +
                 ", userPhoneNumber='" + userPhoneNumber + '\'' +
                 ", createDate=" + createDate +
+                ", validataCode='" + validataCode + '\'' +
+                ", outDate=" + outDate +
+                ", notes='" + notes + '\'' +
                 ", ext1=" + ext1 +
                 ", ext2='" + ext2 + '\'' +
                 ", ext3='" + ext3 + '\'' +

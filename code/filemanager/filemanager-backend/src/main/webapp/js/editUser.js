@@ -66,7 +66,7 @@ $(document).ready(function () {
             submitHandler: function () {
                 if (window.confirm("是否要修改用户信息?")) {
                     $.ajax({
-                        url: "/userManager/saveUserInfo.do",
+                        url: "/filter/userManager/updateUserInfo.do",
                         type: "post",
                         data: userInfo,
                         success: function (data) {
@@ -92,7 +92,7 @@ $(document).ready(function () {
         });
 
         $("#cancelBtn").click(function () {
-            location.href = "/userManager/userManagerPage.do";
+            location.href = "/filter/file/listFileInfo.do";
         });
     };
 

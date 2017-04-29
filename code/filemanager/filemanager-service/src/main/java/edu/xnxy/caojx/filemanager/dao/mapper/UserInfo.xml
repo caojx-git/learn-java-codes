@@ -36,6 +36,8 @@
         <result column="user_email" jdbcType="VARCHAR" property="userEmail"></result>
         <result column="user_phone_number" jdbcType="VARCHAR" property="userPhoneNumber"></result>
         <result column="create_date" jdbcType="TIMESTAMP" property="createDate"></result>
+        <result column="validata_code" jdbcType="VARCHAR" property="validataCode"></result>
+        <result column="out_date" jdbcType="NUMERIC" property="outDate"></result>
         <result column="notes" jdbcType="VARCHAR" property="notes"></result>
         <result column="ext1" jdbcType="NUMERIC" property="ext1"></result>
         <result column="ext2" jdbcType="VARCHAR" property="ext2"></result>
@@ -71,13 +73,14 @@
     <insert id="insert" parameterType="map">
         insert into user_info (user_id, user_name, user_password, user_gender, user_age,
         college_id, manager, manager_type, user_address, user_email, user_phone_number,
-        create_date, rec_status, ext1, ext2, ext3)
+        create_date, validata_code, out_date, rec_status, ext1, ext2, ext3)
         VALUES
         (#{userId, jdbcType=NUMERIC}, #{userName, jdbcType=VARCHAR}, #{userPassword, jdbcType=VARCHAR},
         #{userGender, jdbcType=NUMERIC}, #{userAge, jdbcType=NUMERIC}, #{collegeId ,jdbcType=NUMERIC},
         #{manager, jdbcType=NUMERIC}, #{managerType, jdbcType=NUMERIC}, #{userAddress ,jdbcType=VARCHAR},
         #{userEmail, jdbcType=VARCHAR}, #{userPhoneNumber ,jdbcType=VARCHAR},#{createDate, jdbcType=TIMESTAMP},
-        #{recStatus, jdbcType=NUMERIC}, #{ext1, jdbcType=NUMERIC}, #{ext2, jdbcType=VARCHAR}, #{ext3, jdbcType=VARCHAR})
+       #{validataCode, jdbcType=VARCHAR}, #{outDate, jdbcType=NUMERIC}  #{recStatus, jdbcType=NUMERIC},
+       #{ext1, jdbcType=NUMERIC}, #{ext2, jdbcType=VARCHAR}, #{ext3, jdbcType=VARCHAR})
     </insert>
 
     <update id="update" parameterType="map">
@@ -92,6 +95,8 @@
             <if test="userAddress != null and userAddress != ''">user_address=#{userAddress},</if>
             <if test="userEmail != null and userEmail != ''">user_email=#{userEmail},</if>
             <if test="userPhoneNumber != null and userPhoneNumber != ''">user_phone_number=#{userPhoneNumber},</if>
+            <if test="validataCode != null and validataCode != ''">validata_code=#{validataCode},</if>
+            <if test="outDate != null">out_date=#{outDate},</if>
             <if test="recStatus != null">rec_status=#{recStatus},</if>
             <if test="ext1 != null">ext1=#{ext1},</if>
             <if test="ext2 != null and ext2 != ''">ext2=#{ext2},</if>

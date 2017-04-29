@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -28,7 +28,7 @@
 <body>
 <h3 class="form-title col-sm-offset-2">文件上传</h3>
 <hr/>
-<form class="form-horizontal" enctype="multipart/form-data" action="/file/fileUpload.do" method="post" id="fileUploadForm">
+<form class="form-horizontal" enctype="multipart/form-data" action="<%=basePath%>/filter/file/fileUpload.do" method="post" id="fileUploadForm">
 
     <input type="text" hidden="hidden" id="userId" name="userId" value="${sessionScope.userInfo.userId}">
     <input type="text" hidden="hidden" id="collegeId" name="collegeId" value="${sessionScope.userInfo.collegeId}">
@@ -61,6 +61,6 @@
     </div>
     <button type="button" class="btn btn-primary col-sm-offset-2" id="uploadBtn">上传</button>
 </form>
-<script type="text/javascript" src="/js/fileupload.js"></script>
 </body>
+<script type="text/javascript" src="/js/fileupload.js"></script>
 </html>

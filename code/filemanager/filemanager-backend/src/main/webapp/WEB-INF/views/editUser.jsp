@@ -7,6 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+%>
 <html>
 <head>
     <title>编辑用户</title>
@@ -16,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
     <script type="text/javascript" src="/js/common/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/js/common/jquery.validate.min.js"></script>
-
 </head>
 <body>
 <h3 class="form-title col-sm-offset-1">编辑用户</h3>
@@ -37,7 +39,7 @@
                    value="${requestScope.userInfo.userName}" placeholder="请输入用户姓名">
         </div>
     </div>
-    <%--    <div class="form-group">
+<%--        <div class="form-group">
             <label class="col-sm-2 control-label">密码</label>
             <div class="col-sm-4">
                 <input type="password" class="form-control" id="userPassword" name="userPassword"
@@ -97,7 +99,7 @@
         <div class="from-group form-inline">
             <label class="col-sm-2 control-label">学院</label>
             <select class="col-sm-1 form-control" id="collegeId" name="collegeId">
-                <c:forEach items="${sessionScope.collegeList}" var="item">
+                <c:forEach items="${applicationScope.collegeList}" var="item">
                     <c:if test="${requestScope.userInfo.collegeId == item.codeId}">
                         <option value="${item.codeId}" selected>${item.codeName}</option>
                     </c:if>
@@ -107,8 +109,8 @@
             <select class="col-sm-1 form-control" id="manager" name="manager">
                 <c:choose>
                     <c:when test="${sessionScope.userInfo.managerType ==1 }">
-                        <option value="0" selected>否</option>
-                        <option value="1">是</option>
+                        <option value="1" selected>是</option>
+                        <option value="0">否</option>
                     </c:when>
                     <c:otherwise>
                         <c:if test="${requestScope.userInfo.manager == 1}">
@@ -129,6 +131,6 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="/js/editUser.js"></script>
 </body>
+<script type="text/javascript" src="/js/editUser.js"></script>
 </html>

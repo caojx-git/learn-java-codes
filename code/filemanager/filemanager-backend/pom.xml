@@ -44,6 +44,7 @@
             <artifactId>filemanager-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        
     </dependencies>
 
     <build>
@@ -69,8 +70,10 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <port>8081</port>
-                    <path>/</path>
+                    <port>8888</port>
+                    <path>/filemanager-backend</path>
+                    <update>true</update>
+                    <server>tomcat7</server>
                 </configuration>
             </plugin>
             <plugin>

@@ -14,7 +14,6 @@ $(document).ready(function () {
 
     /**
      * 验证数据
-     * @returns {boolean}
      */
     var validate = function () {
         if (userInfo.userId == "" || userInfo.userId == null) {
@@ -37,20 +36,29 @@ $(document).ready(function () {
             getDate();
             if (validate()) {
                 $.ajax({
-                    url:"/user/login.do",
-                    type:"post",
-                    data:userInfo,
-                    success:function (data) {
-                        if(data.status == 0){
-                            location.href = "/main/indexPage.do";
-                        }else {
+                    url: "/user/login.do",
+                    type: "post",
+                    data: userInfo,
+                    success: function (data) {
+                        if (data.status == 0) {
+                            location.href = "/filter/file/listFileInfo.do";
+                        } else {
                             alert(data.message);
                         }
-
                     }
                 });
             }
         });
+
+        ///忘记密码
+        $("#forgetBtn").bind("click",function () {
+            var userId = $("#userId").val();
+            if(userId == "" || userId==null || userId ==undefined){
+                alert("请填写用户账号");
+            }else {
+                location.href="/findPassword/viewMailPage.do?userId="+userId;
+            }
+        })
     };
 
     /**

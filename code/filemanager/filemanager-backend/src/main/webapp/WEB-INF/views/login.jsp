@@ -12,10 +12,10 @@
     <link rel="icon" href="/images/xnxy.ico" type="image/x-icon"/>
     <title>登录</title>
 </head>
-<%--<link rel="stylesheet" href="/css/style.css"/>--%>
 <link rel="stylesheet" href="/iconfont/iconfont.css"/>
 <script type="text/javascript" src="/js/common/jquery-1.8.3.min.js"></script>
 <style type="text/css">
+
     * {
         margin: 0;
         padding: 0;
@@ -121,13 +121,13 @@
                     <span class="iconfont icon-suo"></span>
                     <input type="password" id="userPassword" name="userPassword" placeholder="请输入密码"/>
                 </div>
-                <p class="forget" id="forgetBtn">忘记登录密码</p>
+                <a class="forget" id="forgetBtn" href="#">忘记登录密码</a>
                 <div class="btn-blue" id="loginBtn">登录</div>
             </div>
         </form>
     </div>
 </div>
-<script type="text/javascript" src="/js/login.js"></script>
 </body>
+<script type="text/javascript" src="/js/login.js"></script>
 </html>
 

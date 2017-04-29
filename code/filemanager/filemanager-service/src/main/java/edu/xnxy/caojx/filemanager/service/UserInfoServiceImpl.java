@@ -3,6 +3,7 @@ package edu.xnxy.caojx.filemanager.service;
 import edu.xnxy.caojx.filemanager.dao.IUserInfoDAO;
 import edu.xnxy.caojx.filemanager.entity.UserInfo;
 import edu.xnxy.caojx.filemanager.mybatis.mapper.pagination.PageParameter;
+import edu.xnxy.caojx.filemanager.web.util.MD5;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -27,32 +28,38 @@ public class UserInfoServiceImpl implements IUserInfoService {
     private IUserInfoDAO userInfoDAO;
 
     /**
-     * 用户登录
+     * Description: 用户登录
      *
-     * @param userId
-     * @param userPassword
+     * @param userId       用户编号
+     * @param userPassword 用户密码
      * @return
      * @throws Exception
      */
     public UserInfo login(Long userId, String userPassword) throws Exception {
-        UserInfo userInfo = new UserInfo();
-        userInfo.setUserId(userId);
-        UserInfo userInfo1 = userInfoDAO.get(userInfo);
-        if (userInfo1 != null) {
-            if (userPassword != null && userPassword.equals(userInfo1.getUserPassword())) {
-                return userInfo1;
+        try {
+            UserInfo userInfo = new UserInfo();
+            userInfo.setUserId(userId);
+            //对密码进行md5解密
+            userPassword = MD5.getMD5Str(userPassword);
+            UserInfo userInfo1 = userInfoDAO.get(userInfo);
+            if (userInfo1 != null) {
+                if (userPassword != null && userPassword.equals(userInfo1.getUserPassword())) {
+                    return userInfo1;
+                } else {
+                    log.error(userId + "用户密码错误");
+                    throw new Exception("用户密码错误");
+                }
             } else {
-                log.error(userId + "用户密码错误");
-                throw new RuntimeException("用户密码错误");
+                return null;
             }
-        } else {
-            log.error(userId + "用户不存在");
-            throw new RuntimeException("用户不存在");
+        } catch (Exception e) {
+            log.error("用户信息查询失败", e);
+            throw new Exception("用户信息查询失败", e);
         }
     }
 
     /**
-     * 查询用户
+     * Description: 查询用户
      *
      * @param userInfo
      * @return
@@ -70,7 +77,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
     }
 
     /**
-     * 查询用户信息
+     * Description: 查询用户信息
      *
      * @param userInfo
      * @return
@@ -89,7 +96,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
     }
 
     /**
-     * 查询用户信息,带分页
+     * Description:查询用户信息,带分页
      *
      * @param userInfo
      * @param page
@@ -100,7 +107,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
     public List<UserInfo> listUserInfo(UserInfo userInfo, PageParameter page) throws Exception {
         List<UserInfo> userInfoList = null;
         try {
-            userInfoList = userInfoDAO.query(userInfo,page);
+            userInfoList = userInfoDAO.query(userInfo, page);
         } catch (Exception e) {
             log.error("查询用户信息失败", e);
             throw new RuntimeException("查询用户信息失败", e);
@@ -110,7 +117,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
 
 
     /**
-     * 新增用户
+     * Description:新增用户
      *
      * @param userInfo
      * @return
@@ -123,18 +130,20 @@ public class UserInfoServiceImpl implements IUserInfoService {
             if (userInfo1 == null) {
                 userInfo.setCreateDate(new Date());
                 userInfo.setRecStatus(1);
+                //对密码进行md5加密
+                userInfo.setUserPassword(MD5.getMD5Str(userInfo.getUserPassword()));
                 userInfoDAO.insert(userInfo);
             } else {
                 throw new RuntimeException("该用户已注册");
             }
         } catch (Exception e) {
             log.error("新增用户失败", e);
-            throw new RuntimeException(e.getMessage(),e);
+            throw new RuntimeException(e.getMessage(), e);
         }
     }
 
     /**
-     * 更新用户信息
+     * Description:更新用户信息
      *
      * @param userInfo
      * @throws Exception
@@ -149,7 +158,7 @@ public class UserInfoServiceImpl implements IUserInfoService {
     }
 
     /**
-     * 删除用户信息，注意并不是真的删除，只是将rec_status=0
+     * Description:删除用户信息，注意并不是真的删除，只是将rec_status=0
      *
      * @param userInfo
      * @throws Exception

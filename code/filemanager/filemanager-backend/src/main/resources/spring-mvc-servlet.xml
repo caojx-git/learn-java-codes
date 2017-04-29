@@ -43,7 +43,8 @@
     <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
     <mvc:resources mapping="/iconfont/**" location="/iconfont/"></mvc:resources>
     <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>
-    <!--    <mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"></mvc:resources>-->
+    <mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"></mvc:resources>
+    <mvc:resources mapping="/pdf/**" location="/pdf/"></mvc:resources>
 
 <!--    &lt;!&ndash;拦截判断用户是否登录&ndash;&gt;
     <mvc:interceptors>

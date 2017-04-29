@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -44,6 +45,7 @@ public class PageInterceptor implements Interceptor {
             //BaseStatementHandler-->mappedStatement(delegate)
             MappedStatement mappedStatement = (MappedStatement) metaObject.getValue("delegate.mappedStatement");
             Configuration configuration = (Configuration) metaObject.getValue("delegate.configuration");
+
             //获取数据库类型
             dialect = configuration.getVariables().getProperty("dialect");
             if (null == dialect || "".equals(dialect)) {
