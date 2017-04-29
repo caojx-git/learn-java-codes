@@ -1,5 +1,8 @@
 package edu.xnxy.caojx.filemanager.entity;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import edu.xnxy.caojx.filemanager.util.CustomDateSerializer;
+
 import java.util.Date;
 
 /**
@@ -43,6 +46,7 @@ public class FileInfo {
     /**
      * 创建时间
      */
+    @JsonSerialize(using = CustomDateSerializer.class)
     private Date createDate;
 
     /**

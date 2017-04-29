@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <% String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
 %>
@@ -156,7 +157,7 @@
                                     </c:forEach>
                                 </td>
                                 <td class="text-center">
-                                        ${fileInfo.createDate}
+                                       <fmt:formatDate value="${fileInfo.createDate}" pattern="yyyy-MM-dd"></fmt:formatDate>
                                 </td>
                                 <td class="text-center">
                                     <a href="<%=basePath %>/filter/file/downloadFile.do?fileId=${fileInfo.fileId}">

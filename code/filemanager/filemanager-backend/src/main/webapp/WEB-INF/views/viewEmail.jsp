@@ -18,7 +18,7 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<h4 class="control-label col-sm-offset-5" style="margin-top: 20px" >修改密码</h4>
+<h4 class="control-label col-sm-offset-5" style="margin-top: 20px" >发送邮件</h4>
 <hr/>
 <form class="form-horizontal col-sm-offset-3" role="form" style="margin-top: 100px">
     <div class="form-group">

@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -195,13 +196,20 @@ public class FileController {
                     pdfBasePath = fileManagerSysBaseType.getCodeName().trim();
                 }
             }
-            String sourceFile = sourceBasePath + fileName;
-            String destFile = pdfBasePath + fileName.substring(0, fileName.lastIndexOf(".")) + ".pdf";
-            boolean result = fileInfoService.getPDFPath(sourceFile, destFile);
-            if (result == true) {
-                httpServletRequest.setAttribute("previewPath", fileName.substring(0, fileName.lastIndexOf(".")) + ".pdf");
-            } else {
-                log.error("文件转pdf失败了");
+
+            //如果是pdf，swf,map3，map4直接返回文件名
+            String suffixName = fileName.substring(fileName.lastIndexOf("."));
+            if(!"pdf".equals(suffixName) || !"swf".equals(suffixName) || !"map3".equals(suffixName)|| !"map4".equals(suffixName)){
+                httpServletRequest.setAttribute("previewPath", fileName);
+            }else { //其他文件格式转换成pdf
+                String sourceFile = sourceBasePath + fileName;
+                String destFile = pdfBasePath + fileName.substring(0, fileName.lastIndexOf(".")) + ".pdf";
+                boolean result = fileInfoService.getPDFPath(sourceFile, destFile);
+                if (result == true) {
+                    httpServletRequest.setAttribute("previewPath", fileName.substring(0, fileName.lastIndexOf(".")) + ".pdf");
+                } else {
+                    log.error("文件转pdf失败了");
+                }
             }
         } catch (Exception e) {
             log.error("文件转pdf失败了", e);
