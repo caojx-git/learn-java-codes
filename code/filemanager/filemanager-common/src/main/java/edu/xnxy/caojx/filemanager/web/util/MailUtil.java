@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeUtility;
 import java.util.Properties;
 
 /**
@@ -46,7 +47,7 @@ public class MailUtil {
             //2创建消息Message
             Message message = new MimeMessage(session);
             //设置发邮件的原地址
-            message.setFrom(new InternetAddress("389715062@qq.com"));
+            message.setFrom(new InternetAddress(MimeUtility.encodeText("湘南云")+"<389715062@qq.com>"));
             //设置接收人
             message.setRecipient(MimeMessage.RecipientType.TO, new InternetAddress(receiverMail));
             message.setSubject("找回密码!");
