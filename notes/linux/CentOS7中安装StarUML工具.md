@@ -13,8 +13,8 @@ XMind没有rpm包,也是deb包，StarUML是一款很不错的UML工具，不过�
 
 ![](../images/linux/staruml/staruml-1.png)
 
-1.2 下载StarUML-v2.8.0-64-bit.deb
-
+1.2 下载StarUML-v2.8.0-64-bit.deb  
+官网：http://staruml.io/download  
 这里我们下载Linux (64-bit) Ubuntu，下载后是StarUML-v2.8.0-64-bit.deb
 ![](../images/linux/staruml/staruml-2.png)
 
