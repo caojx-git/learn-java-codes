@@ -25,12 +25,12 @@ XMind没有rpm包,也是deb包，StarUML是一款很不错的UML工具，不过�
 
 >ar -vx StarUML-v2.8.0-64-bit.deb
 
-参考：http://swordinhand.iteye.com/blog/1706326
+参考：http://swordinhand.iteye.com/blog/1706326  
 
-得到如下三个文件
-x - debian-binary
-x - control.tar.gz
-x - data.tar.xz
+得到如下三个文件  
+x - debian-binary  
+x - control.tar.gz  
+x - data.tar.xz  
 
 2.2 继续解压data.tar.xz
 >xz -dk data.tar.xz
@@ -39,37 +39,37 @@ x - data.tar.xz
 
 解压后得到如下内容：
 
-![](../images/linux/staruml/staruml-3.png)
+![](../images/linux/staruml/staruml-3.png)  
 
 2.3 将解压后对应的内容复制到对应的目录下
 
 系统原先会存在opt目录，和usr目录，我们将下边的内容复制到对应的目录中
 
->[caojx@localhost data]$ pwd
-/home/caojx/下载/StarUML-v2.8.0-64-bit/data
-[caojx@localhost data]$ ls
-opt  usr
-[caojx@localhost data]$ sudo cp -r opt/* /opt/  ==》将opt下的内容复制到/opt/下
-[caojx@localhost data]$ sudo cp -r usr/* /usr/   ==》将usr下的内容复制到/usr/下
+>[caojx@localhost data]$ pwd    
+/home/caojx/下载/StarUML-v2.8.0-64-bit/data    
+[caojx@localhost data]$ ls    
+opt  usr    
+[caojx@localhost data]$ sudo cp -r opt/* /opt/  ==》将opt下的内容复制到/opt/下    
+[caojx@localhost data]$ sudo cp -r usr/* /usr/   ==》将usr下的内容复制到/usr/下    
 
 
-2.4 解压 control.tar.gz
->[caojx@localhost StarUML-v2.8.0-64-bit]$ tar -zxvf control.tar.gz
-[caojx@localhost StarUML-v2.8.0-64-bit]$ cd control/
-[caojx@localhost control]$ ls
-control  postinst  postrm  prerm
+2.4 解压 control.tar.gz  
+>[caojx@localhost StarUML-v2.8.0-64-bit]$ tar -zxvf control.tar.gz  
+[caojx@localhost StarUML-v2.8.0-64-bit]$ cd control/  
+[caojx@localhost control]$ ls  
+control  postinst  postrm  prerm  
 
-2.5 安装
->[caojx@localhost control]$ sudo ./postinst
+2.5 安装  
+>[caojx@localhost control]$ sudo ./postinst  
 
 这里可能会报错，说找不到
->libnspr4.so.0d not found in /lib/x86_64-linux-gnu/libnspr4.so or /usr/lib/x86_64-linux-gnu/libnspr4.so.
+>libnspr4.so.0d not found in /lib/x86_64-linux-gnu/libnspr4.so or /usr/lib/x86_64-linux-gnu/libnspr4.so.  
 
 ## 三、修改安装脚本
 
 查找需要的文件所在的位置
->[caojx@localhost control]$  whereis libnspr4.so
-libnspr4: /usr/lib64/libnspr4.so
+>[caojx@localhost control]$  whereis libnspr4.so  
+libnspr4: /usr/lib64/libnspr4.so  
 
 修改 postinst脚本文件
 
@@ -83,7 +83,7 @@ libnspr4: /usr/lib64/libnspr4.so
 >[caojx@localhost control]$ sudo ./postinst
 
 
-注意：StarUML2是需要收费的，简单的破解参考  
+注意：StarUML2是需要收费的，简单的破解参考    
 http://blog.csdn.net/mergades/article/details/46662413
 
 ## 四、总结
