@@ -87,6 +87,6 @@ libnspr4: /usr/lib64/libnspr4.so
 http://blog.csdn.net/mergades/article/details/46662413
 
 ## 四、总结
-很多dep包都可以在CentOS中通过这种方式安装，比如说还网易云音乐，也是通过这种方式安装的，不过网易云音乐稍微麻烦点，需要安装很多依赖。
-这里就不演示了。
+很多dep包都可以在CentOS中通过这种方式安装，比如说还网易云音乐，也是通过这种方式安装的，
+不过网易云音乐稍微麻烦点，需要安装很多依赖，这里就不演示了。
 ![](../images/linux/staruml/netease-cloud-music.png)
