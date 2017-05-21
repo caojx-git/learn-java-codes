@@ -33,7 +33,8 @@ x - control.tar.gz
 x - data.tar.xz  
 
 2.2 继续解压data.tar.xz
->xz -dk data.tar.xz
+>xz -dk data.tar.xz  
+tar -xvf data.tar
 
 参考：http://blog.csdn.net/rheostat/article/details/7614451
 
