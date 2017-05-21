@@ -74,5 +74,5 @@ control文件一来说明。
 修改文件的权限
 >sudo chmod u=rw,g=r,o=r netease-cloud-music.desktop
 
-修改后可以在应用程序中看到启动图标
+修改后可以在应用程序中看到启动图标  
 ![](../images/linux/wymusic/netease-cloud-music-6.png)
