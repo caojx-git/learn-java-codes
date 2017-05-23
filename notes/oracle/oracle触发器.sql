@@ -1,119 +1,119 @@
-Oracle´¥·¢Æ÷
+Oracleè§¦å‘å™¨
 
-1.Ê²Ã´ÊÇ´¥·¢Æ÷
-	Êý¾Ý¿â´¥·¢Æ÷ÊÇÒ»¸öÓë±íÏà¹ØÁªµÄ£¬´¢´æµÄPL/SQL³ÌÐò¡£
-	Ã¿µ±Ò»¸öÌØ¶¨µÄ²Ù×÷Óï¾ä£¨insert,update,delete£©ÔÚÖ¸¶¨µÄ±íÉÏ·¢³öÊ±£¬oracle×Ô¶¯
-	Ö´ÐÐ´¥·¢ÖÐ¶¨ÒåµÄÓï¾äÐòÁÐ¡£--×¢ÒâÃ»ÓÐselect
+1.ä»€ä¹ˆæ˜¯è§¦å‘å™¨
+	æ•°æ®åº“è§¦å‘å™¨æ˜¯ä¸€ä¸ªä¸Žè¡¨ç›¸å…³è”çš„ï¼Œå‚¨å­˜çš„PL/SQLç¨‹åºã€‚
+	æ¯å½“ä¸€ä¸ªç‰¹å®šçš„æ“ä½œè¯­å¥ï¼ˆinsert,update,deleteï¼‰åœ¨æŒ‡å®šçš„è¡¨ä¸Šå‘å‡ºæ—¶ï¼Œoracleè‡ªåŠ¨
+	æ‰§è¡Œè§¦å‘ä¸­å®šä¹‰çš„è¯­å¥åºåˆ—ã€‚--æ³¨æ„æ²¡æœ‰select
 
 
-	1.ÈçºÎ´´½¨´¥·¢Æ÷
-	°¸Àý£ºÃ¿µ±²åÈëÐÂÔ±¹¤ºó×Ô¶¯´òÓ¡¡°³É¹¦²åÈëÐÂÔ±¹¤¡±£¨´¥·¢Æ÷µ¥´Ê£ºtrigger£©
+	1.å¦‚ä½•åˆ›å»ºè§¦å‘å™¨
+	æ¡ˆä¾‹ï¼šæ¯å½“æ’å…¥æ–°å‘˜å·¥åŽè‡ªåŠ¨æ‰“å°â€œæˆåŠŸæ’å…¥æ–°å‘˜å·¥â€ï¼ˆè§¦å‘å™¨å•è¯ï¼štriggerï¼‰
 
 
 	create or replace trigger saynewemp
-	after insert --afterÖ¸¶¨ÔÚ²åÈëÖ®ºó´¥·¢´¥·¢Æ÷£¬beforeÖ¸¶¨ÔÚ²åÈëÖ®Ç°´¥·¢´¥·¢Æ÷
-	on emp 
+	after insert --afteræŒ‡å®šåœ¨æ’å…¥ä¹‹åŽè§¦å‘è§¦å‘å™¨ï¼ŒbeforeæŒ‡å®šåœ¨æ’å…¥ä¹‹å‰è§¦å‘è§¦å‘å™¨
+	on emp
 	declare
 	begin
-		dbms_output.put_line('³É¹¦²åÈëÐÂÔ±¹¤');
+		dbms_output.put_line('æˆåŠŸæ’å…¥æ–°å‘˜å·¥');
 	end;
 
-	½á¹û£º
+	ç»“æžœï¼š
 	SQL> insert into emp(empno,ename,sal,deptno) values(1001,'Tom',3000,10);
-	³É¹¦²åÈëÐÂÔ±¹¤
-	ÒÑ´´½¨1ÐÐ
-	
-	
+	æˆåŠŸæ’å…¥æ–°å‘˜å·¥
+	å·²åˆ›å»º1è¡Œ
 
-2.´¥·¢Æ÷µÄÓ¦ÓÃ³¡¾°
-	1.¸´ÔÓµÄ°²È«ÐÔ¼ì²é
-	2.Êý¾ÝÈ·ÈÏ
-	3.ÊµÏÖÊý¾ÝÉó¼Æ¹¦ÄÜ
-	4.Íê³ÉÊý¾ÝµÄ±¸·ÝºÍÍ¬²½
 
-3.´¥·¢Æ÷µÄÓï·¨
-	create [or replace] trigger ´¥·¢Æ÷Ãû
-	{before | after} --±íÃ÷ÊÇ´¥·¢Æ÷ÊÇÔÚ²Ù×÷Ç°»¹ÊÇ²Ù×÷ºóÉúÐ§
-	{delete|insert|update[ofÁÐÃû]}--´¥·¢Æ÷Ö§³ÖµÄ²Ù×÷£¬update¿ÉÒÔÖ¸¶¨Ä³ÁÐÖ´ÐÐ²Ù×÷Ê±´¥·¢
-	on ±íÃû --ÎªÄ³¸ö±íÃû´´½¨µÄ´¥·¢Æ÷
-	[for each row[when(Ìõ¼þ)]] --ÓÐÕâÌõÓï¾äÏàµ±ÓÚÐÐ¼¶´¥·¢Æ÷£¬Ä¬ÈÏÎªÓï¾ä¼¶´¥·¢Æ÷
-	PLSQL¿é
 
-4.´¥·¢Æ÷µÄÀàÐÍ
-	Óï¾ä¼¶´¥·¢Æ÷£ºÕë¶ÔµÄÊÇ±í
-		ÔÚÖ¸¶¨µÄ²Ù×÷Óï¾ä²Ù×÷Ö®Ç°ºóÖ®ºóÖ´ÐÐÒ»´Î£¨Ö»Ö´ÐÐÒ»´Î£¬±ÈÈçËµ£©£¬²»¹ÜÕâÌõÓï¾äÓ°ÏìÁË¶àÉÙÐÐ¡£
-	ÐÐ¼¶´¥·¢Æ÷£ºÕë¶ÔµÄÊÇÐÐ
-		´¥·¢Óï¾ä×÷ÓÃµÄÃ¿Ò»Ìõ¼ÇÂ¼¶¼±»´¥·¢£¬ÔÚÐÐ¼¶´¥·¢Æ÷ÖÐÊ¹ÓÃ:oldºÍ:newÎ±¼ÇÂ¼±äÁ¿£¬Ê¶±ðÖ»µÃ×´Ì¬
-		
+2.è§¦å‘å™¨çš„åº”ç”¨åœºæ™¯
+	1.å¤æ‚çš„å®‰å…¨æ€§æ£€æŸ¥
+	2.æ•°æ®ç¡®è®¤
+	3.å®žçŽ°æ•°æ®å®¡è®¡åŠŸèƒ½
+	4.å®Œæˆæ•°æ®çš„å¤‡ä»½å’ŒåŒæ­¥
 
-	ÀýÈç£º¼ÙÈçÎÒ¶¨ÒåÁËÒ»¸öÓï¾ä¼¶´¥·¢Æ÷£¬²åÈë10ºÅ²¿ÃÅµÄÔ±¹¤£¨ÓÐ3Ìõ¼ÇÂ¼£©µ½±íemp10ÖÐ£¬´¥·¢Æ÷Ö»»á´¥·¢Ò»´Î
+3.è§¦å‘å™¨çš„è¯­æ³•
+	create [or replace] trigger è§¦å‘å™¨å
+	{before | after} --è¡¨æ˜Žæ˜¯è§¦å‘å™¨æ˜¯åœ¨æ“ä½œå‰è¿˜æ˜¯æ“ä½œåŽç”Ÿæ•ˆ
+	{delete|insert|update[ofåˆ—å]}--è§¦å‘å™¨æ”¯æŒçš„æ“ä½œï¼Œupdateå¯ä»¥æŒ‡å®šæŸåˆ—æ‰§è¡Œæ“ä½œæ—¶è§¦å‘
+	on è¡¨å --ä¸ºæŸä¸ªè¡¨ååˆ›å»ºçš„è§¦å‘å™¨
+	[for each row[when(æ¡ä»¶)]] --æœ‰è¿™æ¡è¯­å¥ç›¸å½“äºŽè¡Œçº§è§¦å‘å™¨ï¼Œé»˜è®¤ä¸ºè¯­å¥çº§è§¦å‘å™¨
+	PLSQLå—
+
+4.è§¦å‘å™¨çš„ç±»åž‹
+	è¯­å¥çº§è§¦å‘å™¨ï¼šé’ˆå¯¹çš„æ˜¯è¡¨
+		åœ¨æŒ‡å®šçš„æ“ä½œè¯­å¥æ“ä½œä¹‹å‰åŽä¹‹åŽæ‰§è¡Œä¸€æ¬¡ï¼ˆåªæ‰§è¡Œä¸€æ¬¡ï¼Œæ¯”å¦‚è¯´ï¼‰ï¼Œä¸ç®¡è¿™æ¡è¯­å¥å½±å“äº†å¤šå°‘è¡Œã€‚
+	è¡Œçº§è§¦å‘å™¨ï¼šé’ˆå¯¹çš„æ˜¯è¡Œ
+		è§¦å‘è¯­å¥ä½œç”¨çš„æ¯ä¸€æ¡è®°å½•éƒ½è¢«è§¦å‘ï¼Œåœ¨è¡Œçº§è§¦å‘å™¨ä¸­ä½¿ç”¨:oldå’Œ:newä¼ªè®°å½•å˜é‡ï¼Œè¯†åˆ«åªå¾—çŠ¶æ€
+
+
+	ä¾‹å¦‚ï¼šå‡å¦‚æˆ‘å®šä¹‰äº†ä¸€ä¸ªè¯­å¥çº§è§¦å‘å™¨ï¼Œæ’å…¥10å·éƒ¨é—¨çš„å‘˜å·¥ï¼ˆæœ‰3æ¡è®°å½•ï¼‰åˆ°è¡¨emp10ä¸­ï¼Œè§¦å‘å™¨åªä¼šè§¦å‘ä¸€æ¬¡
 	insert into emp10 select * from emp where deptno=10;
-	     ¼ÙÈçÎÒ¶¨ÒåÁËÒ»¸öÐÐ¼¶´¥·¢Æ÷£¬²åÈë10ºÅ²¿ÃÅµÄÔ±¹¤£¨ÓÐ3Ìõ¼ÇÂ¼£©µ½±íemp10ÖÐ£¬´¥·¢Æ÷Ö»»á´¥·¢Èý´Î
+	     å‡å¦‚æˆ‘å®šä¹‰äº†ä¸€ä¸ªè¡Œçº§è§¦å‘å™¨ï¼Œæ’å…¥10å·éƒ¨é—¨çš„å‘˜å·¥ï¼ˆæœ‰3æ¡è®°å½•ï¼‰åˆ°è¡¨emp10ä¸­ï¼Œè§¦å‘å™¨åªä¼šè§¦å‘ä¸‰æ¬¡
 		insert into emp10 select * from emp where deptno=10;
 
 
 
-		
 
-5.°¸Àý
-	
-	--1.¸´ÔÓµÄ°²È«ÐÔ¼ì²é
-	--½ûÖ¹ÔÚ·Ç¹¤×÷ÆÚ¼ä²åÈëÐÂÔ±¹¤
+
+5.æ¡ˆä¾‹
+
+	--1.å¤æ‚çš„å®‰å…¨æ€§æ£€æŸ¥
+	--ç¦æ­¢åœ¨éžå·¥ä½œæœŸé—´æ’å…¥æ–°å‘˜å·¥
 	/*
-		1.ÖÜÄ©£ºto_char(sysdate,'day') in ('ÐÇÆÚÁù','ÐÇÆÚÈÕ')
-		2.ÉÏ°àÇ°£¬ÏÂ°àºó£ºto_number(to_char(sysdate,'hh24')) not betwwn 9 and 18
+		1.å‘¨æœ«ï¼što_char(sysdate,'day') in ('æ˜ŸæœŸå…­','æ˜ŸæœŸæ—¥')
+		2.ä¸Šç­å‰ï¼Œä¸‹ç­åŽï¼što_number(to_char(sysdate,'hh24')) not betwwn 9 and 18
 	*/
 
 	create or replace trigger securityemp
-	before insert --ÔÚ²åÈëÇ°½øÐÐ¼ì²é
+	before insert --åœ¨æ’å…¥å‰è¿›è¡Œæ£€æŸ¥
 	on emp
 	begin
-		if to_char(sysdate,'day') in ('ÐÇÆÚÁù','ÐÇÆÚÈÕ') or 
+		if to_char(sysdate,'day') in ('æ˜ŸæœŸå…­','æ˜ŸæœŸæ—¥') or
 		to_number(to_char(sysdate,'hh24')) not betwwn 9 and 18 then
 
-			--½ûÖ¹²åÈëÔ±¹¤,Å×³öÒì³££¬Ê¹ÓÃÈçÏÂ·½Ê½
-			raise_application_error(-20001,'½ûÖ¹ÔÚ·Ç¹¤×÷Ê±¼ä²åÈëÐÂÔ±¹¤');
-			--²»ÄÜÖ±½ÓÊ¹ÓÃraiseÅ×³öÒì³££¬Ó¦¸ÃÊ¹ÓÃÉÏ±ßÕâÖÖ·½Ê½£¬µÚÒ»¸ö²ÎÊýµÄÈ¡Öµ -20000 ~ -29999
-			--µÚ¶þ¸ö²ÎÊý£º´¥·¢Æ÷Å×³öÒì³£ºóÌáÊ¾µÄÄÚÈÝ
+			--ç¦æ­¢æ’å…¥å‘˜å·¥,æŠ›å‡ºå¼‚å¸¸ï¼Œä½¿ç”¨å¦‚ä¸‹æ–¹å¼
+			raise_application_error(-20001,'ç¦æ­¢åœ¨éžå·¥ä½œæ—¶é—´æ’å…¥æ–°å‘˜å·¥');
+			--ä¸èƒ½ç›´æŽ¥ä½¿ç”¨raiseæŠ›å‡ºå¼‚å¸¸ï¼Œåº”è¯¥ä½¿ç”¨ä¸Šè¾¹è¿™ç§æ–¹å¼ï¼Œç¬¬ä¸€ä¸ªå‚æ•°çš„å–å€¼ -20000 ~ -29999
+			--ç¬¬äºŒä¸ªå‚æ•°ï¼šè§¦å‘å™¨æŠ›å‡ºå¼‚å¸¸åŽæç¤ºçš„å†…å®¹
 		end if;
 
 	end;
 
-	Èç¹ûÔÚ·Ç¹¤×÷Ê±¼äÖ´ÐÐinsertÓï¾ä¾Í»á´¥·¢£¬´¥·¢Æ÷£¬½ûÖ¹ÔÚ·Ç¹¤×÷Ê±¼ä²åÈëÐÂÔ±¹¤
-	
-	--2.Êý¾ÝÈ·ÈÏ
+	å¦‚æžœåœ¨éžå·¥ä½œæ—¶é—´æ‰§è¡Œinsertè¯­å¥å°±ä¼šè§¦å‘ï¼Œè§¦å‘å™¨ï¼Œç¦æ­¢åœ¨éžå·¥ä½œæ—¶é—´æ’å…¥æ–°å‘˜å·¥
+
+	--2.æ•°æ®ç¡®è®¤
 
 	/*
-	´¥·¢Æ÷¶þ£º²ÎÊýµÄÈ·ÈÏ
-	ÕÇºóµÄÐ½Ë®²»ÄÜµÍÓÚÕÇÇ°µÄÐ½Ë®
+	è§¦å‘å™¨äºŒï¼šå‚æ•°çš„ç¡®è®¤
+	æ¶¨åŽçš„è–ªæ°´ä¸èƒ½ä½ŽäºŽæ¶¨å‰çš„è–ªæ°´
 
-	1. :old ºÍ :new ´ú±íÍ¬Ò»Ìõ¼ÇÂ¼
-	2. :old±íÊ¾²Ù×÷¸ÃÐÐÖ®Ç°µÄ¼ÇÂ¼
-	   :new±íÊ¾²Ù×÷¸ÃÐÐÖ®ºóµÄ¼ÇÂ¼
+	1. :old å’Œ :new ä»£è¡¨åŒä¸€æ¡è®°å½•
+	2. :oldè¡¨ç¤ºæ“ä½œè¯¥è¡Œä¹‹å‰çš„è®°å½•
+	   :newè¡¨ç¤ºæ“ä½œè¯¥è¡Œä¹‹åŽçš„è®°å½•
 	*/
 
 	create or replace trigger checksalary
 	before update
 	on emp
-	for each row --ÐÐ¼¶´¥·¢Æ÷
+	for each row --è¡Œçº§è§¦å‘å™¨
 	begin
-		--if ÕÇºóµÄÐ½Ë® < ÕÇÇ°µÄÐ½Ë®
+		--if æ¶¨åŽçš„è–ªæ°´ < æ¶¨å‰çš„è–ªæ°´
 		if :new.sal < :old.sal then
-			raise_application_error(-20002,'ÕÇºóµÄÐ½Ë®²»ÄÜÉÙÓÚÕÇÇ°µÄÐ½Ë®£¬ÕÇÇ°µÄÐ½Ë®'||:new.sal||'ÕÇºóµÄÐ½Ë®'||:old.sal);
+			raise_application_error(-20002,'æ¶¨åŽçš„è–ªæ°´ä¸èƒ½å°‘äºŽæ¶¨å‰çš„è–ªæ°´ï¼Œæ¶¨å‰çš„è–ªæ°´'||:new.sal||'æ¶¨åŽçš„è–ªæ°´'||:old.sal);
 		end if;
 	end;
-	
-	update emp set sal=sal-1 where empno=7389; --ÕâÀï»á´¥·¢´¥·¢Æ÷
 
-	3.ÊµÏÖÊý¾ÝÉó¼Æ¹¦ÄÜ
+	update emp set sal=sal-1 where empno=7389; --è¿™é‡Œä¼šè§¦å‘è§¦å‘å™¨
+
+	3.å®žçŽ°æ•°æ®å®¡è®¡åŠŸèƒ½
 
 
 	/*
-	´¥·¢Æ÷Ó¦ÓÃ³¡¾°Èý.ÊµÏÖÊý¾ÝÉó¼Æ¹¦ÄÜ====¡·»ùÓÚÖµµÃÉó¼Æ
-	¸øÔ±¹¤ÕÇ¹¤×Ê£¬µ±ÕÇºóµÄ¹¤×÷´óÓÚ6000µÄÊ±ºò£¬Éó¼Æ¸ÃÔ±¹¤µÄÐÅÏ¢
+	è§¦å‘å™¨åº”ç”¨åœºæ™¯ä¸‰.å®žçŽ°æ•°æ®å®¡è®¡åŠŸèƒ½====ã€‹åŸºäºŽå€¼å¾—å®¡è®¡
+	ç»™å‘˜å·¥æ¶¨å·¥èµ„ï¼Œå½“æ¶¨åŽçš„å·¥ä½œå¤§äºŽ6000çš„æ—¶å€™ï¼Œå®¡è®¡è¯¥å‘˜å·¥çš„ä¿¡æ¯
 	*/
 
-	--´´½¨±í±£´æÉó¼ÆÐÅÏ¢
+	--åˆ›å»ºè¡¨ä¿å­˜å®¡è®¡ä¿¡æ¯
 	create table audit_info(
 		infomation varchar2(2000);
 	);
@@ -123,35 +123,35 @@ Oracle´¥·¢Æ÷
 	on emp
 	for each row
 	begin
-		--µ±Ô±¹¤µÄ¹¤×Ê´óÓÚ6000²åÈëÉó¼ÆÐÅÏ¢
+		--å½“å‘˜å·¥çš„å·¥èµ„å¤§äºŽ6000æ’å…¥å®¡è®¡ä¿¡æ¯
 		if :new.sal>6000 then
 			insert into audit_info values(:new.empno||' '||:new.ename||' '||:new.sal);
 		end if;
 	end;
-	
-	¸øÃ¿¸öÔ±¹¤ÕÇ¹¤×Ê2000,Èç¹û´æÔÚÔ±¹¤¹¤×Ê´óÓÚ6000¾Í»á²åÈëÉó¼Æ±í
+
+	ç»™æ¯ä¸ªå‘˜å·¥æ¶¨å·¥èµ„2000,å¦‚æžœå­˜åœ¨å‘˜å·¥å·¥èµ„å¤§äºŽ6000å°±ä¼šæ’å…¥å®¡è®¡è¡¨
 	update emp set sal = sal+2000;
 
-	4.Íê³ÉÊý¾ÝµÄ±¸·ÝºÍÍ¬²½
+	4.å®Œæˆæ•°æ®çš„å¤‡ä»½å’ŒåŒæ­¥
 
 	/*
-	ÀûÓÃ´¥·¢Æ÷ÊµÏÖÊý¾ÝµÄÍ¬²½ºÍ±¸·Ý----¡·Í¬²½±¸·Ý
-	¼ÙÈçA±íÎªÖ÷±í£¬B±íÎª±¸·Ý±í£¬Èç¹ûA±íÖÐµÄÊý¾Ý·¢Éú±ä»¯£¬ÔòÍ¬²½µ½B±í
-	µ±Ô±¹¤ÕÇÍê¹¤×Êºó£¬×Ô¶¯±¸·ÝÐÂµÄ¹¤×Êµ½±¸·Ý±íÖÐ
+	åˆ©ç”¨è§¦å‘å™¨å®žçŽ°æ•°æ®çš„åŒæ­¥å’Œå¤‡ä»½----ã€‹åŒæ­¥å¤‡ä»½
+	å‡å¦‚Aè¡¨ä¸ºä¸»è¡¨ï¼ŒBè¡¨ä¸ºå¤‡ä»½è¡¨ï¼Œå¦‚æžœAè¡¨ä¸­çš„æ•°æ®å‘ç”Ÿå˜åŒ–ï¼Œåˆ™åŒæ­¥åˆ°Bè¡¨
+	å½“å‘˜å·¥æ¶¨å®Œå·¥èµ„åŽï¼Œè‡ªåŠ¨å¤‡ä»½æ–°çš„å·¥èµ„åˆ°å¤‡ä»½è¡¨ä¸­
 	*/
 	create or replace trigger sync_salary
 	after update
 	on emp
 	for each row
 	begin
-		--µ±Ö÷±í¸üÐÂºó£¬×Ô¶¯½øÐÐ±¸·Ý
+		--å½“ä¸»è¡¨æ›´æ–°åŽï¼Œè‡ªåŠ¨è¿›è¡Œå¤‡ä»½
 		update emp_back set sal = :new.sal where empno= :new.empno;
 	end;
 
 	update emp set sal=sal+10 where empno=7839;
 
-	oracleÖÐ»¹ÓÐ¸öÀûÓÃ¿ìÕÕ±¸·Ý£¬ÊÇÒì²½µÄ¡£ ¶øÀûÓÃ´¥·¢Æ÷£¬ÊÇÍ¬²½µÄ¡£
+	oracleä¸­è¿˜æœ‰ä¸ªåˆ©ç”¨å¿«ç…§å¤‡ä»½ï¼Œæ˜¯å¼‚æ­¥çš„ã€‚ è€Œåˆ©ç”¨è§¦å‘å™¨ï¼Œæ˜¯åŒæ­¥çš„ã€‚
 
 
-	¿ìÕÕ±¸·ÝÊý¾Ý
+	å¿«ç…§å¤‡ä»½æ•°æ®
 	http://nakupanda.iteye.com/blog/1028819
