@@ -285,7 +285,7 @@ tom
 			--循环从光标结果集合中取出数据
 			loop
 				--取一条记录,使用fetch从光标中取出一条记录，之后光标会向后移动
-				fetch cemp into peanme,psal;
+				fetch cemp into pename,psal;
 				--循环退出没有取到记录的时候
 				exit when cemp%notfound;
 				--否则打印记录
@@ -296,9 +296,10 @@ tom
 
 		else
 			dbms_output.put_line('光标没有打开');
+		  --关闭光标
+		  close cemp;
 
-		--关闭光标
-		close cemp;
+		end if;
 
 	end;
 
