@@ -34,6 +34,7 @@ x - data.tar.xz
 ![](../images/linux/wymusic/netease-cloud-music-2.png)
 
 将他们放入到CentOS7中对应的/usr目录下
+>sudo cp -r usr/* /usr/
 
 ## 三、根据提示安装依赖
 
@@ -52,7 +53,15 @@ x - data.tar.xz
 3.1 在安装完成步骤三提示所需要的依赖后播放歌曲出现”加载失败，网络错误，可在设置中发送反馈“，如下
 ![](../images/linux/wymusic/netease-cloud-music-3.png)
 
-原因是还缺少对应的安装包，需要安装如下包
+原因是还缺少对应的安装包，需要安装相关的插件
+
+安装外部源epel
+>sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
+
+然后通过yum安装Fusion软件仓库
+>sudo yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/el/updates/7/x86_64/r/rpmfusion-free-release-7-1.noarch.rpm http://download1.rpmfusion.org/nonfree/el/updates/7/x86_64/r/rpmfusion-nonfree-release-7-1.noarch.rpm  
+
+安装需要的插件
 >sudo yum -y install gstreamer-plugins-good.x86_64  
 sudo yum -y install gstreamer-plugins-bad.x86_64  
 
