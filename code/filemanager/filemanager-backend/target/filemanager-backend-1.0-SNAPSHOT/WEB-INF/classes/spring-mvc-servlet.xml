@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+    <!--开启扫描包-->
+    <context:component-scan base-package="edu.xnxy.caojx.filemanager"/>
+
+
+    <!--开启springmvc注解-->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <!--下边对返回的字符做编码过滤，通过拦截器的方式，使用jackjson返回中文的时候，一般使用这种方式做编码过滤-->
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!--对静态资源的处理,放行，不拦截-->
+    <mvc:resources mapping="/images/**" location="/images/"></mvc:resources>
+    <mvc:resources mapping="/css/**" location="/css/"></mvc:resources>
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
+    <mvc:resources mapping="/iconfont/**" location="/iconfont/"></mvc:resources>
+    <mvc:resources mapping="/bootstrap/**" location="/bootstrap/"></mvc:resources>
+    <mvc:resources mapping="/html/**" location="/WEB-INF/views/html/"></mvc:resources>
+    <mvc:resources mapping="/pdf/**" location="/pdf/"></mvc:resources>
+
+<!--    &lt;!&ndash;拦截判断用户是否登录&ndash;&gt;
+    <mvc:interceptors>
+        <mvc:interceptor>
+            &lt;!&ndash; 匹配的是url路径， 如果不配置或/**,将拦截所有的Controller &ndash;&gt;
+            <mvc:mapping path="/userManager/**"></mvc:mapping>
+            <mvc:mapping path="/main/**"/>
+            <mvc:exclude-mapping path="/images/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/iconfont/**"/>
+            <mvc:exclude-mapping path="/bootstrap/**"/>
+            <bean class="edu.xnxy.caojx.filemanager.web.filter.CheckLoginFilter"></bean>
+        </mvc:interceptor>
+        &lt;!&ndash; 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法 &ndash;&gt;
+    </mvc:interceptors>-->
+
+    <!--4.0文件上传解析器配置-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"></property><!--文件编码-->
+        <property name="maxUploadSize" value="1048576000"></property><!--文件最大值-->
+        <property name="maxInMemorySize" value="40960"></property><!--文件缓存大小-->
+    </bean>
+
+
+    <!--配置视图解析器-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+</beans>

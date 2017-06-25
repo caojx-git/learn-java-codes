@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery自定义区域的鼠标右键菜单</title>
+    <script src="/js/common/jquery.min.js"></script>
+    <style type="text/css">
+        #mask{position: absolute;left: 0;top: 0;z-index: 9000;display: block;}
+        #myMenu{position: absolute;display: none;z-index: 9999;background: yellow;border: 1px solid;width: 200px;height: 155px;}
+        #textbox{background: orange;width: 380px;border: 2px solid;}
+        img{height: 30px;width: 30px;}
+        td{font-size: 20px;cursor: pointer;}
+        a{text-decoration: none;color: black;}
+        a: hover{color: white;background: black;}
+    </style>
+    <script type="text/javascript">
+        var windowwidth;
+        var windowheight;
+        var checkmenu;
+        $(window).ready(function() {
+            $('#myMenu').hide();
+            $('#textbox').bind("contextmenu",function(e){
+                windowwidth = $(window).width();
+                windowheight = $(window).height();
+                checkmenu = 1;
+                $('#mask').css({
+                    'height': windowheight,
+                    'width': windowwidth
+                });
+                $('#myMenu').show(500);
+                $('#myMenu').css({
+                    'top':e.pageY+'px',
+                    'left':e.pageX+'px'
+                });
+                return false;
+            });
+            $('#mask').click(function(){
+                $(this).height(0);
+                $(this).width(0);
+                $('#myMenu').hide(500);
+                checkmenu = 0;
+                return false;
+            });
+            $('#mask').bind("contextmenu",function(){
+                $(this).height(0);
+                $(this).width(0);
+                $('#myMenu').hide(500);
+                checkmenu = 0;
+                return false;
+            });
+            $(window).resize(function(){
+                if(checkmenu == 1) {
+                    windowwidth = $(window).width();
+                    windowheight = $(window).height();
+                    $('#mask').css({
+                        'height': windowheight,
+                        'width': windowwidth,
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body >
+<div id="myMenu" >
+    <table cellspace="3">
+        <tr>
+            <td ><img src="/images/logo.jpg" ></td><td><a href="#">tweet me</a></td>
+        </tr>
+        <tr>
+            <td ><img src="/images/logo.jpg" > </td><td><a href="#">facebook share</a></td>
+        </tr>
+        <tr>
+            <td ><img src="/images/logo.jpg" > </td><td><a href="#">myspace share</a></td>
+        </tr>
+        <tr>
+            <td ><img src="/images/logo.jpg" > </td><td><a href="#">e-mail this</a></td>
+        </tr>
+    </table>
+</div>
+<div id="mask"> </div>
+<div id="textbox">
+    <p>嗨！您好，在这个区域内点击您的鼠标右键吧，会弹出一个自定义的右键菜单，和浏览器的右键菜单完全不一样哦！<p/>
+</div>
+<div>
+</body>
+</html>
