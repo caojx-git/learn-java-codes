@@ -1,0 +1,81 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1492494843791'); /* IE9*/
+  src: url('iconfont.eot?t=1492494843791#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1492494843791') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1492494843791') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1492494843791#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shanchu:before { content: "\e605"; }
+
+.icon-refresh:before { content: "\e67a"; }
+
+.icon-music:before { content: "\e63d"; }
+
+.icon-iconfontexcel:before { content: "\e622"; }
+
+.icon-tongxunlu:before { content: "\e61d"; }
+
+.icon-refurbish:before { content: "\e754"; }
+
+.icon-iconfonticonfontexcel:before { content: "\e610"; }
+
+.icon-xiazai:before { content: "\e6b7"; }
+
+.icon-yuedu:before { content: "\e6bc"; }
+
+.icon-lianjie:before { content: "\e8d3"; }
+
+.icon-iconfont89:before { content: "\e752"; }
+
+.icon-xiaoxi:before { content: "\e615"; }
+
+.icon-jinlingyingcaiwangtubiao17:before { content: "\e79a"; }
+
+.icon-img:before { content: "\e63c"; }
+
+.icon-suo:before { content: "\e60c"; }
+
+.icon-navicon12:before { content: "\e60a"; }
+
+.icon-shangchuan-copy:before { content: "\e604"; }
+
+.icon-x-mpg:before { content: "\e68c"; }
+
+.icon-academy:before { content: "\e6a2"; }
+
+.icon-touxiang:before { content: "\e634"; }
+
+.icon-shangchuan:before { content: "\e631"; }
+
+.icon-gengduo-copy:before { content: "\e600"; }
+
+.icon-wenjian:before { content: "\e64b"; }
+
+.icon-yuan:before { content: "\e601"; }
+
+.icon-4:before { content: "\e603"; }
+
+.icon-history:before { content: "\e602"; }
+
+.icon-word:before { content: "\e66b"; }
+
+.icon-touxiang1:before { content: "\e607"; }
+
+.icon-txt:before { content: "\e717"; }
+
+.icon-sousuo_sousuo:before { content: "\e67b"; }
+
+.icon-pdf:before { content: "\e641"; }
+
+.icon-xueyuantouxiang:before { content: "\e658"; }
+

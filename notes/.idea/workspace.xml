@@ -1,19 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="更新spring笔记">
+    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="更新CentOS7中安装网易云音乐笔记">
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/bean/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/config/Configuration.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/config/sqlxml/Message.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/dao/MessageDao.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/dao/MessageDao2.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/db/DBAccess.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/db/db.sql" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/service/MessageService.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/servlet/DeleteOneServlet.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/com/imooc/servlet/ListServlet.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring/Spring-AOP.docx" afterPath="$PROJECT_DIR$/spring/Spring-AOP.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring/Spring-IoC.docx" afterPath="$PROJECT_DIR$/spring/Spring-IoC.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../code/mybatis/.idea/dataSources.local.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/build/classes/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/jsp/back/list.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/jstl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/mybatis-3.2.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/ojdbc14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/servlet-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/standard.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/css/all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/css/jscrollpane1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/add_emoticons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn01.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn02.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn03.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn04.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn05.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn06.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn07.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn07g.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn09.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn10.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/btn11.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/graybg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/page.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/page_be.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/talk_recordtext.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/talk_recordtextme.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/talk_send_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/thumbs/talk_recordbox.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/images/thumbs/talk_recordboxme.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/js/common/jquery-1.8.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/js/common/jquery.jscrollpane.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/js/common/jquery.mousewheel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/js/common/scroll-startstop.events.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/mybatis入门实现增删改查.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/列表页.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/linux/.~inux学习.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linux/linux学习.docx" afterPath="$PROJECT_DIR$/linux/linux学习.docx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/.idea/artifacts/filemanager_backend_war_exploded.xml" afterPath="$PROJECT_DIR$/../code/filemanager/.idea/artifacts/filemanager_backend_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/../code/filemanager/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/filemanager-backend.iml" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/filemanager-backend.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/src/main/webapp/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/src/main/webapp/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/src/main/webapp/css/multi-select.css" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/src/main/webapp/css/multi-select.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/src/main/webapp/js/common/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-backend/src/main/webapp/js/common/jquery-1.8.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-common/filemanager-common.iml" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-common/filemanager-common.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/util/CustomDateSerializer.java" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/util/CustomDateSerializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager-service/filemanager-service.iml" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager-service/filemanager-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/filemanager.iml" afterPath="$PROJECT_DIR$/../code/filemanager/filemanager.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/filemanager/pom.xml" afterPath="$PROJECT_DIR$/../code/filemanager/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/.classpath" afterPath="$PROJECT_DIR$/../code/jdbc_examples/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/.project" afterPath="$PROJECT_DIR$/../code/jdbc_examples/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/../code/jdbc_examples/.settings/org.eclipse.core.resources.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/../code/jdbc_examples/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/BatchTest.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/BatchTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/ConnectTest.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/ConnectTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/PrepareTest.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/PrepareTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/StatementTest.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/jdbc/StatementTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Dept.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Dept.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Dept.properties" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Dept.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/SessionTest.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/SessionTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Student.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Student.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Teacher.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Teacher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Teacher.properties" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Teacher.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/TeacherTest.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/TeacherTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Test.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Test1.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/Test1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/TestSession.java" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/TestSession.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/db.properties" afterPath="$PROJECT_DIR$/../code/jdbc_examples/src/com/briup/orm/db.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/SuiteTest.java" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/SuiteTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest1.java" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest2.java" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest3.java" afterPath="$PROJECT_DIR$/../code/learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.classpath" afterPath="$PROJECT_DIR$/../code/mybatis/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../code/mybatis/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.project" afterPath="$PROJECT_DIR$/../code/mybatis/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.settings/.jsdtscope" afterPath="$PROJECT_DIR$/../code/mybatis/.settings/.jsdtscope" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.core.resources.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.jdt.core.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.wst.common.component" afterPath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.wst.common.component" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="$PROJECT_DIR$/../code/mybatis/.settings/org.eclipse.wst.common.project.facet.core.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/WEB-INF/jsp/back/list.jsp" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/WEB-INF/jsp/back/list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/css/all.css" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/css/all.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/css/jscrollpane1.css" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/css/jscrollpane1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/js/common/jquery-1.8.0.min.js" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/js/common/jquery-1.8.0.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/js/common/scroll-startstop.events.jquery.js" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/js/common/scroll-startstop.events.jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/WebContent/列表页.html" afterPath="$PROJECT_DIR$/../code/mybatis/WebContent/列表页.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/Configuration.xml" afterPath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/Configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/sqlxml/Message.xml" afterPath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/sqlxml/Message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/db/db.sql" afterPath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/db/db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/../code/mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/bean/Message.java" afterPath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/bean/Message.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/config/Configuration.xml" afterPath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/config/Configuration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/config/sqlxml/Message.xml" afterPath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/config/sqlxml/Message.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/db/DBAccess.java" afterPath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/db/DBAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/db/db.sql" afterPath="$PROJECT_DIR$/../code/mybatis/src/com/imooc/db/db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/mybatis/src/log4j.properties" afterPath="$PROJECT_DIR$/../code/mybatis/src/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../code/spring-mvc/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/spring-mvc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../code/spring-mvc/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,34 +144,7 @@
     <favorites_list name="notes" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="markdown入门.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/markdown/markdown入门.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="57">
-                <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Centos7 中安装haroopad.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/markdown/Centos7 中安装haroopad.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="209">
-                <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -135,6 +211,8 @@
         <option value="$PROJECT_DIR$/junit4/junit4使用.md" />
         <option value="$PROJECT_DIR$/jdbc/数据库连接池.md" />
         <option value="$PROJECT_DIR$/spring/springmvc学习.md" />
+        <option value="$PROJECT_DIR$/oracle/PLSQL.sql" />
+        <option value="$PROJECT_DIR$/linux/CentOS7中安装网易云音乐.md" />
       </list>
     </option>
   </component>
@@ -143,6 +221,17 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="/usr/local/apache-maven-3.3.9" />
+        <option name="userSettingsFile" value="/usr/local/apache-maven-3.3.9/conf/settings-112.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
@@ -166,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -179,46 +269,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="notes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="markdown" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="settings.editor.splitter.proportion" value="0.34382284" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.33365476" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -528,6 +593,13 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -660,6 +732,19 @@
       <workItem from="1491662747594" duration="101000" />
       <workItem from="1492051983460" duration="135000" />
       <workItem from="1492052152938" duration="17000" />
+      <workItem from="1495637018777" duration="29000" />
+      <workItem from="1495641508343" duration="129000" />
+      <workItem from="1496230553222" duration="650000" />
+      <workItem from="1496321676925" duration="228000" />
+      <workItem from="1496324274124" duration="2008000" />
+      <workItem from="1496327436787" duration="244000" />
+      <workItem from="1496372280817" duration="1152000" />
+      <workItem from="1496377070315" duration="66000" />
+      <workItem from="1496381721454" duration="639000" />
+      <workItem from="1496410539336" duration="35000" />
+      <workItem from="1497418274023" duration="226000" />
+      <workItem from="1497422024553" duration="108000" />
+      <workItem from="1497449639724" duration="71000" />
     </task>
     <task id="LOCAL-00001" summary="git 常用命令">
       <created>1490973845562</created>
@@ -906,11 +991,32 @@
       <option name="project" value="LOCAL" />
       <updated>1491574495654</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="更新PLSQL笔记">
+      <created>1495641583554</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1495641583554</updated>
+    </task>
+    <task id="LOCAL-00037" summary="更新Linux笔记">
+      <created>1495641607299</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1495641607299</updated>
+    </task>
+    <task id="LOCAL-00038" summary="更新CentOS7中安装网易云音乐笔记">
+      <created>1496372804982</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1496372804982</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27414000" />
+    <option name="totallyTimeSpent" value="33009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -923,7 +1029,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
-    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -932,15 +1037,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7395105" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31117824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20196672" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753405" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -963,9 +1068,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="笔记修改" />
-    <MESSAGE value="修改git笔记" />
-    <MESSAGE value="markdown笔记添加换行说明" />
     <MESSAGE value="markdown笔记显示样式修改" />
     <MESSAGE value="haroopad笔记显示样式修改" />
     <MESSAGE value="git笔记显示样式修改" />
@@ -988,7 +1090,10 @@
     <MESSAGE value="修改jdbc连接池的笔记" />
     <MESSAGE value="更新springmvc笔记" />
     <MESSAGE value="更新spring笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新spring笔记" />
+    <MESSAGE value="更新PLSQL笔记" />
+    <MESSAGE value="更新Linux笔记" />
+    <MESSAGE value="更新CentOS7中安装网易云音乐笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新CentOS7中安装网易云音乐笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -999,26 +1104,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="49913">
-            <caret line="2631" column="0" lean-forward="false" selection-start-line="2631" selection-start-column="0" selection-end-line="2631" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junit4/junit4使用.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/git/1_CentOS7中安装git.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1276,16 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linux/linux常用命令.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="485">
-            <caret line="208" column="31" lean-forward="false" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/linux/500Illegal_PORT_command的问题_主被动模式.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1299,13 +1374,6 @@
     <entry file="file://$PROJECT_DIR$/oracle/oracle触发器.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oracle/PLSQL.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1345,16 +1413,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="19">
             <caret line="2" column="53" lean-forward="false" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/3_git工作区暂存区和版本库.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="38">
-            <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
           </first_editor>
           <second_editor />
         </state>
@@ -1450,7 +1508,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="57">
             <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1461,11 +1518,154 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="209">
             <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/git/3_git工作区暂存区和版本库.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="36">
+            <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oracle/PLSQL.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="287" column="30" lean-forward="false" selection-start-line="287" selection-start-column="30" selection-end-line="287" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linux/CentOS7中安装StarUML工具.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="774">
+            <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linux/CentOS7中安装网易云音乐.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="328">
+            <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linux/linux常用命令.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="248">
+            <caret line="215" column="26" lean-forward="false" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>notes</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

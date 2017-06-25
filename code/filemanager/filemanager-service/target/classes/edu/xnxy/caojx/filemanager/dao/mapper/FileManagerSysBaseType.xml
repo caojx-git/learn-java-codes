@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+       Copyright 2009-2012 the original author or authors.
+
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+
+-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.xnxy.caojx.filemanager.dao.IFilemanagerSysBaseTypeDAO">
+
+    <resultMap type="edu.xnxy.caojx.filemanager.entity.FileManagerSysBaseType" id="FileManagerSysBaseType">
+        <!--column 是数据库中字段的名成，property是表对应的试题类Message中的字段
+            jdbcType,可以在java.sql.Types中找到对应的常量
+        -->
+        <result column="code_type" jdbcType="NUMERIC" property="codeType"/><!--如果数据库的字段作为主键，则使用id标签-->
+        <result column="code_id" jdbcType="NUMERIC" property="codeId"/><!--如果数据库的字段是普通的列，则使用result标签-->
+        <result column="code_name" jdbcType="VARCHAR" property="codeName"/>
+        <result column="notes" jdbcType="VARCHAR" property="notes"/>
+        <result column="ext1" jdbcType="NUMERIC" property="ext1"/>
+        <result column="ext2" jdbcType="VARCHAR" property="ext2"/>
+        <result column="ext3" jdbcType="VARCHAR" property="ext3"/>
+    </resultMap>
+
+    <select id="query" parameterType="map" resultMap="FileManagerSysBaseType">
+        select * from filemanager_sys_base_type where 1= 1
+        <if test="entity.codeType != null">
+            and code_type = #{entity.codeType}
+        </if>
+        <if test="entity.codeId != null">
+            and code_id = #{entity.codeId}
+        </if>
+    </select>
+
+</mapper>

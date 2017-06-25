@@ -2,46 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="396c88fc-ecc1-4018-8055-631447ae897a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-JunitFlowTest-run.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-autocreateTest.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-eclipse-keyamp.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-idea-keymap.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-idea-plugins.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-project1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-run1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/images/junit4-testfailure.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-ListServlet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-deleteOne1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-deleteOne2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-jar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-list1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-list2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-list4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-list5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-list6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-list7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-log4j.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-log4j2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-param1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-param2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-project1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-project2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-project3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-project4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebContent/images/mybatis-project5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/.idea/artifacts/learn_junit4_Web_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/src/main/java/pers/java/caojx/learn/junit4/util/Calculate.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/CalculateTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/ErrorAndFailureTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/JunitAnnotation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/JunitFlowTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/FileController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/UserManagerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/addUser.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/fileupload.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/html/mutilSelectTest.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/userManager.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/css/bootstrap-multiselect.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/css/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/js/bootstrap-multiselect.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/js/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/index.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/index2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/meun.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/register.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/bean/Message.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/config/Configuration.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/config/sqlxml/Message.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/dao/MessageDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/dao/MessageDao2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/db/DBAccess.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/db/db.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/service/MessageService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/servlet/DeleteOneServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/com/imooc/servlet/ListServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/log4j.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/jsp/back/list.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/jstl.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/mybatis-3.2.7.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/ojdbc14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/servlet-api.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/standard.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/css/all.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/css/jscrollpane1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/add_emoticons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn01.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn02.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn03.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn04.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn05.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn06.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn07.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn07g.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn09.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn10.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/btn11.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/graybg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/page.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/page_be.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/talk_recordtext.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/talk_recordtextme.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/talk_send_btn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/thumbs/talk_recordbox.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/images/thumbs/talk_recordboxme.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/js/common/jquery-1.8.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/js/common/jquery.jscrollpane.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/js/common/jquery.mousewheel.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/js/common/scroll-startstop.events.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/mybatis入门实现增删改查.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/mybatis_Web_exploded/列表页.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../filemanager/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_2.xml" afterPath="$PROJECT_DIR$/../filemanager/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../filemanager/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterPath="$PROJECT_DIR$/../filemanager/.idea/libraries/Maven__commons_io_commons_io_1_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/register2.html" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/addUser.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/3.2.0/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/3.2.0/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/bootstrap/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/register2.js" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/addUser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/.idea/artifacts/filemanager_backend_war_exploded.xml" afterPath="$PROJECT_DIR$/../filemanager/.idea/artifacts/filemanager_backend_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/filemanager-backend.iml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/filemanager-backend.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/LoginController.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/resources/spring-common.xml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/resources/spring-common.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/resources/spring-mvc-servlet.xml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/resources/spring-mvc-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/login.jsp" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/myCollection.html" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/myCollection.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/userManager.html" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/WEB-INF/views/userManager.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/css/style.css" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/fileupload.js" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/fileupload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/login.js" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/register.js" afterPath="$PROJECT_DIR$/../filemanager/filemanager-backend/src/main/webapp/js/register.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/constant.sql" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/constant.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/filemanager-common.iml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/filemanager-common.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/filemanager.sql" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/filemanager.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/FileManagerSysBaseType.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/FileManagerSysBaseType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/UserInfo.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/UserInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/service/IFileManagerSysBaseTypeService.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/service/IFileManagerSysBaseTypeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/service/IUserInfoService.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/service/IUserInfoService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-service/filemanager-service.iml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-service/filemanager-service.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/FileManagerSysBaseType.xml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/FileManagerSysBaseType.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/UserInfo.xml" afterPath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/UserInfo.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/service/FileManagerSysBaseTypeSerivceImpl.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/service/FileManagerSysBaseTypeSerivceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/service/UserInfoServiceImpl.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/service/UserInfoServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager-service/src/test/java/edu/xnxy/caojx/filemanager/service/UserInfoServiceImplTest.java" afterPath="$PROJECT_DIR$/../filemanager/filemanager-service/src/test/java/edu/xnxy/caojx/filemanager/service/UserInfoServiceImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/filemanager.iml" afterPath="$PROJECT_DIR$/../filemanager/filemanager.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../filemanager/pom.xml" afterPath="$PROJECT_DIR$/../filemanager/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md" afterPath="$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spring-mvc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../spring-mvc/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../notes/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../notes/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -69,20 +136,129 @@
     <favorites_list name="mybatis" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="mybatis入门实现增删改查.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="28154">
-                <caret line="1510" column="1" lean-forward="false" selection-start-line="1510" selection-start-column="1" selection-end-line="1510" selection-end-column="1" />
-                <folding>
-                  <marker date="1491226100023" expanded="false" signature="209:361" ph="..." />
-                  <marker date="1491226100023" expanded="true" signature="494:585" ph="{...}" />
-                  <marker date="1491226100023" expanded="true" signature="711:740" ph="{...}" />
-                </folding>
-              </first_editor>
-              <second_editor />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DBAccess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/imooc/db/DBAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#753#754#0" expanded="false" />
+                <element signature="e#810#811#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/imooc/bean/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding>
+                <element signature="e#265#266#0" expanded="false" />
+                <element signature="e#281#282#0" expanded="false" />
+                <element signature="e#313#314#0" expanded="false" />
+                <element signature="e#332#333#0" expanded="false" />
+                <element signature="e#362#363#0" expanded="false" />
+                <element signature="e#383#384#0" expanded="false" />
+                <element signature="e#425#426#0" expanded="false" />
+                <element signature="e#454#455#0" expanded="false" />
+                <element signature="e#488#489#0" expanded="false" />
+                <element signature="e#513#514#0" expanded="false" />
+                <element signature="e#563#564#0" expanded="false" />
+                <element signature="e#600#601#0" expanded="false" />
+                <element signature="e#630#631#0" expanded="false" />
+                <element signature="e#651#652#0" expanded="false" />
+                <element signature="e#693#694#0" expanded="false" />
+                <element signature="e#722#723#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/imooc/dao/MessageDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/back/list.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1406">
+              <caret line="74" column="59" lean-forward="false" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/imooc/config/sqlxml/Message.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="874">
+              <caret line="46" column="50" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="50" />
+              <folding>
+                <marker date="1488110653239" expanded="true" signature="2555:2591" ph="delete from " />
+                <marker date="1488110653239" expanded="true" signature="2827:2971" ph="delete from " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="列表页.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/列表页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1539">
+              <caret line="81" column="42" lean-forward="false" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/imooc/servlet/ListServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeleteOneServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/imooc/servlet/DeleteOneServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/css/all.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="100" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,7 +337,7 @@
     <option name="x" value="-1" />
     <option name="y" value="28" />
     <option name="width" value="1368" />
-    <option name="height" value="741" />
+    <option name="height" value="707" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -179,9 +355,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="mybatis" />
@@ -203,6 +389,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebContent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -241,11 +445,37 @@
               <option name="myItemId" value="imooc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="servlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mybatis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="imooc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -847,7 +1077,21 @@
       <workItem from="1490779039453" duration="13000" />
       <workItem from="1491206866654" duration="5000" />
       <workItem from="1491215820928" duration="681000" />
-      <workItem from="1491225619584" duration="502000" />
+      <workItem from="1491225619584" duration="1259000" />
+      <workItem from="1491560604450" duration="24000" />
+      <workItem from="1491572408731" duration="1387000" />
+      <workItem from="1491838340381" duration="1425000" />
+      <workItem from="1491920702564" duration="662000" />
+      <workItem from="1491924091739" duration="1578000" />
+      <workItem from="1492052124289" duration="113000" />
+      <workItem from="1492311248708" duration="2255000" />
+      <workItem from="1492439571163" duration="599000" />
+      <workItem from="1492440215477" duration="11000" />
+      <workItem from="1492494016404" duration="625000" />
+      <workItem from="1492496966819" duration="1494000" />
+      <workItem from="1492512369047" duration="65000" />
+      <workItem from="1492618560139" duration="104000" />
+      <workItem from="1492683318564" duration="139000" />
     </task>
     <task id="LOCAL-00001" summary="批量删除消息">
       <created>1488122493671</created>
@@ -856,11 +1100,25 @@
       <option name="project" value="LOCAL" />
       <updated>1488122493671</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新mybatis笔记">
+      <created>1491226138770</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1491226138770</updated>
+    </task>
+    <task id="LOCAL-00003" summary="更新mybatis笔记">
+      <created>1491227040944</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1491227040944</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58816000" />
+    <option name="totallyTimeSpent" value="70054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -872,7 +1130,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
+    <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -887,16 +1145,16 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42657343" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4253472" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30664653" sideWeight="0.49344262" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3542296" sideWeight="0.49344262" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30664653" sideWeight="0.5065574" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -954,7 +1212,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="批量删除消息" />
-    <option name="LAST_COMMIT_MESSAGE" value="批量删除消息" />
+    <MESSAGE value="更新mybatis笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新mybatis笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -967,8 +1226,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/log.txt" />
-    <entry file="file://$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md" />
     <entry file="file://$PROJECT_DIR$/src/com/imooc/bean/Message.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -1021,13 +1278,6 @@
     <entry file="file://$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md" />
     <entry file="file://$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md" />
     <entry file="file://$PROJECT_DIR$/src/com/imooc/dao/IMessageDao.java" />
-    <entry file="file://$PROJECT_DIR$/WebContent/列表页.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/js/back/list.js" />
     <entry file="jar:///usr/java/jdk1.7.0_80/src.zip!/java/sql/DriverManager.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1059,13 +1309,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/imooc/config/sqlxml/Command.xml" />
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/db/DBAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="29" column="4" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/mybatis-3.2.7.jar!/org/apache/ibatis/logging/log4j/Log4jImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1080,48 +1323,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/config/Configuration.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/imooc/config/sqlxml/tomcat中配置https.md" />
     <entry file="file://$PROJECT_DIR$/src/com/imooc/config/sqlxml/使用tomcat的hostmanger.md" />
     <entry file="file://$PROJECT_DIR$/src/log.txt" />
     <entry file="dbDummy://dbtable:/164f147d/05f9efa3-5c20-4854-a38c-b2893cccc25e/MYORACLE.T_USER">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/164f147d/05f9efa3-5c20-4854-a38c-b2893cccc25e/MYORACLE.MESSAGE">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/05f9efa3-5c20-4854-a38c-b2893cccc25e/console.sql" />
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/bean/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/05f9efa3-5c20-4854-a38c-b2893cccc25e/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/com/imooc/dao/MessageDao2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-558">
@@ -1130,59 +1359,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/imooc/service/ListService.java" />
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/back/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/config/sqlxml/Message.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/dao/MessageDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/imooc/service/MessageService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/servlet/DeleteOneServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="36" column="47" lean-forward="false" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/imooc/servlet/ListServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1201,18 +1381,140 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/WebContent/WEB-INF/lib/mybatis-3.2.7.jar!/org/apache/ibatis/session/SqlSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/config/Configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/mybatis入门实现增删改查.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="28154">
-            <caret line="1510" column="1" lean-forward="false" selection-start-line="1510" selection-start-column="1" selection-end-line="1510" selection-end-column="1" />
-            <folding>
-              <marker date="1491226100023" expanded="false" signature="209:361" ph="..." />
-              <marker date="1491226100023" expanded="true" signature="494:585" ph="{...}" />
-              <marker date="1491226100023" expanded="true" signature="711:740" ph="{...}" />
-            </folding>
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="152">
+            <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/db/DBAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="16" column="34" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#753#754#0" expanded="false" />
+            <element signature="e#810#811#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/bean/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#265#266#0" expanded="false" />
+            <element signature="e#281#282#0" expanded="false" />
+            <element signature="e#313#314#0" expanded="false" />
+            <element signature="e#332#333#0" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#383#384#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
+            <element signature="e#454#455#0" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#513#514#0" expanded="false" />
+            <element signature="e#563#564#0" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
+            <element signature="e#630#631#0" expanded="false" />
+            <element signature="e#651#652#0" expanded="false" />
+            <element signature="e#693#694#0" expanded="false" />
+            <element signature="e#722#723#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/dao/MessageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="29" column="14" lean-forward="false" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/config/sqlxml/Message.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="874">
+          <caret line="46" column="50" lean-forward="false" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="50" />
+          <folding>
+            <marker date="1488110653239" expanded="true" signature="2555:2591" ph="delete from " />
+            <marker date="1488110653239" expanded="true" signature="2827:2971" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/css/all.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/列表页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="81" column="42" lean-forward="false" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/servlet/ListServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="48" column="46" lean-forward="false" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/imooc/servlet/DeleteOneServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/back/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="74" column="59" lean-forward="false" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/**<a name="line.1"></a>
+<span class="sourceLineNo">002</span> *<a name="line.2"></a>
+<span class="sourceLineNo">003</span> * Licensed to the Apache Software Foundation (ASF) under one or more<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * contributor license agreements.  See the NOTICE file distributed with<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * this work for additional information regarding copyright ownership.<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * The ASF licenses this file to You under the Apache License, Version 2.0<a name="line.6"></a>
+<span class="sourceLineNo">007</span> * (the "License"); you may not use this file except in compliance with<a name="line.7"></a>
+<span class="sourceLineNo">008</span> * the License.  You may obtain a copy of the License at<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> *     http://www.apache.org/licenses/LICENSE-2.0<a name="line.10"></a>
+<span class="sourceLineNo">011</span> *<a name="line.11"></a>
+<span class="sourceLineNo">012</span> *  Unless required by applicable law or agreed to in writing, software<a name="line.12"></a>
+<span class="sourceLineNo">013</span> *  distributed under the License is distributed on an "AS IS" BASIS,<a name="line.13"></a>
+<span class="sourceLineNo">014</span> *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> *  See the License for the specific language governing permissions and<a name="line.15"></a>
+<span class="sourceLineNo">016</span> *  limitations under the License.<a name="line.16"></a>
+<span class="sourceLineNo">017</span> */<a name="line.17"></a>
+<span class="sourceLineNo">018</span>package org.apache.commons.dbcp2.managed;<a name="line.18"></a>
+<span class="sourceLineNo">019</span><a name="line.19"></a>
+<span class="sourceLineNo">020</span>import org.apache.commons.dbcp2.BasicDataSource;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import org.apache.commons.dbcp2.ConnectionFactory;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import org.apache.commons.dbcp2.PoolableConnection;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import org.apache.commons.dbcp2.PoolableConnectionFactory;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import org.apache.commons.dbcp2.PoolingDataSource;<a name="line.24"></a>
+<span class="sourceLineNo">025</span><a name="line.25"></a>
+<span class="sourceLineNo">026</span>import javax.sql.DataSource;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import javax.sql.XADataSource;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import javax.transaction.TransactionManager;<a name="line.28"></a>
+<span class="sourceLineNo">029</span><a name="line.29"></a>
+<span class="sourceLineNo">030</span>import java.sql.SQLException;<a name="line.30"></a>
+<span class="sourceLineNo">031</span><a name="line.31"></a>
+<span class="sourceLineNo">032</span>/**<a name="line.32"></a>
+<span class="sourceLineNo">033</span> * &lt;p&gt;BasicManagedDataSource is an extension of BasicDataSource which<a name="line.33"></a>
+<span class="sourceLineNo">034</span> * creates ManagedConnections.  This data source can create either<a name="line.34"></a>
+<span class="sourceLineNo">035</span> * full two-phase-commit XA connections or one-phase-commit<a name="line.35"></a>
+<span class="sourceLineNo">036</span> * local connections.  Both types of connections are committed or<a name="line.36"></a>
+<span class="sourceLineNo">037</span> * rolled back as part of the global transaction (a.k.a. XA<a name="line.37"></a>
+<span class="sourceLineNo">038</span> * transaction or JTA Transaction), but only XA connections can be<a name="line.38"></a>
+<span class="sourceLineNo">039</span> * recovered in the case of a system crash.<a name="line.39"></a>
+<span class="sourceLineNo">040</span> * &lt;/p&gt;<a name="line.40"></a>
+<span class="sourceLineNo">041</span> * &lt;p&gt;BasicManagedDataSource adds the TransactionManager and XADataSource<a name="line.41"></a>
+<span class="sourceLineNo">042</span> * properties.  The TransactionManager property is required and is<a name="line.42"></a>
+<span class="sourceLineNo">043</span> * used to enlist connections in global transactions.  The XADataSource<a name="line.43"></a>
+<span class="sourceLineNo">044</span> * is optional and if set is the class name of the XADataSource class<a name="line.44"></a>
+<span class="sourceLineNo">045</span> * for a two-phase-commit JDBC driver.  If the XADataSource property<a name="line.45"></a>
+<span class="sourceLineNo">046</span> * is set, the driverClassName is ignored and a DataSourceXAConnectionFactory<a name="line.46"></a>
+<span class="sourceLineNo">047</span> * is created. Otherwise, a standard DriverConnectionFactory is created<a name="line.47"></a>
+<span class="sourceLineNo">048</span> * and wrapped with a LocalXAConnectionFactory.<a name="line.48"></a>
+<span class="sourceLineNo">049</span> * &lt;/p&gt;<a name="line.49"></a>
+<span class="sourceLineNo">050</span> *<a name="line.50"></a>
+<span class="sourceLineNo">051</span> * @see BasicDataSource<a name="line.51"></a>
+<span class="sourceLineNo">052</span> * @see ManagedConnection<a name="line.52"></a>
+<span class="sourceLineNo">053</span> * @version $Id: BasicManagedDataSource.java 1675737 2015-04-24 00:34:03Z psteitz $<a name="line.53"></a>
+<span class="sourceLineNo">054</span> * @since 2.0<a name="line.54"></a>
+<span class="sourceLineNo">055</span> */<a name="line.55"></a>
+<span class="sourceLineNo">056</span>public class BasicManagedDataSource extends BasicDataSource {<a name="line.56"></a>
+<span class="sourceLineNo">057</span>    /** Transaction Registry */<a name="line.57"></a>
+<span class="sourceLineNo">058</span>    private TransactionRegistry transactionRegistry;<a name="line.58"></a>
+<span class="sourceLineNo">059</span>    /** Transaction Manager */<a name="line.59"></a>
+<span class="sourceLineNo">060</span>    private transient TransactionManager transactionManager;<a name="line.60"></a>
+<span class="sourceLineNo">061</span>    /** XA datasource class name */<a name="line.61"></a>
+<span class="sourceLineNo">062</span>    private String xaDataSource;<a name="line.62"></a>
+<span class="sourceLineNo">063</span>    /** XA datasource instance */<a name="line.63"></a>
+<span class="sourceLineNo">064</span>    private XADataSource xaDataSourceInstance;<a name="line.64"></a>
+<span class="sourceLineNo">065</span><a name="line.65"></a>
+<span class="sourceLineNo">066</span>    /**<a name="line.66"></a>
+<span class="sourceLineNo">067</span>     * Gets the XADataSource instance used by the XAConnectionFactory.<a name="line.67"></a>
+<span class="sourceLineNo">068</span>     *<a name="line.68"></a>
+<span class="sourceLineNo">069</span>     * @return the XADataSource<a name="line.69"></a>
+<span class="sourceLineNo">070</span>     */<a name="line.70"></a>
+<span class="sourceLineNo">071</span>    public synchronized XADataSource getXaDataSourceInstance() {<a name="line.71"></a>
+<span class="sourceLineNo">072</span>        return xaDataSourceInstance;<a name="line.72"></a>
+<span class="sourceLineNo">073</span>    }<a name="line.73"></a>
+<span class="sourceLineNo">074</span><a name="line.74"></a>
+<span class="sourceLineNo">075</span>    /**<a name="line.75"></a>
+<span class="sourceLineNo">076</span>     * &lt;p&gt;Sets the XADataSource instance used by the XAConnectionFactory.&lt;/p&gt;<a name="line.76"></a>
+<span class="sourceLineNo">077</span>     * &lt;p&gt;<a name="line.77"></a>
+<span class="sourceLineNo">078</span>     * Note: this method currently has no effect once the pool has been<a name="line.78"></a>
+<span class="sourceLineNo">079</span>     * initialized.  The pool is initialized the first time one of the<a name="line.79"></a>
+<span class="sourceLineNo">080</span>     * following methods is invoked: &lt;code&gt;getConnection, setLogwriter,<a name="line.80"></a>
+<span class="sourceLineNo">081</span>     * setLoginTimeout, getLoginTimeout, getLogWriter.&lt;/code&gt;&lt;/p&gt;<a name="line.81"></a>
+<span class="sourceLineNo">082</span>     *<a name="line.82"></a>
+<span class="sourceLineNo">083</span>     * @param xaDataSourceInstance XADataSource instance<a name="line.83"></a>
+<span class="sourceLineNo">084</span>     */<a name="line.84"></a>
+<span class="sourceLineNo">085</span>    public synchronized void setXaDataSourceInstance(XADataSource xaDataSourceInstance) {<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        this.xaDataSourceInstance = xaDataSourceInstance;<a name="line.86"></a>
+<span class="sourceLineNo">087</span>        xaDataSource = xaDataSourceInstance == null ? null : xaDataSourceInstance.getClass().getName();<a name="line.87"></a>
+<span class="sourceLineNo">088</span>    }<a name="line.88"></a>
+<span class="sourceLineNo">089</span><a name="line.89"></a>
+<span class="sourceLineNo">090</span>    /**<a name="line.90"></a>
+<span class="sourceLineNo">091</span>     * Gets the required transaction manager property.<a name="line.91"></a>
+<span class="sourceLineNo">092</span>     * @return the transaction manager used to enlist connections<a name="line.92"></a>
+<span class="sourceLineNo">093</span>     */<a name="line.93"></a>
+<span class="sourceLineNo">094</span>    public TransactionManager getTransactionManager() {<a name="line.94"></a>
+<span class="sourceLineNo">095</span>        return transactionManager;<a name="line.95"></a>
+<span class="sourceLineNo">096</span>    }<a name="line.96"></a>
+<span class="sourceLineNo">097</span><a name="line.97"></a>
+<span class="sourceLineNo">098</span>    /**<a name="line.98"></a>
+<span class="sourceLineNo">099</span>     * Gets the transaction registry.<a name="line.99"></a>
+<span class="sourceLineNo">100</span>     * @return the transaction registry associating XAResources with managed connections<a name="line.100"></a>
+<span class="sourceLineNo">101</span>     */<a name="line.101"></a>
+<span class="sourceLineNo">102</span>    protected synchronized TransactionRegistry getTransactionRegistry() {<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        return transactionRegistry;<a name="line.103"></a>
+<span class="sourceLineNo">104</span>    }<a name="line.104"></a>
+<span class="sourceLineNo">105</span><a name="line.105"></a>
+<span class="sourceLineNo">106</span>    /**<a name="line.106"></a>
+<span class="sourceLineNo">107</span>     * Sets the required transaction manager property.<a name="line.107"></a>
+<span class="sourceLineNo">108</span>     * @param transactionManager the transaction manager used to enlist connections<a name="line.108"></a>
+<span class="sourceLineNo">109</span>     */<a name="line.109"></a>
+<span class="sourceLineNo">110</span>    public void setTransactionManager(TransactionManager transactionManager) {<a name="line.110"></a>
+<span class="sourceLineNo">111</span>        this.transactionManager = transactionManager;<a name="line.111"></a>
+<span class="sourceLineNo">112</span>    }<a name="line.112"></a>
+<span class="sourceLineNo">113</span><a name="line.113"></a>
+<span class="sourceLineNo">114</span>    /**<a name="line.114"></a>
+<span class="sourceLineNo">115</span>     * Gets the optional XADataSource class name.<a name="line.115"></a>
+<span class="sourceLineNo">116</span>     * @return the optional XADataSource class name<a name="line.116"></a>
+<span class="sourceLineNo">117</span>     */<a name="line.117"></a>
+<span class="sourceLineNo">118</span>    public synchronized String getXADataSource() {<a name="line.118"></a>
+<span class="sourceLineNo">119</span>        return xaDataSource;<a name="line.119"></a>
+<span class="sourceLineNo">120</span>    }<a name="line.120"></a>
+<span class="sourceLineNo">121</span><a name="line.121"></a>
+<span class="sourceLineNo">122</span>    /**<a name="line.122"></a>
+<span class="sourceLineNo">123</span>     * Sets the optional XADataSource class name.<a name="line.123"></a>
+<span class="sourceLineNo">124</span>     * @param xaDataSource the optional XADataSource class name<a name="line.124"></a>
+<span class="sourceLineNo">125</span>     */<a name="line.125"></a>
+<span class="sourceLineNo">126</span>    public synchronized void setXADataSource(String xaDataSource) {<a name="line.126"></a>
+<span class="sourceLineNo">127</span>        this.xaDataSource = xaDataSource;<a name="line.127"></a>
+<span class="sourceLineNo">128</span>    }<a name="line.128"></a>
+<span class="sourceLineNo">129</span><a name="line.129"></a>
+<span class="sourceLineNo">130</span>    @Override<a name="line.130"></a>
+<span class="sourceLineNo">131</span>    protected ConnectionFactory createConnectionFactory() throws SQLException {<a name="line.131"></a>
+<span class="sourceLineNo">132</span>        if (transactionManager == null) {<a name="line.132"></a>
+<span class="sourceLineNo">133</span>            throw new SQLException("Transaction manager must be set before a connection can be created");<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        }<a name="line.134"></a>
+<span class="sourceLineNo">135</span><a name="line.135"></a>
+<span class="sourceLineNo">136</span>        // If xa data source is not specified a DriverConnectionFactory is created and wrapped with a LocalXAConnectionFactory<a name="line.136"></a>
+<span class="sourceLineNo">137</span>        if (xaDataSource == null) {<a name="line.137"></a>
+<span class="sourceLineNo">138</span>            ConnectionFactory connectionFactory = super.createConnectionFactory();<a name="line.138"></a>
+<span class="sourceLineNo">139</span>            XAConnectionFactory xaConnectionFactory = new LocalXAConnectionFactory(getTransactionManager(), connectionFactory);<a name="line.139"></a>
+<span class="sourceLineNo">140</span>            transactionRegistry = xaConnectionFactory.getTransactionRegistry();<a name="line.140"></a>
+<span class="sourceLineNo">141</span>            return xaConnectionFactory;<a name="line.141"></a>
+<span class="sourceLineNo">142</span>        }<a name="line.142"></a>
+<span class="sourceLineNo">143</span><a name="line.143"></a>
+<span class="sourceLineNo">144</span>        // Create the XADataSource instance using the configured class name if it has not been set<a name="line.144"></a>
+<span class="sourceLineNo">145</span>        if (xaDataSourceInstance == null) {<a name="line.145"></a>
+<span class="sourceLineNo">146</span>            Class&lt;?&gt; xaDataSourceClass = null;<a name="line.146"></a>
+<span class="sourceLineNo">147</span>            try {<a name="line.147"></a>
+<span class="sourceLineNo">148</span>                xaDataSourceClass = Class.forName(xaDataSource);<a name="line.148"></a>
+<span class="sourceLineNo">149</span>            } catch (Exception t) {<a name="line.149"></a>
+<span class="sourceLineNo">150</span>                String message = "Cannot load XA data source class '" + xaDataSource + "'";<a name="line.150"></a>
+<span class="sourceLineNo">151</span>                throw new SQLException(message, t);<a name="line.151"></a>
+<span class="sourceLineNo">152</span>            }<a name="line.152"></a>
+<span class="sourceLineNo">153</span><a name="line.153"></a>
+<span class="sourceLineNo">154</span>            try {<a name="line.154"></a>
+<span class="sourceLineNo">155</span>                xaDataSourceInstance = (XADataSource) xaDataSourceClass.newInstance();<a name="line.155"></a>
+<span class="sourceLineNo">156</span>            } catch (Exception t) {<a name="line.156"></a>
+<span class="sourceLineNo">157</span>                String message = "Cannot create XA data source of class '" + xaDataSource + "'";<a name="line.157"></a>
+<span class="sourceLineNo">158</span>                throw new SQLException(message, t);<a name="line.158"></a>
+<span class="sourceLineNo">159</span>            }<a name="line.159"></a>
+<span class="sourceLineNo">160</span>        }<a name="line.160"></a>
+<span class="sourceLineNo">161</span><a name="line.161"></a>
+<span class="sourceLineNo">162</span>        // finally, create the XAConectionFactory using the XA data source<a name="line.162"></a>
+<span class="sourceLineNo">163</span>        XAConnectionFactory xaConnectionFactory = new DataSourceXAConnectionFactory(getTransactionManager(), xaDataSourceInstance, getUsername(), getPassword());<a name="line.163"></a>
+<span class="sourceLineNo">164</span>        transactionRegistry = xaConnectionFactory.getTransactionRegistry();<a name="line.164"></a>
+<span class="sourceLineNo">165</span>        return xaConnectionFactory;<a name="line.165"></a>
+<span class="sourceLineNo">166</span>    }<a name="line.166"></a>
+<span class="sourceLineNo">167</span><a name="line.167"></a>
+<span class="sourceLineNo">168</span>    @Override<a name="line.168"></a>
+<span class="sourceLineNo">169</span>    protected DataSource createDataSourceInstance() throws SQLException {<a name="line.169"></a>
+<span class="sourceLineNo">170</span>        PoolingDataSource&lt;PoolableConnection&gt; pds =<a name="line.170"></a>
+<span class="sourceLineNo">171</span>                new ManagedDataSource&lt;&gt;(getConnectionPool(), transactionRegistry);<a name="line.171"></a>
+<span class="sourceLineNo">172</span>        pds.setAccessToUnderlyingConnectionAllowed(isAccessToUnderlyingConnectionAllowed());<a name="line.172"></a>
+<span class="sourceLineNo">173</span>        return pds;<a name="line.173"></a>
+<span class="sourceLineNo">174</span>    }<a name="line.174"></a>
+<span class="sourceLineNo">175</span><a name="line.175"></a>
+<span class="sourceLineNo">176</span>    /**<a name="line.176"></a>
+<span class="sourceLineNo">177</span>     * Creates the PoolableConnectionFactory and attaches it to the connection pool.<a name="line.177"></a>
+<span class="sourceLineNo">178</span>     *<a name="line.178"></a>
+<span class="sourceLineNo">179</span>     * @param driverConnectionFactory JDBC connection factory created by {@link #createConnectionFactory()}<a name="line.179"></a>
+<span class="sourceLineNo">180</span>     * @throws SQLException if an error occurs creating the PoolableConnectionFactory<a name="line.180"></a>
+<span class="sourceLineNo">181</span>     */<a name="line.181"></a>
+<span class="sourceLineNo">182</span>    @Override<a name="line.182"></a>
+<span class="sourceLineNo">183</span>    protected PoolableConnectionFactory createPoolableConnectionFactory(<a name="line.183"></a>
+<span class="sourceLineNo">184</span>            ConnectionFactory driverConnectionFactory) throws SQLException {<a name="line.184"></a>
+<span class="sourceLineNo">185</span>        PoolableConnectionFactory connectionFactory = null;<a name="line.185"></a>
+<span class="sourceLineNo">186</span>        try {<a name="line.186"></a>
+<span class="sourceLineNo">187</span>            connectionFactory = new PoolableManagedConnectionFactory(<a name="line.187"></a>
+<span class="sourceLineNo">188</span>                    (XAConnectionFactory) driverConnectionFactory, getRegisteredJmxName());<a name="line.188"></a>
+<span class="sourceLineNo">189</span>            connectionFactory.setValidationQuery(getValidationQuery());<a name="line.189"></a>
+<span class="sourceLineNo">190</span>            connectionFactory.setValidationQueryTimeout(getValidationQueryTimeout());<a name="line.190"></a>
+<span class="sourceLineNo">191</span>            connectionFactory.setConnectionInitSql(getConnectionInitSqls());<a name="line.191"></a>
+<span class="sourceLineNo">192</span>            connectionFactory.setDefaultReadOnly(getDefaultReadOnly());<a name="line.192"></a>
+<span class="sourceLineNo">193</span>            connectionFactory.setDefaultAutoCommit(getDefaultAutoCommit());<a name="line.193"></a>
+<span class="sourceLineNo">194</span>            connectionFactory.setDefaultTransactionIsolation(getDefaultTransactionIsolation());<a name="line.194"></a>
+<span class="sourceLineNo">195</span>            connectionFactory.setDefaultCatalog(getDefaultCatalog());<a name="line.195"></a>
+<span class="sourceLineNo">196</span>            connectionFactory.setCacheState(getCacheState());<a name="line.196"></a>
+<span class="sourceLineNo">197</span>            connectionFactory.setPoolStatements(isPoolPreparedStatements());<a name="line.197"></a>
+<span class="sourceLineNo">198</span>            connectionFactory.setMaxOpenPrepatedStatements(<a name="line.198"></a>
+<span class="sourceLineNo">199</span>                    getMaxOpenPreparedStatements());<a name="line.199"></a>
+<span class="sourceLineNo">200</span>            connectionFactory.setMaxConnLifetimeMillis(getMaxConnLifetimeMillis());<a name="line.200"></a>
+<span class="sourceLineNo">201</span>            connectionFactory.setRollbackOnReturn(getRollbackOnReturn());<a name="line.201"></a>
+<span class="sourceLineNo">202</span>            connectionFactory.setEnableAutoCommitOnReturn(getEnableAutoCommitOnReturn());<a name="line.202"></a>
+<span class="sourceLineNo">203</span>            connectionFactory.setDefaultQueryTimeout(getDefaultQueryTimeout());<a name="line.203"></a>
+<span class="sourceLineNo">204</span>            connectionFactory.setFastFailValidation(getFastFailValidation());<a name="line.204"></a>
+<span class="sourceLineNo">205</span>            connectionFactory.setDisconnectionSqlCodes(getDisconnectionSqlCodes());<a name="line.205"></a>
+<span class="sourceLineNo">206</span>            validateConnectionFactory(connectionFactory);<a name="line.206"></a>
+<span class="sourceLineNo">207</span>        } catch (RuntimeException e) {<a name="line.207"></a>
+<span class="sourceLineNo">208</span>            throw e;<a name="line.208"></a>
+<span class="sourceLineNo">209</span>        } catch (Exception e) {<a name="line.209"></a>
+<span class="sourceLineNo">210</span>            throw new SQLException("Cannot create PoolableConnectionFactory (" + e.getMessage() + ")", e);<a name="line.210"></a>
+<span class="sourceLineNo">211</span>        }<a name="line.211"></a>
+<span class="sourceLineNo">212</span>        return connectionFactory;<a name="line.212"></a>
+<span class="sourceLineNo">213</span>    }<a name="line.213"></a>
+<span class="sourceLineNo">214</span>}<a name="line.214"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>
