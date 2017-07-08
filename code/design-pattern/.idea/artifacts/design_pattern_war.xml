@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="design-pattern:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="design-pattern.war">
+      <element id="artifact" artifact-name="design-pattern:war exploded" />
+    </root>
+  </artifact>
+</component>
