@@ -6,7 +6,7 @@ import junit.framework.TestCase;
  * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: HairFactoryTest
- * @Description: 发型工厂测试类
+ * @Description: 工厂方法模式-发型工厂测试类
  * @version: v1.0.0
  * @author: caojx
  * @date: 2017/7/2 21:56
