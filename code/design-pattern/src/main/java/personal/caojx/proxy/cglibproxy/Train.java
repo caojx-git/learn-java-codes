@@ -10,4 +10,8 @@ package personal.caojx.proxy.cglibproxy;
  * @date: 17-7-9 下午7:26
  */
 public class Train {
+
+    public void move(){
+        System.out.println("火车行驶中...");
+    }
 }
