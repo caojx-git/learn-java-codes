@@ -6,6 +6,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="design-pattern" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: cglib:cglib-nodep:2.2" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/design-pattern/META-INF/MANIFEST.MF" />
