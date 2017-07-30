@@ -2,14 +2,14 @@
 *.class
 
 #target files
-*/target/
+*/target/*
 
 # Intellij
 *.iml
 */*.iml
 
 #some local files
-*/.settings/
-*/.idea/
-.idea/
+*/.settings/*
+*/.idea/*
+.idea/*
 
