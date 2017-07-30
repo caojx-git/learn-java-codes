@@ -65,10 +65,173 @@ Redis是用C语言开发的一个开源的高性能键值对的数据库，他�
 分布式的集群架构中的session分离  
 
 ## 三、Redis的安装
->yum install gcc-c++  
-$ wget http://download.redis.io/releases/redis-4.0.1.tar.gz  
-$ cp redis-4.0.1.tar.gz /usr/loca/src/
-$ tar -zxvf redis-4.0.1.tar.gz  
-$ cd redis-4.0.1  
-$ make  
-$ make PREFIX=/usr/local/redis install
+参考：https://redis.io/download
+### 3.1安装
+```shell
+# yum install gcc-c++  
+# wget http://download.redis.io/releases/redis-4.0.1.tar.gz  
+# cp redis-4.0.1.tar.gz /usr/loca/src/
+# tar -zxvf redis-4.0.1.tar.gz  
+# cd redis-4.0.1  
+# make  
+# make PREFIX=/usr/local/redis install
+```
+安装完成后  
+![](../images/redis/redis-bin.png)
+
+复制redis.conf配置文件到安装目录
+```shell
+# cp /usr/local/src/redis-4.0.1/redis.conf /usr/local/redis/
+```
+### 3.2启动redis
+启动redis
+
+```shell
+# cd /usr/local/redis/
+# ./redis-server
+```
+![](../images/redis/redis-server1.png)
+
+上边的这中方式所有前端启动，关闭命令终端后就redis也就关闭了，下边我们需要修改redis.conf
+该为后端启动。  
+将daemonize no修改为daemonize yes
+![](../images/redis/redis-conf.png)
+
+使用后端启动，注意要指定加载的配置文件redis.conf,不然启动方式依然是前端启动。  
+```shell
+[root@ bin]# ./redis-server ../redis.conf  --启动redis服务
+7381:C 30 Jul 18:42:38.012 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+7381:C 30 Jul 18:42:38.012 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=7381, just started
+7381:C 30 Jul 18:42:38.012 # Configuration loaded
+[root@ bin]# ps -ef | grep -i redis  --查看是否启动
+root      7382     1  0 18:42 ?        00:00:00 ./redis-server 127.0.0.1:6379 （默认端口6379）
+root      7403  6226  0 18:43 pts/0    00:00:00 grep --color=auto -i redis
+```
+### 3.3停止redis
+```shell
+[root@ bin]# ./redis-cli shutdown
+[root@ bin]# ps -ef | grep -i redis
+root      7964  6226  0 18:47 pts/0    00:00:00 grep --color=auto -i redis
+```
+### 3.4简单使用redis
+```shell
+[root@ bin]# ./redis-server ../redis.conf 
+8024:C 30 Jul 18:49:57.562 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+8024:C 30 Jul 18:49:57.562 # Redis version=4.0.1, bits=64, commit=00000000, modified=0, pid=8024, just started
+8024:C 30 Jul 18:49:57.562 # Configuration loaded
+[root@ bin]# ./redis-cli 
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> set name redis
+OK
+127.0.0.1:6379> get name
+"redis"
+127.0.0.1:6379> keys n*
+1) "name"
+127.0.0.1:6379> keys *
+1) "name"
+127.0.0.1:6379> del name
+(integer) 1
+127.0.0.1:6379> 
+```
+
+## 四、Jedis入门
+
+- Jedis是Redis官方首选的Java客户端开发包,Redis的各种语言客户端列表，请参见[Redis Client](https://redis.io/clients)。
+- [Jedis地址](https://github.com/xetorthio/jedis)
+
+使用Jedis依赖的Jar包,引入Maven依赖
+```xml
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-pool2</artifactId>
+    <version>2.4.2</version>
+</dependency>
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+    <version>2.9.0</version>
+    <type>jar</type>
+    <scope>compile</scope>
+</dependency>
+```
+
+JedisDemo.java Jedis简单使用测试
+```java
+package personal.caojx;
+
+import org.junit.Test;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+
+/**
+ * @ClassName: JedisDemo
+ * @Description: Jedis的测试
+ * @version: v1.0.0
+ * @author: caojx
+ * @date: 17-7-30 下午7:18
+ */
+public class JedisDemo {
+
+    /**
+     * 单实例的测试
+     */
+    @Test
+    public void jedisTest(){
+        //1.设置IP地址和端口
+        Jedis jedis = new Jedis("127.0.0.1",6379);
+        //2.保存数据
+        jedis.set("name", "tom");
+        //3.获取数据
+        String name = jedis.get("name");
+        System.out.println(name);
+        //4.释放资源
+        jedis.close();
+    }
+
+    /**
+     * 连接池方式连接
+     * 注意Jedis对象并不是线程安全的，在多线程下使用同一个Jedis对象会出现并发问题。
+     * 为了避免每次使用Jedis对象时都需要重新构建，Jedis提供了JedisPool。
+     * JedisPool是基于Commons Pool 2实现的一个线程安全的连接池。
+     */
+    @Test
+    public void jedisPoolTest(){
+        //1.获取连接池对象
+        JedisPoolConfig config = new JedisPoolConfig();
+        //2.设置对大连接数
+        config.setMaxTotal(30);
+        //3.设置最大空闲连接数
+        config.setMaxIdle(10);
+        //4.获得连接池
+        JedisPool jedisPool = new JedisPool(config,"127.0.0.1",6379);
+
+        //5获取核心对象
+        Jedis jedis = null;
+        try{
+            //通过连接池获得连接
+            jedis = jedisPool.getResource();
+            //设置数据
+            jedis.set("name","张三");
+            //获取数据
+            String name = jedis.get("name");
+            System.out.println(name);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            //6.释放资源
+            if(jedis!= null){
+                jedis.close();
+            }
+            if(jedisPool != null){
+                jedisPool.close();
+            }
+        }
+    }
+  }
+```
+
+
+## 参考文章
+- http://www.jianshu.com/p/7913f9984765
