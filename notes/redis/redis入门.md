@@ -232,6 +232,147 @@ public class JedisDemo {
   }
 ```
 
+## 五、Redis的数据结构
+- 字符串(String)
+- 字符串列表(list)
+- 有序字符串集合(sorted set)
+- 哈希(hash)
+- 字符串集合(set)
+
+### 5.1存储String
+二进制安全的，存入和获取的数据相同  
+Value最多可以容纳的数据长度是512M  
+
+存储String常用命令
+- 赋值
+- 删除
+- 扩展命令
+- 取值
+
+```text
+set key value
+[root@ bin]# ./redis-cli 
+127.0.0.1:6379> set name tom  --设置值set key value
+OK
+127.0.0.1:6379> get name --取值get key
+"tom"
+127.0.0.1:6379> getset company baidu --先取值在设置值，nil表示没有取到值
+(nil)
+127.0.0.1:6379> get company
+"baidu"
+127.0.0.1:6379> del company --删除值 del key
+(integer) 1
+127.0.0.1:6379> get company
+(nil)
+127.0.0.1:6379> incr num --数值的自增，如果这个值原来不存在，先初始化为0再加1，注意自增的值必须可以转成整形，不能转成整形的值是不能使用incr的
+(integer) 1
+127.0.0.1:6379> get num
+"1"
+127.0.0.1:6379> incr num
+"2"
+127.0.0.1:6379> set company baidu
+OK
+127.0.0.1:6379> incr company --company不能转成整形，所以不能自增
+(error) ERR value is not an integer or out of range
+127.0.0.1:6379> decr num --数值的自减，如果值原来不存在，先初始化为0再减1，注意自减的值必须可以转成整形，否则会报错
+(integer) 1
+127.0.0.1:6379> get num
+"1"
+127.0.0.1:6379> decr num2
+(integer) -1
+127.0.0.1:6379> get num2
+"-1"
+127.0.0.1:6379> incrby num 5 --指定自增值，指定自增5
+(integer) 6
+127.0.0.1:6379> incrby num3 5 --指定自增值，如果这个值原来不存在，初始化为0再增加指定值，注意这个值必须可以转化成整形
+(integer) 5
+127.0.0.1:6379> decrby num3 3 --指定自减值，如果这个值原来不存在，初始化为0再减少指定值，注意这个值必须可以转化成整形
+(integer) 2
+127.0.0.1:6379> decrby num4 3
+(integer) -3
+127.0.0.1:6379> append num4 5 --字符串追加
+(integer) 3
+127.0.0.1:6379> get num4
+"-35"
+127.0.0.1:6379> append num5 123
+(integer) 3
+127.0.0.1:6379> get num5
+"123"
+```
+### 5.2存储Hash
+Redis中的hash可以看成具有String的key，String的value的map容器。这个容器非常是和存储值对象的信息，例如用户名、密码、年龄等。
+
+存储Hash常用命令
+- 赋值
+- 删除
+- 取值
+- 增加数字
+
+```text
+127.0.0.1:6379> hset myhash username jack --设置hash值，容器名为myhash，你可以将myhash当成一个map容器或集合
+(integer) 1
+127.0.0.1:6379> hset myhash age 18
+(integer) 1
+127.0.0.1:6379> hmset myhash2 username rose age 21--批量设置hash值
+OK
+127.0.0.1:6379> hget myhash username --获取hash值
+"jack"
+127.0.0.1:6379> hget myhash age
+"18"
+127.0.0.1:6379> hmget myhash2 username age --批量获取hash值
+1) "rose"
+2) "21"
+127.0.0.1:6379> hgetall myhash --或取所有的hash值
+1) "username"
+2) "jack"
+3) "age"
+4) "18"
+127.0.0.1:6379> hdel mysh2 username age --删除hash值，不存在返回长度0
+(integer) 0
+127.0.0.1:6379> hgetall myhash2
+1) "username"
+2) "rose"
+3) "age"
+4) "21"
+127.0.0.1:6379> hdel myhash2 username age
+(integer) 2
+127.0.0.1:6379> hmset myhash2 username rose age 21
+OK
+127.0.0.1:6379> hgetall myhash2
+1) "username"
+2) "rose"
+3) "age"
+4) "21"
+127.0.0.1:6379> del myhash2 --删除整个hash，即删除增个容器
+(integer) 1
+127.0.0.1:6379> hget myhash2 username
+(nil)
+127.0.0.1:6379> hget myhash age --hash值自增
+"18"
+127.0.0.1:6379> hincrby myhash age 5
+(integer) 23
+127.0.0.1:6379> hget myhash age
+"23"
+127.0.0.1:6379> hexists myhash username --判断hash中的某个属性是否存在，存在返回>1的值，不存在返回0
+(integer) 1
+127.0.0.1:6379> hexists myhash password
+(integer) 0
+127.0.0.1:6379> hgetall myhash
+1) "username"
+2) "jack"
+3) "age"
+4) "23"
+127.0.0.1:6379> hlen myhash --判断hash的大小
+(integer) 2
+127.0.0.1:6379> hkeys myhash --获取hash中的所有属性的key值
+1) "username"
+2) "age"
+127.0.0.1:6379> hvals myhash --获取hash中的所有属性的值
+1) "jack"
+2) "23"
+```
+
+
 
 ## 参考文章
 - http://www.jianshu.com/p/7913f9984765
