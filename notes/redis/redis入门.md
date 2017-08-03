@@ -372,6 +372,152 @@ OK
 2) "23"
 ```
 
+### 5.3 存储list
+- ArrayList使用数组方式
+- LinkedList使用双向连接方式
+- 双向链表中增加数据
+- 双向俩链表中删除数据
+
+存储list的常用命令
+- 两端添加
+- 查看列表
+- 两端弹出
+- 获取列表元素个数
+```text
+127.0.0.1:6379> lpush mylist a b c --依次向左边插入元素 a b c
+(integer) 3
+127.0.0.1:6379> lpush mylist 1 2 3 --依次向左边插入元素 1 2 3
+(integer) 6
+127.0.0.1:6379> rpush mylist2 a b c --依次向右边插入元素 a b c
+(integer) 3
+127.0.0.1:6379> rpush mylist2 1 2 3 --依次向右边插入元素 1 2 3
+(integer) 6
+127.0.0.1:6379> lrange mylist 0 5 --查看list的中的元素lrange listKey start(开始索引0开始) stop(结束索引，如果是负数表示从最后开始取，-1表示最后一个元素，-2表示到数第二个，类推)
+1) "3"
+2) "2"
+3) "1"
+4) "c"
+5) "b"
+6) "a"
+127.0.0.1:6379> lrange mylist2 0 -1
+1) "a"
+2) "b"
+3) "c"
+4) "1"
+5) "2"
+6) "3"
+127.0.0.1:6379> lrange mylist2 0 -2
+1) "a"
+2) "b"
+3) "c"
+4) "1"
+5) "2"
+127.0.0.1:6379> lpop mylist  --弹出mylist左边的元素
+"3"
+127.0.0.1:6379> lrange mylist 0 -1
+1) "2"
+2) "1"
+3) "c"
+4) "b"
+5) "a"
+127.0.0.1:6379> rpop mylist --弹出mylist右边的元素
+"a"
+127.0.0.1:6379> lrange mylist 0 -1
+1) "2"
+2) "1"
+3) "c"
+4) "b"
+127.0.0.1:6379> llen mylist --查看mylist的长度
+(integer) 4
+127.0.0.1:6379> lpushx mylist u --仅当mylist存在的时候，在左边插入元素u
+(integer) 5
+127.0.0.1:6379> lpushx mylist3 u --mylist不存在不会插入
+(integer) 0
+127.0.0.1:6379> rpushx mylist y --仅当mylist存在的时候，在右边插入元素y
+(integer) 6
+127.0.0.1:6379> lrange mylist 0 -1
+1) "u"
+2) "2"
+3) "1"
+4) "c"
+5) "b"
+6) "y"
+127.0.0.1:6379> lpush mylist3 1 2 3
+(integer) 3
+127.0.0.1:6379> lpush mylist3 1 2 3
+(integer) 6
+127.0.0.1:6379> lpush mylist3 1 2 3
+(integer) 9
+127.0.0.1:6379> lrange mylist3 0 -1
+1) "3"
+2) "2"
+3) "1"
+4) "3"
+5) "2"
+6) "1"
+7) "3"
+8) "2"
+9) "1"
+127.0.0.1:6379> lrem mylist3 2 3  --lrem key count value 从左向右便利key依次删除2个值为3的元素
+                                    如果：count > 0 从前往后删除count个值为value的元素
+                                    如果：count < 0 从后往前删除count个值为value的元素
+                                    如果: count = 0 删除所有值为value的元素
+127.0.0.1:6379> lrange mylist3 0 -1
+1) "2"
+2) "1"
+3) "2"
+4) "1"
+5) "3"
+6) "2"
+7) "1"
+127.0.0.1:6379> lrem mylist3 0 2  --删除所有等于2的元素
+(integer) 3
+127.0.0.1:6379> lrange mylist3 0 -1
+1) "1"
+2) "1"
+3) "3"
+4) "1"
+127.0.0.1:6379> lset mylist 3 mmm --在指定的索引为值插入元素
+OK
+127.0.0.1:6379> lrange mylist 0 -1
+1) "u"
+2) "2"
+3) "1"
+4) "mmm"
+5) "b"
+6) "y"
+127.0.0.1:6379> linsert mylist4 before b 11 --在指定的元素之前插入元素,即在第一个b之前插入11
+(integer) 7
+127.0.0.1:6379> linsert mylist4 after b 11 --在指定的元素之后插入元素，即在第一个b之后插入11
+(integer) 8
+127.0.0.1:6379> lrange mylist4 0 -1
+1) "c"
+2) "11"
+3) "b"
+4) "11"
+5) "a"
+6) "c"
+7) "b"
+8) "a"
+127.0.0.1:6379> lrange mylist5 0 -1
+1) "3"
+2) "2"
+3) "1"
+127.0.0.1:6379> lrange mylist6 0 -1
+1) "c"
+2) "b"
+3) "a"
+127.0.0.1:6379> rpoplpush mylist5 mylist6--rpoplpush source destination 将source中的元素弹出，push到destination中
+"1"
+127.0.0.1:6379> lrange mylist6 0 -1
+1) "1"
+2) "c"
+3) "b"
+4) "a"                 
+```
+
+
+
 
 
 ## 参考文章
