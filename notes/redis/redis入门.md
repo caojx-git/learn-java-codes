@@ -166,8 +166,8 @@ redis-server --service-uninstall
 ```text
 redis-server --service-install redis.windows.conf  
 ```
-安装完之后，就可看到Redis已经作为windows服务了：      
-![](../images/redis/redis-windows4.png)      
+安装完之后，就可看到Redis已经作为windows服务了   
+![](../images/redis/redis-windows4.png)        
 
 但是安装好之后，Redis并没有启动，启动命令如下：  
 ```text
@@ -1032,7 +1032,7 @@ OK
 (empty list or set)
 ```
 
-关闭redis之后我们可以看到生成了appendonly.aof文件
+关闭redis之后我们可以看到生成了appendonly.aof文件  
 ![](../images/redis/redis-aof.png)
 去掉appendonly.aof中最后一行,保存
 ```text
