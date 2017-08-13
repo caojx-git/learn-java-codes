@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="更新CentOS7中安装网易云音乐笔记">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/redis/redis-nosql.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/redis/redis-nosql2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/redis/redis入门.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/linux/linux学习.docx" afterPath="$PROJECT_DIR$/linux/linux学习.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/design-pattern/.idea/artifacts/design_pattern_war_exploded.xml" afterPath="$PROJECT_DIR$/../code/design-pattern/.idea/artifacts/design_pattern_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/design-pattern/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../code/design-pattern/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/design-pattern/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="$PROJECT_DIR$/../code/design-pattern/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/design-pattern/.idea/misc.xml" afterPath="$PROJECT_DIR$/../code/design-pattern/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../code/design-pattern/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../code/design-pattern/.idea/workspace.xml" />
+    <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/docker/docker-ufs.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/docker/docker-ufs2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/docker/docker-windows1.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/linux/.~inux学习.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker/docker化的Java应用.md" afterPath="$PROJECT_DIR$/docker/docker化的Java应用.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,29 +33,14 @@
     <favorites_list name="notes" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="redis入门.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/redis/redis入门.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="346">
-                <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="springmvc学习.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spring/springmvc学习.md">
+    <leaf>
+      <file leaf-file-name="docker化的Java应用.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docker/docker化的Java应用.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="-1178">
-                <caret line="1803" column="7" lean-forward="false" selection-start-line="1803" selection-start-column="7" selection-end-line="1803" selection-end-column="7" />
-                <folding>
-                  <marker date="1499481607102" expanded="true" signature="57712:57822" ph="{...}" />
-                </folding>
+              <first_editor relative-caret-position="399">
+                <caret line="127" column="21" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+                <folding />
               </first_editor>
               <second_editor />
             </state>
@@ -138,6 +119,7 @@
         <option value="$PROJECT_DIR$/设计模式/工厂模式.md" />
         <option value="$PROJECT_DIR$/设计模式/代理模式.md" />
         <option value="$PROJECT_DIR$/redis/redis入门.md" />
+        <option value="$PROJECT_DIR$/docker/docker化的Java应用.md" />
       </list>
     </option>
   </component>
@@ -156,14 +138,20 @@
     </option>
   </component>
   <component name="MavenProjectNavigator">
-    <treeState />
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="28" />
-    <option name="width" value="1366" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="463" />
+    <option name="y" value="147" />
+    <option name="width" value="1365" />
     <option name="height" value="706" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -179,8 +167,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -197,19 +183,16 @@
               <item name="notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="notes" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notes" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -224,16 +207,16 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images/redis" />
-      <recent name="$PROJECT_DIR$/images/design" />
-      <recent name="$PROJECT_DIR$/images/jdbc" />
-      <recent name="$PROJECT_DIR$/jdbc" />
-      <recent name="$PROJECT_DIR$/junit4" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/tool/tengxuyun" />
       <recent name="$PROJECT_DIR$/images/git" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/docker" />
+      <recent name="$PROJECT_DIR$/redis" />
+      <recent name="$PROJECT_DIR$/images/redis" />
+      <recent name="$PROJECT_DIR$/images/design" />
+      <recent name="$PROJECT_DIR$/images/jdbc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -682,6 +665,14 @@
       <workItem from="1500132562338" duration="640000" />
       <workItem from="1500179512187" duration="699000" />
       <workItem from="1500817658360" duration="2943000" />
+      <workItem from="1501504139846" duration="3956000" />
+      <workItem from="1501765736192" duration="4268000" />
+      <workItem from="1501991098710" duration="6007000" />
+      <workItem from="1501999023189" duration="2515000" />
+      <workItem from="1502026200938" duration="3386000" />
+      <workItem from="1502035269337" duration="1964000" />
+      <workItem from="1502460375770" duration="4704000" />
+      <workItem from="1502628596467" duration="5766000" />
     </task>
     <task id="LOCAL-00001" summary="git 常用命令">
       <created>1490973845562</created>
@@ -949,11 +940,32 @@
       <option name="project" value="LOCAL" />
       <updated>1496372804982</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="redis笔记修改">
+      <created>1502460940744</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1502460940744</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Redis笔记修改">
+      <created>1502461133122</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1502461133122</updated>
+    </task>
+    <task id="LOCAL-00041" summary="提交Docker笔记">
+      <created>1502464697369</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1502464697369</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49094000" />
+    <option name="totallyTimeSpent" value="81711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -965,8 +977,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1366" height="706" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -975,18 +986,16 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.73913044" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.73770493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20681818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753405" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -994,8 +1003,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1006,9 +1017,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="markdown笔记显示样式修改" />
-    <MESSAGE value="haroopad笔记显示样式修改" />
-    <MESSAGE value="git笔记显示样式修改" />
     <MESSAGE value="添加笔记基于腾讯云的动态域名绑定" />
     <MESSAGE value="更新Maven笔记" />
     <MESSAGE value="腾讯云域名绑定与tomcat部署" />
@@ -1031,7 +1039,10 @@
     <MESSAGE value="更新PLSQL笔记" />
     <MESSAGE value="更新Linux笔记" />
     <MESSAGE value="更新CentOS7中安装网易云音乐笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新CentOS7中安装网易云音乐笔记" />
+    <MESSAGE value="redis笔记修改" />
+    <MESSAGE value="Redis笔记修改" />
+    <MESSAGE value="提交Docker笔记" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交Docker笔记" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1042,16 +1053,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/git/2_git和GitHub.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2451">
-            <caret line="129" column="61" lean-forward="false" selection-start-line="129" selection-start-column="61" selection-end-line="129" selection-end-column="61" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/git/3_git工作区暂存区和版本库.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1480,7 +1481,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="193">
             <caret line="52" column="21" lean-forward="false" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -1491,9 +1491,6 @@
         <state split_layout="FIRST">
           <first_editor relative-caret-position="-1178">
             <caret line="1803" column="7" lean-forward="false" selection-start-line="1803" selection-start-column="7" selection-end-line="1803" selection-end-column="7" />
-            <folding>
-              <marker date="1499481607102" expanded="true" signature="57712:57822" ph="{...}" />
-            </folding>
           </first_editor>
           <second_editor />
         </state>
@@ -1502,8 +1499,18 @@
     <entry file="file://$PROJECT_DIR$/redis/redis入门.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="346">
-            <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <first_editor relative-caret-position="181">
+            <caret line="169" column="41" lean-forward="false" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/docker化的Java应用.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="399">
+            <caret line="127" column="21" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
             <folding />
           </first_editor>
           <second_editor />
