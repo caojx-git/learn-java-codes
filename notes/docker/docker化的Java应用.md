@@ -124,8 +124,10 @@ Win10:
 1.下载对应的Windows版本（主要是Windows7）
 ![](../images/docker/docker-windows1.png)    
 2.下载后安装  
-DockerToolbox-17.06.0a-ce.exe,安装完成后运行出错，告诉我们缺少boot2docker.iso，我们可以查看Docker的安装目录是否有该文件，  
-有的话将其复制到 D:\Users\caojx\.docker\machine\cache\boot2docker.iso，没有的话按照步骤3下载boot2docker.iso    
+DockerToolbox-17.06.0a-ce.exe，注意，如过我们本机没有安装Git for Windows，则安装过程中需要勾选Git for Windows，如过已经安装，
+不用勾选，不过每次运行Docker Quickstart Terminal的时候，需要指定C:\Program Files\Git\bin\bash.exe  
+如下安装完成后运行出错，告诉我们缺少boot2docker.iso，我们可以查看Docker的安装目录是否有该文件，有的话将其复制到  
+ 用户目录D:\Users\caojx\.docker\machine\cache\boot2docker.iso，没有的话按照步骤3下载boot2docker.iso      
 ![](../images/docker/docker-boot2docker2.png)    
 ![](../images/docker/docker-boot2docker3.png)     
 3.下载boot2docker.iso      
