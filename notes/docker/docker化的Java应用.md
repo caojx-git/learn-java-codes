@@ -116,7 +116,7 @@ Docker这个文件系统就成为镜像。
 
 ### 3.1Windows安装
 Win10之外：  
-[https://www.docker.com/products/docker-toolbox](https://www.docker.com/products/docker-toolbox)  
+[https://www.docker.com/products/docker-toolbox](https://www.docker.com/products/docker-toolbox)
 Win10:  
 [https://www.docker.com/products/docker#/windows](https://www.docker.com/products/docker#/windows)
 
@@ -124,5 +124,19 @@ Win10:
 1.下载对应的Windows版本（主要是Windows7）
 ![](../images/docker/docker-windows1.png)    
 2.下载后安装  
+DockerToolbox-17.06.0a-ce.exe,安装完成后运行出错，告诉我们缺少boot2docker.iso，我们可以查看Docker的安装目录是否有该文件，  
+有的话将其复制到 D:\Users\caojx\.docker\machine\cache\boot2docker.iso，没有的话按照步骤3下载boot2docker.iso    
+![](../images/docker/docker-boot2docker2.png)    
+![](../images/docker/docker-boot2docker3.png)     
+3.下载boot2docker.iso      
+在Docker首次启动时需要下载的一个boot2docker.iso,复制文件boot2docker.iso到C:\Users\caojx\.docker\machine\cache\boot2docker.iso目录，
+重新打开Docker Quickstart Terminal    
+[https://github.com/boot2docker/boot2docker/releases](https://github.com/boot2docker/boot2docker/releases)    
+![](../images/docker/docker-boot2docker.png)  
+4.运行Docker
+拷贝boot2docker.iso到D:\Users\caojx\.docker\machine\cache\boot2docker.iso我们可以看到Docker在Windows7上成功运行  
+![](../images/docker/docker-windows2.png)  
 
-3.需要下载boot2docker.iso
+### 3.2MacOS安装
+
+### 3.3Linux安装
