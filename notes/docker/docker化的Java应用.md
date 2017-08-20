@@ -138,7 +138,10 @@ DockerToolbox-17.06.0a-ce.exe，注意，如过我们本机没有安装Git for W
 4.运行Docker
 拷贝boot2docker.iso到D:\Users\caojx\.docker\machine\cache\boot2docker.iso我们可以看到Docker在Windows7上成功运行  
 ![](../images/docker/docker-windows2.png)  
-
+不过运行docker version出现如下错误 ，原因是我BIOS没有设置启用虚拟化技术，设置好后就可以了。
+An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.30/version: open //./pipe/docker_engine: 
+The system cannot find the file specified.
+![](../images/docker/docker-error.png)
 ### 3.2MacOS安装
 
 ### 3.3Linux安装
