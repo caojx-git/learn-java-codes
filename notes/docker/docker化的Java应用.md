@@ -138,10 +138,345 @@ DockerToolbox-17.06.0a-ce.exe，注意，如过我们本机没有安装Git for W
 4.运行Docker
 拷贝boot2docker.iso到D:\Users\caojx\.docker\machine\cache\boot2docker.iso我们可以看到Docker在Windows7上成功运行  
 ![](../images/docker/docker-windows2.png)  
-不过运行docker version出现如下错误 ，原因是我BIOS没有设置启用虚拟化技术，设置好后就可以了。
-An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.30/version: open //./pipe/docker_engine: 
-The system cannot find the file specified.
+不过运行docker version出现如下错误 ，原因是我BIOS没有设置启用虚拟化技术，设置好后就可以了。  
+An error occurred trying to connect: Get http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.30/version: open //./pipe/docker_engine:   
+The system cannot find the file specified.  
 ![](../images/docker/docker-error.png)
 ### 3.2MacOS安装
-
+1.下载地址，安装  
+[https://www.docker.com/docker-mac](https://www.docker.com/docker-mac)  
+MacOS上安装Docker是最简单的，只需要双击运行安装文件就可以，这里不过多的介绍  
+2.验证是是否安装成功，没有错误即成功安装    
+docker version  
 ### 3.3Linux安装
+1.系统要求
+- 64-bit 系统
+- kernel 3.10+
+2.检查内核版本是否大于3.10  
+```text
+$ uname -r
+```
+3.确保yum是最新的
+```text
+$ yum update
+```
+4.添加yum源
+```text
+$ sudo vim /etc/yum.repos.d/docker.repo
+```
+在docker.repo文件中添加如下内容
+```text
+[dockerrepo] 
+name=Docker Repository 
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/ 
+enabled=1 
+gpgcheck=1 
+gpgkey=https://yum.dockerproject.org/gpg
+```
+5.安装docker
+```text
+$ sudo yum install -y docker-engine
+```
+6.启动docker
+```text
+# systemctl start docker.service
+# docker version
+Client:
+ Version:      17.05.0-ce
+ API version:  1.29
+ Go version:   go1.7.5
+ Git commit:   89658be
+ Built:        Thu May  4 22:06:25 2017
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      17.05.0-ce
+ API version:  1.29 (minimum version 1.12)
+ Go version:   go1.7.5
+ Git commit:   89658be
+ Built:        Thu May  4 22:06:25 2017
+ OS/Arch:      linux/amd64
+ Experimental: false
+```
+参考文章：  
+[http://blog.csdn.net/yuanchao99/article/details/51396979](http://blog.csdn.net/yuanchao99/article/details/51396979)  
+[http://www.imooc.com/article/16448](http://www.imooc.com/article/16448)
+
+## 四、第一个Docker镜像
+docker的多数命令跟git有点相似，如果会使用git的话，使用起docker更加容易
+
+1.拉取镜像
+从docker仓库中拉取镜像
+```text
+docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+-NAME 表示拉取镜像的名字
+-TAG  可选，默认是最新的
+```  
+2.查看本机有的docker的镜像
+```text
+docker images [OPTIONS] [REPOSITORY[:TAG]]
+```
+测试如下
+```text
+[root@ ~]# docker pull hello-world
+Using default tag: latest --默认是最新的版本
+latest: Pulling from library/hello-world
+b04784fba78d: Pull complete 
+Digest: sha256:f3b3b28a45160805bb16542c9531888519430e9e6d6ffc09d72261b0d26ff74f
+Status: Downloaded newer image for hello-world:latest
+[root@ ~]# docker images  --查看下载的镜像
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              1815c82652c0        2 months ago        1.84kB
+```
+上边我们没有指定docker仓库的地址，这时我们拉取docker镜像的时候，就会从默认的docker仓库[https://hub.docker.com](https://hub.docker.com)拉取镜像。
+
+3.运行docker镜像
+```text
+# docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```
+测试如下
+```text
+# docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:  --消息生成的步骤
+ 1. The Docker client contacted the Docker daemon. --1.Docker client 连接了Docker daemon
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub. --2.Docker daemon从远程仓库拉取了"hello-world"镜像
+ 3. The Docker daemon created a new container from that image which runs the --3.Docker daemon创建了新的容器，这个容器运行了可执行文件，可以执行文件生成了当前输出
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it --4.Docker daemon把输出流给到Docker client，然后输出到终端
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://cloud.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/engine/userguide/
+```
+4.docker的运行过程如下图所示  
+![](../images/docker/docker-run.png)
+- Client 本机  
+- DOCKER_HOST 可以看成Docker Daemon部分  
+- Registry Docker远程仓库  
+5.停止容器运行
+```text
+# docker stop [OPTIONS] CONTAINER [CONTAINER...]
+```
+
+## 五、运行Nginx镜像
+
+1.从网易蜂巢中下载nginx镜像
+```text
+# docker pull hub.c.163.com/library/nginx:latest  --运行nginx镜像
+latest: Pulling from library/nginx
+5de4b4d551f8: Pull complete 
+d4b36a5e9443: Pull complete 
+0af1f0713557: Pull complete 
+Digest: sha256:f84932f738583e0169f94af9b2d5201be2dbacc1578de73b09a6dfaaa07801d6
+Status: Downloaded newer image for hub.c.163.com/library/nginx:latest
+#docker images
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+hello-world                   latest              1815c82652c0        2 months ago        1.84kB
+hub.c.163.com/library/nginx   latest              46102226f2fd        3 months ago        109MB
+```
+2.运行nginx镜像
+```text
+# docker run -d hub.c.163.com/library/nginx 
+fd7e968320289e7a374cf12dce4e6374873dbc2c39f33ad7bf51edeb1d016801
+#docker ps --查看docker上正在运行的容器
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS               NAMES
+fd7e96832028        hub.c.163.com/library/nginx   "nginx -g 'daemon ..."   10 minutes ago      Up 10 minutes       80/tcp              flamboyant_kirch
+```
+3.查看容器的内部结构
+通过如下nginx容器内部结构的查看，我们可以看出整个容器就相当于小型的虚拟机
+```text
+# docker exec --help
+Usage:	docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+
+Options:
+  -d, --detach               Detached mode: run command in the background
+      --detach-keys string   Override the key sequence for detaching a container
+  -e, --env list             Set environment variables
+      --help                 Print usage
+  -i, --interactive          Keep STDIN open even if not attached  --交互
+      --privileged           Give extended privileges to the command
+  -t, --tty                  Allocate a pseudo-TTY --终端
+  -u, --user string          Username or UID (format: <name|uid>[:<group|gid>])
+# docker exec -it fd7e96832028 bash --ffd7e96832028 为容器的编号，使用docker ps可看，bash为打开bash终端
+root@fd7e96832028:/# ls --这是就像进入一个新的电脑一样
+bin  boot  dev	etc  home  lib	lib32  lib64  libx32  media  mnt  opt  proc  root  run	sbin  srv  sys	tmp  usr  var
+root@fd7e96832028:/# which nginx
+/usr/sbin/nginx
+```
+4.Docker网络
+上边我们已经使用Docker运行了nginx，但是还没有通过浏览器访问到nginx，下边我们了解以下Docker的网络部分，以便通过网络访问我们的nginx
+- 网络类型
+大家知道Docker的隔离性，网络也是隔离性的一部分，Linux利用了namespace命令空间来进行资源的隔离，比如PID namespace是用来隔离进程的，network  
+namespace就是用来隔离网络的，每一个network namespace都提供了一份独立的网络环境包括像网卡、路由、iptable规则等等，都是以其他存在的network 
+namespace隔离的。
+Docker容器提供了如下三种网络模式：
+ - Bridge(桥接模式)：Docker容器一般情况下会分配一个独立的network namespace。
+ - Host(仅主机模式)：如果启动容器使用Host模式，那么这个容器将不会获得一个独立的network namespace，而是和主机共同使用一个，这时候容器
+将不会虚拟出自己的网卡和配置自己的ip等，而是会使用宿主机上的ip和端口，也就是说你在Docker里边使用网络和在主机上使用网络是一样的。
+ - None：没有网络，这种情况Docker将不会跟外界的任何东西通讯。
+- 端口映射
+当使用Bridge模式的时候，就涉及到了一个问题，既然他使用的网络有独立的namespace，这就需要有一种技术使得容器内的端口可以在主机上访问到，
+这种技术就是端口映射。Docker可以将容器里边的端口映射到宿主机中的某个端口，当你在访问主机的某个端口的时候，其实就是你在访问容器里边的端口。  
+![](../images/docker/docker-network.png)
+
+5.主机与Docker容器端口映射演示
+- 使用指定的主机端口映射容器中的端口
+```text
+#docker ps --查看运行的nginx，默认使用80端口
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS               NAMES
+fd7e96832028        hub.c.163.com/library/nginx   "nginx -g 'daemon ..."   3 hours ago         Up 3 hours          80/tcp              flamboyant_kirch
+#docker stop fd7e96832028 --先停止nginx容器
+fd7e96832028
+#docker -d -p 8080:80 hub.c.163.com/library/nginx  --docker -d -p 宿主机的端口:容器的端口 镜像名称
+165f22d6a219684302b437fb01593d0c6d5a580c870d677fa8a142a37b016951
+# netstat -na | grep 8080 --8080端口已经处于监听状态了
+tcp6       0      0 :::8080                 :::*                    LISTEN  
+```
+如下图可见，我们访问主机的8080端口的使用，就会映射到容器的80端口  
+![](../images/docker/docker-nginx.png)
+
+- 使用主机的随机端口映射容器的端口
+```text
+# docker run -d -P hub.c.163.com/library/nginx -P(大写)，会将Docker容器中所有的端口与宿主中的一个随即端口映射
+7359fd2c25b535604242ee4f281d9a66ccd791599322614dcc027c273bbf362a
+# netstat -na | grep 32768
+tcp6       0      0 :::32768                :::*                    LISTEN     
+tcp6       0      0 ::1:32768               ::1:45512               TIME_WAIT  
+# docker ps --如下可见容器中的80端口与宿主机中的32768端口建立了映射
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS                   NAMES
+7359fd2c25b5        hub.c.163.com/library/nginx   "nginx -g 'daemon ..."   3 seconds ago       Up 2 seconds        0.0.0.0:32768->80/tcp   cranky_williams
+```
+![](../images/docker/docker-nginx2.png)
+
+## 六、制作自己的镜像
+前边我们hello-world和nginx都是从docker仓库下载回来的，这些都是由别人做好的镜像，放到镜像仓库上的，我们也可以制作自己的镜像，在开始制作自己的Docker镜像之前我们先了以下如下内容。
+- Dockerfile
+  Dockerfile就是告诉Docker我要怎么样来制作我的镜像，我要制作镜像的每一步操作分别是什么。
+- Docker build
+  用来执行Dockerfile里边所描述的每一件事情，最终会把Docker镜像给我们制作出来。
+  
+
+下边我们使用jpress-web-newest.war来演示镜像的制作，javaWeb项目
+[https://github.com/JpressProjects/jpress/blob/alpha/wars/jpress-web-newest.war](https://github.com/JpressProjects/jpress/blob/alpha/wars/jpress-web-newest.war)
+
+1.下载tomcat镜像  
+网易蜂巢镜像仓库地址[https://c.163.com/hub#/m/home/](https://c.163.com/hub#/m/home/)  
+![](../images/docker/docker-tomcat.png)
+```text
+# docker pull hub.c.163.com/library/tomcat:latest --下载命令,tomcat镜像中包含了jdk
+latest: Pulling from library/tomcat
+9af7279b9dbd: Pull complete 
+31816c948f2f: Pull complete 
+c59a1cdf83d3: Pull complete 
+232c7a75d568: Pull complete 
+de412d312979: Pull complete 
+80315ba34693: Pull complete 
+5d3f97bd90e8: Pull complete 
+dc8dc63f6baa: Pull complete 
+f6c6e2d67f03: Pull complete 
+9123b340aa92: Pull complete 
+76abaea2279d: Pull complete 
+4476602e3346: Pull complete 
+12e1fda011bd: Pull complete 
+Digest: sha256:db1a8ca2fe44449d265e5505f300be6f34fc63211a5506400a0a8c24653af91f
+Status: Downloaded newer image for hub.c.163.com/library/tomcat:latest
+# docker images
+REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+hub.c.163.com/library/tomcat   latest              72d2be374029        10 days ago         292MB
+hello-world                    latest              1815c82652c0        2 months ago        1.84kB
+hub.c.163.com/library/nginx    latest              46102226f2fd        3 months ago        109MB
+```
+2.编写Dockerfile镜像文件
+vim Dockerfile
+```text
+#1.告诉Docker需要制作一个镜像,已tomcat为起点
+from hub.c.163.com/library/tomcat
+
+#2.声明镜像的所有者
+MAINTAINER caojx xxxx@163.com
+
+#3.将web应用拷贝到镜像的webapps中
+COPY jpress-web-newest.war /usr/local/tomcat/webapps
+```
+3.运行docker build
+```text
+# docker build .
+Sending build context to Docker daemon   20.8MB
+Step 1/3 : FROM hub.c.163.com/library/tomcat
+ ---> 72d2be374029
+Step 2/3 : MAINTAINER caojx xxxx@163.com
+ ---> Using cache
+ ---> dd77e031fda6
+Step 3/3 : COPY jpress-web-newest.war /usr/local/tomcat/webapps
+ ---> 7340e17574b9
+Removing intermediate container 4d
+# docker images
+REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+<none>                         <none>              7340e17574b9        43 seconds ago      313MB --该镜像没有名称和tag
+hub.c.163.com/library/tomcat   latest              72d2be374029        10 days ago         292MB
+hello-world                    latest              1815c82652c0        2 months ago        1.84kB
+hub.c.163.com/library/nginx    latest              46102226f2fd        3 months ago        109MB
+# docker build -t jpress:latest . --给镜像指定一个名称
+Sending build context to Docker daemon   20.8MB
+Step 1/3 : FROM hub.c.163.com/library/tomcat
+ ---> 72d2be374029
+Step 2/3 : MAINTAINER caojx xxxx@163.com
+ ---> Using cache
+ ---> dd77e031fda6
+Step 3/3 : COPY jpress-web-newest.war /usr/local/tomcat/webapps
+ ---> Using cache
+ ---> 7340e17574b9
+Successfully built 7340e17574b9
+Successfully tagged jpress:latest
+# docker images
+REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+jpress                         latest              7340e17574b9        3 minutes ago       313MB
+hub.c.163.com/library/tomcat   latest              72d2be374029        10 days ago         292MB
+hello-world                    latest              1815c82652c0        2 months ago        1.84kB
+```
+
+3.运行容器
+```text
+# docker run -d -p 8888:8080 jpress
+b2a3db47ddc05e3616e05904c375b32bbcd67f561e12794eefa44b619ddde277
+# netstat -na | grep 8888
+tcp6       0      0 :::8888                 :::*                    LISTEN     
+```
+![](../images/docker/docker-tomcat2.png)
+![](../images/docker/docker-jpress.png)
+
+3.集成mysql  
+运行jpress发现需要数据库,我们安装以下mysql镜像
+![](../images/docker/docker-mysql.png)  
+```text
+# docker pull hub.c.163.com/library/mysql:latest
+latest: Pulling from library/mysql
+42cb69312da9: Pull complete 
+e2cf5467c4b5: Pull complete 
+871ec0232f66: Pull complete 
+3c0ae7ec690d: Pull complete 
+d39b43089b70: Pull complete 
+aa0e7cb4b67c: Pull complete 
+738db9902d06: Pull complete 
+ae333863ac05: Pull complete 
+6d014992204a: Pull complete 
+09aeca0c9a82: Pull complete 
+0162083b2de0: Pull complete 
+Digest: sha256:b2bce1a792237ac5df78877d583f34b09ab023a77130921a6bcce67ce2d24ff0
+Status: Downloaded newer image for hub.c.163.com/library/mysql:latest
+# docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=ex -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest
+231f88edeb710166c718fe3c9090a412501299fd7f274431e20df717bd7db96a
+```
+![](../images/docker/docker-jpress-mysql2.png)
