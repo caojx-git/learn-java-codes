@@ -1,4 +1,4 @@
-learn目录是一个git本地仓库，远程仓库使用github托管
-这里主要存放一些学习资料，项目，笔记等重要文件
-github仓库地址：https://github.com/caojx-git/learn.git
-
+learn仓库主要用于存放学习过程的一些笔记、项目等，如果相关内容有误欢迎指正
+learn仓库分为两大模块
+- code 用于存放相关项目源代码
+- notes 用于存放学习笔记
