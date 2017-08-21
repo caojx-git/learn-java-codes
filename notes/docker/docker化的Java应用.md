@@ -271,7 +271,7 @@ For more examples and ideas, visit:
 ## 五、运行Nginx镜像
 
 1.从网易蜂巢中下载nginx镜像  
-网易蜂巢镜像仓库地址[https://c.163.com/hub#/m/home/](https://c.163.com/hub#/m/home/)    
+网易蜂巢镜像仓库地址[https://c.163.com/hub#/m/home/](https://c.163.com/hub#/m/home/)，需要注册才可访问    
 ```text
 # docker pull hub.c.163.com/library/nginx:latest  --运行nginx镜像
 latest: Pulling from library/nginx
@@ -316,7 +316,8 @@ bin  boot  dev	etc  home  lib	lib32  lib64  libx32  media  mnt  opt  proc  root 
 root@fd7e96832028:/# which nginx
 /usr/sbin/nginx
 ```
-4.Docker网络
+## 六、Docker网络
+1.docker网络
 上边我们已经使用Docker运行了nginx，但是还没有通过浏览器访问到nginx，下边我们了解以下Docker的网络部分，以便通过网络访问我们的nginx
 - 网络类型
 大家知道Docker的隔离性，网络也是隔离性的一部分，Linux利用了namespace命令空间来进行资源的隔离，比如PID namespace是用来隔离进程的，network  
@@ -332,7 +333,7 @@ Docker容器提供了如下三种网络模式：
 这种技术就是端口映射。Docker可以将容器里边的端口映射到宿主机中的某个端口，当你在访问主机的某个端口的时候，其实就是你在访问容器里边的端口。  
 ![](../images/docker/docker-network.png)
 
-5.主机与Docker容器端口映射演示
+2.主机与Docker容器端口映射演示
 - 使用指定的主机端口映射容器中的端口
 ```text
 #docker ps --查看运行的nginx，默认使用80端口
@@ -361,7 +362,7 @@ CONTAINER ID        IMAGE                         COMMAND                  CREAT
 ```
 ![](../images/docker/docker-nginx2.png)
 
-## 六、制作自己的镜像
+## 七、制作自己的镜像
 前边我们hello-world和nginx都是从docker仓库下载回来的，这些都是由别人做好的镜像，放到镜像仓库上的，我们也可以制作自己的镜像，在开始制作自己的Docker镜像之前我们先了以下如下内容。
 - Dockerfile
   Dockerfile就是告诉Docker我要怎么样来制作我的镜像，我要制作镜像的每一步操作分别是什么。
