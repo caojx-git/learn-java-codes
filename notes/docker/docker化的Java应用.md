@@ -203,7 +203,7 @@ Server:
 [http://www.imooc.com/article/16448](http://www.imooc.com/article/16448)
 
 ## 四、第一个Docker镜像
-docker的多数命令跟git有点相似，如果会使用git的话，使用起docker更加容易
+docker的多数命令跟git有点相似，如果会使用git的话，使用起docker更加容易，提示下边的所有实验是在CentOS7上完成的  
 
 1.拉取镜像
 从docker仓库中拉取镜像
@@ -218,13 +218,13 @@ docker images [OPTIONS] [REPOSITORY[:TAG]]
 ```
 测试如下
 ```text
-[root@ ~]# docker pull hello-world
+# docker pull hello-world
 Using default tag: latest --默认是最新的版本
 latest: Pulling from library/hello-world
 b04784fba78d: Pull complete 
 Digest: sha256:f3b3b28a45160805bb16542c9531888519430e9e6d6ffc09d72261b0d26ff74f
 Status: Downloaded newer image for hello-world:latest
-[root@ ~]# docker images  --查看下载的镜像
+# docker images  --查看下载的镜像
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 hello-world         latest              1815c82652c0        2 months ago        1.84kB
 ```
@@ -270,7 +270,8 @@ For more examples and ideas, visit:
 
 ## 五、运行Nginx镜像
 
-1.从网易蜂巢中下载nginx镜像
+1.从网易蜂巢中下载nginx镜像  
+网易蜂巢镜像仓库地址[https://c.163.com/hub#/m/home/](https://c.163.com/hub#/m/home/)    
 ```text
 # docker pull hub.c.163.com/library/nginx:latest  --运行nginx镜像
 latest: Pulling from library/nginx
@@ -459,7 +460,7 @@ tcp6       0      0 :::8888                 :::*                    LISTEN
 
 3.集成mysql  
 运行jpress发现需要数据库,我们安装以下mysql镜像
-![](../images/docker/docker-mysql.png)  
+![](../images/docker/docker-mysql.png)    
 ```text
 # docker pull hub.c.163.com/library/mysql:latest
 latest: Pulling from library/mysql
@@ -476,7 +477,29 @@ ae333863ac05: Pull complete
 0162083b2de0: Pull complete 
 Digest: sha256:b2bce1a792237ac5df78877d583f34b09ab023a77130921a6bcce67ce2d24ff0
 Status: Downloaded newer image for hub.c.163.com/library/mysql:latest
-# docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=ex -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest
+# docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=caojx -e MYSQL_DATABASE=jpress hub.c.163.com/library/mysql:latest
 231f88edeb710166c718fe3c9090a412501299fd7f274431e20df717bd7db96a
+# ifconfig --查看docker机的ip
+docker0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 0.0.0.0
+        inet6 fe80::42:7eff:fe9a:ffaa  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:7e:9a:ff:aa  txqueuelen 0  (Ethernet)
+        RX packets 1544  bytes 546549 (533.7 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1707  bytes 580831 (567.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
-![](../images/docker/docker-jpress-mysql2.png)
+连接mysql  
+![](../images/docker/docker-jpress-mysql3.png)  
+安装jpress完成  
+![](../images/docker/docker-jpress2.png)  
+重启容器  
+```text
+# docker ps
+CONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS              PORTS                    NAMES
+1cb9c2871412        hub.c.163.com/library/mysql:latest   "docker-entrypoint..."   5 minutes ago       Up 5 minutes        0.0.0.0:3306->3306/tcp   brave_hodgkin
+50835660a371        jpress                               "catalina.sh run"        6 minutes ago       Up 6 minutes        0.0.0.0:8888->8080/tcp   elegant_leakey
+# docker restart 50835660a371 --重启容器
+50835660a371
+```
+![](../images/docker/docker-jpress3.png)  
