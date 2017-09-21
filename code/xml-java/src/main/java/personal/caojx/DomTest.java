@@ -51,6 +51,23 @@ public class DomTest {
 					System.out.println("属性值："+attr.getNodeValue());
 					System.out.println("结束遍历第"+(i+1)+"本书的内容");
 				}
+				//解析book节点的子节点
+				NodeList childNodes = book.getChildNodes();
+				//遍历childNodes获取每个节点的节点名和节点值,注意空白也会当成节点
+				System.out.println("第"+(i+1)+"个节点共有"+childNodes.getLength()+"个子节点");
+				for(int k = 0; k < childNodes.getLength(); k++){
+					//由于空白也会被当成text节点，所有我们这里进行排除text节点
+					if(childNodes.item(k).getNodeType() == Node.ELEMENT_NODE){
+						//获取element类型节点中的节点名
+						System.out.print("第"+(k+1)+"个节点名："+childNodes.item(k).getNodeName());
+						//获取节点值方式1，会获取第一个子节点的节点值
+						// System.out.println("--节点值是："+childNodes.item(k).getFirstChild().getNodeValue());
+						//获取节点值方式2，会获取该节点的所有子节点值
+						System.out.println("--节点值是："+childNodes.item(k).getTextContent());
+
+					}
+				}
+
 			}
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
