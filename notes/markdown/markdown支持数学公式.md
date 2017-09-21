@@ -1,5 +1,4 @@
-<script type="text/javascript" src="../../tools/js/MathJax-master/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script type="text/javascript" src="https://github.com/caojx-git/learn/tree/master/tools/js/MathJax-master/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 # Markdown中添加对数学公式的支持
 
@@ -25,3 +24,15 @@
  $$\frac{1}{2}$$
  
  $$a^2$$
+
+
+$$J(\theta) = \frac 1 2 \sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2$$
+
+```html
+<script type="text/javascript" src="../../tools/js/MathJax-master/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+ $$\frac{1}{2}$$
+ 
+ $$a^2$$
+```
