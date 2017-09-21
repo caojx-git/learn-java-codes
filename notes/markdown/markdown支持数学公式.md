@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../../tools/js/MathJax-master/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
 # Markdown中添加对数学公式的支持
