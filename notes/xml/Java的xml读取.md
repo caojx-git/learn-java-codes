@@ -111,7 +111,7 @@ public class DomTest {
 }
 
 ```
-3.测试结果
+3.解析结果
 ```text
 一共有2本书
 第1本书共有1个属性
@@ -311,3 +311,202 @@ book元素的第1个属性名是：id--属性值是：2
 结束遍历第2本书的内容
 sax解析结束
 ```
+
+## 三、JDOM解析xml
+
+1.引入JDOM依赖
+```xml
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom2</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+```
+
+2.JDOMTest.java
+```java
+package personal.caojx;
+
+import org.jdom2.Attribute;
+import org.jdom2.Document;
+import org.jdom2.Element;
+import org.jdom2.JDOMException;
+import org.jdom2.input.SAXBuilder;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+/**
+ * ProjectName: xml-java
+ * ClassName: JDomTest.java
+ *
+ * @Description: JDOM解析XML
+ * @version: v1.0.0
+ * @author: caojx
+ * @date: 2017/9/24 下午9:12
+ * @since JDK 1.8
+ */
+public class JDomTest {
+
+   public static void main(String[] args){
+       //对books.xml文件的jdom行解析
+       //1.创建一个SAXBuilder对象
+       SAXBuilder saxBuilder = new SAXBuilder();
+       //3.创建输入流，将xml家在到输入流中
+       InputStream in = JDomTest.class.getClassLoader().getResourceAsStream("books.xml");
+       try {
+           //3.通过saxBuilder的build方法，将输入流加载到saxBuilder中
+           Document document = saxBuilder.build(in);
+           //通过Document对象获取xml文件的根节点
+           Element rootElement = document.getRootElement();
+           //获取根节点下的子节点
+           List<Element> bookList = rootElement.getChildren();
+
+           //继续进行解析
+           for(Element book: bookList){
+               System.out.println("开始解析第"+(bookList.indexOf(book)+1)+"书");
+               //解析book的属性，获取book的所有属性
+               List<Attribute> attributes = book.getAttributes();
+               //遍历属性(不清楚属性名和属性值)
+               for(Attribute attribute: attributes){
+                   //获取属性名
+                  String attrName =  attribute.getName();
+                   //获取属性值
+                   String attrValue = attribute.getValue();
+                   System.out.println("属性名："+attrName+"--属性值"+attrValue);
+               }
+               //对book节点的子节点的节点名称和节点值的遍历
+               List<Element> bookChilds = book.getChildren();
+               for(Element child: bookChilds){
+                   System.out.println("节点名:"+child.getName()+"--节点值:"+child.getValue());
+               }
+               System.out.println("结束解析第"+(bookList.indexOf(book)+1)+"书");
+           }
+       } catch (JDOMException e) {
+           e.printStackTrace();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
+}
+```
+
+3.解析结果
+```text
+开始解析第1书
+属性名：id--属性值1
+节点名:name--节点值:冰与火之歌
+节点名:author--节点值:乔治马丁
+节点名:year--节点值:2014
+节点名:price--节点值:89
+结束解析第1书
+开始解析第2书
+属性名：id--属性值2
+节点名:name--节点值:安徒生通话
+节点名:year--节点值:2004
+节点名:price--节点值:77
+节点名:language--节点值:English
+结束解析第2书
+```
+
+## 四、DOM4j解析XML
+
+1.引入dom4j依赖
+```xml
+ <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+ </dependency>
+```
+
+2.DOM4JTest.java
+```java
+package personal.caojx;
+
+import org.dom4j.Attribute;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import java.io.File;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * ProjectName: xml-java
+ * ClassName:DOM4JTest.java
+ *
+ * @Description: Dom4j解析XML
+ * @version: v1.0.0
+ * @author: caojx
+ * @date: 2017/9/24 下午9:45
+ * @since JDK 1.8
+ */
+public class DOM4JTest {
+
+    public static void main(String[] args) throws DocumentException {
+        //解析books.xml文件
+        //创建SAXReader的对象reader
+        SAXReader reader = new SAXReader();
+        //通过reader对象的read方法加载books.xml文件
+        Document document = reader.read(DOM4JTest.class.getClassLoader().getResourceAsStream("books.xml"));
+        //通过document对象获取根节点bookstore
+        Element bookstore = document.getRootElement();
+        Iterator it = bookstore.elementIterator();
+        while(it.hasNext()){
+            System.out.println("开始遍历某一本书");
+            Element book = (Element) it.next();
+            //获取book的属性名以及属性值
+            List<Attribute> bookAttrs = book.attributes();
+            for(Attribute attr: bookAttrs){
+                System.out.println("属性名："+attr.getName()+"--属性值："+attr.getValue());
+            }
+
+            //获取book的节点名和节点值
+            Iterator iterator = book.elementIterator();
+            while (iterator.hasNext()){
+                Element bookChild = (Element) iterator.next();
+                System.out.println("节点名："+bookChild.getName()+"--节点值："+bookChild.getStringValue());
+            }
+            System.out.println("结束遍历某一本书");
+        }
+
+    }
+}
+```
+
+## 五、4中解析XML方式的对比
+1.Java官方提供的XML解析方式DOM、SAX解析
+2.第三方的XML解析方式JDOM、DOM4J解析
+
+DOM解析
+- 优点
+ - 形成结构树，直观好理解，代码编写容易
+ - 解析过程中结构保存在内存中，方便修改
+-缺点
+ - 会一次性将整个xml加载到内存中，当xml文件较大时，第内存消耗较大，容易影响解析性能并造成内存溢出。
+ 
+![](../images/xml/xml-dom.png)
+
+SAX解析
+- 优点
+ - 采用事件驱动、对内存耗费较小
+ - 适用于只需要处理xml最后那个的数据时
+- 缺点
+ - 不易编码
+ - 很难同时访问同一个xml中的多处不同数据
+ 
+JDOM
+ - 仅使用具体类而不实用接口
+ - API大量使用了Collections类
+ - 开放源代码
+ 
+DOM4J
+ - JDOM的一种智能分支，它合并了许多超极本的XML文档表示的功能
+ - DOM4J使用接口和抽象极本类方法，是一个优秀的Java XML API
+ - 具有性能优异、灵活性好、功能强大和极端易用使用的特点
+ - 开发源代码
