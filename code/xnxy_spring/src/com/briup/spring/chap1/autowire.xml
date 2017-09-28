@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean name="student" class="com.briup.spring.ioc.bean.Student" autowire="constructor"><!-- byName byType  constructor(一定要提供一个单参数的构造器)-->
+		<property name="name" value="tom"/>
+		<property name="age" value="20"/>
+	<!-- 	<property name="address" ref="address"/> -->
+	</bean>
+<!-- 	<bean name="address" class="com.briup.spring.ioc.bean.Address"> 
+		<property name="country" value="中国"></property>
+		<property name="province" value="江苏"></property>
+		<property name="city" value="昆山"></property>
+	</bean> -->
+	<!-- <bean name="address" class="com.briup.spring.ioc.bean.Address">
+		<property name="country" value="中国"></property>
+		<property name="province" value="江苏"></property>
+		<property name="city" value="昆山"></property>
+	</bean> -->
+</beans>

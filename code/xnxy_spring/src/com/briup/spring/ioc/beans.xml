@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean name="dao" class="com.briup.spring.ioc.UserDao"></bean>
+	<bean name="service" class="com.briup.spring.ioc.UserService">
+		<property name="userDao" ref="dao"></property>
+	</bean>
+</beans>

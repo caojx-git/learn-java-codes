@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean name="car" class="com.briup.spring.ioc.bean.Car" abstract="true"><!--  abstract="true" 不能直接使用getBean来获取-->
+		<property name="owner" value="tom"/>
+	</bean>
+	<bean name="car1" parent="car">
+		<property name="price" value="10000"></property>
+		<property name="name" value="ford"></property>
+	</bean>
+	<bean name="car2" parent="car">
+		<property name="price" value="20000"></property>
+		<property name="name" value="bmw"></property>
+	</bean>
+</beans>

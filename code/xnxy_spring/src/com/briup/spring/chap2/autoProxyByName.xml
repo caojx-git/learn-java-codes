@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<!-- 配置委托类 -->
+    <bean name="target" class="com.briup.spring.aop.bean.UserDaoImpl"></bean>
+    <!-- 配置代理对象将来执行的时候，所要执行的处理程序 -->
+    <bean name="before" class="com.briup.spring.aop.bean.BeforeTest"></bean>
+  	<!-- 配置代理对象 -->
+  	 <bean name="proxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    	<!-- 注入需要被代理的对象名字,会代理所有以targ开始的bean -->
+   		<property name="beanNames">
+   			<list>
+   				<value>targ*</value>
+   			</list>
+   		</property>
+   		<!-- 注入advice或者advisor -->
+   		<property name="interceptorNames">
+   			<list>
+   				<value>before</value>
+   			</list>
+   		</property>
+    </bean>
+</beans>

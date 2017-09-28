@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop 
+ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+ http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd">
+      
+      <!-- 引入外部文件 -->
+     <context:property-placeholder location="classpath:db.properties"/>
+     
+     <!-- 配置c3p0的连接池 -->
+     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+     	<property name="driverClass">
+  			<value>${jdbc.driver}</value>
+  		</property>
+  		<property name="jdbcUrl">
+  			<value>${jdbc.url}</value>
+  		</property>
+  		<property name="user">
+  			<value>${jdbc.username}</value>
+  		</property>
+  		<property name="password">
+  			<value>${jdbc.password}</value>
+  		</property>
+     </bean>
+     
+     <!-- 配置业务层的类 -->
+     <bean id="accountService" class="com.briup.spring.chap5.service.impl.AccountServiceImpl">
+     	<property name="accountDao" ref="accountDao"></property>
+     	<!-- 注入事务管理模板 -->
+     	<property name="transactionTemplate" ref="transactionTemplate"></property>
+     </bean>
+     <!-- 配置dao,Dao继承了JdbcDaoSupport后，只要注入了连接池就会有模板，就可以通过模板对数据库进行相应的操作，可以参见源码-->
+     <bean id="accountDao" class="com.briup.spring.chap5.dao.impl.AccountDaoImpl">
+     	<property name="dataSource" ref="dataSource"></property>
+     </bean>
+     
+     <!-- 配置事务管理 -->
+     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     	<property name="dataSource" ref="dataSource"></property>
+     </bean>
+     
+     <!-- 配置事务管理模板，Spring为了简化事务管理的代码，提供了事务管理模板 -->
+     <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+     	<property name="transactionManager" ref="transactionManager"></property>
+     </bean>
+
+
+</beans>

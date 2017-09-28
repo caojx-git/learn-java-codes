@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+ xmlns:context="http://www.springframework.org/schema/context"  
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xsi:schemaLocation="http://www.springframework.org/schema/beans  
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+      http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- <bean name="conn" class="com.briup.spring.ioc.bean.ConnectionFactory" factory-method="getConnection"/> --><!-- 1使用静态的getConnection一定是静态方法 -->
+	
+
+	<!-- <bean name="factory" class="com.briup.spring.ioc.bean.ConnectionFactory">2使用非静态的
+		<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+		<property name="username" value="estore"/>
+		<property name="password" value="estore"/>
+	</bean>
+	<bean name="conn" factory-bean="factory" factory-method="getConnection"/> -->
+	
+	
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"><!--3从文件中取值  -->
+    	<property name="location" value="db.properties"></property>  <!-- name=location 固定 value=路径 -->
+	</bean>
+	<bean name="factory" class="com.briup.spring.ioc.bean.ConnectionFactory"><!-- 2使用非静态的 -->
+		<property name="driver" value="${driver}"/>
+		<property name="url" value="${url}"/>
+		<property name="username" value="${username}"/>
+		<property name="password" value="${password}"/>
+	</bean>
+	<bean name="conn" factory-bean="factory" factory-method="getConnection"/>
+	
+	<!-- 方式3，常用 -->
+	<context:annotation-config></context:annotation-config>
+	<!--  读取properties文件-->
+	<context:property-placeholder location="classpath:db.properties"/>
+	
+	<!-- 使用spring提供的DriverManger -->
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDtaSource">
+		<property name="driver" value="${driver}"/>
+		<property name="url" value="${url}"/>
+		<property name="username" value="${username}"/>
+		<property name="password" value="${password}"/>
+	</bean>
+	
+</beans>

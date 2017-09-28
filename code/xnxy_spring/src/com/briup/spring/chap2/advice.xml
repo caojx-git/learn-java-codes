@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<!-- 配置委托类 -->
+    <bean name="target" class="com.briup.spring.aop.bean.UserDaoImpl"></bean>
+    <!-- 配置代理对象将来执行的时候，所要执行的处理程序 -->
+    <bean name="advice" class="com.briup.spring.aop.bean.AdviceTest"></bean><!-- advice在方法执行前后添加我们的操作 -->
+  	<!-- 配置代理对象 -->
+    <bean name="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+    	<!--proxyInterfaces 如果ProxyFactoryBean的proxyInterfaces属性没有被设置，但是目标类实现类一个或多个接口，
+    	那么ProxyFactoryBean将自动检测到这个目标类已经实现了至少一个接口，创建一个基于JDK的代理 -->
+    	<!-- <property name="proxyInterfaces" value="com.briup.spring.aop.bean.UserDao"></property> -->
+    	<!-- 注入目标对象(注入被代理的对象) -->
+    	<property name="target" ref="target"></property>
+    	<!-- 注入代理对象需要实现的所有接口 -->
+    	<property name="interfaces">
+    		<array>
+    			<value>com.briup.spring.aop.bean.UserDao</value>
+    		</array>
+    	</property>
+    	<!-- 注入代理对象所要执行的处理程序 -->
+    	<property name="interceptorNames">
+    		<list>
+    			<value>advice</value>
+    		</list>
+    	</property>
+    </bean>
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	
+	 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+	<!-- 扫描注解支持 -->
+	<context:component-scan base-package="spring.aop.bean.annotation"></context:component-scan>
+	
+	<!-- 事物配置 -->
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- advisor配置 配置事务处理的Bean,定义切面（advice） 
+		由于getxxx,queryxxx,findxxx不涉及事务，可以设置read-only为true
+	-->
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="del*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="update*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- aop配置 -->
+	<aop:config>
+	<!-- 给impl包下的所有的方法配置adivce -->
+		<aop:pointcut expression="excution(* com.briup.spring.aop.bean.annotation.service.impl..(..))" id="serviceMethod" />
+		<aop:advisor advice-ref="txAdvice" />
+	</aop:config>
+
+</beans>
