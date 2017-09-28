@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean name="teacher" class="com.briup.spring.ioc.bean.Teacher">
+		<!--  1.按照属性名赋值 ，调用有参数的构造器，顺序是参数顺序-->
+		<constructor-arg name="id" value="1"/> <!-- person(int id,String name, String gender) -->
+		<constructor-arg name="name" value="tom"/>
+		<constructor-arg name="gender" value="male"/>
+		<!-- 2.index从0开始，按照属性在构造器中出现的顺序赋值 索引值是构造器中的属性顺序 -->
+		<!-- <constructor-arg index="0" value="2"/>
+		<constructor-arg index="1" value="jack"/>
+		<constructor-arg index="2" value="male"/> -->
+		<!-- 3.按照类型进行赋值，如果出现相同的类型，按照属性在构造器中出现的顺序进行复制 -->
+	<!-- 	<constructor-arg type="int" value="3"/>
+		<constructor-arg type="String" value="rose"/>
+		<constructor-arg type="String" value="female"/> -->
+	</bean>
+</beans>

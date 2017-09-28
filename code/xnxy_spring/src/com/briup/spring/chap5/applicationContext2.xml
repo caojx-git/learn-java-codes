@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop 
+ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+ http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd">
+      <!-- 声明式事务管理 -->
+      <!-- 引入外部文件 -->
+     <context:property-placeholder location="classpath:db.properties"/>
+     
+     <!-- 配置c3p0的连接池 -->
+     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+     	<property name="driverClass">
+  			<value>${jdbc.driver}</value>
+  		</property>
+  		<property name="jdbcUrl">
+  			<value>${jdbc.url}</value>
+  		</property>
+  		<property name="user">
+  			<value>${jdbc.username}</value>
+  		</property>
+  		<property name="password">
+  			<value>${jdbc.password}</value>
+  		</property>
+     </bean>
+     
+     <!-- 配置业务层的类 -->
+     <bean id="accountService2" class="com.briup.spring.chap5.service.impl.AccountServiceImpl2">
+     	<property name="accountDao" ref="accountDao2"></property>
+     </bean>
+     <!-- 配置dao,Dao继承了JdbcDaoSupport后，只要注入了连接池就会有模板，就可以通过模板对数据库进行相应的操作，可以参见源码-->
+     <bean id="accountDao2" class="com.briup.spring.chap5.dao.impl.AccountDaoImpl2">
+     	<property name="dataSource" ref="dataSource"></property>
+     </bean>
+     <!-- 配置事务管理器 -->
+     <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+     	<property name="dataSource" ref="dataSource"></property>
+     </bean>
+     
+     <!-- 配置业务层的代理 -->
+     <bean id="accountServiceProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+     	<!-- 配置目标类  -->
+     	<property name="target" ref="accountService2"></property>
+     	<!-- 注入事物管理器 -->
+     	<property name="transactionManager" ref="transactionManager"></property>
+     	<!-- 注入事物的相关属性,事物的隔离级别，传播行为等 
+     		key值为方法名可以使用通配符*
+     		value值为
+     	-->
+     	<property name="transactionAttributes">
+     		<props>
+     			<!-- prop的格式
+     				key为方法名，可以使用*通配符号
+     				value值的格式：
+     					1. PROPAGATION  :事务的传播行为
+     					2. ISOLATION    :事务隔离级别
+     					3. readOnly		:只读
+     					4. -Exception	:发生那些异常回滚
+     					5. +Exception 	:发生那些事务不回滚
+     					
+     					之间使用,号隔开
+     			 -->
+     			<prop key="trans*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+     			<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>	<!-- 只读事务 -->
+     		</props>
+     	</property>
+     </bean>
+   	
+
+</beans>

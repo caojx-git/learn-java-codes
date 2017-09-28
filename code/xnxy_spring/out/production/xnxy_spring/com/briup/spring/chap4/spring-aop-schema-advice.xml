@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:aop="http://www.springframework.org/schema/aop"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop 
+ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	
+	<!-- 切面类 -->
+	<bean id="myAspect" class="com.briup.spring.aop.bean.annotation.aop.MyAspect"></bean>
+	
+	<!-- 业务类 -->
+	<bean id="aspectBiz" class="com.briup.spring.aop.bean.annotation.aop.AspectBiz"></bean>
+	<!-- aop配置 可以配置多个-->
+	<aop:config>
+	<!-- 切面类 -->
+		<aop:aspect id="aspectTest" ref="myAspect">
+		<!-- 切入点  标识切入点 aop包下类名以Biz结尾的类的所有方法-->
+			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
+			<!-- 通知 ,通过切入点切入切入切面类中的before方法 在执行切入点指定的方法之前执行 -->
+			<aop:before method="before" pointcut-ref="myPointcut"/>
+			<!-- 返回之后的通知 -->
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+			<!--  -->
+			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
+			<!-- after(finally) advice 不管是否抛出异常，最后都会执行的方法 -->
+			<aop:after method="after" pointcut-ref="myPointcut"/>
+			<!-- adroun advice 环绕通知，方法的第一参数必须是ProceedingJjoinPoint类型 -->
+			<!-- <aop:around method="around" pointcut-ref="myPointcut"/> -->
+			
+			<!-- 参数传递  -->
+			<aop:around method="aroundInit" pointcut="execution(* com.briup.spring.aop.bean.annotation.aop.AspectBiz.init(String,int))
+			and args(bizName,times)"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

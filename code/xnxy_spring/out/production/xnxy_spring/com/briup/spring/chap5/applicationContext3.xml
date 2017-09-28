@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ http://www.springframework.org/schema/aop 
+ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+  http://www.springframework.org/schema/tx
+ http://www.springframework.org/schema/tx/spring-tx.xsd
+ http://www.springframework.org/schema/context  
+      http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 基于AspectJ的声明式事务管理 -->
+	<!-- 引入外部文件 -->
+	<context:property-placeholder location="classpath:db.properties" />
+
+	<!-- 配置c3p0的连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass">
+			<value>${jdbc.driver}</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="user">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+	</bean>
+
+	<!-- 配置业务层的类 -->
+	<bean id="accountService2" class="com.briup.spring.chap5.service.impl.AccountServiceImpl2">
+		<property name="accountDao" ref="accountDao2"></property>
+	</bean>
+	<!-- 配置dao,Dao继承了JdbcDaoSupport后，只要注入了连接池就会有模板，就可以通过模板对数据库进行相应的操作，可以参见源码 -->
+	<bean id="accountDao2" class="com.briup.spring.chap5.dao.impl.AccountDaoImpl2">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<!-- 配置事务管理器 -->
+	<bean name="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 配置事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 设置事物属性 -->
+		<tx:attributes>
+			<!-- 设置各种方法的
+				 propagation 为传播行为 
+				 isolation 事物的隔离级别
+				 read-only 只读
+				 rollback-for 发生生么异常回滚
+				 no-rollback 发生那些一场不回滚
+				 timeout 过期信息
+				  -->
+			<tx:method name="tran*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="insert*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="update*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="delete*" propagation="REQUIRED" read-only="false"
+				rollback-for="java.lang.Exception" />
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<!-- 配置AOP -->
+	<aop:config>
+		<!-- 配置切入点,表示切入点为类AccountServiceImpl2下的所有方法 -->
+		<aop:pointcut
+			expression="execution(* com.briup.spring.chap5.service.impl.AccountServiceImpl2.*(..))"
+			id="pointcut" />
+		<!-- 配置切面,表示AccountServiceImpl2下的所有方法都使用txAdivice增强 -->
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
+	</aop:config>
+
+
+</beans>
