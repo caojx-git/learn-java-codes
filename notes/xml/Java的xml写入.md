@@ -242,7 +242,7 @@ public class JDomTest2 {
 </rss>
 ```
 
-## 三、DOM4J生成XML
+## 四、DOM4J生成XML
 
 1.DOM4JTest2.java
 ```java
