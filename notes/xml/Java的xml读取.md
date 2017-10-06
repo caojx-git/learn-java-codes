@@ -52,12 +52,12 @@ import java.io.IOException;
 public class DomTest {
 
 	public static void main(String[] args){
-		//1.创建一个DocumentBuilderFactory对应
+		//1.创建一个DocumentBuilderFactory对象
 		DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-		//2.创建一个DocumentBuilder对应
+		//2.创建一个DocumentBuilder对象
 		try {
 			DocumentBuilder documentBuilder = builderFactory.newDocumentBuilder();
-			//3.通过DocumentBuilder的parse方法读取xml文件返回Document对应
+			//3.通过DocumentBuilder的parse方法读取xml文件返回Document对象
 			Document document = documentBuilder.parse(DomTest.class.getClassLoader().getResourceAsStream("books.xml"));
 
 			//获取所有的book节点
