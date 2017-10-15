@@ -1,4 +1,4 @@
-# Web服务器集群和负载均衡配置
+# Web服务器集群和负载均衡配置（apache+tomcat）
 本笔记主要了解一下内容
 - 集群、分布式
 - 负载均衡
@@ -154,9 +154,9 @@
 
 ### 2.1 Apache+Tomcat环境介绍和准备
 
-- Apache2.4+Tomcat8集群
+- Apache+Tomcat集群
 - 基于HTTP重定向web服务系统
-- Apache+JK2+Tomcat
+- Apache+JK+Tomcat
 
 集群前后效果图：  
 ![](../images/tomcat/cluster11.png)
@@ -306,7 +306,7 @@ jvmRoute给tomcat取一个集群中的名称:
 - 在cluster/cluster-tomcat1/apache-tomcat-8.5.23/webapps下，创建TestCluster文件夹；
 - 然后将ROOT文件夹下的WEB-INF文件夹拷贝到TestCluster下
 - 打开TestCluster/WEB-INF\web.xml修改，在</web-app>上面添加 \<distributable/> (设置 \<distributable/>,即表明集群下某一个节点生成或发
-生改变的session，将广播到该集群中的其他节点),web.xml内容如下：
+生改变的session，将广播到该集群中的其他节点实现session共享),web.xml内容如下：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -419,11 +419,11 @@ Tomcat配置不做变动，下边是对Apache进行配置：
 worker.list=controller,tomcat1,tomcat3
 
 #=======tomcat1==========
-#tomcat服务器端口
+#tomcat服务器中ajp协议连接端口
 worker.tomcat1.port=7009
 #tomcat服务器主机地址
 worker.tomcat1.host=127.0.0.1
-#tomcat连接协议
+#tomcat中ajp连接协议
 worker.tomcat1.type=ajp13
 #权重，权重越大访问量越多
 worker.tomcat1.lbfactor=1
@@ -441,7 +441,7 @@ worker.tomcat3.type=ajp13
 worker.tomcat3.lbfactor=1
 
 #======controller=======
-#lb(load balance )
+#lb(load balance )负载均衡
 worker.controller.type=lb
 #负载均衡的节点列表
 worker.controller.balanced_workers=tomcat1,tomcat2,tomcat3
@@ -453,8 +453,8 @@ worker.controller.sticky_session=false
 在%APACHE_HOME%\conf目录下新建mod_jk.conf,内容如下
 ```text
 LoadModule jk_module /private/etc/apache2/modules/mod_jk-1.2.24-httpd-2.2.4.so
-JKWorkersFile /private/etc/apache2/conf/workers.properties
-JKMount /* controller
+JkWorkersFile /private/etc/apache2/conf/workers.properties
+JkMount /* controller
 ```
 说明： 
 LoadModule - mod_jk-1.2.24-httpd-2.2.4.so 的位置  
@@ -463,15 +463,15 @@ JKMount - Apache将http://localhost/下的所有请求转发给controller处理
 
 5. 修改%APACHE_HOME%\conf\httpd.conf，在末尾添加如下内容  
 ```text
-include /private/etc/apache2/conf/mod_jk.conf
+Include /private/etc/apache2/conf/mod_jk.conf
 ```
 
-6. 修改http.conf中的apche的端口
+6. 修改http.conf中的apache的端口
 ```text
 Listen 80
 ```
 
-7. 启动apche访问
+7. 启动apache访问
 ```text
 apachectl start
 ```
@@ -487,5 +487,7 @@ url： 为压力测试的地址，不支持https协议
 ```
 
 参考：  
+[http://tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html#s64](http://tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html#s64)  
 [https://ke.qq.com/course/189120](https://ke.qq.com/course/189120)  
-[http://www.cnblogs.com/litubin/articles/4795248.html](http://www.cnblogs.com/litubin/articles/4795248.html)
+[http://www.cnblogs.com/litubin/articles/4795248.html](http://www.cnblogs.com/litubin/articles/4795248.html)  
+[http://www.cnblogs.com/leslies2/archive/2012/07/23/2603617.html](http://www.cnblogs.com/leslies2/archive/2012/07/23/2603617.html)
