@@ -50,7 +50,7 @@ x - data.tar.xz
 
 ## 四、运行后播放失败解决
 
-3.1 在安装完成步骤三提示所需要的依赖后播放歌曲出现”加载失败，网络错误，可在设置中发送反馈“，如下
+3.1 在安装完成步骤三提示所需要的依赖后播放歌曲出现”加载失败，网络错误，可在设置中发送反馈“提示，如下
 ![](../images/linux/wymusic/netease-cloud-music-3.png)
 
 原因是还缺少对应的安装包，需要安装相关的插件
@@ -66,7 +66,7 @@ x - data.tar.xz
 sudo yum -y install gstreamer-plugins-bad.x86_64  
 
 如果还是出现播放失败的提示，请参考netease-cloud-music_1.0.0-2_amd64_ubuntu14.04.deb中解压后的文件control.tar.gz中的
-control文件一来说明。
+control文件是否缺少对应的包。
 ![](../images/linux/wymusic/netease-cloud-music-4.png)
 
 3.2 安装成功  
