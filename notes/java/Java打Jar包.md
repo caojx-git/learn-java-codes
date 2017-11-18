@@ -181,6 +181,7 @@ public class Main
 
 
 同样使用javac 指令编译，三个class文件存在于不同的路径下，因为他们包名不一样。把编译号的含有class文件的文件夹全部放在foo文件夹下： 
+
 ![](../images/java/jar/java-jar9.png)  
 
 然后在foo 外面写一个MANIFEST文件：   
