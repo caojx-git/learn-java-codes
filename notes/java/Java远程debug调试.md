@@ -2,7 +2,15 @@
 Java远程调试的原理是两个VM之间通过debug协议进行通信，然后以达到远程调试的目的。两者之间可以通过socket进行通信。  
 首先被debug程序的虚拟机在启动时要开启debug模式，启动debug监听程序。jdwp是Java Debug Wire Protocol的缩写。  
 
-在启动程序时，将以下参数选项添加到自定义的命令行中，程序就会以支持RemoteDeubg的方式启动。  
+在启动程序时，将以下参数选项添加到自定义的命令行中，程序就会以支持RemoteDeubg的方式启动。    
+```text
+-agentlib:jdwp=transport=dt_socket, address=8080,server=y,suspend=n  
+```
+dt_socket：使用的通信方式    
+address：地址和端口，地址可以省略，两者用冒号分隔，这里我使用的远程调试的端口是8080    
+server：是主动连接调试器还是作为服务器等待调试器连接    
+suspend：是否在启动JVM时就暂停，并等待调试器连接  
+
 
 ## 一、Java代码远程调试
 
@@ -31,10 +39,6 @@ public class Test {
 javac Test.java //编译
 java -agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n Test //启动远程debug模式
 ```
-dt_socket：使用的通信方式    
-address：地址和端口，地址可以省略，两者用冒号分隔，这里我使用的远程调试的端口是8080    
-server：是主动连接调试器还是作为服务器等待调试器连接    
-suspend：是否在启动JVM时就暂停，并等待调试器连接  
 
 提示：
 上边的启动方式是1.5之后的方式，如果是1.5之前的启动方式，如下：
