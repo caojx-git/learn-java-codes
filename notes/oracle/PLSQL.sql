@@ -345,8 +345,8 @@ session_cached_cursors               integer
 		带参数的光标打开的时候需要传递实参
 
 declare
-	--定义带参数的光标  括号中dno作为形参                :=dno 作为实参
-	cursor cemp(dno number) is select ename from emp where deptno:=dno;
+	--定义带参数的光标  括号中dno作为形参  = dno 作为实参
+	cursor cemp(dno number) is select ename from emp where deptno = dno;
 
 	--定义变量
 	pename emp.ename%type;
@@ -359,7 +359,7 @@ begin
 			--取出每个员工的姓名
 			fetch cemp into pename;
 			--没有取到记录退出循环
-			exit where cemp%notfoun;
+			exit when cemp%notfoun;
 			--否则打印员工姓名
 			dbms_output.put_line(pename);
 
