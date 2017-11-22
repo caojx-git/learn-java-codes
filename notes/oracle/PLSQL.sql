@@ -774,7 +774,7 @@ end;
 	使用create procedure命令建立存储过程和存储函数
 	语法：
 	--创建或替换一个存储过程              参数列表需要指明输入或者输出参数
-	create [or replace] procedure 过程名（Name in out type, Name in out type, ...）
+	create [or replace] procedure 过程名（Name in | out type, Name in | out type, ...）
 	as | is --相当于PL/SQL块的declare，这里不可省略
 	PLSQL子程序体；
 
@@ -848,7 +848,7 @@ end;
 
 	--带参数的存储函数必需指明参数列表是输入参数还是输出参数
 	--假如不带参数，不能带（）
-	create or replace function 函数名（Name in out type, Name in out type, ...）
+	create [or replace] function 函数名（Name in | out type, Name in | out type, ...）
 	return 函数值类型
 	as | is
 	PL/SQL子程序体；
@@ -978,7 +978,7 @@ end;
 	调用程序包：
 		调用公用变量
 		exec 程序包名.公用变量名 := 赋值；
-		调用公共过程呢个
+		调用公共过程
 		exec 程序包名.公用过程名(参数)；
 
 
