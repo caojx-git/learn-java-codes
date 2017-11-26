@@ -561,7 +561,7 @@ nginx 文件非常小但是性能非常的高效,这方面完胜 apache,nginx �
 方便，当然也没有 php 安装扩展方便.在原生的 nginx,他不可以动态加载模块,所以当你安装第三方模块的时候需要
 覆盖 nginx 文件.接下来看看如何安装 nginx 第三模块吧.
 `
-nginx 第三方模块安装方法:
+nginx 第三方模块安装方法:  
 ```text
 ./configure --prefix=/你的安装目录 --add-module=/第三方模块目录
 ```
