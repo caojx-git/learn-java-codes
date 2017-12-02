@@ -1,4 +1,5 @@
 # nginx使用
+[toc]
 
 ## 一、Nginx简介
 ### 1.1 简介  
@@ -14,9 +15,8 @@ https://news.netcraft.com/archives/category/web-server-survey/
 
 ## 二、Nginx编译与启动
 
-官网：http://nginx.org/
-安装准备：nginx依赖于pcre库要先安转pcre，因为nginx要在rewrite时要解析正则表达式，pcre是正则解析库。
-
+官网：http://nginx.org/  
+安装准备：nginx依赖于pcre库要先安转pcre，因为nginx要在rewrite时要解析正则表达式，pcre是正则解析库。  
 
 ### 2.1 下载源码包
 ```text
@@ -48,7 +48,7 @@ yum -y install zlib-devel
 [root@localhost pcre-8.31]# pcre-config --version
 8.32
 ```
-  
+
 ### 2.3 安装nginx  
 ```shell
 [root@localhost local]# tar -zxvf nginx-1.8.0.tar.gz -C /usr/local/src/
@@ -60,6 +60,7 @@ yum -y install zlib-devel
 [root@localhost sbin]# /usr/local/nginx-1.8.0/sbin/nginx -v
 nginx version: nginx/1.8.0
 ```
+
 ### 2.4 nginx相关文件夹
 ```shell
 cd /usr/local/-1.8.0, 看到如下4个目录
@@ -552,7 +553,41 @@ server {
 
 通过浏览器访问80端口，我们可以看到访问后台的服务基本是均匀的。
 
-### 四、nginx安装第三方模块
+### 3.10 配置memcache集群
+
+下边的内容没有测试，仅供参考。
+
+配置memcache集群
+```text
+upstream memserver {  把用到的memcached节点,声明在一个组里
+    hash_key $request_uri;  # hash计算时的依据,以uri做依据来hash
+    server localhost:11211;
+    server localhost:11212;
+}
+
+location / {
+    # root   html;
+    set $memcached_key $uri;
+    memcached_pass memserver;  # memserver为上面的memcache节点的名称
+    error_page 404 /writemem.jsp;  #没有找到，跳转到后台jsp，将对应的key存储到memcache里边
+    index  index.php index.html index.htm;
+}
+```
+
+nginx默认的负载均衡的算法是，加权轮询（weighted round robin），可以安装第3方模式,来利用uri做hash等等  
+
+如：[http://wiki.nginx.org/NginxHttpUpstreamConsistentHash](http://wiki.nginx.org/NginxHttpUpstreamConsistentHash)
+
+安装该模块后:
+```text
+upstream memserver {
+        consistent_hash $request_uri;
+        server localhost:11211;
+        server localhost:11212;
+}
+```
+
+## 四、nginx安装第三方模块
 
 下边内容来自：WWW.TTLSA.COM 网站作品，作者:凉白开，漠北整理的<<nginx教程从入门到精通>>
 
@@ -599,3 +634,157 @@ nginx 第三方模块安装方法:
 注意:重新编译的时候，记得一定要把以前编译过的模块一同加到 configure 参数里面.  
 nginx 提供了非常多的 nginx 第三方模块提供安装,地址 http://wiki.nginx.org/3rdPartyModules  
 
+## 五、高性能服务器优化思路
+
+对于高性能网站 ,请求量大,如何支撑?
+
+1. 要减少请求
+    a. 对于开发人员----合并css, 背景图片, 减少mysql查询等.
+    b. 对于运维 nginx的expires ,利用浏览器缓存等,减少查询. 
+3. 利用cdn来响应请求
+4. 最终剩下的,不可避免的请求----服务器集群+负载均衡来支撑.
+
+所以,来到第4步后,就不要再考虑减少请求这个方向了,而是思考如何更好的响应高并发请求.
+
+大的认识-------既然响应是不可避免的,我们要做的是把工作内容”平均”分给每台服务器.
+最理想的状态 每台服务器的性能都被充分利用.
+
+### 5.1 添加nginx统计模块
+
+安装统计模块,便于观察nginx的状态
+
+编译安装
+```text
+# ./configure --help | grep status
+--with-http_stub_status_module enable nginx_http_stub_status_module
+
+# make clean
+# ./configure --prefix=/usr/local/nginx/ --with-http_stub_status_module 
+# make && make install
+```
+
+nginx配置
+```text
+location /status {
+    #开启统计模块
+    stub_status on;
+    #只允许本机看
+    allow localhost;
+    #其他的拒绝看状态
+    deny all;
+}
+```
+![](../images/nginx/nginx-status.png)
+
+### 5.2 nginx并发优化
+
+由于这节内容我没有实验，有些图片是截取视频教程上的，如有不足欢迎指正。
+
+一般来说，默认nginx不调优的情况下只能接受2000左右的并发，如何让nginx稳定的响应请求，我们可以从如下方面入手
+```text
+1:建立socket连接。（你的主机硬件是否可以建立这么多socket连接）
+2:打开文件,并沿socket返回。（你的主机是否允许一次性打开这么多文件）
+```
+
+1. 不做优化的nginx请求测试
+
+```text
+#ab -c 5000 -n 100000 http://192.168.1.202/index.html #5000个并发，100000个请求
+```
+-c 5000 并发数5000  
+-n 10000 请求总数10000  
+
+排查问题,也要注意观察这两点，主要从系统的dmesg ,和nginx的error.log来观察
+
+error.log  
+![](../images/nginx/nginx-optimize1.png)
+
+从nginx的错误日志可以看出，系统不允许nginx打开这么多文件，
+
+dmesg  
+![](../images/nginx/nginx-optimize2.png)
+
+从demsg的信息中可以看出"possible SYN flooding on port 80. Sending cookies."这句话，意思就是80端口有人请求特别快，可能是遭受到洪水攻击了。
+
+
+2. 优化方向如下图
+
+a. socket方向
+
+![](../images/nginx/nginx-optimize3.png)  
+
+>worker_connections
+```text
+events {
+    worker_connections  10240; #增大允许子进程打开的最大进程数
+}
+```
+
+>somaxconn
+```text
+#more /proc/sys/net/core/somaxconn
+128
+#echo 50000 > /proc/sys/net/core/somaxconn #增大系统允许的最大连接数
+```
+
+>tpc快速回收
+```text
+#more /proc/sys/net/ipv4/tcp_tw_recycle
+0
+#echo 1 > /proc/sys/net/ipv4/tcp_tw_recycle #允许tcp快速回收
+```
+
+>tcp回收利用
+```text
+#more /proc/sys/net/ipv4/tcp_tw_reuse
+0
+#echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse #空的tcp是允许回收利用
+```
+
+>不做洪水抵御
+```text
+#more /proc/sys/net/ipv4/tcp_syncookies
+1
+#echo 0 > /proc/sys/net/ipv4/tcp_syncookies #不做洪水抵御
+```
+
+b. 文件方面 
+
+>允许系统打开更多的文件
+```text
+#ulimit -n
+128
+#ulimit -n 50000 #允许系统打开更多的文件
+```
+>允许nginx打开更多的文件
+```text
+worker_rlimit_nofile 10000; #全局区域
+```
+
+3. 优化后效果演示
+
+```text
+#ab -c 5000 -n 100000 http://192.168.1.202/index.html #5000个并发，100000个请求
+```
+
+![](../images/nginx/nginx-optimize4.png)
+
+如上图所示，使用一台客户端并发请求nginx服务器，总请求量10000并发数5000，基本可以保证5000左右的并发量。当然也可以使用多台客户机一起并发
+请求nginx。
+
+
+如果真的应用于高并发的处理的时候，还可以将nginx的keepalive_timeout 设置为0s或设置为一个很小的值，建议在2s内。
+```text
+http{
+    keepalive_timeout 0;
+}
+```
+
+## 六、总结
+本文仅作为一个入门教程，有不足的地方欢迎指教，更多的nginx知识可以参考如下内容。  
+优化：  
+[http://blog.csdn.net/moxiaomomo/article/details/19442737](http://blog.csdn.net/moxiaomomo/article/details/19442737)  
+nginxcookbook:  
+[http://download.csdn.net/download/u014292162/10127019](http://download.csdn.net/download/u014292162/10127019)  
+Nginx完全配置指南:  
+[https://www.gitbook.com/book/lingerhk/complete-nginx-cookbook/details](https://www.gitbook.com/book/lingerhk/complete-nginx-cookbook/details)  
