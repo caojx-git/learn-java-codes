@@ -4,7 +4,8 @@
 
 Java中的定时任务调度工具主要有
 - Timer
-- Quartz
+- Quartz  
+
 两者的不同点：  
 1. Timer是JDK直接提供的，Quartz是OpenSymphony的开源项目。
 2. Timer可以实现一些简单的定时任务，Quartz适用于更加复杂的定时任务场景。
