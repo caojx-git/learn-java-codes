@@ -1,4 +1,4 @@
-# MACOSX中的IntelliJ IDEA快捷键
+# Mac OS X中的IntelliJ IDEA快捷键
 
 提示第一节到第十一节快捷键使用的KeyMap=Max OS X，第十二节的图的keyMap=Mac OS X 10.5+的快捷键
 
