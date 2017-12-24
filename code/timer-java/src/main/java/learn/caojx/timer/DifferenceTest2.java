@@ -42,12 +42,15 @@ public class DifferenceTest2 {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
+                Calendar calendar = Calendar.getInstance();
+                System.out.println("star Schedule exec time is :"+sf.format(calendar.getTime()));
                 try {
-                    Thread.sleep(3000L);
+                    Thread.sleep(8000L);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
                 //打印当前的计划执行时间
+                System.out.println("end Schedule exec time is :"+sf.format(calendar.getTime()));
                 System.out.println("Schedule exec time is :"+sf.format(scheduledExecutionTime()));
                 System.out.println("Task is beging executed!");
             }
