@@ -167,6 +167,6 @@ shift+cmd+A 查找设置help
 
 alter+enter 快速修复（导包，修复拼写错误，实现方法等）      
 
-## 十二、Mac OS X 10.5+ 快捷键
+## 十二、查看IDEA默认的快捷键
 上边使用的是Mac OS X的KeyMap,下图的KeyMap是Mac OS X10.5+的，该图可以在IDEA中的Find Action中搜索Keymap Reference中调出   
 ![](../images/idea/IDEA_KeyMap_MacOSX10.5.png)   
