@@ -28,6 +28,7 @@ public class CronTriggerTest1 {
                 .withSchedule(CronScheduleBuilder.cronSchedule("* * * * * ? *"))
                 .build();
 
+
         //其他
         //1. 2018年内每天10点15分触发一次
         //0 15 10 ? * * 2018
