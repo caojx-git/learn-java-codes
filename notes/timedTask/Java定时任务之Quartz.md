@@ -3,6 +3,8 @@
 [toc]
 
 本文笔记源自慕课网视频教程：https://www.imooc.com/learn/846整出。  
+源码:https://github.com/caojx-git/learn/tree/master/code/spring-quartz  
+
 ## 一、简介
 Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来
 创建简单或为运行十个，百个，甚至是好几万个Jobs这样复杂的程序。Jobs可以做成标准的Java组件或 EJBs。Quartz的最新版本为Quartz 2.3.0。
