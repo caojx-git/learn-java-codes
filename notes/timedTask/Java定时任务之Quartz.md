@@ -2,6 +2,7 @@
 
 [toc]
 
+本文笔记源自慕课网视频教程：https://www.imooc.com/learn/846整出。  
 ## 一、简介
 Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来
 创建简单或为运行十个，百个，甚至是好几万个Jobs这样复杂的程序。Jobs可以做成标准的Java组件或 EJBs。Quartz的最新版本为Quartz 2.3.0。
@@ -68,9 +69,9 @@ scheduler:调度器，将JobDetail绑定在一起，能够定时定频率的执�
  
  案例：使用Quartz实现每2s中打印一次hello job   
  
- 2.1 HelloJob.java
+ ### 2.1 HelloJob.java
  ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
@@ -99,10 +100,10 @@ public class HelloJob implements Job{
 }
 ```
 
-2.2 HelloScheduler.java  
+### 2.2 HelloScheduler.java  
 scheduler将job与trigger绑定实现每2s中打印一次hello job  
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -150,7 +151,7 @@ jobDetail中的几个重要的属性：
 3. 打印Job的相关属性
 
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -183,14 +184,11 @@ public class HelloScheduler {
 jobDetail's name:myJob
 jobDetail's group:group1
 jobDetail's jobClass:learn.caojx.HelloJob
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 Current Exec Time is:2018-01-07 20:51:03
 hello job！
 ```
 
-### 3.2 浅谈JobExecutionContext
+### 3.2 浅谈JobExecutionContext获取上下文参数
 
 1. JobExecutionContext是什么    
 - 当Scheduler调用一个Job，就会将JobExecutionContext传递给Job的execute()方法。  
@@ -213,7 +211,7 @@ hello job！
 
 在JobDetail和Trigger中传入参数
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -249,9 +247,8 @@ public class HelloScheduler2 {
 从jobExecutionContext中获取JobDetail和Trigger中传入的参数  
 
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.quartz.*;
 
 import java.text.SimpleDateFormat;
@@ -322,7 +319,7 @@ triggerDoubleValue is :2.0
 5. Job实现类中添加setter方法对应JobDataMap的键值获取
 
 ```text
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 
@@ -419,7 +416,7 @@ Trigger主要是使用TriggerBuilder来创建的，这里我们主要了解的�
 
 TriggerTest1.java  
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory; 
@@ -468,7 +465,7 @@ public class TriggerTest1 {
 
 TriggerTestJob1.java
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 
@@ -546,7 +543,7 @@ Jobkey Info---jobNamemyJob--jobGroup:DEFAULT
 
 2. 案例  
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -642,7 +639,7 @@ cron表达式举例
 使用CronTrigger每秒钟执行一下定时任务
 
 ```java
-package learn.caojx;
+package caojx.learn.springquartz.base;
 
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
@@ -755,17 +752,17 @@ quartz.properties文件
 
 >调度器属性： 
   
-主要有    
-org.quartz.scheduler.instanceName:用来区分特定的调度器实例，可以按照功能用途来给调度器起名。
-org.quartz.scheduler.instanceId:和上边一样，也允许任何字符串，但这个值必须是所有调度器实例唯一的，尤其是在一个集群中，作为集群的唯一key，
+主要有      
+org.quartz.scheduler.instanceName:用来区分特定的调度器实例，可以按照功能用途来给调度器起名。  
+org.quartz.scheduler.instanceId:和上边一样，也允许任何字符串，但这个值必须是所有调度器实例唯一的，尤其是在一个集群中，作为集群的唯一key，  
 假如你想Quartz帮你生成这个值得话，可以设置为AUTO。  
 
 >线程池属性： 
   
-线程池属性直接关系到quartz后台处理线程的性能，因此这些属性是非常重要的，主要有如下  
-threadCount: 决定quartz有多少个工作线程来处理job，数值至少为1。
-threadPriority: 设置工作线程的优先级，优先级别高的线程比优先级别低的线程更优先得到执行，取值范围1~10，取整数  
-org.quartz.threadPool.class: org.quartz.simpl.SimpleThreadPool线程池的实现类，quartz默认
+线程池属性直接关系到quartz后台处理线程的性能，因此这些属性是非常重要的，主要有如下    
+threadCount: 决定quartz有多少个工作线程来处理job，数值至少为1。  
+threadPriority: 设置工作线程的优先级，优先级别高的线程比优先级别低的线程更优先得到执行，取值范围1~10，取整数      
+org.quartz.threadPool.class: org.quartz.simpl.SimpleThreadPool线程池的实现类，quartz默认  
 
 >作业存储设置：
   
@@ -875,3 +872,617 @@ org.quartz.plugin.jobInitializer.wrapInUserTransaction = false
 ```  
 
 ## 四、quartz整合Spring
+
+### 4.1 使用Quartz配置作业
+
+在spring中可以使用两种方式来配置作业
+
+- MethodInvokingJobDetailFactoryBean 这种方式在你想调用一个特定bean的方法的时候很方便  
+- JobDetailFactoryBean 这种方式也比较常用，它能够支持你传入一些参数 
+
+1. MethodInvokingJobDetailFactoryBean  
+使用MethodInvokingJobDetailFactoryBean来创建JobDetail
+```xml
+<bean id="simpleJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myBean" /><!--指定目标bean-->
+		<property name="targetMethod" value="printMessage" /> <!--指定bean中目标方法-->
+</bean>
+```
+
+```java
+@Componet("myBean")
+public class Mybean {
+    public void printMessage(){
+        System.out.println("Mybean Excetions");
+    }
+}
+```
+
+2. JobDetailFactoryBean
+使用JobDetailFactoryBean来创建JobDetail
+```xml
+<bean id="firstComplexJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <!--指定一个继承自QuartzJobBean的类，它实现了作业调度接口，当调用到这个作业的时候executeInternal方法将会被执行--> 
+		<property name="jobClass" value="com.imooc.springquartz.quartz.FirstScheduledJob"/>
+		<!--可选，可以传入自定义参数，如果传入了参数需要Job中声明该属性-->
+		<property name="jobDataMap">
+			<map>
+				<entry key="anotherBean" value-ref="anotherBean" />
+			</map>
+		</property>
+		<property name="Durability" value="true"/>				
+</bean>
+```
+
+```java
+
+public class FirstScheduledJob extends QuartzJobBean{
+    
+     //对应jobDataMap配置的参数
+     private AnotherBean anotherBean;
+     
+     public void setAnotherBean(AnotherBean anotherBean){
+    	 this.anotherBean = anotherBean;
+     }
+
+	@Override
+	protected void executeInternal(JobExecutionContext arg0)
+			throws JobExecutionException {
+		Date date = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println("FirstScheduledJob Executes!" + sf.format(date));
+		this.anotherBean.printAnotherMessage();		
+	}
+}
+```
+
+### 4.2 spring与quartz整合工程案例
+
+1. maven工程目录结构  
+![](../images/timedTask/quartz/quartz-spring-project.png)
+
+2. pom.xml
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>learn.caojx</groupId>
+    <artifactId>springQuartz</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>springQuartz Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.3.6.RELEASE</spring.version>
+    </properties>
+    <dependencies>
+        <!--spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!--quartz-->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.2.3</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>springQuartz</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port>
+                    <path>/</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+3. web.xml
+```xml
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- spring MVC的核心就是DispatcherServlet，使用springMVC的第一步就是将下面的servlet放入web.xml
+      servlet-name属性非常重要，默认情况下，DispatchServlet会加载这个名字-servlet.xml的文件，如下，就会加载 dispather-servlet.xml，也是在WEN-INF目录下。 -->
+  <servlet>
+    <servlet-name>mvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring-mvc-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <!-- 设置dispatchservlet的匹配模式，通过把dispatchservlet映射到/，默认servlet会处理所有的请求，包括静态资源 -->
+  <servlet-mapping>
+    <servlet-name>mvc</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+```
+
+4. spring-mvc-servlet.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+            http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/mvc  
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+            http://www.springframework.org/schema/context  
+            http://www.springframework.org/schema/context/spring-context.xsd"
+	default-lazy-init="true">
+
+	<!-- 通过mvc:resources设置静态资源，这样servlet就会处理这些静态资源，而不通过控制器 -->
+	<!-- 设置不过滤内容，比如:css,jquery,img 等资源文件 -->
+	<mvc:resources location="/*.html" mapping="/**.html" />
+	<mvc:resources location="/css/*" mapping="/css/**" />
+	<mvc:resources location="/js/*" mapping="/js/**" />
+	<mvc:resources location="/images/*" mapping="/images/**" />
+	<!-- 设定消息转换的编码为utf-8防止controller返回中文乱码 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter">
+					<property name="supportedMediaTypes">
+						<list>
+							<value>text/html;charset=UTF-8</value>
+						</list>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- 添加注解驱动 -->
+	<mvc:annotation-driven />
+	<!-- 默认扫描的包路径 -->
+	<context:component-scan base-package="caojx.learn.springquartz" />
+
+	<!-- mvc:view-controller可以在不需要Controller处理request的情况，转向到设置的View -->
+	<!-- 像下面这样设置，如果请求为/，则不通过controller，而直接解析为/index.jsp -->
+	<mvc:view-controller path="/" view-name="index" />
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+		<!-- 配置jsp路径前缀 -->
+		<property name="prefix" value="/"></property>
+		<!-- 配置URl后缀 -->
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+
+    <!--配置job作业-->
+
+	<!--方式1 使用MethodInvokingJobDetailFactoryBean配置作业调度-->
+	<bean id="simpleJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="myBean" />
+		<property name="targetMethod" value="printMessage" />
+	</bean>
+
+	<!--方式2 使用JobDetailFactoryBean方式配置作业调度-->
+	<bean id="firstComplexJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="caojx.learn.springquartz.quartz.FirstScheduledJob" />
+		<property name="jobDataMap">
+			<map>
+				<entry key="anotherBean" value-ref="anotherBean"/>
+			</map>
+		</property>
+        <!--Durability=true表明任务就算没有绑定trigger,任然保留在quartz的JobStore中-->
+        <property name="durability" value="true"></property>
+	</bean>
+
+
+    <!--配置trigger触发器-->
+
+    <!-- SimpleTrigger 距离当前时间1秒之后执行，之后每隔两秒钟执行一次 -->
+	<bean id="mySimpleTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean">
+	    <property name="jobDetail"  ref="simpleJobDetail"/><!--指定jobDetail-->
+	    <property name="startDelay"  value="1000"/>
+	    <property name="repeatInterval"  value="2000"/>
+	</bean>
+	
+	 <!--CronTrigger 每隔5秒钟执行一次-->
+	<bean id="myCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+	    <property name="jobDetail"  ref="firstComplexJobDetail"/>
+	    <property name="cronExpression"  value="0/5 * * ? * *"/>
+	</bean>
+
+
+    <!--配置Scheduler-->
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+	    <property name="jobDetails"> <!--jobDeatil-->
+	        <list>
+	            <ref bean="simpleJobDetail"/>
+	            <ref bean="firstComplexJobDetail"/>
+	        </list>
+	    </property>
+	    <property name="triggers"> <!--trigger配置-->
+	        <list>
+	            <ref bean="mySimpleTrigger"/>
+	            <ref bean="myCronTrigger"/>
+	        </list>
+	    </property>
+	</bean>
+</beans>
+```
+
+5. MyBean.java
+
+```java
+package caojx.learn.springquartz.quartz;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.stereotype.Component;
+
+@Component("myBean")
+public class MyBean {
+	public void printMessage() {
+		// 打印当前的执行时间，格式为2017-01-01 00:00:00
+		Date date = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println("MyBean Executes!" + sf.format(date));
+	}
+}
+```
+
+6. FirstScheduledJob.java和AnotherBean.java
+
+```java
+package caojx.learn.springquartz.quartz;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+import org.springframework.scheduling.quartz.QuartzJobBean;
+
+public class FirstScheduledJob extends QuartzJobBean{
+     private AnotherBean anotherBean;
+     
+     public void setAnotherBean(AnotherBean anotherBean){
+    	 this.anotherBean = anotherBean;
+     }
+
+	@Override
+	protected void executeInternal(JobExecutionContext arg0)
+			throws JobExecutionException {
+		Date date = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println("FirstScheduledJob Executes!" + sf.format(date));
+		this.anotherBean.printAnotherMessage();		
+	}
+}
+```
+
+```java
+package caojx.learn.springquartz.quartz;
+
+import org.springframework.stereotype.Component;
+
+@Component("anotherBean")
+public class AnotherBean {
+	public void printAnotherMessage() {
+		System.out.println("AnotherMessage");
+	}
+}
+```
+
+工程运行结果:
+```text
+MyBean Executes!2018-01-11 13:08:17
+MyBean Executes!2018-01-11 13:08:19
+FirstScheduledJob Executes!2018-01-11 13:08:20
+AnotherMessage
+MyBean Executes!2018-01-11 13:08:21
+MyBean Executes!2018-01-11 13:08:23
+FirstScheduledJob Executes!2018-01-11 13:08:25
+AnotherMessage
+MyBean Executes!2018-01-11 13:08:25
+MyBean Executes!2018-01-11 13:08:27
+MyBean Executes!2018-01-11 13:08:29
+FirstScheduledJob Executes!2018-01-11 13:08:30
+AnotherMessage
+MyBean Executes!2018-01-11 13:08:31
+MyBean Executes!2018-01-11 13:08:33
+FirstScheduledJob Executes!2018-01-11 13:08:35
+......
+```
+
+## 五、quartz企业开发中常见使用技巧
+
+下边简单举例我们在企业开发中定时任务quartz的常见使用方式，体会一下大致的使用思路。  
+
+1. 定时任务配置表  
+
+一般企业开发的项目中，会将定时任务配置到数据库表中，如下是表结构和其中的一条数据举例。 
+>表结构   
+![](../images/timedTask/quartz/quartz-scheduler-table.png)  
+>定时任务配置举例    
+![](../images/timedTask/quartz/quartz-scheduler-table2.png)    
+
+2. 定时任务日志记录表  
+用于记录定时任务执行记录，用来记录什么时候执行了什么定时任务，是成功还是失败。  
+>表结构  
+![](../images/timedTask/quartz/quartz-scheduler-log1.png)        
+>任务执行记录举例  
+![](../images/timedTask/quartz/quartz-scheulder-log2.png)    
+
+
+3. 定时任务Bean
+```java
+@Service("schedulerService")
+public class SchedulerServiceImpl implements SchedulerService, ApplicationContextAware {
+
+    private static final Logger logger = LoggerFactory.getLogger(SchedulerServiceImpl.class);
+
+    @Autowired
+    @Qualifier("schedulerFactory")
+    private Scheduler scheduler;
+
+    private ApplicationContext applicationContext;
+
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
+    @Resource
+    private ChannelScheduleDao channelScheduleDao;
+
+
+    //初始化定时任务，该注解会在改bean类的依赖加载完成后执行
+    @PostConstruct
+    public void initTask() throws Exception {
+        String configPath = System.getProperty("config.path");
+        String contextPath = System.getProperty("context.path");
+        org.springframework.core.io.Resource resource = new FileSystemResource(configPath + "/" + contextPath + "/sysconfig.properties");
+        Properties props = PropertiesLoaderUtils.loadProperties(resource);
+        String isLoadSchedule = props.getProperty("IS_LOAD_SCHEDULE");
+        if (isLoadSchedule != null && isLoadSchedule.equals("true")) {
+            logger.info("正在加载计划任务...");
+            ChannelSchedule channelSchedule_ = new ChannelSchedule();
+            //查询数据库，加载表中的所有的定时任务
+            List<ChannelSchedule> channelScheduleList = channelScheduleDao.query(channelSchedule_);
+            for (ChannelSchedule channelSchedule : channelScheduleList) {
+                if (channelSchedule.getStatus() != null && channelSchedule.getStatus() == 1) {
+                    addTaskToScheduler(channelSchedule);
+                }
+            }
+            logger.info("计划任务加载完成...");
+        } else {
+            logger.warn("sysconfig.properties中未配置IS_LOAD_SCHEDULE，IS_LOAD_SCHEDULE=false。根据配置不需要加载定时任务！！");
+        }
+    }
+
+    /**
+     * 加载任务到调度中，相当于配置trigger
+     *
+     * @param channelSchedule
+     * @throws Exception
+     */
+    private void addTaskToScheduler(ChannelSchedule channelSchedule) throws Exception {
+        CronTriggerImpl trigger = (CronTriggerImpl) applicationContext.getBean("cronTrigger");
+        JobDetailImpl jobDetail = (JobDetailImpl) applicationContext.getBean("controllerJobDetail");
+        trigger.setCronExpression(channelSchedule.getExecutePlan());
+        trigger.getJobDataMap().put("SCHEDULE_ID", channelSchedule.getId());
+        trigger.getJobDataMap().put("TARGET_OBJECT", channelSchedule.getTargetObject());
+        trigger.getJobDataMap().put("TARGET_METHOD", channelSchedule.getTargetMethod());
+        trigger.getJobDataMap().put("SCHEDULE_NAME", channelSchedule.getName());
+        trigger.setName(getTriggerName(channelSchedule));
+        trigger.setGroup(channelSchedule.getGroupName());
+        trigger.setJobKey(jobDetail.getKey());
+        scheduler.scheduleJob(trigger);
+    }
+
+    /**
+     * 执行定时任务
+     *
+     * @param channelSchedule
+     * @throws Exception
+     */
+    @Override
+    public void doScheduleAuto(ChannelSchedule channelSchedule) throws Exception {
+        Long scheduleId = channelSchedule.getId();
+        String scheduleName = channelSchedule.getName();
+        Date nowTime = new Date();
+        String targetObject = channelSchedule.getTargetObject();
+        String targetMethod = channelSchedule.getTargetMethod();
+        logger.info("run:" + targetObject + "." + targetMethod);
+
+        String message = "";
+        int result = 0;
+        try {
+            Object obj = applicationContext.getBean(targetObject);
+            Class<?> classType = obj.getClass();
+            Method method = classType.getMethod(targetMethod);
+            method.invoke(obj);
+            message = "执行成功！";
+        } catch (Exception e) {
+            logger.error("执行失败！", e);
+            result = 1;
+            message = "执行失败！" + e.getMessage();
+        }
+        //记录定时任务log
+        ChannelScheduleLog channelScheduleLog = new ChannelScheduleLog();
+        channelScheduleLog.setDateTime(nowTime);
+        channelScheduleLog.setScheduleId(scheduleId);
+        channelScheduleLog.setScheduleName(scheduleName);
+        channelScheduleLog.setMessage("自动执行,"+message);
+        channelScheduleLog.setResult(result);
+        channelScheduleLog.setOpType(0);
+
+        ChannelSchedule channelSchedule_ = new ChannelSchedule();
+        channelSchedule_.setId(channelSchedule.getId());
+        channelSchedule_.setLastExecuteTime(new Date());
+        try {
+            channelScheduleLogDao.insert(channelScheduleLog);
+            channelScheduleDao.update(channelSchedule_);
+        } catch (Exception e) {
+            logger.error("定时任务执行日志记录失败！", e);
+        }
+    }
+}
+```
+
+4. spring-scheduler.xml配置  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+    <!--job工作配置-->
+    <bean id="controllerJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="description" value="任务控制器"/>
+        <property name="durability" value="true"/>
+        <property name="jobClass" value="com.ailk.newchnl.scheduling.ControllerJob"/>
+    </bean>
+
+
+     <!--注意：trigger在初始化schedulerService bean的时候读取定时任务表中的数据配置到了scheduler中-->
+     
+    <!--配置scheduler--> 
+    <bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails">
+            <list>
+                <ref bean="controllerJobDetail"/>
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <!--
+                    <ref bean="snmpScanServiceTrigger"/>
+                 -->
+            </list>
+        </property>
+        <!--其他的配置-->
+    </bean>
+</beans>
+```
+
+4. ControllerJob.java  
+```java
+/**
+* 从上quartz上线文中读取参数，调用SchedulerService中doScheduleAuto方法执行定时任务
+*/
+public class ControllerJob extends BaseJob {
+
+    protected static final Logger logger = LoggerFactory.getLogger(ControllerJob.class);
+
+    public void executeInternal(JobExecutionContext context) throws JobExecutionException {
+        Long scheduleId = (Long) context.getMergedJobDataMap().get("SCHEDULE_ID");
+        String scheduleName = (String) context.getMergedJobDataMap().get("SCHEDULE_NAME");
+        String targetObject = (String) context.getMergedJobDataMap().get("TARGET_OBJECT");
+        String targetMethod = (String) context.getMergedJobDataMap().get("TARGET_METHOD");
+
+        ChannelSchedule channelSchedule = new ChannelSchedule();
+        channelSchedule.setId(scheduleId);
+        channelSchedule.setName(scheduleName);
+        channelSchedule.setTargetObject(targetObject);
+        channelSchedule.setTargetMethod(targetMethod);
+        try {
+            SchedulerService schedulerService = (SchedulerService) applicationContext.getBean("schedulerService");
+            //执行定时任务
+            schedulerService.doScheduleAuto(channelSchedule);
+        } catch (Exception e) {
+            logger.error("执行失败！", e);
+        }
+    }
+}
+```
+
+5. BaseJob.java  
+```java
+public class BaseJob extends QuartzJobBean {
+
+
+    //父类QuartzJobBean通过BeanWrapper类的setPropertyValues注入以下属性
+
+    //scheduler.getContext()(context.getScheduler().getContext())通过SchedulerFactoryBean的applicationContextSchedulerContextKey属性注入了ApplicationContext
+    protected ApplicationContext applicationContext;
+
+    //由于通过CronTriggerFactoryBean这个FactoryBean生成的CronTriggerImpl实例的jobDataMap中已经加入了jobDetail的属性
+    //所以从getMergedJobDataMap中获取到了trigger的jobDataMap中的这个属性
+    protected JobDetail jobDetail;
+
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
+
+    public void setJobDetail(JobDetail jobDetail) {
+        this.jobDetail = jobDetail;
+    }
+
+
+    @Override
+    protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+		try {
+			SchedulerContext schedulerContext = context.getScheduler().getContext();
+			ApplicationContext applicationContext = (ApplicationContext)schedulerContext.get("applicationContext");
+		} catch (Exception e) {
+		    
+		}
+		System.out.println(context.getMergedJobDataMap().get("applicationContext"));
+    }
+
+}
+```
