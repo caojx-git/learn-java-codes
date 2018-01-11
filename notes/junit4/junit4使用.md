@@ -138,21 +138,21 @@ public class CalculateTest {
 
 #### 2.2.3 运行结果
 
-![](../images/junit4/junit4-run1.png)
+![](../images/junit4/junit4-run1.png)  
 
-#### 2.2.4 在idea中自动生成测试类
+#### 2.2.4 在idea中自动生成测试类  
 
-1.确保IDEA中启动了JUnit插件  
-![](../images/junit4/junit4-idea-plugins.png)
-
-2.如果使用的eclipse快捷键，需要自定义一下Navigate的快捷键
-![](../images/junit4/junit4-eclipse-keyamp.png)
-
-3.如果是IDEA默认的快捷键，责使用ctrl+shift+t生成
-![](../images/junit4/junit4-idea-keymap.png)
-
-是哟该你快捷键可以自动为我们生成测试类
-![](../images/junit4/junit4-autocreateTest.png)
+1.确保IDEA中启动了JUnit插件    
+![](../images/junit4/junit4-idea-plugins.png)  
+  
+2.如果使用的eclipse快捷键，需要自定义一下Navigate的快捷键  
+![](../images/junit4/junit4-eclipse-keyamp.png)  
+  
+3.如果是IDEA默认的快捷键，责使用ctrl+shift+t生成  
+![](../images/junit4/junit4-idea-keymap.png)  
+  
+是哟该你快捷键可以自动为我们生成测试类  
+![](../images/junit4/junit4-autocreateTest.png)  
 
 
 ### 2.3 测试失败的两种情况
