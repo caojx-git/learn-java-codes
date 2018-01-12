@@ -36,7 +36,9 @@ option+shift+F 将文件或其它（class，method..）添加到Favorites
 cmd+N 查找类class,连续按两下可以查找jar包中的类    
 cmd+shift+N 查找文件    
 option+shift+cmd+N 查找方法    
-ctrl+shift+F 查找字符串    
+ctrl+shift+F 查找字符串   
+F3/ctrl+L/cmd+G 查找下一个
+shift+F3/shift+ctrl+L/cmd+shift+G 查找前一个 
 
 ## 三、列操作
 
