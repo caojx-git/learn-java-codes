@@ -98,7 +98,7 @@ load data  --控制文件标识
 infile 'c:/wh/data/WH_SEND20170703153100_2420877.csv' --数据源文件
 append into table wh_send --向 wh_send表中追加记录
 fields terminated by ',' --指定分割符，终止字段值 
-trailing nullcols --代表表的字段没有值时，允许为空
+trailing nullcols --代表字段没有值时，允许为空
 ( --定义列对应顺序
     C1 FILLER, --跳过由PL/SQL Developer生成的第一列序号，即跳过姓名字段
     C2 FILLER, --跳过由PL/SQL Developer生成的第二列序号，即跳过品牌字段
