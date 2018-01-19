@@ -2,6 +2,8 @@
 # CentOS7中安装StarUML工具
 ***
 
+[TOC]
+
 找了很久的UML工具，最终放弃了网友推荐的Dia，和umbrello，这两个工具都使用过，安装起来非常简单
 可是使用起来非常难以接受，经过一段时间的折腾我想起了之前看过的XMind在CentOS7中的安装教程，
 XMind没有rpm包,也是deb包，StarUML是一款很不错的UML工具，不过提供的安装包就是没有rpm包，
@@ -34,7 +36,7 @@ x - data.tar.xz
 
 2.2 继续解压data.tar.xz
 >xz -dk data.tar.xz  
-tar -xvf data.tar
+>tar -xvf data.tar
 
 参考：http://blog.csdn.net/rheostat/article/details/7614451
 
@@ -47,18 +49,18 @@ tar -xvf data.tar
 系统原先会存在opt目录，和usr目录，我们将下边的内容复制到对应的目录中
 
 >[caojx@localhost data]$ pwd    
-/home/caojx/下载/StarUML-v2.8.0-64-bit/data    
-[caojx@localhost data]$ ls    
-opt  usr    
-[caojx@localhost data]$ sudo cp -r opt/* /opt/  ==》将opt下的内容复制到/opt/下    
-[caojx@localhost data]$ sudo cp -r usr/* /usr/   ==》将usr下的内容复制到/usr/下    
+>/home/caojx/下载/StarUML-v2.8.0-64-bit/data    
+>[caojx@localhost data]$ ls    
+>opt  usr    
+>[caojx@localhost data]$ sudo cp -r opt/* /opt/  ==》将opt下的内容复制到/opt/下    
+>[caojx@localhost data]$ sudo cp -r usr/* /usr/   ==》将usr下的内容复制到/usr/下    
 
 
 2.4 解压 control.tar.gz  
 >[caojx@localhost StarUML-v2.8.0-64-bit]$ tar -zxvf control.tar.gz  
-[caojx@localhost StarUML-v2.8.0-64-bit]$ cd control/  
-[caojx@localhost control]$ ls  
-control  postinst  postrm  prerm  
+>[caojx@localhost StarUML-v2.8.0-64-bit]$ cd control/  
+>[caojx@localhost control]$ ls  
+>control  postinst  postrm  prerm  
 
 2.5 安装  
 >[caojx@localhost control]$ sudo ./postinst  
@@ -70,7 +72,7 @@ control  postinst  postrm  prerm
 
 查找需要的文件所在的位置
 >[caojx@localhost control]$  whereis libnspr4.so  
-libnspr4: /usr/lib64/libnspr4.so  
+>libnspr4: /usr/lib64/libnspr4.so  
 
 修改 postinst脚本文件
 

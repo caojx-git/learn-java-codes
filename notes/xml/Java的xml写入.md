@@ -1,5 +1,7 @@
 # Java的XML写入
 
+[TOC]
+
 ## 一、DOM生成XML
 
 1.DomTest2.java

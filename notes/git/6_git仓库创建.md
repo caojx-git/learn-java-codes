@@ -1,5 +1,7 @@
 ## Git 创建仓库
 
+[TOC]
+
 [原文链接](http://www.runoob.com/git/git-create-repository.html)
 
 本章节我们将为大家介绍如何创建一个 Git 仓库。
@@ -20,9 +22,9 @@ Git 使用 git init 命令来初始化一个 Git 仓库，Git 的很多命令都
 初始化后，会在 指定 目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。
 如果当前目录下有几个文件想要纳入版本控制，需要先用 git add 命令告诉 Git 开始对这些文件进行跟踪，然后提交：
 >$ git add *.c  
-$ git add README  
-$ git commit -m '初始化项目版本'  
-以上命令将目录下以 .c 结尾及 README 文件提交到仓库中。  
+>$ git add README  
+>$ git commit -m '初始化项目版本'  
+>以上命令将目录下以 .c 结尾及 README 文件提交到仓库中。  
 
 ### git clone
 我们使用 git clone 从现有 Git 仓库中拷贝项目（类似 svn checkout）。

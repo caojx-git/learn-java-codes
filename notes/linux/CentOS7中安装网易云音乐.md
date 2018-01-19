@@ -1,6 +1,8 @@
 # CentOS7中安装网易云音乐
 ***
 
+[TOC]
+
 CentOS7中一直没有一个像样的音乐播放器，网易云音乐与深度科技团队在半年前就启动了“网易云音乐Linux版“，
 但是只提供了Ubuntu（14.04&16.04）和deepin15版本，并不涉及CentOS7，不过花点时间还是可以在CentOS7中
 安装上的。
@@ -63,7 +65,7 @@ x - data.tar.xz
 
 安装需要的插件
 >sudo yum -y install gstreamer-plugins-good.x86_64  
-sudo yum -y install gstreamer-plugins-bad.x86_64  
+>sudo yum -y install gstreamer-plugins-bad.x86_64  
 
 如果还是出现播放失败的提示，请参考netease-cloud-music_1.0.0-2_amd64_ubuntu14.04.deb中解压后的文件control.tar.gz中的
 control文件是否缺少对应的包。

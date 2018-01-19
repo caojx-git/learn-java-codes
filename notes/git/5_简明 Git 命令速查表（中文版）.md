@@ -1,6 +1,8 @@
 ## 简明 Git 命令速查表（中文版）
 
->笔记来自实验楼整理
+[TOC]
+
+> 笔记来自实验楼整理
 
 [原文链接](https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=215698435&idx=1&sn=c3db8ef05960bd99f22869c64b050503&scene=20#rd)
 
@@ -44,8 +46,8 @@
 
 把当前分支中未提交的修改移动到其他分支
 >git stash  
-git checkout branch2  
-git stash pop  
+>git checkout branch2  
+>git stash pop  
 
 ### 搜索
 
@@ -88,7 +90,9 @@ git stash pop
 >$ git branch <new-branch>
 
 基于远程分支创建新的可追溯的分支：
->$ git branch --track <new-branch> <remote-branch>
+>$ git branch --track <new-branch> <remote-branch>  
+>或  
+>git checkout -b <new-branch> <remote-branch>  
 
 删除本地分支:
 >$ git branch -d <branch>
@@ -121,7 +125,7 @@ git stash pop
 
 删除远程端分支：
 >$ git push <remote> :<branch> (since Git v1.5.0)  
-或  
+>或  
 >git push <remote> --delete <branch> (since Git v1.7.0)  
 
 发布标签:

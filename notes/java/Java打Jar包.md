@@ -1,6 +1,9 @@
 # Java打jar包
 
+[TOC]
+
 转载[http://blog.csdn.net/allocator/article/details/51704846](http://blog.csdn.net/allocator/article/details/51704846)
+
 1. jar包打包实现
 2. 第一种简单的打包方式
 3. 第二种打包方式

@@ -1,4 +1,6 @@
-# 一、使用Tomcat HostManager管理平台
+# 使用Tomcat HostManager管理平台
+
+[TOC]
 
 1.1进入tomcat首页
 ![](../images/tomcat/tomcat-hostmanager.png)
