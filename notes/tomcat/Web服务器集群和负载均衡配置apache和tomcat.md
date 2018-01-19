@@ -1,5 +1,8 @@
 # Web服务器集群和负载均衡配置（apache+tomcat）
+[TOC]
+
 本笔记主要了解一下内容
+
 - 集群、分布式
 - 负载均衡
 - Aache+Tomcat负载均衡集群配置演示
@@ -24,7 +27,7 @@
 出现了服务器拒绝服务甚至崩溃的问题。解决这种问题，
 常见的技术有如下：
 1. 升级网络服务器，采用更快的CPU，增加更多的内存，使其具有更强的性能；但日益增长的服务请求又会使服务器再次过载，
-需要再次升级，这样就会陷入升级的怪圈，还有，升级的时候还得考虑到服务如何接续，能否终止。
+  需要再次升级，这样就会陷入升级的怪圈，还有，升级的时候还得考虑到服务如何接续，能否终止。
 2. 增加更多的服务器，让多台服务器来完成相同的服务。
 
 ![](../images/tomcat/cluster1.png)
@@ -72,7 +75,7 @@
 
 举例：比如新浪网，访问的人多了，他可以做一个集群，前边放一个响应服务器，后边几台服务器完成同一业务，如果有业务访问的时候，响应服务器看那台服
 务器的负载压力小，就将给哪一台去完成。  
-  
+
 而分布式，从窄意义上理解，也跟集群差不多，但是它的组织比较松散；不像集群，有一个组织性，一台服务器垮了，其他的服务器就可以顶上来。分布式的每
 一个节点，都完成不同的业务，一个节点垮了，哪这个业务就不可访问了。
 
@@ -85,13 +88,13 @@
 服务器集群系统就是指通过集群技术将很多服务器集中起来一起进行同一种服务，在客户端看来就像只有一个服务器。  
 
 现在在中大型企业都采用了服务器集群系统，比如：百度、新浪、网易、腾讯、淘宝、京东等。  
-  
+
 然而，对于服务器集群系统来说，用户访问的域名网址都是一样的，那么用户的具体访问请求会交给集群中的那个服务器来处理？如果海量的访问请求，那么
 集群系统到底怎么分配这些请求任务给集群系统中的每台服务器?并保证等待时间在用户承受的范围完成响应?同时也要保证服务器能够承受这么大的处理量？
 
 ### 1.6 为什么需要负载均衡  
 ![](../images/tomcat/cluster2.png)
- 
+
 什么是负载均衡：  
 当一台服务器的单位时间的访问量越大的时候，服务器的压力会越大。当一台服务器压力大的超过自生承受能力的时候，服务器会崩溃。为了避免服务器的崩溃，
 让用户获得更好的体验，我们通常通过负载均衡的方式来分担服务器的压力。那么什么是负载均衡呢？当用户访问我们的网站的时候，先访问一个中间服务器，
@@ -100,30 +103,30 @@
 
 解决方案：
 1. 服务器负载均衡  
-![](../images/tomcat/cluster3.png)  
+  ![](../images/tomcat/cluster3.png)  
 2. 链路负载均衡  
-![](../images/tomcat/cluster4.png)  
+  ![](../images/tomcat/cluster4.png)  
 
 基本原理：      
 ![](../images/tomcat/cluster5.png)  
 
 ### 1.7 负载均衡的分类（地理结构）
 1. 本地负载均衡技术  
-本地负载均衡技术是本地服务器集群进行负载均处理。该技术通过服务器进行优化，使用浏览能够平均分配在服务器群众的各个服务器上，其能有效的解决数据
-流量过大、网络负荷过重的问题，并且不需要花费昂贵开支购置性能卓越的服务器，充分利用现有设备，避免服务器单点故障造成数据流量的损失。
+  本地负载均衡技术是本地服务器集群进行负载均处理。该技术通过服务器进行优化，使用浏览能够平均分配在服务器群众的各个服务器上，其能有效的解决数据
+  流量过大、网络负荷过重的问题，并且不需要花费昂贵开支购置性能卓越的服务器，充分利用现有设备，避免服务器单点故障造成数据流量的损失。
 
 2. 全局负载均衡技术（广域负载均衡）  
-全局负载均衡技术适用于拥有多个地域的服务器集群的大型网站系统。全局负载均衡技术是对分布在全国各个地区的多个服务器进行负载均衡处理，该技术可以
-通过对访问用户的IP地理位置判定，自动转向地域最近点的服务器集群。也可用于子公司分散站点分布广的大公司通过Intranet（企业内部互联网）来达到资
-源统一合理分配的目的。
-）
+  全局负载均衡技术适用于拥有多个地域的服务器集群的大型网站系统。全局负载均衡技术是对分布在全国各个地区的多个服务器进行负载均衡处理，该技术可以
+  通过对访问用户的IP地理位置判定，自动转向地域最近点的服务器集群。也可用于子公司分散站点分布广的大公司通过Intranet（企业内部互联网）来达到资
+  源统一合理分配的目的。
+  ）
 
 ### 1.8 负载均衡的实现方式
 1. 软件负载均衡技术    
-![](../images/tomcat/cluster6.png)  
+  ![](../images/tomcat/cluster6.png)  
 
 2. 硬件负载均衡技术    
-![](../images/tomcat/cluster7.png)  
+  ![](../images/tomcat/cluster7.png)  
 
 ### 1.9 负载均衡常用算法  
 ![](../images/tomcat/cluster8.png)
@@ -134,21 +137,21 @@
 采用不同的机制建立映射关系，可以形成不同的负载均衡技术，常见的包括：
 
 1. 基于DNS的负载均衡   
-通过DNS服务中的随机名字解析来实现负载均衡，在DNS服务器中，可以为多个不同的地址配置同一个名字，而最终查询这个名字的客户机将在解析这个名字时
-得到其中一个地址。因此，对于同一个名字，不同的客户机会得到不同的地址，他们也就访问不同地址上的Web服务器，从而达到负载均衡的目的。
+  通过DNS服务中的随机名字解析来实现负载均衡，在DNS服务器中，可以为多个不同的地址配置同一个名字，而最终查询这个名字的客户机将在解析这个名字时
+  得到其中一个地址。因此，对于同一个名字，不同的客户机会得到不同的地址，他们也就访问不同地址上的Web服务器，从而达到负载均衡的目的。
 
 2. 基于CDN的负载均衡    
   待补充
 3. 反向代理负载均衡 （如Apache+JK2+Tomcat这种组合）  
-使用代理服务器可以将请求转发给内部的Web服务器，让代理服务器将请求均匀地转发给多台内部Web服务器之一上，从而达到负载均衡的目的。
-这种代理方式 与普通的代理方式有所不同，标准代理方式是客户使用代理访问多个外部Web服务器，而这种代理方式是多个客户使用它访问内部Web服务器，
-因此也被称为反 向代理模式。
+  使用代理服务器可以将请求转发给内部的Web服务器，让代理服务器将请求均匀地转发给多台内部Web服务器之一上，从而达到负载均衡的目的。
+  这种代理方式 与普通的代理方式有所不同，标准代理方式是客户使用代理访问多个外部Web服务器，而这种代理方式是多个客户使用它访问内部Web服务器，
+  因此也被称为反 向代理模式。
 
 4. IP负载均衡    
-![](../images/tomcat/cluster9.png)
+  ![](../images/tomcat/cluster9.png)
 
 5. 基于NAT（Network Address Translation）的负载均衡技术 （如Linux Virtual Server，简称LVS  
-![](../images/tomcat/cluster10.png)  
+  ![](../images/tomcat/cluster10.png)  
 
 ## 二、Apache2.4+Tomcat8负载均衡集群配置演示
 
@@ -171,39 +174,39 @@
 两种访问方式：  
 1. 一种是HTTP直连方式  
 2. 另一种是使用Apache的jK插件方式   
-![](../images/tomcat/cluster14.png)
-两种方式中tomcat配置:    
-![](../images/tomcat/cluster15.png)
+  ![](../images/tomcat/cluster14.png)
+  两种方式中tomcat配置:    
+  ![](../images/tomcat/cluster15.png)
 
 ### 2.3 结构图
 ![](../images/tomcat/cluster16.png)
 
 1. Load balancer：三种负载均衡实现方式  
 - mod proxy balance    
-代理进行均衡  
+  代理进行均衡  
 - Apache proxy      
-一般不用这种方式，这种方式只是简单做了一个代理的作用，将客户端过来的请求分给配好的几个tomcat服务器，直接的转发过去。  
+  一般不用这种方式，这种方式只是简单做了一个代理的作用，将客户端过来的请求分给配好的几个tomcat服务器，直接的转发过去。  
 - Apache+mod jk     
- 使用AJP协议进行负载均衡，jk配置灵活，我们主要使用这种方式  
- 
+   使用AJP协议进行负载均衡，jk配置灵活，我们主要使用这种方式  
+
 2. Apliacation Server：应用服务器，Tomcat集群  
 
 3. Session的三种同步机制  
 
 - tomcat sticky session    
-一个用户上来之后，他会通过后台的tomcat应用服务器建立一个session，而这个session会与用户进行绑定，同时这个
-session也会与某一个tomcat进行绑定，也就是跟一个服务器进行绑定。那这个用户所有的操作都会自动的分配到这个tomcat里边，不会去其他tomcat里边，
-即该tomcat中的session在其他tomcat中是没有的。这样容易出现一旦某一台tomcat宕机，其他服务器因为没有其session无法服务。
+  一个用户上来之后，他会通过后台的tomcat应用服务器建立一个session，而这个session会与用户进行绑定，同时这个
+  session也会与某一个tomcat进行绑定，也就是跟一个服务器进行绑定。那这个用户所有的操作都会自动的分配到这个tomcat里边，不会去其他tomcat里边，
+  即该tomcat中的session在其他tomcat中是没有的。这样容易出现一旦某一台tomcat宕机，其他服务器因为没有其session无法服务。
 
 - tomcat replicated session    
-tomcat默认使用的session同步机制，使用这种session同步机制，每个集群中的tomcat服务器会复制其他tomcat服务
-中的session，即集群中的每一个tomcat都有其他tomcat中的session，任何一台服务器宕机，其他服务器会接管下来，不会影响用户的操作。但是当服务器多
-的时候，所有的session都进行共享，每个tomcat都保存这几百个甚至几千个session，那么tomcat就会忙于tomcat之间的数据拷贝，严重影响带宽。
-提示：演示的时候我们使用这种session同步机制
+  tomcat默认使用的session同步机制，使用这种session同步机制，每个集群中的tomcat服务器会复制其他tomcat服务
+  中的session，即集群中的每一个tomcat都有其他tomcat中的session，任何一台服务器宕机，其他服务器会接管下来，不会影响用户的操作。但是当服务器多
+  的时候，所有的session都进行共享，每个tomcat都保存这几百个甚至几千个session，那么tomcat就会忙于tomcat之间的数据拷贝，严重影响带宽。
+  提示：演示的时候我们使用这种session同步机制
 
 - Terracotta    
-这时一个第三方的支持，他会将所有的tomcat中的session放到一个公共的缓存区里边，优势就是当其中的某台tomcat的数据发生变化的时候，他不是进行
-所有的广播，他能监控到时那个tomcat服务器发生了变化，然后将这个信息发给需要的tomcat，这样就具有针对性。
+  这时一个第三方的支持，他会将所有的tomcat中的session放到一个公共的缓存区里边，优势就是当其中的某台tomcat的数据发生变化的时候，他不是进行
+  所有的广播，他能监控到时那个tomcat服务器发生了变化，然后将这个信息发给需要的tomcat，这样就具有针对性。
 
 ### 2.4 AJP协议工作原理
 这里我主要使用的是Apache的JK插件进行负载均衡演示，其中JK插件通过AJP协议与Tomcat服务器进行通信  
@@ -214,7 +217,7 @@ AJP(Apache Jserv Protocol)是定向协议包。因为性能原因，使用二进
 - AJP的优点  
 1. AJP使用二进制格式来传输可读性文本，在连接上发送的基本请求信息是高度压缩的，Web Server通过TCP连接Application Server,较HTTP性能更高。
 2. 为了减少socket的开销，Web Server和Application Server之间尝试保持持久性的TCP连接，对多个request/response循环重用一个链接（ajp建立
-的连接都处于keepalive的状态）
+  的连接都处于keepalive的状态）
 3. 一旦连接分配给一个特定的request，在该request完成之前不会再分配给其他request。因此，request在一个连接上市独占的，这使连接两段的编码变得简洁。
 - AJP的缺点：
 1. 某一时刻的链接数可能比较多。
@@ -228,11 +231,11 @@ AJP(Apache Jserv Protocol)是定向协议包。因为性能原因，使用二进
 
 ### 3.2 windows中安装apche
 1. 修改httpd.conf文件  
-解压后将Define SRVROOT修改为本机的路径  
-![](../images/tomcat/cluster-httpd1.png)
+  解压后将Define SRVROOT修改为本机的路径  
+  ![](../images/tomcat/cluster-httpd1.png)
 
 2. 安装
-在控制台终端输入命令
+  在控制台终端输入命令
 ```xml
 httpd -k install
 ```
@@ -241,11 +244,11 @@ httpd -k install
 httpd -k start
 ```
 4. 访问
-地址栏输入：http://127.0.0.1出现IT WORKS界面，说明安装成功了
-![](../images/tomcat/cluster-httpd3.png)
+  地址栏输入：http://127.0.0.1出现IT WORKS界面，说明安装成功了
+  ![](../images/tomcat/cluster-httpd3.png)
 
 5. 安装windows中安装apche可能出现的错误  
-![](../images/tomcat/cluster-httpd2.png)
+  ![](../images/tomcat/cluster-httpd2.png)
 
 ### 3.3 macos中安装apche
 
@@ -279,16 +282,16 @@ hellox:cluster caojx$ unzip apache-tomcat-8.5.23.zip -d cluster-tomcat-3
 ```
 
 2. cluster-tomcat1中修改server.xml
-修改Server中的port端口：  
-![](../images/tomcat/cluster-tomcat1.png)  
-修改连接器中的端口:  
-![](../images/tomcat/cluster-tomcat2.png)  
-修改AJP连接端口：  
-![](../images/tomcat/cluster-tomcat3.png)  
-解开注释使用集群标签：  
-![](../images/tomcat/cluster-tomcat4.png)  
-jvmRoute给tomcat取一个集群中的名称:    
-![](../images/tomcat/cluster-tomcat5.png)  
+  修改Server中的port端口：  
+  ![](../images/tomcat/cluster-tomcat1.png)  
+  修改连接器中的端口:  
+  ![](../images/tomcat/cluster-tomcat2.png)  
+  修改AJP连接端口：  
+  ![](../images/tomcat/cluster-tomcat3.png)  
+  解开注释使用集群标签：  
+  ![](../images/tomcat/cluster-tomcat4.png)  
+  jvmRoute给tomcat取一个集群中的名称:    
+  ![](../images/tomcat/cluster-tomcat5.png)  
 
 同样cluster-tomcat2中的server.xml可以修改为
 修改Server中的port端口：  
@@ -306,7 +309,7 @@ jvmRoute给tomcat取一个集群中的名称:
 - 在cluster/cluster-tomcat1/apache-tomcat-8.5.23/webapps下，创建TestCluster文件夹；
 - 然后将ROOT文件夹下的WEB-INF文件夹拷贝到TestCluster下
 - 打开TestCluster/WEB-INF\web.xml修改，在</web-app>上面添加 \<distributable/> (设置 \<distributable/>,即表明集群下某一个节点生成或发
-生改变的session，将广播到该集群中的其他节点实现session共享),web.xml内容如下：
+  生改变的session，将广播到该集群中的其他节点实现session共享),web.xml内容如下：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -406,11 +409,11 @@ caojx$ /Users/caojx/cluster/cluster-tomcat-3/apache-tomcat-8.5.23/bin/startup.sh
 Tomcat配置不做变动，下边是对Apache进行配置：  
 
 1. 配置mod_jk.so  
-下载对应版本的mod_jk-1.2.24-httpd-2.2.4.so，如mac版本的下载地址  
-[https://archive.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/macosx/jk-1.2.24/x86/](https://archive.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/macosx/jk-1.2.24/x86/)
+  下载对应版本的mod_jk-1.2.24-httpd-2.2.4.so，如mac版本的下载地址  
+  [https://archive.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/macosx/jk-1.2.24/x86/](https://archive.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/macosx/jk-1.2.24/x86/)
 
 2. 将mod_jk.so 拷贝到%APCHE_HOME%\modules目录下  
-提示：如果没有modules目录可以手动建立  
+  提示：如果没有modules目录可以手动建立  
 
 3. 在%APACHE_HOME%\conf目录下新建文件workers.properties
 ```properties
@@ -450,7 +453,7 @@ worker.controller.sticky_session=false
 ```
 
 4. 新建mod_jk.conf文件  
-在%APACHE_HOME%\conf目录下新建mod_jk.conf,内容如下
+  在%APACHE_HOME%\conf目录下新建mod_jk.conf,内容如下
 ```text
 LoadModule jk_module /private/etc/apache2/modules/mod_jk-1.2.24-httpd-2.2.4.so
 JkWorkersFile /private/etc/apache2/conf/workers.properties

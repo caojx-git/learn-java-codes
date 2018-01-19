@@ -37,7 +37,7 @@ MathJax.Hub.Config({
 
 
  $$\frac{1}{2}$$
- 
+
  $$a^2$$
 
 

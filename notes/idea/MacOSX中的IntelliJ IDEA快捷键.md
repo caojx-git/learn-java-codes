@@ -2,35 +2,35 @@
 
 提示第一节到第十一节快捷键使用的KeyMap=Max OS X，第十二节的图的keyMap=Mac OS X 10.5+的快捷键
 
-[toc]
+[TOC]
 
 ## 一、无处不在的跳转  
 
 - 项目之间的跳转     
-option+cmd+] 跳转到下一个项目窗口  （Window）  
-option+cmd+[ 跳转到上一个项目窗口   
+  option+cmd+] 跳转到下一个项目窗口  （Window）  
+  option+cmd+[ 跳转到上一个项目窗口   
 
 - 视图切换  
-cmd + 数字 视图区域对应的数字 各视图区域的切换    
-esc 跳转回文件区  
+  cmd + 数字 视图区域对应的数字 各视图区域的切换    
+  esc 跳转回文件区  
 
 - 文件之间的跳转    
-cmd+E 查找最近打开过的文件  
-cmd+shift+E 查找最近编辑过的文件     
-shift+cmd+delete 跳回最近编辑过的地方  （Navigate）  
-option+cmd+<- 跳转回上一个浏览的地方   （Navigate）  
-option+cmd+-> 跳转回下一个浏览的地方   （Navigate）  
+  cmd+E 查找最近打开过的文件  
+  cmd+shift+E 查找最近编辑过的文件     
+  shift+cmd+delete 跳回最近编辑过的地方  （Navigate）  
+  option+cmd+<- 跳转回上一个浏览的地方   （Navigate）  
+  option+cmd+-> 跳转回下一个浏览的地方   （Navigate）  
 
 - 利用书签跳转  
-shift+F11  显示书签  
-F11 添加或移除书签  
-cmd+F11 添加带标记的书签或移除书签  
-ctrl+1 跳到书签1，同样ctrl+n跳到书签n  
-ctrl+shift+n 取消或标记当前书签并带上数字  
+  shift+F11  显示书签  
+  F11 添加或移除书签  
+  cmd+F11 添加带标记的书签或移除书签  
+  ctrl+1 跳到书签1，同样ctrl+n跳到书签n  
+  ctrl+shift+n 取消或标记当前书签并带上数字  
 
 - 收藏位置和文件  
-cmd+2 打开Favorites  
-option+shift+F 将文件或其它（class，method..）添加到Favorites  
+  cmd+2 打开Favorites  
+  option+shift+F 将文件或其它（class，method..）添加到Favorites  
 
 ## 二、精准搜索
 cmd+N 查找类class,连续按两下可以查找jar包中的类    
@@ -47,7 +47,7 @@ ctrl+cmd+G 定位光标所在处的单词的所有出现，可以一起编辑
 ## 四、live template
 
 使用Live Template定义一些常用的方法可以快速生成方法   
- 
+
 find action中搜索live templates,进入设置或在settings中查找   
 Live Templates -> Template Group(添加组或使用原有组) -> Live Template      
 
@@ -74,21 +74,21 @@ foo.sout输出
 foo.filed 将局部变量升级为属性  
 foo.return 返回  
 foo.nn 判空   
-  
+
 其他的就不列举了，查看postfix Completion    
 
 ## 五、重构和抽取
 
 - 重构  
-shift+F6 重构变量    
-cmd+F6 或alter+enter 重构方法    
+  shift+F6 重构变量    
+  cmd+F6 或alter+enter 重构方法    
 
 - 抽取  
-抽取变量：    
-option+cmd+V 抽取为变量    
-option+cmd+C 抽取为常量  
-option+cmd+F 抽取为属性  
-option+cmd+P 抽取为参数  
+  抽取变量：    
+  option+cmd+V 抽取为变量    
+  option+cmd+C 抽取为常量  
+  option+cmd+F 抽取为属性  
+  option+cmd+P 抽取为参数  
 
 抽取方法：  
 option+cmd+M 抽取为方法  
@@ -120,7 +120,7 @@ shift+F9 调试当前程序
 option+shift+F9 调试,可以选择调试哪一个     
 cmd+F2 停止  
 ctrl+F5 重启  
-   
+
 F7 单步进入    
 F8 单步跳过   
 option+F9 运行到光标处    

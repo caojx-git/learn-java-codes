@@ -1,6 +1,9 @@
 ## 1基于腾讯云的域名绑定与tomcat部署
 
+[TOC]
+
 ### 1.1注册域名
+
 进入腾讯云主机官网，依次选择：**云产品->域名服务->域名注册**
 ![](../images/tool/tengxuyun/txy-register1.png)
 ![](../images/tool/tengxuyun/txy-register2.png)

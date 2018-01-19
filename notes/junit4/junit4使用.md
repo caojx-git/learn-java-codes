@@ -1,5 +1,7 @@
 ## 一、JUnit4 使用
 
+[TOC]
+
    本笔记通过慕课网观看JUnit学习视频后整理、本笔记主要了解如下内容
 
 * JUnit4的快速入门
@@ -9,7 +11,7 @@
 ## 二、JUnit4快速入门
 
 ### 2.1 什么是JUnit
-    
+
 JUnit官网:http://junit.org/junit4/
 
 JUnit是一个Java语言的单元测试框架。它由Kent Beck和Erich Gamma建立，逐渐成为源于Kent Beck的sUnit的xUnit家族中最为成功的一个。 JUnit有它自己的JUnit扩展生态圈。多数Java的开发环境都已经集成了JUnit作为单元测试的工具。[1-2] 
@@ -20,7 +22,7 @@ JUnit是由 Erich Gamma 和 Kent Beck 编写的一个回归测试框架（regres
 ### 2.2 如何开发测试用例
 
 新建learn-junit4 web项目，使用maven进行搭建，项目结构图如下：
-  
+
 ![](../images/junit4/junit4-project1.png)
 
 在pom文件中引入junit4的依赖
@@ -144,13 +146,13 @@ public class CalculateTest {
 
 1.确保IDEA中启动了JUnit插件    
 ![](../images/junit4/junit4-idea-plugins.png)  
-  
+
 2.如果使用的eclipse快捷键，需要自定义一下Navigate的快捷键  
 ![](../images/junit4/junit4-eclipse-keyamp.png)  
-  
+
 3.如果是IDEA默认的快捷键，责使用ctrl+shift+t生成  
 ![](../images/junit4/junit4-idea-keymap.png)  
-  
+
 是哟该你快捷键可以自动为我们生成测试类  
 ![](../images/junit4/junit4-autocreateTest.png)  
 
@@ -348,7 +350,7 @@ public class JunitAnnotation {
 写一个作为测试套件的入口类这里是SuiteTest.java，这个类里不包含其他的方法,包含了也不会执行  
 @RunWith()更改测试运行器为Suite.class  
 将要测试的类作为数组传入到Suite.SuiteClasses（{}）  
-    
+​    
 ```java
 package pers.caojx.learn.junit4.util;
 

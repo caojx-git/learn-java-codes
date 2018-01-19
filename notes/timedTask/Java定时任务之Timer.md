@@ -1,5 +1,7 @@
 # Java定时任务之Timer的使用
 
+[TOC]
+
 定时任务就是基于给定的时间点，给定的时间间隔或者给定的执行次数自动执行的任务。  
 
 Java中的定时任务调度工具主要有
@@ -35,7 +37,7 @@ Timer类里边有两个属性TaskQueue和TimerThread，TimerThread通过定期�
 ### 2.1 Timer的简单使用
 
 1. MyTimerTask
-相当于需要定时的业务逻辑，然后使用Timer对TimerTask进行定时定频率的调用  
+  相当于需要定时的业务逻辑，然后使用Timer对TimerTask进行定时定频率的调用  
 ```java
 package learn.caojx.timer;
 
@@ -98,7 +100,7 @@ public class MyTimer {
 }
 ```
 3. 结果  
-当前2s执行第一次后，以后每一秒执行一次
+  当前2s执行第一次后，以后每一秒执行一次
 ```text
 current exec name is: No.1
 current exec name is: No.1
@@ -122,8 +124,8 @@ schedule的四种用法：
 参数： 
 - taks：所要安排的任务  
 - time: 执行任务的时间   
-作用：  
-在时间等于或超过time的时候执行且仅执行一次task。
+  作用：  
+  在时间等于或超过time的时候执行且仅执行一次task。
 
 1. MyTimerTask.java
 ```java
@@ -224,8 +226,8 @@ Current exec time is: 2017-12-03 16:10:19
 - task：所安排的任务  
 - time：首次执行的时间  
 - period： 执行一次task的时间间隔，单位是毫秒  
-作用：  
-时间等于或超过time时首次执行task，之后每隔period毫秒重复执行task。  
+  作用：  
+  时间等于或超过time时首次执行task，之后每隔period毫秒重复执行task。  
 
 1. MyTimer.java
 ```java
@@ -284,8 +286,8 @@ Current exec time is: 2017-12-03 16:21:21
 参数：  
 - task：所安排的任务  
 - delay：执行任务前的延迟时间，单位是毫秒
-作用：  
-等待delay毫秒后执行且仅仅执行一次task
+  作用：  
+  等待delay毫秒后执行且仅仅执行一次task
 
 
 1. MyTimer.java
@@ -331,8 +333,8 @@ Current exec time is: 2017-12-03 16:27:58
 - task：所要安排的任务
 - delay：执行任务前的延迟时间，单位默认是毫秒
 - period：执行一次task的时间间隔，单位默认是毫秒
-作用：  
-等待delay毫秒后首次执行task，之后每隔period毫秒重复执行task
+  作用：  
+  等待delay毫秒后首次执行task，之后每隔period毫秒重复执行task
 
 提示：这里不再举例
 
@@ -344,9 +346,9 @@ scheduleAtFixedRate的两种用法：
 - task：所要安排的任务    
 - time：首次执行任务的时间    
 - period:执行一次task的时间间隔，单位是毫秒 
-作用：  
-时间等于或超过time时首次执行task，之后每隔period毫秒重复执行一次task
-    
+  作用：  
+  时间等于或超过time时首次执行task，之后每隔period毫秒重复执行一次task
+
 1. MyTimer.java
 ```java
 package learn.caojx.timer;
@@ -396,15 +398,15 @@ current exec name is: scheduleAtFixedRate1
 Current exec time is: 2017-12-03 16:45:00
 .......
 ```
-    
-    
+
+
 > 用法2：scheduleAtFixedRate（task，delay，period）
-参数：  
+> 参数：  
 - task：所要安排的任务    
 - delay：首次执行任务的延迟时间，单位是毫秒    
 - period:执行一次task的时间间隔，单位是毫秒 
-作用：  
-等待delay毫秒后首次执行task，之后每隔period毫秒重复执行一次task
+  作用：  
+  等待delay毫秒后首次执行task，之后每隔period毫秒重复执行一次task
 
 1. MyTimer.java
 ```java
@@ -468,7 +470,7 @@ TimerTask:
 作用：取消当前的TimerTask里边的任务。
 
 1. MyTimerTask.java  
-超过3次取消当前TimerTask里边的任务
+  超过3次取消当前TimerTask里边的任务
 ```java
 package learn.caojx.timer;
 
@@ -618,7 +620,7 @@ Current exec time is: 2017-12-03 17:25:04
 schedule time is 2017-12-03 17:25:07
 current exec name is: schedule
 Current exec time is: 2017-12-03 17:25:07
-``` 
+```
 
 Timer:
 
@@ -751,7 +753,7 @@ current canceled task number is: 1
 - 首次计划执行时间早于当前时间。
 - 任务所需要的时间超出任务的执行周期时间。   
   比如说我们的任务需要每隔2s执行一次，但是单次完成任务需要3s，那么这就超出了我们的任务执行周期间隔了。
-  
+
 情况1：首次计划执行时间早于当前时间
 
 > 1.schedule方法  
@@ -1024,7 +1026,7 @@ Timer简单易用，你只需要编写短短的几行代码便能够轻松的实
     如果存在多个任务，且任务时间过长，会导致执行效果与预期不符。
 - 当任务抛出异常时的缺陷
     Timer对RunTimeException的支持力度不够
-    
+
 ### 3.1 管理并发任务的缺陷
 
 1. MyTimerTask2.java
@@ -1121,7 +1123,7 @@ No.2's finish time is: 2017-12-03 21:12:06
 如果TimerTask抛出RuntimeException, Timer会停止所有任务的运行。
 
 1. MyTimerTask2.java
-在执行的时候抛出RuntimeException
+  在执行的时候抛出RuntimeException
 ```java
 package learn.caojx.timer;
 

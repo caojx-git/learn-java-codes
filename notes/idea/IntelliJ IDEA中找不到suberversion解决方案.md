@@ -1,6 +1,8 @@
 #Intellij IDEA中找不到subversion的解决方案
 ***
->问题描述
+[TOC]
+
+> 问题描述
 
 CVS中没有发现svn
 settings->Version Control 没有发现svn

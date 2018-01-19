@@ -3,6 +3,7 @@
 # Markdown-入门
 
 ### 导语
+
 Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
 由于使用起来非常简单，几分钟就可以入门，Markdown的语法简洁明了、学习容易，而且功能比纯文本更强，因此有很
 多人用它写博客。世界上最流行的博客平台WordPress和大型CMS如Joomla、Drupal都能很好的支持Markdown。
@@ -95,8 +96,8 @@ hello[^hello]
 >分割线
 
 分割线只要另外起一行，输入连续的三个*开头就可以了
-    
-*** 
+​    
+***
 
 
 
@@ -105,16 +106,16 @@ hello[^hello]
 使用markdown画表格,默认靠左，”:“放在右边靠右显示，”：“在两边，居中显示
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 
 >显示目录结构
 
-[toc]
+[TOC]
 
 >换行
 
