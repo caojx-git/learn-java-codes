@@ -1,7 +1,10 @@
+[TOC]
+
 <!DOCTYPE html>
 <!-- mathjax config similar to math.stackexchange -->
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
+
     jax: ["input/TeX", "output/HTML-CSS"],
     tex2jax: {
         inlineMath: [ ['$', '$'] ],
@@ -40,5 +43,24 @@ MathJax.Hub.Config({
 
  $$a^2$$
 
-
 $$J(\theta) = \frac 1 2 \sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2$$
+
+$$sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}$$
+
+$\ce{C6H5-CHO}$
+$\ce{$A$ ->[\ce{+H2O}] $B$}$
+$\ce{SO4^2- + Ba^2+ -> BaSO4 v}​$
+
+$\left(\frac{\sqrt x}{y^3}\right)$
+
+$\sum_{i=0}^N\int_{a}^{b}g(t,i)\text{d}t$ 
+
+### 三、支持数学表达式的Markdown编辑器
+
+- [Typora](https://typora.io/) 这个是国人开发的Markdown阅读编辑器，有Mac、Windows、Linux版本体验效果非常好
+
+
+
+推荐：
+
+- https://www.jianshu.com/p/a0aa94ef8ab2 MathJax教程
