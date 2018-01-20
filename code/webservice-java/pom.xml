@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>caojx.learn</groupId>
+    <artifactId>webservice-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>webservice-server</module>
+        <module>webservice-client</module>
+    </modules>
+
+    <properties>
+        <cxf.version>2.2.7</cxf.version>
+    </properties>
+
+    <dependencies>
+        <!--cxf依赖必须-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>apache-cxf</artifactId>
+            <version>${cxf.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!--cxf可根据需要添加-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
