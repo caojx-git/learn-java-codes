@@ -63,6 +63,30 @@ http://www.webxml.com.cn/zh_cn/web_services.aspx
 一个apache的用于开发webservice服务器端和客户端的框架
 ```
 
+### 1.6 Web Service开发框架
+jws的发布对java webservice框架产生了巨大的影响，经过大浪淘沙，目前java开发webservice的框架主要包括axis2和cxf。  
+axis2和cxf都是apache旗下的产品，但是其目的不同，导致webservice开发方法也不一样。两个框架都得到了开发者的支持。有必要对二者进行以下对比。
+
+ 
+ 
+ |         |      Axis2      |  CXF |
+ | ------------- | :-----------: | :----: |
+|目标 |WebService引擎| 	简易的SOA框架，可以作为ESB |
+|ws* 标准支持   |	不支持WS-Policy	|WS-Addressing，WS-Policy， WS-RM， WS-Security，WS-I Basic Profile|
+|数据绑定支持	   |XMLBeans、JiBX、JaxMe 、JaxBRI、ADB	|JAXB, Aegis, XMLBeans, SDO, JiBX|
+|spring集成	   |不支持|	支持|
+|应用集成	       |困难	 |  简单|
+|多语言	       |支持C/C++ |	不支持|
+|部署	       |web应用	 |  嵌入式|
+|服务监控和管理  |支持	 | 不支持|
+
+结论：  
+如果希望以一种一致的方式实现webservice，特别是有跨语言的需求时，应该使用Axis2  
+如果需要在现有的java程序（包括web应用）中增加webservice支持，应该使用CXF  
+
+来自：  
+https://www.cnblogs.com/holbrook/archive/2012/12/12/2814821.html
+
 ## 二、开发Web Service
 •	开发手段：  
 –	使用JDK开发(1.6及以上版本)  
@@ -170,7 +194,7 @@ public class ServerTest {
 - 开发客户端  
 1. 根据wsdl文档地址生成可客户端代码  
 ```text
-$cd /webservice-client/src/main/java
+$cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
 $wsimport -keep http://127.0.0.1:8989/ws01/hellows?wsdl
 ``` 
 代码生成结果  
@@ -201,7 +225,13 @@ public class ClientTest {
 ```
 结果  
 ![](../images/webservice/webservice_4.png)    
-![](../images/webservice/webservice_5.png)    
+![](../images/webservice/webservice_5.png)  
+
+### 2.2 一次Web service请求的流程  
+一次web service请求的本质:   
+1)客户端向服务器端发送了一个soap消息(http请求+xml片断)
+2)服务器端处理完请求后, 向客户端返回一个soap消息，那么它的流程是怎样的呢？  
+![](../images/webservice/webservice_9.png)    
 
 ## 三、编写天气预报的Web Service
 网络上有很多免费的WebService接口如下，提供了一些免费的WebService接口，比如天气查询服务、手机号码归属查询、航班查询等。      
@@ -219,7 +249,7 @@ java方式在生成客户端代码的时候都需要进行少许的修改
 
 生成客户端代码  
 ```text
-$cd /webservice-client/src/main/java
+$cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
 $wsimport -keep ~/code/learn/code/webservice-java/webservice-client/src/main/resources/weather.wsdl
 ```
 ![](../images/webservice/webservice_6.png)
@@ -400,9 +430,13 @@ public class WeatherClientTest {
 - port - 定义为协议/数据格式绑定与具体Web访问地址组合的单个服务访问点。
 
 
+
 ## 五、使用CXF开发WebService
 
 ### 5.1 CXF简介
+Apache CXF 是一个开源的 Services 框架，CXF 帮助您利用 Frontend 编程 API 来构建和开发 Services ，像 JAX-WS 。这些 Services 
+可以支持多种协议，比如：SOAP、XML/HTTP、RESTful HTTP 或者 CORBA ，并且可以在多种传输协议上运行，比如：HTTP、JMS 或者 JBI，CXF 
+大大简化了 Services 的创建，同时它继承了 XFire 传统，一样可以天然地和 Spring 进行无缝集成。 --百度百科
 
 
 ### 5.2 CXF支持的数据类型
@@ -414,7 +448,794 @@ public class WeatherClientTest {
 - 集合：数组，List, Set, Map（JDK开发WebService不支持Map类型） 
 - 自定义类型   Student  
 
+1. maven依赖  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>caojx.learn</groupId>
+    <artifactId>webservice-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>webservice-server</module>
+        <module>webservice-client</module>
+    </modules>
+
+    <properties>
+        <cxf.version>3.1.7</cxf.version>
+    </properties>
+
+    <dependencies>
+        <!--cxf依赖必须-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>apache-cxf</artifactId>
+            <version>${cxf.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!--cxf可根据需要添加-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+2. Student.java  
+用于测试自定义类型是否支持  
+```java
+package server.datetype;
+
+public class Student {
+
+    private int id;
+
+    private String name;
+
+    private float price;
+
+    public Student(){
+        super();
+    }
+
+    public Student(int id, String name, float price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+}
+```
+
+3. DateTypeWS.java  
+定义WebService接口  
+```java
+package server.datetype;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+import java.util.List;
+import java.util.Map;
+
+@WebService
+public interface DateTypeWS {
+
+    @WebMethod
+    public boolean addStudent(Student s);
+
+    @WebMethod
+    public Student getStudentById(int id);
+
+    @WebMethod
+    public List<Student> getStudentByPrice(float price);
+
+    /**
+     * 如果使用的cxf发布报错： com.sun.xml.bind.v2.runtime.IllegalAnnotationsException: 2 counts of IllegalAnnotationExceptions
+     * java.util.Map is an interface, and JAXB can't handle interfaces.
+     * 原因是不支持map类型数据，解决方案参考如下：
+     * 方案一： http://blog.csdn.net/kongxx/article/details/7544640
+     * 方案二： 我将将cxf版本换到3.1.7以上就好了
+     * @return
+     */
+    @WebMethod
+    public Map<Integer,Student> getAllStudentsMap();
+}
+```
+
+4. DateTypeWSImpl.java  
+接口实现类，用于测试各种数据类型是否支持，注意没有使用cxf框架或cxf版本过低可能会出现类似于如下的错误   
+```text
+com.sun.xml.bind.v2.runtime.IllegalAnnotationsException: 2 counts of IllegalAnnotationExceptions
+java.util.Map is an interface, and JAXB can't handle interfaces.
+```
+解决方案：  
+一：参考http://blog.csdn.net/kongxx/article/details/7544640。   
+二：我切换到cxf版本3.1.7后可以支持map类型了,之前使用2.2.7版本发现不支持map类型，其他的版本没有试。  
+
+```java
+package server.datetype;
+
+import javax.jws.WebService;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@WebService
+public class DateTypeWSImpl implements DateTypeWS {
+
+    public boolean addStudent(Student s) {
+        System.out.println("server addStudent() " + s);
+        return true;
+    }
+
+    public Student getStudentById(int id) {
+        System.out.println("server getStudentById() " + id);
+        return new Student(id, "CAT", 1000);
+    }
+
+    public List<Student> getStudentByPrice(float price) {
+        System.out.println("server getStudentByPrice() " + price);
+        List<Student> list = new ArrayList<Student>();
+        list.add(new Student(1, "TOM1", price+1));
+        list.add(new Student(2, "TOM1", price+2));
+        list.add(new Student(3, "TOM1", price+3));
+        return list;
+    }
+
+    /**
+     * 如果使用的cxf发布报错： com.sun.xml.bind.v2.runtime.IllegalAnnotationsException: 2 counts of IllegalAnnotationExceptions
+     * java.util.Map is an interface, and JAXB can't handle interfaces.
+     * 原因是不支持map类型数据，解决方案参考如下：
+     * 方案一： http://blog.csdn.net/kongxx/article/details/7544640
+     * 方案二： 我将将cxf版本换到3.1.7以上就好了
+     * @return
+     */
+    public Map<Integer, Student> getAllStudentsMap() {
+        System.out.println("server getAllStudentsMap() ");
+        Map<Integer, Student> map = new HashMap<Integer, Student>();
+        map.put(1,new Student(1, "JACK1", 100));
+        map.put(2,new Student(1, "JACK1", 200));
+        map.put(3,new Student(1, "JACK1", 300));
+        return map;
+    }
+}
+```
+
+5. ServerTest.java   
+发布服务，注意需要添加cxf的maven依赖，不然不能支持map类型
+```java
+package server.datetype;
+
+
+import javax.xml.ws.Endpoint;
+
+public class ServerTest {
+
+    public static void main(String[] args) {
+        System.out.println("发布开始");
+        //发布地址
+        String address = "http://127.0.0.1:8989/dateType/dateTypews";
+        //指定发布的地址和SEI实现类对象
+        Endpoint.publish(address, new DateTypeWSImpl());
+        System.out.println("发布完成");
+    }
+}
+```
+
+6. 生成客户端代码  
+
+```text
+$cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
+$wsimport -keep http://127.0.0.1:8989/dateType/dateTypews?wsdl
+```
+
+7. DateTypeClientTest.java  
+客户端测试
+```java
+package client;
+
+import server.datetype.DateTypeWS;
+import server.datetype.DateTypeWSImplService;
+import server.datetype.GetAllStudentsMapResponse;
+import server.datetype.Student;
+
+import java.util.List;
+
+/**
+ * 使用cxf框架后测试支持的数据类型
+ */
+public class DateTypeClientTest {
+
+    public static void main(String[] args) {
+        DateTypeWSImplService factory = new DateTypeWSImplService();
+        DateTypeWS dateTypeWS = factory.getDateTypeWSImplPort();
+
+        Student student = new Student();
+        student.setId(12);
+        student.setName("abc");
+        student.setPrice(23);
+        boolean success = dateTypeWS.addStudent(student);
+
+        System.out.println("client "+success);
+
+        List<Student> list = dateTypeWS.getStudentByPrice(23);
+
+        System.out.println(list);
+
+        GetAllStudentsMapResponse.Return r = dateTypeWS.getAllStudentsMap();
+        List<GetAllStudentsMapResponse.Return.Entry> entries = r.getEntry();
+        for(GetAllStudentsMapResponse.Return.Entry entry :entries){
+            Integer id = entry.getKey();
+            Student student1 = entry.getValue();
+            System.out.println(id +"_"+student1); //不知原因，客户端中没有生成toString()方法
+            System.out.println(student1.getId()+"-"+student1.getName()+"-"+student1.getPrice());
+        }
+    }
+}
+```
+
+8. 结果  
+引入cxf的maven依赖后，通过结果可以看出，cxf支持所有的数据类型包括自定义类型 
+```text
+client true
+[server.datetype.Student@6399551e, server.datetype.Student@13d73fa, server.datetype.Student@5023bb8b]
+1_server.datetype.Student@3e30646a
+1-JACK1-100.0
+2_server.datetype.Student@5cde6747
+1-JACK1-200.0
+3_server.datetype.Student@63a270c9
+1-JACK1-300.0
+```
+
+
+### 5.4 CXF拦截器
+
+- 为什么设计拦截器？   
+1. 为了在webservice请求过程中,能动态操作请求和响应数据, CXF设计了拦截器，JDK没有提供类似与cxf开发webservice拦截器功能.  
+- 拦截器分类：  
+1. 按所处的位置分：服务器端拦截器，客户端拦截器  
+2. 按消息的方向分：入拦截器，出拦截器  
+3. 按定义者分：系统拦截器，自定义拦截器  
+
+
+- 拦截器API  
+Interceptor(拦截器接口)  
+AbstractPhaseInterceptor(自定义拦截器从此继承)  
+LoggingInInterceptor(系统日志入拦截器类)  
+LoggingOutInterceptor(系统日志出拦截器类)  
+
+> 使用日志拦截器，实现日志记录
+- LoggingInInterceptor
+- LoggingOutInterceptor
+
+
+1. ServerTest.java   
+给服务端添加日志出拦截器和日志入拦截器  
+```java
+package server.ws02.cxf.interceptor1;
+
+import org.apache.cxf.interceptor.Interceptor;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.apache.cxf.jaxws.EndpointImpl;
+import org.apache.cxf.message.Message;
+
+import javax.xml.ws.Endpoint;
+import java.util.List;
+
+/**
+ * 发布WebService,并添加入拦截器和出拦截器，添加后我们可以在debug窗口看到请求响应日志
+ */
+public class ServerTest {
+
+    public static void main(String[] args) {
+        System.out.println("发布开始");
+        //发布地址
+        String address = "http://127.0.0.1:8989/ws02/interceptor1";
+        //指定发布的地址和SEI实现类对象
+        Endpoint endpoint = Endpoint.publish(address, new HelloWSImpl());
+
+        EndpointImpl endpointImpl = (EndpointImpl) endpoint;
+        //服务端的日志入拦截器
+        List<Interceptor<? extends Message>> inInterceptors = endpointImpl.getInInterceptors();
+        inInterceptors.add(new LoggingInInterceptor());
+
+        //服务端的日志出拦截器
+        List<Interceptor<? extends Message>> outInterceptors = endpointImpl.getOutInterceptors();
+        outInterceptors.add(new LoggingOutInterceptor());
+
+        System.out.println("发布完成");
+    }
+}
+```
+
+2. 生成客户端代码  
+```text
+$cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
+$wsimport -keep http://127.0.0.1:8989/ws02/interceptor1?wsdl
+```
+
+3. InterceptorClientTest.java  
+客户端也添加日志拦截器    
+```java
+package client;
+
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.interceptor.Interceptor;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.apache.cxf.message.Message;
+import server.ws02.cxf.interceptor1.HelloWS;
+import server.ws02.cxf.interceptor1.HelloWSImplService;
+
+import java.util.List;
+
+/**
+ * 调用WebService，添加入拦截器和出拦截器
+ */
+public class InterceptorClientTest {
+
+    public static void main(String[] args) {
+        //获取factory对应wsdl中<service name="HelloWSImplService">中的name值
+        HelloWSImplService factory = new HelloWSImplService();
+        //获取具体的服务对应<port name="HelloWSImplPort" binding="tns:HelloWSImplPortBinding">...</port>中的get+name值
+        HelloWS helloWS = factory.getHelloWSImplPort();
+        System.out.println(helloWS.getClass());
+
+        //发送请求的客户端对象
+        Client client = ClientProxy.getClient(helloWS);
+
+        //客户端出拦截器
+        //客户端的日志入拦截器
+        List<Interceptor<? extends Message>> inInterceptors = client.getInInterceptors();
+        inInterceptors.add(new LoggingInInterceptor());
+
+        //客户端的日志出拦截器
+        List<Interceptor<? extends Message>> outInterceptors = client.getOutInterceptors();
+        outInterceptors.add(new LoggingOutInterceptor());
+
+        String result = helloWS.sayHello("jack");
+        System.out.println("client:"+result);
+    }
+}
+
+```
+4. 效果    
+在客户端和服务端添加日志拦截器后我们可以在终端看到请求出入参数    
+客户端：  
+```text
+/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=53297:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/tools.jar:/Users/caojx/code/learn/code/webservice-java/webservice-client/target/classes:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-common/3.1.7/cxf-tools-common-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/caojx/code/maven_repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/caojx/code/maven_repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar:/Users/caojx/code/maven_repository/com/sun/xml/bind/jaxb-xjc/2.2.11/jaxb-xjc-2.2.11.jar:/Users/caojx/code/maven_repository/com/sun/xml/bind/jaxb-core/2.2.11/jaxb-core-2.2.11.jar:/Users/caojx/code/maven_repository/com/sun/xml/bind/jaxb-impl/2.2.11/jaxb-impl-2.2.11.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-validator/3.1.7/cxf-tools-validator-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/ws/xmlschema/xmlschema-core/2.2.1/xmlschema-core-2.2.1.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-core/3.1.7/cxf-tools-wsdlto-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-wsdl/3.1.7/cxf-rt-wsdl-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-frontend-javascript/3.1.7/cxf-tools-wsdlto-frontend-javascript-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-misctools/3.1.7/cxf-tools-misctools-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-corba/3.1.7/cxf-tools-corba-3.1.7.jar:/Users/caojx/code/maven_repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-databinding-jaxb/3.1.7/cxf-tools-wsdlto-databinding-jaxb-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-frontend-jaxws/3.1.7/cxf-tools-wsdlto-frontend-jaxws-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wadlto-jaxrs/3.1.7/cxf-tools-wadlto-jaxrs-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-service-description/3.1.7/cxf-rt-rs-service-description-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-java2ws/3.1.7/cxf-tools-java2ws-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjc-utils/cxf-xjc-runtime/3.0.5/cxf-xjc-runtime-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-dv/3.0.5/cxf-xjc-dv-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-ts/3.0.5/cxf-xjc-ts-3.0.5.jar:/Users/caojx/code/maven_repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-bug671/3.0.5/cxf-xjc-bug671-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-boolean/3.0.5/cxf-xjc-boolean-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-javadoc/3.0.5/cxf-xjc-javadoc-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-core/3.1.7/cxf-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar:/Users/caojx/code/maven_repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-features-clustering/3.1.7/cxf-rt-features-clustering-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-management/3.1.7/cxf-rt-management-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-local/3.1.7/cxf-rt-transports-local-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-udp/3.1.7/cxf-rt-transports-udp-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/mina/mina-core/2.0.13/mina-core-2.0.13.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-hc/3.1.7/cxf-rt-transports-http-hc-3.1.7.jar:/Users/caojx/code/maven_repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpcore-nio/4.4.4/httpcore-nio-4.4.4.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpasyncclient/4.1.2/httpasyncclient-4.1.2.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/Users/caojx/code/maven_repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-jetty/3.1.7/cxf-rt-transports-http-jetty-3.1.7.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-server/9.2.15.v20160210/jetty-server-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-util/9.2.15.v20160210/jetty-util-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-io/9.2.15.v20160210/jetty-io-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-security/9.2.15.v20160210/jetty-security-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-continuation/9.2.15.v20160210/jetty-continuation-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-http/9.2.15.v20160210/jetty-http-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-netty-server/3.1.7/cxf-rt-transports-http-netty-server-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-netty-client/3.1.7/cxf-rt-transports-http-netty-client-3.1.7.jar:/Users/caojx/code/maven_repository/org/slf4j/slf4j-jdk14/1.7.21/slf4j-jdk14-1.7.21.jar:/Users/caojx/code/maven_repository/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-jms/3.1.7/cxf-rt-transports-jms-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-soap/3.1.7/cxf-rt-bindings-soap-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.7/cxf-rt-databinding-jaxb-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-corba/3.1.7/cxf-rt-bindings-corba-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-xml/3.1.7/cxf-rt-bindings-xml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-object/3.1.7/cxf-rt-bindings-object-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-coloc/3.1.7/cxf-rt-bindings-coloc-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-databinding-aegis/3.1.7/cxf-rt-databinding-aegis-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-databinding-xmlbeans/3.1.7/cxf-rt-databinding-xmlbeans-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-addr/3.1.7/cxf-rt-ws-addr-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-rm/3.1.7/cxf-rt-ws-rm-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-policy/2.1.7/wss4j-policy-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-policy/3.1.7/cxf-rt-ws-policy-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/neethi/neethi/3.0.3/neethi-3.0.3.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-mex/3.1.7/cxf-rt-ws-mex-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-security/3.1.7/cxf-rt-ws-security-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-security-saml/3.1.7/cxf-rt-security-saml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-security/3.1.7/cxf-rt-security-3.1.7.jar:/Users/caojx/code/maven_repository/net/sf/ehcache/ehcache/2.10.2/ehcache-2.10.2.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-dom/2.1.7/wss4j-ws-security-dom-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-common/2.1.7/wss4j-ws-security-common-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/santuario/xmlsec/2.0.7/xmlsec-2.0.7.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-saml-impl/3.1.1/opensaml-saml-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-profile-api/3.1.1/opensaml-profile-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-core/3.1.1/opensaml-core-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-saml-api/3.1.1/opensaml-saml-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xmlsec-api/3.1.1/opensaml-xmlsec-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-soap-api/3.1.1/opensaml-soap-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-security-impl/3.1.1/opensaml-security-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-security-api/3.1.1/opensaml-security-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/cryptacular/cryptacular/1.0/cryptacular-1.0.jar:/Users/caojx/code/maven_repository/org/bouncycastle/bcprov-jdk15on/1.51/bcprov-jdk15on-1.51.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xmlsec-impl/3.1.1/opensaml-xmlsec-impl-3.1.1.jar:/Users/caojx/code/maven_repository/net/shibboleth/utilities/java-support/7.1.1/java-support-7.1.1.jar:/Users/caojx/code/maven_repository/com/google/guava/guava/18.0/guava-18.0.jar:/Users/caojx/code/maven_repository/joda-time/joda-time/2.7/joda-time-2.7.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-impl/3.1.1/opensaml-xacml-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-api/3.1.1/opensaml-xacml-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-saml-impl/3.1.1/opensaml-xacml-saml-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-saml-api/3.1.1/opensaml-xacml-saml-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-stax/2.1.7/wss4j-ws-security-stax-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-bindings/2.1.7/wss4j-bindings-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-policy-stax/2.1.7/wss4j-ws-security-policy-stax-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-js/3.1.7/cxf-rt-frontend-js-3.1.7.jar:/Users/caojx/code/maven_repository/rhino/js/1.7R2/js-1.7R2.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-simple/3.1.7/cxf-rt-frontend-simple-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-jaxrs/3.1.7/cxf-rt-frontend-jaxrs-3.1.7.jar:/Users/caojx/code/maven_repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/Users/caojx/code/maven_repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-extension-providers/3.1.7/cxf-rt-rs-extension-providers-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-extension-search/3.1.7/cxf-rt-rs-extension-search-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-cors/3.1.7/cxf-rt-rs-security-cors-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-oauth/3.1.7/cxf-rt-rs-security-oauth-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-client/3.1.7/cxf-rt-rs-client-3.1.7.jar:/Users/caojx/code/maven_repository/net/oauth/core/oauth-provider/20100527/oauth-provider-20100527.jar:/Users/caojx/code/maven_repository/net/oauth/core/oauth/20100527/oauth-20100527.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-oauth2/3.1.7/cxf-rt-rs-security-oauth2-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-jose-jaxrs/3.1.7/cxf-rt-rs-security-jose-jaxrs-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-xml/3.1.7/cxf-rt-rs-security-xml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-sso-saml/3.1.7/cxf-rt-rs-security-sso-saml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-servlet_3.0_spec/1.0/geronimo-servlet_3.0_spec-1.0.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-javascript/3.1.7/cxf-rt-javascript-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/sts/cxf-services-sts-core/3.1.7/cxf-services-sts-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-jose/3.1.7/cxf-rt-rs-security-jose-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-json-basic/3.1.7/cxf-rt-rs-json-basic-3.1.7.jar:/Users/caojx/code/maven_repository/org/springframework/spring-context/4.1.9.RELEASE/spring-context-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/springframework/spring-expression/4.1.9.RELEASE/spring-expression-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/wsn/cxf-services-wsn-api/3.1.7/cxf-services-wsn-api-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/wsn/cxf-services-wsn-core/3.1.7/cxf-services-wsn-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/activemq/activemq-broker/5.12.0/activemq-broker-5.12.0.jar:/Users/caojx/code/maven_repository/org/apache/activemq/activemq-client/5.12.0/activemq-client-5.12.0.jar:/Users/caojx/code/maven_repository/org/fusesource/hawtbuf/hawtbuf/1.11/hawtbuf-1.11.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar:/Users/caojx/code/maven_repository/org/apache/activemq/activemq-openwire-legacy/5.12.0/activemq-openwire-legacy-5.12.0.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/ws-discovery/cxf-services-ws-discovery-api/3.1.7/cxf-services-ws-discovery-api-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/ws-discovery/cxf-services-ws-discovery-service/3.1.7/cxf-services-ws-discovery-service-3.1.7.jar:/Users/caojx/code/maven_repository/org/codehaus/jettison/jettison/1.3.8/jettison-1.3.8.jar:/Users/caojx/code/maven_repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/Users/caojx/code/maven_repository/com/sun/xml/fastinfoset/FastInfoset/1.2.13/FastInfoset-1.2.13.jar:/Users/caojx/code/maven_repository/org/springframework/spring-web/4.1.9.RELEASE/spring-web-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/springframework/spring-aop/4.1.9.RELEASE/spring-aop-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/caojx/code/maven_repository/org/springframework/spring-beans/4.1.9.RELEASE/spring-beans-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/springframework/spring-core/4.1.9.RELEASE/spring-core-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.7/cxf-rt-frontend-jaxws-3.1.7.jar:/Users/caojx/code/maven_repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http/3.1.7/cxf-rt-transports-http-3.1.7.jar client.InterceptorClientTest
+一月 21, 2018 9:26:32 下午 org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+信息: Creating Service {http://interceptor1.cxf.ws02.server/}HelloWSImplService from WSDL: http://127.0.0.1:8989/ws02/interceptor1?wsdl
+class com.sun.proxy.$Proxy34
+一月 21, 2018 9:26:33 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Outbound Message
+---------------------------
+ID: 1
+Address: http://127.0.0.1:8989/ws02/interceptor1
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=[""]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHello xmlns:ns2="http://interceptor1.cxf.ws02.server/"><arg0>jack</arg0></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+一月 21, 2018 9:26:33 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=UTF-8
+Headers: {content-type=[text/xml; charset=UTF-8], Date=[Sun, 21 Jan 2018 13:26:33 GMT], Server=[Jetty(9.2.15.v20160210)], transfer-encoding=[chunked]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHelloResponse xmlns:ns2="http://interceptor1.cxf.ws02.server/"><return>hello jack</return></ns2:sayHelloResponse></soap:Body></soap:Envelope>
+--------------------------------------
+client:hello jack
+```
+
+服务端：  
+```text
+一月 21, 2018 9:26:32 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Inbound Message
+----------------------------
+ID: 5
+Address: http://127.0.0.1:8989/ws02/interceptor1?wsdl
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Type=[null], Host=[127.0.0.1:8989], Pragma=[no-cache], User-Agent=[Apache-CXF/3.1.7]}
+--------------------------------------
+一月 21, 2018 9:26:33 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+server sayHello()jack
+信息: Inbound Message
+----------------------------
+ID: 6
+Address: http://127.0.0.1:8989/ws02/interceptor1
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[204], content-type=[text/xml; charset=UTF-8], Host=[127.0.0.1:8989], Pragma=[no-cache], SOAPAction=[""], User-Agent=[Apache-CXF/3.1.7]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHello xmlns:ns2="http://interceptor1.cxf.ws02.server/"><arg0>jack</arg0></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+一月 21, 2018 9:26:33 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Outbound Message
+---------------------------
+ID: 6
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml
+Headers: {}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHelloResponse xmlns:ns2="http://interceptor1.cxf.ws02.server/"><return>hello jack</return></ns2:sayHelloResponse></soap:Body></soap:Envelope>
+--------------------------------------
+```
+
+> 使用自定义拦截器，实现用户名与密码的检验
+- 服务器端的in拦截器
+- 客户端的out拦截器
+
+1. 客户端自定义拦截器  
+假设需要在客户端入参中添加如下格式参数  
+```xml
+<test>
+    <name></name>
+    <password></password>
+<test/>
+```
+
+AddUserInterceptor.java  
+
+```java
+package client;
+
+import com.sun.org.apache.xml.internal.utils.DOMHelper;
+import org.apache.cxf.binding.soap.SoapMessage;
+import org.apache.cxf.headers.Header;
+import org.apache.cxf.interceptor.Fault;
+import org.apache.cxf.phase.AbstractPhaseInterceptor;
+import org.apache.cxf.phase.Phase;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import javax.xml.namespace.QName;
+import java.util.List;
+
+/**
+ * 客户端自定义拦截器
+ */
+public class AddUserInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
+
+    private String name;
+    private String password;
+
+
+    public AddUserInterceptor(String name, String password) {
+        super(Phase.PRE_PROTOCOL); //准备协议化的时候调用，还有其他的常量见Phase
+        this.name = name;
+        this.password = password;
+    }
+
+    /**
+     * <Envelope>
+     *      <head>
+     *          <test>
+     *              <name></name>
+     *              <password></password>
+     *          </test>
+     *          <test>
+     *              <name></name>
+     *              <password></password>
+     *          </test>
+     *      </head>
+     *      <body>
+     *          <sayHello>
+     *              <arg0></arg0>
+     *          </sayHello>
+     *      </body>
+     * </Envelope>
+     * @param soapMessage
+     * @throws Fault
+     */
+    @Override
+    public void handleMessage(SoapMessage soapMessage) throws Fault {
+
+        /**
+         * <test>
+         *     <name></name>
+         *     <password></password>
+         * <test/>
+         */
+        List<Header> headerList = soapMessage.getHeaders();
+        Document document = DOMHelper.createDocument();
+        Element rootEle = document.createElement("test");
+        Element nameEle = document.createElement("name");
+        nameEle.setTextContent(name);
+        rootEle.appendChild(nameEle);
+        Element passwordEle = document.createElement("password");
+        passwordEle.setTextContent(password);
+        rootEle.appendChild(passwordEle);
+        headerList.add(new Header(new QName("test"), rootEle));
+
+        System.out.println("client handleMessage()");
+    }
+}
+```
+
+
+2. InterceptorClientTest2.java
+客户端使用自定义拦截器  
+```java
+package client;
+
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.interceptor.Interceptor;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.apache.cxf.message.Message;
+import server.ws02.cxf.interceptor1.HelloWS;
+import server.ws02.cxf.interceptor1.HelloWSImplService;
+
+import java.util.List;
+
+/**
+ * 调用WebService，使用自定义拦截器
+ */
+public class InterceptorClientTest2 {
+
+    public static void main(String[] args) {
+        //获取factory对应wsdl中<service name="HelloWSImplService">中的name值
+        HelloWSImplService factory = new HelloWSImplService();
+        //获取具体的服务对应<port name="HelloWSImplPort" binding="tns:HelloWSImplPortBinding">...</port>中的get+name值
+        HelloWS helloWS = factory.getHelloWSImplPort();
+        System.out.println(helloWS.getClass());
+
+        //发送请求的客户端对象
+        Client client = ClientProxy.getClient(helloWS);
+
+        //客户端出拦截器
+        //客户端的日志入拦截器
+        List<Interceptor<? extends Message>> inInterceptors = client.getInInterceptors();
+        inInterceptors.add(new LoggingInInterceptor());
+
+        //客户端的日志出拦截器
+        List<Interceptor<? extends Message>> outInterceptors = client.getOutInterceptors();
+        outInterceptors.add(new LoggingOutInterceptor());
+        //自定义拦截器
+        outInterceptors.add(new AddUserInterceptor("tom", "123"));
+
+        String result = helloWS.sayHello("jack");
+        System.out.println("client:"+result);
+    }
+}
+```
+
+3. CheckUserInterceptor.java  
+服务端检查客户端传输过来的数据是否正确，如果校验不通过拦截抛出异常
+```java
+package server.ws02.cxf.interceptor2;
+
+import org.apache.cxf.binding.soap.SoapMessage;
+import org.apache.cxf.headers.Header;
+import org.apache.cxf.interceptor.Fault;
+import org.apache.cxf.phase.AbstractPhaseInterceptor;
+import org.apache.cxf.phase.Phase;
+import org.w3c.dom.Element;
+
+import javax.xml.namespace.QName;
+
+/**
+ * 检查用户的拦截器
+ */
+public class CheckUserInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
+
+    private String name;
+    private String password;
+
+
+    public CheckUserInterceptor() {
+        super(Phase.PRE_PROTOCOL); //准备协议化的时候调用，还有其他的常量见Phase
+    }
+
+    /**
+     * <Envelope>
+     *      <head>
+     *          <test>
+     *              <name></name>
+     *              <password></password>
+     *          </test>
+     *          <test>
+     *              <name></name>
+     *              <password></password>
+     *          </test>
+     *      </head>
+     *      <body>
+     *          <sayHello>
+     *              <arg0></arg0>
+     *          </sayHello>
+     *      </body>
+     * </Envelope>
+     * @param soapMessage
+     * @throws Fault
+     */
+    @SuppressWarnings("deprecation")
+    @Override
+    public void handleMessage(SoapMessage soapMessage) throws Fault {
+
+        /**
+         * <test>
+         *     <name></name>
+         *     <password></password>
+         * <test/>
+         */
+       Header header = soapMessage.getHeader(new QName("test"));
+       if(header != null){
+           Element testEle = (Element) header.getObject();
+           String name = testEle.getElementsByTagName("name").item(0).getTextContent();
+           String password = testEle.getElementsByTagName("password").item(0).getTextContent();
+           if("tom".equals(name) && "123".equals(password)){
+               System.out.println("server 通过拦截器。。。。");
+               return;
+           }
+           //不能通过
+           System.out.println("没有通过拦截器。。。");
+           throw  new Fault(new RuntimeException("请求需要一个正确的用户名或密码!"));
+       }
+        System.out.println("server handleMessage()");
+    }
+}
+```
+4. ServerTest.java  
+```java
+package server.ws02.cxf.interceptor1;
+
+import org.apache.cxf.interceptor.Interceptor;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
+import org.apache.cxf.jaxws.EndpointImpl;
+import org.apache.cxf.message.Message;
+import server.ws02.cxf.interceptor2.CheckUserInterceptor;
+
+import javax.xml.ws.Endpoint;
+import java.util.List;
+
+/**
+ * 发布WebService,并添加入拦截器和出拦截器，添加后我们可以在debug窗口看到请求响应日志
+ */
+public class ServerTest {
+
+    public static void main(String[] args) {
+        System.out.println("发布开始");
+        //发布地址
+        String address = "http://127.0.0.1:8989/ws02/interceptor1";
+        //指定发布的地址和SEI实现类对象
+        Endpoint endpoint = Endpoint.publish(address, new HelloWSImpl());
+
+        EndpointImpl endpointImpl = (EndpointImpl) endpoint;
+        //服务端的日志入拦截器
+        List<Interceptor<? extends Message>> inInterceptors = endpointImpl.getInInterceptors();
+        inInterceptors.add(new LoggingInInterceptor());
+        inInterceptors.add(new CheckUserInterceptor()); //拦截器校验用户名或密码
+        //服务端的日志出拦截器
+        List<Interceptor<? extends Message>> outInterceptors = endpointImpl.getOutInterceptors();
+        outInterceptors.add(new LoggingOutInterceptor());
+
+        System.out.println("发布完成");
+    }
+}
+``` 
+5. 结果  
+客户端：   
+```text
+/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=54114:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/tools.jar:/Users/caojx/code/learn/code/webservice-java/webservice-client/target/classes:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-common/3.1.7/cxf-tools-common-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/caojx/code/maven_repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/caojx/code/maven_repository/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar:/Users/caojx/code/maven_repository/com/sun/xml/bind/jaxb-xjc/2.2.11/jaxb-xjc-2.2.11.jar:/Users/caojx/code/maven_repository/com/sun/xml/bind/jaxb-core/2.2.11/jaxb-core-2.2.11.jar:/Users/caojx/code/maven_repository/com/sun/xml/bind/jaxb-impl/2.2.11/jaxb-impl-2.2.11.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-validator/3.1.7/cxf-tools-validator-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/ws/xmlschema/xmlschema-core/2.2.1/xmlschema-core-2.2.1.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-core/3.1.7/cxf-tools-wsdlto-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-wsdl/3.1.7/cxf-rt-wsdl-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-frontend-javascript/3.1.7/cxf-tools-wsdlto-frontend-javascript-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-misctools/3.1.7/cxf-tools-misctools-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-corba/3.1.7/cxf-tools-corba-3.1.7.jar:/Users/caojx/code/maven_repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-databinding-jaxb/3.1.7/cxf-tools-wsdlto-databinding-jaxb-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wsdlto-frontend-jaxws/3.1.7/cxf-tools-wsdlto-frontend-jaxws-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-wadlto-jaxrs/3.1.7/cxf-tools-wadlto-jaxrs-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-service-description/3.1.7/cxf-rt-rs-service-description-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-tools-java2ws/3.1.7/cxf-tools-java2ws-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjc-utils/cxf-xjc-runtime/3.0.5/cxf-xjc-runtime-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-dv/3.0.5/cxf-xjc-dv-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-ts/3.0.5/cxf-xjc-ts-3.0.5.jar:/Users/caojx/code/maven_repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-bug671/3.0.5/cxf-xjc-bug671-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-boolean/3.0.5/cxf-xjc-boolean-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/xjcplugins/cxf-xjc-javadoc/3.0.5/cxf-xjc-javadoc-3.0.5.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-core/3.1.7/cxf-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/codehaus/woodstox/woodstox-core-asl/4.4.1/woodstox-core-asl-4.4.1.jar:/Users/caojx/code/maven_repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-features-clustering/3.1.7/cxf-rt-features-clustering-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-management/3.1.7/cxf-rt-management-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-local/3.1.7/cxf-rt-transports-local-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-udp/3.1.7/cxf-rt-transports-udp-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/mina/mina-core/2.0.13/mina-core-2.0.13.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-hc/3.1.7/cxf-rt-transports-http-hc-3.1.7.jar:/Users/caojx/code/maven_repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpcore-nio/4.4.4/httpcore-nio-4.4.4.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpasyncclient/4.1.2/httpasyncclient-4.1.2.jar:/Users/caojx/code/maven_repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar:/Users/caojx/code/maven_repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-jetty/3.1.7/cxf-rt-transports-http-jetty-3.1.7.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-server/9.2.15.v20160210/jetty-server-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-util/9.2.15.v20160210/jetty-util-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-io/9.2.15.v20160210/jetty-io-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-security/9.2.15.v20160210/jetty-security-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-continuation/9.2.15.v20160210/jetty-continuation-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/eclipse/jetty/jetty-http/9.2.15.v20160210/jetty-http-9.2.15.v20160210.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-netty-server/3.1.7/cxf-rt-transports-http-netty-server-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http-netty-client/3.1.7/cxf-rt-transports-http-netty-client-3.1.7.jar:/Users/caojx/code/maven_repository/org/slf4j/slf4j-jdk14/1.7.21/slf4j-jdk14-1.7.21.jar:/Users/caojx/code/maven_repository/org/slf4j/jcl-over-slf4j/1.7.21/jcl-over-slf4j-1.7.21.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-jms/3.1.7/cxf-rt-transports-jms-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-jms_1.1_spec/1.1.1/geronimo-jms_1.1_spec-1.1.1.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-soap/3.1.7/cxf-rt-bindings-soap-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-databinding-jaxb/3.1.7/cxf-rt-databinding-jaxb-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-corba/3.1.7/cxf-rt-bindings-corba-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-xml/3.1.7/cxf-rt-bindings-xml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-object/3.1.7/cxf-rt-bindings-object-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-bindings-coloc/3.1.7/cxf-rt-bindings-coloc-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-databinding-aegis/3.1.7/cxf-rt-databinding-aegis-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-databinding-xmlbeans/3.1.7/cxf-rt-databinding-xmlbeans-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/xmlbeans/xmlbeans/2.6.0/xmlbeans-2.6.0.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-addr/3.1.7/cxf-rt-ws-addr-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-rm/3.1.7/cxf-rt-ws-rm-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-policy/2.1.7/wss4j-policy-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-policy/3.1.7/cxf-rt-ws-policy-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/neethi/neethi/3.0.3/neethi-3.0.3.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-mex/3.1.7/cxf-rt-ws-mex-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-ws-security/3.1.7/cxf-rt-ws-security-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-security-saml/3.1.7/cxf-rt-security-saml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-security/3.1.7/cxf-rt-security-3.1.7.jar:/Users/caojx/code/maven_repository/net/sf/ehcache/ehcache/2.10.2/ehcache-2.10.2.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-dom/2.1.7/wss4j-ws-security-dom-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-common/2.1.7/wss4j-ws-security-common-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/santuario/xmlsec/2.0.7/xmlsec-2.0.7.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-saml-impl/3.1.1/opensaml-saml-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-profile-api/3.1.1/opensaml-profile-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-core/3.1.1/opensaml-core-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-saml-api/3.1.1/opensaml-saml-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xmlsec-api/3.1.1/opensaml-xmlsec-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-soap-api/3.1.1/opensaml-soap-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-security-impl/3.1.1/opensaml-security-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-security-api/3.1.1/opensaml-security-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/cryptacular/cryptacular/1.0/cryptacular-1.0.jar:/Users/caojx/code/maven_repository/org/bouncycastle/bcprov-jdk15on/1.51/bcprov-jdk15on-1.51.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xmlsec-impl/3.1.1/opensaml-xmlsec-impl-3.1.1.jar:/Users/caojx/code/maven_repository/net/shibboleth/utilities/java-support/7.1.1/java-support-7.1.1.jar:/Users/caojx/code/maven_repository/com/google/guava/guava/18.0/guava-18.0.jar:/Users/caojx/code/maven_repository/joda-time/joda-time/2.7/joda-time-2.7.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-impl/3.1.1/opensaml-xacml-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-api/3.1.1/opensaml-xacml-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-saml-impl/3.1.1/opensaml-xacml-saml-impl-3.1.1.jar:/Users/caojx/code/maven_repository/org/opensaml/opensaml-xacml-saml-api/3.1.1/opensaml-xacml-saml-api-3.1.1.jar:/Users/caojx/code/maven_repository/org/jasypt/jasypt/1.9.2/jasypt-1.9.2.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-javamail_1.4_spec/1.7.1/geronimo-javamail_1.4_spec-1.7.1.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-stax/2.1.7/wss4j-ws-security-stax-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-bindings/2.1.7/wss4j-bindings-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/wss4j/wss4j-ws-security-policy-stax/2.1.7/wss4j-ws-security-policy-stax-2.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-js/3.1.7/cxf-rt-frontend-js-3.1.7.jar:/Users/caojx/code/maven_repository/rhino/js/1.7R2/js-1.7R2.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-simple/3.1.7/cxf-rt-frontend-simple-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-jaxrs/3.1.7/cxf-rt-frontend-jaxrs-3.1.7.jar:/Users/caojx/code/maven_repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar:/Users/caojx/code/maven_repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-extension-providers/3.1.7/cxf-rt-rs-extension-providers-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-extension-search/3.1.7/cxf-rt-rs-extension-search-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-cors/3.1.7/cxf-rt-rs-security-cors-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-oauth/3.1.7/cxf-rt-rs-security-oauth-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-client/3.1.7/cxf-rt-rs-client-3.1.7.jar:/Users/caojx/code/maven_repository/net/oauth/core/oauth-provider/20100527/oauth-provider-20100527.jar:/Users/caojx/code/maven_repository/net/oauth/core/oauth/20100527/oauth-20100527.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-oauth2/3.1.7/cxf-rt-rs-security-oauth2-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-jose-jaxrs/3.1.7/cxf-rt-rs-security-jose-jaxrs-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-xml/3.1.7/cxf-rt-rs-security-xml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-sso-saml/3.1.7/cxf-rt-rs-security-sso-saml-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-servlet_3.0_spec/1.0/geronimo-servlet_3.0_spec-1.0.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-javascript/3.1.7/cxf-rt-javascript-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/sts/cxf-services-sts-core/3.1.7/cxf-services-sts-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-security-jose/3.1.7/cxf-rt-rs-security-jose-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-rs-json-basic/3.1.7/cxf-rt-rs-json-basic-3.1.7.jar:/Users/caojx/code/maven_repository/org/springframework/spring-context/4.1.9.RELEASE/spring-context-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/springframework/spring-expression/4.1.9.RELEASE/spring-expression-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/wsn/cxf-services-wsn-api/3.1.7/cxf-services-wsn-api-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/wsn/cxf-services-wsn-core/3.1.7/cxf-services-wsn-core-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/activemq/activemq-broker/5.12.0/activemq-broker-5.12.0.jar:/Users/caojx/code/maven_repository/org/apache/activemq/activemq-client/5.12.0/activemq-client-5.12.0.jar:/Users/caojx/code/maven_repository/org/fusesource/hawtbuf/hawtbuf/1.11/hawtbuf-1.11.jar:/Users/caojx/code/maven_repository/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar:/Users/caojx/code/maven_repository/org/apache/activemq/activemq-openwire-legacy/5.12.0/activemq-openwire-legacy-5.12.0.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/ws-discovery/cxf-services-ws-discovery-api/3.1.7/cxf-services-ws-discovery-api-3.1.7.jar:/Users/caojx/code/maven_repository/org/apache/cxf/services/ws-discovery/cxf-services-ws-discovery-service/3.1.7/cxf-services-ws-discovery-service-3.1.7.jar:/Users/caojx/code/maven_repository/org/codehaus/jettison/jettison/1.3.8/jettison-1.3.8.jar:/Users/caojx/code/maven_repository/org/ow2/asm/asm/5.0.4/asm-5.0.4.jar:/Users/caojx/code/maven_repository/com/sun/xml/fastinfoset/FastInfoset/1.2.13/FastInfoset-1.2.13.jar:/Users/caojx/code/maven_repository/org/springframework/spring-web/4.1.9.RELEASE/spring-web-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/springframework/spring-aop/4.1.9.RELEASE/spring-aop-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/caojx/code/maven_repository/org/springframework/spring-beans/4.1.9.RELEASE/spring-beans-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/springframework/spring-core/4.1.9.RELEASE/spring-core-4.1.9.RELEASE.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-frontend-jaxws/3.1.7/cxf-rt-frontend-jaxws-3.1.7.jar:/Users/caojx/code/maven_repository/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar:/Users/caojx/code/maven_repository/org/apache/cxf/cxf-rt-transports-http/3.1.7/cxf-rt-transports-http-3.1.7.jar client.InterceptorClientTest2
+一月 21, 2018 10:16:48 下午 org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean buildServiceFromWSDL
+信息: Creating Service {http://interceptor1.cxf.ws02.server/}HelloWSImplService from WSDL: http://127.0.0.1:8989/ws02/interceptor1?wsdl
+class com.sun.proxy.$Proxy34
+client handleMessage()
+一月 21, 2018 10:16:48 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Outbound Message
+---------------------------
+ID: 1
+Address: http://127.0.0.1:8989/ws02/interceptor1
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=[""]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><test><name>tom</name><password>123</password></test></soap:Header><soap:Body><ns2:sayHello xmlns:ns2="http://interceptor1.cxf.ws02.server/"><arg0>jack</arg0></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+一月 21, 2018 10:16:48 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Inbound Message
+----------------------------
+ID: 1
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml; charset=UTF-8
+Headers: {content-type=[text/xml; charset=UTF-8], Date=[Sun, 21 Jan 2018 14:16:48 GMT], Server=[Jetty(9.2.15.v20160210)], transfer-encoding=[chunked]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHelloResponse xmlns:ns2="http://interceptor1.cxf.ws02.server/"><return>hello jack</return></ns2:sayHelloResponse></soap:Body></soap:Envelope>
+--------------------------------------
+client:hello jack
+
+Process finished with exit code 0
+```
+服务端：  
+```text
+一月 21, 2018 10:16:48 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Inbound Message
+----------------------------
+ID: 3
+Address: http://127.0.0.1:8989/ws02/interceptor1?wsdl
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Type=[null], Host=[127.0.0.1:8989], Pragma=[no-cache], User-Agent=[Apache-CXF/3.1.7]}
+--------------------------------------
+server 通过拦截器。。。。
+server sayHello()jack
+一月 21, 2018 10:16:48 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Inbound Message
+----------------------------
+ID: 4
+Address: http://127.0.0.1:8989/ws02/interceptor1
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml; charset=UTF-8
+Headers: {Accept=[*/*], Cache-Control=[no-cache], connection=[keep-alive], Content-Length=[284], content-type=[text/xml; charset=UTF-8], Host=[127.0.0.1:8989], Pragma=[no-cache], SOAPAction=[""], User-Agent=[Apache-CXF/3.1.7]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Header><test><name>tom</name><password>123</password></test></soap:Header><soap:Body><ns2:sayHello xmlns:ns2="http://interceptor1.cxf.ws02.server/"><arg0>jack</arg0></ns2:sayHello></soap:Body></soap:Envelope>
+--------------------------------------
+一月 21, 2018 10:16:48 下午 org.apache.cxf.services.HelloWSImplService.HelloWSImplPort.HelloWS
+信息: Outbound Message
+---------------------------
+ID: 4
+Response-Code: 200
+Encoding: UTF-8
+Content-Type: text/xml
+Headers: {}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHelloResponse xmlns:ns2="http://interceptor1.cxf.ws02.server/"><return>hello jack</return></ns2:sayHelloResponse></soap:Body></soap:Envelope>
+--------------------------------------
+```
 
 参考：  
-https://www.cnblogs.com/holbrook/archive/2012/12/12/2814821.html
-http://blog.csdn.net/kongxx/article/details/7544640  
+https://www.cnblogs.com/holbrook/archive/2012/12/12/2814821.html  
+http://blog.csdn.net/kongxx/article/details/7544640    
