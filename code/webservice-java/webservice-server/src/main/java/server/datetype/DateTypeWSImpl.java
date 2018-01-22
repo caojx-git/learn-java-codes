@@ -29,18 +29,19 @@ public class DateTypeWSImpl implements DateTypeWS {
     }
 
     /**
-     * 发布报错： com.sun.xml.bind.v2.runtime.IllegalAnnotationsException: 2 counts of IllegalAnnotationExceptions
+     * 如果使用的cxf发布报错： com.sun.xml.bind.v2.runtime.IllegalAnnotationsException: 2 counts of IllegalAnnotationExceptions
      * java.util.Map is an interface, and JAXB can't handle interfaces.
-     * 由于默认不支持map类型数据，解决方案参考如下：
-     * http://blog.csdn.net/kongxx/article/details/7544640
+     * 原因是不支持map类型数据，解决方案参考如下：
+     * 方案一： http://blog.csdn.net/kongxx/article/details/7544640
+     * 方案二： 我将将cxf版本换到3.1.7以上就好了
      * @return
      */
-   /* public Map<Integer, Student> getAllStudentsMap() {
+    public Map<Integer, Student> getAllStudentsMap() {
         System.out.println("server getAllStudentsMap() ");
         Map<Integer, Student> map = new HashMap<Integer, Student>();
         map.put(1,new Student(1, "JACK1", 100));
         map.put(2,new Student(1, "JACK1", 200));
         map.put(3,new Student(1, "JACK1", 300));
         return map;
-    }*/
+    }
 }
