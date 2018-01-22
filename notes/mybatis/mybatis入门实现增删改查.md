@@ -1,4 +1,4 @@
-[toc]
+[TOC]
 
 ## 一、mybatis入门实现增删改查
 这里我们使用mybatis去实现一个自动回复机器人的功能的实现。
@@ -33,9 +33,9 @@ public class ListServlet extends HttpServlet {
 
 }
 ```
-项目结构图
+项目结构图  
 
-![mybatis project](images/mybatis-project1.png)
+![mybatis project](../images/mybatis/mybatis-project1.png)  
 
 
 #### 1.1.2 list.jsp页面
@@ -146,8 +146,8 @@ list.jsp页面用于展示页面列表，这个文件放在WEB-INF/jsp/back/list
  </html>
 ```
 
-项目结构图
-![](images/mybatis-project2.png)
+项目结构图      
+![](../images/mybatis/mybatis-project2.png)  
 
 #### 1.1.3 web.xml文件
 
@@ -176,8 +176,8 @@ list.jsp页面用于展示页面列表，这个文件放在WEB-INF/jsp/back/list
 
 #### 1.1.4 结果
 
-下图是占时没有从数据库中获取数据，所以列表页面是空的
-![](images/mybatis-list1.png)
+下图是占时没有从数据库中获取数据，所以列表页面是空的    
+![](../images/mybatis/mybatis-list1.png)    
 
 
 ### 1.2 建表和连接数据库
@@ -266,9 +266,9 @@ public class Message {
 }
 ```
 
-项目结构图
+项目结构图    
 
-![](images/mybatis-project3.png)
+![](../images/mybatis/mybatis-project3.png)  
 
 #### 1.2.3 ListServlet.java 从数据库中查询数据
 
@@ -327,8 +327,8 @@ public class ListServlet extends HttpServlet {
 
 ```
 
-结果
-![](images/mybatis-list2.png)
+结果  
+![](../images/mybatis/mybatis-list2.png)  
 
 ### 1.3 列表查询
 
@@ -415,8 +415,8 @@ public class ListServlet extends HttpServlet {
 }
 ```
 
-结果
-![](images/mybatis-list4.png)
+结果  
+![](../images/mybatis/mybatis-list4.png)  
 
 
 ### 1.4 代码重构
@@ -598,10 +598,10 @@ public class ListServlet extends HttpServlet {
 
 ```
 
-结果：
+结果：  
 
-![](images/mybatis-project4.png)
-![](images/mybatis-list5.png)
+![](../images/mybatis/mybatis-project4.png)    
+![](../images/mybatis/mybatis-list5.png)   
 
 
 ## 二、开始使用mybatis
@@ -609,7 +609,7 @@ public class ListServlet extends HttpServlet {
 
 ### 2.1.1准备jar包
 
-![](images/mybatis-jar.png)
+![](../images/mybatis/mybatis-jar.png)    
 
 
 #### 2.1.2 使用mybatis连接数据库
@@ -723,7 +723,7 @@ public class DBAccess {
 #### 2.1.5 MessageDao.java
 
 这里使用mybatis数据库进行查询，修改MessageDao.java的内容
- 
+
  ```java
 package com.imooc.dao;
 
@@ -773,7 +773,7 @@ public class MessageDao {
         return messages;
     }
 }
-```
+ ```
 
 #### 2.1.6 Message.xml
 
@@ -830,11 +830,11 @@ hibernate不同。
 
 </mapper>
 ```
-项目结构图
-![](images/mybatis-project5.png)
+项目结构图  
+![](../images/mybatis/mybatis-project5.png)    
 
 结果
-![](images/mybatis-list6.png)
+![](../images/mybatis/mybatis-list6.png)    
 
 
 ### 2.2动态sql拼接
@@ -905,9 +905,9 @@ public class MessageDao {
 
 mybatis中主要使用ognl表达式获取parameterType中传入的参数值，规则如下
 
-![](images/mybatis-param1.png)
+![](../images/mybatis/mybatis-param1.png)    
 
-![](images/mybatis-param2.png)
+![](../images/mybatis/mybatis-param2.png)    
 
 Message.xml文件
 
@@ -979,7 +979,7 @@ Message.xml文件
 
 查询结果
 
-![](images/mybatis-list7.png)
+![](../images/mybatis/mybatis-list7.png)  
 
 
 ## 三、配置log4j日志输出
@@ -1002,12 +1002,12 @@ log4j.logger.org.apache=INFO
 ```
 
 >语法
-其语法为：  
-log4j.rootLogger = [ level ] , appenderName1, appenderName2, …  
-level: 是日志记录的优先级，分为OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、ALL或  
-者您定义的级别。Log4j建议只使用四个级别，优 先级从高到低分别是ERROR、WARN、INFO、DEBUG。通过在这里定义的级别，您可以控制到应用程序中相应级别的日志信息的开关。比如在这里定 义了INFO级别，则应用程序中所有DEBUG级别的日志信息将不被打印出来。  
-appenderName: 就是指定日志信息输出到哪个地方。您可以同时指定多个输出目的地。  
-例如：log4j.rootLogger＝info,A1,B2,C3
+>其语法为：  
+>log4j.rootLogger = [ level ] , appenderName1, appenderName2, …  
+>level: 是日志记录的优先级，分为OFF、FATAL、ERROR、WARN、INFO、DEBUG、TRACE、ALL或  
+>者您定义的级别。Log4j建议只使用四个级别，优 先级从高到低分别是ERROR、WARN、INFO、DEBUG。通过在这里定义的级别，您可以控制到应用程序中相应级别的日志信息的开关。比如在这里定 义了INFO级别，则应用程序中所有DEBUG级别的日志信息将不被打印出来。  
+>appenderName: 就是指定日志信息输出到哪个地方。您可以同时指定多个输出目的地。  
+>例如：log4j.rootLogger＝info,A1,B2,C3
 
 #### 3.1日志的输出级别
 log4j.rootLogger=DEBUG,Console,file 用于说明日志输出的级别，位置
@@ -1022,14 +1022,14 @@ DEBUG表示输出级别
 
 各个级别表示的含义
 >OFF 、FATAL 、ERROR、WARN、INFO、DEBUG、TRACE 、ALL  
-  OFF 为最高等级 关闭了日志信息  
-  FATAL  为可能导致应用中止的严重事件错误  
-  ERROR 为严重错误 主要是程序的错误  
-  WARN 为一般警告，比如session丢失  
-  INFO 为一般要显示的信息，比如登录登出  
-  DEBUG 为程序的调试信息  
-  TRACE 为比DEBUG更细粒度的事件信息  
-  ALL 为最低等级，将打开所有级别的日志 
+>  OFF 为最高等级 关闭了日志信息  
+>  FATAL  为可能导致应用中止的严重事件错误  
+>  ERROR 为严重错误 主要是程序的错误  
+>  WARN 为一般警告，比如session丢失  
+>  INFO 为一般要显示的信息，比如登录登出  
+>  DEBUG 为程序的调试信息  
+>  TRACE 为比DEBUG更细粒度的事件信息  
+>  ALL 为最低等级，将打开所有级别的日志 
 
 #### 3.2日志的输出位置
 Console，表示输出的位置是控制台
@@ -1048,10 +1048,10 @@ log4j.rootLogger=DEBUG,A,B,C,..
 
 期输出位置主要有如下几种
 >1.org.apache.log4j.ConsoleAppender（控制台）  
- 2.org.apache.log4j.FileAppender（文件）  
- 3.org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件）  
- 4.org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）  
- 5.org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
+> 2.org.apache.log4j.FileAppender（文件）  
+> 3.org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件）  
+> 4.org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）  
+> 5.org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
 
 #### 3.3日志的输出格式
 log4j.appender.Console.layout=org.apache.log4j.PatternLayout是布局类
@@ -1059,29 +1059,29 @@ log4j.appender.Console.layout=org.apache.log4j.PatternLayout是布局类
 log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n 自定义输出格式
 其中空格 []都会被原样输出
 >%d 表示日志产生的时间<br/>
- %t 表示产生日志的线程名称<br/>
- %p 表示日志的级别，%5p,表示级别信息会占用5个字符位置，不足5位字符使用空格补齐，%-5p，其中表示右对齐。<<br/>
- %c 表示出书日志的全类名<br/>
- %m 表示输出的附加信息<br/>
- %n 表示换行<br/>
-其他：<br/>
-%p: 输出日志信息优先级，即DEBUG，INFO，WARN，ERROR，FATAL,  
-%d: 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyyy MM dd HH:mm:ss,SS}，输出类似：2002年10月18日 22：10：28，921  
-%r: 输出自应用启动到输出该log信息耗费的毫秒数  
-%c: 输出日志信息所属的类，通常就是所在类的全名  
-%t: 输出产生该日志事件的线程名  
-%l: 输出日志事件的发生位置，相当于%C.%M(%F:%L)的组合,包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main (TestLog4.java:10)  
-%x: 输出和当前线程相关联的NDC(嵌套诊断环境),尤其用到像java servlets这样的多客户多线程的应用中。  
-%%: 输出一个"%"字符  
-%F: 输出日志消息产生时所在的文件名称  
-%L: 输出代码中的行号  
-%m: 输出代码中指定的消息,产生的日志具体信息  
-%n: 输出一个回车换行符，Windows平台为"/r/n"，Unix平台为"/n"输出日志信息换行  
-可以在%与模式字符之间加上修饰符来控制其最小宽度、最大宽度、和文本的对齐方式。如：  
-1)%20c：指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，默认的情况下右对齐。  
-2)%-20c:指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，"-"号指定左对齐。  
-3)%.30c:指定输出category的名称，最大的宽度是30，如果category的名称大于30的话，就会将左边多出的字符截掉，但小于30的话也不会有空格。  
-4)%20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边较远输出的字符截掉。 
+> %t 表示产生日志的线程名称<br/>
+> %p 表示日志的级别，%5p,表示级别信息会占用5个字符位置，不足5位字符使用空格补齐，%-5p，其中表示右对齐。<<br/>
+> %c 表示出书日志的全类名<br/>
+> %m 表示输出的附加信息<br/>
+> %n 表示换行<br/>
+>其他：<br/>
+>%p: 输出日志信息优先级，即DEBUG，INFO，WARN，ERROR，FATAL,  
+>%d: 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyyy MM dd HH:mm:ss,SS}，输出类似：2002年10月18日 22：10：28，921  
+>%r: 输出自应用启动到输出该log信息耗费的毫秒数  
+>%c: 输出日志信息所属的类，通常就是所在类的全名  
+>%t: 输出产生该日志事件的线程名  
+>%l: 输出日志事件的发生位置，相当于%C.%M(%F:%L)的组合,包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main (TestLog4.java:10)  
+>%x: 输出和当前线程相关联的NDC(嵌套诊断环境),尤其用到像java servlets这样的多客户多线程的应用中。  
+>%%: 输出一个"%"字符  
+>%F: 输出日志消息产生时所在的文件名称  
+>%L: 输出代码中的行号  
+>%m: 输出代码中指定的消息,产生的日志具体信息  
+>%n: 输出一个回车换行符，Windows平台为"/r/n"，Unix平台为"/n"输出日志信息换行  
+>可以在%与模式字符之间加上修饰符来控制其最小宽度、最大宽度、和文本的对齐方式。如：  
+>1)%20c：指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，默认的情况下右对齐。  
+>2)%-20c:指定输出category的名称，最小的宽度是20，如果category的名称小于20的话，"-"号指定左对齐。  
+>3)%.30c:指定输出category的名称，最大的宽度是30，如果category的名称大于30的话，就会将左边多出的字符截掉，但小于30的话也不会有空格。  
+>4)%20.30c:如果category的名称小于20就补空格，并且右对齐，如果其名称长于30字符，就从左边较远输出的字符截掉。 
 
 
 
@@ -1178,10 +1178,10 @@ public class ListServlet extends HttpServlet {
 ```
 #### 3.6 日志输出
 
-运行项目后我们将会在控制台
-![](images/mybatis-log4j.png)
+运行项目后我们将会在控制台  
+![](../images/mybatis/mybatis-log4j.png)  
 在文件中看日志输出
-![](images/mybatis-log4j2.png)
+![](../images/mybatis/mybatis-log4j2.png)  
 
 
 推荐文章：
@@ -1496,10 +1496,10 @@ public class DeleteOneServlet extends HttpServlet{
 </web-app>
 ```
 #### 4.1.6运行
-这里我们删除第9条数据，指令为查看的
-![](images/mybatis-deleteOne1.png)
-删除后
-![](images/mybatis-deleteOne2.png)
+这里我们删除第9条数据，指令为查看的  
+![](../images/mybatis/mybatis-deleteOne1.png)  
+删除后  
+![](../images/mybatis/mybatis-deleteOne2.png)  
 
 ****
 ### 4.2消息批量删除
