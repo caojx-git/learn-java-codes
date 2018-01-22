@@ -14,7 +14,7 @@
     </modules>
 
     <properties>
-        <cxf.version>2.2.7</cxf.version>
+        <cxf.version>3.1.7</cxf.version>
     </properties>
 
     <dependencies>

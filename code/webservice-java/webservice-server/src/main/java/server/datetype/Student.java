@@ -1,6 +1,8 @@
 package server.datetype;
 
-public class Student {
+import java.io.Serializable;
+
+public class Student implements Serializable{
 
     private int id;
 
@@ -16,6 +18,14 @@ public class Student {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
