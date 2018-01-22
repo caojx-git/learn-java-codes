@@ -1,10 +1,10 @@
 
 # Web Service学习
 
-[toc]
+[TOC]
 
 ## 一、Web Service简介
-![](../images/Web Service/Web Service_0.png)  
+![](../images/webservice/webservice_0.png)  
 我们手机或浏览器中一般都会有查询天气的服务，那么么个公司服务器的数据库中都保存了天气预报数据吗?如果没有, 那数据都存在哪了呢?这些网站是
 如何得到这些数据的呢?其实大多这种公共服务都是调用WebService获得的。
 
@@ -27,7 +27,7 @@ web service能解决如下问题
 ### 1.3 什么时候使用Web Service
 1. 同一家公司的新旧应用之间
 2. 不同公司的应用之间
-分析业务需求：天猫网与中通物流系统如何交互？
+  分析业务需求：天猫网与中通物流系统如何交互？
 3. 一些提供数据的内容聚合应用：天气预报、股票行情
 
 ### 1.4 免费的Web Service
@@ -68,17 +68,17 @@ jws的发布对java webservice框架产生了巨大的影响，经过大浪淘�
 axis2和cxf都是apache旗下的产品，但是其目的不同，导致webservice开发方法也不一样。两个框架都得到了开发者的支持。有必要对二者进行以下对比。
 
  
- 
- |         |      Axis2      |  CXF |
- | ------------- | :-----------: | :----: |
-|目标 |WebService引擎| 	简易的SOA框架，可以作为ESB |
-|ws* 标准支持   |	不支持WS-Policy	|WS-Addressing，WS-Policy， WS-RM， WS-Security，WS-I Basic Profile|
-|数据绑定支持	   |XMLBeans、JiBX、JaxMe 、JaxBRI、ADB	|JAXB, Aegis, XMLBeans, SDO, JiBX|
-|spring集成	   |不支持|	支持|
-|应用集成	       |困难	 |  简单|
-|多语言	       |支持C/C++ |	不支持|
-|部署	       |web应用	 |  嵌入式|
-|服务监控和管理  |支持	 | 不支持|
+
+|          |              Axis2              |                   CXF                    |
+| -------- | :-----------------------------: | :--------------------------------------: |
+| 目标       |          WebService引擎           |             简易的SOA框架，可以作为ESB             |
+| ws* 标准支持 |          不支持WS-Policy           | WS-Addressing，WS-Policy， WS-RM， WS-Security，WS-I Basic Profile |
+| 数据绑定支持   | XMLBeans、JiBX、JaxMe 、JaxBRI、ADB |     JAXB, Aegis, XMLBeans, SDO, JiBX     |
+| spring集成 |               不支持               |                    支持                    |
+| 应用集成     |               困难                |                    简单                    |
+| 多语言      |             支持C/C++             |                   不支持                    |
+| 部署       |              web应用              |                   嵌入式                    |
+| 服务监控和管理  |               支持                |                   不支持                    |
 
 结论：  
 如果希望以一种一致的方式实现webservice，特别是有跨语言的需求时，应该使用Axis2  
@@ -118,12 +118,12 @@ wsimport -keep url   //url为wsdl文件的路径,-keep是保存生成的java代�
 - 开发服务端
 
 1. 建立mave工程    
-建立mave工程webservice-java项目，包含两个模块webservice-client是web项目，webservice-server是普通java项目分别作用客户端和服务端。
-这里只是为了方便测试，将服务端和客户端建在同一个maven项目中，一般情况下服务端都调用其他公司的项目。
-![](../images/webservice/webservice-java-project1.png)  
+  建立mave工程webservice-java项目，包含两个模块webservice-client是web项目，webservice-server是普通java项目分别作用客户端和服务端。
+  这里只是为了方便测试，将服务端和客户端建在同一个maven项目中，一般情况下服务端都调用其他公司的项目。
+  ![](../images/webservice/webservice-java-project1.png)  
 
 2. HelloWS.java  
-定义WebService服务接口，需要在类中添加@WebService注解和方法中添加@WebMethod注解
+  定义WebService服务接口，需要在类中添加@WebService注解和方法中添加@WebMethod注解
 ```java
 package server.ws01;
 
@@ -145,7 +145,7 @@ public interface HelloWS {
 ```
 
 3. HelloWSImpl.java   
-实现HelloWS，只需要在实现类中添加@WebService注解
+  实现HelloWS，只需要在实现类中添加@WebService注解
 ```java
 package server.ws01;
 
@@ -166,7 +166,7 @@ public class HelloWSImpl implements HelloWS {
 ```
 
 4. ServerTest.java  
-发布webservice
+  发布webservice
 ```java
 package server.ws01;
 
@@ -188,15 +188,15 @@ public class ServerTest {
 }
 ```
 5. 浏览器访问  
-地址：http://127.0.0.1:8989/ws01/hellows?wsdl
-![](../images/webservice/webservice_1.png)
+  地址：http://127.0.0.1:8989/ws01/hellows?wsdl
+  ![](../images/webservice/webservice_1.png)
 
 - 开发客户端  
 1. 根据wsdl文档地址生成可客户端代码  
 ```text
 $cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
 $wsimport -keep http://127.0.0.1:8989/ws01/hellows?wsdl
-``` 
+```
 代码生成结果  
 ![](../images/webservice/webservice_3.png)
 
@@ -253,9 +253,9 @@ $cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
 $wsimport -keep ~/code/learn/code/webservice-java/webservice-client/src/main/resources/weather.wsdl
 ```
 ![](../images/webservice/webservice_6.png)
- 
+
 2. WeatherClientTest.java  
-调用天气服务
+  调用天气服务
 ```java
 package client;
 
@@ -276,7 +276,6 @@ public class WeatherClientTest {
 ```
 结果  
 ```text
-/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=62219:/Applications/IntelliJ IDEA.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/lib/tools.jar:/Users/caojx/code/learn/code/webservice-java/webservice-client/target/classes client.WeatherClientTest
 [直辖市 上海, 上海, 2013, 2018/01/17 21:31:43, 今日天气实况：气温：8℃；风向/风力：东北风 1级；湿度：81%, 紫外线强度：最弱。空气质量：中。, 紫外线指数：最弱，辐射弱，涂擦SPF8-12防晒护肤品。
 健臻·血糖指数：不易波动，天气条件好，血糖不易波动，可适时进行户外锻炼。
 感冒指数：较易发，温差较大，较易感冒，注意防护。
@@ -494,7 +493,7 @@ Apache CXF 是一个开源的 Services 框架，CXF 帮助您利用 Frontend 编
 ```
 
 2. Student.java  
-用于测试自定义类型是否支持  
+  用于测试自定义类型是否支持  
 ```java
 package server.datetype;
 
@@ -552,7 +551,7 @@ public class Student {
 ```
 
 3. DateTypeWS.java  
-定义WebService接口  
+  定义WebService接口  
 ```java
 package server.datetype;
 
@@ -587,7 +586,7 @@ public interface DateTypeWS {
 ```
 
 4. DateTypeWSImpl.java  
-接口实现类，用于测试各种数据类型是否支持，注意没有使用cxf框架或cxf版本过低可能会出现类似于如下的错误   
+  接口实现类，用于测试各种数据类型是否支持，注意没有使用cxf框架或cxf版本过低可能会出现类似于如下的错误   
 ```text
 com.sun.xml.bind.v2.runtime.IllegalAnnotationsException: 2 counts of IllegalAnnotationExceptions
 java.util.Map is an interface, and JAXB can't handle interfaces.
@@ -647,7 +646,7 @@ public class DateTypeWSImpl implements DateTypeWS {
 ```
 
 5. ServerTest.java   
-发布服务，注意需要添加cxf的maven依赖，不然不能支持map类型
+  发布服务，注意需要添加cxf的maven依赖，不然不能支持map类型
 ```java
 package server.datetype;
 
@@ -675,7 +674,7 @@ $wsimport -keep http://127.0.0.1:8989/dateType/dateTypews?wsdl
 ```
 
 7. DateTypeClientTest.java  
-客户端测试
+  客户端测试
 ```java
 package client;
 
@@ -720,7 +719,7 @@ public class DateTypeClientTest {
 ```
 
 8. 结果  
-引入cxf的maven依赖后，通过结果可以看出，cxf支持所有的数据类型包括自定义类型 
+  引入cxf的maven依赖后，通过结果可以看出，cxf支持所有的数据类型包括自定义类型 
 ```text
 client true
 [server.datetype.Student@6399551e, server.datetype.Student@13d73fa, server.datetype.Student@5023bb8b]
@@ -744,10 +743,10 @@ client true
 
 
 - 拦截器API  
-Interceptor(拦截器接口)  
-AbstractPhaseInterceptor(自定义拦截器从此继承)  
-LoggingInInterceptor(系统日志入拦截器类)  
-LoggingOutInterceptor(系统日志出拦截器类)  
+  Interceptor(拦截器接口)  
+  AbstractPhaseInterceptor(自定义拦截器从此继承)  
+  LoggingInInterceptor(系统日志入拦截器类)  
+  LoggingOutInterceptor(系统日志出拦截器类)  
 
 > 使用日志拦截器，实现日志记录
 - LoggingInInterceptor
@@ -755,7 +754,7 @@ LoggingOutInterceptor(系统日志出拦截器类)
 
 
 1. ServerTest.java   
-给服务端添加日志出拦截器和日志入拦截器  
+  给服务端添加日志出拦截器和日志入拦截器  
 ```java
 package server.ws02.cxf.interceptor1;
 
@@ -801,7 +800,7 @@ $wsimport -keep http://127.0.0.1:8989/ws02/interceptor1?wsdl
 ```
 
 3. InterceptorClientTest.java  
-客户端也添加日志拦截器    
+  客户端也添加日志拦截器    
 ```java
 package client;
 
@@ -847,8 +846,8 @@ public class InterceptorClientTest {
 
 ```
 4. 效果    
-在客户端和服务端添加日志拦截器后我们可以在终端看到请求出入参数    
-客户端：  
+  在客户端和服务端添加日志拦截器后我们可以在终端看到请求出入参数    
+  客户端：  
 ```text
 信息: Creating Service {http://interceptor1.cxf.ws02.server/}HelloWSImplService from WSDL: http://127.0.0.1:8989/ws02/interceptor1?wsdl
 class com.sun.proxy.$Proxy34
@@ -916,7 +915,7 @@ Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><
 - 客户端的out拦截器
 
 1. 客户端自定义拦截器  
-假设需要在客户端入参中添加如下格式参数  
+  假设需要在客户端入参中添加如下格式参数  
 ```xml
 <test>
     <name></name>
@@ -1004,7 +1003,7 @@ public class AddUserInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 
 
 2. InterceptorClientTest2.java
-客户端使用自定义拦截器  
+  客户端使用自定义拦截器  
 ```java
 package client;
 
@@ -1052,7 +1051,7 @@ public class InterceptorClientTest2 {
 ```
 
 3. CheckUserInterceptor.java  
-服务端检查客户端传输过来的数据是否正确，如果校验不通过拦截抛出异常
+  服务端检查客户端传输过来的数据是否正确，如果校验不通过拦截抛出异常
 ```java
 package server.ws02.cxf.interceptor2;
 
@@ -1164,9 +1163,9 @@ public class ServerTest {
         System.out.println("发布完成");
     }
 }
-``` 
+```
 5. 结果  
-客户端：   
+  客户端：   
 ```text
 信息: Creating Service {http://interceptor1.cxf.ws02.server/}HelloWSImplService from WSDL: http://127.0.0.1:8989/ws02/interceptor1?wsdl
 class com.sun.proxy.$Proxy34
