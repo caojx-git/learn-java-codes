@@ -37,5 +37,5 @@
 
 
 下面2张图可以直观的帮助你理解：
-![](../images/git/git-operate1.png)
-![](../images/git/git-operate2.png)
+![](../images/git/git-operate1.png)  
+![](../images/git/git-operate2.png)  

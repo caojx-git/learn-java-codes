@@ -1231,6 +1231,19 @@ Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><
 --------------------------------------
 ```
 
+## 六、用CXF编写基于spring的web service
+
+### 6.1 编码实现
+1. Server端  
+– 创建spring的配置文件beans.xml,在其中配置SEI  
+– 在web.xml中，配置上CXF的一些核心组件  
+2. Client端  
+– 生成客户端代码  
+– 创建客户端的spring配置文件beans-client.xml,并配置  
+– 编写测试类请求web service  
+
+
+
 参考：  
 https://www.cnblogs.com/holbrook/archive/2012/12/12/2814821.html  
 http://blog.csdn.net/kongxx/article/details/7544640    
