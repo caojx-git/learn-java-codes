@@ -118,7 +118,7 @@ wsimport -keep url   //url为wsdl文件的路径,-keep是保存生成的java代�
 - 开发服务端
 
 1. 建立mave工程    
-  建立mave工程webservice-java项目，包含两个模块webservice-client是web项目，webservice-server是普通java项目分别作用客户端和服务端。
+  建立mave工程webservice-java项目，包含两个模块webservice-client是web项目，webservice-server也是web项目分别作用客户端和服务端。
   这里只是为了方便测试，将服务端和客户端建在同一个maven项目中，一般情况下服务端都调用其他公司的项目。
   ![](../images/webservice/webservice-java-project1.png)  
 
@@ -1242,6 +1242,395 @@ Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><
 – 创建客户端的spring配置文件beans-client.xml,并配置  
 – 编写测试类请求web service  
 
+
+> 服务端
+
+所在模块webservice-server  
+1. Order.java   
+订单实体类  
+```java
+package server.ws02.cxf.spring;
+
+import java.io.Serializable;
+
+public class Order implements Serializable{
+
+    private Integer id;
+
+    private String name;
+
+    private double price;
+
+    public Order(){
+        super();
+    }
+
+    public Order(Integer id, String name, double price){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+}
+```
+
+2. OrderWS.java  
+订单服务接口
+```java
+package server.ws02.cxf.spring;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService
+public interface OrderWS {
+
+    @WebMethod
+    public Order getOrderById(int id);
+}
+```
+
+3. OrderWSImpl.java  
+订单接口实现  
+```java
+package server.ws02.cxf.spring;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService
+public class OrderWSImpl implements OrderWS{
+
+    @Override
+    public Order getOrderById(int id){
+        System.out.println("getOrderById() "+id);
+        return new Order(id, "飞机", 100000000);
+    }
+}
+```
+
+4. pom.xml  
+webservice-java父模块的pom.xml中添加cxf依赖
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>caojx.learn</groupId>
+    <artifactId>webservice-java</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>webservice-java</name>
+    <url>http://maven.apache.org</url>
+
+    <modules>
+        <module>webservice-server</module>
+        <module>webservice-client</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cxf.version>3.1.7</cxf.version>
+    </properties>
+
+    <dependencies>
+        <!--cxf依赖必须-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>apache-cxf</artifactId>
+            <version>${cxf.version}</version>
+            <type>pom</type>
+            <!--
+            需要排除如下依赖，不然会出现如下报错
+            java.lang.ClassCastException: org.apache.cxf.transport.servlet.CXFServlet cannot be cast to javax.servlet.Servlet
+            -->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.geronimo.specs</groupId>
+                    <artifactId>geronimo-servlet_3.0_spec</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>javax.servlet-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--cxf可根据需要添加-->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+
+    </dependencies>
+</project>
+```
+
+5. pom.xml  
+webservice-server中的pom.xml添加tomcat插件
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>webservice-java</artifactId>
+        <groupId>caojx.learn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>webservice-server</artifactId>
+    <packaging>war</packaging>
+    <name>webservice-server Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <build>
+        <finalName>webservice-server</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8081</port>
+                    <path>/</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+```
+
+6. web.xml  
+webservice-server模块的web.xml配置，配置cxf的入口  
+```xml
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--配置bean-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:beans.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--cxf请求入口，所有的请求都会先经过cxf-->
+    <servlet>
+        <servlet-name>cxf</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>cxf</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
+```
+
+7. beans.xml  
+新建beans.xml，spring的bean配置文件，引入cxf的核心配置，和配置webservice服务
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!--3.0以下的cxf需要引入如下三个资源文件，引入cxf的核心配置-->
+<!--    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />-->
+
+    <!--3.0之后只需要引入一个，引入cxf的核心配置-->
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+
+    <!--webService服务-->
+    <jaxws:endpoint id="orderWS" implementor="server.ws02.cxf.spring.OrderWSImpl" address="/orderWS" />
+
+</beans>
+```
+
+> 客户端开发  
+
+所在模块websrvice-client，由于属于webservice-java的子模块，所以不需要再引入cxf依赖    
+1. 生成客户端代码  
+```text
+$cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
+$ wsimport -keep http://localhost:8081/orderWS?wsdl
+```
+
+2. client-beans.xml  
+配置webservice客户端，注意由于web  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!--webservice客户端-->
+  <jaxws:client id="orderClient" serviceClass="server.ws02.cxf.spring.OrderWS" address="http://localhost:8081/orderWS">
+        <jaxws:outInterceptors>
+            <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"></bean>
+        </jaxws:outInterceptors>
+</jaxws:client>
+
+</beans>
+```
+
+3. SpringClientTest.java  
+编写客户端测试代码  
+```java
+package client;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import server.ws02.cxf.spring.Order;
+import server.ws02.cxf.spring.OrderWS;
+
+public class SpringClientTest {
+
+    public static void main(String[] args) {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("client-beans.xml");
+        OrderWS orderWS = (OrderWS) context.getBean("orderClient");
+        Order order = orderWS.getOrderById(24);
+        System.out.println(order.getId()+"-"+order.getName()+"-"+order.getPrice());
+    }
+}
+```
+
+4. 结果  
+客户端：    
+```text
+一月 24, 2018 10:31:05 下午 org.springframework.context.support.AbstractApplicationContext prepareRefresh
+信息: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4f47d241: startup date [Wed Jan 24 22:31:05 CST 2018]; root of context hierarchy
+一月 24, 2018 10:31:05 下午 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+信息: Loading XML bean definitions from class path resource [client-beans.xml]
+一月 24, 2018 10:31:07 下午 org.apache.cxf.wsdl.service.factory.ReflectionServiceFactoryBean buildServiceFromClass
+信息: Creating Service {http://spring.cxf.ws02.server/}OrderWSService from class server.ws02.cxf.spring.OrderWS
+一月 24, 2018 10:31:08 下午 org.apache.cxf.services.OrderWSService.OrderWSPort.OrderWS
+信息: Outbound Message
+---------------------------
+ID: 1
+Address: http://localhost:8081/orderWS
+Encoding: UTF-8
+Http-Method: POST
+Content-Type: text/xml
+Headers: {Accept=[*/*], SOAPAction=[""]}
+Payload: <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:getOrderById xmlns:ns2="http://spring.cxf.ws02.server/"><arg0>24</arg0></ns2:getOrderById></soap:Body></soap:Envelope>
+--------------------------------------
+24-飞机-1.0E8
+```
+服务端：  
+```text
+getOrderById() 24  
+```
+
+## 七、HttpURLConnection请求WebService
+```java
+package client;
+
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class HttpURLConnectionTest {
+
+    public static void main(String[] args) throws Exception{
+        String date = "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\"><soap:Body><ns2:sayHello xmlns:ns2=\"http://interceptor1.cxf.ws02.server/\"><arg0>jack</arg0></ns2:sayHello></soap:Body></soap:Envelope>";
+        String path = "http://127.0.0.1:8989/ws02/interceptor1";
+        doPost(path,date);
+    }
+
+    public static void doPost(String path, String data) throws Exception {
+        URL url = new URL(path);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("POST");
+        connection.setDoOutput(true);
+        connection.setDoInput(true);
+        connection.setRequestProperty("Content-Type","text/xml;charset=utf-8");
+
+        OutputStream outputStream = connection.getOutputStream();
+        outputStream.write(data.getBytes("utf-8"));
+        outputStream.flush();
+
+        int responseCode = connection.getResponseCode();
+        if(responseCode == 200){
+            InputStream inputStream = connection.getInputStream();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+            StringBuilder strBuild=new StringBuilder();
+            byte[] buffer = new byte[1024];
+            int len = 0;
+            while ((len = bufferedInputStream.read(buffer)) != -1 ){
+                strBuild.append(new String(buffer,0,len));
+            }
+            System.out.println("文件的内容："+strBuild.toString());
+        }
+    }
+}
+```
 
 
 参考：  
