@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <!--3.0以下的cxf需要引入如下三个资源文件，引入cxf的核心配置-->
+<!--    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />-->
+
+    <!--3.0之后只需要引入一个，引入cxf的核心配置-->
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+
+    <!--webService服务-->
+    <jaxws:endpoint id="orderWS" implementor="server.ws02.cxf.spring.OrderWSImpl" address="/orderWS" />
+
+</beans>

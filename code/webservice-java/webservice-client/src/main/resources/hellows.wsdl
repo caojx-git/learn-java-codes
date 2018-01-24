@@ -1,0 +1,101 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws01.server/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ws01.server/" name="HelloWSImplService">
+    <types>
+       <!-- <xsd:schema>
+            <xsd:import namespace="http://ws01.server/" schemaLocation="http://127.0.0.1:8989/ws01/hellows?xsd=1"/>
+        </xsd:schema>-->
+
+        <xs:schema xmlns:tns="http://ws01.server/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws01.server/">
+
+            <!--定义消息片段-->
+            <!--
+
+                请求入参标签片段定义：
+                <sayHello>
+                    <arg0>string<arg0>
+                 </sayHello>
+
+                响应出参标签片段定义：
+                 <sayHelloResponse>
+                    <return>string</return>
+                 <sayHelloResponse>
+            -->
+
+            <xs:element name="sayHello" type="tns:sayHello"/>
+            <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+            <xs:complexType name="sayHello">
+                <xs:sequence>
+                    <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="sayHelloResponse">
+                <xs:sequence>
+                    <xs:element name="return" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </types>
+
+
+
+    <!--
+        message: 用于定义消息的结构，声明消息中包含的片段
+            part：用于指定引用的types中定义的标签片段
+    -->
+    <message name="sayHello">
+        <part name="parameters" element="tns:sayHello"/>
+    </message>
+    <message name="sayHelloResponse">
+        <part name="parameters" element="tns:sayHelloResponse"/>
+    </message>
+
+    <!--
+        portType:用来定义服务器端的SEI
+               operation：用来指定SEI中的请求方法
+                    input：指定客户端应用传过来的数据，会引用上边定义的<message>
+                    output:指定服务端应用返回给客户端的数据，会引用上边定义的<message>
+    -->
+    <portType name="HelloWSImpl">
+        <operation name="sayHello">
+            <input wsam:Action="http://ws01.server/HelloWSImpl/sayHelloRequest" message="tns:sayHello"/>
+            <output wsam:Action="http://ws01.server/HelloWSImpl/sayHelloResponse" message="tns:sayHelloResponse"/>
+        </operation>
+    </portType>
+
+<!--
+    binding:用于定义SEI的实现类
+        type：引用上边的<portType>
+        <soap:binding style="document"/> ：绑定的数据是一个document(xml)
+        operation:用来定义实现的方法
+            <soap:operation soapAction="" style="document"/>: 传输的是document(xml)
+            input:指定客户端应用传过来的数据
+                <soap:body use="literal"/>：文本数据
+            output:指定服务端返回给客户端的数据
+                <soap:body use="literal"/>：文本数据
+
+-->
+    <binding name="HelloWSImplPortBinding" type="tns:HelloWSImpl">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="sayHello">
+            <soap:operation soapAction="" style="document"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <!--
+        service：相当于一个webservice容器
+            name属性：用来指定一个客户端容器类
+            port属性：用来指定一个服务器端处理的请求入口（就是SEI的实现）
+                binding属性：引用上边定义的<binding>
+                address:当前webservice请求地址
+    -->
+    <service name="HelloWSImplService">
+        <port name="HelloWSImplPort" binding="tns:HelloWSImplPortBinding">
+            <soap:address location="http://127.0.0.1:8989/ws01/hellows"/>
+        </port>
+    </service>
+</definitions>
