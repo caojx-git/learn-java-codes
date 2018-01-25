@@ -3,6 +3,8 @@
 
 [TOC]
 
+源码：https://github.com/caojx-git/learn/tree/master/code/webservice-java  
+
 ## 一、Web Service简介
 ![](../images/webservice/webservice_0.png)  
 我们手机或浏览器中一般都会有查询天气的服务，那么么个公司服务器的数据库中都保存了天气预报数据吗?如果没有, 那数据都存在哪了呢?这些网站是
@@ -1632,7 +1634,49 @@ public class HttpURLConnectionTest {
 }
 ```
 
+## 八、通过注解修改wsdl文档  
+注意：即使是没有修改源代码，只修改了注解，客户端的代码也必须要重新生成, 否则调用将会失败  
 
+1. @WebService    
+```text
+作用在具体类上。而不是接口。
+一个类只有添加了此注解才可以通过Endpoint发布为一个web服务。
+一个添加了此注解的类，必须要至少包含一个实例方法。静态方法和final方法不能被发布为服务方法。
+```
+WebService注解包含以下参数：    
+![](../images/webservice/webservice_zj1.png)    
+
+2. @WebMethod  
+```text
+此注解用在方法上，用于修改对外暴露的方法
+```  
+![](../images/webservice/webservice_zj2.png)  
+ 
+3. @WebResult  
+```text
+用于定制返回值到WSDL的映射
+```  
+![](../images/webservice/webservice_zj3.png)  
+
+4. @WebParam  
+```text
+用于定义WSDL中的参数映射    
+```  
+![](../images/webservice/webservice_zj4.png)    
+
+5. @XmlElement  
+```text
+用于定义实体类的属性到WSDL中的映射(get/set方法上)  
+```  
+![](../images/webservice/webservice_zj5.png)
+
+## 九、推荐其他教程 
+[Web Service入门](http://www.importnew.com/12182.html)
+[Web Service 那点事儿（1）](http://www.importnew.com/24800.html)     
+[Web Service 那点事儿（2）—— 使用 CXF 开发 SOAP 服务](http://www.importnew.com/24816.html)      
+[Web Service 那点事儿（3）—— SOAP 及其安全控制](http://www.importnew.com/24830.html)     
+[Web Service 那点事儿（4）—— 使用 CXF 开发 REST 服务](http://www.importnew.com/24848.html)  
+[使用Java创建RESTful Web Service](http://www.importnew.com/7336.html)    
 参考：  
 https://www.cnblogs.com/holbrook/archive/2012/12/12/2814821.html  
 http://blog.csdn.net/kongxx/article/details/7544640    
