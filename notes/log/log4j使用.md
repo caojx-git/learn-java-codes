@@ -209,10 +209,10 @@ public class ListServlet extends HttpServlet {
 
 运行项目后我们将会在控制台  
 ![](../images/mybatis/mybatis-log4j.png)  
-在文件中看日志输出
-![](../images/mybatis/mybatis-log4j2.png)  
+在文件中看日志输出  
+![](../images/mybatis/mybatis-log4j2.png)    
 
-推荐文章：
+推荐文章：  
 http://blog.csdn.net/edward0830ly/article/details/8250412  
 http://blog.csdn.net/hu_shengyang/article/details/6754031  
 http://swiftlet.net/archives/683    
