@@ -1176,7 +1176,7 @@ public class ListServlet extends HttpServlet {
 }
 
 ```
-#### 3.6 日志输出
+#### 3.7日志输出
 
 运行项目后我们将会在控制台  
 ![](../images/mybatis/mybatis-log4j.png)  
