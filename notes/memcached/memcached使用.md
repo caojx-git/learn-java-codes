@@ -1139,17 +1139,17 @@ END
 
 ## 四、Java连接Memcached
 
-使用 Java 程序连接 Memcached，需要在你的 classpath 中添加 Memcached jar 包。
+使用 Java 程序连接 Memcached，需要添加 Memcached jar 包。
 
-本站 jar 包下载地址：
+maven依赖：  
 
-spymemcached-2.10.3.jar。
-
-Google Code jar 包下载地址：
-
-spymemcached-2.10.3.jar
-
-（需要翻墙）。
+```xml
+<dependency>
+    <groupId>com.whalin</groupId>
+    <artifactId>Memcached-Java-Client</artifactId>
+    <version>3.0.2</version>
+</dependency>
+```
 
 以下程序假定 Memcached 服务的主机为 127.0.0.1，端口为 11211。
 
