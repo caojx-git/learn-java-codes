@@ -127,10 +127,27 @@ Window上安装Mysql相对来说会较为简单，你只需要在 MySQL 下载�
 mysqld.exe --console
 如果安装成功以上命令将输出一些mysql启动及InnoDB信息。
 ```
+windows安转后MySQL目录结构：  
+- bin目录，可以存储可执行文件
+- data目录，存储数据文件
+- docs目录，文档
+- include目录，存储包含的头文件
+- lib目录，存储库文件
+- share目录，错误消息和字符集文件
+
+### 2.3 MySQL配置
+
+windwos配置文件：在安装目录下有my.ini配置文件，里边可以配置客户、服务端端口和编码以及其他的配置
+编码配置：  
+```text
+default-character-set=utf-8
+character-set-server=utf-8
+```
 
 ## 三、 MySQL 管理
 
 ### 3.1 启动及关闭 MySQL 服务器
+linux:  
 ```text
 首先，我们需要通过以下命令来检查MySQL服务器是否启动：
 ps -ef | grep mysqld
@@ -145,7 +162,62 @@ root@host# cd /usr/bin
 Enter password: ******
 ```
 
-### 3.2 MySQL 用户设置
+Windwos:  
+```text
+Windows可以通过Windows的服务管理界面启动或停止MySQL服务或通过如下命令停止或启动MySQL服务。
+
+启动Windwos服务：
+net start mysql
+关闭Windows服务：
+net stop mysql
+```
+### 3.2 MySQL登录退出  
+
+登录：  
+
+![](../images/mysql/mysql_login_1.png)  
+
+退出：  
+```sql
+mysql> exit;
+mysql> quit;
+mysql> \q;
+```
+
+### 3.3 MySQL提示符号  
+
+修改MySQL提示符 ：  
+```text
+方式一：连接客户端时通过参数指定  
+shell>mysql -uroot -proot --prompt 提示符号
+方式二：连接上客户端后，通过prompt 命令修改
+mysql>prompt 提示符
+```
+常用提示符号：  
+```text
+\D  完整的日期
+\d	当前数据库
+\h 	服务器名称
+\u 	当前用户
+```
+案例：  
+```text
+[root@localhost mysql]# mysql -uroot -p -P3306 -h127.0.0.1
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 13
+Server version: 5.5.56-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> prompt \u@\h \d>
+PROMPT set to '\u@\h \d>'
+root@127.0.0.1 (none)>
+```
+
+### 3.4 MySQL 用户设置
 
 如果你需要添加 MySQL 用户，你只需要在 mysql 数据库中的 user 表添加新用户即可。  
 
@@ -211,7 +283,7 @@ mysql> GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP
 以上命令会在mysql数据库中的user表创建一条用户信息记录。  
 注意: MySQL 的SQL语句以分号 (;) 作为结束标识。  
 
-### 3.3 /etc/my.cnf 文件配置
+### 3.5 /etc/my.cnf 文件配置
 一般情况下，你不需要修改该配置文件，该文件默认配置如下：
 ```text
 [mysqld]
@@ -227,8 +299,11 @@ err-log=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
 在配置文件中，你可以指定不同的错误日志文件存放的目录，一般你不需要改动这些配置。
-
-### 3.4 管理MySQL的命令
+### 3.6 MySQL语句规范
+- 关键字与函数名全部大写(建议，小写虽然也可以)
+- 数据库名称、表名称、字段名成全部小写（建议）
+- SQL语句必须以分号结尾
+### 3.7 管理MySQL的命令
 以下列出了使用Mysql数据库过程中常用的命令：  
 1. USE 数据库名 :  
   选择要操作的Mysql数据库，使用该命令后所有Mysql命令都只针对该数据库。
@@ -309,6 +384,16 @@ mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%';     # 表名以runoob开头
 mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%'\G;   # 加上 \G，查询结果按列打印
 ```
 
+7. 其他操作  
+```text
+显示当前服务器版本  
+SELECT VERSION();
+显示当前日期时间
+SELECT NOW();
+显示当前用户
+SELECT USER();
+```
+
 ## 四、 数据库操作
 
 ### 4.1 连接数据库
@@ -340,7 +425,14 @@ Bye
 ### 4.2 创建数据库  
 使用普通用户，你可能需要特定的权限来创建或者删除 MySQL 数据库。  
 所以我们这边使用root用户登录，root用户拥有最高权限，可以使用 mysql mysqladmin 命令来创建数据库。  
+
+语法：  
+```sql
+CREATE {database | schema} [IF NOT EXISTS] db_name [DEFAULT] CHARACTER SET [=] charset_name
+```
+
 以下命令简单的演示了创建数据库的过程，数据名为 RUNOOB:  
+
 ```text
 [root@host]# mysqladmin -u root -p create RUNOOB
 Enter password:******
@@ -1711,3 +1803,7 @@ password *****
 mysqlimport的常用选项介绍  
 ![](../images/mysql/mysql_mysqlimport_1.png)   
 mysqlimport命令常用的选项还有-v 显示版本（version）， -p 提示输入密码（password）等。
+
+## 十八、 MySQL函数
+
+https://www.w3cschool.cn/mysql/func-date-add.html
