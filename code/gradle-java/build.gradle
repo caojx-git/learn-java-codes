@@ -1,0 +1,116 @@
+project.group 'caojx.learn'  //group属性在org.gradle.api.Project中所以隐式可用
+version '1.0-SNAPSHOT'
+
+//添加插件
+//apply plugin: 'java' //引入插件后，就可使用插件中的任务
+apply plugin: 'war'
+
+//sourceCompatibility = 1.7 //指定编译字节码的jdk版本
+
+//所有的项目包括子项目使用如下配置
+allprojects {
+    apply plugin: 'java'
+    sourceCompatibility = 1.7
+
+    apply plugin: 'maven-publish' //使用该插件做发布
+
+    publishing { //配置两个属性publications和repositories
+        publications {
+            mavenJava(MavenPublication) {//mavenJava可以随意指定名称
+                groupId 'caojx.learn' //必须指定groupId
+                artifactId 'gradle.java'
+                version '1.0'
+                from components.java //指定将java产生的输出发布出去
+            }
+        }
+        repositories { //仓库
+            maven {
+                name ''//仓库名称，可自定义
+                url '' //仓库地址
+            }
+        }
+    }
+}
+
+//所有子项目都使用的配置
+subprojects {
+    repositories {
+        mavenCentral()  //配置maven公共仓库
+    }
+    dependencies {
+        compile 'ch.qos.logback:logback-classic:1.1.1'
+        testCompile group: 'junit', name: 'junit', version: '4.11'
+    }
+
+}
+
+//可以配置多个仓库，会按照配置顺序查找需要的jar，如果第一个仓库查找到了，就不会去第二个仓库查找
+repositories {
+/*    maven{
+        url:'' //私服
+    }*/
+    mavenLocal()    //配置maven本地仓库
+    mavenCentral()  //配置maven公共仓库
+
+}
+
+dependencies {
+    compile project(":children-model")  //如果对子项目依赖，使用这种写法
+    compile(group: 'org.hibernate', name: 'hibernate-core', version: '3.6.3.Final') {
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+    compile 'ch.qos.logback:logback-classic:1.1.1' //写法一：'group:name:version',使用冒号分割协议
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    //写法二：group:'value',name:'value',version:'value' junit编译时依赖
+}
+
+/*
+出现冲突构建失败
+configurations.all {
+    resolutionStrategy {
+        failOnVersionConflict()
+    }
+}*/
+
+//强制指定一个版本
+/*
+configurations.all{
+    resolutionStrategy {
+        force 'org.slf4j:slf4j-api:1.7.6'
+    }
+}
+*/
+
+//闭包，用于创建目录
+def createDir = {
+    path ->
+        b
+        File dir = new File(path);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+}
+
+//自定义任务，创建Java目录结构
+task makeJavaDir() {
+    //定义java目录结构
+    def paths = ['src/main/java', 'src/main/resources', 'src/test/java', 'src/test/resources'];
+
+    //定义动作
+    doFirst {
+        paths.forEach(createDir);
+    }
+}
+
+//自定义任务，创建web目录结构
+task makeWebDir {
+    dependsOn makeJavaDir
+    //定义web的目录结构
+    def paths = ['src/main/webapp', 'src/test/webapp'];
+
+    //定义动作
+    doLast {
+        paths.forEach(createDir);
+    }
+
+}
