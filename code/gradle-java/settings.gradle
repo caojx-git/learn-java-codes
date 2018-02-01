@@ -1,0 +1,5 @@
+rootProject.name = 'gradle-java'  //根项目写法
+include 'children-model'    //声明包含的子模块需要include
+
+
+
