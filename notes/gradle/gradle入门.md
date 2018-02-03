@@ -33,6 +33,8 @@ export PATH=$PATH:$GRADLE_HOME/bin
 
 ### 1.2 Groovy 简介
 
+groovy文章推荐：http://blog.csdn.net/kmyhy/article/details/4200563
+
 Groovy 是用于Java虚拟机的一种敏捷的动态语言，他是一种成熟的面向对象编程语言，即可以用于面向对象编程，又可以用作纯粹的脚本语言。使用改语言不必写过多的代码，同时又具有闭包和动态语言的其他特性。
 
 **Groovy与Java对比**
@@ -842,3 +844,8 @@ publishing{ //配置两个属性publications和repositories
  配置好发布配置后，就可以在IDEA的publishing中看到下图一样的内容，使用publishToMavenLocal可以将jar发布到本地仓库。
 
 ![](../images/gradle/gradle_13.png)  
+
+## 推荐文章
+
+- Groovy入门教程：http://blog.csdn.net/kmyhy/article/details/4200563
+
