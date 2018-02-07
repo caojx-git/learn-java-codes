@@ -1,3 +1,5 @@
+
+
 # MySQL入门学习
 
 [TOC]
@@ -394,9 +396,448 @@ SELECT NOW();
 SELECT USER();
 ```
 
-## 四、 数据库操作
+### 3.8 MySQL客户端工具
 
-### 4.1 连接数据库
+**mysql**命令客户端
+
+　　　　用于数据库连接管理
+
+　　　　将 用户SQL 语句发送到服务器
+
+**mysqladmin**命令 ：命令行管理工具
+
+**mysqldump**命令 ：备份数据库和表的内容
+
+
+
+**3.8.1  mysq命令客户端**
+
+   作用：
+
+   　用于连接数据库
+
+   　用于管理数据库通过下列方式进行管理
+
+   命令接口自带命令
+
+   　　DDL：数据定义语言
+
+   　　DCL：数据控制语言
+
+   　　DML：数据操作语言
+
+   **1.mysql命令接口自带命令说明**
+
+| **命令**                     | **命令说明**                                 |
+| -------------------------- | ---------------------------------------- |
+| **\h **或 **help **或 **? ** | 获取帮助                                     |
+| **\G**                     | 格式化输出（行转列）                               |
+| **\T **或**tee**            | 记录操作日志  tee /tmp/mysql.log               |
+| **\c **或 **CTRL+c**        | 退出mysql                                  |
+| **\s **或 **status**        | 查看数据库状态信息                                |
+| **\. **或 **source**        | mysql> source /tmp/world.sql             |
+| **\!**                     | 使用shell中的命令 mysql> \! cat /etc/redhat-releaseCentOS release 6.9 (Final) |
+| **\u **或**use   **         | use  worldshow databases  看当前所有数据库的名字show tables   查看当前use到的数据库所有的表show  tables from world   查看目标数据库下的表 |
+| **快捷键**                    | 上下翻页、TAB键、ctrl +C 、ctrl +L               |
+
+**2.mysql中help命令的使用**
+
+　　在mysql命令行中输入mysql或 ?都可以查看帮助
+
+```mysql
+mysql> help
+```
+
+　　使用 help contents查看完整的sql类别列表帮助
+
+```mysql
+mysql> help contents
+```
+
+　　有关特定 SQL 类别或语句的帮助
+
+```mysql
+mysql> help Account Management
+```
+
+　　查看 grant 的帮助
+
+```mysql
+mysql> help GRANT
+```
+
+　　有关与状态相关的 SQL 语句的帮助
+
+```mysql
+mysql> help status
+```
+
+**3.source命令的使用**
+
+在 mysql 中处理输入文件：
+
+如果这些文件包含 SQL 语句，则称为“脚本文件”或“批处理文件”。
+
+使用 SOURCE 命令：
+
+```mysql
+mysql> SOURCE /data/mysql/world.sql
+```
+
+　　或者使用非交互式：(尽量避免使用mysql 导入数据，会产生大量的无用日志)
+
+```mysql
+mysql</data/mysql/world.sql
+```
+
+**3.8.2 mysqladmin命令说明**
+
+基本语法
+
+```mysql
+mysqladmin -u<name> -p<password> commands
+```
+
+**命令说明图表**
+
+| **功能选项**                                 | **说明**            |
+| ---------------------------------------- | ----------------- |
+| **mysqladmin -u用户 -p密码 ping**            | “强制回应 (Ping)”服务器。 |
+| **mysqladmin -u用户 -p密码 shutdown**        | 关闭服务器。            |
+| **mysqladmin -u用户 -p密码 create databasename** | 创建数据库。            |
+| **mysqladmin -u用户 -p密码drop databasename** | 删除数据库             |
+| **mysqladmin -u用户 -p密码 version**         | 显示服务器和版本信息        |
+| **mysqladmin -u用户 -p密码 status**          | 显示或重置服务器状态变量      |
+| **mysqladmin -u用户 -p密码 password**        | 设置口令              |
+| **mysqladmin -u用户 -p密码 flush-privileges** | 重新刷新授权表。          |
+| **mysqladmin -u用户 -p密码 flush-logs**      | 刷新日志文件和高速缓存。      |
+| **以上信息通过mysqladmin  --help 获得**          |                   |
+
+**3.8.3 mysqldump简单说明**
+　　mysqldump是一款数据库备份工具。  
+命令帮助及基本语法：
+```mysql
+[root@db02 ~]# mysqldump --help
+Dumping structure and contents of MySQL databases and tables.
+Usage: mysqldump [OPTIONS] database [tables]
+OR     mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...]
+OR     mysqldump [OPTIONS] --all-databases [OPTIONS]
+```
+
+　　情参照mysqldump --help
+
+## 四、MySQL用户管理
+
+### 4.1 用户的定义
+
+用户的定义：用户名+主机域，密码
+
+用户的作用：  
+　1、用户登录
+　2、用于管理数据库及数据
+
+```mysql
+MariaDB [(none)]> select user,host,password from mysql.user;
++------+-----------------------+-------------------------------------------+
+| user | host                  | password                                  |
++------+-----------------------+-------------------------------------------+
+| root | localhost             | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | localhost.localdomain | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | 127.0.0.1             | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | ::1                   | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+|      | localhost             |                                           |
+|      | localhost.localdomain |                                           |
+| root | %                     | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
++------+-----------------------+-------------------------------------------+
+7 rows in set (0.00 sec)
+```
+
+### 4.2 用户权限
+
+ 定义权限：对不同的对象进行权限(角色)定义
+
+**命令:**
+
+```mysql
+grant 权限 on 权限范围  to 用户  identified  by '密码'
+```
+
+*权限*
+
+```mysql
+对数据库的读、写等操作
+（insert update、select、delete、drop、create等）
+```
+
+*角色*
+
+```mysql
+数据库定义好的一组权限的定义
+（all privileges、replication slave等）
+```
+
+*权限范围*
+
+```mysql
+全库级别： *.*
+单库级别：clsn.*
+单表级别：clsn.t1
+```
+
+*用户*
+
+```mysql
+'clsn'@'localhost'  本地
+'clsn'@'192.168.66.149'
+'clsn'@'192.168.66.%'÷
+'clsn'@'192.168.66.14%'
+```
+
+**给用户授权**
+
+```mysql
+# 创建用户
+create user 'clsn'@'localhost' identified by 'clsn123';
+# 查看用户信息
+ select user,host,password from mysql.user;
+# 授权所有权限给clsn用户
+GRANT ALL ON *.* TO 'clsn'@'localhost';
+# 查看clsn用户的权限
+SHOW GRANTS FOR 'clsn'@'localhost'\G
+```
+
+创建用户的同时授权
+
+```mysql
+grant all on *.* to clsn@'172.16.1.%' identified by 'clsn123';
+# 刷新权限
+flush privileges; #<==可以不用。
+```
+
+创建用户然后授权
+
+```mysql
+create user 'clsn'@'localhost' identified by 'clsn123';
+GRANT ALL ON *.* TO 'clsn'@'localhost';
+```
+
+授权和root一样的权限
+
+```mysql
+grant all on *.* to system@'localhost' identified by 'clsn123' with grant option;
+```
+
+授权给用户select,create,insert,update 权限
+
+```mysql
+grant select,create,insert,update on clsn.* to 'clsn'@'10.0.0.%' identified by '123';
+```
+
+授权任何主机连接权限
+
+```mysql
+#为其他主机远程连接数据库开放访问权限
+MariaDB [(none)]> select user,host,password from mysql.user;
++------+-----------------------+-------------------------------------------+
+| user | host                  | password                                  |
++------+-----------------------+-------------------------------------------+
+| root | localhost             | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | localhost.localdomain | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | 127.0.0.1             | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | ::1                   | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+|      | localhost             |                                           |
+|      | localhost.localdomain |                                           |
++------+-----------------------+-------------------------------------------+
+#通过以上输出可以看出数据库默认只允许用户root在本地服务器（localhost）上登录，不允许其他主机远程连接
+#下面这条语句将允许用户root使用密码(root)在任何主机上连接该数据库，并赋予该用户所有权限。
+MariaDB [(none)]> use mysql;
+MariaDB [(mysql)]> grant all privileges on *.* to root@"%" identified by "root";
+Query OK, 0 rows affected (0.01 sec)
+MariaDB [mysql]> flush privileges;
+Query OK, 0 rows affected (0.00 sec)
+#这样数据库的访问权限就设置好了。
+MariaDB [(mysql)]> select user,host,password from mysql.user;
++------+-----------------------+-------------------------------------------+
+| user | host                  | password                                  |
++------+-----------------------+-------------------------------------------+
+| root | localhost             | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | localhost.localdomain | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | 127.0.0.1             | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+| root | ::1                   | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
+|      | localhost             |                                           |
+|      | localhost.localdomain |                                           |
+| root | %                     | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B |
++------+-----------------------+-------------------------------------------+
+7 rows in set (0.00 sec)
+```
+
+**回收权限**
+
+```mysql
+REVOKE INSERT ON *.* FROM clsn@localhost;
+```
+
+可以授权的用户权限
+
+```mysql
+INSERT,SELECT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, 
+PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, 
+CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, 
+REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER 
+ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE
+```
+
+【示例】博客授权收回示例
+
+```mysql
+grant select,insert,update,delete,create,drop on blog.* to 'blog'@'172.16.1.%' identified by 'blog123';  授权博客类的最多权限：select,insert,update,delete
+revoke create,drop on blog.* from 'blog'@'172.16.1.%';
+```
+
+客类的最多权限：select,insert,update,delete
+
+### 4.2 创建用户
+
+**创建用户语法**
+
+```mysql
+CREATE USER '用户'@'主机' IDENTIFIED BY '密码';
+```
+
+*示例：*
+
+```mysql
+create user 'clsn'@'localhost' identified by 'clsn123'; 
+```
+
+注意这个样创建的用户只有连接权限
+
+企业里创建用户一般是授权一个内网网段登录，最常见的网段写法有两种。
+
+方法1：172.16.1.%（%为通配符，匹配所有内容）。
+
+方法2：172.16.1.0/255.255.255.0，但是不能使用172.16.1.0/24，是个小遗憾。
+
+查看当前存在的用户:
+
+```mysql
+select user,host from mysql.user;
+```
+
+**标准的建用户方法：**
+
+```mysql
+create user 'web'@'172.16.1.%' identified by 'web123';
+```
+
+**查看用户对应的权限**
+
+```mysql
+show grants for oldboy@localhost\G
+```
+
+案例：
+
+按照如下要求设置用户：
+
+用户只能通过10.0.0.0/24网段访问，用户名为clsn 密码为123
+
+这个用户只能对clsn数据库下的对象进行增insert create、改update 、查select；
+
+ 授权命令：
+
+```mysql
+grant select,create,insert,update on clsn.* to 'clsn'@'10.0.0.%' identified by '123';
+```
+
+查看用户权限
+
+```mysql
+mysql>  show grants for clsn@'172.16.1.%'\G
+*************************** 1. row ***************************
+Grants for clsn@172.16.1.%: GRANT USAGE ON *.* TO 'clsn'@'172.16.1.%' IDENTIFIED BY PASSWORD '*23AE809DDACAF96AF0FD78ED04B6A265E05AA257'
+1 row in set (0.00 sec)
+```
+
+### 4.4 删除用户
+
+删除用户语法：
+
+```mysql
+drop user 'user'@'主机域'
+```
+
+特殊的删除方法:(慎用，尽量不要直接去修改表)
+
+```mysql
+mysql> delete from mysql.user where  user='clsn' and host='localhost'; 
+Query OK, 1 row affected (0.00 sec)
+mysql> flush privileges;
+```
+
+### 4.5 其他操作
+
+```mysql
+mysql> use  clsn;#切换到数据库clsn
+mysql> select user(); #查看当前登录的用户
+mysql> select database(); #查看当前所在的数据库
+mysql> show tables;#查看库里边的表
+```
+
+## 五、 数据库操作
+
+### 5.1 查看数据库
+
+查询所有的数据库
+
+```mysql
+MariaDB [(mysql)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| activiti_learn     |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+5 rows in set (0.00 sec)
+```
+
+查看数据库--模糊匹配
+
+```mysql
+MariaDB [mysql]>  show databases like "%s%";
++--------------------+
+| Database (%s%)     |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+4 rows in set (0.01 sec)
+```
+
+查看相关帮助
+
+```mysql
+MariaDB [mysql]> ? show databases;
+Name: 'SHOW DATABASES'
+Description:
+Syntax:
+SHOW {DATABASES | SCHEMAS}
+    [LIKE 'pattern' | WHERE expr]
+```
+
+使用mysql数据库
+
+```mysql
+user mysql;
+```
+
+### 5.2 连接数据库
+
 您可以使用MySQL二进制方式进入到mysql命令提示符下来连接MySQL数据库。    
 
 以下是从命令行中连接mysql服务器的简单实例：  
@@ -422,7 +863,7 @@ mysql> exit
 Bye
 ```
 
-### 4.2 创建数据库  
+### 5.3 创建数据库  
 使用普通用户，你可能需要特定的权限来创建或者删除 MySQL 数据库。  
 所以我们这边使用root用户登录，root用户拥有最高权限，可以使用 mysql mysqladmin 命令来创建数据库。  
 
@@ -437,14 +878,40 @@ CREATE {database | schema} [IF NOT EXISTS] db_name [DEFAULT] CHARACTER SET [=] c
 [root@host]# mysqladmin -u root -p create RUNOOB
 Enter password:******
 ```
-以上命令执行成功后会创建 MySQL 数据库 RUNOOB。  
+以上命令执行成功后会创建 MySQL 数据库 RUNOOB。
 
-### 4.3 删除数据库
+显示可用数据库列表
+
+```mysql
+show databases
+```
+
+登录后创建数据库
+
+```mysql
+mysql> create database haha;
+```
+
+创建数据库时定义字符编码
+
+```mysql
+mysql> create database clsn charset utf8 ;
+mysql> show create database clsn;     查询数据库定义信息。
+```
+
+存在的数据库修改字符编码：
+
+```mysql
+mysql> alter database clsn charset gbk;
+```
+
+### 5.4 删除数据库
+
 在删除数据库过程中，务必要十分谨慎，因为在执行删除命令后，所有数据将会消失  
-```text
+```mysql
 [root@host]# mysqladmin -u root -p drop RUNOOB
 Enter password:******
-执行以上删除数据库命令后，会出现一个提示框，来确认是否真的删除数据库：
+#执行以上删除数据库命令后，会出现一个提示框，来确认是否真的删除数据库：
 ```
 
 ```text
@@ -455,12 +922,24 @@ Do you really want to drop the 'RUNOOB' database [y/N] y
 Database "RUNOOB" dropped
 ```
 
-### 4.4 选择数据库  
+登录数据库后删除
+
+```mysql
+mysql> drop database haha;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
+```
+
+### 5.5 选择数据库  
+
 在你连接到 MySQL 数据库后，可能有多个可以操作的数据库，所以你需要选择你要操作的数据库。
 在 mysql> 提示窗口中可以很简单的选择特定的数据库。你可以使用SQL命令来选择指定的数据库。  
 
 以下实例选取了数据库 RUNOOB:  
-```text
+```mysql
 [root@host]# mysql -u root -p
 Enter password:******
 mysql> use RUNOOB;
@@ -469,11 +948,11 @@ mysql>
 ```
 执行以上命令后，你就已经成功选择了 RUNOOB 数据库，在后续的操作中都会在 RUNOOB 数据库中执行。  
 
-## 五、MySQL 数据类型  
+## 六、MySQL 数据类型  
 MySQL中定义数据字段的类型对你数据库的优化是非常重要的。  
 MySQL支持多种类型，大致可以分为三类：数值、日期/时间和字符串(字符)类型。  
 
-### 5.1 数值类型  
+### 6.1 数值类型  
 MySQL支持所有标准SQL数值数据类型。  
 这些类型包括严格数值数据类型(INTEGER、SMALLINT、DECIMAL和NUMERIC)，以及近似数值数据类型(FLOAT、REAL和DOUBLE PRECISION)。    
 关键字INT是INTEGER的同义词，关键字DEC是DECIMAL的同义词。    
@@ -481,13 +960,13 @@ BIT数据类型保存位字段值，并且支持MyISAM、MEMORY、InnoDB和BDB�
 作为SQL标准的扩展，MySQL也支持整数类型TINYINT、MEDIUMINT和BIGINT。下面的表显示了需要的每个整数类型的存储和范围。    
 ![](../images/mysql/mysql_datetype_1.png)    
 
-### 5.2 日期和时间类型
+### 6.2 日期和时间类型
 表示时间值的日期和时间类型为DATETIME、DATE、TIMESTAMP、TIME和YEAR。  
 每个时间类型有一个有效值范围和一个"零"值，当指定不合法的MySQL不能表示的值时使用"零"值。  
 TIMESTAMP类型有专有的自动更新特性，将在后面描述。   
 ![](../images/mysql/mysql_datetype_2.png)    
 
-### 5.3 字符串类型
+### 6.3 字符串类型
 字符串类型指CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM和SET。该节描述了这些类型如何工作以及如何在查询中使用这些类型。    
 ![](../images/mysql/mysql_datetype_3.png)  
 CHAR和VARCHAR类型类似，但它们保存和检索的方式不同。它们的最大长度和是否尾部空格被保留等方面也不同。在存储或检索过程中不进行大小写转换。  
@@ -495,9 +974,15 @@ BINARY和VARBINARY类类似于CHAR和VARCHAR，不同的是它们包含二进制
 BLOB是一个二进制大对象，可以容纳可变数量的数据。有4种BLOB类型：TINYBLOB、BLOB、MEDIUMBLOB和LONGBLOB。它们只是可容纳值的最大长度不同。  
 有4种TEXT类型：TINYTEXT、TEXT、MEDIUMTEXT和LONGTEXT。这些对应4种BLOB类型，有相同的最大长度和存储需求。    
 
-## 六、MySQL表操作
+## 七、MySQL表操作
 
-### 6.1 MySQL 创建数据表
+查询数据库中的所有表
+```mysql
+ show tables;
+```
+
+### 7.1 MySQL 创建数据表
+
 创建MySQL数据表需要以下信息：  
 - 表名
 - 表字段名
@@ -533,7 +1018,7 @@ mysql>
 - PRIMARY KEY关键字用于定义列为主键。 您可以使用多列来定义主键，列间以逗号分隔。  
 - ENGINE 设置存储引擎，CHARSET 设置编码。  
 
-### 6.2 MySQL 删除数据表
+### 7.2 MySQL 删除数据表
 MySQL中删除数据表是非常容易操作的， 但是你再进行删除表操作时要非常小心，因为执行删除命令后所有数据都会消失。  
 
 >语法  
@@ -543,8 +1028,184 @@ MySQL中删除数据表是非常容易操作的， 但是你再进行删除表�
 DROP TABLE table_name;
 ```
 
-## 七、MySQL增删改查
-### 7.1 插入数据
+### 7.3 MySQL 查看数据表
+
+1.查看表结构
+
+```mysql
+mysql>desc user; 
+```
+
+2.查看建表语句
+
+```mysql
+mysql> show create table user\G;
+```
+
+### 7.4 MySQL 修改数据表
+
+1. 修改表名字
+
+```mysql
+#方法1
+mysql> rename table t3 to haha;
+mysql> show tables ;
++----------------+
+| Tables_in_clsn |
++----------------+
+| haha           |
+#方法2
+mysql> alter table haha rename to people;
+mysql> show tables;
++----------------+
+| Tables_in_clsn |
++----------------+
+| people         |
+```
+
+2. 修改表结构
+
+```mysql
+mysql> alter table people  add addr char(40) NOT NULL;
+mysql> desc people;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int(11)  | YES  |     | NULL    |       |
+| addr  | char(40) | NO   |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+```
+
+案例：
+
+指定添加年龄列到name列后面的位置，示例如下:
+
+```mysql
+mysql> alter table people add age int(4) after name;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc people;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| id    | int(11)  | YES  |     | NULL    |       |
+| addr  | char(40) | NO   |     | NULL    |       |
+| name  | int(40)  | YES  |     | NULL    |       |
+| age   | int(4)   | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+```
+
+通过下面的命令在第一列添加qq字段:
+
+```mysql
+mysql> alter table people add telnum  int  first;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc people;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| telnum | int(11)  | YES  |     | NULL    |       |
+| id     | int(11)  | YES  |     | NULL    |       |
+| addr   | char(40) | NO   |     | NULL    |       |
+| name   | int(40)  | YES  |     | NULL    |       |
+| age    | int(4)   | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+```
+
+同时添加多个列定义:
+
+```mysql
+mysql> alter table people add id1 int first ,add sex char(4) after name ;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc people;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| id1    | int(11)  | YES  |     | NULL    |       |
+| telnum | int(11)  | YES  |     | NULL    |       |
+| id     | int(11)  | YES  |     | NULL    |       |
+| addr   | char(40) | NO   |     | NULL    |       |
+| name   | int(40)  | YES  |     | NULL    |       |
+| sex    | char(4)  | YES  |     | NULL    |       |
+| age    | int(4)   | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+```
+
+3. 删除表结构
+
+```mysql
+mysql> alter table people  drop  sex;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc  people;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| id1    | int(11)  | YES  |     | NULL    |       |
+| telnum | int(11)  | YES  |     | NULL    |       |
+| id     | int(11)  | YES  |     | NULL    |       |
+| addr   | char(40) | NO   |     | NULL    |       |
+| name   | int(40)  | YES  |     | NULL    |       |
+| age    | int(4)   | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+```
+
+4. 修改表定义
+
+```mysql
+mysql> alter table people modify name char(20);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc  people;
++--------+----------+------+-----+---------+-------+
+| Field  | Type     | Null | Key | Default | Extra |
++--------+----------+------+-----+---------+-------+
+| id1    | int(11)  | YES  |     | NULL    |       |
+| telnum | int(11)  | YES  |     | NULL    |       |
+| id     | int(11)  | YES  |     | NULL    |       |
+| addr   | char(40) | NO   |     | NULL    |       |
+| name   | char(20) | YES  |     | NULL    |       |
+| age    | int(4)   | YES  |     | NULL    |       |
++--------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+```
+
+5. 修改列名
+
+```mysql
+mysql> alter table people change name people_name char(30) ; 
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc  people;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| id1         | int(11)  | YES  |     | NULL    |       |
+| telnum      | int(11)  | YES  |     | NULL    |       |
+| id          | int(11)  | YES  |     | NULL    |       |
+| addr        | char(40) | NO   |     | NULL    |       |
+| people_name | char(30) | YES  |     | NULL    |       |
+| age         | int(4)   | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+```
+
+## 八、MySQL增删改查
+
+### 8.1 MySQL INSERT 语句
 MySQL 表中使用 INSERT INTO SQL语句来插入数据。  
 你可以通过 mysql> 命令提示窗口中向数据表中插入数据，或者通过PHP脚本来插入数据。  
 
@@ -575,7 +1236,58 @@ mysql> INSERT INTO runoob_tbl
 Query OK, 1 rows affected, 1 warnings (0.01 sec)
 ```
 
-### 7.2 MySQL 查询数据
+一次插入多行数据
+
+```mysql
+mysql> desc clsn;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int(11)     | YES  |     | NULL    |       |
+| name  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+#一次插入两行数据
+mysql> insert into clsn values(1,'yougboy'),(2,'youggilr');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from clsn;
++------+----------+
+| id   | name     |
++------+----------+
+|    1 | yougboy  |
+|    2 | youggilr |
++------+----------+
+2 rows in set (0.00 sec)
+```
+
+使用子查询插入
+
+```mysql
+mysql> create table test2 like clsn;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into test2 select * from clsn;
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select  * from test2;
++------+----------+
+| id   | name     |
++------+----------+
+|    1 | clsn     |
+|    2 | yougboy  |
+|    3 | youggilr |
+| NULL | xiaoming |
++------+----------+
+4 rows in set (0.00 sec)
+```
+
+
+
+### 8.2 MySQL 查询数据
+
 MySQL 数据库使用SQL SELECT语句来查询数据。  
 你可以通过 mysql> 命令提示窗口中在数据库中查询数据，或者通过PHP脚本来查询数据。  
 >语法
@@ -603,7 +1315,7 @@ FROM table_name
 select * from runoob_tbl;
 ```
 
-### 7.3 MySQL WHERE 子句
+### 8.3 MySQL WHERE 子句
 我们知道从 MySQL 表中使用 SQL SELECT 语句来读取数据。  
 如需有条件地从表中选取数据，可将 WHERE 子句添加到 SELECT 语句中。  
 
@@ -648,7 +1360,7 @@ mysql> SELECT * from runoob_tbl WHERE BINARY runoob_author='RUNOOB.COM';
 ````
 实例中使用了 BINARY 关键字，是区分大小写的，所以 runoob_author='runoob.com' 的查询条件是没有数据的。
 
-### 7.4 MySQL UPDATE
+### 8.4 MySQL UPDATE 语句
 
 如果我们需要修改或更新 MySQL 中的数据，我们可以使用 SQL UPDATE 命令来操作。.
 
@@ -684,19 +1396,26 @@ mysql> SELECT * from runoob_tbl WHERE runoob_id=3;
 ```
 从结果上看，runoob_id 为 3 的 runoob_title 已被修改。
 
-### 7.5 MySQL DELETE 语句
+### 8.5 MySQL DELETE 语句
 你可以使用 SQL 的 DELETE FROM 命令来删除 MySQL 数据表中的记录。  
 你可以在 mysql> 命令提示符或 PHP 脚本中执行该命令。  
 
 >语法  
 >以下是 SQL DELETE 语句从 MySQL 数据表中删除数据的通用语法：
-```sql
+```mysql
 DELETE FROM table_name [WHERE Clause]
 ```
 - 如果没有指定 WHERE 子句，MySQL 表中的所有记录将被删除。
 - 你可以在 WHERE 子句中指定任何条件  
 - 您可以在单个表中一次性删除记录。  
 - 当你想删除数据表中指定的记录时 WHERE 子句是非常有用的。  
+
+其他：
+
+```mysql
+delete from test;     #逻辑删除，一行一行删。
+truncate table test;  #物理删除，pages(block)，效率高。
+```
 
 从命令行中删除数据
 这里我们将在 SQL DELETE 命令中使用 WHERE 子句来删除 MySQL 数据表 runoob_tbl 所选的数据。
@@ -712,7 +1431,7 @@ mysql> DELETE FROM runoob_tbl WHERE runoob_id=3;
 Query OK, 1 row affected (0.23 sec)
 ```
 
-### 7.6 MySQL LIKE 子句
+### 8.6 MySQL LIKE 子句
 
 >语法
 
@@ -746,7 +1465,7 @@ mysql> SELECT * from runoob_tbl  WHERE runoob_author LIKE '%COM';
 2 rows in set (0.01 sec)
 ```
 
-### 7.7 MySQL UNION 操作符
+### 8.7 MySQL UNION 操作符
 本教程为大家介绍 MySQL UNION 操作符的语法和实例。  
 
 描述  
@@ -771,7 +1490,7 @@ FROM tables
 - DISTINCT: 可选，删除结果集中重复的数据。默认情况下 UNION 操作符已经删除了重复数据，所以 DISTINCT 修饰符对结果没啥影响。
 - ALL: 可选，返回所有结果集，包含重复数据。
 
-### 7.8 MySQL 排序
+### 8.8 MySQL 排序
 我们知道从 MySQL 表中使用 SQL SELECT 语句来读取数据。  
 如果我们需要对读取的数据进行排序，我们就可以使用 MySQL 的 ORDER BY 子句来设定你想按哪个字段哪种方式来进行排序，再返回搜索结果。  
 
@@ -787,7 +1506,7 @@ ORDER BY field1, [field2...] [ASC [DESC]]
 - 你可以使用 ASC 或 DESC 关键字来设置查询结果是按升序或降序排列。 默认情况下，它是按升序排列。
 - 你可以添加 WHERE...LIKE 子句来设置条件。
 
-### 7.9 MySQL GROUP BY 语句
+### 8.9 MySQL GROUP BY 语句
 GROUP BY 语句根据一个或多个列对结果集进行分组。  
 在分组的列上我们可以使用 COUNT, SUM, AVG,等函数。  
 >GROUP BY 语法
@@ -847,7 +1566,7 @@ mysql> SELECT coalesce(name, '总数'), SUM(singin) as singin_count FROM  employ
 4 rows in set (0.01 sec)
 ```
 
-### 7.10 Mysql 连接的使用
+### 8.10 Mysql 连接的使用
 在前几章节中，我们已经学会了如何在一张表中读取数据，这是相对简单的，但是在真正的应用中经常需要从多个数据表中读取数据。  
 本章节我们将向大家介绍如何使用 MySQL 的 JOIN 在两个或多个表中查询数据。  
 你可以在 SELECT, UPDATE 和 DELETE 语句中使用 Mysql 的 JOIN 来联合多表查询。    
@@ -966,7 +1685,7 @@ mysql> SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a RIG
 ```
 以上实例中使用了 RIGHT JOIN，该语句会读取右边的数据表 tcount_tbl 的所有选取的字段数据，即便在左侧表 runoob_tbl 中没有对应的runoob_author 字段值。
 
-### 7.11 MySQL NULL 值处理
+### 8.11 MySQL NULL 值处理
 我们已经知道 MySQL 使用 SQL SELECT 命令及 WHERE 子句来读取数据表中的数据,但是当提供的查询条件字段为 NULL 时，该命令可能就无法正常工作。  
 
 为了处理这种情况，MySQL提供了三大运算符:  
@@ -978,7 +1697,7 @@ mysql> SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a RIG
   在 MySQL 中，NULL 值与任何其它值的比较（即使是 NULL）永远返回 false，即 NULL = NULL 返回false 。    
   MySQL 中处理 NULL 使用 IS NULL 和 IS NOT NULL 运算符。  
 
-### 7.12 MySQL 正则表达式
+### 8.12 MySQL 正则表达式
 在前面的章节我们已经了解到MySQL可以通过 LIKE ...% 来进行模糊匹配。  
 MySQL 同样也支持其他正则表达式的匹配， MySQL中使用 REGEXP 操作符来进行正则表达式匹配。  
 如果您了解PHP或Perl，那么操作起来就非常简单，因为MySQL的正则表达式匹配与这些脚本的类似。    
@@ -1005,7 +1724,7 @@ mysql> SELECT name FROM person_tbl WHERE name REGEXP 'mar';
 mysql> SELECT name FROM person_tbl WHERE name REGEXP '^[aeiou]|ok$';
 ```
 
-## 八、MySQL事务
+## 九、MySQL事务
 MySQL 事务主要用于处理操作量大，复杂度高的数据。比如说，在人员管理系统中，你删除一个人员，你即需要删除人员的基本资料，也要删除和该人员相关的信息，如信箱，文章等等，这样，这些数据库操作语句就构成一个事务！
 
 - 在 MySQL 中只有使用了 Innodb 数据库引擎的数据库或表才支持事务。
@@ -1096,7 +1815,7 @@ mysql>   select * from runoob_transaction_test;   # 因为回滚所以数据没�
 mysql>
 ```
 
-## 九、 MySQL ALTER命令
+## 十、 MySQL ALTER命令
 当我们需要修改数据表名或者修改数据表字段时，就需要使用到MySQL ALTER命令。  
 开始本章教程前让我们先创建一张表，表名为：testalter_tbl。  
 ```sql
@@ -1232,7 +1951,7 @@ mysql> ALTER TABLE testalter_tbl RENAME TO alter_tbl;
 ```
 ALTER 命令还可以用来创建及删除MySQL数据表的索引，该功能我们会在接下来的章节中介绍。
 
-## 十、MySQL 索引
+## 十一、MySQL 索引
 MySQL索引的建立对于MySQL的高效运行是很重要的，索引可以大大提高MySQL的检索速度。  
 打个比方，如果合理的设计且使用索引的MySQL是一辆兰博基尼的话，那么没有设计和使用索引的MySQL就是一个人力三轮车。  
 索引分单列索引和组合索引。单列索引，即一个索引只包含单个列，一个表可以有多个单列索引，但这不是组合索引。组合索引，即一个索引包含多个列。  
@@ -1335,7 +2054,7 @@ mysql> SHOW INDEX FROM table_name; \G
 ........  
 ```
 
-## 十一、MySQL 临时表
+## 十二、MySQL 临时表
 MySQL 临时表在我们需要保存一些临时数据时是非常有用的。临时表只在当前连接可见，当关闭连接时，Mysql会自动删除表并释放所有空间。  
 临时表在MySQL 3.23版本中添加，如果你的MySQL版本低于 3.23版本就无法使用MySQL的临时表。不过现在一般很少有再使用这么低版本的MySQL数据库服务了。  
 MySQL临时表只在当前连接可见，如果你使用PHP脚本来创建MySQL临时表，那每当PHP脚本执行完成后，该临时表也会自动销毁。  
@@ -1397,7 +2116,7 @@ mysql>  SELECT * FROM SalesSummary;
 ERROR 1146: Table 'RUNOOB.SalesSummary' doesn't exist
 ```
 
-## 十二、MySQL 复制表
+## 十三、MySQL 复制表
 如果我们需要完全的复制MySQL的数据表，包括表的结构，索引，默认值等。 如果仅仅使用CREATE TABLE ... SELECT 命令，是无法实现的。  
 本章节将为大家介绍如何完整的复制MySQL数据表，步骤如下：  
 
@@ -1464,7 +2183,7 @@ CREATE TABLE targetTable LIKE sourceTable;
 INSERT INTO targetTable SELECT * FROM sourceTable;
 ```
 
-## 十三、MySQL 元数据
+## 十四、MySQL 元数据
 你可能想知道MySQL以下三种信息：  
 
 - 查询结果信息： SELECT, UPDATE 或 DELETE语句影响的记录数。
@@ -1477,7 +2196,7 @@ INSERT INTO targetTable SELECT * FROM sourceTable;
 以下命令语句可以在 MySQL 的命令提示符使用，也可以在脚本中 使用，如PHP脚本。
 ![](../images/mysql/mysql_data_1)
 
-## 十四、MySQL 序列使用
+## 十五、MySQL 序列使用
 MySQL序列是一组整数：1, 2, 3, ...，由于一张数据表只能有一个字段自增主键， 如果你想实现其他  字段也实现自动增加，就可以使用MySQL序列来实现。  
 本章我们将介绍如何使用MySQL的序列。  
 
@@ -1540,7 +2259,7 @@ mysql> CREATE TABLE insect
 mysql> ALTER TABLE t AUTO_INCREMENT = 100;
 ```
 
-## 十五、MySQL 处理重复数据
+## 十六、MySQL 处理重复数据
 有些 MySQL 数据表中可能存在重复的记录，有些情况我们允许重复数据的存在，但有时候我们也需  要删除这些重复的数据。  
 本章节我们将为大家介绍如何防止数据表出现重复数据及如何删除数据表中的重复数据。  
 
@@ -1635,7 +2354,7 @@ mysql> ALTER IGNORE TABLE person_tbl
     -> ADD PRIMARY KEY (last_name, first_name);
 ```
 
-## 十六、MySQL 导出数据
+## 十七、MySQL 导出数据
 MySQL中你可以使用SELECT...INTO OUTFILE语句来简单的导出数据到文本文件上。  
 
 >使用 SELECT ... INTO OUTFILE 语句导出数据
@@ -1750,7 +2469,7 @@ $ mysqldump -u root -p database_name \
 ```
 以上命令中使用了管道来将导出的数据导入到指定的远程主机上。
 
-## 十七、MySQL 导入数据
+## 十八、MySQL 导入数据
 MySQL中可以使用两种简单的方式来导入MySQL导出的数据。
 
 >使用 LOAD DATA 导入数据
@@ -1804,6 +2523,12 @@ mysqlimport的常用选项介绍
 ![](../images/mysql/mysql_mysqlimport_1.png)   
 mysqlimport命令常用的选项还有-v 显示版本（version）， -p 提示输入密码（password）等。
 
-## 十八、 MySQL函数
+## 十九、 MySQL函数
 
 https://www.w3cschool.cn/mysql/func-date-add.html
+
+
+
+## 参考
+
+https://www.cnblogs.com/clsn/p/8047028.html#auto_id_14
