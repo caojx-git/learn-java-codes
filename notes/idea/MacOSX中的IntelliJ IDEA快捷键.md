@@ -171,6 +171,12 @@ alter+enter 快速修复（导包，修复拼写错误，实现方法等）
 
 shift+cmd+T 自动生成测试类 
 
+自动生成serialVersionUID：  
+
+Setting->Inspections->Serialization issues->Serializable class without ’serialVersionUID’ 
+
+选上以后，在你的class中：Alt+Enter就会提示自动创建serialVersionUID了。
+
 ## 十二、查看IDEA默认的快捷键
 上边使用的是Mac OS X的KeyMap,下图的KeyMap是Mac OS X10.5+的，该图可以在IDEA中的Find Action中搜索Keymap Reference中调出   
 ![](../images/idea/IDEA_KeyMap_MacOSX10.5.png)   
