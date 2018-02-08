@@ -6,9 +6,15 @@
 
 Mysql是最流行的关系型数据库管理系统，在WEB应用方面MySQL是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一  
 
-本教程原文：http://www.runoob.com/mysql/mysql-tutorial.html
+本教程整理自原文：
 
-## 一、MySQL简介  
+http://www.runoob.com/mysql/mysql-tutorial.html
+
+https://www.w3cschool.cn/mysql/
+
+https://www.cnblogs.com/clsn/p/8047028.html#auto_id_14
+
+## 一、MySQL 简介  
 
 1. RDBMS 术语  
   在我们开始学习MySQL 数据库前，让我们先了解下RDBMS的一些术语：
@@ -36,7 +42,7 @@ Mysql是最流行的关系型数据库管理系统，在WEB应用方面MySQL是�
 - MySQL支持大型数据库，支持5000万条记录的数据仓库，32位系统表文件最大可支持4GB，64位系统支持最大的表文件为8TB。
 - Mysql是可以定制的，采用了GPL协议，你可以修改源码来开发自己的Mysql系统。
 
-## 二、安装MySQL 
+## 二、MySQL 安装 
 所有平台的Mysql下载地址为：https://www.mysql.com/downloads/  
 
 ### 2.1 Linux/UNIX上安装MySQL   
@@ -137,7 +143,7 @@ windows安转后MySQL目录结构：
 - lib目录，存储库文件
 - share目录，错误消息和字符集文件
 
-### 2.3 MySQL配置
+### 2.3 MySQL 配置
 
 windwos配置文件：在安装目录下有my.ini配置文件，里边可以配置客户、服务端端口和编码以及其他的配置
 编码配置：  
@@ -148,7 +154,7 @@ character-set-server=utf-8
 
 ## 三、 MySQL 管理
 
-### 3.1 启动及关闭 MySQL 服务器
+### 3.1  MySQL 启动及关闭
 linux:  
 ```text
 首先，我们需要通过以下命令来检查MySQL服务器是否启动：
@@ -173,7 +179,7 @@ net start mysql
 关闭Windows服务：
 net stop mysql
 ```
-### 3.2 MySQL登录退出  
+### 3.2 MySQL 登录退出  
 
 登录：  
 
@@ -186,7 +192,7 @@ mysql> quit;
 mysql> \q;
 ```
 
-### 3.3 MySQL提示符号  
+### 3.3 MySQL 提示符号  
 
 修改MySQL提示符 ：  
 ```text
@@ -301,11 +307,11 @@ err-log=/var/log/mysqld.log
 pid-file=/var/run/mysqld/mysqld.pid
 ```
 在配置文件中，你可以指定不同的错误日志文件存放的目录，一般你不需要改动这些配置。
-### 3.6 MySQL语句规范
+### 3.6 MySQL 语句规范
 - 关键字与函数名全部大写(建议，小写虽然也可以)
 - 数据库名称、表名称、字段名成全部小写（建议）
 - SQL语句必须以分号结尾
-### 3.7 管理MySQL的命令
+### 3.7 MySQL 管理命令
 以下列出了使用Mysql数据库过程中常用的命令：  
 1. USE 数据库名 :  
   选择要操作的Mysql数据库，使用该命令后所有Mysql命令都只针对该数据库。
@@ -526,7 +532,7 @@ OR     mysqldump [OPTIONS] --all-databases [OPTIONS]
 
 　　情参照mysqldump --help
 
-## 四、MySQL用户管理
+## 四、MySQL 用户管理
 
 ### 4.1 用户的定义
 
@@ -784,7 +790,7 @@ mysql> select database(); #查看当前所在的数据库
 mysql> show tables;#查看库里边的表
 ```
 
-## 五、 数据库操作
+## 五、 MySQL 数据库操作
 
 ### 5.1 查看数据库
 
@@ -974,7 +980,7 @@ BINARY和VARBINARY类类似于CHAR和VARCHAR，不同的是它们包含二进制
 BLOB是一个二进制大对象，可以容纳可变数量的数据。有4种BLOB类型：TINYBLOB、BLOB、MEDIUMBLOB和LONGBLOB。它们只是可容纳值的最大长度不同。  
 有4种TEXT类型：TINYTEXT、TEXT、MEDIUMTEXT和LONGTEXT。这些对应4种BLOB类型，有相同的最大长度和存储需求。    
 
-## 七、MySQL表操作
+## 七、MySQL 表操作
 
 查询数据库中的所有表
 ```mysql
@@ -1724,7 +1730,7 @@ mysql> SELECT name FROM person_tbl WHERE name REGEXP 'mar';
 mysql> SELECT name FROM person_tbl WHERE name REGEXP '^[aeiou]|ok$';
 ```
 
-## 九、MySQL事务
+## 九、MySQL 事务
 MySQL 事务主要用于处理操作量大，复杂度高的数据。比如说，在人员管理系统中，你删除一个人员，你即需要删除人员的基本资料，也要删除和该人员相关的信息，如信箱，文章等等，这样，这些数据库操作语句就构成一个事务！
 
 - 在 MySQL 中只有使用了 Innodb 数据库引擎的数据库或表才支持事务。
@@ -2523,12 +2529,16 @@ mysqlimport的常用选项介绍
 ![](../images/mysql/mysql_mysqlimport_1.png)   
 mysqlimport命令常用的选项还有-v 显示版本（version）， -p 提示输入密码（password）等。
 
-## 十九、 MySQL函数
+## 十九、 MySQL 函数
 
 https://www.w3cschool.cn/mysql/func-date-add.html
 
 
 
 ## 参考
+
+http://www.runoob.com/mysql/mysql-tutorial.html
+
+https://www.w3cschool.cn/mysql/
 
 https://www.cnblogs.com/clsn/p/8047028.html#auto_id_14
