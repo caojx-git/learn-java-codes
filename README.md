@@ -4,8 +4,8 @@ learn仓库主要用于存放**Java**相关的学习笔记、项目等，每学�
 
 learn仓库有如下两大模块  
 
-- [code](https://github.com/caojx-git/learn/code) 用于存放相关项目源代码
-- [notes](https://github.com/caojx-git/learn/notes) 用于存放学习笔记
+- [code](https://github.com/caojx-git/learn/tree/master/code) 用于存放相关项目源代码
+- [notes](https://github.com/caojx-git/learn/tree/master/notes) 用于存放学习笔记
 
 ## 目录
 
