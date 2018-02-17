@@ -8,7 +8,7 @@ learn仓库有如下两大模块
 - [notes](https://github.com/caojx-git/learn/tree/master/notes) 用于存放学习笔记
 
 ## 目录
-
+- [activiti](https://github.com/caojx-git/learn/tree/master/notes/activiti)  
 - [docker](https://github.com/caojx-git/learn/tree/master/notes/docker)
 - [git](https://github.com/caojx-git/learn/tree/master/notes/git)
 - [gradle](https://github.com/caojx-git/learn/tree/master/notes/gradle)
