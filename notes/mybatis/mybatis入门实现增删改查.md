@@ -1,7 +1,7 @@
 [TOC]
 
 ## 一、mybatis入门实现增删改查
-这里我们使用mybatis去实现一个自动回复机器人的功能的实现。
+这里我们使用mybatis去实现一个自动回复机器人的功能的实现。本篇文章时案例演示增删改改查，如果完全没有学过mybatis建议先看[MyBatis入门学习](http://blog.csdn.net/u014292162/article/details/52016571)
 
 
 ### 1.1实现页面跳转

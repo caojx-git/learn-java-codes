@@ -402,7 +402,7 @@ SELECT NOW();
 SELECT USER();
 ```
 
-### 3.8 MySQL客户端工具
+### 3.8 MySQL 客户端工具
 
 **mysql**命令客户端
 
@@ -530,7 +530,129 @@ OR     mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...]
 OR     mysqldump [OPTIONS] --all-databases [OPTIONS]
 ```
 
-　　情参照mysqldump --help
+　　请参照mysqldump --help
+
+### 3.9 MySQL 编码设置
+
+1. 查看MySQL系统设置的编码详细
+
+```mysql
+MariaDB [(none)]> show variables like '%char%';
++--------------------------+----------------------------+
+| Variable_name            | Value                      |
++--------------------------+----------------------------+
+| character_set_client     | utf8                       |
+| character_set_connection | utf8                       |
+| character_set_database   | utf8                       |
+| character_set_filesystem | binary                     |
+| character_set_results    | utf8                       |
+| character_set_server     | utf8                       |
+| character_set_system     | utf8                       |
+| character_sets_dir       | /usr/share/mysql/charsets/ |
++--------------------------+----------------------------+
+```
+
+2. 临时设置MySQL系统会话编码
+
+```mysql
+#设置当前窗口的数据库字符编码，即使基于会话session级别的，关闭此窗口，重新打开另外的窗口操作数据库依然是原来的字符编码
+set character_set_database=utf8;
+set character_set_server=utf8;
+```
+
+3. 设置全局MySQL系统会话字符编码
+
+```mysql
+#设置全局的数据库字符编码，不会改变现有存在数据的编码，在没有重启数据库的情况下，新建数据库时，就会变成我们设置的全局编码，因为设置全局的数据库编码是基于整个MySQL服务的，但是当重启MySQL服务的时候，编码就会变为原来的字符编码。
+set global character_set_database=utf8;
+set global character_ser_server=utf8;
+```
+
+4. 永久设置MySQL系统编码
+
+```txt
+编辑 /etc/my.cnf，
+　   在里面加入，已经有[XXX]的，在里面直接加入即可。 
+　   
+　　　　[mysqld]
+　　　　character-set-server=utf8 
+　　　　
+　　　　[client]
+　　　　default-character-set=utf8 
+　　　　
+　　　　[mysql]
+　　　　default-character-set=utf8
+　　然后重启数据库即可，service mysql restart.
+```
+
+5. 查看一个数据库的编码
+
+```mysql
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+4 rows in set (0.00 sec)
+
+MariaDB [(none)]> show create database mysql;
++----------+----------------------------------------------------------------+
+| Database | Create Database                                                |
++----------+----------------------------------------------------------------+
+| mysql    | CREATE DATABASE `mysql` /*!40100 DEFAULT CHARACTER SET utf8 */ |
++----------+----------------------------------------------------------------+
+1 row in set (0.00 sec)
+```
+
+6. 修改数据库的编码格式
+
+```mysql
+mysql>alter database <数据库名> character set utf8;
+```
+
+7. 创建数据库时指定数据库的字符集
+
+```mysql
+mysql>create database <数据库名> character set utf8;
+```
+
+8. 查看数据指定表的编码格式
+
+```mysql
+mysql> show create table <表名>;
+```
+
+9. 查看数据库中所有表（tables）的字符集
+
+```mysql
+show table status from <数据库名>
+```
+
+10. 修改数据表的编码格式
+
+```mysql
+mysql>alter table <表名> character set utf8;
+```
+
+11. 创建数据表时指定数据表的编码格式
+
+```mysql
+create table tb_books (
+	name varchar(45) not null,
+	price double not null,
+	bookCount int not null,
+	author varchar(45) not null ) default charset = utf8;
+```
+
+12. 查看表中数据列（column）的字符集
+
+```mysql
+show full columns from <表名>;
+```
 
 ## 四、MySQL 用户管理
 
@@ -1572,7 +1694,7 @@ mysql> SELECT coalesce(name, '总数'), SUM(singin) as singin_count FROM  employ
 4 rows in set (0.01 sec)
 ```
 
-### 8.10 Mysql 连接的使用
+### 8.10 MySQL 连接的使用
 在前几章节中，我们已经学会了如何在一张表中读取数据，这是相对简单的，但是在真正的应用中经常需要从多个数据表中读取数据。  
 本章节我们将向大家介绍如何使用 MySQL 的 JOIN 在两个或多个表中查询数据。  
 你可以在 SELECT, UPDATE 和 DELETE 语句中使用 Mysql 的 JOIN 来联合多表查询。    
@@ -2529,7 +2651,7 @@ mysqlimport的常用选项介绍
 ![](../images/mysql/mysql_mysqlimport_1.png)   
 mysqlimport命令常用的选项还有-v 显示版本（version）， -p 提示输入密码（password）等。
 
-## 十九、 MySQL 函数
+## 十九、MySQL 函数
 
 https://www.w3cschool.cn/mysql/func-date-add.html
 
