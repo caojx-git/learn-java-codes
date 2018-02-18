@@ -1,0 +1,12 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%><%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	request.setAttribute("basePath",  basePath);
+%>
+
+<script language="javascript" src="${basePath}/js/jquery.js"></script>
+<script language="javascript" src="${basePath}/js/navbar.js"></script>
+<link type="text/css" rel="stylesheet" href="${basePath}/css/public.css" />
+
+<script type="text/javascript">
+</script>

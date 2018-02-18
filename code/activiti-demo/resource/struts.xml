@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 配置模式为开发模式，自动加载struts.xml和显示错误提示信息 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 设置页面主题为简单主题，去掉struts2开发提供的样式 -->
+    <constant name="struts.ui.theme" value="simple" />
+
+    <package name="default" namespace="/" extends="struts-default">
+    	<!-- 拦截器配置 -->
+    	<interceptors>
+    		<!-- 定义了一个用于拦截器登录的拦截器 -->
+    		<interceptor name="loginInterceptor" class="cn.itcast.ssh.utils.LoginInteceptor"></interceptor>
+    		<!-- 定义一个拦截器栈 -->
+    		<interceptor-stack name="systemStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="loginInterceptor" />
+			</interceptor-stack>
+    	</interceptors>
+    
+  		<!-- 定义系统默认拦截器 全局 -->
+		<default-interceptor-ref name="systemStack" /> 
+    	<!-- 全局结果视图 -->
+    	<global-results>
+    		<result name="login" type="redirect">
+    			login.jsp
+    		</result>
+    	</global-results>
+    	
+    	<action name="loginAction_*" class="loginAction" method="{1}">
+        	<result name="success">WEB-INF/views/main.jsp</result>
+        	<result name="top">WEB-INF/views/top.jsp</result>
+        	<result name="left">WEB-INF/views/left.jsp</result>
+        	<result name="welcome">WEB-INF/views/welcome.jsp</result>
+        </action>
+        
+        <action name="leaveBillAction_*" class="leaveBillAction" method="{1}">
+            <result name="home">WEB-INF/views/leaveBill/list.jsp</result>
+            <result name="input">WEB-INF/views/leaveBill/input.jsp</result>
+            <result name="save" type="redirectAction">
+        		<param name="actionName">leaveBillAction_home.action</param>
+        	</result>
+        </action>
+    	
+    	<action name="workflowAction_*" class="workflowAction" method="{1}">
+        	<result name="list" type="redirectAction">
+        		<param name="actionName">workflowAction_deployHome.action</param>
+        	</result>
+        	<result name="deployHome">WEB-INF/views/workflow/workflow.jsp</result>
+        	<result name="task">WEB-INF/views/workflow/task.jsp</result>
+        	<result name="image">WEB-INF/views/workflow/image.jsp</result>
+        	<result name="listTask" type="redirectAction">
+    			<param name="actionName">workflowAction_listTask.action</param>
+            </result>
+        	<result name="viewTaskForm" type="redirectAction">
+        		<!-- 从LeaveBill.bpmn文件中获取任务节点的url连接 -->
+        		<param name="actionName">/${#url}</param>
+        	</result>
+        	<result name="taskForm">WEB-INF/views/workflow/taskForm.jsp</result>
+            <result name="viewHisComment">WEB-INF/views/workflow/taskFormHis.jsp</result>
+        </action>
+    </package>
+</struts>

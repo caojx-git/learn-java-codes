@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.ssh.domain">
+<class name="LeaveBill" table="a_leaveBill">
+	<id name="id" type="long" column="id">
+	     <generator class="native"/>
+	</id>
+	<property name="days" type="integer" column="days"/>
+	<property name="content"  type="string" column="content"/>
+	<property name="remark" type="string" column="remark"/>
+	<property name="leaveDate" type="timestamp" column="leaveDate"/>
+	<property name="state" type="integer" column="state"/>
+	<many-to-one name="user" class="Employee" column="user_id"></many-to-one>
+</class>
+</hibernate-mapping>

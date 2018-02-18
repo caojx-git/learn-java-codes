@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family:宋体;
+	font-size:14px;
+	line-height: 25px;
+	margin-left: 3px;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-bottom: 0px;
+}
+a:link {
+	color: blue;
+}
+a:visited {
+	color: blue;
+}
+a:active {
+	color: blue;
+	text-decoration: underLine;
+}
+a:hover {
+	color: #0066CC;
+	text-decoration: none;
+}
+
+table.list{
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+
+table.list tr{ 
+	background-color:#FFFFFF;
+	vertical-align:bottom;
+}
+
+table.list th, table.list td {
+	font-family:宋体;
+	font-size:14px;
+	border:1px solid #D2D2D2;
+	height:28px;
+	padding-left:5px;
+	padding-right:5px;
+	vertical-align:middle;
+}
+
+.STYLE1 {
+	color: #e1e2e3;
+	font-size: 12px;
+}
+.STYLE6 {color: #000000; font-size: 12; }
+.STYLE10 {color: #000000; font-size: 12px; }
+.STYLE19 {
+	color: #344b50;
+	font-size: 12px;
+}
+.STYLE21 {
+	font-size: 12px;
+	color: #3b6375;
+}
+.STYLE22 {
+	font-size: 12px;
+	color: #295568;
+}
+.button_ok {
+	background-color: #DAE6FF;
+	margin: 1px;
+	border: 1px solid #8AA2CC;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: #2F3F5B;
+	cursor: hand;
+	text-align: right;
+	left: 10px;
+	top: 10px;
+	right: 0px;
+	bottom: 10px;
+	clip:  rect(10px 10px 10px 10px);
+	height: 15px;
+}

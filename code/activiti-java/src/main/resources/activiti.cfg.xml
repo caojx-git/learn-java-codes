@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--流程引擎的相关配置。按照上面代码配置ProcessEngineConfiguration对象，主要定义数据库的连接配置和建表策略-->
+    <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+
+        <!--连接数据库配置-->
+        <property name="jdbcUrl" value="jdbc:mariadb://192.168.46.131:3306/activiti_learn?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false" />
+        <property name="jdbcDriver" value="org.mariadb.jdbc.Driver" />
+        <property name="jdbcUsername" value="root" />
+        <property name="jdbcPassword" value="root" />
+
+        <!--建表策略-->
+        <property name="databaseSchemaUpdate" value="true" />
+
+    </bean>
+
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		                    http://www.springframework.org/schema/context 
+		                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		                    http://www.springframework.org/schema/tx 
+		                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		                    http://www.springframework.org/schema/aop 
+		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"> 
+	<bean id="loginAction" class="cn.itcast.ssh.web.action.LoginAction" scope="prototype">
+		<property name="employeeService" ref="employeeService"></property>
+	</bean>
+	<bean id="leaveBillAction" class="cn.itcast.ssh.web.action.LeaveBillAction" scope="prototype">
+		<property name="leaveBillService" ref="leaveBillService"></property>
+	</bean>
+	<bean id="workflowAction" class="cn.itcast.ssh.web.action.WorkflowAction" scope="prototype">
+		<property name="workflowService" ref="workflowService"></property>
+		<property name="leaveBillService" ref="leaveBillService"></property>
+	</bean>
+</beans>

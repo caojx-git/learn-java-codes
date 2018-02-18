@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		                    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		                    http://www.springframework.org/schema/context 
+		                    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		                    http://www.springframework.org/schema/tx 
+		                    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		                    http://www.springframework.org/schema/aop 
+		                    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"> 
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="url" value="${jdbc.url}" />
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+	<!-- 配置外部数据库连接信息-->
+	<context:property-placeholder location="classpath:db.properties"/>
+	<!-- 创建SessionFactory，这是spring整合hibernate的核心 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 1.配置datasource -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 2.配置Hibernate属性 -->
+		<property name="hibernateProperties">
+			<value>
+				hibernate.hbm2ddl.auto=update
+				hibernate.show_sql=true
+				hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+			</value>
+		</property>
+		<!-- 3.配置映射文件 -->
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:cn/itcast/ssh/domain/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 
+	配置事务
+	 -->
+	<!-- 1.配置事务管理器 -->
+	<bean id="transManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 2.配置事务通知 -->
+	<tx:advice id="txAdvice" transaction-manager="transManager">
+		<tx:attributes>
+			<tx:method name="save*" isolation="DEFAULT" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+			<tx:method name="update*" isolation="DEFAULT" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+			<tx:method name="delete*" isolation="DEFAULT" propagation="REQUIRED" read-only="false" rollback-for="Exception"/>
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- 3.配置切面 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* cn.itcast.ssh.service..*.*(..))" id="aopPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="aopPointcut" />
+	</aop:config>
+	
+	<!--  配置基础的Dao，在其他的DAO中只需要继承即可 -->
+	<bean id="baseDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<!-- 导入相关配置 -->
+	<import resource="classpath:applicationContext-dao.xml"/>
+	<import resource="classpath:applicationContext-service.xml"/>
+	<import resource="classpath:applicationContext-action.xml"/>
+	<import resource="classpath:activiti-context.xml"/>
+	
+	
+		
+</beans>                    
