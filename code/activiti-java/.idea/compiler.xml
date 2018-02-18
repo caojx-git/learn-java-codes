@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="2048" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="activiti-java_main" target="1.8" />
+      <module name="activiti-java_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

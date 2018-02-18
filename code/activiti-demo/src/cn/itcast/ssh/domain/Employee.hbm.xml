@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.ssh.domain">
+<class name="Employee" table="a_employee">
+	<id name="id" type="long" column="id">
+		 <generator class="native"/>
+	</id>
+	<property name="name" type="string" column="name" unique="true" />
+	<property name="password" type="string" column="password" />
+	<property name="email" type="string" column="email" unique="true"/>
+	<property name="role" type="string" column="role" />
+    <many-to-one name="manager" class="Employee" column="manager_id"></many-to-one>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.activiti:activiti-spring:5.22.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.activiti/activiti-spring/5.22.0/92f424f144bf4c04c70a62ee6dd8175355e41326/activiti-spring-5.22.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.activiti/activiti-spring/5.22.0/b337485d3f5245cc5d25a021e9845c09eb277877/activiti-spring-5.22.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
