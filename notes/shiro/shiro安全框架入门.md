@@ -1694,7 +1694,7 @@ Shiro提供了记住我（RememberMe）的功能，比如访问如淘宝等一�
 
 参考：http://shiro.apache.org/spring.html
 
-源码：
+源码：https://github.com/caojx-git/learn/tree/master/code/shiro-spring
 
 源码文件：
 
