@@ -1139,6 +1139,13 @@ mysql> CREATE TABLE runoob_tbl(
    -> )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 Query OK, 0 rows affected (0.16 sec)
 mysql>
+mysql> CREATE TABLE runoob_tbl2(
+   -> runoob_id INT  PRIMARY KEY NOT NULL AUTO_INCREMENT,
+   -> runoob_title VARCHAR(100) NOT NULL,
+   -> runoob_author VARCHAR(40) NOT NULL,
+   -> submission_date DATE
+   -> )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+Query OK, 0 rows affected (0.16 sec)
 ```
 实例解析：  
 - 如果你不想字段为 NULL 可以设置字段的属性为 NOT NULL， 在操作数据库时如果输入该字段的数据为NULL ，就会报错。  
@@ -1330,6 +1337,10 @@ mysql> desc  people;
 +-------------+----------+------+-----+---------+-------+
 6 rows in set (0.00 sec)
 ```
+
+### 7.5 MySQL 常见的建表选项及约束
+
+https://www.cnblogs.com/geaozhang/p/6786105.html
 
 ## 八、MySQL增删改查
 

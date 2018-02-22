@@ -29,6 +29,7 @@ learn仓库有如下两大模块
 - [oracle](https://github.com/caojx-git/learn/tree/master/notes/oracle)
 - [redis](https://github.com/caojx-git/learn/tree/master/notes/redis)
 - [spring](https://github.com/caojx-git/learn/tree/master/notes/spring)
+- [shiro](https://github.com/caojx-git/learn/tree/master/notes/shiro)
 - [timedTask](https://github.com/caojx-git/learn/tree/master/notes/timedTask)
 - [tomcat](https://github.com/caojx-git/learn/tree/master/notes/tomcat)
 - [tools](https://github.com/caojx-git/learn/tree/master/notes/tools)
