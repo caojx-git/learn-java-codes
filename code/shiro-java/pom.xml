@@ -8,7 +8,8 @@
     <name>shiro-java Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
+
+        <!--测试-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -17,40 +18,70 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-core -->
+        <!--shiro-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-core</artifactId>
             <version>1.4.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-web</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+
+        <!--日志-->
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.25</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+        <!-- log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+
+        <!--数据源配置-->
         <dependency>
             <groupId>c3p0</groupId>
             <artifactId>c3p0</artifactId>
             <version>0.9.1.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <version>2.2.0</version>
         </dependency>
+
+
+        <!--servlet-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--jstl-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
 
     </dependencies>
     <build>

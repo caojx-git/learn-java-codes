@@ -1,7 +1,56 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!--shiro过滤器配置,所有的请求都会经过shiro过滤-->
+    <filter>
+        <filter-name>ShiroFilter</filter-name>
+        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+        <!--默认路径，不用配置也没事-->
+        <init-param>
+            <param-name>configPath</param-name>
+           <!-- <param-value>/WEB-INF/shiro.ini</param-value>-->
+            <param-value>/WEB-INF/shiro.ini</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>ShiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!--shiro监听器-->
+    <listener>
+        <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>loginServet</servlet-name>
+        <servlet-class>web.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>adminServlet</servlet-name>
+        <servlet-class>web.AdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginServet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>adminServlet</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
 </web-app>
