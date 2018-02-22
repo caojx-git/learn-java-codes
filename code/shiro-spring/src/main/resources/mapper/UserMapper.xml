@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+
+	<resultMap type="User" id="UserResult">
+		<result property="id" column="id"/>
+		<result property="userName" column="userName"/>
+		<result property="password" column="password"/>
+	</resultMap>
+
+	<!--通过用户名查询用户-->
+	<select id="getByUserName" parameterType="String" resultMap="UserResult">
+		select * from t_user where userName=#{userName}
+	</select>
+
+	<!--通过用户名查询角色信息-->
+	<select id="getRoles" parameterType="String" resultType="String">
+		select r.roleName from t_user u,t_role r where u.roleId=r.id and u.userName=#{userName}
+	</select>
+
+	<!--通过用户名查询权限信息-->
+	<select id="getPermissions" parameterType="String" resultType="String">
+		select p.permissionName from t_user u,t_role r,t_permission p where u.roleId=r.id and p.roleId=r.id and u.userName=#{userName}
+	</select>
+
+</mapper> 
