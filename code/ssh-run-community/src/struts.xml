@@ -1,0 +1,105 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.action.extension" value="action,do"></constant>
+	<package name="member" extends="struts-default" namespace="/">
+		<action name="register" class="register"><!-- 用户注册 -->
+			<result name="success" type="redirect">/timeOut.jsp</result>
+			<result name="error" type="redirect">/register.jsp</result>
+		</action>
+		<action name="login" class="login">
+			<result name="success" type="chain">afterLogin</result>
+			<result name="error" type="redirect">/login.jsp</result>
+		</action>
+		<action name="checkAutoLogin" class="autoLogin">
+			<result name="success" type="chain">login</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="afterLogin" class="afterlogin">
+			<result name="success" type="redirect">/member/activity.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="logout" class="logout">
+			<result name="success" type="redirect">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="findPWD" class="findPassword">
+			<result name="success" type="redirect">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="createSpace" class="createSpace">
+			<result name="success" type="redirect">/member/space.jsp</result>
+			<result name="error">/member/noSpace.jsp</result>
+		</action>
+		<action name="saveModify" class="saveModify">
+			<result name="success" type="redirect">/member/space.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="isCreateSpace" class="isCreateSpace">
+			<result name="success" type="redirect">/member/space.jsp</result>
+			<result name="error">/member/noSpace.jsp</result>
+		</action>
+	</package>
+
+	<package name="message" extends="struts-default">
+		<action name="matchOne" class="matchOne">
+			<result name="success">/messenger/matchFriend.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="addFriend" class="addFriend">
+			<result name="success">/messenger/matchFriend.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="delfriend" class="delfriend">
+			<result name="success">/messenger/buddyList.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="delblack" class="delblack">
+			<result name="success">/messenger/blackList.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="listFriend" class="listFriend">
+			<result name="success">/messenger/buddyList.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="listBlack" class="listBlack">
+			<result name="success">/messenger/blackList.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="addBlack" class="addBlack">
+			<result name="success">/messenger/blackList.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="matchFriendForm" class="matchFriendForm">
+			<result name="success">/messenger/matchFriend.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="sendMessage" class="sendMessage">
+			<result name="success">/messenger/outbox.jsp</result>
+			<result name="error">/messenger/sendInfo.jsp</result>
+		</action>
+		<action name="listSendMessage" class="listSendMessage">
+			<result name="success">/messenger/outbox.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="listReciverMessage" class="listReciverMessage">
+			<result name="success">/messenger/inbox.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="view" class="view">
+			<result name="success">/messenger/view.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="delReceiveMessage" class="delReceiveMessage">
+			<result name="success">/messenger/inbox.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="delSendMessage" class="delSendMessage">
+			<result name="success">/messenger/outbox.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</struts>
