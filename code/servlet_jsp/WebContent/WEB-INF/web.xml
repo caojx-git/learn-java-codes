@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+	<!-- session的默认失效时间为30分钟 -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+
+	<context-param>
+		<param-name>upload folder</param-name>
+		<param-value>attachment</param-value>
+	</context-param>
+	<context-param>
+		<param-name>allowed file type</param-name>
+		<param-value>.gif, .jpg, .bmp</param-value>
+	</context-param>
+
+	<welcome-file-list>
+		<welcome-file></welcome-file>
+	</welcome-file-list>
+	<listener>
+		<listener-class>web.listener.SessionListnerTest</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>web.listener.SessionAttrListner</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>first</servlet-name>
+		<servlet-class>web.servlet.basic.FirstServlet</servlet-class>
+		<load-on-startup>1</load-on-startup><!-- 该标签表示在启动tomcat启动的时候创建对象，正整数表示创建顺序越小越先创建 -->
+	</servlet>
+
+	<servlet>
+		<servlet-name>second</servlet-name>
+		<servlet-class>web.servlet.basic.SecondServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>third</servlet-name>
+		<servlet-class>web.servlet.basic.ThirdServlet</servlet-class>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>fourth</servlet-name>
+		<servlet-class>web.servlet.basic.ServletTest</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>identity</servlet-name>
+		<servlet-class>web.servlet.basic.IdentityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>initparam</servlet-name>
+		<servlet-class>web.servlet.basic.InitParamServlet</servlet-class>
+		<init-param>
+			<param-name>admin</param-name>
+			<param-value>admin</param-value>
+		</init-param>
+		<init-param>
+			<param-name>briup</param-name>
+			<param-value>briup</param-value>
+		</init-param>
+		<init-param>
+			<param-name>mcao</param-name>
+			<param-value>mcao</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>context</servlet-name>
+		<servlet-class>web.servlet.basic.ContextParamServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>yahoo</servlet-name>
+		<servlet-class>web.servlet.basic.SearchServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>life</servlet-name>
+		<servlet-class>web.servelet.life.ServletLifeTest</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>param</servlet-name>
+		<servlet-class>web.servlet.param.ParamServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>encode</servlet-name>
+		<servlet-class>web.servlet.encode.EncodeServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>forward</servlet-name>
+		<servlet-class>web.servlet.forAndDirect.ForwardAServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>forwardA</servlet-name>
+		<servlet-class>web.servlet.forAndDirect.ForwardAServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>forwardB</servlet-name>
+		<servlet-class>web.servlet.forAndDirect.ForwardBServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>redirect</servlet-name>
+		<servlet-class>web.servlet.forAndDirect.RedirectServlet</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>path</servlet-name>
+		<servlet-class>web.servlet.path.PathServlet</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>request</servlet-name>
+		<servlet-class>web.servlet.scope.RequestServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>session</servlet-name>
+		<servlet-class>web.servlet.scope.SessionServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>app</servlet-name>
+		<servlet-class>web.servlet.scope.AppServlet</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>cookie</servlet-name>
+		<servlet-class>web.servlet.cookie.CookieServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>showCookie</servlet-name>
+		<servlet-class>web.servlet.cookie.ShowCookieServlet</servlet-class>
+	</servlet>
+
+	<filter>
+		<filter-name>filter</filter-name>
+		<filter-class>web.filter.EncodingFilter</filter-class>
+	</filter>
+
+	<servlet-mapping>
+		<servlet-name>first</servlet-name>
+		<url-pattern>/first</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>param</servlet-name>
+		<url-pattern>/param</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>second</servlet-name>
+		<url-pattern>/second</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>third</servlet-name>
+		<url-pattern>/third</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>fourth</servlet-name>
+		<url-pattern>/fourth</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>identity</servlet-name>
+		<url-pattern>/identity</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>initparam</servlet-name>
+		<url-pattern>/initparam</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>context</servlet-name>
+		<url-pattern>/context</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>yahoo</servlet-name>
+		<url-pattern>/xn_servlet_jsp/SearchServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>life</servlet-name>
+		<url-pattern>/life</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>encode</servlet-name>
+		<url-pattern>/encode</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>forward</servlet-name>
+		<url-pattern>/forward</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>forwardA</servlet-name>
+		<url-pattern>/forwardA</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>forwardB</servlet-name>
+		<url-pattern>/forwardB</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>redirect</servlet-name>
+		<url-pattern>/redirect</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>path</servlet-name>
+		<url-pattern>/path/toPathA</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>request</servlet-name>
+		<url-pattern>/request</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>session</servlet-name>
+		<url-pattern>/session</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>app</servlet-name>
+		<url-pattern>/app</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>cookie</servlet-name>
+		<url-pattern>/cookie</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>showCookie</servlet-name>
+		<url-pattern>/showCookie</url-pattern>
+	</servlet-mapping>
+
+	<filter-mapping>
+		<filter-name>filter</filter-name>
+		<url-pattern>/*</url-pattern><!-- 拦截路经 -->
+	</filter-mapping>
+
+
+</web-app>
