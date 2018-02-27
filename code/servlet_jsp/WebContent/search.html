@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equi="content-type"  content="text/html" charset="UTF-8">
+<style>
+	div, body, span {
+		font-size: 14px;
+	}
+
+</style>
+	<title>search.html</title>
+</head>
+<body>
+	<div align="center">
+		<img src="images/yahoo.jpg" style="margin: 25px; width :'350px'; height : '80px';"></img>
+		<div>
+		<!--action为web.xml中配置的<servlet-name>yahoo<servlet-name>  -->
+			<form action='xn_servlet_jsp/SearchServlet' method="get">
+				<input type="radio" name="type" value="web" checked>网页
+				<input type="radio" name="type" value="news">新闻
+				<input type="radio" name="type" value="image">图片
+				<input type="radio" name="type" value="video">视频&nbsp;&nbsp;
+				<input type="checkbox" name="alloweAdult" value="true">允许成人内容<br/><br/>
+				<input type="text" name="word" value="" style="width: 300px;">
+				<input type="submit" value="用雅虎收索" style="width: 100px;">
+			</form>
+		</div>
+		<div style="margin-top: 50px;">&copy; Helloween 2007-2010</div>
+	</div>
+</body>
+</html>

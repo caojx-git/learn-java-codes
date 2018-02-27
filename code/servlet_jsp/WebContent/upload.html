@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>upload</title>
+</head>
+<body>
+	<form action="basic/UploadServelet" method="post" enctype="multipart/form-date">
+		<div align="center"><br/>
+			<fieldset style="width : 80%">
+				<legend>上传文件</legend><br/>
+				<div class="lien">
+					<div align="left" class="leftDiv">上传文件一</div>
+					<div align="right" class="rightDiv">
+						<input type="file" name="file1" class="text">
+					</div>
+				</div>
+				<div class="lien">
+					<div align="left" class="leftDiv">上传文件二</div>
+					<div align="right" class="rightDiv">
+						<input type="file" name="file2" class="text"></input>
+					</div>
+				</div>
+				
+				<div class="lien">
+					<div align="left" class="leftDiv">上传文件说明一</div>
+					<div align="right" class="rightDiv">
+						<input type="text" name="description1" class="text"></input>
+					</div>
+				</div>
+				<div class="lien">
+					<div align="left" class="leftDiv">上传文件说明二</div>
+					<div align="right" class="rightDiv">
+						<input type="text" name="description2" class="text"></input>
+					</div>
+				</div>
+				
+				<div class="lien">
+					<div align="left" class="leftDiv"></div>
+					<div align="center" class="rightDiv"><br/>
+						<input type="submit" value="上传文件" class="button"></input>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+</body>
+</html>
