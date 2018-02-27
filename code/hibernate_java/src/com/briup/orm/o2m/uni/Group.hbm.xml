@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.o2m.uni">
+	<!-- 一对多单向关联 -->
+	<class name="Group" table="t_group">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		 <!--  
+		 	lazy = "false|extra|true"
+		 	false 立即加载
+		 	extra 延迟加载  只加载set集合中使用的关联的对象
+		 	true  延迟加载 将set结合中所有的关联对象全部加载
+		 -->
+		<set name="users" cascade="all-delete-orphan" lazy="true" fetch="select" inverse="false">
+			<key column="group_id"></key>
+			<!-- class 多的一方的类型 -->
+			<one-to-many class="User"/>
+		</set>
+		
+		
+	</class>
+ 	
+</hibernate-mapping>
+
+
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.m2m.uni">
+	<!-- 多对多单向关联 -->
+	<class name="Teacher">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		
+		<!-- 
+				table=t_s 桥表名
+				key  teacher所对应的表中的主键在t_s中的外键列
+				many-to-many class 多对多关系中多的一方
+				class 类型
+				column student所对应的表中的主键在t_s的外键列
+		 -->
+		<set name="students" table="t_s" cascade="all" lazy="true">
+			<key column="t_id"></key>
+			<many-to-many class="Student" column="s_id"></many-to-many>
+		</set>
+		
+	</class>
+ 	
+</hibernate-mapping>
+
+
+
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.criteria">
+	<!-- Criteria查询测试 -->
+	<class name="Wife">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		
+		<one-to-one name="husband" class="Husband" cascade="all" fetch="select"></one-to-one>
+		
+	</class>
+ 	
+</hibernate-mapping>
+
+
+
+
+

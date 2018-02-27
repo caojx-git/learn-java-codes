@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.o2m.bi">
+	<!-- 一对多双向关联 -->
+	<class name="Group" table="t_group">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		
+		<set name="users" cascade="all" inverse="true" lazy="false" fetch="select">
+			<key column="group_id"></key>
+			<one-to-many class="User"/>
+		</set>
+		<!-- 
+		inverse 反转的意思  表示是否要把维护外键列的值的职责反转给对象
+		
+		inverse="false" 不反转,就是由自己来维护这个外键列的值
+		
+		inverse="true"  反转,把外键列的值的维护职责交给对放来维护
+		
+		1对多关系中,外键一定是在多的一方建立
+		
+		那么如果是1的一方来维护外键,它是最后执行额外的update语句来更新外键值
+		如果是多的一方来维护,它是在insert插入数据的时候把外键值插入进行,没有额外update语句生成
+		注意:如果交给多的一方来维护,那么就必须要让多的一方对象能够关联到一的方法
+		
+		 -->
+		
+		
+	</class>
+ 	
+</hibernate-mapping>
+
+
+
+
+

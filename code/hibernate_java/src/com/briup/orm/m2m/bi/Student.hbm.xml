@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.m2m.bi">
+	<!-- 多对多双向关联 -->
+	<class name="Student">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		<!-- 
+			inverse="true" 将维护外键的权利交给另一方
+			在多对多中如果双方都有维护外键的权利，并且在内存中建立了双向关联，
+			那么在乔表中会重复保存数据
+		 -->
+		<set name="teachers" table="t_s" inverse="true">
+			<key column="s_id"></key>
+			<many-to-many class="Teacher" column="t_id"></many-to-many>
+		</set>
+	</class>
+		
+ 	
+</hibernate-mapping>
+
+
+
+
+

@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+         
+<hibernate-configuration>
+<session-factory>
+	<!--第一部分: 连接数据的相关信息 -->
+	
+	<!-- 连接数据库的地址 -->
+	<property name="connection.url">
+		jdbc:oracle:thin:@127.0.0.1:1521:XE
+	</property>
+	<!-- 连接数据库的驱动 -->
+	<property name="connection.driver_class">
+		oracle.jdbc.driver.OracleDriver
+	</property>
+	<!-- 连接数据库的用户名和密码 -->
+	<property name="connection.username">briup</property>
+	<property name="connection.password">briup</property>
+	<!-- 连接数据库用的方言 -->
+	<property name="dialect">
+		org.hibernate.dialect.Oracle10gDialect
+	</property>
+	
+	<!--第二部分: Hibernate框架的基本属性 -->
+	
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+	<property name="current_session_context_class">thread</property>
+	<!--  hbm2ddl.auto  》create:只要重新执行session就会建新表-->
+	<!-- 
+	
+	 <mapping resource="com/briup/component/Person.hbm.xml"/> 
+	 -->
+	<!--第三部分: 要读取的映射文件的路径 -->
+	<!-- 
+		<mapping resource="com/briup/bean/Car.hbm.xml"/> 
+	
+		<mapping resource="com/briup/composite/Person.hbm.xml"/> 
+	
+		<mapping resource="com/briup/orm/o2o/uni/Husband.hbm.xml"/> 
+		<mapping resource="com/briup/orm/o2o/uni/Wife.hbm.xml"/> 
+	
+		<mapping resource="com/briup/orm/m2m/bi/Teacher.hbm.xml"/>
+		<mapping resource="com/briup/orm/m2m/bi/Student.hbm.xml"/>
+	-->
+	
+	<mapping resource="com/briup/lock/Husband.hbm.xml" />
+	<mapping resource="com/briup/lock/Wife.hbm.xml" />
+	<mapping resource="com/briup/bean/Car.hbm.xml"/> 
+	
+<!-- 
+
+	<mapping resource="com/briup/orm/o2m/bi/Group.hbm.xml"/>
+	<mapping resource="com/briup/orm/o2m/bi/User.hbm.xml"/>
+	<mapping resource="com/briup/orm/o2o/bi/Husband.hbm.xml"/>
+	<mapping resource="com/briup/orm/o2o/bi/Wife.hbm.xml"/>
+	
+	
+ -->
+	
+	 
+	<!-- 
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+	<property name="current_session_context_class">thread</property>
+	<mapping resource="com/briup../../...hbm.xml" />
+	
+	 -->
+	 
+	 
+	 <!-- 
+	多对多映射
+	<mapping resource="com/briup/orm/m2m/bi/Student.hbm.xml" />
+	<mapping resource="com/briup/orm/m2m/bi/Teacher.hbm.xml" />
+	<mapping resource="com/briup/orm/m2m/uni/Student.hbm.xml" />
+	<mapping resource="com/briup/orm/m2m/uni/Teacher.hbm.xml" />
+	
+	一对多映射
+	<mapping resource="com/briup/orm/o2m/bi/Group.hbm.xml" />
+	<mapping resource="com/briup/orm/o2m/bi/User.hbm.xml" />
+	<mapping resource="com/briup/orm/o2m/uni/Group.hbm.xml" />
+	<mapping resource="com/briup/orm/o2m/uni/User.hbm.xml" />
+	
+	一对一映射
+	<mapping resource="com/briup/orm/o2o/uni/Husband.hbm.xml" />
+	<mapping resource="com/briup/orm/o2o/uni/Wife.hbm.xml" />
+	<mapping resource="com/briup/orm/o2o/bi/Husband.hbm.xml" />
+	<mapping resource="com/briup/orm/o2o/bi/Wife.hbm.xml" />
+	
+	联合主键
+	<mapping resource="com/briup/composite/Person.hbm.xml" />
+	
+	组件映射
+	<mapping resource="com/briup/component/Person.hbm.xml" />
+	
+	hql语句
+	<mapping resource="com/briup/hql/Group.hbm.xml" />
+	<mapping resource="com/briup/hql/User.hbm.xml" />
+	
+	criteria查询
+	<mapping resource="com/briup/criteria/Husband.hbm.xml" />
+	<mapping resource="com/briup/criteria/Wife.hbm.xml" />
+	
+	lock机制测试
+	<mapping resource="com/briup/lock/Husband.hbm.xml" />
+	<mapping resource="com/briup/lock/Wife.hbm.xml" />
+	
+	<mapping resource="com/briup/bean/Car.hbm.xml" />
+	
+	 -->
+	
+	<!-- 
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property>
+	<property name="hbm2ddl.auto">create</property>
+	<property name="hbm2ddl.auto">update</property>
+	<property name="current_session_context_class">thread</property>
+	<mapping resource="com/briup../../...hbm.xml" />
+	
+	 -->
+	
+</session-factory>
+
+
+</hibernate-configuration>
