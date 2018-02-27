@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.m2m.bi">
+	<!-- 多对多双向关联 -->
+	<class name="Teacher">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		<!-- 
+			把外键维护的权利交给对方 inverse=true  默认false
+			如果两边都为true则修改数据的时候可能会出现异常
+			一般外键维护只由一方维护
+		 -->
+		<set name="students" table="t_s" cascade="all" lazy="true" inverse="false">
+			<key column="t_id"></key>
+			<many-to-many class="Student" column="s_id"></many-to-many>
+		</set>
+	</class>
+ 	
+</hibernate-mapping>
+
+
+
+
+

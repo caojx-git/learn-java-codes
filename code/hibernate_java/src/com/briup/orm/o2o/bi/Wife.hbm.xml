@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.o2o.bi">
+	<!-- 一对一双向关联 -->
+	<class name="Wife">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"></property>
+		<!-- 只有双向关联的时候才可以用one-to-one(没有对应的外键列) 
+		使用<one-to-one>标签来映射，但是需要使用property-ref属性来指定对象持有你自己的引用的成员属性名称(是gettxxxx后面的名称)，
+		这样在生成数据库表时，就不会再添加一个多于的字段了。数据加载时hibernate会根据这些配置自己加载数据
+		-->
+		<one-to-one name="husband" class="Husband" property-ref="id" cascade="none" fetch="select"></one-to-one>
+
+	</class>
+ 	
+</hibernate-mapping>
+
+
+
+
+

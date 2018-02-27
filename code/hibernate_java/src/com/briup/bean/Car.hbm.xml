@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.bean">
+ 	<class name="Car" table="car">
+ 		<id name="id" column="cid" type="java.lang.Integer">
+ 			<!-- 主键生成策略 increment自增张   assigned自指定-->
+ 			<generator class="increment">
+ 				<param name="c_id"></param>
+ 			</generator>
+ 		</id>
+ 		<property name="brand" length="8" type="java.lang.String"></property>
+ 		<!--  小数位 precision-->
+ 		<property name="price" length="6" type="double" precision="2"></property>
+ 		
+ 	</class>
+</hibernate-mapping>
+
+
+
+
+

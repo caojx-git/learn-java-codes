@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.briup.orm.o2o.uni">
+	<!-- 1对1单向关联 -->
+	<class name="Husband">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		
+		<property name="name"></property>
+		
+		<!-- 那一方维护外键，则那一方使用many-to-one    unique表示唯一性约束，避免一个丈夫对应多个a妻子-->
+		<!-- 
+			name 属性名
+			class 类型名
+			column 外键名
+			unique 外键列唯一
+			cascade 级联操作模式
+				none 默认的，不做级联操作
+				save-update 保存和更新时级联操作
+				delete	删除时级联操作
+				all		save-update 和delete
+				
+				注意：下面这两个不适用一对一的关系
+				delete-orphan  接触关联关系时删除对象	
+				all-delete-orphan
+				
+			lazy 是否懒加载  
+				proxy 默认 延迟加载关联对象
+				false 立即加载关联对象
+			fetch 查询方式  
+				select 默认查询关联对象时使用单独的select语句
+				join 使用连接查询   只有一条查询语句，所以延迟加载会失效
+		 -->
+		<many-to-one name="wife" class="Wife" column="wife_id" unique="true" cascade="all" lazy="proxy" fetch="select"></many-to-one>
+	</class>
+		
+ 	
+</hibernate-mapping>
+
+
+
+
+
