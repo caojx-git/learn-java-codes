@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean name="memberService" class="com.briup.run.service.impl.IMemberServiceImpl">
+		<property name="memberDao" ref="memberDao"></property>
+	</bean>
+	<bean name="messageService" class="com.briup.run.service.impl.IMessagerServiceImpl">
+		<property name="messageDao" ref="messageDao"></property>
+	</bean>
+	<!-- 配置事物管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="proxy1"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<!-- 给某个类注入一个事物，一般事物开启层都在service层  -->
+			<ref local="memberService" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<!-- key里面写的是需要事物的方法 -->
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="proxy2"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<!-- 给某个类注入一个事物，一般事物开启层都在service层  -->
+			<ref local="messageService" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<!-- key里面写的是需要事物的方法 -->
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

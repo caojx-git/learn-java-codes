@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>SSHRunCommunity</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+	<!-- 加载顺序
+		1.context-param
+		2.listener
+		3.filter
+		4.servlet
+	-->
+ 	<!-- 配置contextConfigLocation指定spring将要使用的配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:action.xml,classpath:dao.xml,classpath:service.xml</param-value>
+	</context-param>
+	<!--  配置listner让spring读取配置文件-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 配置struts -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>AuthImg</servlet-name>
+		<servlet-class>com.briup.run.web.servlet.AuthImg</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthImg</servlet-name>
+		<url-pattern>/images/authimg.jpg</url-pattern>
+	</servlet-mapping>
+</web-app>

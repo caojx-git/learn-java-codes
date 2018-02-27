@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<bean name="login" class="com.briup.run.web.action.LoginAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="register" class="com.briup.run.web.action.RegisterAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="autoLogin" class="com.briup.run.web.action.CheckAutoLoginAction"/>
+	<bean name="afterlogin" class="com.briup.run.web.action.AfterLoginAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="logout" class="com.briup.run.web.action.LogOutAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="findPassword" class="com.briup.run.web.action.FindNewPasswordAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="createSpace" class="com.briup.run.web.action.CreateSpaceAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="saveModify" class="com.briup.run.web.action.ModifyAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="isCreateSpace" class="com.briup.run.web.action.IsCreateSpaceAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	
+	<bean name="matchOne" class="com.briup.run.web.action.MatchOneAction">
+		<property name="iMemberService" ref="proxy1"></property>
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="addFriend" class="com.briup.run.web.action.AddFriendAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="delfriend" class="com.briup.run.web.action.DelFriendAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="delblack" class="com.briup.run.web.action.DelBlackAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="listFriend" class="com.briup.run.web.action.ListFriendAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="listBlack" class="com.briup.run.web.action.ListBlackAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="addBlack" class="com.briup.run.web.action.AddBlackListAction">
+		<property name="iMemberService" ref="proxy1"></property>
+	</bean>
+	<bean name="matchFriendForm" class="com.briup.run.web.action.MatchFromAction">
+		<property name="iMemberService" ref="proxy1"></property>
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="sendMessage" class="com.briup.run.web.action.SendMessageAction">
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="listSendMessage" class="com.briup.run.web.action.ListSendMessageAction">
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="listReciverMessage" class="com.briup.run.web.action.ListReciverMessageAction">
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="delReceiveMessage" class="com.briup.run.web.action.DelRecieveMessageAction">
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="view" class="com.briup.run.web.action.ViewMessageAction">
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+	<bean name="delSendMessage" class="com.briup.run.web.action.DelSendMessageAction">
+		<property name="iMessengerService" ref="proxy2"></property>
+	</bean>
+</beans>

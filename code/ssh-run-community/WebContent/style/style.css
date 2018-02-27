@@ -1,0 +1,174 @@
+table{
+	font-size:14px;
+}
+.CURSOR {
+	CURSOR: hand;
+}
+
+.tabhead{
+	color:white;
+	padding:13px 0 0 18px;
+	font-weight: bold;
+}
+.msg-info{
+	color:#000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.fontblue{color:#00336c;}
+.fontred{color:#ec2500;}
+.fontgray{color:#666;}
+.fontgreen{color:green;}
+.fontorange{color:#ff7800;}
+.menutabOut{
+	color:#043671;padding:5px 0 2px 5px;border-bottom:1px solid #accde5;}
+.menutabOver{
+	color:#043671;padding:5px 0 2px 5px;background:#fff; CURSOR: hand;border-bottom:1px solid #accde5;font-weight:bold;}
+
+.titlehead
+{
+	padding:6px 0 3px 10px;
+	font-size:14px;
+	border-bottom:1px solid #00336c;
+	color:#00336c;
+	background:#ddeeff;
+	filter:progid:DXImageTransform.Microsoft.Shadow(direction=180,color=#cccccc,strength=3);
+ }
+
+ .titlehead02{
+padding:6px 0 3px 10px;
+font-size:14px;
+border-bottom:1px solid #ee5f00;
+color:#ee5f00;
+background:#fff3d0;
+filter:progid:DXImageTransform.Microsoft.Shadow(direction=180,color=#cccccc,strength=3);
+ }
+
+
+/* 超链接 黑-黑（下划线）*/
+a.textlink01:link {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#043671;text-decoration: none;
+}
+a.textlink01:visited {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#043671;text-decoration: none;	
+}
+a.textlink01:hover {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#043671;text-decoration: underline;
+}
+a.textlink01:active {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#043671;text-decoration: underline;
+}
+
+/* 超链接 黑-黑（下划线）*/
+a.textlink02:link {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#0000ff;text-decoration: underline;
+}
+a.textlink02:visited {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#0000ff;text-decoration: underline;	
+}
+a.textlink02:hover {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#e64100;text-decoration: underline;
+}
+a.textlink02:active {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#e64100;text-decoration: underline;
+}
+/* 超链接 黑-黑（下划线）*/
+a.textlink03:link {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#0000ff;text-decoration: none;
+}
+a.textlink03:visited {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#0000ff;text-decoration: none;	
+}
+a.textlink03:hover {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#e64100;text-decoration: underline;
+}
+a.textlink03:active {
+	font-family: Arial, Helvetica, sans-serif, "宋体";color:#e64100;text-decoration: underline;
+}
+
+
+/* 文本框 */
+.formtext01 {font-family: Arial, Helvetica, sans-serif, "宋体";font-size: 12px;color: #1E5100;border-right: 1px solid #ccc;border-top: 1px solid #999;border-left: 1px solid #999;border-bottom: 1px solid #ccc;background:#F8FFE3;}
+
+.artlist {
+	PADDING:0px;
+	margin:5px 15px 5px 28px;  
+} 
+
+.artlist ul {
+	PADDING:0px;
+	margin:0px;
+	LIST-STYLE-TYPE: circle;
+}
+.artlist li { 
+	padding:2px 0px 0px 0px;
+} 
+
+.docAddout{
+	background:url(images/document_check.gif) no-repeat #467ebe 5px 2px;CURSOR: hand;border:1px solid #6f9fd7;
+	color:#fff;
+	padding:3px 5px 0px 23px;
+}
+.docAddover{
+	background:url(images/document_check.gif) no-repeat #a6cdf9 5px 2px;CURSOR: hand;border:1px solid #cbdcef;
+	padding:3px 5px 0px 23px;color:#003878;
+}
+
+.docDelout{
+	background:url(images/document_delete.gif) no-repeat #467ebe 5px 2px;CURSOR: hand;border:1px solid #6f9fd7;
+	color:#fff;
+	padding:3px 5px 0px 23px;
+}
+.docDelover{
+	background:url(images/document_delete.gif) no-repeat #a6cdf9 5px 2px;CURSOR: hand;border:1px solid #cbdcef;
+	padding:3px 5px 0px 23px;color:#003878;
+}
+
+.Addout{
+	background:url(images/icon12.gif) no-repeat #467ebe 5px 2px;CURSOR: hand;border:1px solid #6f9fd7;
+	color:#fff;
+	padding:3px 5px 0px 23px;
+}
+.Addover{
+	background:url(images/icon12.gif) no-repeat #a6cdf9 5px 2px;CURSOR: hand;border:1px solid #cbdcef;
+	padding:3px 5px 0px 23px;color:#003878;
+}
+
+.Delout{
+	background:url(images/delete.gif) no-repeat #467ebe 5px 2px;CURSOR: hand;border:1px solid #6f9fd7;
+	color:#fff;
+	padding:3px 5px 0px 23px;
+}
+.Delover{
+	background:url(images/delete.gif) no-repeat #a6cdf9 5px 2px;CURSOR: hand;border:1px solid #cbdcef;
+	padding:3px 5px 0px 23px;color:#003878;
+}
+
+.BBout{
+	background:url(images/icon06.gif) no-repeat #467ebe 5px 2px;CURSOR: hand;border:1px solid #6f9fd7;
+	color:#fff;
+	padding:3px 5px 0px 23px;
+}
+.BBover{
+	background:url(images/icon06.gif) no-repeat #a6cdf9 5px 2px;CURSOR: hand;border:1px solid #cbdcef;
+	padding:3px 5px 0px 23px;color:#003878;
+}
+
+.Searchout{
+	background:url(images/search.gif) no-repeat #467ebe 5px 2px;CURSOR: hand;border:1px solid #6f9fd7;
+	color:#fff;
+	padding:3px 5px 0px 23px;
+}
+.Searchover{
+	background:url(images/search.gif) no-repeat #a6cdf9 5px 2px;CURSOR: hand;border:1px solid #cbdcef;
+	padding:3px 5px 0px 23px;color:#003878;
+}
+.tabstyle01{
+	padding:10px;background:#ddedff;border-right:1px solid #fff;
+}
+.tabstyle02{
+	padding:6px 0 3px 10px;background:#ddedff;
+}
+
+.tabover{border:1px solid #999;background:#eee;padding:4px 5px 1px 5px;CURSOR: hand;}
+.tabout{border:1px solid #ccc;padding:4px 5px 1px 5px;}

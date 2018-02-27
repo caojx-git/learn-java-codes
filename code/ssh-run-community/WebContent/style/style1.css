@@ -1,0 +1,166 @@
+TD {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; COLOR: #58595b; WORD-BREAK: break-all; SCROLLBAR-3DLIGHT-COLOR: #ffffff; LINE-HEIGHT: 140%; SCROLLBAR-ARROW-COLOR: #fcab3f; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: 宋体; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; height:30
+}
+TH {
+	SCROLLBAR-FACE-COLOR: #f2f2f2; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #999999; SCROLLBAR-SHADOW-COLOR: #999999; COLOR: #58595b; WORD-BREAK: break-all; SCROLLBAR-3DLIGHT-COLOR: #ffffff; LINE-HEIGHT: 140%; SCROLLBAR-ARROW-COLOR: #fcab3f; SCROLLBAR-TRACK-COLOR: #f2f2f2; FONT-FAMILY: 宋体; SCROLLBAR-DARKSHADOW-COLOR: #ffffff
+}
+A:link {
+	FONT-SIZE: 12px; COLOR: #58595b; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 12px; COLOR: #58595b; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 12px; COLOR: #f15a22; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A:active {
+	FONT-SIZE: 12px; COLOR: #58595b; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue12:link {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue12:visited {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.blue12:hover {
+	FONT-SIZE: 12px; COLOR: #f15a22; FONT-FAMILY: 宋体; TEXT-DECORATION: underline
+}
+A.blue12:active {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:link {
+	FONT-SIZE: 14px; COLOR: #505050; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:visited {
+	FONT-SIZE: 14px; COLOR: #505050; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:hover {
+	FONT-SIZE: 14px; COLOR: #f15a22; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+A.font14:active {
+	FONT-SIZE: 14px; COLOR: #505050; FONT-FAMILY: 宋体; TEXT-DECORATION: none
+}
+.input {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #cccccc 1px solid; COLOR: #58595b; WORD-BREAK: break-all; LINE-HEIGHT: 140%; BORDER-BOTTOM: #cccccc 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif, 宋体
+}
+.manageinput {
+	BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #999999 1px solid; COLOR: #58595b; WORD-BREAK: break-all; LINE-HEIGHT: 140%; BORDER-BOTTOM: #999999 1px solid; FONT-FAMILY: 宋体
+}
+.tddot {
+	BACKGROUND-IMAGE: url(../imgs/zc_menu.files/images/shct10000_main08.gif); BORDER-BOTTOM: #bfbfbf 1px dotted
+}
+.listtable TD {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid
+}
+.listtable_noborder TD {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+.managetable TD {
+	BORDER-RIGHT: #f15a22 1px solid; BORDER-TOP: #f15a22 1px solid; BORDER-LEFT: #f15a22 1px solid; BORDER-BOTTOM: #f15a22 1px solid
+}
+TABLE.list_Title {
+	BORDER-RIGHT: #cccccc 1px; BORDER-TOP: #cccccc 1px; BORDER-LEFT: #cccccc 1px; BORDER-BOTTOM: #cccccc 1px; BORDER-COLLAPSE: collapse
+}
+TABLE.list_Title TD.t_head {
+	BACKGROUND: #e8f3ff; HEIGHT: 20px
+}
+TABLE.list_Title TD {
+	BORDER-RIGHT: #dddddd 1px solid; BORDER-TOP: #dddddd 1px solid; PADDING-LEFT: 5px; VERTICAL-ALIGN: middle; BORDER-LEFT: #dddddd 1px solid; BORDER-BOTTOM: #dddddd 1px solid; HEIGHT: 20px
+}
+.vip_table_left_line {
+	BORDER-LEFT: #cccccc 1px solid
+}
+.vip_table_leftbottom_line {
+	BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid
+}
+
+
+#tabs1 {
+      float:left;
+      width:100%;
+	  background:#F4F7FB;
+      font-size:93%;
+      line-height:normal;
+	  border-bottom:1px solid #BCD2E6;
+      }
+    #tabs1 ul {
+	  margin:0;
+	  padding:10px 10px 0 50px;
+	  list-style:none;
+      }
+    #tabs1 li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabs1 a {
+      float:left;
+      background:url("tableft1.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 4px;
+      text-decoration:none;
+      }
+    #tabs1 a span {
+      float:left;
+      display:block;
+      background:url("tabright1.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#627EB7;
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    #tabs1 a span {float:none;}
+    /* End IE5-Mac hack */
+    #tabs a:hover span {
+      color:#627EB7;
+      }
+    #tabs1 a:hover {
+      background-position:0% -42px;
+      }
+    #tabs1 a:hover span {
+      background-position:100% -42px;
+      }
+
+ #tabsJ {
+      float:left;
+      width:100%;
+      background:#F4F4F4;
+      font-size:93%;
+      line-height:normal;
+	  border-bottom:1px solid #24618E;
+      }
+    #tabsJ ul {
+	margin:0;
+	padding:10px 10px 0 50px;
+	list-style:none;
+      }
+    #tabsJ li {
+      display:inline;
+      margin:0;
+      padding:0;
+      }
+    #tabsJ a {
+      float:left;
+      background:url("tableftJ.gif") no-repeat left top;
+      margin:0;
+      padding:0 0 0 5px;
+      text-decoration:none;
+      }
+    #tabsJ a span {
+      float:left;
+      display:block;
+      background:url("tabrightJ.gif") no-repeat right top;
+      padding:5px 15px 4px 6px;
+      color:#24618E;
+      }
+    /* Commented Backslash Hack hides rule from IE5-Mac \*/
+    #tabsJ a span {float:none;}
+    /* End IE5-Mac hack */
+    #tabsJ a:hover span {
+      color:#FFF;
+      }
+    #tabsJ a:hover {
+      background-position:0% -42px;
+      }
+    #tabsJ a:hover span {
+      background-position:100% -42px;
+      }
