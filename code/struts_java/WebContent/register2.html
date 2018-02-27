@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<table align="center" border="0" bgColor="#cc4444" width="60%">
+		<tr align="center">
+			<td><b><font>注册页面</font></b></td>
+		</tr>
+	</table>
+	<form action="/xnxy_struts/test/param.action">
+		<table align="center" cellpadding="3" cellspacing="3" border="1" borderColor="#cc4444">
+			<tr>
+				<td align="right">用户名:</td>
+				<td><input type="text" name="student.name"></td>
+			</tr>
+			<tr>
+				<td align="right">密码:</td>
+				<td><input type="password" name="student.password"></td>
+			</tr>
+			<tr>
+				<td align="right">年龄:</td>
+				<td><input type="text" name="student.age"></td>
+			</tr>
+			<tr>
+				<td align="right">性别:</td>
+				<td>
+					<input type="radio" name="student.gender" value="male">男
+					<input type="radio" name="student.gender" value="female">女
+				</td>
+			</tr>
+			<tr>
+				<td align="right">兴趣爱好:</td>
+				<td>
+					<input type="checkbox" name="student.hobby" value="fb">篮球
+					<input type="checkbox" name="student.hobby" value="zb">足球
+					<input type="checkbox" name="student.hobby" value="pp">乒乓
+					<input type="checkbox" name="student.hobby" value="pq">排球
+				</td>
+			</tr>
+			<tr>
+				<td align="right">省份:</td>
+				<td>
+					<select name="student.province">
+						<option value="sh">上海</option>
+						<option value="sh">北京</option>
+						<option value="sh">江苏</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<p align="center">
+			<input type="submit" value="提交">
+			<input type="reset" value="重置">
+		</p>
+	</form>
+ </body>
+</html>

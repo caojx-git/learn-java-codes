@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+<!-- name=struts.devMode是自动加载struts.xml  但是constant加入需要重启动项目  -->
+	<constant name="struts.devMode" value="false"></constant>
+	<!-- value="action,do"是访问资源需要加上的后缀 如http://localhost/xnxy_struts/test/test1.do 或 test1.action -->
+ 	<constant name="struts.action.extension" value="action,do"></constant>
+ 	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+ 	<constant name="struts.custom.i18n.resources" value="message"/><!-- struts国际化 value名字跟properties名字一样 -->
+<!--所有的jar包默继承于struts-default  namepspace="/test" 为命名空间 -->
+	<package name="default" extends="struts-default" namespace="/test">
+	  <default-action-ref name="test1"></default-action-ref>
+		 <global-results>
+			<result name="success">/success.jsp</result>
+			<result name="error">/error.jsp</result>
+		</global-results> 
+		
+		<!-- 
+		
+		<action name="test1" class="com.briup.struts.chap1.ActionTest1">
+		当com.briup.struts.chap1.ActionTest1中的execute方法的返回值去访问result
+			<result name="success">/success.jsp</result> name的值为execute返回值 默认为success
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="test2" class="com.briup.struts.chap1.ActionTest2" method="go"> go为指定其访问的方法名
+		<action name="test2" class="com.briup.struts.chap1.ActionTest2">
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="test3" class="com.briup.struts.chap1.ActionTest3">
+			<result name="success">/success.jsp</result>
+		</action> 
+		
+		-->
+		<action name="test*" class="com.briup.struts.chap1.ActionTest{1}"><!-- 第一个*与第一个{1}  数字1代表第一个*号 -->
+				<result name="success">/success.jsp</result>
+				<result name="error">/error.jsp</result>
+		</action>
+		<action name="param" class="com.briup.struts.chap2.ParamAction">
+				<result name="success">/success.jsp</result>
+				<result name="error">/error.jsp</result>
+		</action>
+		<action name="dispatcher" class="com.briup.struts.chap2.DispathcerAction">
+			<result name="success" type="dispatcher">/success.jsp</result> <!-- type默认为dispatcher 转发到一个页面，地址栏不会变 -->
+		</action>
+		<action name="chain" class="com.briup.struts.chap2.ChainAction">
+			<!-- <result name="success" type="chain">dispatcher</result> --> <!-- type转发方式为chain，转发到一个actioin，地址栏不会变 -->
+			<result name="success" type="chain">
+				<param name="actionName">dispatcher</param>
+				<param name="namespace">/user</param>
+			</result>  
+		</action>
+		<action name="redirect" class="com.briup.struts.chap2.RedirectAction">
+			<result name="success" type="redirect">/success.jsp</result> <!-- type转发方式为redirect，转发到一个页面，地址栏改变 -->
+		</action>
+		<action name="redirectAction" class="com.briup.struts.chap2.RedirectAction2">
+			<!-- <result name="success" type="redirectAction">redirect</result>  --><!-- type转发方式为redirect，转发到一个action，地址栏改变 -->
+			<result name="success" type="redirectAction">
+				<param name="actionName">dispatcher</param>
+				<param name="namespace">/user</param>
+			</result>
+		</action>
+	</package>
+	<package name="user" extends="struts-default" namespace="/user">
+		<action name="dispatcher" class="com.briup.struts.chap2.DispathcerAction">
+			<result name="success">/success.jsp</result>
+		</action>
+		<action name="vs" class="com.briup.struts.chap2.VsAndAc">
+			<result>/vs.jsp</result>
+		</action>
+		<action name="web" class="com.briup.struts.chap2.WebAction">
+			<result>/web.jsp</result>
+		</action>
+		<action name="ognl" class="com.briup.struts.chap3.OgnlActoin">
+			<result>/ognl.jsp</result>
+		</action>
+		<action name="form" class="com.briup.struts.chap3.FormAction">
+			<result>/success.jsp</result>
+		</action>
+		<action name="convertor" class="com.briup.struts.chap3.ConvertorAction">
+			<result>/success.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+		<action name="fileUp" class="com.briup.struts.chap4.FileUpAction">
+			<result>/success.jsp</result>
+			<result name="error">/success.jsp</result>
+		</action>
+		<action name="fileUp2" class="com.briup.struts.chap4.FileUpAction2">
+			<result>/WEB-INF/success.jsp</result>
+			<result name="error">/fileUp.jsp</result>
+		</action>
+		<action name="download" class="com.briup.struts.chap4.FileDownloadAction">
+			<!-- <param name="inputPath">/01.jpg</param> 文件来源路经 -->
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<!-- 方法名 -->
+				<param name="inputName">downloadFile</param>
+				<!-- 下载形式，附件，文件名与原来的保持一致 -->
+				<!-- <param name="contentDisposition">attachment;filename="01.jpg"</param> -->
+				<!-- 通过ognl动态获取下载的文件名，需要在FileDownloadAction中提供getDownloadFileName方法 -->
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<action name="test">
+			<result>/success.jsp</result>
+		</action>
+	</package>
+</struts>
+
