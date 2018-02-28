@@ -1,9 +1,9 @@
 # Java定时任务之Quartz
 
-[toc]
+[TOC]
 
 本文笔记源自慕课网视频教程：https://www.imooc.com/learn/846整出。  
-源码:https://github.com/caojx-git/learn/tree/master/code/spring-quartz  
+练习源码:https://github.com/caojx-git/learn/tree/master/code/spring-quartz  
 
 ## 一、简介
 Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目，它可以与J2EE与J2SE应用程序相结合也可以单独使用。Quartz可以用来
@@ -41,7 +41,7 @@ Quartz是OpenSymphony开源组织在Job scheduling领域又一个开源项目，
 ### 1.4 Quartz体系结构
 
 ![](../images/timedTask/quartz/quartz-1.png)    
-  
+
 JobDetail:任务，包含了任务的实现类，以及类的信息  
 Trigger:触发器，决定任务什么时候被调用  
 scheduler:调度器，将JobDetail绑定在一起，能够定时定频率的执行JobDetail  
@@ -62,15 +62,15 @@ scheduler:调度器，将JobDetail绑定在一起，能够定时定频率的执�
 - Calendar：一个Trigger可以和多个Calendar关联，以排除或包含某些时间点。
 - 监听器：
  JobListener、TriggerListener、SchedulerListener
- 
+
  ## 二、第一个Quartz程序
- 
+
  准备工作：  
  - 建立maven工程
  - 引入Quartz.jar包  
- 
+
  案例：使用Quartz实现每2s中打印一次hello job   
- 
+
  ### 2.1 HelloJob.java
  ```java
 package caojx.learn.springquartz.base;
@@ -100,7 +100,7 @@ public class HelloJob implements Job{
         System.out.println("hello job！");
     }
 }
-```
+ ```
 
 ### 2.2 HelloScheduler.java  
 scheduler将job与trigger绑定实现每2s中打印一次hello job  
@@ -463,7 +463,7 @@ public class TriggerTest1 {
 
     }
 }
-```  
+```
 
 TriggerTestJob1.java
 ```java
@@ -618,12 +618,12 @@ CronTrigger主要使用Cron表达式来指定任务的触发时间，Cron表达�
 前6个字段必填，第7个字段年可以不填
 
 4. 通配符说明  
-- \, 表示或的关系，比如1，2，3，4  
+- , 表示或的关系，比如1，2，3，4  
 - \- 表示区间，比如1970-2099  
 - \* 表示每（任何），在某个字段就表示每多少，比如说在秒字段就是每秒，在分字段就是每分，在时字段就是每小时  
-- \/ 表示每递增多少执行，用于递增触发    
-- \? 表示不关心该时间  
-- \L 表示最后  
+- / 表示每递增多少执行，用于递增触发    
+- ? 表示不关心该时间  
+- L 表示最后  
 
 详细说明见图：  
 ![](../images/timedTask/quartz/quartz-cron3.png)  
@@ -692,6 +692,12 @@ public class CronTriggerTest1 {
         //scheduler再挂起3s后重新启动
         Thread.sleep(3000L);
         scheduler.start();
+        
+        //shutdown(true)表示等待所有正在执行的job执行完毕后，再关闭schduler
+        //shutdown(false)即shutdown()表示直接关闭scheduler,默认
+        scheduler.shutdown();
+
+        System.out.println("scheduler is shutdown?"+scheduler.isShutdown());
     }
 }
 ```
@@ -708,6 +714,7 @@ Current Exec Time is:2018-01-09 13:01:48
 hello job！
 Current Exec Time is:2018-01-09 13:01:49
 hello job！
+scheduler is shutdown?true
 ```
 
 ### 3.6 浅谈Scheduler
@@ -722,14 +729,14 @@ Scheduler scheduler = sfact.getScheduler();
 
 DirectSchedulerFactory factory = DirectSchedulerFactory.getInstance();
 Scheduler scheduler = factory.getScheduler();
-```    
+```
 
 3. StdSchedulerFactory  
 推荐使用这种方式来创建Scheduler，因为DirectSchedulerFactory中的很多配置都需要写在代码中的，而StdSchedulerFactory可以很方便的从配置
 文件中读取我们的配置。
 
 配置参数我们一般存储在quartz.properties中，使用一组参数（Java.util.Properties）来创建和初始化调度器  
- 
+
 4. Scheduler的主要函数
 
 - Date schedulerJob(JobDetail jobDetail, Trigger trigger) 会返回scheduler近期就要触发的时间  
@@ -738,7 +745,7 @@ Scheduler scheduler = factory.getScheduler();
 - void shutdown() 完全关闭scheduler，不能再重启  
 注意：shutdown(true)表示等待所有正在执行的job执行完毕后，再关闭scheduler  
      shutdown(false)即shutdown()表示直接关闭scheduler,默认    
-     
+  
 ### 3.7 quartz.properties  
 
 1. 文档的位置和加载顺序  
@@ -753,25 +760,25 @@ quartz.properties文件
 - 插件配置 
 
 >调度器属性： 
-  
+
 主要有      
 org.quartz.scheduler.instanceName:用来区分特定的调度器实例，可以按照功能用途来给调度器起名。  
 org.quartz.scheduler.instanceId:和上边一样，也允许任何字符串，但这个值必须是所有调度器实例唯一的，尤其是在一个集群中，作为集群的唯一key，  
 假如你想Quartz帮你生成这个值得话，可以设置为AUTO。  
 
 >线程池属性： 
-  
+
 线程池属性直接关系到quartz后台处理线程的性能，因此这些属性是非常重要的，主要有如下    
 threadCount: 决定quartz有多少个工作线程来处理job，数值至少为1。  
 threadPriority: 设置工作线程的优先级，优先级别高的线程比优先级别低的线程更优先得到执行，取值范围1~10，取整数      
 org.quartz.threadPool.class: org.quartz.simpl.SimpleThreadPool线程池的实现类，quartz默认  
 
 >作业存储设置：
-  
+
 描述了再调度器实例的生命周期中，Job和Trigger的信息时如何被存储的。  
 
 >插件配置：
-  
+
 满足特定需求用到的Quartz插件配置，当Quartz无法满足我们当前的业务需求的时候，就需要配置该模块，一般的开发中使用较少。
 
 3. quartz.properties文件案例  
@@ -871,7 +878,7 @@ org.quartz.plugin.jobInitializer.wrapInUserTransaction = false
 #true:链接远程服务调度(客户端),这个也要指定registryhost和registryport，默认为false
 # 如果export和proxy同时指定为true，则export的设置将被忽略
 #org.quartz.scheduler.rmi.proxy = false
-```  
+```
 
 ## 四、quartz整合Spring
 
@@ -941,7 +948,7 @@ public class FirstScheduledJob extends QuartzJobBean{
 ### 4.2 spring与quartz整合工程案例
 
 1. maven工程目录结构  
-![](../images/timedTask/quartz/quartz-spring-project.png)
+![](../images/timedTask/quartz/quartz-spring-project.png)  
 
 2. pom.xml
 ```xml
@@ -1147,7 +1154,6 @@ public class FirstScheduledJob extends QuartzJobBean{
 
 
     <!--配置Scheduler-->
-
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 	    <property name="jobDetails"> <!--jobDeatil-->
 	        <list>
@@ -1257,16 +1263,19 @@ FirstScheduledJob Executes!2018-01-11 13:08:35
 1. 定时任务配置表  
 
 一般企业开发的项目中，会将定时任务配置到数据库表中，如下是表结构和其中的一条数据举例。 
->表结构   
-![](../images/timedTask/quartz/quartz-scheduler-table.png)  
->定时任务配置举例    
-![](../images/timedTask/quartz/quartz-scheduler-table2.png)    
+**表结构**  
+ ![](../images/timedTask/quartz/quartz-scheduler-table.png)    
+
+**定时任务配置举例**  
+ ![](../images/timedTask/quartz/quartz-scheduler-table2.png)      
 
 2. 定时任务日志记录表  
-用于记录定时任务执行记录，用来记录什么时候执行了什么定时任务，是成功还是失败。  
->表结构  
+  用于记录定时任务执行记录，用来记录什么时候执行了什么定时任务，是成功还是失败。  
+
+**表结构**  
 ![](../images/timedTask/quartz/quartz-scheduler-log1.png)        
->任务执行记录举例  
+
+**任务执行记录举例** 
 ![](../images/timedTask/quartz/quartz-scheulder-log2.png)    
 
 
@@ -1485,6 +1494,5 @@ public class BaseJob extends QuartzJobBean {
 		}
 		System.out.println(context.getMergedJobDataMap().get("applicationContext"));
     }
-
 }
 ```
