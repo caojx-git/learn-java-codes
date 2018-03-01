@@ -10,6 +10,7 @@ learn仓库有如下两大模块
 ## 目录
 - [activiti](https://github.com/caojx-git/learn/tree/master/notes/activiti)  
 - [docker](https://github.com/caojx-git/learn/tree/master/notes/docker)
+- [dubbo](https://github.com/caojx-git/learn/tree/master/notes/dubbo)
 - [git](https://github.com/caojx-git/learn/tree/master/notes/git)
 - [gradle](https://github.com/caojx-git/learn/tree/master/notes/gradle)
 - [idea](https://github.com/caojx-git/learn/tree/master/notes/idea)
