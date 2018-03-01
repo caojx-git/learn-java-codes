@@ -2,6 +2,8 @@
 
 [TOC]
 
+duubo官网：http://dubbo.io/
+
 学习源码：https://github.com/caojx-git/learn/tree/master/code/dubbo-demo
 
 ![](../images/dubbo/dubbo_2.png)  
@@ -10,7 +12,7 @@
 
 ### 1.1 简介
 
-Dubbo是一个分布式服务**框架**，致力于提高性能和透明化的RPC远程服务调用方案，以及SOA服务子方案。当网站规模达到了一定的量级的时候，普通的MVC框架已经不能满足我们的需求，于是分布式的服务框架和流动式的架构就凸显出来了。
+Dubbo是一个分布式服务**框架**，致力于提高性能和透明化的[RPC](http://www.importnew.com/22003.html)远程服务调用方案，以及SOA服务子方案。当网站规模达到了一定的量级的时候，普通的MVC框架已经不能满足我们的需求，于是分布式的服务框架和流动式的架构就凸显出来了。
 
 **dubbo是**：
 
@@ -119,22 +121,6 @@ dubbo-demo-consumer 服务消费者,需要引入provider的接口依赖配置
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xmlns="http://www.springframework.org/schema/beans"
@@ -167,22 +153,6 @@ limitations under the License.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Licensed to the Apache Software Foundation (ASF) under one or more
-contributor license agreements.  See the NOTICE file distributed with
-this work for additional information regarding copyright ownership.
-The ASF licenses this file to You under the Apache License, Version 2.0
-(the "License"); you may not use this file except in compliance with
-the License.  You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xmlns="http://www.springframework.org/schema/beans"
@@ -207,22 +177,6 @@ limitations under the License.
 3. DemoService.java 接口实现类
 
 ```java
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.alibaba.dubbo.demo.provider;
 
 import com.alibaba.dubbo.demo.DemoService;
@@ -244,22 +198,6 @@ public class DemoServiceImpl implements DemoService {
 4. 启动服务提供者Provider.java
 
 ```java
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.alibaba.dubbo.demo.provider;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -282,22 +220,6 @@ public class Provider {
 5. 启动服务消费者Consumer.java
 
 ```java
-/*
- * Licensed to the Apache Software Foundation (ASF) under one or more
- * contributor license agreements.  See the NOTICE file distributed with
- * this work for additional information regarding copyright ownership.
- * The ASF licenses this file to You under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.alibaba.dubbo.demo.consumer;
 
 import com.alibaba.dubbo.demo.DemoService;
@@ -385,7 +307,7 @@ Hello world, response form provider: 10.10.146.234:20880
 
 注意：使用zookeeper之前需要安装jdk
 
-### 1.1 安装zookeeper
+### 1.1 zookeeper 安装
 
 ```shell
 #下载
@@ -727,7 +649,7 @@ Hello world, response form provider: 192.168.46.1:20880
 
 
 
-### 1.3 zookeeper集群部署
+### 1.3 zookeeper 集群部署
 
 zookepper集群部署至少需要部署3台机器，部署奇数台，一般部署1，3，5，7…这样的数量，因为这是根据zookepper的选举算法决定，这个算法有两个必要条件
 
@@ -840,3 +762,153 @@ Mode: leader
 
 2. **dubbo-demo连接测试**
 
+
+配置dubbo-demo-provider.xml，配置多台zookeeper注册中心
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- provider's application name, used for tracing dependency relationship -->
+    <!-- 服务名称 -->
+    <dubbo:application name="demo-provider"/>
+
+    <!-- use multicast registry center to export service -->
+    <!-- 使用multicast广播注册中心暴露服务地址,不需要启动任何中心节点，不需要安装zookper一样，和广播地址一样可以互相发现 -->
+<!--    <dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+
+    <!--使用zookeeper作为注册中心-->
+    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+
+    <!--多台zookeeper集群作为注册中心-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181?backup=127.0.0.1:2182,127.0.0.1:2183"/>
+
+    <!-- use dubbo protocol to export service on port 20880 -->
+    <!-- 服务端和消费端双发通信协议，使用dubbo协议，端口20880 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- service implementation, as same as regular local bean -->
+    <bean id="demoService" class="com.alibaba.dubbo.demo.provider.DemoServiceImpl"/>
+
+    <!-- declare the service interface to be exported -->
+    <!-- 暴露服务的接口 -->
+    <dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService"/>
+
+</beans>
+```
+
+
+
+配置dubbo-demo-consumer.xml，配置多台zookeeper注册中心
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- consumer's application name, used for tracing dependency relationship (not a matching criterion),
+    don't set it same as provider -->
+    <dubbo:application name="demo-consumer"/>
+
+    <!-- use multicast registry center to discover service -->
+    <!--服务注册中心，与provider一样-->
+ <!--   <dubbo:registry address="multicast://224.5.6.7:1234"/>-->
+
+    <!--使用zookeeper作为注册中心-->
+   <!-- <dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
+
+    <!--多台zookeeper集群作为注册中心-->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181?	backup=127.0.0.1:2182,127.0.0.1:2183"/>
+
+    <!-- generate proxy for the remote service, then demoService can be used in the same way as the
+    local regular interface -->
+    <!-- 服务消费者，依赖于服务提供者暴露的接口 -->
+    <dubbo:reference id="demoService" check="false" interface="com.alibaba.dubbo.demo.DemoService"/>
+
+</beans>
+```
+
+3. **结果**
+
+控制台结果与1.2结果一致。
+
+
+
+## 四、Dubbo 服务集群及负载均衡搭建
+
+待补充。。。
+
+dubbo的负载均衡有4中
+
+1. 随机负载均衡（默认）
+2. 权重轮询
+3. 最少活跃度
+4. 一致性hash算法
+
+
+
+## 五、Dubbo 服务管理
+
+参考：https://www.cnblogs.com/shengulong/p/8303454.html
+
+本节我们来了解dubbo的服务管理控制台，在实际的项目开发管理过程中，这个管理控制台是非常有用的，在服务越来越多的时候，使用dubbo服务管理控制台，可以更方便的管理我们的服务。
+
+dubbo:https://github.com/alibaba/dubbo/releases,我使用的是2.6.0
+
+Tomcat:http://mirrors.shu.edu.cn/apache/tomcat/tomcat-7/v7.0.85/bin/apache-tomcat-7.0.85.zip
+
+### 5.1 安装dubbo-admin
+
+下载dubbo源码：https://github.com/alibaba/dubbo，编译dubbo-admin模块，但是现在dubbo-admin这个目录，不在这里了。
+
+可以直接去下载他们打包好的源代码：https://github.com/alibaba/dubbo/releases
+
+![](../images/dubbo/dubbo_admin_1.png)  
+
+方式一：解压后，根目录里存在dubbo-admin，进入dubbo-admin目录，运行命令**mvn package -Dmaven.test.skip=true**安装完后，生成target目录，进入这个目录，找到dubbo-admin-2.6.0这个目录，把这个目录全部copy到tomcat的目录webapps下的ROOT下面（删除tomcat webapps目录下ROOT原有内容）
+
+方式二：解压后，根目录里存在dubbo-admin，进入dubbo-admin目录，运行命令 **mvn install -Dmaven.test.skip=true **安装完后，生成target目录，进入这个目录，找到dubbo-admin-2.6.0.war，把这个war包copy到tomcat的目录webapps下的ROOT下面（删除tomcat webapps目录下ROOT原有内容），然后使用**jar xvf dubbo-admin-2.6.0.war**解压war包，把解压后的内容全部放到ROOT目录下
+
+### 5.2 使用dubbo-admin
+
+访问：http://localhost:8080/
+
+启动tomcat，就可以看到dubbo-admin的界面，默认帐号密码root/root
+
+![](../images/dubbo/dubbo_admin_2.png)  **修改帐号密码，以及注册信息**
+
+```shell
+# pwd
+/Users/caojx/Downloads/apache-tomcat-7.0.85/webapps/ROOT/WEB-INF
+#cat dubbo.properties 
+dubbo.registry.address=zookeeper://127.0.0.1:2181
+dubbo.admin.root.password=root
+dubbo.admin.guest.password=guest
+```
+
+### 5.3 简单使用dubbo-admin
+
+启动我们之前的dubbo-demo之后，注意dubbo-demo注册中心修改回zookeeper://127.0.0.1:2181，保持与dubbo-admin使用的注册中心一样，可以在dubbo-admin的首页看到服务的统计信息。
+
+![](../images/dubbo/dubbo_admin_3.png)  
+
+
+
+duubo-admin控制中心功能罗列很清楚，自己动手看比我这里说更好，所以不过多介绍。
+
+
+
+## 参考
+
+https://www.cnblogs.com/shengulong/p/8303454.html
+
+http://dubbo.io/books/dubbo-admin-book/install/introduction.html
+
+http://www.importnew.com/22003.html
