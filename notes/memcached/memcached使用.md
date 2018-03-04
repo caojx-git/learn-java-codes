@@ -1629,3 +1629,18 @@ public class MemcachedJava {
    }
 }
 ```
+# 五、Memcached单实例/多实例
+
+关于memcached的单实例和多实例，我们不需要像mysql一样配置那么麻烦，我们只需要再执行memcached的启动命令启动就可以再打开多个memcahed实例了。不过需要注意的是，一定不能让它们的端口相同！切记！
+
+```shell
+#下面是memcached单机多实例的启动实例：
+[root@linuxidc ~]# /usr/local/bin/memcached -d -m 10 -u root -l 192.168.0.121 -p 11211 -c 256 -P /tmp/memcached.pid
+[root@linuxidc ~]# /usr/local/bin/memcached -d -m 10 -u root -l 192.168.0.121 -p 11212 -c 256 -P /tmp/memcached.pid
+[root@linuxidc ~]# ps -ef |grep memcached
+root 11880 1 0 14:14 ? 00:00:00 /usr/local/bin/memcached -d -m 10 -u root -l 192.168.0.121 -p 11211 -c 256 -P /tmp/memcached.pid
+root 11944 1 0 14:32 ? 00:00:00 /usr/local/bin/memcached -d -m 10 -u root -l 192.168.0.121 -p 11212 -c 256 -P /tmp/memcached.pid
+root 11951 2175 0 14:32 pts/0 00:00:00 grep memcached
+```
+
+OK，从操作结果可以看出，memcached的单机多实例已经OK！
