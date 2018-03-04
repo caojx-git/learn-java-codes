@@ -33,6 +33,9 @@ limitations under the License.
 <!--    <dubbo:registry address="zookeeper://192.168.46.133:2181"/>-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
+    <!--多台zookeeper集群作为注册中心-->
+   <!-- <dubbo:registry address="zookeeper://192.168.46.133:2181?backup=192.168.46.133:2182,192.168.46.133:2183"/>-->
+
     <!-- use dubbo protocol to export service on port 20880 -->
     <!-- 服务端和消费端双发通信协议，使用dubbo协议，端口20880 -->
     <dubbo:protocol name="dubbo" port="20880"/>
