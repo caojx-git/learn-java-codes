@@ -33,6 +33,9 @@ limitations under the License.
 <!--    <dubbo:registry address="zookeeper://192.168.46.133:2181"/>-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
+    <!--多台zookeeper集群作为注册中心-->
+    <!--<dubbo:registry address="zookeeper://192.168.46.133:2181?backup=192.168.46.133:2182,192.168.46.133:2183"/>-->
+
     <!-- generate proxy for the remote service, then demoService can be used in the same way as the
     local regular interface -->
     <!-- 服务消费者，依赖于服务提供者暴露的接口 -->
