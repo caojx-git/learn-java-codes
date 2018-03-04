@@ -139,7 +139,7 @@ OK
 ### 3.2 Windows安装
 Redis官方是不支持Windows的，但是Microsoft Open Tech group 在 GitHub上开发了一个Win64的版本  
 地址是https://github.com/MicrosoftArchive/redis，在 Release 页面中，有 msi 安装文件以及 .zip 文件。    
-![](../images/redis/redis-windows1.png)    
+![](../images/redis/redis-windows1.png)      
 
 安装redis的msi安装文件  
 ![](../images/redis/redis-windows2.png)  
