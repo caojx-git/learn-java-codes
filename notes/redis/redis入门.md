@@ -1905,6 +1905,8 @@ SLAVEOF <新的masterip> <新的masterport>
 
 **Redis哨兵（Redis Sentinel）**的启动和redis实例的启动没有关系。所以可以在任何机器上启动redis哨兵。Redis Sentinel 是一个分布式系统，可以在整个redis主从架构中运行多个 Sentinel 进程（progress）。建议至少要保证有两个哨兵在运行，要不然物理机宕机后哨兵进程也不存在了，就无法进行主从切换。
 
+注意：主服务器判断为失效至少需要 2 个 Sentinel 同意
+
 3. **配置**
 
 我们这里有4台redis服务器（1主3从），所以启动5个哨兵。每个哨兵的配置如下
