@@ -1,5 +1,5 @@
 # nginx使用
-[toc]
+[TOC]
 
 ## 一、Nginx简介
 ### 1.1 简介  
@@ -35,9 +35,9 @@ yum -y install gcc-c++
 yum -y install openssl-devel
 yum -y install zlib-devel
 ```
- 
+
 除了使用上边的yum方式安装pcre，还可以使用下边的源码包安装方式，将下载好的源码包解压到/usr/local/src目录下，编译安装  
- 
+
 源码方式安装pcre  
 ```shell
 [root@localhost local]# tar -zxvf pcre-8.31.tar.gz -C /usr/local/src
@@ -228,7 +228,7 @@ $ cat /var/log/host.access.log
 nginx 日志默认情况下统统写入到一个文件中，文件会变的越来越大，非常不方便查看分析。以日期来作为日志的切割 是比较好的，通常我们是以每日来做统计的。
 
 nginx-log-rotate.sh
-```shell
+​```shell
 #假设nginx的日志文件位置为/usr/local/nginx/logs/host.access.log,为了演示我们每分钟生成一个新的日志文件进行演示
 #!/bin/bash
 LOGPATH=/usr/local/nginx/logs/host.zccess.log #定义nginx原始日志文件变量
@@ -250,7 +250,7 @@ crontab -e
 service crond reload #重新加载配置
 ```
 
-## 3.5 location配置
+### 3.5 location配置
 
 location有"定位"的意思，根据uri来进行不同的定位，在虚拟主机的配置中，是必不可少的，location可以把网站的不同部分定位
 到不同的处理方式上，一个server段中可以配置多个location。 
@@ -450,7 +450,7 @@ location ~ .*\.(js|css)$
  {
 expires 1h;
 }
-``` 
+```
 
 ### 3.9 nginx反向代理和负载均衡
 
@@ -463,11 +463,13 @@ nginx做反向代理和负载均衡非常简单,通过使用proxy, upstream,分�
 将所有的jsp请求，都转发给tomcat处理
 
 server.xml配置,使用8080端口
+
 ```xml
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
-````
+```
+
 假设我的tomcat下边部署的一个简单的页面如下，访问8080端口如下  
 ![](../images/nginx/nginx-proxy-1.png)
 
@@ -487,7 +489,7 @@ nginx.conf反向代理配置
             proxy_set_header X-Forwarded-For $remote_addr; #将真实的客户地址转发给服务端
             proxy_pass http://localhost:8080;
         }
-
+    
         error_page  404              /404.html;
         # redirect server error pages to the static page /50x.html
         error_page   500 502 503 504  /50x.html;
@@ -503,7 +505,7 @@ nginx.conf反向代理配置
 反向代理后端如果有多台服务器集群，我们可以将后台服务器写在upstream中，然后proxy_pass指向upstream组就可以实现负载均衡。
 
 upstream 语法：
-```text
+​```text
 upstream name {
     server address [parameters];
     ....
@@ -519,7 +521,7 @@ paramters参考：http://nginx.org/en/docs/http/ngx_http_upstream_module.html
 ![](../images/nginx/nginx-lb-3.png)  
 
 nginx.conf中upstream配置：
-```text
+​```text
 upstream backend {
     server localhost:7080 weight=1; #weight是权重，值越大转发到该服务器的请求就越多
     server localhost:8080 weight=1;
