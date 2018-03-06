@@ -21,7 +21,8 @@ public class MyRealm extends AuthorizingRealm{
 	private UserService userService;
 
 	/**
-	 * 为当限前登录的用户授予角色和权
+	 * 为当前登录的用户授予角色和权
+	 * 验证通过后会调用该方法，给用户赋予角色和权限
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
