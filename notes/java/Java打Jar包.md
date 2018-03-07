@@ -212,12 +212,27 @@ Main-Class则是jar包的入口程序，指定运行的类的全称(一定要包
 第三个Class-Path是指的打包时需要依赖的其他jar包，打包的时候自己的程序中也可能含有其他的jar包所以要添加依赖。   
 注意每个MANIFEST属性冒号与内容之间都有一个空格，并且写完后最后还要留有一行空行，不然运行时还是出现找不到主清单属性的错误  
 
-## 四、其他
+##  四、jar包解压后再打成jar
+
+如下边我
+
+```shell
+#ls -l newchnl-common-0.0.1-SNAPSHOT.jar 
+-rw-r--r--  1 caojx  staff  739432  3  7 10:31 newchnl-common-0.0.1-SNAPSHOT.jar
+#jar命令解压不能解压到指定目录，使用unzip可以将jar包解压到指定的目录
+#unzip newchnl-common-0.0.1-SNAPSHOT.jar -d newchnl-common-0.0.1-SNAPSHOT
+
+#解压后打包成jar
+#cd newchnl-common-0.0.1-SNAPSHOT  #一定要进入解压后的目录里边再打jar包
+#jar -cvf newchnl-common-0.0.1-SNAPSHOT.jar *
+```
+
+## 五、其他
 解压jar
 ```text
 jar -xvf test.jar
 ```
-## 五、小结
+## 六、小结
 
 jar文件打包容易出错的地方就是Manifest清单文件的编写，容易出一些格式上的错误比如属性的冒号和内容之间少空格，Class-Path中添加依赖之间没有空格，  
 依赖文件过多，多行书写的时候每行开头没加空格，文件最后一行没有空行等等。写MANIFEST文件的时候注意这些关键的地方就不会在打包上面耗费太多的时间。
