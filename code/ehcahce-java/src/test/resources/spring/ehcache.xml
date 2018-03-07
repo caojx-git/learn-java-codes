@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+    <!-- 磁盘缓存位置
+          磁盘存储:将缓存中暂时不使用的对象,转移到硬盘,类似于Windows系统的虚拟内存
+         path:指定在硬盘上存储对象的路径
+      -->
+    <diskStore path="/Users/caojx/temp/ehcache"/>
+
+    <!-- 默认缓存 -->
+    <defaultCache
+            maxEntriesLocalHeap="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            maxEntriesLocalDisk="10000000"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+    <!-- helloworld缓存 -->
+    <cache name="HelloWorldCache"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="5"
+           timeToLiveSeconds="5"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU"/>
+
+    <cache name="UserCache"
+           maxElementsInMemory="1000"
+           eternal="false"
+           timeToIdleSeconds="1800"
+           timeToLiveSeconds="1800"
+           overflowToDisk="false"
+           memoryStoreEvictionPolicy="LRU"/>
+</ehcache>
