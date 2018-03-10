@@ -12,6 +12,7 @@ learn仓库有如下两大模块
 - [docker](https://github.com/caojx-git/learn/tree/master/notes/docker)
 - [dubbo](https://github.com/caojx-git/learn/tree/master/notes/dubbo)
 - [ehcache](https://github.com/caojx-git/learn/tree/master/notes/ehcache)
+- [freemarker](https://github.com/caojx-git/learn/tree/master/notes/freemarker)
 - [git](https://github.com/caojx-git/learn/tree/master/notes/git)
 - [gradle](https://github.com/caojx-git/learn/tree/master/notes/gradle)
 - [idea](https://github.com/caojx-git/learn/tree/master/notes/idea)
