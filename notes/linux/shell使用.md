@@ -22,7 +22,7 @@ Shell 编程跟 java、php 编程一样，只要有一个能编写代码的文�
 ### 2.1 helloworld.sh
 注意：编写shell的时候，shell程序的第一行必须有如下声明
  - \#!/bin/sh   
-  符号#!用来告诉系统它后面的参数是用来执行该文件的程序。在这个例子中我们使用/bin/sh来执行程序。
+    符号#!用来告诉系统它后面的参数是用来执行该文件的程序。在这个例子中我们使用/bin/sh来执行程序。
 
 1 helloworl.sh
 ```shell
@@ -61,9 +61,9 @@ your_name="runoob.com"
 - 不能使用bash里的关键字（可用help命令查看保留关键字）
 - 变量内容若有空格符可以使用双引号『"』或单引号『'』将变量内容结合起来，但是
   - 双引号内的特殊字符如$等，可以保持原本的特性，如下：  
-    var="lang is $LANG" 则echo $var可得lang is zh_TW.UTF-8  
+    var="lang is \$LANG" 则echo $var可得lang is zh_TW.UTF-8  
   - 单引号内的特俗字符则仅为一般字符（纯文本），如下：  
-    var='lang is $LANG' 则echo $var可得lang is $LANG  
+    var='lang is \$LANG' 则echo $var可得lang is \$LANG  
 
 除了显式地直接赋值，还可以用语句给变量赋值，如：
 ```text
