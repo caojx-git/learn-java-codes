@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <!--ActiveMQ为我们提供的ConnectionFactory-->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://127.0.0.1:61616"></property>
+        <property name="userName" value="admin"></property>
+        <property name="password" value="admin"></property>
+    </bean>
+
+    <!--spring jms为我们提供连接池，代理activemq的连接工厂-->
+
+    <!--
+    持久订阅时，客户端向JMS 服务器注册一个自己身份的ID，当这个客户端处于离线时，JMS Provider 会为这个ID 保存所有发送到主题的消息，
+    当客户再次连接到JMS Provider时，会根据自己的ID得到所有当自己处于离线时发送到主题的消息。
+    -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <!--代理的连接工厂-->
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"></property>
+        <!-- 持久订阅模式时接收者ID必须指定,如果使用非持久订阅模式时不用配置 -->
+        <property name="clientId" value="client_119"/>
+        <!-- Session缓存数量 -->
+        <property name="sessionCacheSize" value="10" />
+    </bean>
+
+    <!--一个队列目的地，点对点队列模式-->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <!-- 设置消息队列的名字 -->
+        <constructor-arg index="0" value="queue"/>
+    </bean>
+
+    <!--一个主题目的地，发布订阅模式-->
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <!-- 设置消息主题的名字 -->
+        <constructor-arg index="0" value="topic"/>
+    </bean>
+
+</beans>

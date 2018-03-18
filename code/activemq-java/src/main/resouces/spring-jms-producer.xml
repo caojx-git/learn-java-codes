@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--导入公共配置-->
+    <import resource="spring-jms-common.xml"></import>
+
+    <!--消息模板,用于发送消息-->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--发送消息的目的地,一个队列-->
+        <!--<property name="defaultDestination" ref="queueDestination"/>-->
+        <!--发送消息的目的地,一个主题-->
+        <property name="defaultDestination" ref="topicDestination"/>
+    </bean>
+
+    <!--bean配置-->
+    <bean class="caojx.learn.jms.spring.queue.ProducerServiceImpl"></bean>
+</beans>
