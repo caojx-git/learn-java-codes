@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--导入公共配置-->
+    <import resource="spring-jms-common.xml"></import>
+
+    <!--配置消息监听器-->
+    <bean id="consumerMessageListener" class="caojx.learn.jms.spring.queue.ConsumerMessageListener"></bean>
+
+    <!--配置消息监听容器-->
+    <bean id="jmsContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <!--连接工厂-->
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--队列模式-->
+        <!--<property name="destination" ref="queueDestination"/>-->
+        <!--主题模式-->
+        <property name="destination" ref="topicDestination"/>
+        <!--消息监听器-->
+        <property name="messageListener" ref="consumerMessageListener"/>
+
+        <!-- 持久订阅模式时接收者ID必须指定,如果使用非持久订阅模式时不用配置 -->
+        <property name="clientId" value="client_119"/>
+        <property name="durableSubscriptionName" value="client_119"/>
+    </bean>
+</beans>
