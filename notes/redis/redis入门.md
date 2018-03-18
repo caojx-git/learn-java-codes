@@ -1662,6 +1662,7 @@ db3:keys=1,expires=0,avg_ttl=0
 #cd /home/caojx/redis
 #yum install yum install gcc-c++
 #wget http://download.redis.io/releases/redis-4.0.8.tar.gz
+#tar -zxvf redis-4.0.8.tar.gz
 #cd redis-4.0.8
 #make
 #make PREFIX=/home/caojx/redis/redis_master install #redis安装
