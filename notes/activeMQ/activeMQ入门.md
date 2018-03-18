@@ -2,7 +2,11 @@
 
 [TOC]
 
+本笔记主要根据慕课网视屏教程整理出：https://www.imooc.com/learn/856
 
+练习源码：https://github.com/caojx-git/learn
+
+使用其他消息中间件：https://github.com/jovezhao/nest
 
 ## 一、简介
 
@@ -967,25 +971,562 @@ Caused by: javax.jms.InvalidClientIDException: Broker: localhost - Client: clien
 
 ## 五、activeMQ集群
 
+本节主要了解：
+
+- ActiveMQ集群配置
+- 消息中间件在企业系统中的使用
+
 ### 5.1 activeMQ集群理论
+
+#### 1. 为什么要对消息中间件集群？
+
+- 实现**高可用**，以排除单点故障引起的服务中断
+- 实现**负载均衡**，以提升效率为更多客户提供服务
+
+#### 2. 集群方式
+
+- 客户端集群：让多个消费者消费同一个队列
+- Broker clusters：多个Broker之间同步消息
+- Master Slave：高可用
+
+#### 3. 集群客户端配置
+
+- ActiveMQ失效转移（failover）
+
+  允许当其中一台消息服务器宕机时，客户端在传输层上重新连接到其他消息服务器
+
+  语法：failover:(消息服务器uri1,…,消息服务器uriN)?transportOptions
+
+  transportOptions重要参数说明：
+
+  randomize 默认为true，表示在URI列表中选择URI连接时是否采用随机策略
+
+  initialReconnectDelay 默认为10，单位毫秒，表示第一次尝试重连之间等待时间
+
+  maxReconnectDelay 默认30000，单位毫秒，表示最长重连的时间间隔
+
+#### 4. Broker Cluster集群配置
+
+**原理**
+
+![](../images/activeMQ/activemq_broker cluster_1.png)      
+
+节点A将消息同步给节点B，节点B将消息同步给节点A，通过这样的消息同步之后，节点A和节点B之间都有相同的消息。它的实现方式采用的是一种网络连接器的方式实现的
+
+**NetworkConnector(网络连接器)**
+
+网络连接器主要用于配置ActiveMQ服务器与服务器之间的网络通讯方式，用于服务器透传消息
+
+网络连接器分为静态连接和动态连接
+
+**静态连接器：**
+
+在配置连接器的时候去指定具体的ip地址，参考一下配置
+
+```xml
+<networkConnectors>
+	<networkConnector uri="static:(tpc://127.0.0.1:61617,tpc://127.0.0.1:61618)"/>
+</networkConnectors>
+```
+
+**动态连接器：**
+
+如果我们服务器比较多的时候，或者服务器可能需要动态扩展的时候，静态配置显然比较麻烦，这时我们需要使用动态连接，动态连接主要使用组播的方式实现的，参考一下配置
+
+```xml
+<transportConnectors>
+	<transportConnector uri="tcp://localhost:0" discoveryUri="multicast://default"/>
+</transportConnectors>
+```
+
+#### 5. Master/Slave 集群配置
+
+这种集群方式主要有一下3种实现方案
+
+- Share nothing storage master/slave (已经过时，5.8+后移除)，这里不了解
+- Share storage master/slave 共享储存
+- Replicated LevelDB Store 基于复制的LevelDB Store,主要使用zookeeper实现
+
+
+
+**共享存储集群的原理：**
+
+![](../images/activeMQ/activemq_master_slave_1.png)  
+
+假如我们有节点A和节点B两台服务器，还有一个共享的储存地址持久化（可以是jdbc的数据库，也可以是基于SAN的文件系统）。
+
+![](../images/activeMQ/activemq_master_slave_2.png)  
+
+然后我们将节点A和节点B都配置到同一个持久化地址后，先启动节点A，这时节点A获取到资源排它锁成为Master，节点B因为他获取不到锁资源成为Slave，成为Master的节点A获取到了对外服务开放的能力，可以通过外部的客户端提交信息到节点A，但是不能够发送信息到节点B。
+
+![](../images/activeMQ/activemq_master_slave_3.png)  
+
+如果节点A挂点了，节点B会立即获取到持久化资源的排它锁，节点B成为新的Master，可以接收外部客户端发送的消息，客户端使用失效转移之后将请求发送到节点B，这样就完成了整个请求的不间断性，达到了高可用效果。
+
+
+
+**基于复制的LevelDB Store的原理：**
+
+![](../images/activeMQ/activemq_leveldb_1.png)  
+
+因为LevelDB是基于zookeeper的，所以服务器至少需要3台，这里假设我们有3台服务器节点A/B/C，每个节点都有自己的持久化方式，因为她们都配置同样的zookeeper节点，通过zookeeper来选举一台服务器节点作为Master。比如选举了节点A作为Master，这时节点A成为Master之后，节点A具有了对外服务的能力，而节点B和节点C是不具有对外服务的能力的。节点A获取到外部发送过的消息之后，先进行本地储存（Store），然后通过zookeeper将消息同步给节点B和节点C，节点B和节点C分别在自己的服务器上储存。当然如果节点A出现故障，zookepper会立即选举一台新的Master出来。
+
+
+
+#### 6. 两种集群方式的对比
+
+|                | 高可用 | 负载均衡 | 特点                                                         |
+| -------------- | ------ | -------- | ------------------------------------------------------------ |
+| Master/Slave   | 是     | 否       | Slave服务器不具备对外服务的能力                              |
+| Broker Cluster | 否     | 是       | 自己的消息没有在一个地方储存，当某台服务器挂掉的时候，消息可能会同步丢失 |
+
+上边的两种集群方案要么是不支持负载均衡，要么不能高可用，是否有一种方案可以即可以负载均衡又可以做到高可用呢？
 
 
 
 ### 5.2 activeMQ集群实践
 
+由于是演示配置，所以都在同一台机器上完成
+
+#### 1. 三台服务器的完美集群方案
+
+![](/Users/caojx/code/learn/notes/images/activeMQ/activemq_jq_1.png)  
+
+假如我们有3台服务器，我们可以组一个如上图的架构即达到高可用，又可以负载均衡。
+
+节点A和节点B和节点C组成一个 Broker Cluster集群方案，然后节点B和节点C组成一个Master/Slave方案共享持久化内容。
 
 
-## 六、使用其他消息中间件
+
+#### 2. 实现配置
+
+**配置说明：**
+
+|        | 服务端口 | 管理端口 | 存储               | 网络连接器     | 用途           |
+| ------ | -------- | -------- | ------------------ | -------------- | -------------- |
+| Node-A | 61616    | 8161     | -                  | Node-B、Node-C | 消费者         |
+| Node-B | 61617    | 8162     | /share_file/kahadb | Node-A         | 生产者、消费者 |
+| Node-C | 61618    | 8163     | /share_file/kahadb | Node-A         | 生产者、消费者 |
+
+上边因为Node-A配置的是Broker集群，所以Node-A不需要配置存储，Node-B和Node-C配置的是Master/Slave集群，所以需要配置存储。
+
+Node-A只能做消费者（Broker Cluster集群），如果作为生产者的话，因为网络连接是双向连接，Node-A的消息能够被Node-B和Node-C消费掉，如果单Node-A上边有消息，但是还么有被消费的时候，如果Node-A节点挂掉，Node-B和Node-C就收不到消息。
 
 
 
+**配置准备：**
+
+```shell
+#1.创建active_cluster目录，复制activemq安装包到里边，并解压3分作为节点A/B/C
+$mkdir activemq_cluster
+$cp apache-activemq-5.15.3-bin.tar.gz activemq_cluster
+$tar -zxvf apache-activemq-5.15.3-bin.tar.gz
+$cp apache-activemq-5.15.3 apache-activemq-nodeA
+$cp apache-activemq-5.15.3 apache-activemq-nodeB
+$cp apache-activemq-5.15.3 apache-activemq-nodeC
+
+#2.创建一个共享文件夹用于nodeB和nodeC的共享储存文件夹
+$ mkdir kahadb
+```
+
+**节点A配置:**
+
+修改apache-activemq-nodeA/conf/activemq.xml，注释掉不需要使用的协议，服务端口为61618，新增网络连接配置，由于这里是已知的3台服务器，所以这里使用静态配置网络连接，连接到B和C两台服务器。
+
+```xml
+        <transportConnectors>
+            <!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB -->
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <!--
+
+            	注释不需要的协议
+
+            <transportConnector name="amqp" uri="amqp://0.0.0.0:5672?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="stomp" uri="stomp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="mqtt" uri="mqtt://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="ws" uri="ws://0.0.0.0:61614?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+
+       		-->
+        </transportConnectors>
+
+        <!-- 新增网络连接配置项，名字自定义，uri使用静态配置，连接到B和C两台服务器 -->
+        <networkConnectors>
+        	<networkConnector name="local_network" uri="static:(tcp://127.0.0.1:61617,tcp://127.0.0.1:61618)"/>
+        </networkConnectors>
+```
+
+查看后端管理端口是否需要修改apache-activemq-nodeA/conf/jetty.xml,由于已经是8161，不需要修改
+
+```xml
+    <bean id="jettyPort" class="org.apache.activemq.web.WebConsolePort" init-method="start">
+             <!-- the default port number for the web console -->
+        <property name="host" value="0.0.0.0"/>
+        <property name="port" value="8161"/>
+    </bean>
+```
+
+**节点B配置：**
+
+修改apache-activemq-nodeB/conf/activemq.xml，注释掉不需要使用的协议，配置服务端口为61617，新增网络连接配置，使用静态配置网络连接，连接到A服务器。并配置B与C的持久化共享文件目录
+
+```xml
+   <!--配置B与C的共享文件夹 -->
+	<persistenceAdapter>
+            <!--<kahaDB directory="${activemq.data}/kahadb"/> -->
+            <kahaDB directory="/Users/caojx/Downloads/activemq_cluster/kahadb"/>
+    </persistenceAdapter>
+	
+	<transportConnectors>
+            <!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB -->
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61617?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <!-- 注释不需要的协议 
+            <transportConnector name="amqp" uri="amqp://0.0.0.0:5672?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="stomp" uri="stomp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="mqtt" uri="mqtt://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="ws" uri="ws://0.0.0.0:61614?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            -->
+        </transportConnectors>
+
+        <!-- 新增网络连接配置项，名字自定义，uri使用静态配置，连接到A服务器 -->
+        <networkConnectors>
+            <networkConnector name="network_a" uri="static:(tcp://127.0.0.1:61616)"/>
+        </networkConnectors>
+```
+
+修改apache-activemq-nodeB/conf/jetty.xml中的管理端口8162
+
+```xml
+    <bean id="jettyPort" class="org.apache.activemq.web.WebConsolePort" init-method="start">
+             <!-- the default port number for the web console -->
+        <property name="host" value="0.0.0.0"/>
+        <property name="port" value="8162"/>
+    </bean>
+```
 
 
-## 七、总结
+
+**配置C节点：**
+
+修改apache-activemq-nodeC/conf/activemq.xml，注释掉不需要使用的协议，配置服务端口为61618，新增网络连接配置，使用静态配置网络连接，连接到A服务器。并配置B与C的持久化共享文件目录
+
+```xml
+   <!--配置B与C的共享文件夹 -->
+	<persistenceAdapter>
+            <!--<kahaDB directory="${activemq.data}/kahadb"/> -->
+            <kahaDB directory="/Users/caojx/Downloads/activemq_cluster/kahadb"/>
+    </persistenceAdapter>
+	
+	<transportConnectors>
+            <!-- DOS protection, limit concurrent connections to 1000 and frame size to 100MB -->
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61618?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <!-- 注释不需要的协议 
+            <transportConnector name="amqp" uri="amqp://0.0.0.0:5672?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="stomp" uri="stomp://0.0.0.0:61613?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="mqtt" uri="mqtt://0.0.0.0:1883?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            <transportConnector name="ws" uri="ws://0.0.0.0:61614?maximumConnections=1000&amp;wireFormat.maxFrameSize=104857600"/>
+            -->
+        </transportConnectors>
+
+        <!-- 新增网络连接配置项，名字自定义，uri使用静态配置，连接到A服务器 -->
+        <networkConnectors>
+            <networkConnector name="network_a" uri="static:(tcp://127.0.0.1:61616)"/>
+        </networkConnectors>
+```
+
+修改apache-activemq-nodeC/conf/jetty.xml中的管理端口8163
+
+```xml
+    <bean id="jettyPort" class="org.apache.activemq.web.WebConsolePort" init-method="start">
+             <!-- the default port number for the web console -->
+        <property name="host" value="0.0.0.0"/>
+        <property name="port" value="8163"/>
+    </bean>
+```
+
+**启动3台ActiveMQ:**
+
+```shell
+$./apache-activemq-nodeA/bin/activemq start
+$./apache-activemq-nodeB/bin/activemq start
+$./apache-activemq-nodeC/bin/activemq start
+```
+
+启动之后，可以在浏览器中访问节点Ahttp://127.0.0.1:8161 和节点Bhttp://127.0.0.1:8162 而节点C由于在B的后边启动所以作为节点B的Slave暂时不能访问，当B节点挂调后C节点会获得资源成为新的Master，就可以方位节点Chttp://127.0.0.1:8163。
 
 
 
+#### 3. 编码
 
+生产者
+
+```java
+package caojx.learn.jms.queue;
+
+import org.apache.activemq.ActiveMQConnectionFactory;
+
+import javax.jms.*;
+
+/**
+ * @author caojx
+ * Created on 2018/3/13 下午下午12:41
+ * jms队列模式-消息生产者
+ */
+public class AppProducer {
+
+    //配置多个节点，failover失效转移，当61617节点失效之后，会将请求转向61618节点，randomize表示从节点列表中随机选择一台
+    public static final String url="failover:(tcp://127.0.0.1:61617,tcp://127.0.0.1:61618)?randomize=true";
+    public static final String queueName="queue-test"; //队列名称
+
+
+    public static void main(String[] args) throws JMSException {
+
+        //1.创建ConnectionFactory
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
+
+        //2.创建Connection
+        Connection connection = connectionFactory.createConnection();
+
+        //3.启动连接
+        connection.start();
+
+        //4.创建会话，第一个参数表示是否在事务中处理，由于是演示代码所以不使用事务false，第二个参数是连接应答模式，Session.AUTO_ACKNOWLEDGE表示自动应答
+        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+        //5.创建一个目标 队列
+        Destination destination = session.createQueue(queueName);
+
+        //6.创建一个生产者,并指定目标
+        MessageProducer producer = session.createProducer(destination);
+
+        for (int i = 1; i <= 100; i++) {
+            //7.创建消息
+            TextMessage textMessage = session.createTextMessage("test"+i);
+            //8.发送消息
+            producer.send(textMessage);
+            System.out.println("发送消息"+textMessage.getText());
+        }
+        //9.关闭连接
+        connection.close();
+    }
+}
+
+```
+
+
+
+消费者
+
+```java
+package caojx.learn.jms.queue;
+
+import org.apache.activemq.ActiveMQConnectionFactory;
+
+import javax.jms.*;
+
+/**
+ * @author caojx
+ * Created on 2018/3/13 下午下午12:56
+ * jms队列模式-消息消费者
+ */
+public class AppConsumer {
+
+    //配置多个节点，failover失效转移，当61616节点失效之后，会将请求转向61617节点或，61618节点 randomize表示从节点列表中随机选择一台
+    public static final String url="failover:(tcp://127.0.0.1:61616,tcp://127.0.0.1:61617,tcp://127.0.0.1:61618)?randomize=true";
+
+    public static final String queueName="queue-test"; //队列名称
+
+    public static void main(String[] args) throws JMSException {
+
+        //1.创建ConnectionFactory
+        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(url);
+
+        //2.创建Connection
+        Connection connection = connectionFactory.createConnection();
+
+        //3.启动连接
+        connection.start();
+
+        //4.创建会话，第一个参数表示是否在事务中处理，由于是演示代码所以不使用事务false，第二个参数是连接应答模式，Session.AUTO_ACKNOWLEDGE表示自动应答
+        Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+
+        //5.创建一个目标 队列
+        Destination destination = session.createQueue(queueName);
+
+        //6.创建一个消费者,并指定目标
+        MessageConsumer consumer = session.createConsumer(destination);
+
+       //7.创建一个监听器,接收消息
+        consumer.setMessageListener(new MessageListener() {
+            public void onMessage(Message message) {
+                TextMessage textMessage = (TextMessage) message;
+                try {
+                    System.out.println("接收消息："+textMessage.getText());
+                } catch (JMSException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //注意，由于消息接收是异步的，所以不能关闭connection
+        //connection.close();
+    }
+}
+```
+
+#### 4. 测试
+
+测试的时候我们可以停止任何一台节点nodeA/nodeB/nodeC服务器，然后测试结果是停止任何一台服务器服务依然正常，即使停掉2台剩下一台服务也依然正常。
+
+
+
+## 六、企业级系统中的最佳实践
+
+本节主要了解企业级系统中的现状，分析存在的问题，然后提出解决方案
+
+**实际业务场景分析：**
+
+![](../images/activeMQ/activemq_qy_1.png)  
+
+如上图所示某个企业总存在3个子系统登录系统，积分系统和日志系统，其中每个子系统都进行了集群，用户登录操作后要保证将登录事件通知到积分系统和业务系统，并且积分系统和日志系统不能重复收到这个消息，登录成功后要将登录事件发送到积分系统和日志系统。
+
+**实际业务场景特点：**
+
+- 子业务系统都有集群的可能性
+- 同一个消息会广播给关注改消息的所有子系统
+- 同一类消息在集群中被负载消费
+- 业务的发生和消费的发布最终一致性
+
+**需要解决的问题：**
+
+- 不同业务系统分别处理同一个消息，同一业务系统负载处理同类消息
+- 解决消息发送时的一致性问题
+- 解决消息处理时的幂等性问题
+- 基于消息机制简历事件总线
+
+**集群系统处理消息方案**
+
+使用JMS级联的解决方案1：
+
+![](../images/activeMQ/activemq_qy_2.png)  
+
+JMS存在两种消息模式，发布/订阅和消息队列模式，我们需要将两种模式结合起来应用。如上图发布者将消息发送到JMS主题，然后两个中转器接收主题中的消息，然后再将消息发送到JMS队列中，最后集群系统负载消费。
+
+这个方案主要存在几个问题，主要是中转器的使用增加了开发的复杂性，因为每增加一个业务系统集群都需要增加一个中转器，并且需要保证中转器的高可用，如果中转器出现故障消息将在主题中堆积，如下是解决这类问题的犯案。
+
+使用ActiveMQ的虚拟主题解决方案2:
+
+- 发布者：将消息发布到一个主题中，主题明为VirtualTopic开头，如VirtualTopic.Test
+- 消费者：从队列中获取消息，在队列名中表明自己的身份，如Comsumer.A.VirtualTopic.Test
+
+**解决消息发送时的一致性为题：**
+
+使用JMS中的XA系列的接口保证强一致性：
+
+- 引入分布式事务
+- 要求业务操作必须支持XA协议
+
+使用消息的本地事务解决方案1：
+
+![](../images/activeMQ/activemq_qy_3.png)  
+
+
+
+使用内存日志的解决方案2：
+
+![](../images/activeMQ/activemq_qy_4.png)
+
+
+
+**解决消息处理时的幂等性问题：**
+
+使用本地消息表的本地事务解决方案1：
+
+![](../images/activeMQ/activemq_qy_5.png)  
+
+1消费者从消息中间件获取消息，2消费者查询日志消息是否已经处理过，3如果没有处理消费者开始使用本地事务处理业务，和更新消息状态，4最后向消息中间件确认消息。
+
+使用内存日志的解决方案2：
+
+![](../images/activeMQ/activemq_qy_6.png)  
+
+1消费者从消息中间件获取消息，2消费者去查询本地内存日志是否已经处理过，3如果说当前消息没有被处理，那么进行业务处理，4业务处理成功之后更新本地内存日志。5最后再确认消息。
+
+**基于消息机制简历事件总线:**
+
+使用了最终一致性后系统变得很复杂，不管是发送方还是接收方都需要做更多的事情，为了简化开发我们需要将一些代码进行复用，将有规律性的代码放到一起。
+
+我们之前的消息发送接收就像是一个事件，发送者就是事件的发起者，消费者就是时间的影响者，这样的架构方式也称为事件驱动。
+
+什么是事件驱动架构？
+
+事件驱动架构（Event Driven Architecture, EDA）定义了一个设计和实现一个应用系统的方法学，在这个系统里事件可传输于松散耦合的组件服务之间。
+
+特点：有事我找你，没事别烦我，就是不要是不是来问我有关于你关注的消息，有消息的时候我会通知你
+
+案例：
+
+https://github.com/jovezhao/nest
+
+![](../images/activeMQ/activemq_qy_7.png)
+
+首先我们假如我们有3个业务系统，使用事件总线来简化业务事件之间的发布接收，业务系统B/C通过事件总线提供的方法进行事件注册，业务发起系统通过事件总线提供的方法进行发起事件。这样事件总线就实现了事件的发送和接收以及内存日志的处理。但是事件总线还不具备消息中间件的功能，所以事件总线还需要定义一个抽象的消息提供者，然后我们可以根据不同的消息中间件提供消息提供者，比如ActiveMQ/RabbitMQ/Kafka消息提供者。
+
+该事件总线编码可以参考：https://github.com/jovezhao/nest
+
+## 七、使用其他消息中间件
+
+这里只是对消息进行简单的原理，源码见：https://github.com/jovezhao/nest
+
+之前的消息中间件中我们使用的都是ActiveMQ,ActiveMQ最大的优点就是JMS，jms使得Java消息中间件的开发变得简单，但是ActiveMQ各方面都表现的比较中庸，存在很多自己的缺点，比如吞吐量没有kafka强，稳定性没有RabbitMQ强。在企业开发中往往也不只是基于ActiveMQ的开发，还有其他许多优秀的消息中间件。下边简单介绍一下其他消息中间件的使用方法。
+
+**企业开发需要解决的问题：**
+
+在前面的企业开发过程中我们了解了企业开发中需要解决的问题：
+
+- 不同业务系统分别处理同一个消息，同一业务系统负载处理同类消息
+- 解决消息发送时的一致性问题
+- 解决消息处理时的幂等性问题
+- 基于消息机制简历事件总线
+
+我们使用其他消息中间件时只需要解决
+
+- 解决个业务系统集群处理同一条消息
+- 实现自己的消息提供者
+
+常用的消息中间件
+
+- ActiveMQ
+- RabbitMQ
+- Kafka
+
+### 7.1 集成RabbitMQ
+
+**RabbitMQ:使用交换器绑定到队列**
+
+![](../images/activeMQ/rabbitmq_1.png)  
+
+在RabbitMQ中消费者首先需要将队列与交换器绑定，生产者不是直接将消息发送到队列而是发送到交换器。
+
+**RabbitMQ消息提供者源码解析**
+
+- 创建ConnectionFactory
+- 创建Connection
+- 创建Channel通道
+- 基于通道创建一个交换器Exchange
+- 定义Queue队列并将队列绑定到交换器
+
+### 7.2 集成Kafka
+
+**Kafka使用group.id分组消费者**
+
+- 配置消息者参数group.id相同时对消息进行负载处理
+- 配置服务器partitions参数，控制同一个group.id下的consumer数量小于partitions
+- kafka只保证同一个partition下的消息是有序的
+
+**Kafka消息提供者源码分析：**
+
+- 创建生产者
+- 创建消费者
 
 ## 参考与推荐文章
 
