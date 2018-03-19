@@ -6,8 +6,8 @@
 源码：https://github.com/caojx-git/learn/tree/master/code/webservice-java  
 
 ## 一、Web Service简介
-![](../images/webservice/webservice_0.png)  
-我们手机或浏览器中一般都会有查询天气的服务，那么么个公司服务器的数据库中都保存了天气预报数据吗?如果没有, 那数据都存在哪了呢?这些网站是
+![](../images/webservice/webservice_0.png)    
+我们手机或浏览器中一般都会有查询天气的服务，那么每个公司服务器的数据库中都保存了天气预报数据吗?如果没有, 那数据都存在哪了呢?这些网站是
 如何得到这些数据的呢?其实大多这种公共服务都是调用WebService获得的。
 
 ### 1.1 Web Service是什么
@@ -119,8 +119,8 @@ wsimport -keep url   //url为wsdl文件的路径,-keep是保存生成的java代�
 
 - 开发服务端
 
-1. 建立mave工程    
-  建立mave工程webservice-java项目，包含两个模块webservice-client是web项目，webservice-server也是web项目分别作用客户端和服务端。
+1. 建立maven工程    
+  建立maven工程webservice-java项目，包含两个模块webservice-client是web项目，webservice-server也是web项目分别作用客户端和服务端。
   这里只是为了方便测试，将服务端和客户端建在同一个maven项目中，一般情况下服务端都调用其他公司的项目。
   ![](../images/webservice/webservice-java-project1.png)  
 
@@ -191,16 +191,16 @@ public class ServerTest {
 ```
 5. 浏览器访问  
   地址：http://127.0.0.1:8989/ws01/hellows?wsdl
-  ![](../images/webservice/webservice_1.png)
+  ![](../images/webservice/webservice_1.png)  
 
 - 开发客户端  
-1. 根据wsdl文档地址生成可客户端代码  
+1. 根据wsdl文档地址生成客户端代码  
 ```text
 $cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
 $wsimport -keep http://127.0.0.1:8989/ws01/hellows?wsdl
 ```
 代码生成结果  
-![](../images/webservice/webservice_3.png)
+![](../images/webservice/webservice_3.png)  
 
 2. 根据生成的客户端代码调用服务  
 ```java
@@ -254,7 +254,7 @@ java方式在生成客户端代码的时候都需要进行少许的修改
 $cd ~/code/learn/code/webservice-java/webservice-client/src/main/java/
 $wsimport -keep ~/code/learn/code/webservice-java/webservice-client/src/main/resources/weather.wsdl
 ```
-![](../images/webservice/webservice_6.png)
+![](../images/webservice/webservice_6.png)  
 
 2. WeatherClientTest.java  
   调用天气服务
@@ -1649,26 +1649,26 @@ WebService注解包含以下参数：
 2. @WebMethod  
 ```text
 此注解用在方法上，用于修改对外暴露的方法
-```  
+```
 ![](../images/webservice/webservice_zj2.png)  
- 
+
 3. @WebResult  
 ```text
 用于定制返回值到WSDL的映射
-```  
+```
 ![](../images/webservice/webservice_zj3.png)  
 
 4. @WebParam  
 ```text
 用于定义WSDL中的参数映射    
-```  
+```
 ![](../images/webservice/webservice_zj4.png)    
 
 5. @XmlElement  
 ```text
 用于定义实体类的属性到WSDL中的映射(get/set方法上)  
-```  
-![](../images/webservice/webservice_zj5.png)
+```
+![](../images/webservice/webservice_zj5.png)  
 
 ## 九、推荐其他教程 
 [Web Service入门](http://www.importnew.com/12182.html)
