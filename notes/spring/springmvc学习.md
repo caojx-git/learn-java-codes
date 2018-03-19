@@ -1,9 +1,9 @@
-[toc]
+[TOC]
 
 # SpringMVC
 
 ### 一.Spring MVC 优点
-	
+
    Spring MVC 和其他的Web框架一样，基于MVC设计理念
    采用松散耦合可拔插组件结构，比其他MVC框架更具有哦灵活性和扩展性。
    Spring MVC还支持REST风格的URL请求：注解驱动以及REST风格的SpringMVC
@@ -30,7 +30,7 @@ d.最终展现给客户端--》图片、pdf文档、html页面、xml、json数�
 再使用注解的方式。
 	
 ####  3.1 新建在IDEA中创建JavaEE Web工程
-	
+
 >File->new Project->Java->JavaEE->Web Application-->工程名/工程保存位置
 
 ![](../images/spring/springmvc/springmvc-web.png)
@@ -40,7 +40,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 这里添加jar的方式跟Eclipse有点不同，但是思想都是一样的。
 我这里将jar添加到WEB-INF的lib下边（lib目录不存在需要手动建立）
 
-![](../images/spring/springmvc/springmvc-jar.png)
+![](../images/spring/springmvc/springmvc-jar.png)  
 
 提示：项目相关的配置都在Project Settings里边设置，不仅是jar，这个新建的项目常常需要检查这里的配置是都正确
 ![](../images/spring/springmvc/springmvc-jar2.png)
@@ -87,7 +87,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 **b.将springmvc配置文件配置到指定的路径下 如放置到src/configs下**
 指定路径方式的截图
 
-![](../images/spring/springmvc/springmvc-webxml2.png)
+![](../images/spring/springmvc/springmvc-webxml2.png)  
 
 推荐使用指定路径的方式
 
@@ -141,7 +141,7 @@ Project Structure->Project Settings->Moules->Add(jar包的路径)
 
 路径如图：
 
-![](../images/spring/springmvc/springmvc-welcome.png)
+![](../images/spring/springmvc/springmvc-welcome.png)  
 
 内容：
 ```jsp
@@ -201,16 +201,16 @@ public class HelloWorldController implements Controller {
             <property name="suffix" value=".jsp"></property><!--试图视图资源的后缀，我这里使用jsp-->
         </bean>
 </beans>
-```  
+```
 
 ####  3.6 添加tomcat服务器
 Edit Configurations
 
-![](../images/spring/springmvc/springmvc-tomcat-add.png)
+![](../images/spring/springmvc/springmvc-tomcat-add.png)  
 
 点击"+",找到tomcat
 
-![](../images/spring/springmvc/springmvc-tomcat-add2.png)
+![](../images/spring/springmvc/springmvc-tomcat-add2.png)  
 
 Name：取个名字，随便，图中可以看出有错，这个因为没有Deployment(tomcat中还没有部署项目)
 ![](../images/spring/springmvc/springmvc-tomcat-add3.png)
@@ -307,7 +307,7 @@ public class HelloWorldController implements Controller {
 </html>
 ```
 ####  4.3结果
-![](../images/spring/springmvc/springmvc-result1.png)
+![](../images/spring/springmvc/springmvc-result1.png)  
 
 
 
@@ -315,33 +315,33 @@ public class HelloWorldController implements Controller {
 
 
 	步骤1：写一个Controller类extends MultiActionController
-
+	
 	步骤2：自定义方法参数为 HttpServletRequest request,HttpServletResponse response
-
+	
 		public ModelAndView add(HttpServletRequest request,HttpServletResponse response){
 		System.out.println("add");
 		return new ModelAndView("multi","method","add");
 		}
-
+	
 	步骤3：在配置文件中配置参数方法解析器
 		
 		 <!-- 配置参数方法解析器     action为方法参数名
-      			http://localhost:8888/springmvc2/test1/multi?action=update
-       		-->
-      		<bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
-      			<property name="paramName" value="action"></property>
-      		</bean>
-      
+	  			http://localhost:8888/springmvc2/test1/multi?action=update
+	   		-->
+	  		<bean id="paramMethodResolver" class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+	  			<property name="paramName" value="action"></property>
+	  		</bean>
+	  
 	步骤4：配置自定义Controller类
 		<!-- 使用参数方法解析器， 引入方法参数解析器，将请求参数映射到具体的方法 
-      		http://localhost:8888/springmvc2/test1/multi?action=add
-     		 -->
-      		<bean name="/test1/multi" class="com.mcao.web.controller.MultiController">
-      			<property name="methodNameResolver">
-      				<ref bean="paramMethodResolver"/>
-      			</property>
-      		</bean>
-
+	  		http://localhost:8888/springmvc2/test1/multi?action=add
+	 		 -->
+	  		<bean name="/test1/multi" class="com.mcao.web.controller.MultiController">
+	  			<property name="methodNameResolver">
+	  				<ref bean="paramMethodResolver"/>
+	  			</property>
+	  		</bean>
+	
 	步骤5：启动web服务器，访问http://localhost:8888/springmvc2/test1/multi?action=add
 		action的值就是请求方法
 
@@ -433,11 +433,11 @@ public class MultiController extends MultiActionController{
 
 ####  5.4 结果
 
-![](../images/spring/springmvc/springmvc-multi.png)
+![](../images/spring/springmvc/springmvc-multi.png)  
 
 项目结构图：
 
-![](../images/spring/springmvc/springmvc-project.png)
+![](../images/spring/springmvc/springmvc-project.png)  
 
 ### 六.spring mvc对静态资源的访问
 
@@ -447,13 +447,13 @@ public class MultiController extends MultiActionController{
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern><!-- /表示拦截所有请求，也可以 *.do   *.html 等 这样的话就只会拦截到.do 或*.html请求 -->
 	</servlet-mapping>
-
+	
 	在springmvc-serlvet.xml中添加，我们就可以顺利访问到我们的静态资源
 	<!-- 对静态资源的访问   声明在/imgs/** 的所有资源都不要拦截
 	     **表示/imgs/下边以及子文件夹下的所有静态资源
 	-->
 	<mvc:resources location="/imgs/" mapping="/imgs/**"/>
-
+	
 	html部
 		<body>
 			<h2>访问图片</h2>
@@ -462,7 +462,7 @@ public class MultiController extends MultiActionController{
 			</div>
 		</body>
 
-
+####  6.1 StaticController.java
 ####  6.1 StaticController.java
 
 StaticController，是一个多方法Controller，img方法返回视图的路径
@@ -570,7 +570,7 @@ public class StaticController extends MultiActionController{
 
 
 ### 七.springmvc注解配置
-	
+
 之前使用的都是xml配置方式，其实springmvc使用最多的是注解方式，使用起来非常简单方便
 这里我们使用一个新的springmvc的配置文件springmvc-annotation-servlet.xml，之前的那个咱时不用了
     
@@ -622,7 +622,7 @@ public class StaticController extends MultiActionController{
     </servlet-mapping>
 </web-app>
 ```
-    
+
 ####  7.2 springmvc-annotation-servlet.xml
 
 对于springmvc-annotation-servlet.xml 添加注解的支持在spring3.0之前和3.0之后写法上有点不同
@@ -633,10 +633,10 @@ public class StaticController extends MultiActionController{
 	<context:component-scan base-package="com.learn.controller.annotation" />
 	
 	<!-- 开启springmvc注解，根据扫描包和url找类   -->
-    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
 	<!-- 开启springmvc注解，负责根据url找方法   -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"></bean>
-
+	
 	<!-- 配置视图解析器 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -675,15 +675,15 @@ springmvc-annotation-servlet.xml 3.0之前内容
 </beans>
 ```
 
-	
+
 **3.0之后**
 开启注解变得非常简单，只需要配置一行就可以开启注解了
 
     <!-- 注解扫描包 ,扫描该包下的所有Controller-->
     <context:component-scan base-package="com.learn.controller.annotation" />
-	<!--开启springmvc注解  3.0之后-->
-	<mvc:annotation-driven/>
-
+    <!--开启springmvc注解  3.0之后-->
+    <mvc:annotation-driven/>
+    
     <!-- 配置视图解析器 -->
     <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -777,9 +777,9 @@ public class UserController {
     org.springframework.beans.factory.BeanDefinitionStoreException: Failed to read candidate component class: file [/mnt/sda3/learn/code/spring-mvc/out/artifacts/spring_mvc_Web_exploded/WEB-INF/classes/com/learn/annotaion/UserController.class]; nested exception is java.lang.IllegalArgumentException
     	at org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider.findCandidateComponents(ClassPathScanningCandidateComponentProvider.java:281)
         ....
- 
+
  运行结果：
- 
+
  ![](../images/spring/springmvc/springmvc-annotation1.png)
 
 
@@ -844,20 +844,25 @@ public class UserController2 {
 ```
 
 ####  7.6 优化后的访问结果
-![](../images/spring/springmvc/springmvc-annotation2.png)
+![](../images/spring/springmvc/springmvc-annotation2.png)  
 
 
 
 
 ### 八.springmvc参数传递
 
-	
+
 #### 8.1修改编码，加强对中文的支持
 前台页面向后台提交参数的时候，中文经常出现乱码问题，可以检查一下下边的配置。
 1.检查项目的编码是否为UTF-8
 2.设置tomcat服务的编码，在server.xml文件中修改为如下
-  <Connector URIEncoding="UTF-8" port="8888" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+
+```xml
+<Connector URIEncoding="UTF-8" port="8888" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+```
+
 3.在web.xml中添加编码过滤配置设置为UTF-8，这里使用springmvc的编码过滤
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
@@ -1043,11 +1048,11 @@ public class DataController {
 ```
 #####   8.2.1.4 结果（之前台到后台）
 
-![](../images/spring/springmvc/springmvc-param1.png)
+![](../images/spring/springmvc/springmvc-param1.png)  
 
 ![](../images/spring/springmvc/springmvc-param2.png)
 
-![](../images/spring/springmvc/springmvc-param3.png)
+![](../images/spring/springmvc/springmvc-param3.png)  
 
 
 
@@ -1359,7 +1364,7 @@ public class DataController {
 ```
 
 ####  8.3.4结果（之前台到后台）
-![](../images/spring/springmvc/springmvc-json.png);
+![](../images/spring/springmvc/springmvc-json.png)  ;
 
 ### 8.4参数的几种传递方式(后台到前台的参数传递)
 >后台到前台的参数传递
@@ -1901,7 +1906,7 @@ spring可以理解成为一个对象的容器，对象都装载到spring容器�
 集成，实现一个小的增删改查功能,其中的代码就不进行过多的分析。
 
 #### 11.1 添加spring集成hibernate4所需要的jar
-![](../images/spring/springmvc/hibernate/spring-hibernate-jar.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-jar.png)  
 
 #### 11.2 Hibernate五大对象
 在hibernate中，可以说是围绕着这一下五大对象展开的，集成在spring中后，就交给spring对这五大对象进行管理。
@@ -2062,9 +2067,9 @@ public class User {
 ```
 
 ####   11.6 DAO层IUserDao.java接口和UserDAO实现类
- 
+
  IUserDao.java接口
- 
+
  ```java
 package com.learn.dao;
 
@@ -2104,7 +2109,7 @@ public interface IUserDAO {
     public boolean updateUser(User user);
 }
 
-```
+ ```
 
 UserDao实现类
 
@@ -2610,21 +2615,21 @@ OpenSessionInViewFilter主要是保持Session状态知道request将全部页面�
 ```
 不配至OpenSessionInViewFilter，会出现如下图中的错误
 
-![](../images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-OpenSessionInViewFilter.png)  
 
 添加用户
 
-![](../images/spring/springmvc/hibernate/spring-hibernate-addUser.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-addUser.png)  
 
 编辑用户
 
-![](../images/spring/springmvc/hibernate/spring-hibernate-edit1.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-edit1.png)  
 
-![](../images/spring/springmvc/hibernate/spring-hibernate-edit2.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-edit2.png)    
 
 删除用户
 
-![](../images/spring/springmvc/hibernate/spring-hibernate-delete.png)
+![](../images/spring/springmvc/hibernate/spring-hibernate-delete.png)  
 
 
 
