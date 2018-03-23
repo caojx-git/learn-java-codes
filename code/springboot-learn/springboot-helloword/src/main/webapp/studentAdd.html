@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息添加页面</title>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+        function submitData(){
+            $.post("/student/add",{name:$("#name").val(),age:$("#age").val()},
+                function(result){
+                    alert(result);
+                }
+            );
+        }
+    </script>
+</head>
+<body>
+姓名：<input type="text" id="name" name="name"/>
+年龄：<input type="text" id="age" name="age"/>
+<input type="button" value="提交" onclick="submitData()"/>
+</body>
+</html>

@@ -1,0 +1,22 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+helloWorld: Spring Boot Hello World
+
+mysql:
+     jdbcName: com.mysql.jdbc.Driver
+     dbUrl: jdbc:mysql://localhost:3306/db_diary
+     userName: root
+     password: 123456
+
+spring:
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://192.168.46.135:3306/db_book?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+      username: root
+      password: root
+   jpa:
+     hibernate.ddl-auto: update
+     show-sql: true
