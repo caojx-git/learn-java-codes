@@ -2662,6 +2662,66 @@ mysqlimport的常用选项介绍
 ![](../images/mysql/mysql_mysqlimport_1.png)   
 mysqlimport命令常用的选项还有-v 显示版本（version）， -p 提示输入密码（password）等。
 
+
+
+**导入导出案例：**
+
+https://www.2cto.com/database/201702/596873.html
+
+```mysql
+Linux下导出表方法如下：
+
+1、导出数据和表结构：
+
+mysqldump -u用户名 -p密码 数据库名 > 数据库名.sql
+
+#/usr/local/mysql/bin/ mysqldump -uroot -p abc > abc.sql
+
+敲回车后会提示输入密码，也可以将密码跟在-p后边，注意安全性问题。
+
+2、只导出表结构
+
+mysqldump -u用户名 -p密码 -d 数据库名 > 数据库名.sql
+
+#/usr/local/mysql/bin/ mysqldump -uroot -p -d abc > abc.sql
+
+注：/usr/local/mysql/bin/ ---> mysql的data目录
+
+根据我的实践，下边接着讲解在Linux系统下如何向MySQL数据库中导入.sql文件。
+
+导入数据库
+
+1、首先建空数据库
+
+mysql>create database abc;
+
+2、导入数据库
+
+方法一：
+
+(1)选择数据库
+
+mysql>use abc;
+
+(2)设置数据库编码
+
+mysql>set names utf8;
+
+(3)导入数据(注意sql文件的路径)
+
+mysql>source /home/abc/abc.sql;
+
+方法二：
+
+mysql -u用户名 -p密码 数据库名 < 数据库名.sql
+
+#mysql -uabc_f -p abc < abc.sql
+
+建议使用第二种方法导入。
+```
+
+
+
 ## 十九、MySQL 函数
 
 https://www.w3cschool.cn/mysql/func-date-add.html
