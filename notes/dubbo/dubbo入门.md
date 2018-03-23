@@ -22,7 +22,7 @@ Dubbo是一个分布式服务**框架**，致力于提高性能和透明化的[R
 
 优点：
 
-- 远程通讯：提供都明话的远程调用，提供多协议（Dubbo、RMI、WebService、Hessian、Http、Thrift、Redis、Memcached）支持
+- 远程通讯：提供透明化的远程调用，提供多协议（Dubbo、RMI、WebService、Hessian、Http、Thrift、Redis、Memcached）支持
 - 集群容错：如在均衡，失败容错，地址路由，动态配置等集群支持
 - 自动发现：基于注册中心目录服务，是服务消费方能动态的查找服务提供方，支持平滑减少或增加机器。
 
@@ -653,7 +653,7 @@ Hello world, response form provider: 192.168.46.1:20880
 
 zookepper集群部署至少需要部署3台机器，部署奇数台，一般部署1，3，5，7…这样的数量，因为这是根据zookepper的选举算法决定，这个算法有两个必要条件
 
-1. 集群中必须有一般以上的机器同意，才可以成为leader
+1. 集群中必须有一半以上的机器同意，才可以成为leader
 2. 集群中一半的机器瘫痪，整个集群瘫痪。
 
 
