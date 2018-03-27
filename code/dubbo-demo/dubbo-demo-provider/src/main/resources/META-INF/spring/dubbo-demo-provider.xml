@@ -29,7 +29,7 @@ limitations under the License.
     <!-- 使用multicast广播注册中心暴露服务地址,不需要启动任何中心节点，不需要安装zookper一样，和广播地址一样可以互相发现 -->
 <!--    <dubbo:registry address="multicast://224.5.6.7:1234"/>-->
 
-    <!--使用zookeeper作为注册中心-->
+    <!--使用zookeeper作为注册中心，暴露服务地址-->
 <!--    <dubbo:registry address="zookeeper://192.168.46.133:2181"/>-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
@@ -37,7 +37,8 @@ limitations under the License.
    <!-- <dubbo:registry address="zookeeper://192.168.46.133:2181?backup=192.168.46.133:2182,192.168.46.133:2183"/>-->
 
     <!-- use dubbo protocol to export service on port 20880 -->
-    <!-- 服务端和消费端双发通信协议，使用dubbo协议，端口20880 -->
+    <!-- 服务端和消费端双发通信协议，使用dubbo协议，在端口20880暴露服务 -->
+    <!-- 如果要集群多台dubbo服务只需要修改一下dubbo暴露服务的接口就行 -->
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!-- service implementation, as same as regular local bean -->
