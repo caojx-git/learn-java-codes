@@ -2,7 +2,15 @@
 
 [TOC]
 
-duubo官网：http://dubbo.io/
+Duubo官网：http://dubbo.io/
+
+GitHub <https://github.com/alibaba/dubbo>
+
+Dubbo用户手册(中文)：http://dubbo.io/books/dubbo-user-book/
+
+Dubbo开发手册(中文)：http://dubbo.io/books/dubbo-dev-book/
+
+Dubbo管理手册(中文)：http://dubbo.io/books/dubbo-admin-book/
 
 学习源码：https://github.com/caojx-git/learn/tree/master/code/dubbo-demo
 
@@ -843,14 +851,57 @@ Mode: leader
 
 ## 四、Dubbo 服务集群及负载均衡搭建
 
-待补充。。。
+参考：http://blog.java1234.com/blog/articles/384.html
 
-dubbo的负载均衡有4中
+当某个服务并发量特别大的时候，一个服务延迟太高，我们就需要进行服务集群，例如某个项目一天注册量10万，这个注册功能就必须要进行集群了，否则一个服务无法应付这么大的并发量。
+
+dubbo的服务集群很简单，只需在服务提供者的配置文件里改个端口即可，其他代码不需要动，消费者也不需要修改任何配置，因为消费者查找服务是通过注册中心查找需要的服务的。
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 服务名称 -->
+    <dubbo:application name="demo-provider"/>
+    
+    <!--使用zookeeper作为注册中心，暴露服务地址-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <!-- 服务端和消费端双发通信协议，使用dubbo协议，在端口20880暴露服务 -->
+    <!-- 如果要集群多台dubbo服务只需要修改一下dubbo暴露服务的接口就行 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 普通的业务bean -->
+    <bean id="demoService" class="com.alibaba.dubbo.demo.provider.DemoServiceImpl"/>
+
+    <!-- 暴露服务的接口 -->
+    <dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService"/>
+
+</beans>
+```
+
+我们使用20880启动服务提供者后，修改端口为20881再一个服务提供者，如下图我们所示我们启动了两个提供者，我们可以通过调节权重达到负载均衡调用。
+
+![](../images/dubbo/dubbo_4.png)    
+
+
+
+企业级项目多个服务集群，每个服务都放不同机器，不仅能实现负载均衡，也能进行容错；就算一个机器挂了，其他机器可以继续服务。
+
+
+
+dubbo的负载均衡有4中，一般我们通过管理控制台修改权重即可，下边的策略自己了解一下。
 
 1. 随机负载均衡（默认）
 2. 权重轮询
 3. 最少活跃度
 4. 一致性hash算法
+
+
 
 
 
@@ -906,6 +957,14 @@ duubo-admin控制中心功能罗列很清楚，自己动手看比我这里说更
 
 
 ## 参考
+
+java1234 Dubbo学习：http://blog.java1234.com/blog/articles/377.html
+
+Dubbo用户手册(中文)：http://dubbo.io/books/dubbo-user-book/
+
+Dubbo开发手册(中文)：http://dubbo.io/books/dubbo-dev-book/
+
+Dubbo管理手册(中文)：http://dubbo.io/books/dubbo-admin-book/
 
 https://www.cnblogs.com/shengulong/p/8303454.html
 
