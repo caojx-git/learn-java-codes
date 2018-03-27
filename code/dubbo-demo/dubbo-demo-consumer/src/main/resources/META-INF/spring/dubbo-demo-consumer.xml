@@ -23,6 +23,7 @@ limitations under the License.
 
     <!-- consumer's application name, used for tracing dependency relationship (not a matching criterion),
     don't set it same as provider -->
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
     <dubbo:application name="demo-consumer"/>
 
     <!-- use multicast registry center to discover service -->
@@ -39,6 +40,7 @@ limitations under the License.
     <!-- generate proxy for the remote service, then demoService can be used in the same way as the
     local regular interface -->
     <!-- 服务消费者，依赖于服务提供者暴露的接口 -->
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoProviderService  check属性，启动的时候是否检查 一般设置为false 启动的时候不检查-->
     <dubbo:reference id="demoService" check="false" interface="com.alibaba.dubbo.demo.DemoService"/>
 
 </beans>
