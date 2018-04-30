@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <!-- scanner redis properties  -->
+    <context:property-placeholder location="classpath:redis-ms.properties" ignore-unresolvable="true"/>
+    
+    <!-- redis连接池 -->
+    <bean id="jedisConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="${im.hs.server.redis.maxTotal}" />
+        <property name="minIdle" value="${im.hs.server.redis.minIdle}" />
+        <property name="maxWaitMillis" value="${im.hs.server.redis.maxWaitTime}" />
+        <property name="maxIdle" value="${im.hs.server.redis.maxIdle}" />
+        <property name="testOnBorrow" value="${im.hs.server.redis.testOnBorrow}" />
+    </bean>
+    
+    <!--哨兵配置-->
+    <bean id="sentinelConfiguration" class="org.springframework.data.redis.connection.RedisSentinelConfiguration">
+        <property name="master">
+            <bean class="org.springframework.data.redis.connection.RedisNode">
+                <property name="name" value="${im.hs.server.redis.sentinel.masterName}"></property>
+            </bean>
+        </property>
+        <property name="sentinels">
+            <set>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${sentinel1.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${sentinel1.port}"></constructor-arg>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${sentinel2.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${sentinel2.port}"></constructor-arg>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${sentinel3.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${sentinel3.port}"></constructor-arg>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="${sentinel4.host}"></constructor-arg>
+                    <constructor-arg name="port" value="${sentinel4.port}"></constructor-arg>
+                </bean>
+            </set>
+        </property>
+    </bean>
+    
+    <!--连接工厂-->
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <constructor-arg name="sentinelConfig" ref="sentinelConfiguration"></constructor-arg>
+        <constructor-arg name="poolConfig" ref="jedisConfig"></constructor-arg>
+        <property name="password" value="${im.hs.server.redis.sentinel.password}"></property>
+    </bean>
+    
+    <!-- redis操作模板，这里采用尽量面向对象的模板 -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <!--     如果不配置Serializer，那么存储的时候只能使用String，如果用对象类型存储，那么会提示错误 can't cast to String！！！-->
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+        </property>
+        <!--开启事务-->
+        <property name="enableTransactionSupport" value="true"/>
+    </bean>
+
+
+</beans>
