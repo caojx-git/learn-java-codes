@@ -390,10 +390,13 @@ sentinel parallel-syncs mymaster 1
 #启动master
 #/home/caojx/redis/redis_master/bin/redis-server /home/caojx/redis/redis_master/conf/sentinel.conf --sentinel
 
+#redis_slave1
 #/home/caojx/redis/redis_slave1/bin/redis-server /home/caojx/redis/redis_slave1/conf/sentinel.conf --sentinel
 
+#redis_slave2
 #/home/caojx/redis/redis_slave2/bin/redis-server /home/caojx/redis/redis_slave2/conf/sentinel.conf --sentinel
 
+#redis_slave3
 #/home/caojx/redis/redis_slave3/bin/redis-server /home/caojx/redis/redis_slave3/conf/sentinel.conf --sentinel
 
 #ps -ef | grep redis
