@@ -2,10 +2,10 @@ package personal.caojx;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 import org.junit.Test;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPool;
-import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.*;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -92,6 +92,29 @@ public class JedisDemo {
             name = "rose";
             return name;
         }
+    }
+    
+    /**
+     * redis 主从测试
+     */
+    @Test
+    public void sentinelTest() {
+        Set<String> sentinels = new HashSet<String>();
+        sentinels.add(new HostAndPort("192.168.46.137", 26376).toString());
+        sentinels.add(new HostAndPort("192.168.46.137", 26377).toString());
+        sentinels.add(new HostAndPort("192.168.46.137", 26378).toString());
+        sentinels.add(new HostAndPort("192.168.46.137", 26379).toString());
+        JedisSentinelPool sentinelPool = new JedisSentinelPool("mymaster", sentinels, "123456");
+        
+        System.out.println("Current master: " + sentinelPool.getCurrentHostMaster().toString());
+        
+        Jedis master = sentinelPool.getResource();
+        master.set("username","jager");
+        
+        System.out.println(master.get("username"));
+        
+        sentinelPool.close();
+        sentinelPool.destroy();
     }
 
 }
