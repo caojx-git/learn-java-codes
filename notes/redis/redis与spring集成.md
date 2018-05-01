@@ -4,6 +4,14 @@
 
 练习源码：https://github.com/caojx-git/learn/tree/master/code/spring-redis
 
+本文主要参考：
+
+[架构之路之spring+redis的集成](https://blog.csdn.net/tomcat_2014/article/details/55260306)
+
+[](https://blog.csdn.net/u010690828/article/details/77141083)
+
+[spring整合redis(集群、主从)](https://blog.csdn.net/sunqingzhong44/article/details/70976038?locationNum=6&fps=1)
+
 ## 一、Redis简介
 
 Redis是用C语言开发的一个开源的高性能键值对的数据库，他通过提供多种键值的数据类型来适应不同场景下的存储需求，目前为止Redis
