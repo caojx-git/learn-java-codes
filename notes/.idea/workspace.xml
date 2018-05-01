@@ -2,14 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2705db95-574a-45f4-9454-20b2ca64c46c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/docker/docker-ufs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/docker/docker-ufs2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/docker/docker-windows1.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/linux/.~inux学习.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docker/docker化的Java应用.md" afterPath="$PROJECT_DIR$/docker/docker化的Java应用.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/compiler.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/encodings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__commons_net_commons_net_3_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_apache_activemq_activemq_core_5_7_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_apache_activemq_kahadb_5_7_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_apache_activemq_protobuf_activemq_protobuf_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_j2ee_management_1_1_spec_1_0_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jms_1_1_spec_1_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_fusesource_hawtbuf_hawtbuf_1_9.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_1_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_fusesource_hawtdispatch_hawtdispatch_transport_1_11.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_fusesource_mqtt_client_mqtt_client_1_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_jasypt_jasypt_1_9_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_slf4j_slf4j_api_1_6_6.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_aop_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_beans_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_context_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_core_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_expression_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_jms_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_messaging_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_test_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/libraries/Maven__org_springframework_spring_tx_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/uiDesigner.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/activemq-java/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/.name" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/compiler.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/encodings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_10_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_aop_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_beans_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_context_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_core_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_expression_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_test_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_web_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/uiDesigner.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/ehcahce-java/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/artifacts/freemark_java_war.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/artifacts/freemark_java_war_exploded.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/artifacts/freemarker_java_war.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/artifacts/freemarker_java_war_exploded.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/compiler.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/libraries/Maven__org_freemarker_freemarker_2_3_23.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../code/freemarker-java/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../code/shiro-spring/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/../code/shiro-spring/src/main/resources/applicationContext.xml" />
+      <change beforePath="$PROJECT_DIR$/../code/springboot-learn/springboot-helloword/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/../code/springboot-learn/springboot-helloword/src/main/resources/application.yml" />
+      <change beforePath="$PROJECT_DIR$/../code/webservice-java/src/main/java/caojx/learn/App.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../code/webservice-java/src/test/java/caojx/learn/AppTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored mask=".idea/*" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +94,18 @@
     <favorites_list name="notes" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="docker化的Java应用.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docker/docker化的Java应用.md">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mybatis实现增删改查.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mybatis/mybatis实现增删改查.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="399">
-                <caret line="127" column="21" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
-                <folding />
+              <first_editor relative-caret-position="-1395">
+                <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                <folding>
+                  <marker date="1522071798654" expanded="false" signature="314:466" ph="..." />
+                  <marker date="1522071798654" expanded="true" signature="599:690" ph="{...}" />
+                  <marker date="1522071798654" expanded="true" signature="816:845" ph="{...}" />
+                </folding>
               </first_editor>
               <second_editor />
             </state>
@@ -107,7 +172,6 @@
         <option value="$PROJECT_DIR$/git/4_git使用基础篇.md" />
         <option value="$PROJECT_DIR$/linux/500Illegal_PORT_command的问题_主被动模式.md" />
         <option value="$PROJECT_DIR$/markdown/haroopad安装.md" />
-        <option value="$PROJECT_DIR$/markdown/markdown入门.md" />
         <option value="$PROJECT_DIR$/tomcat/tomcat中配置https.md" />
         <option value="$PROJECT_DIR$/tools/基于腾讯云的域名绑定与tomcat部署.md" />
         <option value="$PROJECT_DIR$/junit4/junit4学习.md" />
@@ -120,6 +184,9 @@
         <option value="$PROJECT_DIR$/设计模式/代理模式.md" />
         <option value="$PROJECT_DIR$/redis/redis入门.md" />
         <option value="$PROJECT_DIR$/docker/docker化的Java应用.md" />
+        <option value="$PROJECT_DIR$/tomcat/tomcat部署项目的三种方式.md" />
+        <option value="$PROJECT_DIR$/gradle/gradle入门.md" />
+        <option value="$PROJECT_DIR$/markdown/markdown入门.md" />
       </list>
     </option>
   </component>
@@ -143,11 +210,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="463" />
-    <option name="y" value="147" />
-    <option name="width" value="1365" />
-    <option name="height" value="706" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="807" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -161,12 +227,13 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,26 +244,24 @@
             <path>
               <item name="notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="notes" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="activeMQ" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="notes" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-              <item name="docker" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="settings.editor.splitter.proportion" value="0.33365476" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -207,16 +272,16 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/images/tool/tengxuyun" />
-      <recent name="$PROJECT_DIR$/images/git" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/docker" />
       <recent name="$PROJECT_DIR$/redis" />
       <recent name="$PROJECT_DIR$/images/redis" />
       <recent name="$PROJECT_DIR$/images/design" />
       <recent name="$PROJECT_DIR$/images/jdbc" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images/tool/tengxuyun" />
+      <recent name="$PROJECT_DIR$/images/git" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,6 +318,53 @@
       <module name="" />
       <envs />
     </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+    </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
@@ -260,14 +372,6 @@
       <setting name="launchBrowser" value="true" />
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -288,12 +392,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -328,6 +426,12 @@
       <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -465,55 +569,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -611,9 +666,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -673,160 +739,36 @@
       <workItem from="1502035269337" duration="1964000" />
       <workItem from="1502460375770" duration="4704000" />
       <workItem from="1502628596467" duration="5766000" />
-    </task>
-    <task id="LOCAL-00001" summary="git 常用命令">
-      <created>1490973845562</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1490973845562</updated>
-    </task>
-    <task id="LOCAL-00002" summary="测试">
-      <created>1490974060075</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1490974060075</updated>
-    </task>
-    <task id="LOCAL-00003" summary="git 笔记修改">
-      <created>1490975620016</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1490975620016</updated>
-    </task>
-    <task id="LOCAL-00004" summary="git 笔记添加">
-      <created>1490976809132</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1490976809132</updated>
-    </task>
-    <task id="LOCAL-00005" summary="git 笔记修改">
-      <created>1490977097328</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1490977097328</updated>
-    </task>
-    <task id="LOCAL-00006" summary="git 笔记修改">
-      <created>1490977281622</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1490977281622</updated>
-    </task>
-    <task id="LOCAL-00007" summary="笔记修改">
-      <created>1490977805501</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1490977805501</updated>
-    </task>
-    <task id="LOCAL-00008" summary="笔记修改">
-      <created>1490977985001</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1490977985001</updated>
-    </task>
-    <task id="LOCAL-00009" summary="修改git笔记">
-      <created>1491009962873</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1491009962873</updated>
-    </task>
-    <task id="LOCAL-00010" summary="markdown笔记添加换行说明">
-      <created>1491010095669</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1491010095669</updated>
-    </task>
-    <task id="LOCAL-00011" summary="markdown笔记显示样式修改">
-      <created>1491010202806</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1491010202806</updated>
-    </task>
-    <task id="LOCAL-00012" summary="haroopad笔记显示样式修改">
-      <created>1491010227478</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1491010227478</updated>
-    </task>
-    <task id="LOCAL-00013" summary="haroopad笔记显示样式修改">
-      <created>1491010346628</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1491010346628</updated>
-    </task>
-    <task id="LOCAL-00014" summary="git笔记显示样式修改">
-      <created>1491010796115</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1491010796115</updated>
-    </task>
-    <task id="LOCAL-00015" summary="git笔记显示样式修改">
-      <created>1491011041020</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1491011041020</updated>
-    </task>
-    <task id="LOCAL-00016" summary="添加笔记基于腾讯云的动态域名绑定">
-      <created>1491063250891</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1491063250891</updated>
-    </task>
-    <task id="LOCAL-00017" summary="更新Maven笔记">
-      <created>1491114762266</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1491114762266</updated>
-    </task>
-    <task id="LOCAL-00018" summary="腾讯云域名绑定与tomcat部署">
-      <created>1491148907641</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1491148907642</updated>
-    </task>
-    <task id="LOCAL-00019" summary="更新git笔记">
-      <created>1491182540541</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1491182540541</updated>
-    </task>
-    <task id="LOCAL-00020" summary="git笔记更新">
-      <created>1491183093251</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1491183093251</updated>
-    </task>
-    <task id="LOCAL-00021" summary="更新笔记 500Illegal_port_command的问题_主被动模式">
-      <created>1491185878825</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1491185878825</updated>
-    </task>
-    <task id="LOCAL-00022" summary="更新笔记">
-      <created>1491186126837</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1491186126837</updated>
+      <workItem from="1516953524494" duration="508000" />
+      <workItem from="1516961230435" duration="637000" />
+      <workItem from="1516974025432" duration="1248000" />
+      <workItem from="1517189216251" duration="26000" />
+      <workItem from="1517285940416" duration="32000" />
+      <workItem from="1517404627850" duration="469000" />
+      <workItem from="1517406173805" duration="53000" />
+      <workItem from="1517406573387" duration="614000" />
+      <workItem from="1517497528505" duration="181000" />
+      <workItem from="1517667549108" duration="167000" />
+      <workItem from="1517667874667" duration="21000" />
+      <workItem from="1517797574552" duration="497000" />
+      <workItem from="1517989470527" duration="5000" />
+      <workItem from="1517989812150" duration="48000" />
+      <workItem from="1518880111563" duration="62000" />
+      <workItem from="1518880518896" duration="12000" />
+      <workItem from="1518881416623" duration="1000" />
+      <workItem from="1519829207853" duration="185000" />
+      <workItem from="1519911032497" duration="436000" />
+      <workItem from="1520175183956" duration="138000" />
+      <workItem from="1520175361824" duration="14000" />
+      <workItem from="1520175719445" duration="46000" />
+      <workItem from="1520343075326" duration="305000" />
+      <workItem from="1520429793534" duration="89000" />
+      <workItem from="1521125571035" duration="396000" />
+      <workItem from="1521165704567" duration="77000" />
+      <workItem from="1521448702220" duration="88000" />
+      <workItem from="1521772447588" duration="84000" />
+      <workItem from="1522071758914" duration="166000" />
+      <workItem from="1522071934970" duration="179000" />
     </task>
     <task id="LOCAL-00023" summary="Centos7中安装haroopad">
       <created>1491187500962</created>
@@ -961,11 +903,221 @@
       <option name="project" value="LOCAL" />
       <updated>1502464697369</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="新增log4j使用.md文件">
+      <created>1516962002410</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1516962002410</updated>
+    </task>
+    <task id="LOCAL-00043" summary="新增tomcat部署项目的三种方式.md文件">
+      <created>1516962029356</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1516962029356</updated>
+    </task>
+    <task id="LOCAL-00044" summary="更新mybatis入门实现增删改查.md文件">
+      <created>1516962063917</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1516962063917</updated>
+    </task>
+    <task id="LOCAL-00045" summary="更新log4j使用.md">
+      <created>1516974158286</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1516974158286</updated>
+    </task>
+    <task id="LOCAL-00046" summary="更新log4j使用.md">
+      <created>1516974252504</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1516974252504</updated>
+    </task>
+    <task id="LOCAL-00047" summary="更新tomcat部署项目的三种方式.md">
+      <created>1516974324490</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1516974324490</updated>
+    </task>
+    <task id="LOCAL-00048" summary="新增memcached使用.md">
+      <created>1517404690980</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1517404690981</updated>
+    </task>
+    <task id="LOCAL-00049" summary="更新memcached使用.md">
+      <created>1517405111136</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1517405111136</updated>
+    </task>
+    <task id="LOCAL-00050" summary="gradle笔记图片">
+      <created>1517497550214</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1517497550214</updated>
+    </task>
+    <task id="LOCAL-00051" summary="新增gradle入门.md">
+      <created>1517497597577</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1517497597577</updated>
+    </task>
+    <task id="LOCAL-00052" summary="新增jenkins.md笔记">
+      <created>1517667665298</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1517667665298</updated>
+    </task>
+    <task id="LOCAL-00053" summary="更新笔记">
+      <created>1518880145445</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1518880145446</updated>
+    </task>
+    <task id="LOCAL-00054" summary="添加duubo入门.md笔记">
+      <created>1519829377294</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1519829377295</updated>
+    </task>
+    <task id="LOCAL-00055" summary="更新duubo入门.md">
+      <created>1519911088349</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1519911088351</updated>
+    </task>
+    <task id="LOCAL-00056" summary="更新redis笔记">
+      <created>1520175255970</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1520175255971</updated>
+    </task>
+    <task id="LOCAL-00057" summary="更新memcached笔记">
+      <created>1520175300476</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1520175300476</updated>
+    </task>
+    <task id="LOCAL-00058" summary="添加常用程序无限使用方法.md">
+      <created>1520175755646</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1520175755647</updated>
+    </task>
+    <task id="LOCAL-00059" summary="更新 redis入门.md">
+      <created>1520343129010</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1520343129011</updated>
+    </task>
+    <task id="LOCAL-00060" summary="添加 redis主从配置.md">
+      <created>1520343159969</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1520343159969</updated>
+    </task>
+    <task id="LOCAL-00061" summary="更新 nginx使用.md">
+      <created>1520343184104</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1520343184104</updated>
+    </task>
+    <task id="LOCAL-00062" summary="添加 tomcat集群通过redis共享session.md">
+      <created>1520343359374</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1520343359374</updated>
+    </task>
+    <task id="LOCAL-00063" summary="添加ehcache入门.md 笔记">
+      <created>1520429867532</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1520429867532</updated>
+    </task>
+    <task id="LOCAL-00064" summary="添加ehcache整合shiro.md笔记">
+      <created>1521125698337</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1521125698338</updated>
+    </task>
+    <task id="LOCAL-00065" summary="修改git查看历史命令.md修改为git工作常用命令">
+      <created>1521125792522</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1521125792522</updated>
+    </task>
+    <task id="LOCAL-00066" summary="添加activeMQ入门.md笔记">
+      <created>1521125863374</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1521125863374</updated>
+    </task>
+    <task id="LOCAL-00067" summary="修改笔记中错误">
+      <created>1521165769268</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1521165769270</updated>
+    </task>
+    <task id="LOCAL-00068" summary="优化笔记中的小错误">
+      <created>1521448772626</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1521448772627</updated>
+    </task>
+    <task id="LOCAL-00069" summary="优化笔记中的小错误">
+      <created>1521772514936</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1521772514936</updated>
+    </task>
+    <task id="LOCAL-00070" summary="修改文件名">
+      <created>1522071954192</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1522071954193</updated>
+    </task>
+    <task id="LOCAL-00071" summary="更新maven的使用">
+      <created>1522072094590</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1522072094590</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81711000" />
+    <option name="totallyTimeSpent" value="88495000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,38 +1129,71 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="807" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6690856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.73770493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2118003" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29542202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753405" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753405" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289855" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.73770493" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23462088" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1017,32 +1202,32 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加笔记基于腾讯云的动态域名绑定" />
-    <MESSAGE value="更新Maven笔记" />
-    <MESSAGE value="腾讯云域名绑定与tomcat部署" />
-    <MESSAGE value="更新git笔记" />
-    <MESSAGE value="git笔记更新" />
-    <MESSAGE value="更新笔记 500Illegal_port_command的问题_主被动模式" />
+    <MESSAGE value="更新tomcat部署项目的三种方式.md" />
+    <MESSAGE value="新增memcached使用.md" />
+    <MESSAGE value="更新memcached使用.md" />
+    <MESSAGE value="gradle笔记图片" />
+    <MESSAGE value="新增gradle入门.md" />
+    <MESSAGE value="新增jenkins.md笔记" />
+    <MESSAGE value="更新mysql学习入门.md" />
+    <MESSAGE value="添加duubo入门.md笔记" />
+    <MESSAGE value="更新duubo入门.md" />
+    <MESSAGE value="更新redis笔记" />
+    <MESSAGE value="更新memcached笔记" />
+    <MESSAGE value="添加常用程序无限使用方法.md" />
+    <MESSAGE value="更新 redis入门.md" />
+    <MESSAGE value="添加 redis主从配置.md" />
+    <MESSAGE value="更新 nginx使用.md" />
+    <MESSAGE value="添加 tomcat集群通过redis共享session.md" />
+    <MESSAGE value="添加ehcache入门.md 笔记" />
+    <MESSAGE value="添加ehcache整合shiro.md笔记" />
+    <MESSAGE value="修改git查看历史命令.md修改为git工作常用命令" />
+    <MESSAGE value="添加activeMQ入门.md笔记" />
+    <MESSAGE value="修改笔记中错误" />
     <MESSAGE value="更新笔记" />
-    <MESSAGE value="Centos7中安装haroopad" />
-    <MESSAGE value="更新markdown入门笔记" />
-    <MESSAGE value="tomcat中配置https" />
-    <MESSAGE value="tomcat中配置https笔记更新" />
-    <MESSAGE value="添加笔记基于腾讯云的域名绑定与tomcat部署" />
-    <MESSAGE value="修改基于腾讯云的域名绑定与tomcat部署的显示样式" />
-    <MESSAGE value="更新maven笔记" />
-    <MESSAGE value="添加junit笔记" />
-    <MESSAGE value="添加jdbc连接池的笔记" />
-    <MESSAGE value="修改jdbc连接池的笔记" />
-    <MESSAGE value="更新springmvc笔记" />
-    <MESSAGE value="更新spring笔记" />
-    <MESSAGE value="更新PLSQL笔记" />
-    <MESSAGE value="更新Linux笔记" />
-    <MESSAGE value="更新CentOS7中安装网易云音乐笔记" />
-    <MESSAGE value="redis笔记修改" />
-    <MESSAGE value="Redis笔记修改" />
-    <MESSAGE value="提交Docker笔记" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交Docker笔记" />
+    <MESSAGE value="优化笔记中的小错误" />
+    <MESSAGE value="修改文件名" />
+    <MESSAGE value="更新maven的使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新maven的使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1053,250 +1238,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/git/3_git工作区暂存区和版本库.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/4_git使用基础篇.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1862">
-            <caret line="98" column="30" lean-forward="false" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/5_简明 Git 命令速查表（中文版）.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2318">
-            <caret line="122" column="57" lean-forward="false" selection-start-line="122" selection-start-column="57" selection-end-line="122" selection-end-column="57" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/6_git仓库创建.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="418">
-            <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/7_git分支管理.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1900">
-            <caret line="100" column="27" lean-forward="true" selection-start-line="100" selection-start-column="27" selection-end-line="100" selection-end-column="27" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/8_git工作流程.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="19">
-            <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/9_git查看历史命令.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/10_git标签.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="646">
-            <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/11_git服务器搭建.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/1_CentOS7中安装git.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/1_CentOS7中安装git.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/idea/Intllij_IDEA快捷键.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/idea/IntelliJ IDEA中找不到suberversion解决方案.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="285">
-            <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/idea/Intellij Idea中找不到suberversion解决方案.md" />
-    <entry file="file://$PROJECT_DIR$/linux/500 Illegal PORT command的问题(主被动模式).md" />
-    <entry file="file://$PROJECT_DIR$/tools/CentOS7中IDEA或WPS无法切换中文输入法解决方案.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-55">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/git基本操作.md" />
-    <entry file="file://$PROJECT_DIR$/git/8_git工作流程.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="38">
-            <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/6_git仓库创建.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-384">
-            <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/10_git标签.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-403">
-            <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/9_git查看历史命令.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-1106">
-            <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linux/CentOS7中IDEA或WPS无法切换中文输入法解决方案.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="95">
-            <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linux/500Illegal_PORT_command的问题_主被动模式.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="247">
-            <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oracle/oracle触发器.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tomcat/使用tomcat的hostmanger.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/5_简明 Git 命令速查表（中文版）.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="485">
-            <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/git/11_git服务器搭建.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="19">
-            <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/git/2_git和GitHub.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1382,16 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markdown/markdown入门.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="57">
-            <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oracle/PLSQL.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1446,16 +1377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/markdown/Centos7 中安装haroopad.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="646">
-            <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/设计模式/代理模式.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1496,11 +1417,228 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/log/log4j使用.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/git/5_简明 Git 命令速查表（中文版）.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="457">
+            <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/memcached/memcached_1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/memcached/memcached使用.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-23766">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/gradle/gradle_5.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle/gradle入门.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="176">
+            <caret line="456" column="0" lean-forward="true" selection-start-line="456" selection-start-column="0" selection-end-line="456" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/jenkins/jenkins_command.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/jenkins/jenkins_ex_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/Centos7 中安装haroopad.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="510">
+            <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="18" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/java实现excel导入导出.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="-340">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/markdown/markdown入门.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="225">
+            <caret line="15" column="47" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="47" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idea/MacOSX中的IntelliJ IDEA快捷键.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="41">
+            <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/dubbo/dubbo_admin_2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/dubbo/dubbo_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/redis/redis_ha_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/redis/redis-windows4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/redis/redis_cluster_1.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../code/dubbo-demo/dubbo-demo-provider/src/main/resources/META-INF/spring/dubbo-demo-provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/常用程序无限试用方法.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/redis/redis入门.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="181">
-            <caret line="169" column="41" lean-forward="false" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
+          <first_editor relative-caret-position="69">
+            <caret line="1902" column="0" lean-forward="false" selection-start-line="1902" selection-start-column="0" selection-end-line="1902" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redis/redis主从配置.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nginx/nginx使用.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/tomcat部署项目的三种方式.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="255">
+            <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/tomcat/tomcat_redis_1.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tomcat/tomcat集群通过redis共享session.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ehcache/ehcache整合shiro.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ehcache/ehcache入门.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linux/shell使用.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="53">
+            <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           </first_editor>
           <second_editor />
         </state>
@@ -1509,9 +1647,278 @@
     <entry file="file://$PROJECT_DIR$/docker/docker化的Java应用.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="399">
-            <caret line="127" column="21" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="127" selection-end-column="21" />
+          <first_editor relative-caret-position="4950">
+            <caret line="330" column="0" lean-forward="false" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
             <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo/dubbo入门.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <folding>
+              <marker date="1521720257839" expanded="true" signature="4021:5212" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="5382:6331" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="5750:5883" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="6065:6185" ph="..." />
+              <marker date="1521720257839" expanded="false" signature="6422:6557" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="6654:6950" ph="{...}" />
+              <marker date="1521720257839" expanded="true" signature="7195:7666" ph="{...}" />
+              <marker date="1521720257839" expanded="true" signature="7205:7377" ph="//..." />
+              <marker date="1521720257839" expanded="false" signature="7757:7867" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="7937:8797" ph="{...}" />
+              <marker date="1521720257839" expanded="true" signature="7947:8119" ph="//..." />
+              <marker date="1521720257839" expanded="true" signature="23594:25282" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="23979:24053" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="24068:24213" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="24233:25271" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="24277:24422" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="24469:24627" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="24676:24832" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="24876:25047" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="25068:25242" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="25479:26177" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="25636:25760" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="25971:26166" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="25992:26146" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="26382:27078" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="26539:26663" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="26872:27067" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="26893:27047" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="27269:28556" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="28748:29893" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="29116:29249" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="29628:29748" ph="..." />
+              <marker date="1521720257839" expanded="false" signature="29993:30128" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="30225:30521" ph="{...}" />
+              <marker date="1521720257839" expanded="true" signature="30869:31340" ph="{...}" />
+              <marker date="1521720257839" expanded="true" signature="30879:31051" ph="//..." />
+              <marker date="1521720257839" expanded="false" signature="31436:31546" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="31616:32476" ph="{...}" />
+              <marker date="1521720257839" expanded="true" signature="31626:31798" ph="//..." />
+              <marker date="1521720257839" expanded="true" signature="37095:38517" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="38677:39885" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="39045:39178" ph="..." />
+              <marker date="1521720257839" expanded="true" signature="39619:39739" ph="..." />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysql/mysql学习入门.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="350">
+            <caret line="2723" column="0" lean-forward="false" selection-start-line="2723" selection-start-column="0" selection-end-line="2723" selection-end-column="0" />
+            <folding>
+              <marker date="1521687036230" expanded="true" signature="5551:5609" ph="SELECT host,... user" />
+              <marker date="1521687036230" expanded="true" signature="6529:6650" ph="SELECT,INSER... " />
+              <marker date="1521687036230" expanded="true" signature="11352:11365" ph="help content... " />
+              <marker date="1521687036230" expanded="true" signature="11408:11431" ph="help Account... " />
+              <marker date="1521687036230" expanded="true" signature="13072:13100" ph="show variabl... " />
+              <marker date="1521687036230" expanded="true" signature="13896:13927" ph="set characte... " />
+              <marker date="1521687036230" expanded="true" signature="13929:13958" ph="set characte... " />
+              <marker date="1521687036230" expanded="true" signature="14115:14153" ph="set global c... " />
+              <marker date="1521687036230" expanded="true" signature="14155:14191" ph="set global c... " />
+              <marker date="1521687036230" expanded="true" signature="14500:14514" ph="show databas... " />
+              <marker date="1521687036230" expanded="true" signature="14744:14770" ph="show create " />
+              <marker date="1521687036230" expanded="true" signature="14863:15018" ph="Create Datab... " />
+              <marker date="1521687036230" expanded="true" signature="15019:15170" ph="CREATE DATAB... mysql" />
+              <marker date="1521687036230" expanded="true" signature="15221:15261" ph="alter databa... " />
+              <marker date="1521687036230" expanded="true" signature="15303:15344" ph="create datab... " />
+              <marker date="1521687036230" expanded="true" signature="15384:15406" ph="show create " />
+              <marker date="1521687036230" expanded="true" signature="15448:15477" ph="show table s... " />
+              <marker date="1521687036230" expanded="true" signature="15514:15549" ph="alter table " />
+              <marker date="1521687036230" expanded="true" signature="15587:15741" ph="create table... tb_books" />
+              <marker date="1521687036230" expanded="true" signature="15782:15809" ph="show full co... " />
+              <marker date="1521687036230" expanded="true" signature="15925:15966" ph="select user,... user" />
+              <marker date="1521687036230" expanded="true" signature="16901:16945" ph="grant 权限 on " />
+              <marker date="1521687036230" expanded="true" signature="16979:17020" ph="insert update... " />
+              <marker date="1521687036230" expanded="true" signature="17295:17349" ph="create user " />
+              <marker date="1521687036230" expanded="true" signature="17361:17402" ph="select user,... user" />
+              <marker date="1521687036230" expanded="true" signature="17420:17458" ph="GRANT ALL ON... " />
+              <marker date="1521687036230" expanded="true" signature="17474:17510" ph="SHOW GRANTS " />
+              <marker date="1521687036230" expanded="true" signature="17536:17597" ph="grant all on... " />
+              <marker date="1521687036230" expanded="true" signature="17606:17622" ph="flush privil... " />
+              <marker date="1521687036230" expanded="true" signature="17658:17712" ph="create user " />
+              <marker date="1521687036230" expanded="true" signature="17714:17752" ph="GRANT ALL ON... " />
+              <marker date="1521687036230" expanded="true" signature="17782:17862" ph="grant all on... " />
+              <marker date="1521687036230" expanded="true" signature="17915:17999" ph="grant select... " />
+              <marker date="1521687036230" expanded="true" signature="18065:18106" ph="select user,... user" />
+              <marker date="1521687036230" expanded="true" signature="19035:19095" ph="grant all pr... " />
+              <marker date="1521687036230" expanded="true" signature="19151:19167" ph="flush privil... " />
+              <marker date="1521687036230" expanded="true" signature="19243:19284" ph="select user,... user" />
+              <marker date="1521687036230" expanded="true" signature="20182:20222" ph="REVOKE INSER... " />
+              <marker date="1521687036230" expanded="true" signature="20249:20346" ph="INSERT,SELEC... " />
+              <marker date="1521687036230" expanded="true" signature="20403:20464" ph="LOCK TABLES,... " />
+              <marker date="1521687036230" expanded="true" signature="20465:20520" ph="CREATE VIEW,... " />
+              <marker date="1521687036230" expanded="true" signature="20521:20567" ph="CREATE USER,... " />
+              <marker date="1521687036230" expanded="true" signature="20596:20698" ph="grant select... " />
+              <marker date="1521687036230" expanded="true" signature="20740:20793" ph="revoke creat... " />
+              <marker date="1521687036230" expanded="true" signature="20872:20912" ph="CREATE USER " />
+              <marker date="1521687036230" expanded="true" signature="20935:20989" ph="create user " />
+              <marker date="1521687036230" expanded="true" signature="21159:21191" ph="select user,... user" />
+              <marker date="1521687036230" expanded="true" signature="21222:21275" ph="create user " />
+              <marker date="1521687036230" expanded="true" signature="21306:21340" ph="show grants " />
+              <marker date="1521687036230" expanded="true" signature="21474:21558" ph="grant select... " />
+              <marker date="1521687036230" expanded="true" signature="21590:21716" ph="show grants " />
+              <marker date="1521687036230" expanded="true" signature="21717:21834" ph="GRANT USAGE " />
+              <marker date="1521687036230" expanded="true" signature="21887:21909" ph="drop user 'u... " />
+              <marker date="1521687036230" expanded="true" signature="21956:22018" ph="delete from mysql.user... " />
+              <marker date="1521687036230" expanded="true" signature="22064:22080" ph="flush privil... " />
+              <marker date="1521687036230" expanded="true" signature="22146:22159" ph="select user(... " />
+              <marker date="1521687036230" expanded="true" signature="22179:22196" ph="select datab... " />
+              <marker date="1521687036230" expanded="true" signature="22315:22329" ph="show databas... " />
+              <marker date="1521687036230" expanded="true" signature="22608:22633" ph="show databas... " />
+              <marker date="1521687036230" expanded="true" signature="22885:22899" ph="show databas... " />
+              <marker date="1521687036230" expanded="true" signature="22945:23005" ph="SHOW {DATABA... " />
+              <marker date="1521687036230" expanded="true" signature="24026:24040" ph="show databas... " />
+              <marker date="1521687036230" expanded="true" signature="24072:24092" ph="create datab... haha" />
+              <marker date="1521687036230" expanded="true" signature="24129:24162" ph="create datab... clsn" />
+              <marker date="1521687036230" expanded="true" signature="24172:24197" ph="show create " />
+              <marker date="1521687036230" expanded="true" signature="24250:24281" ph="alter databa... clsn" />
+              <marker date="1521687036230" expanded="true" signature="24698:24716" ph="drop databas... " />
+              <marker date="1521687036230" expanded="true" signature="24763:24777" ph="show databas... " />
+              <marker date="1521687036230" expanded="true" signature="26431:26480" ph="CREATE TABLE... table_name" />
+              <marker date="1521687036230" expanded="true" signature="26617:26872" ph="CREATE TABLE... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="26925:27161" ph="CREATE TABLE... runoob_tbl2" />
+              <marker date="1521687036230" expanded="true" signature="27525:27546" ph="DROP TABLE t... " />
+              <marker date="1521687036230" expanded="true" signature="27641:27665" ph="show create " />
+              <marker date="1521687036230" expanded="true" signature="27724:27747" ph="rename table... " />
+              <marker date="1521687036230" expanded="true" signature="27858:27891" ph="alter table haha... " />
+              <marker date="1521687036230" expanded="true" signature="28020:28066" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="28477:28521" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="29102:29143" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="29777:29841" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="30580:30609" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="31295:31334" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="32019:32070" ph="alter table people... " />
+              <marker date="1521687036230" expanded="true" signature="33039:33172" ph="INSERT INTO table_name... " />
+              <marker date="1521687036230" expanded="true" signature="34011:34062" ph="insert into clsn... " />
+              <marker date="1521687036230" expanded="true" signature="34148:34166" ph="select * fro... clsn" />
+              <marker date="1521687036230" expanded="true" signature="34343:34371" ph="create table... test2" />
+              <marker date="1521687036230" expanded="true" signature="34418:34454" ph="insert into test2... " />
+              <marker date="1521687036230" expanded="true" signature="34436:34454" ph="select * fro... clsn" />
+              <marker date="1521687036230" expanded="true" signature="34540:34560" ph="select * fro... test2" />
+              <marker date="1521687036230" expanded="true" signature="34900:34982" ph="SELECT colum... table_name" />
+              <marker date="1521687036230" expanded="true" signature="35258:35282" ph="select * fro... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="35455:35564" ph="SELECT field... " />
+              <marker date="1521687036230" expanded="true" signature="36096:36160" ph="SELECT * fro... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="36192:36256" ph="SELECT * fro... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="36861:36934" ph="UPDATE table_name... " />
+              <marker date="1521687036230" expanded="true" signature="37164:37181" ph="UPDATE 语句... " />
+              <marker date="1521687036230" expanded="true" signature="37182:37243" ph="UPDATE runoob_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="37291:37333" ph="SELECT * fro... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="37880:37917" ph="DELETE FROM table_name... " />
+              <marker date="1521687036230" expanded="true" signature="38056:38072" ph="delete from test... " />
+              <marker date="1521687036230" expanded="true" signature="38091:38110" ph="truncate tab... " />
+              <marker date="1521687036230" expanded="true" signature="38329:38369" ph="DELETE FROM runoob_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="38490:38599" ph="SELECT field... " />
+              <marker date="1521687036230" expanded="true" signature="38913:38970" ph="SELECT * fro... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="39546:39649" ph="SELECT expre... " />
+              <marker date="1521687036230" expanded="true" signature="39650:39730" ph="SELECT expre... " />
+              <marker date="1521687036230" expanded="true" signature="40136:40237" ph="SELECT field... " />
+              <marker date="1521687036230" expanded="true" signature="40491:40602" ph="SELECT colum... table_name" />
+              <marker date="1521687036230" expanded="true" signature="40669:40724" ph="SELECT name,... employee_tbl" />
+              <marker date="1521687036230" expanded="true" signature="41017:41102" ph="SELECT name,... employee_tbl" />
+              <marker date="1521687036230" expanded="true" signature="41410:41432" ph="select coale... " />
+              <marker date="1521687036230" expanded="true" signature="41558:41659" ph="SELECT coale... employee_tbl" />
+              <marker date="1521687036230" expanded="true" signature="42588:42612" ph="SELECT * FRO... tcount_tbl" />
+              <marker date="1521687036230" expanded="true" signature="42871:42895" ph="SELECT * fro... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="43616:43746" ph="SELECT a.run... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="44208:44331" ph="SELECT a.run... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="44944:45073" ph="SELECT a.run... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="45809:45939" ph="SELECT a.run... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="47340:47391" ph="SELECT name person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="47437:47488" ph="SELECT name person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="47535:47586" ph="SELECT name person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="47642:47702" ph="SELECT name person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="49126:49188" ph="CREATE TABLE... runoob_transaction_test" />
+              <marker date="1521687036230" expanded="true" signature="49245:49282" ph="select * fro... runoob_transaction_test" />
+              <marker date="1521687036230" expanded="true" signature="49621:49658" ph="select * fro... runoob_transaction_test" />
+              <marker date="1521687036230" expanded="true" signature="49970:50007" ph="select * fro... runoob_transaction_test" />
+              <marker date="1521687036230" expanded="true" signature="50333:50408" ph="create table... testalter_tbl" />
+              <marker date="1521687036230" expanded="true" signature="50891:50924" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="51043:51078" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="51631:51663" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="51665:51706" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="51708:51740" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="51742:51785" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="52001:52044" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="52139:52182" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="52191:52231" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="52351:52421" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="52517:52567" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="52997:53043" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="53574:53615" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="54221:54266" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="54958:55011" ph="ALTER table tableName... " />
+              <marker date="1521687036230" expanded="true" signature="55036:55161" ph="CREATE TABLE... mytable" />
+              <marker date="1521687036230" expanded="true" signature="55391:55452" ph="ALTER table mytable... " />
+              <marker date="1521687036230" expanded="true" signature="55476:55602" ph="CREATE TABLE... mytable" />
+              <marker date="1521687036230" expanded="true" signature="56031:56070" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="56133:56171" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="56262:56309" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="56318:56363" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="56404:56446" ph="ALTER TABLE testalter_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="57472:57498" ph="SELECT * FRO... SalesSummary" />
+              <marker date="1521687036230" expanded="true" signature="58567:58593" ph="SELECT * FRO... SalesSummary" />
+              <marker date="1521687036230" expanded="true" signature="58961:58984" ph="DROP TABLE S... " />
+              <marker date="1521687036230" expanded="true" signature="58994:59020" ph="SELECT * FRO... SalesSummary" />
+              <marker date="1521687036230" expanded="true" signature="59453:59479" ph="CREATE TABLE... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="59569:59942" ph="Create Table... " />
+              <marker date="1521687036230" expanded="true" signature="59991:60318" ph="CREATE TABLE... clone_tbl" />
+              <marker date="1521687036230" expanded="true" signature="60643:60740" ph="SELECT runoo... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="60874:60915" ph="CREATE TABLE... targetTable" />
+              <marker date="1521687036230" expanded="true" signature="60917:60966" ph="INSERT INTO targetTable... " />
+              <marker date="1521687036230" expanded="true" signature="60941:60966" ph="SELECT * FRO... sourceTable" />
+              <marker date="1521687036230" expanded="true" signature="61507:61758" ph="CREATE TABLE... insect" />
+              <marker date="1521687036230" expanded="true" signature="62090:62122" ph="SELECT * FRO... insect" />
+              <marker date="1521687036230" expanded="true" signature="62629:62655" ph="ALTER TABLE insect... " />
+              <marker date="1521687036230" expanded="true" signature="62664:62768" ph="ALTER TABLE insect... " />
+              <marker date="1521687036230" expanded="true" signature="62848:63093" ph="CREATE TABLE... insect" />
+              <marker date="1521687036230" expanded="true" signature="63140:63174" ph="ALTER TABLE t... " />
+              <marker date="1521687036230" expanded="true" signature="63432:63525" ph="CREATE TABLE... person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="63646:63794" ph="CREATE TABLE... person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="64469:64611" ph="CREATE TABLE... person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="64682:64826" ph="SELECT COUNT... person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="65044:65104" ph="SELECT DISTI... person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="65155:65246" ph="SELECT last_... person_tbl" />
+              <marker date="1521687036230" expanded="true" signature="65306:65396" ph="CREATE TABLE... tmp" />
+              <marker date="1521687036230" expanded="true" signature="65468:65489" ph="DROP TABLE p... " />
+              <marker date="1521687036230" expanded="true" signature="65498:65534" ph="ALTER TABLE tmp... " />
+              <marker date="1521687036230" expanded="true" signature="65874:65940" ph="SELECT * FRO... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="65998:66134" ph="SELECT * FRO... passwd" />
+              <marker date="1521687036230" expanded="true" signature="66185:66324" ph="SELECT a,b,a... " />
+              <marker date="1521687036230" expanded="true" signature="67373:67662" ph="CREATE TABLE... runoob_tbl" />
+              <marker date="1521687036230" expanded="true" signature="67711:67789" ph="INSERT INTO runoob_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="67791:67869" ph="INSERT INTO runoob_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="67871:67950" ph="INSERT INTO runoob_tbl... " />
+              <marker date="1521687036230" expanded="true" signature="70772:70791" ph="create datab... abc" />
+              <marker date="1521687036230" expanded="true" signature="70835:70853" ph="(2)设置数据库编码 m... " />
+              <marker date="1521687036230" expanded="true" signature="70853:70867" ph="set names ut... " />
+              <marker date="1521687036230" expanded="true" signature="70870:70921" ph="(3)导入数据(注意sq... " />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mybatis/mybatis实现增删改查.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="-1395">
+            <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <folding>
+              <marker date="1522071798654" expanded="false" signature="314:466" ph="..." />
+              <marker date="1522071798654" expanded="true" signature="599:690" ph="{...}" />
+              <marker date="1522071798654" expanded="true" signature="816:845" ph="{...}" />
+            </folding>
           </first_editor>
           <second_editor />
         </state>
