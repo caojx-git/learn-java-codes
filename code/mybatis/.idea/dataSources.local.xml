@@ -9,7 +9,9 @@
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>myoracle</user-name>
+      <introspection-schemas>*:MYORACLE</introspection-schemas>
       <resolve-scope>*:MYORACLE,PUBLIC</resolve-scope>
+      <unqualified-resolve-schemas>*:MYORACLE,PUBLIC</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>

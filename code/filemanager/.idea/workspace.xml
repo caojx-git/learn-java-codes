@@ -2,122 +2,332 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d33c1c14-0125-4202-980c-b6f6479a05bc" name="Default" comment="文件管理模块基本完成">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/bean/Message.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/config/Configuration.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/config/sqlxml/Message.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/dao/MessageDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/dao/MessageDao2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/db/DBAccess.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/db/db.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/service/MessageService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/servlet/DeleteOneServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/com/imooc/servlet/ListServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/build/classes/log4j.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/jsp/back/list.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/jstl.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/log4j-1.2.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/mybatis-3.2.7.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/ojdbc14.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/servlet-api.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/lib/standard.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/css/all.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/css/jscrollpane1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/add_emoticons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn01.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn02.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn03.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn04.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn05.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn06.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn07.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn07g.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn09.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn10.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/btn11.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/graybg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/page.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/page_be.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/talk_recordtext.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/talk_recordtextme.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/talk_send_btn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/thumbs/talk_recordbox.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/images/thumbs/talk_recordboxme.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/js/common/jquery-1.8.0.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/js/common/jquery.jscrollpane.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/js/common/jquery.mousewheel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/js/common/scroll-startstop.events.jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/mybatis入门实现增删改查.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/列表页.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../notes/linux/.~inux学习.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../notes/linux/linux学习.docx" afterPath="$PROJECT_DIR$/../../notes/linux/linux学习.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/filemanager_backend_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/filemanager_backend_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-backend/filemanager-backend.iml" afterPath="$PROJECT_DIR$/filemanager-backend/filemanager-backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-backend/src/main/webapp/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/filemanager-backend/src/main/webapp/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-backend/src/main/webapp/css/multi-select.css" afterPath="$PROJECT_DIR$/filemanager-backend/src/main/webapp/css/multi-select.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/common/jquery-1.8.3.min.js" afterPath="$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/common/jquery-1.8.3.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-common/filemanager-common.iml" afterPath="$PROJECT_DIR$/filemanager-common/filemanager-common.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/util/CustomDateSerializer.java" afterPath="$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/util/CustomDateSerializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager-service/filemanager-service.iml" afterPath="$PROJECT_DIR$/filemanager-service/filemanager-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filemanager.iml" afterPath="$PROJECT_DIR$/filemanager.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/.classpath" afterPath="$PROJECT_DIR$/../jdbc_examples/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/.project" afterPath="$PROJECT_DIR$/../jdbc_examples/.project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/../jdbc_examples/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/../jdbc_examples/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/BatchTest.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/BatchTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/ConnectTest.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/ConnectTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/PrepareTest.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/PrepareTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/StatementTest.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/jdbc/StatementTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Dept.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Dept.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Dept.properties" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Dept.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/SessionTest.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/SessionTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Student.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Teacher.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Teacher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Teacher.properties" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Teacher.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/TeacherTest.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/TeacherTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Test.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Test1.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/Test1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/TestSession.java" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/TestSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/db.properties" afterPath="$PROJECT_DIR$/../jdbc_examples/src/com/briup/orm/db.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/SuiteTest.java" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/SuiteTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest1.java" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest2.java" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest3.java" afterPath="$PROJECT_DIR$/../learn-junit4/src/test/java/pers/caojx/learn/junit4/util/TaskTest3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.classpath" afterPath="$PROJECT_DIR$/../mybatis/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../mybatis/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.project" afterPath="$PROJECT_DIR$/../mybatis/.project" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.settings/.jsdtscope" afterPath="$PROJECT_DIR$/../mybatis/.settings/.jsdtscope" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.jdt.core.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.wst.common.component" afterPath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.wst.common.component" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.wst.common.project.facet.core.xml" afterPath="$PROJECT_DIR$/../mybatis/.settings/org.eclipse.wst.common.project.facet.core.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/../mybatis/WebContent/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/WEB-INF/jsp/back/list.jsp" afterPath="$PROJECT_DIR$/../mybatis/WebContent/WEB-INF/jsp/back/list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../mybatis/WebContent/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/css/all.css" afterPath="$PROJECT_DIR$/../mybatis/WebContent/css/all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/css/jscrollpane1.css" afterPath="$PROJECT_DIR$/../mybatis/WebContent/css/jscrollpane1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/js/common/jquery-1.8.0.min.js" afterPath="$PROJECT_DIR$/../mybatis/WebContent/js/common/jquery-1.8.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/js/common/scroll-startstop.events.jquery.js" afterPath="$PROJECT_DIR$/../mybatis/WebContent/js/common/scroll-startstop.events.jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/WebContent/列表页.html" afterPath="$PROJECT_DIR$/../mybatis/WebContent/列表页.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/Configuration.xml" afterPath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/Configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/sqlxml/Message.xml" afterPath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/config/sqlxml/Message.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/db/db.sql" afterPath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/com/imooc/db/db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/log4j.properties" afterPath="$PROJECT_DIR$/../mybatis/out/artifacts/mybatis_Web_exploded/WEB-INF/classes/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/src/com/imooc/bean/Message.java" afterPath="$PROJECT_DIR$/../mybatis/src/com/imooc/bean/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/src/com/imooc/config/Configuration.xml" afterPath="$PROJECT_DIR$/../mybatis/src/com/imooc/config/Configuration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/src/com/imooc/config/sqlxml/Message.xml" afterPath="$PROJECT_DIR$/../mybatis/src/com/imooc/config/sqlxml/Message.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/src/com/imooc/db/DBAccess.java" afterPath="$PROJECT_DIR$/../mybatis/src/com/imooc/db/DBAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/src/com/imooc/db/db.sql" afterPath="$PROJECT_DIR$/../mybatis/src/com/imooc/db/db.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../mybatis/src/log4j.properties" afterPath="$PROJECT_DIR$/../mybatis/src/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spring-mvc/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/../spring-mvc/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../spring-mvc/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../spring-mvc/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../notes/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../notes/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../notes/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../notes/.idea/workspace.xml" />
+      <change afterPath="$PROJECT_DIR$/../spring-redis/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-redis/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-redis/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-redis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../activemq-java/src/main/resouces/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ehcahce-java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ehcahce-java/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_oracle_thin_extras_0_9_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_oracle_thin_extras_0_9_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_artofsolving_jodconverter_2_2_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_artofsolving_jodconverter_2_2_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_8_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_oracle_ojdbc6_11_2_0_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_oracle_ojdbc6_11_2_0_2_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_mail_1_4_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_artofsolving_jodconverter_jodconverter_core_3_0_beta_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_artofsolving_jodconverter_jodconverter_core_3_0_beta_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_2_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_2_8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_juh_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_juh_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_jurt_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_jurt_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_ridl_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_ridl_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_unoil_2_3_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openoffice_unoil_2_3_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_4_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_4_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_2_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_2_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__taglibs_standard_1_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/FileCollectionInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/FindPasswordController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/LogOutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/Office2PDFUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/edu/xnxy/caojx/filemanager/web/UserManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/spring-common.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/classes/spring-mvc-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/FileCollectionInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/FindPasswordController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/LogOutController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/Office2PDFUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/UserManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/spring-common.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/classes/spring-mvc-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/activation-1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/aspectjweaver-1.8.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/c3p0-0.9.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/c3p0-oracle-thin-extras-0.9.0.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/commons-cli-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/commons-fileupload-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/commons-io-1.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/filemanager-common-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/filemanager-service-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jackson-annotations-2.8.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jackson-core-2.8.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jackson-databind-2.8.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jodconverter-2.2.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jodconverter-core-3.0-beta-4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/juh-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/jurt-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/mail-1.4.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/mchange-commons-java-0.2.12.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/mybatis-3.2.8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/mybatis-spring-1.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/ojdbc6-11.2.0.2.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/ridl-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/slf4j-api-1.4.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-aspects-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-context-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-context-support-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-core-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-jdbc-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-orm-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-oxm-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-tx-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-web-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/spring-webmvc-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/standard-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/lib/unoil-2.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/addUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/collection.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/editUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/fileInfoList.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/fileupload.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/findPassword.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/FlexPaperViewer.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/TestView.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/a.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/aa.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/aa.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/addUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/fileupload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/flash4382.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/jqueryMediaTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/linux.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/linux学习.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/mutilSelectTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/myCollection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/test-right-menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/test-rinht-menu2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/userManager.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/儿童英语歌曲动画house.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/html/苏巧慧毕业总结.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/preview.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/userManager.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/viewEmail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/views/viewUser.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/css/bootstrap-multiselect.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/css/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/js/bootstrap-multiselect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/bootstrap/js/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/css/multi-select.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/css/style.css.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/demo_fontclass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/demo_symbol.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/demo_unicode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/iconfont/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/images/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/images/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/images/switch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/images/xnxy.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/addUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/collection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/flexpaper_flash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/flexpaper_flash_debug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery-1.8.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery.media.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery.metadata.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery.multi-select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery.quicksearch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery.validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/common/messages_zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/editUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/fileInfoList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/fileupload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/findPassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/userManager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/js/viewEmail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/2017-04-26 22-07-49 的屏幕截图.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/baidu_jgylogo3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/linux学习.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/工作日程.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/政企客户业务综合运营平台标准方案@201612.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/曹建祥毕业总结.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/filemanager-backend-1.0-SNAPSHOT/pdf/苏巧慧毕业总结.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/tomcat/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/tomcat/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/tomcat/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-backend/target/tomcat/logs/access_log.2017-05-04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/entity/FileCollectionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/entity/FileInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/entity/FileManagerSysBaseType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/entity/UserInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/mybatis/mapper/pagination/PageParameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/service/IFileCollectionInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/service/IFileInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/service/IFileManagerSysBaseTypeService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/service/IUserInfoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/util/CustomDateSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/util/Office2PDFUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/util/PDF2SWFUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/web/filter/CheckLoginFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/web/listener/MyServletContextListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/web/util/MD5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/web/util/MailUtil$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/edu/xnxy/caojx/filemanager/web/util/MailUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/classes/officeutil.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/filemanager-common-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/surefire-reports/TEST-edu.xnxy.caojx.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/surefire-reports/edu.xnxy.caojx.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-common/target/test-classes/edu/xnxy/caojx/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/IBaseDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/IFileCollectionInfoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/IFileInfoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/IFilemanagerSysBaseTypeDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/IUserInfoDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/mapper/FileCollectionInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/mapper/FileInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/mapper/FileManagerSysBaseType.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/dao/mapper/UserInfo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/intercepter/PageInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/service/FileCollectionInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/service/FileInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/service/FileManagerSysBaseTypeSerivceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/edu/xnxy/caojx/filemanager/service/UserInfoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/jdbcpool.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/spring-common.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/classes/spring-datasource.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/filemanager-service.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/surefire-reports/TEST-edu.xnxy.caojx.filemanager.dao.DBTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/surefire-reports/TEST-edu.xnxy.caojx.filemanager.dao.IUserInfoDAOTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/surefire-reports/TEST-edu.xnxy.caojx.filemanager.service.UserInfoServiceImplTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/surefire-reports/edu.xnxy.caojx.filemanager.dao.DBTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/surefire-reports/edu.xnxy.caojx.filemanager.dao.IUserInfoDAOTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/surefire-reports/edu.xnxy.caojx.filemanager.service.UserInfoServiceImplTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/test-classes/edu/xnxy/caojx/filemanager/dao/DBTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/test-classes/edu/xnxy/caojx/filemanager/dao/IUserInfoDAOTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/filemanager-service/target/test-classes/edu/xnxy/caojx/filemanager/service/UserInfoServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/classes/edu/xnxy/caojx/filemanager/web/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/classes/spring-common.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/classes/spring-mvc-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/fileupload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/fileupload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/test-right-menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/test-rinht-menu2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/html/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/views/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/bootstrap/3.2.0/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/bootstrap/3.2.0/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/css/style.css.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/demo_fontclass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/demo_symbol.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/demo_unicode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/iconfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/iconfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/iconfont.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/iconfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/iconfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/iconfont/iconfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/images/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/images/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/images/xnxy.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/js/common/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/js/common/jquery.validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/js/common/jquery.validate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/js/common/messages_zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/filemanager_backend_Web_exploded/js/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../freemarker-java/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../freemarker-java/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatis/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatis/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mybatis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mybatis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redis-java/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redis-java/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../redis-java/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shiro-spring/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shiro-spring/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../springboot-learn/springboot-helloword/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../springboot-learn/springboot-helloword/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webservice-java/src/main/java/caojx/learn/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../webservice-java/src/test/java/caojx/learn/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../notes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../notes/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -154,20 +364,23 @@
       </PATH_ELEMENT>
     </PATH>
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="filemanager" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MailUtil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/web/util/MailUtil.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="15">
+              <caret line="103" column="27" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -228,11 +441,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -307,8 +515,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="/usr/local/apache-maven-3.3.9" />
-        <option name="userSettingsFile" value="/usr/local/apache-maven-3.3.9/conf/settings.xml" />
+        <option name="localRepository" value="$PROJECT_DIR$/../../../maven_repository" />
+        <option name="mavenHome" value="/usr/local/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="/usr/local/apache-maven-3.5.2/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -319,35 +528,26 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="filemanager" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="filemanager" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="filemanager" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="filemanager" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
     </treeState>
   </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="28" />
+    <option name="x" value="435" />
+    <option name="y" value="59" />
     <option name="width" value="1368" />
     <option name="height" value="707" />
   </component>
@@ -402,88 +602,82 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages ProjectPane="false" />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager-backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filemanager-backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="filemanager-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="filemanager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="filemanager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="filemanager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="filemanager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="filemanager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="filemanager-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
-    <property name="settings.editor.splitter.proportion" value="0.34382284" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.splitter.proportion" value="0.34382284" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -530,40 +724,97 @@
     </option>
   </component>
   <component name="RunManager" selected="Maven.backend-run">
-    <configuration default="false" name="UserInfoServiceImplTest.testGetUserInfoService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="MD5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.xnxy.caojx.filemanager.web.util.MD5" />
+      <module name="filemanager-common" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="edu.xnxy.caojx.filemanager.service.*" />
+          <option name="PATTERN" value="edu.xnxy.caojx.filemanager.web.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="filemanager-service" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="edu.xnxy.caojx.filemanager.service" />
-      <option name="MAIN_CLASS_NAME" value="edu.xnxy.caojx.filemanager.service.UserInfoServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetUserInfoService" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
     </configuration>
-    <configuration default="false" name="IUserInfoDAOTest.testGetUserInfoDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+    <configuration name="Office2PDFUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.xnxy.caojx.filemanager.web.Office2PDFUtil" />
+      <module name="filemanager-backend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.xnxy.caojx.filemanager.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+    </configuration>
+    <configuration name="IUserInfoDAOTest.testGetUserInfoDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="filemanager-service" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.xnxy.caojx.filemanager.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="filemanager-service" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="edu.xnxy.caojx.filemanager.dao" />
@@ -573,23 +824,43 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
-      <method />
     </configuration>
-    <configuration default="false" name="UserInfoServiceImplTest.testSaveUserInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+    <configuration name="UserInfoServiceImplTest.testGetUserInfoService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="filemanager-service" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="edu.xnxy.caojx.filemanager.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="edu.xnxy.caojx.filemanager.service" />
+      <option name="MAIN_CLASS_NAME" value="edu.xnxy.caojx.filemanager.service.UserInfoServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetUserInfoService" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UserInfoServiceImplTest.testSaveUserInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="filemanager-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.xnxy.caojx.filemanager.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="edu.xnxy.caojx.filemanager.service" />
@@ -599,65 +870,123 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
-      <method />
     </configuration>
-    <configuration default="false" name="Office2PDFUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="edu.xnxy.caojx.filemanager.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="edu.xnxy.caojx.filemanager.web.Office2PDFUtil" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="filemanager-backend" />
-      <envs />
-      <method />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
-    <configuration default="false" name="MD5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="edu.xnxy.caojx.filemanager.web.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="edu.xnxy.caojx.filemanager.web.util.MD5" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <configuration name="backend-run" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+                <option value="-X" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/filemanager-backend" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration name="common-install" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="install" />
+                <option value="-X" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/filemanager-common" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration name="service-run" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/filemanager-service" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="filemanager-common" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings />
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
       <option name="LOCAL" value="false" />
@@ -670,14 +999,79 @@
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <method />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method />
+    <configuration name="backend-run" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.67" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="filemanager-backend:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_filemanager_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="true" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="true" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="37913" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="filemanager-backend:war exploded" />
+        </option>
+      </method>
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -732,29 +1126,6 @@
         <option name="SUPPORT_LIB_ENABLED" value="true" />
         <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -838,55 +1209,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -901,36 +1223,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <setting name="depsClasspath" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -1031,41 +1323,22 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -1081,177 +1354,37 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="common-install" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="install" />
-                <option value="-X" />
-              </list>
-            </option>
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$/filemanager-common" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method />
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
-    <configuration default="false" name="backend-run" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="tomcat7:run" />
-                <option value="-X" />
-              </list>
-            </option>
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$/filemanager-backend" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="service-run" type="MavenRunConfiguration" factoryName="Maven">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="tomcat7:run" />
-              </list>
-            </option>
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$/filemanager-service" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method />
-    </configuration>
-    <configuration default="false" name="backend-run" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.67" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="filemanager-backend:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_filemanager_2" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="true" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="true" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="37913" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="filemanager-backend:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <list size="9">
-      <item index="0" class="java.lang.String" itemvalue="Maven.common-install" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.backend-run" />
-      <item index="2" class="java.lang.String" itemvalue="Maven.service-run" />
-      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.backend-run" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.UserInfoServiceImplTest.testGetUserInfoService" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.IUserInfoDAOTest.testGetUserInfoDao" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.UserInfoServiceImplTest.testSaveUserInfo" />
-      <item index="7" class="java.lang.String" itemvalue="Application.Office2PDFUtil" />
-      <item index="8" class="java.lang.String" itemvalue="Application.MD5" />
+    <list>
+      <item itemvalue="Maven.common-install" />
+      <item itemvalue="Maven.backend-run" />
+      <item itemvalue="Maven.service-run" />
+      <item itemvalue="Tomcat Server.backend-run" />
+      <item itemvalue="JUnit.UserInfoServiceImplTest.testGetUserInfoService" />
+      <item itemvalue="JUnit.IUserInfoDAOTest.testGetUserInfoDao" />
+      <item itemvalue="JUnit.UserInfoServiceImplTest.testSaveUserInfo" />
+      <item itemvalue="Application.Office2PDFUtil" />
+      <item itemvalue="Application.MD5" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MD5" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Office2PDFUtil" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserInfoServiceImplTest.testSaveUserInfo" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IUserInfoDAOTest.testGetUserInfoDao" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.UserInfoServiceImplTest.testGetUserInfoService" />
+      <list>
+        <item itemvalue="Application.MD5" />
+        <item itemvalue="Application.Office2PDFUtil" />
+        <item itemvalue="JUnit.UserInfoServiceImplTest.testSaveUserInfo" />
+        <item itemvalue="JUnit.IUserInfoDAOTest.testGetUserInfoDao" />
+        <item itemvalue="JUnit.UserInfoServiceImplTest.testGetUserInfoService" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1328,6 +1461,8 @@
       <workItem from="1493453261862" duration="7315000" />
       <workItem from="1493897647612" duration="132000" />
       <workItem from="1497792485286" duration="78000" />
+      <workItem from="1525161501347" duration="485000" />
+      <workItem from="1525162846732" duration="97000" />
     </task>
     <task id="LOCAL-00001" summary="毕业设计-文件管理系统-第一次提交">
       <created>1492271644105</created>
@@ -1449,51 +1584,52 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="509973000" />
+    <option name="totallyTimeSpent" value="510555000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
+    <frame x="435" y="59" width="1368" height="707" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5541958" sideWeight="0.5212121" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3237519" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5584642" sideWeight="0.47878787" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54195803" sideWeight="0.49697885" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28668684" sideWeight="0.4826389" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22507553" sideWeight="0.5208333" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2907855" sideWeight="0.5173611" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32517484" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298611" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55944055" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867134" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5212121" side_tool="true" weight="0.5541958" />
+      <window_info anchor="bottom" id="Application Servers" order="15" weight="0.3298611" />
+      <window_info anchor="right" id="Maven Projects" order="9" visible="true" weight="0.32352942" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49697885" weight="0.5417377" />
+      <window_info anchor="bottom" id="Version Control" order="6" />
+      <window_info anchor="bottom" id="Spring" order="13" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32984293" />
+      <window_info id="Designer" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4826389" visible="true" weight="0.29562595" />
+      <window_info id="Web" order="6" sideWeight="0.5208333" side_tool="true" weight="0.22507553" />
+      <window_info anchor="right" id="Database" order="5" weight="0.3287879" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.47878787" weight="0.5584642" />
+      <window_info id="Favorites" order="7" sideWeight="0.5173611" side_tool="true" weight="0.2907855" />
+      <window_info id="Capture Tool" order="8" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.3298611" />
+      <window_info id="Image Layers" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.55944055" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32517484" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1545,66 +1681,44 @@
       </breakpoints-dialog>
       <option name="time" value="264" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/viewUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/preview.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/editUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2412">
-          <caret line="134" column="45" lean-forward="false" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
+          <caret line="134" column="45" selection-start-line="134" selection-start-column="45" selection-end-line="134" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/resources/spring-datasource.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="101" column="35" lean-forward="false" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="35" />
+          <caret line="101" column="35" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/IFileCollectionInfoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
-          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="36" />
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/intercepter/PageInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
@@ -1618,7 +1732,7 @@
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/service/FileCollectionInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
@@ -1632,56 +1746,56 @@
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/service/IUserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/UserManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2575">
-          <caret line="174" column="33" lean-forward="false" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="33" />
+          <caret line="174" column="33" selection-start-line="174" selection-start-column="33" selection-end-line="174" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
-          <caret line="123" column="56" lean-forward="false" selection-start-line="123" selection-start-column="56" selection-end-line="123" selection-end-column="56" />
+          <caret line="123" column="56" selection-start-line="123" selection-start-column="56" selection-end-line="123" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/FileCollectionInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-47">
-          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <caret line="31" column="34" selection-start-line="31" selection-end-line="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/fileupload.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="81" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/viewEmail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
-          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
-          <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="34" />
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1695,72 +1809,46 @@
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/findPassword.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
-          <caret line="38" column="58" lean-forward="false" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
+          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/addUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="66" />
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/findPassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
-          <caret line="14" column="66" lean-forward="false" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/viewEmail.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="20" column="72" lean-forward="false" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
-          <folding />
+          <caret line="20" column="72" selection-start-line="20" selection-start-column="72" selection-end-line="20" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.FILE_COLLECTION_INFO">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="ROWID" enabled="false" />
-          </column-attributes>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.FILE_INFO">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.FILE_COLLECTION_INFO" />
+    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.FILE_INFO" />
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/FileCollectionInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="43" column="37" lean-forward="false" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+          <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/FindPasswordController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1614">
-          <caret line="170" column="0" lean-forward="false" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+          <caret line="170" selection-start-line="170" selection-end-line="170" />
           <folding>
-            <element signature="e#6009#6025#0" expanded="false" />
+            <element signature="e#6009#6025#0" />
           </folding>
         </state>
       </provider>
@@ -1768,28 +1856,28 @@
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/UserInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
-          <caret line="77" column="31" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="31" />
+          <caret line="77" column="31" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/entity/FileInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="54" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/util/CustomDateSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/collection.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-468">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -1797,150 +1885,121 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.USER_INFO">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.USER_INFO" />
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/addUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
-          <caret line="82" column="44" lean-forward="false" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="44" />
+          <caret line="82" column="44" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/js/editUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="67" column="44" lean-forward="false" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/IFileInfoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
-          <caret line="29" column="26" lean-forward="false" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/webapp/WEB-INF/views/fileInfoList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2628">
-          <caret line="9" column="64" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="9" column="64" selection-start-line="9" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/service/FileInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
-          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/UserInfo.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
-          <caret line="88" column="59" lean-forward="false" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="59" />
+          <caret line="88" column="59" selection-start-line="88" selection-start-column="47" selection-end-line="88" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/FileCollectionInfo.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
-          <caret line="83" column="36" lean-forward="false" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="36" />
+          <caret line="83" column="36" selection-start-line="83" selection-start-column="16" selection-end-line="83" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/java/edu/xnxy/caojx/filemanager/dao/mapper/FileInfo.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1458">
-          <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+          <caret line="81" column="13" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/java/edu/xnxy/caojx/filemanager/web/FileController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1602">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/mybatis/mapper/pagination/PageParameter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/web/util/MD5.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5040">
-          <caret line="292" column="11" lean-forward="false" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="11" />
-          <folding>
-            <element signature="e#1627#1628#0" expanded="false" />
-            <element signature="e#1657#1658#0" expanded="false" />
-            <element signature="e#1702#1703#0" expanded="false" />
-            <element signature="e#1733#1734#0" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="false" />
-            <element signature="e#1803#1804#0" expanded="false" />
-            <element signature="e#1848#1849#0" expanded="false" />
-            <element signature="e#1876#1877#0" expanded="false" />
-            <element signature="e#7694#7695#0" expanded="false" />
-            <element signature="e#7741#7742#0" expanded="false" />
-            <element signature="e#8073#8074#0" expanded="false" />
-            <element signature="e#8120#8121#0" expanded="false" />
-          </folding>
+          <caret line="292" column="11" selection-start-line="292" selection-start-column="8" selection-end-line="292" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a80ce978-2ecf-44e2-9fbe-96d4c484e653/console.sql" />
-    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.FILEMANAGER_SYS_BASE_TYPE">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/ad4705b/a80ce978-2ecf-44e2-9fbe-96d4c484e653/MYORACLE.FILEMANAGER_SYS_BASE_TYPE" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/90991de3-b11e-4b45-bda7-16e5a8e15897/console.sql" />
     <entry file="file://$PROJECT_DIR$/filemanager-common/filemanager.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="5" column="26" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="10" selection-end-column="2" />
+          <caret line="5" column="26" selection-start-line="1" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/filemanager-backend/src/main/resources/spring-mvc-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="103" column="27" lean-forward="false" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
-          <folding />
-        </state>
+        <state relative-caret-position="-735" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/java/edu/xnxy/caojx/filemanager/web/util/MailUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="151">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filemanager-common/src/main/resources/officeutil.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="103" column="27" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filemanager-service/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

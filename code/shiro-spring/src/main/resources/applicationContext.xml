@@ -20,7 +20,7 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
-		<property name="url" value="jdbc:mariadb://192.168.46.131:3306/db_shiro"/>
+		<property name="url" value="jdbc:mariadb://192.168.46.134:3306/db_shiro"/>
 		<property name="username" value="root"/>
 		<property name="password" value="root"/>
 	</bean>
