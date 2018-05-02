@@ -1634,7 +1634,52 @@ public class HttpURLConnectionTest {
 }
 ```
 
-## 八、通过注解修改wsdl文档  
+
+
+## 八、动态调用WebService
+
+本节内容参考：https://blog.csdn.net/qq_26562641/article/details/71534715
+
+如果服务端返回的是基本类型，推荐使用动态调用WebService服务不用生成客户端代码，当然前面的HttpURLConnection请求方式也属于动态调用，不过下边这种更方便简洁。
+
+```java
+package client;
+
+import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
+import javax.xml.namespace.QName;
+
+
+/**
+ * 动态调用webservice，无需生成客户端代码
+ * 静态调用需要生成客户端代码
+ * 参考：https://blog.csdn.net/qq_26562641/article/details/71534715
+ */
+public class WsDynamicClient {
+    
+    public static void main(String[] args) {
+        
+        JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+        // url为调用webService的wsdl地址
+        org.apache.cxf.endpoint.Client client = dcf.createClient("http://127.0.0.1:8989/ws01/hellows?wsdl");
+        // namespaceURL是命名空间对应wsdl中的targetNamespace，localPart是方法名
+        QName name = new QName("http://ws01.server/", "sayHello");
+        // paramvalue为参数值
+        String xmlStr = "tom";
+        Object[] objects;
+        try {
+            objects = client.invoke(name, xmlStr);
+            System.out.println(objects[0].toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+注意：如果是axis的webservice服务，可能需要参考https://blog.csdn.net/chenqs_/article/details/79138945
+
+## 九、通过注解修改wsdl文档  
+
 注意：即使是没有修改源代码，只修改了注解，客户端的代码也必须要重新生成, 否则调用将会失败  
 
 1. @WebService    
@@ -1670,7 +1715,7 @@ WebService注解包含以下参数：
 ```
 ![](../images/webservice/webservice_zj5.png)  
 
-## 九、推荐其他教程 
+## 十、推荐其他教程 
 [Web Service入门](http://www.importnew.com/12182.html)
 [Web Service 那点事儿（1）](http://www.importnew.com/24800.html)     
 [Web Service 那点事儿（2）—— 使用 CXF 开发 SOAP 服务](http://www.importnew.com/24816.html)      
@@ -1679,4 +1724,5 @@ WebService注解包含以下参数：
 [使用Java创建RESTful Web Service](http://www.importnew.com/7336.html)    
 参考：  
 https://www.cnblogs.com/holbrook/archive/2012/12/12/2814821.html  
-http://blog.csdn.net/kongxx/article/details/7544640    
+http://blog.csdn.net/kongxx/article/details/7544640  
+https://blog.csdn.net/qq_26562641/article/details/71534715   
