@@ -565,7 +565,7 @@ set character_set_server=utf8;
 ```mysql
 #设置全局的数据库字符编码，不会改变现有存在数据的编码，在没有重启数据库的情况下，新建数据库时，就会变成我们设置的全局编码，因为设置全局的数据库编码是基于整个MySQL服务的，但是当重启MySQL服务的时候，编码就会变为原来的字符编码。
 set global character_set_database=utf8;
-set global character_ser_server=utf8;
+set global character_set_server=utf8;
 ```
 
 4. 永久设置MySQL系统编码
