@@ -1,7 +1,6 @@
 package personal.caojx.factory;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: HNGirl
  * @Description: 新年系列的女孩

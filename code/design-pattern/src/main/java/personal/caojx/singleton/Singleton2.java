@@ -1,8 +1,6 @@
 package personal.caojx.singleton;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
- *
  * @ClassName: Singleton
  * @Description: 单例模式案例Singleton 饿汉模式
  * 应用场合：有些对象只需要一个就足够了，如古代皇帝

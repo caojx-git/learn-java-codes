@@ -1,7 +1,6 @@
 package personal.caojx.factory;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: PersonFactory
  * @Description: 人物实现工厂接口

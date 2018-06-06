@@ -4,7 +4,6 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: TimeHandler
  * @Description: JDK动态代理类

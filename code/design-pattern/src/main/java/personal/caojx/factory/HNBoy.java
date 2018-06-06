@@ -1,7 +1,6 @@
 package personal.caojx.factory;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: HNBoy
  * @Description: 新年系列的男孩

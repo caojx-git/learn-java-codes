@@ -1,7 +1,6 @@
 package personal.caojx.factory;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: MCFactory
  * @Description: 圣诞系列加工厂

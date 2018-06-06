@@ -1,7 +1,6 @@
 package personal.caojx.factory;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: LeftHair
  * @Description: 左偏分发型

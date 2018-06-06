@@ -872,7 +872,7 @@ Jenkins 供了两种维度的安全策略:
 
 ### 2.8  可视化-BlueOcean
 
-![](/Users/caojx/Desktop/jenkins_blueOcean.png)  
+![](../images/jenkins/jenkins_blueOcean.png)    
 
 
 

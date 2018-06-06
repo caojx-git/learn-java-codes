@@ -30,7 +30,7 @@ class Student{
 	public int id;
 	public Student(){
 	}
-	/*public int hashCode(){
+/*	public int hashCode(){
 		return 1;
 	}*/
 	public boolean equals(Object o){

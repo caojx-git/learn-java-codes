@@ -1,7 +1,6 @@
 package personal.caojx.proxy.staticproxy;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: CarTimeProxy
  * @Description: 汽车时间记录的代理

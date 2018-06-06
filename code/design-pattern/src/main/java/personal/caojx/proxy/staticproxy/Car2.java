@@ -3,7 +3,6 @@ package personal.caojx.proxy.staticproxy;
 import personal.caojx.proxy.staticproxy.Car;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: Car2
  * @Description: 该类的功能描述
