@@ -1,7 +1,6 @@
 package personal.caojx.singleton;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: Singleton
  * @Description: 单例模式案例Singleton 懒汉模式

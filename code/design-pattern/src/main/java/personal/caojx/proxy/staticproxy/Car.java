@@ -3,7 +3,6 @@ package personal.caojx.proxy.staticproxy;
 import java.util.Random;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: Car
  * @Description: 该类的功能描述

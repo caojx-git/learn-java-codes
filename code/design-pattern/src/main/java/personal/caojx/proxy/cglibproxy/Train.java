@@ -1,7 +1,6 @@
 package personal.caojx.proxy.cglibproxy;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: Train
  * @Description: 该类的功能描述

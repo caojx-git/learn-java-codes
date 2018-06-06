@@ -3,7 +3,6 @@ package personal.caojx.factory;
 import java.util.Map;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: HairFactory
  * @Description: 发型工厂

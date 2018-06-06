@@ -1,7 +1,6 @@
 package personal.caojx.proxy.staticproxy;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: Client
  * @Description: 代理测试类

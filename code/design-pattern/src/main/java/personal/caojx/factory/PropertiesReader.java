@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: PropertiesReader
  * @Description: properties文件读取类

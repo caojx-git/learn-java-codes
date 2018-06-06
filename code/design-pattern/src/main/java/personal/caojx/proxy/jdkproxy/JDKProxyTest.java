@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: JDKProxyTest
  * @Description: JDK动态代理测试类

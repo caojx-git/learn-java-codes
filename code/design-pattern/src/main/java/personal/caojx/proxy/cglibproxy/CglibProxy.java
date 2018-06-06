@@ -7,7 +7,6 @@ import net.sf.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: CglibProxy
  * @Description: Cglib动态代理

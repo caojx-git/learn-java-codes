@@ -1,7 +1,6 @@
 package personal.caojx.proxy.cglibproxy;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: CglibProxyTest
  * @Description: CglibProxy代理测试类

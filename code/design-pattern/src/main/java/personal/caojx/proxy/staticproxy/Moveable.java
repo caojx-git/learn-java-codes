@@ -1,7 +1,6 @@
 package personal.caojx.proxy.staticproxy;
 
 /**
- * Copyright: Copyright (c) 2017 Asiainfo
  *
  * @ClassName: Moveable
  * @Description: 行驶
