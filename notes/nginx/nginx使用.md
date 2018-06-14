@@ -54,7 +54,7 @@ yum -y install zlib-devel
 [root@localhost local]# tar -zxvf nginx-1.8.0.tar.gz -C /usr/local/src/
 [root@localhost src]# cd nginx-1.8.0/
 [root@localhost nginx-1.8.0]#./configure --prefix=/usr/local/nginx-1.8.0
-#[root@localhost nginx-1.8.0]#./configure --prefix=/usr/local/nginx-1.8.0 --with-pcre=/usr/local/src/pcre-8.31 源码包安装pcre可能需要指定pcre位置 
+#[root@localhost nginx-1.8.0]#./configure --prefix=/usr/local/nginx-1.8.0 --with-pcre=/usr/local/src/pcre-8.31 源码包安装pcre可能需要指定pcre位置，pcre用于rewrite重定向支持
 
 [roott@localhost nginx-1.8.0# make && make install
 [root@localhost sbin]# /usr/local/nginx-1.8.0/sbin/nginx -v
@@ -191,12 +191,17 @@ $http_referer referer 以记录用户是从哪个链接访问过来的
 $http_user_agent 用户代理/蜘蛛,用户所使用的代理（一般为浏览器）
 $http_x_forwarded_for 被转发的请求的原始IP，即客户端ip
 
+--------如下两个日志参数：nginx做代理的时候可使用，查看到底转发到那台服务器------------
+$upstream_addr 转发到目标的IP地址，即请求转发到具体的服务器
+$upstream_status 转发到目标的请求状态
+-----------------------------------------------------------------------------
+
 http_x_forwarded_for:在经过代理时,代理把你的本来IP加在此头信息中,传输你的原始IP
 
 2: 声明一个独特的log_format并命名
-log_format  mylog '$remote_addr- "$request" '
-                   '$status $body_bytes_sent "$http_referer" '
-                    '"$http_user_agent" "$http_x_forwarded_for"';
+log_format  mylog '$remote_addr- "$request"'
+                   '$status $body_bytes_sent "$http_referer"'
+                   '"$http_user_agent" "$http_x_forwarded_for"';
 在下面的server/location,我们就可以引用 mylog
 
 nginx允许针对不同的server做不同的Log ,(有的web服务器不支持,如lighttp)
@@ -443,12 +448,11 @@ nginx中设置过期时间,非常简单,在location或if段里,来写.
 ```text
 #对图片，flash 文件在浏览器本地缓存 30 天
 location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ {
-expires 30d;
+	expires 30d;
 }
 #对 js，css 文件在浏览器本地缓存 1 小时
-location ~ .*\.(js|css)$
- {
-expires 1h;
+location ~ .*\.(js|css)$ {
+	expires 1h;
 }
 ```
 
@@ -588,6 +592,98 @@ upstream memserver {
         server localhost:11212;
 }
 ```
+
+
+
+### 3.11 动静分离nginx.conf 案例
+
+```conf
+user  caojx;
+worker_processes  1;
+
+#允许nginx打开更多的文件
+worker_rlimit_nofile 10000;
+
+#允许nginx打开更多的连接
+events {
+    worker_connections  10240;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #设置日志输出格式
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"'
+                      '"$upstream_addr" "$upstream_status"';
+
+    #access_log  logs/access.log  main;
+
+	#表示启动高效传输文件的模式
+    sendfile        on;
+    tcp_nopush     on;
+
+    #持续连接时长
+    keepalive_timeout  0;
+
+    #开启压缩，节省网络请求带宽
+    gzip  on;
+    gzip_buffers 32 4k;
+    gzip_comp_level 6;
+    gzip_min_length 2000;
+    gzip_types text/css text/xml application/x-javascript;
+    
+    gzip_vary on;
+
+    server {
+        listen       80;
+        server_name  www.caojx.cn;
+        
+        #编码
+        charset utf-8;
+        
+        #设置日志路径
+        access_log  logs/host.access.log  main;
+
+        #静态资源请求
+        location ~ .*\.(pdf|doc|docx|html|htm|gif|jpg|jpeg|bmp|png|ico|txt|js|css|woff|ttf|map|woff2|CAB)$ {
+            root   /home/caojx/mmall/front/mmall/dist;
+            expires 1h;
+            index  index.html index.htm;
+        }
+
+        #转发到后台服务器tomcat8087
+        location / {
+            proxy_pass http://119.29.234.71:8087;
+            proxy_redirect off;
+            proxy_set_header HOST $host:80;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            add_header backendIP $upstream_addr; #配置该项浏览器的response header中会显示具体转发到那台tomcat服务器，测试时建议配置，生产不建议配置，会暴露具体的服务地址不安全。
+            add_header backendCode $upstream_status;
+            client_max_body_size 10m;
+            client_body_buffer_size 128k;
+            proxy_connect_timeout 90;
+            proxy_read_timeout 90;
+            proxy_buffer_size 4k;
+            proxy_buffers 4 32k;
+            proxy_busy_buffers_size 64k;
+            proxy_temp_file_write_size 64k;
+        }
+
+        #错误时从定向
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+ }
+```
+
+
+
+
 
 ## 四、nginx安装第三方模块
 
@@ -783,6 +879,7 @@ http{
 ```
 
 ## 六、总结
+
 本文仅作为一个入门教程，有不足的地方欢迎指教，更多的nginx知识可以参考如下内容。  
 优化：  
 [http://blog.csdn.net/moxiaomomo/article/details/19442737](http://blog.csdn.net/moxiaomomo/article/details/19442737)  
