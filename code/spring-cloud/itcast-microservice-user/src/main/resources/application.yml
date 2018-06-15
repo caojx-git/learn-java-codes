@@ -1,0 +1,60 @@
+server:
+  port: ${port} #服务端口
+spring:
+  application:
+    name: itcast-microservice-user #指定服务名
+################################################################
+# mariadb 属性配置
+  datasource: #指定数据源
+    driver-class-name: org.mariadb.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mariadb://192.168.46.139:3306/store?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+
+#  jpa:
+#    hibernate:
+#      #ddl-auto: create #ddl-auto:设为create表示每次都重新建表
+#      ddl-auto: update #ddl-auto:设为update表示每次都不会重新建表
+#    show-sql: true
+################################################################
+################################################################
+#spring集成Mybatis环境
+#pojo别名扫描包
+mybatis:
+  type-aliases-package: com.itheima.microservice.user.pojo
+################################################################
+################################################################
+eureka:
+  client:
+    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
+    fetchRegistry:  true  #是否从Eureka中获取注册信息，默认为true
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/,http://127.0.0.1:6869/eureka/
+    healthcheck: #使用health端点来代替心跳表明服务是否可用，反应到eureka server ui上服务的UP还是DOWN
+      enabled: true
+    eurekaServerConnectTimeoutSeconds: 60
+    eurekaServerReadTimeoutSeconds: 60
+  instance:
+    prefer-ip-address:  true  #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
+    lease-expiration-duration-in-seconds: 30 #续约更新时间间隔（默认30秒）
+    lease-renewal-interval-in-seconds: 10 # 续约到期时间（默认90秒）
+    leaseRenewalIntervalInSeconds: 10 #心跳时间
+################################################################
+
+################################################################
+logging:
+  level:
+    root: debug
+#    org.springframework.web: DEBUG
+  file: /Users/caojx/temp/log/log/my_provide.log
+  pattern:
+    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+    file: "%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n"
+################################################################
+
+management:
+  security:
+    enabled: false #是否开启actuator安全认证

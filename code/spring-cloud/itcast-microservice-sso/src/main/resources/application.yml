@@ -1,0 +1,29 @@
+server:
+  port: ${port} #服务端口
+spring:
+  application:
+    name: itcast-microservice-sso #指定服务名
+
+eureka:
+  client:
+    registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
+    fetchRegistry:  true  #是否从Eureka中获取注册信息，默认为true
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://127.0.0.1:6868/eureka/,http://127.0.0.1:6869/eureka/
+    healthcheck: #使用health端点来代替心跳表明服务是否可用，反应到eureka server ui上服务的UP还是DOWN
+      enabled: true
+  instance:
+    prefer-ip-address:  true  #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
+#itcast-microservice-item:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+logging:
+  level:
+    root: DEBUG
+#    org.springframework.web: DEBUG
+  file: /Users/caojx/temp/log/log/my_consume.log
+  pattern:
+    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+    file: "%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n"

@@ -1,0 +1,42 @@
+server:
+  port: ${port} #服务端口
+
+spring:
+  application:
+    name: itcast-microservice-eureka #指定服务名
+
+eureka:
+  client:
+    registerWithEureka: true #是否将自己注册到Eureka服务中，本身就是所有无需注册,但是后边我们会使用两台eureka,进行相互注册，所以是true
+    fetchRegistry: true #是否从Eureka中获取注册信息
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: ${eureka.server}
+    healthcheck: #使用health端点来代替心跳表明服务是否可用，反应到eureka server ui上服务的UP还是DOWN
+      enabled: true
+  instance:
+    prefer-ip-address:  true  #将自己的ip地址注册到Eureka服务中
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
+  server:
+    enable-self-preservation: false #禁用自我保护模式
+    eviction-interval-timer-in-ms: 60000 #清理间隔（单位毫秒，默认是60*1000）
+
+#security: #微服务注册安装认证，如果配置了此项，访问eureka时需要认证用户信息，服务注册需要使用 htt://user:password@EUREKA_HOST:EUREKA_PORT/eureka访问
+#  basic:
+#    enable: true #开启基于HTTP basic的认证
+#  user: #配置用户的账号信息
+#    name: caojx
+#    password: caojx123
+logging:
+  level:
+    root: debug
+#    org.springframework.web: DEBUG
+  file: /Users/caojx/temp/log/log/my_eureka.log
+  pattern:
+    console: "%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n"
+    file: "%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n"
+#logging.level.root=WARN
+#logging.level.org.springframework.web=DEBUG
+#logging.file=/log/log/my.log
+#logging.pattern.console=%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger- %msg%n
+#logging.pattern.file=%d{yyyy/MM/dd-HH:mm} [%thread] %-5level %logger- %msg%n

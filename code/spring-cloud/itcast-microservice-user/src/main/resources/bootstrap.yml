@@ -1,0 +1,20 @@
+#eureka:
+#  client:
+#    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+#      defaultZone: http://127.0.0.1:6868/eureka/
+#spring:
+#  cloud:
+#    config:
+#      name: item #对应的配置服务中的应用名称
+##      uri: http://127.0.0.1:6688/
+#      profile: dev #对应配置服务中的{profile}
+#      label: master #对应的分支
+#      discovery:
+#        enabled: true #启用发现服务功能
+#        service-id: itcast-microservice-config-server #指定服务名称
+#      failFast: true #启动时连configserver失败快速提示错误
+#  rabbitmq: #RabbitMQ相关的配置
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
