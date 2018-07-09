@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <!--1.定义RabbitMQ的连接工厂-->
+    <rabbit:connection-factory id="connectionFactory" host="127.0.0.1" port="5672" username="caojx" password="caojx" virtual-host="/vhost_caojx"/>
+
+    <!--2.定义rabbit模板， 指定连接工厂以及定义exchange-->
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="fanoutExchange"></rabbit:template>
+
+    <!--3.MQ的管理，包括队列，交换器声明等-->
+    <rabbit:admin connection-factory="connectionFactory"></rabbit:admin>
+
+    <!--定义队列，自动声明-->
+    <rabbit:queue name="myqueue" auto-declare="true" durable="true"></rabbit:queue>
+
+    <!--定义交换器， 自动声明-->
+    <rabbit:fanout-exchange name="fanoutExchange" auto-declare="true">
+        <rabbit:bindings>
+            <rabbit:binding queue="myqueue"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+
+    <!--监听队列-->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener ref="foo" method="listen" queue-names="myqueue"></rabbit:listener>
+    </rabbit:listener-container>
+
+    <!--消费者-->
+    <bean id="foo" class="caojx.learn.spring.MyConsumer"></bean>
+</beans>
