@@ -1,0 +1,7 @@
+server:
+  port: 8081
+
+#springboot 1.5.X 以上默认开通了安全认证，所以需要在配置文件application.properties添加以下配置
+management:
+  security:
+    enabled: false

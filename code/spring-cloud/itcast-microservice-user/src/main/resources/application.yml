@@ -8,7 +8,7 @@ spring:
   datasource: #指定数据源
     driver-class-name: org.mariadb.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mariadb://192.168.46.139:3306/store?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mariadb://192.168.46.140:3306/store?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
     username: root
     password: root
 
@@ -47,7 +47,8 @@ eureka:
 ################################################################
 logging:
   level:
-    root: debug
+    root: info
+    org.springframework.web.DispatcherServlet: DEBUG
 #    org.springframework.web: DEBUG
   file: /Users/caojx/temp/log/log/my_provide.log
   pattern:
