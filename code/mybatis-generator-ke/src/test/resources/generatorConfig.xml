@@ -51,7 +51,7 @@
         <javaClientGenerator targetPackage="com.lianjia.cto.ke.dao" targetProject="src/test/java" type="XMLMAPPER"/>
 
         <!--要生成哪些表 -->
-        <table tableName="%" enableSelectByExample="false" enableDeleteByExample="false"
+        <table tableName="move_static_data%" enableSelectByExample="false" enableDeleteByExample="false"
                enableCountByExample="false" enableUpdateByExample="false"
                selectByExampleQueryId="false">
            <!-- <property name="rootClass" value="common.BaseEntity"/>-->
