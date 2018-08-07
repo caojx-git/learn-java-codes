@@ -171,6 +171,10 @@ alter+enter 快速修复（导包，修复拼写错误，实现方法等）
 
 shift+cmd+T 自动生成测试类 
 
+ctrl+option+o 优化导包
+
+option+cmd+L 格式化代码
+
 自动生成serialVersionUID：  
 
 Setting->Inspections->Serialization issues->Serializable class without ’serialVersionUID’ 

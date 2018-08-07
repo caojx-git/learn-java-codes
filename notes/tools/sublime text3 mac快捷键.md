@@ -118,7 +118,17 @@ Sublime Text 是一个代码编辑器（Sublime Text 2是收费软件，但可�
 | **⌘⌃上下键** | **两行交换位置**  |
 | **⌘KB**      | **显示/隐藏侧边** |
 
-## 四、推荐好文
+## 四、插件
+
+### 4.1 pretty json 格式化json
+
+Package Control: Install Package -> pretty json  安装完成后格式化json快捷键
+
+- Linux: ctrl+alt+j
+- Windows: ctrl+alt+j
+- OS X: cmd+ctrl+j
+
+## 五、推荐好文
 
 [Sublime Text 快捷键（MAC环境）](https://www.jianshu.com/p/6185dc5eb507)
 

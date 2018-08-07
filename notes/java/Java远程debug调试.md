@@ -6,7 +6,7 @@ Java远程调试的原理是两个VM之间通过debug协议进行通信，然后
 
 在启动程序时，将以下参数选项添加到自定义的命令行中，程序就会以支持RemoteDeubg的方式启动。    
 ```text
--agentlib:jdwp=transport=dt_socket, address=8080,server=y,suspend=n  
+-agentlib:jdwp=transport=dt_socket,address=8080,server=y,suspend=n  
 ```
 dt_socket：使用的通信方式    
 address：地址和端口，地址可以省略，两者用冒号分隔，这里我使用的远程调试的端口是8080    
