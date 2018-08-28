@@ -2,7 +2,8 @@
 
 [TOC]
 
-kafka官网：http://kafka.apache.org/
+kafka官网：http://kafka.apache.org/  
+练习代码： https://github.com/caojx-git/learn/tree/master/code/kafka-java  
 
 ## 一、初识kafka
 
