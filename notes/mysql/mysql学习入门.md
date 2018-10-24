@@ -2333,7 +2333,14 @@ INSERT INTO targetTable SELECT * FROM sourceTable;
 >获取服务器元数据
 
 以下命令语句可以在 MySQL 的命令提示符使用，也可以在脚本中 使用，如PHP脚本。
-![](../images/mysql/mysql_data_1)
+
+| 命令               | 描述                      |
+| ------------------ | ------------------------- |
+| SELECT VERSION( )  | 服务器版本信息            |
+| SELECT DATABASE( ) | 当前数据库名 (或者返回空) |
+| SELECT USER( )     | 当前用户名                |
+| SHOW STATUS        | 服务器状态                |
+| SHOW VARIABLES     | 服务器配置变量            |
 
 ## 十五、MySQL 序列使用
 MySQL序列是一组整数：1, 2, 3, ...，由于一张数据表只能有一个字段自增主键， 如果你想实现其他  字段也实现自动增加，就可以使用MySQL序列来实现。  

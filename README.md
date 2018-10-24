@@ -8,7 +8,7 @@ learn仓库有如下两大模块
 - [notes](https://github.com/caojx-git/learn/tree/master/notes) 用于存放学习笔记
 
 下图是[Markdown](https://www.typora.io/)编辑器本地查看效果，可以很方便的查看到目录结构，我是在mac平台上编辑的，windows平如果显示效果不佳请更换其他Markdown编辑器。  
-![](https://github.com/caojx-git/learn/blob/master/notes/images/markdown_1.png)  
+![](https://github.com/caojx-git/learn/blob/master/notes/images/markdown/markdown_1.png)  
 
 ## 目录
 - [activiti](https://github.com/caojx-git/learn/tree/master/notes/activiti)  
