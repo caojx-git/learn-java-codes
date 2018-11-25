@@ -14,6 +14,7 @@ IDEA可以自定义符合自己风格的模板注释，比如说 类模板注释
 
 File -> Setting -> Editor -> File and Code Templates -> Templates  Class 
 
+
 ```java
 /**
  * \$Id: ${NAME}.java,v 1.0 ${DATE} ${TIME} caojx
