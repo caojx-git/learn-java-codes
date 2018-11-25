@@ -6,6 +6,7 @@ IDEA可以自定义符合自己风格的模板注释，比如说 类模板注释
 
 ## 一、IDEA类模板配置
 
+
 ### 1.1 Class代码模板设置 
 
 File -> Setting -> Editor -> File and Code Templates -> Templates  Class 
