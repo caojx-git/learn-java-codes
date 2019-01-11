@@ -104,7 +104,7 @@ Mac版 Navicat Premium 12 v12.0.22.0 官网下载地址：
 }
 ```
 
-时间一个未来时间的时间戳获取地址：https://tool.lu/timestamp/
+获取一个未来时间的时间戳获取地址：https://tool.lu/timestamp/
 
 ![](../images/tool/navicat/navicat-6.png)
 
