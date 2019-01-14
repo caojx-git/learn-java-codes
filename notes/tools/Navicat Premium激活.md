@@ -8,6 +8,16 @@ https://blog.csdn.net/u013490280/article/details/79720893
 
 https://www.jianshu.com/p/f3ef78deadaa
 
+[TOC]
+
+
+
+**注意，Navicat Premium可以自己从官网下载，我用的12.0.22.0版本，如果官网最新版本不可以激活，再使用这个版本激活后再升级，注意我使用的是Mac，Windows应该也可以激活。**
+
+**如果不想操作这么多，直接使用第5点，提供了mac版激活后的包，可以直接使用**
+
+
+
 ## 1、RSA公钥私钥对
 
 （这里直接使用大神的密钥，也可以自己生成测试可以用）
@@ -68,7 +78,7 @@ Mac版 Navicat Premium 12 v12.0.22.0 官网下载地址：
 
 
 
-注意：安装完成后别着急打开软件, 在目录 /Applications/Navicat Premium.app/Contents/Resources下新建文本文件 `rpk`将私钥复制到`rpk`文件中保存
+注意：安装完成后别着急打开软件, 在目录 /Applications/Navicat Premium.app/Contents/Resources下新建文本文件 `rpk`将`公钥`复制到`rpk`文件中保存
 
 ![](../images/tool/navicat/navicat-rpk.png)  
 
@@ -128,7 +138,13 @@ Mac版 Navicat Premium 12 v12.0.22.0 官网下载地址：
 
 
 
+## 5、不成功最后方案
+
+我是在2019年1月11号激活的，如果以上方式都失败了，我这边提供了我激活后的Mac版本的包，不用再激活，可以正常安装更新
+
+下载链接: <https://pan.baidu.com/s/1XHeun_GkRZFQesfYV3QINQ> 提取码: u23b 复制这段内容后打开百度网盘手机App，操作更方便哦
 
 
 
+![](../images/tool/navicat/navicat-9.png)  
 
