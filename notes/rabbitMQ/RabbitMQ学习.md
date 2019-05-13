@@ -570,7 +570,7 @@ public class Send {
 
         
         /**
-         * 每个消费者发送确认消息之前，纤细队列不会发送下一个消息到消费者，一次只处理一个消息
+         * 每个消费者发送确认消息之前，消息队列不会发送下一个消息到消费者，一次只处理一个消息
          */
         int prefetchCount = 1;
         channel.basicQos(prefetchCount);
@@ -854,7 +854,7 @@ public class Send {
 消息发布完成后可以在控制台的Exchanges下边看到如下内容  
 ![](../images/rabbitMQ/rabbitmq_9.png)  
 
-消息哪里去了？丢失了，因为交换机没有存储能力，因为RabbitMQ里边只有队列有存储能力，因为这个时候还没有队列班定到这个交换机，所以数据丢失了，所以需要有消费者。
+消息哪里去了？丢失了，因为交换机没有存储能力，因为RabbitMQ里边只有队列有存储能力，因为这个时候还没有队列绑定到这个交换机，所以数据丢失了，所以需要有消费者。
 
 
 
@@ -989,7 +989,7 @@ reciver:hello ps
 
 ###3.6 Exchange (交换机，转发器)
 
-作用：一方面接收省常中的消息，另一方面是向队列推送消息。
+作用：一方面接收生产中的消息，另一方面是向队列推送消息。
 
 
 
@@ -1846,7 +1846,48 @@ Spring官网：http://spring.io/projects/spring-amqp
 </project>
 ```
 
-#### 2.生产者
+####2.content.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+
+    <!--1.定义RabbitMQ的连接工厂-->
+    <rabbit:connection-factory id="connectionFactory" host="127.0.0.1" port="5672" username="caojx" password="caojx" virtual-host="/vhost_caojx"/>
+
+    <!--2.定义rabbit模板， 指定连接工厂以及定义exchange-->
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" exchange="fanoutExchange"></rabbit:template>
+
+    <!--3.MQ的管理，包括队列，交换器声明等-->
+    <rabbit:admin connection-factory="connectionFactory"></rabbit:admin>
+
+    <!--定义队列，自动声明-->
+    <rabbit:queue name="myqueue" auto-declare="true" durable="true"></rabbit:queue>
+
+    <!--定义交换器， 自动声明-->
+    <rabbit:fanout-exchange name="fanoutExchange" auto-declare="true">
+        <rabbit:bindings>
+            <rabbit:binding queue="myqueue"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:fanout-exchange>
+
+    <!--监听队列-->
+    <rabbit:listener-container connection-factory="connectionFactory">
+        <rabbit:listener ref="foo" method="listen" queue-names="myqueue"></rabbit:listener>
+    </rabbit:listener-container>
+
+    <!--消费者-->
+    <bean id="foo" class="caojx.learn.spring.MyConsumer"></bean>
+</beans>
+```
+
+
+
+#### 3.生产者
 
 ```java
 package caojx.learn.spring;
@@ -1873,7 +1914,7 @@ public class SpringMain {
 }
 ```
 
-#### 3.消费者
+#### 4.消费者
 
 ```java
 package caojx.learn.spring;
