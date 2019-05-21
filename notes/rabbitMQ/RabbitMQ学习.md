@@ -803,7 +803,7 @@ channel.queueDeclare(QUEUE_NAME, durable, false, false, null);
 1. 一个生产者多个消费者
 2. 每个消费者都有自己的队列
 3. 生产者没有直接将消息发送到队列而是发送到交换机（转发器）
-4. 每隔队列都要绑定到交换机上
+4. 每个队列都要绑定到交换机上
 5. 生产者发送的消息经过交换机到达队列就实现了一个消息被多个消费者消费。
 
 
@@ -1015,7 +1015,7 @@ channel.exchangeDeclare(EXCHANGE_NAME, "fanout"); //分发
 
 Direct(处理路由键)：
 
-![](../images/rabbitMQ/rabbitmq_14.png)
+![](../images/rabbitMQ/rabbitmq_14.png)  
 
 
 
@@ -1025,7 +1025,7 @@ Direct(处理路由键)：
 
 #### 1. 模型
 
-![](../images/rabbitMQ/rabbitmq_11.png)
+![](../images/rabbitMQ/rabbitmq_11.png)  
 
 
 
