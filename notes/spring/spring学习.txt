@@ -1,104 +1,104 @@
-spring Ñ§Ï°
+spring å­¦ä¹ 
 
-	1.Ê²Ã´ÊÇspring
-		spring ÊÇ·Ö²ãµÄJavaSE/EEÇáÁ¿¼¶Ó¦ÓÃ¿ªÔ´¿ò¼Ü£¬ÒÑ¿ØÖÆ·´×ªIOCºÍÃæÏòÇĞÃæ±à³ÌAOPÎªºËĞÄ£¬Ìá¹©ÁËÕ¹ÏÖ²ãSpringMVC,
-		ºÍ³Ö¾Ã²ãSrping JDBCÒÔ¼°ÊÂÎñ¹ÜÀíµÈ¡£
+	1.ä»€ä¹ˆæ˜¯spring
+		spring æ˜¯åˆ†å±‚çš„JavaSE/EEè½»é‡çº§åº”ç”¨å¼€æºæ¡†æ¶ï¼Œå·²æ§åˆ¶åè½¬IOCå’Œé¢å‘åˆ‡é¢ç¼–ç¨‹AOPä¸ºæ ¸å¿ƒï¼Œæä¾›äº†å±•ç°å±‚SpringMVC,
+		å’ŒæŒä¹…å±‚Srping JDBCä»¥åŠäº‹åŠ¡ç®¡ç†ç­‰ã€‚
 
-	2.ÌØµã
-		·½±ã½âñî£¬¼ò»¯¿ª·¢
-			springÌá¹©iocÈİÆ÷£¬¿ÉÒÔ½«¶ÔÏóÖ®¼äµÄÒÀÀµ¹ØÏµ½»¸øspring¿ØÖÆ£¬±ÜÃâÓ²±àÂëËùÔì³ÉµÄ¹ı¶È³ÌĞòñîºÏ¡£
+	2.ç‰¹ç‚¹
+		æ–¹ä¾¿è§£è€¦ï¼Œç®€åŒ–å¼€å‘
+			springæä¾›iocå®¹å™¨ï¼Œå¯ä»¥å°†å¯¹è±¡ä¹‹é—´çš„ä¾èµ–å…³ç³»äº¤ç»™springæ§åˆ¶ï¼Œé¿å…ç¡¬ç¼–ç æ‰€é€ æˆçš„è¿‡åº¦ç¨‹åºè€¦åˆã€‚
 
-		AOP±à³ÌÖ§³Ö
-			Í¨¹ıspringÌá¹©µÄaop¹¦ÄÜ£¬ÓÃ»§¿ÉÒÔÇáËÉµÄ½øĞĞÃæÏòÇĞÃæ±à³Ì
+		AOPç¼–ç¨‹æ”¯æŒ
+			é€šè¿‡springæä¾›çš„aopåŠŸèƒ½ï¼Œç”¨æˆ·å¯ä»¥è½»æ¾çš„è¿›è¡Œé¢å‘åˆ‡é¢ç¼–ç¨‹
 
-		ÉùÃ÷ÊÂÎñµÄÖ§³Ö
-			ÓÃ»§¿ÉÒÔÍ¨¹ıspringÀ´¹ÜÀíÊÂÎñ£¬ÌáÉı¿ª·¢Ğ§ÂÊ
+		å£°æ˜äº‹åŠ¡çš„æ”¯æŒ
+			ç”¨æˆ·å¯ä»¥é€šè¿‡springæ¥ç®¡ç†äº‹åŠ¡ï¼Œæå‡å¼€å‘æ•ˆç‡
 
-		·½±ã³ÌĞòµÄ²âÊÔ
-			¿ÉÒÔÊ¹ÓÃ·ÇÈİÆ÷µÄÒÀÀµµÄ±à³Ì·½Ê½½øĞĞ¼¸ºõËùÓĞµÄ²âÊÔ¹¤×÷£¬ÔÚspringÖĞ£¬²âÊÔ²»ÔÙÊÇ
-			°º¹óµÄ²Ù×÷£¬¶øÊÇËæÊÖ¿É×öµÄÊÂ
-		·½±ã¼¯³É¸÷ÖÖÓÅĞãµÄ¿ò¼Ü
-			spring²»ÅÅ³â¸÷ÖÖÓÅĞãµÄ¿ò¼Ü£¬Ïà·´spring¿ÉÒÔ½µµÍ¸÷ÖÖ¿ò¼ÜµÄÊ¹ÓÃÄÑ¶È¡£Èç¿ÉÒÔ¼¯³É£¨struts¡¢Hibernate£©
-		
-		½µµÍJavaEE APIµÄÊ¹ÓÃÄÑ¶È
-			ÈçJDBC¡¢JavaMail¡¢Ô¶³Ìµ÷ÓÃµÈ
-		springÔ´ÂëÉè¼Æ¾«Ãî¡¢½á¹¹ÇåÎú£¬ÑĞ¾¿Ô´Âë¿ÉÒÔ¿ìËÙÌáÉıJava¼¼ÊõË®Æ½ºÍ¿ª·¢Ó¦ÓÃË®Æ½
+		æ–¹ä¾¿ç¨‹åºçš„æµ‹è¯•
+			å¯ä»¥ä½¿ç”¨éå®¹å™¨çš„ä¾èµ–çš„ç¼–ç¨‹æ–¹å¼è¿›è¡Œå‡ ä¹æ‰€æœ‰çš„æµ‹è¯•å·¥ä½œï¼Œåœ¨springä¸­ï¼Œæµ‹è¯•ä¸å†æ˜¯
+			æ˜‚è´µçš„æ“ä½œï¼Œè€Œæ˜¯éšæ‰‹å¯åšçš„äº‹
+		æ–¹ä¾¿é›†æˆå„ç§ä¼˜ç§€çš„æ¡†æ¶
+			springä¸æ’æ–¥å„ç§ä¼˜ç§€çš„æ¡†æ¶ï¼Œç›¸åspringå¯ä»¥é™ä½å„ç§æ¡†æ¶çš„ä½¿ç”¨éš¾åº¦ã€‚å¦‚å¯ä»¥é›†æˆï¼ˆstrutsã€Hibernateï¼‰
+
+		é™ä½JavaEE APIçš„ä½¿ç”¨éš¾åº¦
+			å¦‚JDBCã€JavaMailã€è¿œç¨‹è°ƒç”¨ç­‰
+		springæºç è®¾è®¡ç²¾å¦™ã€ç»“æ„æ¸…æ™°ï¼Œç ”ç©¶æºç å¯ä»¥å¿«é€Ÿæå‡JavaæŠ€æœ¯æ°´å¹³å’Œå¼€å‘åº”ç”¨æ°´å¹³
 
 
 
 ---
 
-spring 
+spring
 
 ioc
 bean
-	springÖĞËùÓĞÓÉËü¹ÜÀíµÄ¶ÔÏó¶¼½Ğbean
+	springä¸­æ‰€æœ‰ç”±å®ƒç®¡ç†çš„å¯¹è±¡éƒ½å«bean
 aop
 
 
-×ÊÔ´µØÖ·£º
+èµ„æºåœ°å€ï¼š
 	http://spring.io/
 	http://projects.spring.io/spring-framework
 
-springÊÇÊ²Ã´
-	springÊÇÒ»¸ö¿ªÔ´¿ò¼Ü£¬ÎªÁË½â¾öÆóÒµÓ¦ÓÃ¿ª·¢µÄ¸´ÔÓĞÔ¶ø´´½¨µÄ£¬µ«ÏÖÔÚ²»Ö¹Ó¦ÓÃÓÚÆóÒµÓ¦ÓÃ¡£
-	Í¬Ê±ÊÇÒ»¸öÇáÁ¿¼¶µÄ¿ØÖÆ·´×ªiocºÍÃæÏòÇĞÃæ±à³ÌµÄÈİÆ÷¿ò¼Ü
-	ÇáÁ¿£º´Ó´óĞ¡Óë¿ªÏú¶ÔÓÚspring¶¼ÊÇÇáÁ¿µÄ
-	Í¨¹ı¿ØÖÆ·´×ªiocµÄ¼¼Êõ´ïµ½ËÉñîºÏ
-	Ìá¹©ÃæÏòÇĞÃæ±à³ÌµÄ·á¸»Ö§³Ö£¬ÔÊĞíÍ¨¹ı·ÖÀëÓ¦ÓÃµÄÒµÎñÂß¼­ÓëÏµÍ³·şÎñ½øĞĞÄÚ¾ÛĞÔµÄ¿ª·¢
-	°üº¬²¢¹ÜÀíÓ¦ÓÃ¶ÔÏóµÄÅäÖÃºÍÉúÃüÖÜÆÚ£¬Õâ¸öÒâÒåÊÇÈİÆ÷
-	½«¼òµ¥µÄ×é¼şÅäÖÃ×éºÏ³É¸´ÔÓµÄÓ¦ÓÃ£¬Õâ¸öÒâÒåÊÇ¿ò¼Ü
+springæ˜¯ä»€ä¹ˆ
+	springæ˜¯ä¸€ä¸ªå¼€æºæ¡†æ¶ï¼Œä¸ºäº†è§£å†³ä¼ä¸šåº”ç”¨å¼€å‘çš„å¤æ‚æ€§è€Œåˆ›å»ºçš„ï¼Œä½†ç°åœ¨ä¸æ­¢åº”ç”¨äºä¼ä¸šåº”ç”¨ã€‚
+	åŒæ—¶æ˜¯ä¸€ä¸ªè½»é‡çº§çš„æ§åˆ¶åè½¬iocå’Œé¢å‘åˆ‡é¢ç¼–ç¨‹çš„å®¹å™¨æ¡†æ¶
+	è½»é‡ï¼šä»å¤§å°ä¸å¼€é”€å¯¹äºspringéƒ½æ˜¯è½»é‡çš„
+	é€šè¿‡æ§åˆ¶åè½¬iocçš„æŠ€æœ¯è¾¾åˆ°æ¾è€¦åˆ
+	æä¾›é¢å‘åˆ‡é¢ç¼–ç¨‹çš„ä¸°å¯Œæ”¯æŒï¼Œå…è®¸é€šè¿‡åˆ†ç¦»åº”ç”¨çš„ä¸šåŠ¡é€»è¾‘ä¸ç³»ç»ŸæœåŠ¡è¿›è¡Œå†…èšæ€§çš„å¼€å‘
+	åŒ…å«å¹¶ç®¡ç†åº”ç”¨å¯¹è±¡çš„é…ç½®å’Œç”Ÿå‘½å‘¨æœŸï¼Œè¿™ä¸ªæ„ä¹‰æ˜¯å®¹å™¨
+	å°†ç®€å•çš„ç»„ä»¶é…ç½®ç»„åˆæˆå¤æ‚çš„åº”ç”¨ï¼Œè¿™ä¸ªæ„ä¹‰æ˜¯æ¡†æ¶
 
-spring´øÀ´ÁË¸´ÔÓµÄJavaEEµÄ´ºÌì
+springå¸¦æ¥äº†å¤æ‚çš„JavaEEçš„æ˜¥å¤©
 
 
-springµÄ×÷ÓÃ
-	ÈİÆ÷
-	Ìá¹©ÁË¶àÖĞ¼¼ÊõµÄÖ§³Ö
-	aop(ÊÂÎñ¹ÜÀí£¬ÈÕÖ¾)
-	Ìá¹©ÁËÖÚ¶àµÄÓ¦ÓÃµÄ¸¨ÖúÀà£¨JDBC Template£©
-	¶ÔÖ÷Á÷¿ò¼ÜµÄÁ¼ºÃµÄÖ§³Ö
+springçš„ä½œç”¨
+	å®¹å™¨
+	æä¾›äº†å¤šä¸­æŠ€æœ¯çš„æ”¯æŒ
+	aop(äº‹åŠ¡ç®¡ç†ï¼Œæ—¥å¿—)
+	æä¾›äº†ä¼—å¤šçš„åº”ç”¨çš„è¾…åŠ©ç±»ï¼ˆJDBC Templateï¼‰
+	å¯¹ä¸»æµæ¡†æ¶çš„è‰¯å¥½çš„æ”¯æŒ
 
-ÊÊÓÃ·¶Î§
-	¹¹½¨ÆóÒµÓ¦ÓÃ£¨springmvc+spring+hibernate/mybatis£©
-	µ¥¶ÀÊ¹ÓÃbeanÈİÆ÷£¨bean¹ÜÀí£©
-	µ¥¶ÀÊ¹ÓÃaop½øĞĞÇĞÃæ±à³Ì
-	ÆäËû spring¹¦ÄÜ£¬Èç¶ÔÏûÏ¢µÄÖ§³Ö
-	
-
+é€‚ç”¨èŒƒå›´
+	æ„å»ºä¼ä¸šåº”ç”¨ï¼ˆspringmvc+spring+hibernate/mybatisï¼‰
+	å•ç‹¬ä½¿ç”¨beanå®¹å™¨ï¼ˆbeanç®¡ç†ï¼‰
+	å•ç‹¬ä½¿ç”¨aopè¿›è¡Œåˆ‡é¢ç¼–ç¨‹
+	å…¶ä»– springåŠŸèƒ½ï¼Œå¦‚å¯¹æ¶ˆæ¯çš„æ”¯æŒ
 
 
 
-Ê²Ã´ÊÇ¿ò¼Ü£º
-	¿ò¼Ü¾ÍÊÇ¶¨ÖÆÒ»Ì×¹æ·¶»òÕß¹æÔò£¨Ë¼Ïë£©£¬´ó¼ÒÔÚ¸Ã¹æ·¶»òË¼ÏëÏÂ½øĞĞ¹¤×÷£¬»òÕßËµ
-	Ê¹ÓÃ±ğÈË´òºÃµÄÎèÌ¨£¬ÄãÀ´×ö±íÑİ
 
-¿ò¼ÜÓÚÀà¿âµÄÇø±ğ
-	¿ò¼ÜÒ»°ãÊÇ·â×°ÁËÂß¼­µÄ£¬¸ßÄÚ¾ÛµÄ£¬Àà¿âÔòÊÇËÉÉ¢µÄ¹¤¾ß¼¯ºÏ
-	¿ò¼ÜÒ»°ãËÆºõ×¨×¢ÓÚÄ³Ò»ÁìÓò£¬Àà¿âÔòÊÇ¸üÍ¨ÓÃµÄ
+
+ä»€ä¹ˆæ˜¯æ¡†æ¶ï¼š
+	æ¡†æ¶å°±æ˜¯å®šåˆ¶ä¸€å¥—è§„èŒƒæˆ–è€…è§„åˆ™ï¼ˆæ€æƒ³ï¼‰ï¼Œå¤§å®¶åœ¨è¯¥è§„èŒƒæˆ–æ€æƒ³ä¸‹è¿›è¡Œå·¥ä½œï¼Œæˆ–è€…è¯´
+	ä½¿ç”¨åˆ«äººæ‰“å¥½çš„èˆå°ï¼Œä½ æ¥åšè¡¨æ¼”
+
+æ¡†æ¶äºç±»åº“çš„åŒºåˆ«
+	æ¡†æ¶ä¸€èˆ¬æ˜¯å°è£…äº†é€»è¾‘çš„ï¼Œé«˜å†…èšçš„ï¼Œç±»åº“åˆ™æ˜¯æ¾æ•£çš„å·¥å…·é›†åˆ
+	æ¡†æ¶ä¸€èˆ¬ä¼¼ä¹ä¸“æ³¨äºæŸä¸€é¢†åŸŸï¼Œç±»åº“åˆ™æ˜¯æ›´é€šç”¨çš„
 
 
 
 
 IOC
 
-½Ó¿ÚÃæÏò½Ó¿Ú±à³Ì
-	½Ó¿Ú£ºÊÇÒ»ÖÖ¹µÍ¨ÖĞµÄËµÃ÷£¬½Ó¿ÚÊÇÒ»ÖÖ¶ÔÍâ²¿µÄËµÃ÷Ãû£¬ÉùÃ÷ÁËÄÇĞ©·½·¨¶ÔÍâ²¿ÊÇ¹«¿ªµÄ
-	ÃæÏò½Ó¿ÚµÄ±à³ÌµÄºÃ´¦¾ÍÊÇ£¬½Ó¿ÚµÄÊµÏÖµÄ¾ßÌåµÄ±ä¶¯²»»áÓ°Ïì¸÷²ãµÄµ÷ÓÃ£¬ÕâÒ»µãÔÚ¹«¹²·şÎñÖĞÓÈÆäÖØÒª
-	¡±ÃæÏò½Ó¿Ú±à³Ì¡°ÖĞµÄ¡°½Ó¿Ú¡±ÊÇÓÃÓÚÒş²Ø¾ßÌåÊµÏÖºÍÊµÏÖ¶àÌ¬µÄ×é¼ş
-Ê²Ã´ÊÇIOC
+æ¥å£é¢å‘æ¥å£ç¼–ç¨‹
+	æ¥å£ï¼šæ˜¯ä¸€ç§æ²Ÿé€šä¸­çš„è¯´æ˜ï¼Œæ¥å£æ˜¯ä¸€ç§å¯¹å¤–éƒ¨çš„è¯´æ˜åï¼Œå£°æ˜äº†é‚£äº›æ–¹æ³•å¯¹å¤–éƒ¨æ˜¯å…¬å¼€çš„
+	é¢å‘æ¥å£çš„ç¼–ç¨‹çš„å¥½å¤„å°±æ˜¯ï¼Œæ¥å£çš„å®ç°çš„å…·ä½“çš„å˜åŠ¨ä¸ä¼šå½±å“å„å±‚çš„è°ƒç”¨ï¼Œè¿™ä¸€ç‚¹åœ¨å…¬å…±æœåŠ¡ä¸­å°¤å…¶é‡è¦
+	â€é¢å‘æ¥å£ç¼–ç¨‹â€œä¸­çš„â€œæ¥å£â€æ˜¯ç”¨äºéšè—å…·ä½“å®ç°å’Œå®ç°å¤šæ€çš„ç»„ä»¶
+ä»€ä¹ˆæ˜¯IOC
 
-	IOC¿ØÖÆ·´×ª£¬¿ØÖÆÈ¨µÄ×ªÒÆ£¬Ó¦ÓÃ³ÌĞò±¾Éí²»¸ºÔğÒÀÀµ¶ÔÏóµÄ´´½¨ºÍÎ¬»¤£¬¶øÊÇÓĞÍâ²¿ÈİÆ÷µÄ´´½¨ºÍÎ¬»¤
-	£¨¾ÍÏñÎÒÃÇĞèÒª·¿×Ó£¬²»ÊÇ×Ô¼ºÈ¥»­Í¼Ö½£¬½¨·¿×Ó¶øÊÇÈ¥Çë¿ª·¢ÉÌÈ¥×ö£¬»ò·¿ÎİÖĞ½é×¡·¿£©
-	Ê²Ã´±»·´×ªÁËÄÚ¡ª¡ª¡ª¡ª¡ª¡ª¡·»ñµÄ¶ÔÏóµÄ¹ı³Ì±»·´×ªÁË£¬ÒÀÀµ×¢Èë
-SpringµÄBeanÅäÖÃ
-	SpringµÄIOCÈİÆ÷ÖĞËùÓĞµÄ¶ÔÏó¶¼³ÉÎªbean
+	IOCæ§åˆ¶åè½¬ï¼Œæ§åˆ¶æƒçš„è½¬ç§»ï¼Œåº”ç”¨ç¨‹åºæœ¬èº«ä¸è´Ÿè´£ä¾èµ–å¯¹è±¡çš„åˆ›å»ºå’Œç»´æŠ¤ï¼Œè€Œæ˜¯æœ‰å¤–éƒ¨å®¹å™¨çš„åˆ›å»ºå’Œç»´æŠ¤
+	ï¼ˆå°±åƒæˆ‘ä»¬éœ€è¦æˆ¿å­ï¼Œä¸æ˜¯è‡ªå·±å»ç”»å›¾çº¸ï¼Œå»ºæˆ¿å­è€Œæ˜¯å»è¯·å¼€å‘å•†å»åšï¼Œæˆ–æˆ¿å±‹ä¸­ä»‹ä½æˆ¿ï¼‰
+	ä»€ä¹ˆè¢«åè½¬äº†å†…â€”â€”â€”â€”â€”â€”ã€‹è·çš„å¯¹è±¡çš„è¿‡ç¨‹è¢«åè½¬äº†ï¼Œä¾èµ–æ³¨å…¥
+Springçš„Beané…ç½®
+	Springçš„IOCå®¹å™¨ä¸­æ‰€æœ‰çš„å¯¹è±¡éƒ½æˆä¸ºbean
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-<!-- nameÖĞµÄuser¿ÉÒÔÈ¡±ğÃû    scope="prototype" »òsingleton="false"¿ÉÒÔÉèÖÃÎª·Çµ¥ÀıÄ£Ê½ -->
+<!-- nameä¸­çš„userå¯ä»¥å–åˆ«å    scope="prototype" æˆ–singleton="false"å¯ä»¥è®¾ç½®ä¸ºéå•ä¾‹æ¨¡å¼ -->
 	<bean name="user,user2" class="com.briup.spring.ioc.bean.User">
 		<property name="id" value="1"/>
 		<property name="name" value="tom"/>
@@ -107,74 +107,74 @@ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 	</bean>
 
 
-	Ê¹ÓÃ·½Ê½£ºspringÌá¹©Á½ÖÖ·½Ê½ÅäÖÃ
-	Ò»ÖÖÊÇxmlÅäÖÃ£¬Ò»ÖÖÊÇ×¢½â
+	ä½¿ç”¨æ–¹å¼ï¼šspringæä¾›ä¸¤ç§æ–¹å¼é…ç½®
+	ä¸€ç§æ˜¯xmlé…ç½®ï¼Œä¸€ç§æ˜¯æ³¨è§£
 
 
 
-		
+
 </beans>
 
-BeanµÄ³õÊ¼»¯
-	BeanÈİÆ÷µÄ³õÊ¼»¯
-	Á½¸ö»ù´¡°ü£º
+Beançš„åˆå§‹åŒ–
+	Beanå®¹å™¨çš„åˆå§‹åŒ–
+	ä¸¤ä¸ªåŸºç¡€åŒ…ï¼š
 		org.springframework.beans
 		org.springframework.context
-		BeanFactoryÌá¹©ÅäÖÃ½á¹¹ºÍ»ù±¾¹¦ÄÜ£¬¼ÓÔØ²¢³õÊ¼»¯Bean
-		ApplicationContext±£´æÁËBean¶ÔÏó²¢ÔÚspringÖĞ±»¹ã·ºÊ¹ÓÃ
-		
+		BeanFactoryæä¾›é…ç½®ç»“æ„å’ŒåŸºæœ¬åŠŸèƒ½ï¼ŒåŠ è½½å¹¶åˆå§‹åŒ–Bean
+		ApplicationContextä¿å­˜äº†Beanå¯¹è±¡å¹¶åœ¨springä¸­è¢«å¹¿æ³›ä½¿ç”¨
 
-	beanÈİÆ÷µÄ³õÊ¼»¯£º
-		ÎÄ¼ş	FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("F:/workspace/appcontext.xml");
+
+	beanå®¹å™¨çš„åˆå§‹åŒ–ï¼š
+		æ–‡ä»¶	FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("F:/workspace/appcontext.xml");
 			ApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap1/coll.xml");
 			BeanFactory factory = new ClassPathXmlApplicationContext("com/briup/spring/chap1/ioc.xml");
 
-		webÓ¦ÓÃÖĞ£º
-	<!-- ÅäÖÃcontextConfigLocationÖ¸¶¨spring½«ÒªÊ¹ÓÃµÄÅäÖÃÎÄ¼ş -->
+		webåº”ç”¨ä¸­ï¼š
+	<!-- é…ç½®contextConfigLocationæŒ‡å®šspringå°†è¦ä½¿ç”¨çš„é…ç½®æ–‡ä»¶ -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:action.xml,classpath:dao.xml,classpath:service.xml</param-value>
 	</context-param>
-	<!--  ÅäÖÃlistnerÈÃspring¶ÁÈ¡ÅäÖÃÎÄ¼ş-->
+	<!--  é…ç½®listnerè®©springè¯»å–é…ç½®æ–‡ä»¶-->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-springµÄ³£ÓÃ×¢Èë·½Ê½
+springçš„å¸¸ç”¨æ³¨å…¥æ–¹å¼
 
-	spring×¢ÈëÖµµÄÊÇÔÚÆô¶¯springÈİÆ÷¼ÓÔØbeanÅäÖÃµÄÊ±ºò£¬Íê³É¶Ô±äÁ¿µÄ¸³ÖµĞĞÎª
-	³£ÓÃµÄÁ½ÖÖ×¢Èë·½Ê½£º
-		-ÉèÖµ×¢Èë
-		-¹¹Ôì×¢Èë
-
-
-		ÉèÖµ×¢Èë£º
+	springæ³¨å…¥å€¼çš„æ˜¯åœ¨å¯åŠ¨springå®¹å™¨åŠ è½½beané…ç½®çš„æ—¶å€™ï¼Œå®Œæˆå¯¹å˜é‡çš„èµ‹å€¼è¡Œä¸º
+	å¸¸ç”¨çš„ä¸¤ç§æ³¨å…¥æ–¹å¼ï¼š
+		-è®¾å€¼æ³¨å…¥
+		-æ„é€ æ³¨å…¥
 
 
-			»ù±¾ÀàĞÍÉèÖµ×¢Èë
-		<property name="ÎªÀàÖĞÊôĞÔ", valueÎª×¢ÈëµÄÖµ>
+		è®¾å€¼æ³¨å…¥ï¼š
+
+
+			åŸºæœ¬ç±»å‹è®¾å€¼æ³¨å…¥
+		<property name="ä¸ºç±»ä¸­å±æ€§", valueä¸ºæ³¨å…¥çš„å€¼>
 			<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-<!-- nameÖĞµÄuser¿ÉÒÔÈ¡±ğÃû    scope="prototype" »òsingleton="false"¿ÉÒÔÉèÖÃÎª·Çµ¥ÀıÄ£Ê½ -->
+<!-- nameä¸­çš„userå¯ä»¥å–åˆ«å    scope="prototype" æˆ–singleton="false"å¯ä»¥è®¾ç½®ä¸ºéå•ä¾‹æ¨¡å¼ -->
 	<bean name="user,user2" class="com.briup.spring.ioc.bean.User">
 		<property name="id" value="1"/>
 		<property name="name" value="tom"/>
 		<property name="age" value="20"/>
 		<property name="gender" value="male"/>
-	</bean>	
+	</bean>
 </beans>
-		
-			ÀàÀàĞÍÉèÖµ×¢Èë
+
+			ç±»ç±»å‹è®¾å€¼æ³¨å…¥
 
 	<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-	<!-- serviceÖĞÌá¹©memberDaoÊôĞÔµÄgetxx Setxx·½Ê½¾Í¿ÉÒÔ×Ô¶¯×¢Èë½øÀ´
-		×¢ÒâMemberDaoÓ¦¸ÃÊÇÔÚIMemberServiceImplÖĞÊÇÒ»¸ö½Ó¿ÚµÄÒıÓÃ
+	<!-- serviceä¸­æä¾›memberDaoå±æ€§çš„getxx Setxxæ–¹å¼å°±å¯ä»¥è‡ªåŠ¨æ³¨å…¥è¿›æ¥
+		æ³¨æ„MemberDaoåº”è¯¥æ˜¯åœ¨IMemberServiceImplä¸­æ˜¯ä¸€ä¸ªæ¥å£çš„å¼•ç”¨
 	-->
 	<bean name="memberService" class="com.briup.run.service.impl.IMemberServiceImpl">
 		<property name="memberDao" ref="memberDao"></property>
@@ -182,36 +182,36 @@ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 	</bean>
 
 		<bean name="memberDao" class="com.briup.run.dao.impl.IMemberDaoImpl">
-		
+
 	</bean>
 
 	</beans>
 
 
-¹¹Ôì×¢Èë£º
+æ„é€ æ³¨å…¥ï¼š
 
-	
+
 	<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 	<bean name="teacher" class="com.briup.spring.ioc.bean.Teacher">
-		<!--  1.°´ÕÕÊôĞÔÃû¸³Öµ £¬µ÷ÓÃÓĞ²ÎÊıµÄ¹¹ÔìÆ÷£¬Ë³ĞòÊÇ²ÎÊıË³Ğò-->
+		<!--  1.æŒ‰ç…§å±æ€§åèµ‹å€¼ ï¼Œè°ƒç”¨æœ‰å‚æ•°çš„æ„é€ å™¨ï¼Œé¡ºåºæ˜¯å‚æ•°é¡ºåº-->
 		<constructor-arg name="id" value="1"/> <!-- person(int id,String name, String gender) -->
 		<constructor-arg name="name" value="tom"/>
 		<constructor-arg name="gender" value="male"/>
-		<!-- 2.index´Ó0¿ªÊ¼£¬°´ÕÕÊôĞÔÔÚ¹¹ÔìÆ÷ÖĞ³öÏÖµÄË³Ğò¸³Öµ Ë÷ÒıÖµÊÇ¹¹ÔìÆ÷ÖĞµÄÊôĞÔË³Ğò -->
+		<!-- 2.indexä»0å¼€å§‹ï¼ŒæŒ‰ç…§å±æ€§åœ¨æ„é€ å™¨ä¸­å‡ºç°çš„é¡ºåºèµ‹å€¼ ç´¢å¼•å€¼æ˜¯æ„é€ å™¨ä¸­çš„å±æ€§é¡ºåº -->
 		<!-- <constructor-arg index="0" value="2"/>
 		<constructor-arg index="1" value="jack"/>
 		<constructor-arg index="2" value="male"/> -->
-		<!-- 3.°´ÕÕÀàĞÍ½øĞĞ¸³Öµ£¬Èç¹û³öÏÖÏàÍ¬µÄÀàĞÍ£¬°´ÕÕÊôĞÔÔÚ¹¹ÔìÆ÷ÖĞ³öÏÖµÄË³Ğò½øĞĞ¸´ÖÆ -->
+		<!-- 3.æŒ‰ç…§ç±»å‹è¿›è¡Œèµ‹å€¼ï¼Œå¦‚æœå‡ºç°ç›¸åŒçš„ç±»å‹ï¼ŒæŒ‰ç…§å±æ€§åœ¨æ„é€ å™¨ä¸­å‡ºç°çš„é¡ºåºè¿›è¡Œå¤åˆ¶ -->
 	<!-- 	<constructor-arg type="int" value="3"/>
 		<constructor-arg type="String" value="rose"/>
 		<constructor-arg type="String" value="female"/> -->
 	</bean>
-	
-		
+
+
 </beans>
 
 
@@ -247,15 +247,15 @@ public class Teacher implements Serializable{
 
 Bean
 
-BeanÅäÖÃÏî
-BeanµÄ×÷ÓÃÓò
-BeanµÄÉúÃüÖÜÆÚ
-BeanµÄ×Ô¶¯×°Åä
-ResourcesºÍResourceLoader
+Beané…ç½®é¡¹
+Beançš„ä½œç”¨åŸŸ
+Beançš„ç”Ÿå‘½å‘¨æœŸ
+Beançš„è‡ªåŠ¨è£…é…
+Resourceså’ŒResourceLoader
 
 
 
-BeanÅäÖÃÏî
+Beané…ç½®é¡¹
 Id
 Class
 Constructor arguments
@@ -266,11 +266,11 @@ Initialization/destruction method
 
 
 
-Bean×÷ÓÃÓò
-singeton:µ¥ÀûÄ£Ê½£¬Ö¸µÄÊÇBeanÈİÆ÷ÖĞÖ»´æÔÚÒ»·İ
-Propertype£ºÃ¿´ÎÇëÇó´´½¨ĞÂµÄÊµÀı£¬destory·½Ê½²»ÉúĞ§
-request:Ã¿´ÎhttpÇëÇó´´½¨Ò»¸öÊµÀı£¬ÇÒ½öÔÚµ±Ç°requestÉúĞ§
-session:Í¬ÉÏ£¬Ã¿´ÎhttpÇëÇó´´½¨Ò»¸öÊµÀı£¬ÇÒ½öÔÚµ±Ç°sessonÉúĞ§
+Beanä½œç”¨åŸŸ
+singeton:å•åˆ©æ¨¡å¼ï¼ŒæŒ‡çš„æ˜¯Beanå®¹å™¨ä¸­åªå­˜åœ¨ä¸€ä»½
+Propertypeï¼šæ¯æ¬¡è¯·æ±‚åˆ›å»ºæ–°çš„å®ä¾‹ï¼Œdestoryæ–¹å¼ä¸ç”Ÿæ•ˆ
+request:æ¯æ¬¡httpè¯·æ±‚åˆ›å»ºä¸€ä¸ªå®ä¾‹ï¼Œä¸”ä»…åœ¨å½“å‰requestç”Ÿæ•ˆ
+session:åŒä¸Šï¼Œæ¯æ¬¡httpè¯·æ±‚åˆ›å»ºä¸€ä¸ªå®ä¾‹ï¼Œä¸”ä»…åœ¨å½“å‰sessonç”Ÿæ•ˆ
 
 set.xml
 <bean name="beanScope" class="com.briup.spring.ioc.bean.User" scope="prototype">
@@ -280,25 +280,25 @@ set.xml
 		<property name="gender" value="male"/>
 	</bean>
 
-	//²âÊÔ
+	//æµ‹è¯•
 
 	BeanFactory factory = new ClassPathXmlApplicationContext("com/briup/spring/chap1/set.xml");
-	User user = (User) factory.getBean("user"); 
+	User user = (User) factory.getBean("user");
 	User user2 = (User) factory.getBean("user");
-	System.out.println(user == user2);//true -- ËùÒÔÄ¬ÈÏµ¥Àı 
-	
-	--ÕâÊÇ¿ÉÒÔ¿ØÖÆµÄÔÚÅäÖÃÎÄ¼şÖĞ bean scope="prototype"-->»á±ä³ÉÔ­ĞÍÄ£Ê½ ÕâÊ±½á¹û»áÊÇfalse
+	System.out.println(user == user2);//true -- æ‰€ä»¥é»˜è®¤å•ä¾‹
+
+	--è¿™æ˜¯å¯ä»¥æ§åˆ¶çš„åœ¨é…ç½®æ–‡ä»¶ä¸­ bean scope="prototype"-->ä¼šå˜æˆåŸå‹æ¨¡å¼ è¿™æ—¶ç»“æœä¼šæ˜¯false
 
 
-BeanµÄÉùÃ÷ÖÜÆÚ
+Beançš„å£°æ˜å‘¨æœŸ
 
-	¶¨Òå
-	³õÊ¼»¯
-	Ê¹ÓÃ
-	Ïú»Ù
+	å®šä¹‰
+	åˆå§‹åŒ–
+	ä½¿ç”¨
+	é”€æ¯
 
 
-	   <!-- µ÷ÓÃset·½·¨¸³Öµºó»áµ÷ÓÃmyInit·½·¨    myDestory·½·¨×îºóµ÷ÓÃ-->
+	   <!-- è°ƒç”¨setæ–¹æ³•èµ‹å€¼åä¼šè°ƒç”¨myInitæ–¹æ³•    myDestoryæ–¹æ³•æœ€åè°ƒç”¨-->
 	<bean name="life" class="com.briup.spring.ioc.bean.Life" init-method="myInit" destroy-method="myDestory">
 		<property name="name" value="tom"></property>
 	</bean>
@@ -313,9 +313,9 @@ import org.springframework.beans.factory.BeanNameAware;
 
 public class Life implements BeanNameAware,BeanFactoryAware{
 	private String name;
-	
-	public Life(){//Ò»¼ÓÔØ¾Í»áµ÷µ½ÓÃ
-		System.out.println("µ÷ÓÃÎŞ²Î¹¹ÔìÆ÷");
+
+	public Life(){//ä¸€åŠ è½½å°±ä¼šè°ƒåˆ°ç”¨
+		System.out.println("è°ƒç”¨æ— å‚æ„é€ å™¨");
 	}
 
 	public String getName() {
@@ -323,57 +323,57 @@ public class Life implements BeanNameAware,BeanFactoryAware{
 	}
 
 	public void setName(String name) {
-		System.out.println("µ÷ÓÃsetName·½·¨");
+		System.out.println("è°ƒç”¨setNameæ–¹æ³•");
 		this.name = name;
 	}
-	
+
 	public void myInit() {
-		System.out.println("µ÷ÓÃmyInit·½·¨");
+		System.out.println("è°ƒç”¨myInitæ–¹æ³•");
 	}
-	
+
 	public void myDestory(){
-		System.out.println("µ÷ÓÃmyDestory·½·¨");
+		System.out.println("è°ƒç”¨myDestoryæ–¹æ³•");
 	}
 
 	@Override
 	public void setBeanFactory(BeanFactory arg0) throws BeansException {
-		System.out.println("µ÷ÓÃsetBeanFactory·½·¨");
-		
+		System.out.println("è°ƒç”¨setBeanFactoryæ–¹æ³•");
+
 	}
 
 	@Override
 	public void setBeanName(String arg0) {
-		System.out.println("µ÷ÓÃsetBeanName·½·¨");
+		System.out.println("è°ƒç”¨setBeanNameæ–¹æ³•");
 	}
-	
-	
-	²âÊÔ
+
+
+	æµ‹è¯•
 	@Test
-	public void life(){//springBeanµÄÉúÃüÖÜÆÚ	
+	public void life(){//springBeançš„ç”Ÿå‘½å‘¨æœŸ
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap2/life.xml");
 		Life life = ac.getBean("life",Life.class);
 		System.out.println(life);
 		ac.destroy();
 	}
 	/**
-	 * µ÷ÓÃÎŞ²Î¹¹ÔìÆ÷
-µ÷ÓÃsetName·½·¨
-µ÷ÓÃsetBeanName·½·¨
-µ÷ÓÃsetBeanFactory·½·¨
-µ÷ÓÃmyInit·½·¨
+	 * è°ƒç”¨æ— å‚æ„é€ å™¨
+è°ƒç”¨setNameæ–¹æ³•
+è°ƒç”¨setBeanNameæ–¹æ³•
+è°ƒç”¨setBeanFactoryæ–¹æ³•
+è°ƒç”¨myInitæ–¹æ³•
 com.briup.spring.ioc.bean.Life@4f0b5b
-µ÷ÓÃmyDestory·½·¨
-AfterClass ±ê×¢µÄ·½·¨ »á×îºóÖ´ĞĞ
+è°ƒç”¨myDestoryæ–¹æ³•
+AfterClass æ ‡æ³¨çš„æ–¹æ³• ä¼šæœ€åæ‰§è¡Œ
 
-	 * 
+	 *
 	 * */
 }
 
 
 
 
-Aware ¸ĞÖª
-	springÖĞÌá¹©ÁËÒ»Ğ©Aware½áÎ²µÄ½Ó¿Ú£¬ÊµÏÖÀàAware½Ó¿ÚµÄbeanÔÚ³õÊ¼»¯Ö®ºó£¬¿ÉÒÔ»ñÈ¡ÏàÓ¦µÄ×ÊÔ´
+Aware æ„ŸçŸ¥
+	springä¸­æä¾›äº†ä¸€äº›Awareç»“å°¾çš„æ¥å£ï¼Œå®ç°ç±»Awareæ¥å£çš„beanåœ¨åˆå§‹åŒ–ä¹‹åï¼Œå¯ä»¥è·å–ç›¸åº”çš„èµ„æº
 
 	ApplicationContextAware
 	BeanNameAware
@@ -385,15 +385,15 @@ Aware ¸ĞÖª
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-<!-- nameÖĞµÄuser¿ÉÒÔÈ¡±ğÃû    scope="prototype" »òsingleton="false"¿ÉÒÔÉèÖÃÎª·Çµ¥ÀıÄ£Ê½ -->
+<!-- nameä¸­çš„userå¯ä»¥å–åˆ«å    scope="prototype" æˆ–singleton="false"å¯ä»¥è®¾ç½®ä¸ºéå•ä¾‹æ¨¡å¼ -->
 	<bean name="applicationAawareTest" class="com.briup.spring.aop.bean.AwareTest">
-	
+
 	</bean>
-		
+
 </beans>
 
 
-ÈçÊµÏÖApplicationContextAware¿ÉÒÔ»ñÈ¡ÈİÆ÷ÖĞÏîÏà¹Ø×ÊÔ´
+å¦‚å®ç°ApplicationContextAwareå¯ä»¥è·å–å®¹å™¨ä¸­é¡¹ç›¸å…³èµ„æº
 package com.briup.spring.aop.bean;
 
 import org.springframework.beans.BeansException;
@@ -424,11 +424,11 @@ public class AwareTest implements ApplicationContextAware{
 
 
 
--------------Bean¹ÜÀíµÄ×¢½âÊµÏÖ
+-------------Beanç®¡ç†çš„æ³¨è§£å®ç°
 
 
-ClasspathÉ¨ÃèÓë×é¼ş¹ÜÀí
-ÀàµÄ×Ô¶¯¼ì²âÓë×¢²áBean
+Classpathæ‰«æä¸ç»„ä»¶ç®¡ç†
+ç±»çš„è‡ªåŠ¨æ£€æµ‹ä¸æ³¨å†ŒBean
 <context:annotation-config/>
 @Component, @Repository, @Service, @Constroller
 @Required
@@ -438,93 +438,93 @@ ClasspathÉ¨ÃèÓë×é¼ş¹ÜÀí
 
 
 
-classpatpÉ¨ÃèÓë×é¼ş¹ÜÀí£º
-´ÓSpring3.0¿ªÊ¼£¬Spring JavaConfigÏîÄ¿Ìá¹©ÁËºÜ¶àÌØĞÔ£¬°üÀ¨Ê¹ÓÃjava¶ø²»ÊÇXML¶¨ÒåBean,±ÈÈç
+classpatpæ‰«æä¸ç»„ä»¶ç®¡ç†ï¼š
+ä»Spring3.0å¼€å§‹ï¼ŒSpring JavaConfigé¡¹ç›®æä¾›äº†å¾ˆå¤šç‰¹æ€§ï¼ŒåŒ…æ‹¬ä½¿ç”¨javaè€Œä¸æ˜¯XMLå®šä¹‰Bean,æ¯”å¦‚
 @Configuration, @Bean, @Import, @DependsOn
-@ComponentÊÇSpringÖĞµÄÒ»¸öÍ¨ÓÃ×¢½â£¬¿ÉÒÔÓÃÓÚÈÎºÎBean,Ïàµ±ÓÚ×¢½âµÄ³¬Àà,Èç¹û²»ÖªµÀÎ»ÓÚÄÇ¸ö²ã£¬Ò»°ãÊ¹ÓÃ¸Ã×¢½â
-@Repository, @Service, @ControllerÊÇ¸ü¾ßÓĞÕë¶ÔĞÔµÄ×¢½â
-- @Repository,Í¨³£ÓÃÓÚ×¢½âDAO,¼´³Ö¾Ã²ãµÄ×¢½â
-- @Service,Í¨³£ÓÃÓÚ×·×¢½âServiceÀà£¬¼´·şÎñ²ã
-- @ControllerÍ¨³£ÓÃÓÚ×¢½âController£¬¼´¿ØÖÆ²ã£¨MVC£©
+@Componentæ˜¯Springä¸­çš„ä¸€ä¸ªé€šç”¨æ³¨è§£ï¼Œå¯ä»¥ç”¨äºä»»ä½•Bean,ç›¸å½“äºæ³¨è§£çš„è¶…ç±»,å¦‚æœä¸çŸ¥é“ä½äºé‚£ä¸ªå±‚ï¼Œä¸€èˆ¬ä½¿ç”¨è¯¥æ³¨è§£
+@Repository, @Service, @Controlleræ˜¯æ›´å…·æœ‰é’ˆå¯¹æ€§çš„æ³¨è§£
+- @Repository,é€šå¸¸ç”¨äºæ³¨è§£DAO,å³æŒä¹…å±‚çš„æ³¨è§£
+- @Service,é€šå¸¸ç”¨äºè¿½æ³¨è§£Serviceç±»ï¼Œå³æœåŠ¡å±‚
+- @Controlleré€šå¸¸ç”¨äºæ³¨è§£Controllerï¼Œå³æ§åˆ¶å±‚ï¼ˆMVCï¼‰
 
 
 
-ÀàµÄ×Ô¶¯¼ì²âÒÔ¼°BeanµÄ×¢²á
-spring¿ÉÒÔ×Ô¶¯¼ì²âÀà²¢×¢½âBeanµ½ApplicationContextÖĞ
+ç±»çš„è‡ªåŠ¨æ£€æµ‹ä»¥åŠBeançš„æ³¨å†Œ
+springå¯ä»¥è‡ªåŠ¨æ£€æµ‹ç±»å¹¶æ³¨è§£Beanåˆ°ApplicationContextä¸­
 
 
-ÎªÁËÄÜ¹»¼ì²âÕâĞ©Àà£¬²¢×¢²áÏàÓ¦µÄBean,ĞèÒªÏÂÃæÄÚÈİ
+ä¸ºäº†èƒ½å¤Ÿæ£€æµ‹è¿™äº›ç±»ï¼Œå¹¶æ³¨å†Œç›¸åº”çš„Bean,éœ€è¦ä¸‹é¢å†…å®¹
 
-  <!--context:component-scan°üº¬context:annotation-configµÄÈ«²¿¹¦ÄÜ£¬Í¨³£Ê¹ÓÃÇ°Õßºó£¬²»ÔÙÊ¹ÓÃºóÕß
-      	 context:component-scanÒ»°ãÓÃÓÚ»ùÓÚÀàµÄ×¢½â£¨°üÀ¨³ÉÔ±±äÁ¿»ò³ÉÔ±·½·¨µÄ×¢½â£©£¬µ«ÊÇcontext:annotation-configÖ»ÄÜÔÚÍê³Ébean×¢²áºó£¬È¥´¦ÀíbeanÀàÖĞµÄ
-      	 ³ÉÔ±±äÁ¿»ò³ÉÔ±·½·¨µÄ×¢½â
-      	  basp-packageÖ¸ÏòÉ¨ÃèÄÇ¸ö°üÏÂµÄ×¢½âÀà
-      	
+  <!--context:component-scanåŒ…å«context:annotation-configçš„å…¨éƒ¨åŠŸèƒ½ï¼Œé€šå¸¸ä½¿ç”¨å‰è€…åï¼Œä¸å†ä½¿ç”¨åè€…
+      	 context:component-scanä¸€èˆ¬ç”¨äºåŸºäºç±»çš„æ³¨è§£ï¼ˆåŒ…æ‹¬æˆå‘˜å˜é‡æˆ–æˆå‘˜æ–¹æ³•çš„æ³¨è§£ï¼‰ï¼Œä½†æ˜¯context:annotation-configåªèƒ½åœ¨å®Œæˆbeanæ³¨å†Œåï¼Œå»å¤„ç†beanç±»ä¸­çš„
+      	 æˆå‘˜å˜é‡æˆ–æˆå‘˜æ–¹æ³•çš„æ³¨è§£
+      	  basp-packageæŒ‡å‘æ‰«æé‚£ä¸ªåŒ…ä¸‹çš„æ³¨è§£ç±»
+
        -->
-   
+
       <context:component-scan base-package="spring.aop.bean.annotation"></context:component-scan>
 
 
 
-¹ıÂË×¢½â£º
+è¿‡æ»¤æ³¨è§£ï¼š
 
- 
-      <!--Ä¬ÈÏÇé¿öÏÂ£¬springÖĞ×Ô¶¯·¢ÏÖ²¢±»×¢²ábeanµÄÌõ¼şÊÇ£º
-      	Ê¹ÓÃ@Component, @Repository, @Service, @ConstrollerÆäÖĞÖ®Ò»µÄ×¢½â
-      	»òÕßÊ¹ÓÃ»ùÓÚ@ComponentµÄ×Ô¶¨Òå×¢½â
-      	
-      	¿ÉÒÔÍ¨¹ı¹ıÂËÆ÷ĞŞ¸ÄÉÏ±ßµÄĞĞÎª£¬ÈçÏÂ±ßµÄÀı×ÓXMLÅäÖÃºöÂÔËùÓĞ@Repository×¢½â²¢ÓÃ¡°stub¡±´úÌæ
+
+      <!--é»˜è®¤æƒ…å†µä¸‹ï¼Œspringä¸­è‡ªåŠ¨å‘ç°å¹¶è¢«æ³¨å†Œbeançš„æ¡ä»¶æ˜¯ï¼š
+      	ä½¿ç”¨@Component, @Repository, @Service, @Constrollerå…¶ä¸­ä¹‹ä¸€çš„æ³¨è§£
+      	æˆ–è€…ä½¿ç”¨åŸºäº@Componentçš„è‡ªå®šä¹‰æ³¨è§£
+
+      	å¯ä»¥é€šè¿‡è¿‡æ»¤å™¨ä¿®æ”¹ä¸Šè¾¹çš„è¡Œä¸ºï¼Œå¦‚ä¸‹è¾¹çš„ä¾‹å­XMLé…ç½®å¿½ç•¥æ‰€æœ‰@Repositoryæ³¨è§£å¹¶ç”¨â€œstubâ€ä»£æ›¿
         -->
        <context:component-scan base-package="spring.aop.bean.annotation">
        		<!--  -->
        		<context:include-filter type="regex" expression=".*Stub.*Repository"/>
-       		<!-- ÅÅ³ı@Repository×¢½â -->
+       		<!-- æ’é™¤@Repositoryæ³¨è§£ -->
        		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
        </context:component-scan>
 
 
 
-Ê¹ÓÃ×¢½â¶¨ÒåBean
+ä½¿ç”¨æ³¨è§£å®šä¹‰Bean
 
-É¨Ãè¹ı³ÌÖĞ×é¼ş×Ô¶¯¼ì²â£¬ÄÇÃ´BeanÃû³ÆÊÇÓĞBeanNameGeneratorÉú³ÉµÄ( @Component, @Repository, @Service, @Controller
-¶¼»áÓĞ¸önameÊôĞÔÓÃÓÚÏÔÊ¾ÉèÖÃBeanName)
+æ‰«æè¿‡ç¨‹ä¸­ç»„ä»¶è‡ªåŠ¨æ£€æµ‹ï¼Œé‚£ä¹ˆBeanåç§°æ˜¯æœ‰BeanNameGeneratorç”Ÿæˆçš„( @Component, @Repository, @Service, @Controller
+éƒ½ä¼šæœ‰ä¸ªnameå±æ€§ç”¨äºæ˜¾ç¤ºè®¾ç½®BeanName)
 
-//ÏÔÊ¾ÉèÖÃbeanName,Ïàµ±ÓÚÔÚxmlÅäÖÃbeanµÄÊÇidµÄÖµ
+//æ˜¾ç¤ºè®¾ç½®beanName,ç›¸å½“äºåœ¨xmlé…ç½®beançš„æ˜¯idçš„å€¼
 @Service("myMoveLister")
 public class simpleLlister{
 //..
 }
 
 
-//ÉèÖÃbeanNameÄ¬ÈÏÊ¹ÓÃÀàÃû£¬Ê××ÖÄ¸Ğ¡Ğ´×÷ÎªbeanName
+//è®¾ç½®beanNameé»˜è®¤ä½¿ç”¨ç±»åï¼Œé¦–å­—æ¯å°å†™ä½œä¸ºbeanName
 @Repository
 public class MovieFinderImpl implements MovieFinder{
-	
+
 }
 
-¿ÉÒÔ×Ô¶¨ÒåbeanÃüÃû²ßÂÔ£¬ÊµÏÖBeanNameGenerator½Ó¿Ú£¬ÕâÀïÒ»¶¨Òª°üº¬Ò»¸öÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+å¯ä»¥è‡ªå®šä¹‰beanå‘½åç­–ç•¥ï¼Œå®ç°BeanNameGeneratoræ¥å£ï¼Œè¿™é‡Œä¸€å®šè¦åŒ…å«ä¸€ä¸ªæ— å‚æ•°çš„æ„é€ å™¨
    <context:component-scan base-package="spring.aop.bean.MyNameGenerator"></context:component-scan>
 
 
 
-×÷ÓÃÓòµÄ×¢½âScope
-Í¨³£Çé¿öÏÂ×Ô¶¯²éÕÒµÄSpring×é¼ş£¬ÆäScopeÊÇsingleton,ÆäSpring2.5Ìá¹©ÁËScopeµÄ×¢½â @Scope
+ä½œç”¨åŸŸçš„æ³¨è§£Scope
+é€šå¸¸æƒ…å†µä¸‹è‡ªåŠ¨æŸ¥æ‰¾çš„Springç»„ä»¶ï¼Œå…¶Scopeæ˜¯singleton,å…¶Spring2.5æä¾›äº†Scopeçš„æ³¨è§£ @Scope
 
 
-@Scope("prototype")  //À¨ºÅÖĞÖ¸¶¨ScopeµÄ·¶Î§,Ä¬ÈÏ
+@Scope("prototype")  //æ‹¬å·ä¸­æŒ‡å®šScopeçš„èŒƒå›´,é»˜è®¤
 @Repository
 public class MovieFinderImpl implements MovieFinder{
 
 }
 
-Ò²¿ÉÒÔ×Ô¶¨Òåscope²ßÂÔ£¬ÊµÏÖScopeMetadataResolver½Ó¿Ú²¢Ìá¹©Ò»ÎŞ²ÎÊıµÄ¹¹ÔìÆ÷
+ä¹Ÿå¯ä»¥è‡ªå®šä¹‰scopeç­–ç•¥ï¼Œå®ç°ScopeMetadataResolveræ¥å£å¹¶æä¾›ä¸€æ— å‚æ•°çš„æ„é€ å™¨
 
  <context:component-scan base-package="spring.aop.bean.MyScopeResolver"></context:component-scan>
 
 
-´úÀí·½Ê½£º
+ä»£ç†æ–¹å¼ï¼š
 
-¿ÉÒÔÊ¹ÓÃscoped-proxyÊôĞÔÖ¸¶¨´úÀí£¬ÓĞÈı¸öÖµ¿ÉÑ¡£ºon,interfaces,targetClass
+å¯ä»¥ä½¿ç”¨scoped-proxyå±æ€§æŒ‡å®šä»£ç†ï¼Œæœ‰ä¸‰ä¸ªå€¼å¯é€‰ï¼šon,interfaces,targetClass
 <context:component-scan base-package="spring.aop.bean"
 	scoped-proxy="interfaces"></context:component-scan>
 
@@ -533,18 +533,18 @@ public class MovieFinderImpl implements MovieFinder{
 
 
 
-bean×¢½âµÄÊ¹ÓÃ
+beanæ³¨è§£çš„ä½¿ç”¨
 <context:component-scan base-package="com.briup.spring.aop.bean.annotation"></context:component-scan>
-       
+
 
 BeanAnnotation.java
 
-//ÓÉÓÚ²»ÖªµÀÆä×÷ÓÃÓÚDAO»òServiceËùÒÔÊ¹ÓÃÍ¨ÓÃ×¢½â
-//@Component -->Ä¬ÈÏÊ¹ÓÃÀàÃûĞ¡Ğ´×÷ÎªbeanµÄname
-@Scope("prototype") //À¨ºÅÖĞÎªScopeµÄ·¶Î§,ÕâÀïÉèÖÃÎªÔ­ĞÍÄ£Ê½
+//ç”±äºä¸çŸ¥é“å…¶ä½œç”¨äºDAOæˆ–Serviceæ‰€ä»¥ä½¿ç”¨é€šç”¨æ³¨è§£
+//@Component -->é»˜è®¤ä½¿ç”¨ç±»åå°å†™ä½œä¸ºbeançš„name
+@Scope("prototype") //æ‹¬å·ä¸­ä¸ºScopeçš„èŒƒå›´,è¿™é‡Œè®¾ç½®ä¸ºåŸå‹æ¨¡å¼
 @Component("beanAnnotation")
 public class BeanAnnotation {
-	
+
 	public void say(String arg){
 		System.out.println("BeanAnnotation: "+arg);
 	}
@@ -552,12 +552,12 @@ public class BeanAnnotation {
 }
 
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 
 @Test
 	public void testAnnotation(){
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/annotation.xml");
-		//@ComponentÃ»ÓĞvalueÖµ£¬Ä¬ÈÏÊ¹ÓÃÀàÃûÊ××ÖÄ¸Ğ¡Ğ´×÷ÎªbeanµÄid
+		//@Componentæ²¡æœ‰valueå€¼ï¼Œé»˜è®¤ä½¿ç”¨ç±»åé¦–å­—æ¯å°å†™ä½œä¸ºbeançš„id
 		BeanAnnotation beanAnnotation1  = ac.getBean("beanAnnotation",BeanAnnotation.class);
 		BeanAnnotation beanAnnotation2  = ac.getBean("beanAnnotation",BeanAnnotation.class);
 		System.out.println(beanAnnotation1);
@@ -566,18 +566,18 @@ public class BeanAnnotation {
 		//com.briup.spring.aop.bean.annotation.BeanAnnotation@1598d5f
 		//com.briup.spring.aop.bean.annotation.BeanAnnotation@505fd8
 	}
-	
+
 
 
 
 @Required
 
-	@Required×¢½âÊ¹ÓÃÓÚ×¢½âbeanÊôĞÔµÄsetter·½·¨
-	Õâ¸ö×¢½â½ö½ö±êÊ¶£¬ÊÜÓ°ÏìµÄbeanÊôĞÔ±ØĞëÔÚÅäÖÃÊ±±»Ìî³ä£¬Í¨¹ıbean¶¨Òå»òÍ¨¹ı×Ô¶¯×°ÅäÒ»¸öÃ÷È·µÄÊôĞÔÖµ
+	@Requiredæ³¨è§£ä½¿ç”¨äºæ³¨è§£beanå±æ€§çš„setteræ–¹æ³•
+	è¿™ä¸ªæ³¨è§£ä»…ä»…æ ‡è¯†ï¼Œå—å½±å“çš„beanå±æ€§å¿…é¡»åœ¨é…ç½®æ—¶è¢«å¡«å……ï¼Œé€šè¿‡beanå®šä¹‰æˆ–é€šè¿‡è‡ªåŠ¨è£…é…ä¸€ä¸ªæ˜ç¡®çš„å±æ€§å€¼
 
-	Õâ¸ö×¢½â²»ÊÇºÜ³£¼û
+	è¿™ä¸ªæ³¨è§£ä¸æ˜¯å¾ˆå¸¸è§
 	pulic class simpleMovieLister{
-	
+
 		private MoiveFinder movieFinder;
 
 
@@ -591,17 +591,17 @@ public class BeanAnnotation {
 
 
 @Autowried
-²»Ê¹ÓÃ¸Ã×¢½âµÄÇé¿öÏÂ£¬ÏëÒªspringÎªÄã×¢ÈëÖµ£¬ĞèÒªÎª±»×¢ÈëÖµµÄÊôĞÔÌá¹©getter,setter·½·¨
-@Autowried¶ÔÊôĞÔ½øĞĞ×¢½âµÄÊ±ºò£¬ÎÒÃÇ¿ÉÒÔÊ¡ÂÔgetter,setter·½·¨£¬Í¨¹ı¶ÔÓ¦µÄbeanµÄÀàĞÍ£¬¶ÔÊôĞÔÖµ×¢Èë
-@Autowried¶Ôseter·½·¨½øĞĞ×¢½âµÄÊ±ºò£¬¿ÉÒÔ×¢Èë¶ÔÓ¦µÄÖµ
-@Autowried¶Ô¹¹ÔìÆ÷½øĞĞ×¢½âµÄÊ±ºò£¬¿ÉÒÔÍ¨¹ıÀàĞÍÕÒµ½¶ÔÓ¦µÄbean×¢Èë
-@Autowried¿ÉÒÔ½« @AutowriedÎª¡±´«Í³¡°µÄsetter·½·¨´úÌæ @Required
-@Autowried×Ô¶¯×¢Èë£¬»áÈ¥ÈİÆ÷ÖĞ°´ÕÕÀàĞÍ²éÕÒ¶ÔÓ¦µÄbean×¢Èë
+ä¸ä½¿ç”¨è¯¥æ³¨è§£çš„æƒ…å†µä¸‹ï¼Œæƒ³è¦springä¸ºä½ æ³¨å…¥å€¼ï¼Œéœ€è¦ä¸ºè¢«æ³¨å…¥å€¼çš„å±æ€§æä¾›getter,setteræ–¹æ³•
+@Autowriedå¯¹å±æ€§è¿›è¡Œæ³¨è§£çš„æ—¶å€™ï¼Œæˆ‘ä»¬å¯ä»¥çœç•¥getter,setteræ–¹æ³•ï¼Œé€šè¿‡å¯¹åº”çš„beançš„ç±»å‹ï¼Œå¯¹å±æ€§å€¼æ³¨å…¥
+@Autowriedå¯¹seteræ–¹æ³•è¿›è¡Œæ³¨è§£çš„æ—¶å€™ï¼Œå¯ä»¥æ³¨å…¥å¯¹åº”çš„å€¼
+@Autowriedå¯¹æ„é€ å™¨è¿›è¡Œæ³¨è§£çš„æ—¶å€™ï¼Œå¯ä»¥é€šè¿‡ç±»å‹æ‰¾åˆ°å¯¹åº”çš„beanæ³¨å…¥
+@Autowriedå¯ä»¥å°† @Autowriedä¸ºâ€ä¼ ç»Ÿâ€œçš„setteræ–¹æ³•ä»£æ›¿ @Required
+@Autowriedè‡ªåŠ¨æ³¨å…¥ï¼Œä¼šå»å®¹å™¨ä¸­æŒ‰ç…§ç±»å‹æŸ¥æ‰¾å¯¹åº”çš„beanæ³¨å…¥
 
 
 
 pulic class simpleMovieLister{
-	
+
 		private MoiveFinder movieFinder;
 
 
@@ -612,65 +612,65 @@ pulic class simpleMovieLister{
 		//..
 }
 
-Í¬Ê± @Autowried¿ÉÒÔÓÃÓÚ¹¹ÔìÆ÷»ò³ÉÔ±±äÁ¿
+åŒæ—¶ @Autowriedå¯ä»¥ç”¨äºæ„é€ å™¨æˆ–æˆå‘˜å˜é‡
 pulic class MovieRreCommender{
-	
-		³ÉÔ±±äÁ¿ÖĞ
+
+		æˆå‘˜å˜é‡ä¸­
 		@Autowried
 		private MovieCatalog movieCatalog;
 
 		private CustomerPreferenceDao customerPreferenceDao;
 
 
-		//¹¹ÔìÆ÷ÖĞ
+		//æ„é€ å™¨ä¸­
 		@Autowried
 		public MovieRreCommender(CustomerPreferenceDao customerPreferenceDao){
 			this.CustomerPreferenceDao  = CustomerPreferenceDao;
 		}
-		
+
 }
 
 
-×¢Òâ£º
-Ä¬ÈÏÇé¿öÏÂ£¬Èç¹ûÒòÕÒ²»µ½ºÏÊÊµÄbean½«»áµ¼ÖÂautowiringÊ§°ÜÅ×³öÒì³££¬¿ÉÒÔÍ¨¹ıÏÂ±ß
-ÕâÖÖ·½Ê½±ÜÃâ
+æ³¨æ„ï¼š
+é»˜è®¤æƒ…å†µä¸‹ï¼Œå¦‚æœå› æ‰¾ä¸åˆ°åˆé€‚çš„beanå°†ä¼šå¯¼è‡´autowiringå¤±è´¥æŠ›å‡ºå¼‚å¸¸ï¼Œå¯ä»¥é€šè¿‡ä¸‹è¾¹
+è¿™ç§æ–¹å¼é¿å…
 
 pulic class simpleMovieLister{
-	
+
 		private MoiveFinder movieFinder;
 
 
-		@Autowried(requried=false)//Ö¸Ã÷¸ÃÊôĞÔ²»ÊÇ±ØĞëµÄ£¬ÕÒ²»µ½µÄÇé¿öÏÂ²»»áÅ×³öÒì³£
+		@Autowried(requried=false)//æŒ‡æ˜è¯¥å±æ€§ä¸æ˜¯å¿…é¡»çš„ï¼Œæ‰¾ä¸åˆ°çš„æƒ…å†µä¸‹ä¸ä¼šæŠ›å‡ºå¼‚å¸¸
 		public void setMovieFinder(MovieFinder movieFinder){
 			this.movieFinder  = movieFinder;
 		}
 		//..
 }
 
-Ã¿Ò»ÀàÖĞÖ»ÄÜÓĞÒ»¸ö¹¹ÔìÆ÷±»±ê¼ÇÎªrequried=ture
-½¨Òé½« @AutowiredµÄ±ØÒªÊôĞÔÊ±£¬Ê¹ÓÃ @Requried×¢½â
+æ¯ä¸€ç±»ä¸­åªèƒ½æœ‰ä¸€ä¸ªæ„é€ å™¨è¢«æ ‡è®°ä¸ºrequried=ture
+å»ºè®®å°† @Autowiredçš„å¿…è¦å±æ€§æ—¶ï¼Œä½¿ç”¨ @Requriedæ³¨è§£
 
 
 
-Ê¹ÓÃ @Autowired×¢½â
-ÊôĞÔ×¢Èë
-setter×¢Èë
-¹¹Ôì×¢Èë
+ä½¿ç”¨ @Autowiredæ³¨è§£
+å±æ€§æ³¨å…¥
+setteræ³¨å…¥
+æ„é€ æ³¨å…¥
 
-ÏÂ±ßµÄ3ÖĞ·½Ê½µÄ×÷ÓÃ¶¼ÊÇÒ»ÑùµÄ£¬Ò»°ãÊ¹ÓÃµÚÒ»ÖÖÊôĞÔ×¢Èë£¬¿ÉÒÔÊ¡ÂÔsetter  getter
+ä¸‹è¾¹çš„3ä¸­æ–¹å¼çš„ä½œç”¨éƒ½æ˜¯ä¸€æ ·çš„ï¼Œä¸€èˆ¬ä½¿ç”¨ç¬¬ä¸€ç§å±æ€§æ³¨å…¥ï¼Œå¯ä»¥çœç•¥setter  getter
 
-	//Ê¹ÓÃautowired ×¢Èë³ÉÔ±ÊôĞÔµÄÖµ£¬¿ÉÒÔÊ¡ÂÔgetxx setxx·½·¨
+	//ä½¿ç”¨autowired æ³¨å…¥æˆå‘˜å±æ€§çš„å€¼ï¼Œå¯ä»¥çœç•¥getxx setxxæ–¹æ³•
 	@Autowired
 	private InjeactionDAO injeactionDAO;
-	
-	
-	//setter×¢ÈëÍ¬ÉÏ±ß×÷ÓÃÒ»Ñù
+
+
+	//setteræ³¨å…¥åŒä¸Šè¾¹ä½œç”¨ä¸€æ ·
 	@Autowired
 	public void setInjeactionDAO(InjeactionDAO injeactionDAO) {
 		this.injeactionDAO = injeactionDAO;
 	}
-	
-	//¹¹Ôì×¢ÈëÍ¬ÊôĞÔ×¢ÈëÒ»Ñù
+
+	//æ„é€ æ³¨å…¥åŒå±æ€§æ³¨å…¥ä¸€æ ·
 	@Autowired
 	public InjeactionServiceImpl(InjeactionDAO injeactionDAO) {
 		this.injeactionDAO = injeactionDAO;
@@ -678,23 +678,23 @@ setter×¢Èë
 
 
 
-Ê¹ÓÃ @Autowired×¢½â¿ÉÒÔ·½±ãµÄ×¢½âÄÇĞ©ÖÚËùÖÜÖªµÄ½âÎöÒÀÀµĞÔ½Ó¿Ú
-±ÈÈçËµ£ºBeanFacotry,ApplicationContext,Environment,ResourceLoader,ApplicaiontEventPublisher, MessageSourceµÈ
+ä½¿ç”¨ @Autowiredæ³¨è§£å¯ä»¥æ–¹ä¾¿çš„æ³¨è§£é‚£äº›ä¼—æ‰€å‘¨çŸ¥çš„è§£æä¾èµ–æ€§æ¥å£
+æ¯”å¦‚è¯´ï¼šBeanFacotry,ApplicationContext,Environment,ResourceLoader,ApplicaiontEventPublisher, MessageSourceç­‰
 
 
 	pulic class simpleMovieLister{
-	
+
 		@Autowired
 		private AplicationContext context;
 
 		public simpleMovieLister(){}
-	
+
 	}
 
-ÉÏ±ßµÄ°¸ÀıÊ¹ÓÃautowired×¢½âApplicationContext£¬ÕâÑùÎÒÃÇ¾Í¿ÉÒÔ»îApplicatioinContextÈİÆ÷×ÜµÄbean¶ÔÏó
+ä¸Šè¾¹çš„æ¡ˆä¾‹ä½¿ç”¨autowiredæ³¨è§£ApplicationContextï¼Œè¿™æ ·æˆ‘ä»¬å°±å¯ä»¥æ´»ApplicatioinContextå®¹å™¨æ€»çš„beanå¯¹è±¡
 
 
-Ê¹ÓÃ @Autowired½«ÈİÆ÷ÖĞÏà¹ØÀàĞÍµÄbean×¢Èëµ½Ò»¸ö¼¯ºÏ»òÊı×éÖĞ
+ä½¿ç”¨ @Autowiredå°†å®¹å™¨ä¸­ç›¸å…³ç±»å‹çš„beanæ³¨å…¥åˆ°ä¸€ä¸ªé›†åˆæˆ–æ•°ç»„ä¸­
 
 private Set<MovieCatalog> movieCatalog;
 
@@ -703,10 +703,10 @@ public void setMovieCatalog(Set<MovieCatalog> movieCatalog){
 	this.movieCatalog = movieCatalog;
 }
 
-ÉÏ±ß°¸Àı£¬Ê¹ÓÃ @Autowired½«applicationContextÈİÆ÷ÖĞËùÓĞÀàĞÍÎªMoviceCtalog.classµÄbean×¢Èëµ½Set¼¯ºÏÖĞ
+ä¸Šè¾¹æ¡ˆä¾‹ï¼Œä½¿ç”¨ @Autowiredå°†applicationContextå®¹å™¨ä¸­æ‰€æœ‰ç±»å‹ä¸ºMoviceCtalog.classçš„beanæ³¨å…¥åˆ°Seté›†åˆä¸­
 
 
-¿ÉÒÔÓÃÓÚkeyÎªStringdµÄMap£¬StringÎªËùÓĞbaenµÄid,valueÎªËùÓĞMoviceCatalog-> beanµÄ¶ÔÏó
+å¯ä»¥ç”¨äºkeyä¸ºStringdçš„Mapï¼ŒStringä¸ºæ‰€æœ‰baençš„id,valueä¸ºæ‰€æœ‰MoviceCatalog-> beançš„å¯¹è±¡
 private Map<String,MovieCatalog> movieCatalog;
 
 @Autowired
@@ -715,15 +715,15 @@ public void setMovieCatalog(Map<String,MovieCatalog> movieCatalog){
 }
 
 
-Èç¹ûÏ£ÍûÊı×éÓĞĞò£¬¿ÉÒÔÈÃbeanÊµÏÖorg.springframework.core.Ordered½Ó¿Ú»òÊ¹ÓÃ @Order×¢½â
+å¦‚æœå¸Œæœ›æ•°ç»„æœ‰åºï¼Œå¯ä»¥è®©beanå®ç°org.springframework.core.Orderedæ¥å£æˆ–ä½¿ç”¨ @Orderæ³¨è§£
 
 
-×¢Òâ£º
-@AutowiredÊÇÓÉSpring BeanPostProcessor´¦ÀíµÄ£¬ËùÒÔ²»ÄÜÔÙ×Ô¼ºµÄBeanPostProcessor»òBeanFactoryProcessorÀàĞÍÖĞÊ¹ÓÃ
-¸Ã×¢½â£¬ÕâĞ©ÀàĞÍ±ØĞëÍ¨¹ıXML»òspringµÄ @Bean×¢½â¼ÓÔØ
+æ³¨æ„ï¼š
+@Autowiredæ˜¯ç”±Spring BeanPostProcessorå¤„ç†çš„ï¼Œæ‰€ä»¥ä¸èƒ½å†è‡ªå·±çš„BeanPostProcessoræˆ–BeanFactoryProcessorç±»å‹ä¸­ä½¿ç”¨
+è¯¥æ³¨è§£ï¼Œè¿™äº›ç±»å‹å¿…é¡»é€šè¿‡XMLæˆ–springçš„ @Beanæ³¨è§£åŠ è½½
 
 
-ÏÂ±ßÊµÏÖmap×¢Èë£¬ºÍlist×¢Èë£¬²¢ÅÅĞò
+ä¸‹è¾¹å®ç°mapæ³¨å…¥ï¼Œå’Œlistæ³¨å…¥ï¼Œå¹¶æ’åº
 
 @Order(1)
 @Component
@@ -731,7 +731,7 @@ public class BeanImplOne implements BeanInterface {
 
 }
 
-@Order(2)  //OrderÅÅĞò×¢½âÖ»¶Ôlist,»òÊı×é¼¯ºÏÓĞĞ§À¨ºÅÀï±ßÊÇÅÅĞòË³Ğò
+@Order(2)  //Orderæ’åºæ³¨è§£åªå¯¹list,æˆ–æ•°ç»„é›†åˆæœ‰æ•ˆæ‹¬å·é‡Œè¾¹æ˜¯æ’åºé¡ºåº
 @Component
 public class BeanImplTwo implements BeanInterface {
 
@@ -751,16 +751,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanInvoker {
-	
-	@Autowired //¸Ã×¢½â»á½«ËùÓĞµÄBeanInterfaceÀàĞÍµÄbean×¢Èëµ½¸ÃlistÖĞ
-	//Èç¹ûbeanÓĞ @Order×¢½â¿ÉÒÔÊµÏÖÅÅĞò
+
+	@Autowired //è¯¥æ³¨è§£ä¼šå°†æ‰€æœ‰çš„BeanInterfaceç±»å‹çš„beanæ³¨å…¥åˆ°è¯¥listä¸­
+	//å¦‚æœbeanæœ‰ @Orderæ³¨è§£å¯ä»¥å®ç°æ’åº
 	private List<BeanInterface> list;
-	
-	//¸Ã×¢½â»á½«ËùÓĞµÄBeanInterfaceÀàĞÍµÄbean×¢Èëµ½¸ÃmapÖĞ£¬keyÖµÎªbeanµÄÃû×Ö
-	//ÊÇStringÀàĞÍ£¬mapÀàĞÍÎŞÅÅĞò¿ÉÑÔ
+
+	//è¯¥æ³¨è§£ä¼šå°†æ‰€æœ‰çš„BeanInterfaceç±»å‹çš„beanæ³¨å…¥åˆ°è¯¥mapä¸­ï¼Œkeyå€¼ä¸ºbeançš„åå­—
+	//æ˜¯Stringç±»å‹ï¼Œmapç±»å‹æ— æ’åºå¯è¨€
 	@Autowired
 	private Map<String, BeanInterface> map;
-	
+
 	public void print(){
 		if(list != null && 0 != list.size()){
 			System.out.println("list...");
@@ -778,7 +778,7 @@ public class BeanInvoker {
 	}
 }
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 
 @Test
 public void testAutowired2(){
@@ -787,7 +787,7 @@ public void testAutowired2(){
 		beanInvoker.print();
 }
 
-½á¹û£º
+ç»“æœï¼š
 list...
 com.briup.spring.aop.bean.annotation.BeanImplOne
 com.briup.spring.aop.bean.annotation.BeanImplTwo
@@ -798,13 +798,13 @@ beanImplTwo--com.briup.spring.aop.bean.annotation.BeanImplTwo
 
 
 
-@Qualifier--ÅäºÏ @Autowired
+@Qualifier--é…åˆ @Autowired
 
-Èç¹ûÊ¹ÓÃ @Autowired×Ô¶¯×°Åä¿ÉÄÜ´æÔÚ¶à¸öÏàÍ¬ÀàĞÍµÄbeanµÄÊ±ºò£¬¿ÉÒÔÊ¹ÓÃspringµÄ @Qualifier
-×¢½âËõĞ¡×¢½â·¶Î§£¨»òÖ¸¶¨Î¨Ò»£©£¬Ò²¿ÉÒÔÓÃÓÚÖ¸¶¨µ¥¶ÀµÄ¹¹Ôì²ÎÊıµÄ·½·¨²ÎÊı
-¿ÉÒÔÊÊÓÃÓÚ×¢½â¼¯ºÏÀàĞÍµÄ±äÁ¿
+å¦‚æœä½¿ç”¨ @Autowiredè‡ªåŠ¨è£…é…å¯èƒ½å­˜åœ¨å¤šä¸ªç›¸åŒç±»å‹çš„beançš„æ—¶å€™ï¼Œå¯ä»¥ä½¿ç”¨springçš„ @Qualifier
+æ³¨è§£ç¼©å°æ³¨è§£èŒƒå›´ï¼ˆæˆ–æŒ‡å®šå”¯ä¸€ï¼‰ï¼Œä¹Ÿå¯ä»¥ç”¨äºæŒ‡å®šå•ç‹¬çš„æ„é€ å‚æ•°çš„æ–¹æ³•å‚æ•°
+å¯ä»¥é€‚ç”¨äºæ³¨è§£é›†åˆç±»å‹çš„å˜é‡
 
-°¸Àı£º
+æ¡ˆä¾‹ï¼š
 
 public class MovieRecommander{
 	@Autowired
@@ -818,8 +818,8 @@ public class MovieRecommander{
 	}
 }
 
-ÉÏ±ßµÄ°¸Àı£º¼ÙÉèMovieCatalogÔÚÈİÆ÷ÖĞ´æÔÚ¶à¸öÏàÍ¬µÄÀàĞÍµÄÇé¿öÏÂ£¬¿ÉÒÔ½áºÏÊ¹ÓÃ @Qualifier("beanName")
-Ö¸¶¨Ò»¸öbeanµÄid×¢Èëµ½¸ÃÊôĞÔÖĞ£¬¿ÉÒÔÔÚ·½·¨µÄ²ÎÊıÖĞÊ¹ÓÃ
+ä¸Šè¾¹çš„æ¡ˆä¾‹ï¼šå‡è®¾MovieCatalogåœ¨å®¹å™¨ä¸­å­˜åœ¨å¤šä¸ªç›¸åŒçš„ç±»å‹çš„æƒ…å†µä¸‹ï¼Œå¯ä»¥ç»“åˆä½¿ç”¨ @Qualifier("beanName")
+æŒ‡å®šä¸€ä¸ªbeançš„idæ³¨å…¥åˆ°è¯¥å±æ€§ä¸­ï¼Œå¯ä»¥åœ¨æ–¹æ³•çš„å‚æ•°ä¸­ä½¿ç”¨
 
 package com.briup.spring.aop.bean.annotation;
 
@@ -835,17 +835,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanInvoker {
-	
+
 	@Autowired
 	private List<BeanInterface> list;
-	
+
 	@Autowired
 	private Map<String, BeanInterface> map;
-	
+
 	@Autowired
-	@Qualifier("beanImplOne")  //BeanInterfaceÓĞÁ½¸ö×ÓÀà£¬ËùÒÔ´æÔÚ¶à¿É@Autowired´æÔÚ¶à¸öbean£¬ËùÒÔĞèÒªÅäºÏ@Qualifier("beanName")×¢ÈëÄÇ¸ö
+	@Qualifier("beanImplOne")  //BeanInterfaceæœ‰ä¸¤ä¸ªå­ç±»ï¼Œæ‰€ä»¥å­˜åœ¨å¤šå¯@Autowiredå­˜åœ¨å¤šä¸ªbeanï¼Œæ‰€ä»¥éœ€è¦é…åˆ@Qualifier("beanName")æ³¨å…¥é‚£ä¸ª
 	private BeanInterface beanInterface;
-	
+
 	public void print(){
 		if(list != null && 0 != list.size()){
 			System.out.println("list...");
@@ -860,12 +860,12 @@ public class BeanInvoker {
 				System.out.println(entry.getKey()+"--"+entry.getValue().getClass().getName());
 			}
 		}
-		
+
 		System.out.println(beanInterface);
 	}
 }
 
-½á¹û£º
+ç»“æœï¼š
 list...
 com.briup.spring.aop.bean.annotation.BeanImplOne
 com.briup.spring.aop.bean.annotation.BeanImplTwo
@@ -876,41 +876,41 @@ com.briup.spring.aop.bean.annotation.BeanImplOne@1a3f9e4
 
 
 
-@Resource×¢½â£º
+@Resourceæ³¨è§£ï¼š
 
-@Resource×¢½âÊÇJSR-250¶¨Òå×¢½â£¬Ò²±È½Ï³£ÓÃ£¬×÷ÓÃÓÚ @AutowiredµÄ×÷ÓÃÒ»ÖÂ
+@Resourceæ³¨è§£æ˜¯JSR-250å®šä¹‰æ³¨è§£ï¼Œä¹Ÿæ¯”è¾ƒå¸¸ç”¨ï¼Œä½œç”¨äº @Autowiredçš„ä½œç”¨ä¸€è‡´
 
-@ResourceµÄ×÷ÓÃÏàµ±ÓÚ@Autowired£¬Ö»²»¹ı@Autowired°´byType×Ô¶¯×¢Èë£¬
-¶ø@ResourceÄ¬ÈÏ°´ byName×Ô¶¯×¢Èë°ÕÁË¡£
-@ResourceÓĞÁ½¸öÊôĞÔÊÇ±È½ÏÖØÒªµÄ£¬·ÖÊÇnameºÍtype£¬
-Spring½«@Resource×¢½âµÄnameÊôĞÔ½âÎöÎªbeanµÄÃû×Ö£¬¶øtypeÊôĞÔÔò½âÎöÎªbeanµÄÀàĞÍ¡£
-ËùÒÔÈç¹ûÊ¹ÓÃnameÊôĞÔ£¬ÔòÊ¹ÓÃbyNameµÄ×Ô¶¯×¢Èë²ßÂÔ£¬¶øÊ¹ÓÃtypeÊôĞÔÊ±ÔòÊ¹ÓÃbyType×Ô¶¯×¢Èë²ßÂÔ¡£Èç¹û¼È²»Ö¸¶¨nameÒ²²»Ö¸¶¨typeÊôĞÔ£¬ÕâÊ±½«Í¨¹ı·´Éä»úÖÆÊ¹ÓÃbyName×Ô¶¯×¢Èë²ßÂÔ¡£
-¡¡¡¡@Resource×°ÅäË³Ğò
-¡¡¡¡1. Èç¹ûÍ¬Ê±Ö¸¶¨ÁËnameºÍtype£¬Ôò´ÓSpringÉÏÏÂÎÄÖĞÕÒµ½Î¨Ò»Æ¥ÅäµÄbean½øĞĞ×°Åä£¬ÕÒ²»µ½ÔòÅ×³öÒì³£
-¡¡¡¡2. Èç¹ûÖ¸¶¨ÁËname£¬Ôò´ÓÉÏÏÂÎÄÖĞ²éÕÒÃû³Æ£¨id£©Æ¥ÅäµÄbean½øĞĞ×°Åä£¬ÕÒ²»µ½ÔòÅ×³öÒì³£
-¡¡¡¡3. Èç¹ûÖ¸¶¨ÁËtype£¬Ôò´ÓÉÏÏÂÎÄÖĞÕÒµ½ÀàĞÍÆ¥ÅäµÄÎ¨Ò»bean½øĞĞ×°Åä£¬ÕÒ²»µ½»òÕßÕÒµ½¶à¸ö£¬¶¼»áÅ×³öÒì³£
-¡¡¡¡4. Èç¹û¼ÈÃ»ÓĞÖ¸¶¨name£¬ÓÖÃ»ÓĞÖ¸¶¨type£¬Ôò×Ô¶¯°´ÕÕbyName·½Ê½½øĞĞ×°Åä£»Èç¹ûÃ»ÓĞÆ¥Åä£¬Ôò»ØÍËÎªÒ»¸öÔ­Ê¼ÀàĞÍ½øĞĞÆ¥Åä£¬Èç¹ûÆ¥ÅäÔò×Ô¶¯×°Åä£» 
-
-
+@Resourceçš„ä½œç”¨ç›¸å½“äº@Autowiredï¼Œåªä¸è¿‡@AutowiredæŒ‰byTypeè‡ªåŠ¨æ³¨å…¥ï¼Œ
+è€Œ@Resourceé»˜è®¤æŒ‰ byNameè‡ªåŠ¨æ³¨å…¥ç½¢äº†ã€‚
+@Resourceæœ‰ä¸¤ä¸ªå±æ€§æ˜¯æ¯”è¾ƒé‡è¦çš„ï¼Œåˆ†æ˜¯nameå’Œtypeï¼Œ
+Springå°†@Resourceæ³¨è§£çš„nameå±æ€§è§£æä¸ºbeançš„åå­—ï¼Œè€Œtypeå±æ€§åˆ™è§£æä¸ºbeançš„ç±»å‹ã€‚
+æ‰€ä»¥å¦‚æœä½¿ç”¨nameå±æ€§ï¼Œåˆ™ä½¿ç”¨byNameçš„è‡ªåŠ¨æ³¨å…¥ç­–ç•¥ï¼Œè€Œä½¿ç”¨typeå±æ€§æ—¶åˆ™ä½¿ç”¨byTypeè‡ªåŠ¨æ³¨å…¥ç­–ç•¥ã€‚å¦‚æœæ—¢ä¸æŒ‡å®šnameä¹Ÿä¸æŒ‡å®štypeå±æ€§ï¼Œè¿™æ—¶å°†é€šè¿‡åå°„æœºåˆ¶ä½¿ç”¨byNameè‡ªåŠ¨æ³¨å…¥ç­–ç•¥ã€‚
+ã€€ã€€@Resourceè£…é…é¡ºåº
+ã€€ã€€1. å¦‚æœåŒæ—¶æŒ‡å®šäº†nameå’Œtypeï¼Œåˆ™ä»Springä¸Šä¸‹æ–‡ä¸­æ‰¾åˆ°å”¯ä¸€åŒ¹é…çš„beanè¿›è¡Œè£…é…ï¼Œæ‰¾ä¸åˆ°åˆ™æŠ›å‡ºå¼‚å¸¸
+ã€€ã€€2. å¦‚æœæŒ‡å®šäº†nameï¼Œåˆ™ä»ä¸Šä¸‹æ–‡ä¸­æŸ¥æ‰¾åç§°ï¼ˆidï¼‰åŒ¹é…çš„beanè¿›è¡Œè£…é…ï¼Œæ‰¾ä¸åˆ°åˆ™æŠ›å‡ºå¼‚å¸¸
+ã€€ã€€3. å¦‚æœæŒ‡å®šäº†typeï¼Œåˆ™ä»ä¸Šä¸‹æ–‡ä¸­æ‰¾åˆ°ç±»å‹åŒ¹é…çš„å”¯ä¸€beanè¿›è¡Œè£…é…ï¼Œæ‰¾ä¸åˆ°æˆ–è€…æ‰¾åˆ°å¤šä¸ªï¼Œéƒ½ä¼šæŠ›å‡ºå¼‚å¸¸
+ã€€ã€€4. å¦‚æœæ—¢æ²¡æœ‰æŒ‡å®šnameï¼Œåˆæ²¡æœ‰æŒ‡å®štypeï¼Œåˆ™è‡ªåŠ¨æŒ‰ç…§byNameæ–¹å¼è¿›è¡Œè£…é…ï¼›å¦‚æœæ²¡æœ‰åŒ¹é…ï¼Œåˆ™å›é€€ä¸ºä¸€ä¸ªåŸå§‹ç±»å‹è¿›è¡ŒåŒ¹é…ï¼Œå¦‚æœåŒ¹é…åˆ™è‡ªåŠ¨è£…é…ï¼›
 
 
 
 
-»ùÓÚjavaµÄÈİÆ÷×¢½â @Bean
 
-@Bean±êÊ¶Ò»¸öÓÃÓÚÅäÖÃºÍ³õÊ¼»¯Ò»¸öÓÉSpringIocÈİÆ÷¹ÜÀíµÄĞÂ¶ÔÏóµÄ·½·¨£¬ÀàĞÍÓÚXMLÅäÖÃÎÄ¼şÖĞµÄ<bean/>
-¿ÉÒÔÔÚSpringµÄ @Compenet×¢½âµÄÀàÖĞÊ¹ÓÃµÄµØ·½Ê¹ÓÃ @Bean×¢½âÈÎºÎ·½·¨£¨Ò»°ãÊ¹ÓÃÖĞ²»½¨ÒéÓë @CompenetÒ»ÆğÊ¹ÓÃ£©
-¶øÊÇÓë @ConfigurationÊ¹ÓÃ
 
-@Configuration   //Ïàµ±ÓÚÅäÖÃÎÄ¼ş
+åŸºäºjavaçš„å®¹å™¨æ³¨è§£ @Bean
+
+@Beanæ ‡è¯†ä¸€ä¸ªç”¨äºé…ç½®å’Œåˆå§‹åŒ–ä¸€ä¸ªç”±SpringIocå®¹å™¨ç®¡ç†çš„æ–°å¯¹è±¡çš„æ–¹æ³•ï¼Œç±»å‹äºXMLé…ç½®æ–‡ä»¶ä¸­çš„<bean/>
+å¯ä»¥åœ¨Springçš„ @Compenetæ³¨è§£çš„ç±»ä¸­ä½¿ç”¨çš„åœ°æ–¹ä½¿ç”¨ @Beanæ³¨è§£ä»»ä½•æ–¹æ³•ï¼ˆä¸€èˆ¬ä½¿ç”¨ä¸­ä¸å»ºè®®ä¸ @Compenetä¸€èµ·ä½¿ç”¨ï¼‰
+è€Œæ˜¯ä¸ @Configurationä½¿ç”¨
+
+@Configuration   //ç›¸å½“äºé…ç½®æ–‡ä»¶
 public class Appconfig{
-	
+
 	@Bean
 	public Myservice myservice(){
 		return new MyServiceImpl();
 	}
 	/*
-		¶Ô±È»ùÓÚXMLÎÄ¼şÖĞµÄÅäÖÃĞ§¹ûÀàËÆ
+		å¯¹æ¯”åŸºäºXMLæ–‡ä»¶ä¸­çš„é…ç½®æ•ˆæœç±»ä¼¼
 		<bean id="myservice" class="com.xxx.service.MyserviceImpl"></bean>
 	*/
 }
@@ -924,96 +924,96 @@ public class Appconfig{
 
 public class Foo{
 	public void init(){
-	
+
 	}
 }
 
 public class Bar{
 	public void cleanup(){
-	
+
 	}
 }
 
-@Configuration 
+@Configuration
 public class Appconfig{
-	
-	@Bean(name="life")  //¶¨ÒåbeanµÄname
+
+	@Bean(name="life")  //å®šä¹‰beançš„name
 	public Life life(){
 		return new Life();
 	}
 
-	@Bean(initMethod="init") //ÔÚ³õÊ¼»¯FooµÄÊ±ºò£¬»áµ÷ÓÃFoo.javaÖĞµÄinit·½·¨
+	@Bean(initMethod="init") //åœ¨åˆå§‹åŒ–Fooçš„æ—¶å€™ï¼Œä¼šè°ƒç”¨Foo.javaä¸­çš„initæ–¹æ³•
 	public Foo foo(){
 		return new Foo();
-	}	
-	
-	@Bean(destoryMethod=¡°cleanup¡±) //ÔÚÏú»ÙBarµÄÊ±ºò»áµ÷ÓÃBar.javaÖĞµÄcleanupÖĞµÄ·½·¨
+	}
+
+	@Bean(destoryMethod=â€œcleanupâ€) //åœ¨é”€æ¯Barçš„æ—¶å€™ä¼šè°ƒç”¨Bar.javaä¸­çš„cleanupä¸­çš„æ–¹æ³•
 	public Bar bar(){
 		return new Bar();
 	}
 }
 
 
-°¸ÀıÊµÏÖ£º
+æ¡ˆä¾‹å®ç°ï¼š
 @Configuration
 public class StoreConfig {
 
-	@Bean(name="beanImplOne")  //Èç¹ûÃ»ÓĞÖ¸¶¨BeanµÄnameÊôĞÔ£¬ÔòbeanµÄnameÄ¬ÈÏÎª·½·¨µÄÃû³Æ
+	@Bean(name="beanImplOne")  //å¦‚æœæ²¡æœ‰æŒ‡å®šBeançš„nameå±æ€§ï¼Œåˆ™beançš„nameé»˜è®¤ä¸ºæ–¹æ³•çš„åç§°
 	public BeanInterface getBeanInterface(){
 		return new BeanImplOne();
 	}
 }
 
 
-°¸Àı2£ºÁ¬½ÓÊı¾İ¿â
+æ¡ˆä¾‹2ï¼šè¿æ¥æ•°æ®åº“
 
-<!-- ¼ÓÔØdb.propertiesÎÄ¼ş -->
+<!-- åŠ è½½db.propertiesæ–‡ä»¶ -->
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"  
- xmlns:context="http://www.springframework.org/schema/context"  
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
- xsi:schemaLocation="http://www.springframework.org/schema/beans  
-      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
-      http://www.springframework.org/schema/context  
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
       http://www.springframework.org/schema/context/spring-context.xsd" >
-     
-     <!-- ¼ÓÔØdb.propertiesÎÄ¼ş -->
+
+     <!-- åŠ è½½db.propertiesæ–‡ä»¶ -->
        <context:property-placeholder location="classpath:db.properties"/>
-       
+
 </beans>
 
-×¢½âÖ§³Ö
+æ³¨è§£æ”¯æŒ
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"  
- xmlns:context="http://www.springframework.org/schema/context"  
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
- xsi:schemaLocation="http://www.springframework.org/schema/beans  
-      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
-      http://www.springframework.org/schema/context  
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/context
       http://www.springframework.org/schema/context/spring-context.xsd" >
-       <!-- ¼ÓÔØdb.propertiesÎÄ¼ş -->
+       <!-- åŠ è½½db.propertiesæ–‡ä»¶ -->
        <context:property-placeholder location="classpath:db.properties"/>
-       <!--context:component-scan°üº¬context:annotation-configµÄÈ«²¿¹¦ÄÜ£¬Í¨³£Ê¹ÓÃÇ°Õßºó£¬²»ÔÙÊ¹ÓÃºóÕß
+       <!--context:component-scanåŒ…å«context:annotation-configçš„å…¨éƒ¨åŠŸèƒ½ï¼Œé€šå¸¸ä½¿ç”¨å‰è€…åï¼Œä¸å†ä½¿ç”¨åè€…
        <context:component-scan base-package="com.briup.spring.aop.bean.annotation"></context:component-scan>
 
 </beans>
 
-°¸Àı£º
+æ¡ˆä¾‹ï¼š
 
 @Configuration
-@ImportResource("classpath:com/briup/spring/chap4/config.xml")  //Ö¸¶¨ÅäÖÃÎÄ¼şµÄÂ·¾¶
+@ImportResource("classpath:com/briup/spring/chap4/config.xml")  //æŒ‡å®šé…ç½®æ–‡ä»¶çš„è·¯å¾„
 public class MyConnection {
-	
-	
-	@Value("${jdbc.url}")  //»ù±¾ÀàĞÍµÄ±äÁ¿Ê¹ÓÃ@Value×¢½â(À¨ºÅÀï±ßÊÇ×¢ÈëµÄÖµ)  £¬ÕâÊÇÊ¹ÓÃ${ÊÇ¶ÁÈ¡Åädb.propertiesÖĞµÄÖµ}
+
+
+	@Value("${jdbc.url}")  //åŸºæœ¬ç±»å‹çš„å˜é‡ä½¿ç”¨@Valueæ³¨è§£(æ‹¬å·é‡Œè¾¹æ˜¯æ³¨å…¥çš„å€¼)  ï¼Œè¿™æ˜¯ä½¿ç”¨${æ˜¯è¯»å–é…db.propertiesä¸­çš„å€¼}
 	private String url;
-	
-	@Value("${jdbc.username}")  //Ä¬ÈÏÈ¡µÄÊÇµ±Ç°²Ù×÷ÏµÍ³ÓÃ»§µÄÃû³Æ£¬¿ÉÒÔÔÚdb.properties¶¨ÒåusernameµÄÊ±ºòÊ¹ÓÃjdbc.username
+
+	@Value("${jdbc.username}")  //é»˜è®¤å–çš„æ˜¯å½“å‰æ“ä½œç³»ç»Ÿç”¨æˆ·çš„åç§°ï¼Œå¯ä»¥åœ¨db.propertieså®šä¹‰usernameçš„æ—¶å€™ä½¿ç”¨jdbc.username
 	private String userName;
-	
+
 	@Value("${jdbc.password}")
 	private String password;
-	
+
 	@Bean(name="myDriverManager")
 	public MyDriverManager MyDriverManager(){
 		return new MyDriverManager(url,userName,password);
@@ -1023,7 +1023,7 @@ public class MyConnection {
 
 
 public class MyDriverManager {
-	
+
 	public MyDriverManager(String url, String userName, String password){
 		System.out.println("url :"+url);
 		System.out.println("userName :"+userName);
@@ -1033,17 +1033,17 @@ public class MyDriverManager {
 }
 
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/annotation.xml");
 System.out.println(ac.getBean("myDriverManager"));
-½á¹û£º
+ç»“æœï¼š
 url :jdbc:oracle:thin:@localhost:1521:XE
 userName :caojx
 password :caojx
 com.briup.spring.aop.bean.annotation.MyDriverManager@152b54b
 
 
-@Bean  ºÍ @Scope×éºÏÊ¹ÓÃ
+@Bean  å’Œ @Scopeç»„åˆä½¿ç”¨
 @Bean(name="myDriverManager")
 @Scope("prototype")
 public MyDriverManager MyDriverManager(){
@@ -1058,44 +1058,44 @@ public MyDriverManager MyDriverManager(){
 
 
 
-JSR-250Ö§³Ö
-@Resource×¢½âÊÇJSR-250¶¨Òå×¢½â£¬Ò²±È½Ï³£ÓÃ£¬×÷ÓÃÓÚ @AutowiredµÄ×÷ÓÃÒ»ÖÂ
+JSR-250æ”¯æŒ
+@Resourceæ³¨è§£æ˜¯JSR-250å®šä¹‰æ³¨è§£ï¼Œä¹Ÿæ¯”è¾ƒå¸¸ç”¨ï¼Œä½œç”¨äº @Autowiredçš„ä½œç”¨ä¸€è‡´
 
-@ResourceµÄ×÷ÓÃÏàµ±ÓÚ@Autowired£¬Ö»²»¹ı@Autowired°´byType×Ô¶¯×¢Èë£¬
-¶ø@ResourceÄ¬ÈÏ°´ byName×Ô¶¯×¢Èë°ÕÁË¡£
-@ResourceÓĞÁ½¸öÊôĞÔÊÇ±È½ÏÖØÒªµÄ£¬·ÖÊÇnameºÍtype£¬
-Spring½«@Resource×¢½âµÄnameÊôĞÔ½âÎöÎªbeanµÄÃû×Ö£¬¶øtypeÊôĞÔÔò½âÎöÎªbeanµÄÀàĞÍ¡£
-ËùÒÔÈç¹ûÊ¹ÓÃnameÊôĞÔ£¬ÔòÊ¹ÓÃbyNameµÄ×Ô¶¯×¢Èë²ßÂÔ£¬¶øÊ¹ÓÃtypeÊôĞÔÊ±ÔòÊ¹ÓÃbyType×Ô¶¯×¢Èë²ßÂÔ¡£Èç¹û¼È²»Ö¸¶¨nameÒ²²»Ö¸¶¨typeÊôĞÔ£¬ÕâÊ±½«Í¨¹ı·´Éä»úÖÆÊ¹ÓÃbyName×Ô¶¯×¢Èë²ßÂÔ¡£
-¡¡¡¡@Resource×°ÅäË³Ğò
-¡¡¡¡1. Èç¹ûÍ¬Ê±Ö¸¶¨ÁËnameºÍtype£¬Ôò´ÓSpringÉÏÏÂÎÄÖĞÕÒµ½Î¨Ò»Æ¥ÅäµÄbean½øĞĞ×°Åä£¬ÕÒ²»µ½ÔòÅ×³öÒì³£
-¡¡¡¡2. Èç¹ûÖ¸¶¨ÁËname£¬Ôò´ÓÉÏÏÂÎÄÖĞ²éÕÒÃû³Æ£¨id£©Æ¥ÅäµÄbean½øĞĞ×°Åä£¬ÕÒ²»µ½ÔòÅ×³öÒì³£
-¡¡¡¡3. Èç¹ûÖ¸¶¨ÁËtype£¬Ôò´ÓÉÏÏÂÎÄÖĞÕÒµ½ÀàĞÍÆ¥ÅäµÄÎ¨Ò»bean½øĞĞ×°Åä£¬ÕÒ²»µ½»òÕßÕÒµ½¶à¸ö£¬¶¼»áÅ×³öÒì³£
-¡¡¡¡4. Èç¹û¼ÈÃ»ÓĞÖ¸¶¨name£¬ÓÖÃ»ÓĞÖ¸¶¨type£¬Ôò×Ô¶¯°´ÕÕbyName·½Ê½½øĞĞ×°Åä£»Èç¹ûÃ»ÓĞÆ¥Åä£¬Ôò»ØÍËÎªÒ»¸öÔ­Ê¼ÀàĞÍ½øĞĞÆ¥Åä£¬Èç¹ûÆ¥ÅäÔò×Ô¶¯×°Åä£» 
-    5. Èç¹û @ResourceÓÃÓÚ·½·¨ÖĞ£¬Ä¬ÈÏÊ¹ÓÃ·½·¨Ãû×÷ÎªbeanName,Ö¸¶¨Ãû×ÖÔòÊ¹ÓÃÃû×Ö
-
-
-
-   
- @ResourceµÄ´¦ÀíÊÇÓÉApplicationContextÖĞµÄCommonAnnotationBeanPostProecssor·¢ÏÖ²¢´¦ÀíµÄ
-
-CommonAnnotationBeanPostProecssor²»½öÖ§³Ö @Resource×¢½â£¬»¹Ö§³Ö @PostConstruct³õÊ¼»Øµ÷
-ºÍ @PreDestoryÏú»Ù»Øµ÷£¬Ç°ÌáÊÇCommonAnnotationBeanPostProecssorÊÇÔÚApplicationContextÖĞ×¢²áµÄ
-	
+@Resourceçš„ä½œç”¨ç›¸å½“äº@Autowiredï¼Œåªä¸è¿‡@AutowiredæŒ‰byTypeè‡ªåŠ¨æ³¨å…¥ï¼Œ
+è€Œ@Resourceé»˜è®¤æŒ‰ byNameè‡ªåŠ¨æ³¨å…¥ç½¢äº†ã€‚
+@Resourceæœ‰ä¸¤ä¸ªå±æ€§æ˜¯æ¯”è¾ƒé‡è¦çš„ï¼Œåˆ†æ˜¯nameå’Œtypeï¼Œ
+Springå°†@Resourceæ³¨è§£çš„nameå±æ€§è§£æä¸ºbeançš„åå­—ï¼Œè€Œtypeå±æ€§åˆ™è§£æä¸ºbeançš„ç±»å‹ã€‚
+æ‰€ä»¥å¦‚æœä½¿ç”¨nameå±æ€§ï¼Œåˆ™ä½¿ç”¨byNameçš„è‡ªåŠ¨æ³¨å…¥ç­–ç•¥ï¼Œè€Œä½¿ç”¨typeå±æ€§æ—¶åˆ™ä½¿ç”¨byTypeè‡ªåŠ¨æ³¨å…¥ç­–ç•¥ã€‚å¦‚æœæ—¢ä¸æŒ‡å®šnameä¹Ÿä¸æŒ‡å®štypeå±æ€§ï¼Œè¿™æ—¶å°†é€šè¿‡åå°„æœºåˆ¶ä½¿ç”¨byNameè‡ªåŠ¨æ³¨å…¥ç­–ç•¥ã€‚
+ã€€ã€€@Resourceè£…é…é¡ºåº
+ã€€ã€€1. å¦‚æœåŒæ—¶æŒ‡å®šäº†nameå’Œtypeï¼Œåˆ™ä»Springä¸Šä¸‹æ–‡ä¸­æ‰¾åˆ°å”¯ä¸€åŒ¹é…çš„beanè¿›è¡Œè£…é…ï¼Œæ‰¾ä¸åˆ°åˆ™æŠ›å‡ºå¼‚å¸¸
+ã€€ã€€2. å¦‚æœæŒ‡å®šäº†nameï¼Œåˆ™ä»ä¸Šä¸‹æ–‡ä¸­æŸ¥æ‰¾åç§°ï¼ˆidï¼‰åŒ¹é…çš„beanè¿›è¡Œè£…é…ï¼Œæ‰¾ä¸åˆ°åˆ™æŠ›å‡ºå¼‚å¸¸
+ã€€ã€€3. å¦‚æœæŒ‡å®šäº†typeï¼Œåˆ™ä»ä¸Šä¸‹æ–‡ä¸­æ‰¾åˆ°ç±»å‹åŒ¹é…çš„å”¯ä¸€beanè¿›è¡Œè£…é…ï¼Œæ‰¾ä¸åˆ°æˆ–è€…æ‰¾åˆ°å¤šä¸ªï¼Œéƒ½ä¼šæŠ›å‡ºå¼‚å¸¸
+ã€€ã€€4. å¦‚æœæ—¢æ²¡æœ‰æŒ‡å®šnameï¼Œåˆæ²¡æœ‰æŒ‡å®štypeï¼Œåˆ™è‡ªåŠ¨æŒ‰ç…§byNameæ–¹å¼è¿›è¡Œè£…é…ï¼›å¦‚æœæ²¡æœ‰åŒ¹é…ï¼Œåˆ™å›é€€ä¸ºä¸€ä¸ªåŸå§‹ç±»å‹è¿›è¡ŒåŒ¹é…ï¼Œå¦‚æœåŒ¹é…åˆ™è‡ªåŠ¨è£…é…ï¼›
+    5. å¦‚æœ @Resourceç”¨äºæ–¹æ³•ä¸­ï¼Œé»˜è®¤ä½¿ç”¨æ–¹æ³•åä½œä¸ºbeanName,æŒ‡å®šåå­—åˆ™ä½¿ç”¨åå­—
 
 
 
 
-spring¶ÔJSRµÄ×¢½âÖ§³Ö
+ @Resourceçš„å¤„ç†æ˜¯ç”±ApplicationContextä¸­çš„CommonAnnotationBeanPostProecssorå‘ç°å¹¶å¤„ç†çš„
+
+CommonAnnotationBeanPostProecssorä¸ä»…æ”¯æŒ @Resourceæ³¨è§£ï¼Œè¿˜æ”¯æŒ @PostConstructåˆå§‹å›è°ƒ
+å’Œ @PreDestoryé”€æ¯å›è°ƒï¼Œå‰ææ˜¯CommonAnnotationBeanPostProecssoræ˜¯åœ¨ApplicationContextä¸­æ³¨å†Œçš„
+
+
+
+
+
+springå¯¹JSRçš„æ³¨è§£æ”¯æŒ
 
 @Resource
 
-@PostConstrct  ³õÊ¼»¯»Øµô
+@PostConstrct  åˆå§‹åŒ–å›æ‰
 
-@PreDetory   Ïú»Ù»Øµ÷ÓÃ
+@PreDetory   é”€æ¯å›è°ƒç”¨
 
-@Inject µÈĞ§ÓÚ @Autowired
+@Inject ç­‰æ•ˆäº @Autowired
 
-@Named Óë @CompenetµÈĞ§
+@Named ä¸ @Compenetç­‰æ•ˆ
 
 
 
@@ -1111,39 +1111,39 @@ import com.briup.spring.aop.bean.annotation.dao.JsrDAO;
 
 @Service
 public class JsrService {
-	
+
 	@Resource
 	private JsrDAO jsrDAO;
-	
-	@Resource  //×÷ÓÃÓëÉÏ±ßÒ»Ñù
+
+	@Resource  //ä½œç”¨ä¸ä¸Šè¾¹ä¸€æ ·
 	public void setJsrDAO(JsrDAO jsrDAO){
 		this.jsrDAO = jsrDAO;
 	}
-	
+
 	public void save(){
 		jsrDAO.save();
 	}
-	
+
 	@PostConstruct
 	public void init(){
 		System.out.println("jsr Service init");
 	}
-	
+
 	@PreDestroy
 	public void destory(){
 		System.out.println("jsr Service destory");
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * jsr Service init
 		com.briup.spring.aop.bean.annotation.service.JsrService@7dc4cb
 		jsr Service destory
 	 * */
-	
+
 }
 
-	
+
 
 
 
@@ -1151,90 +1151,90 @@ public class JsrService {
 spring Aop
 
 
-Ê²Ã´ÊÇaop:Aspect Oriented ProgrammingµÄËõĞ´£¬ÃæÏòÇĞÃæ±à³Ì£¬Í¨¹ıÔ¤±àÒëºÍ¶¯Ì¬´óÁ¦ÊµÏÖ³ÌĞò¹¦ÄÜµÄ
-Í³Ò»Î¬»¤µÄÒ»ÖÖ¼¼Êõ
+ä»€ä¹ˆæ˜¯aop:Aspect Oriented Programmingçš„ç¼©å†™ï¼Œé¢å‘åˆ‡é¢ç¼–ç¨‹ï¼Œé€šè¿‡é¢„ç¼–è¯‘å’ŒåŠ¨æ€å¤§åŠ›å®ç°ç¨‹åºåŠŸèƒ½çš„
+ç»Ÿä¸€ç»´æŠ¤çš„ä¸€ç§æŠ€æœ¯
 
-Ö÷Òª¹¦ÄÜ£ºÈÕÖ¾¼ÇÂ¼£¬ĞÔÄÜÍ³¼Æ£¬°²È«¿ØÖÆ£¬ÊÂÎñ´¦Àí£¬Òì³£´¦ÀíµÈ
+ä¸»è¦åŠŸèƒ½ï¼šæ—¥å¿—è®°å½•ï¼Œæ€§èƒ½ç»Ÿè®¡ï¼Œå®‰å…¨æ§åˆ¶ï¼Œäº‹åŠ¡å¤„ç†ï¼Œå¼‚å¸¸å¤„ç†ç­‰
 
 
-AopÊµÏÖµÄ·½Ê½
+Aopå®ç°çš„æ–¹å¼
 
-	Ô¤±àÒë
-	-AspectJ  ÍêÕûµÄÃæÏòÇĞÃæ±à³Ì½â¾ö·½°¸--¡·spring²»ÊÇÍêÕûµÄ½â¾ö·½°¸£¬²»¹ıspringÌá¹©±È½ÏºÃµÄÊµÏÖ·½Ê½
-	
-	ÔËĞĞÆÚ¼ä¶¯Ì¬´úÀí£¨JDK¶¯Ì¬´úÀí£¬CGLib¶¯Ì¬´úÀí£©
+	é¢„ç¼–è¯‘
+	-AspectJ  å®Œæ•´çš„é¢å‘åˆ‡é¢ç¼–ç¨‹è§£å†³æ–¹æ¡ˆ--ã€‹springä¸æ˜¯å®Œæ•´çš„è§£å†³æ–¹æ¡ˆï¼Œä¸è¿‡springæä¾›æ¯”è¾ƒå¥½çš„å®ç°æ–¹å¼
+
+	è¿è¡ŒæœŸé—´åŠ¨æ€ä»£ç†ï¼ˆJDKåŠ¨æ€ä»£ç†ï¼ŒCGLibåŠ¨æ€ä»£ç†ï¼‰
 	-SpringAop,JbossAop
 
 
-AOPµÄÏà¹Ø¸ÅÄî
+AOPçš„ç›¸å…³æ¦‚å¿µ
 
-	ÇĞÃæ£¨Aspect£©Ò»¸ö¹Ø×¢µãµÄÄ£¿é»¯£¬Õâ¸ö¹Ø×¢µã¿ÉÄÜ»áºáÇĞ¶à¸ö¶ÔÏó
-	Á¬½Óµã£¨Joinpoint£©³ÌĞòÖ´ĞĞ¹ı³ÌÖĞÄ³¸öÌØ¶¨µÄÁ¬½Óµã
-	Í¨Öª£¨Advice£© ÔÚÇĞÃæµÄÄ³¸öÌØµÄÁ¬½ÓµãÉÏÖ´ĞĞµÄ¶¯×÷
-	ÇĞÈëµã£¨Pointcut£©Æ¥ÅäÁ¬½ÓµÄ¶ÏÑÔ£¬ÔÚAopÖĞÍ¨ÖªºÍÒ»¸öÇĞÈëµã±í´ïÊ½¹ØÁª
-	ÒıÈë£¨Intruduction£© ÔÚ²»ĞŞ¸ÄÀà´úÂëµÄÇ°ÌáÏÂ£¬ÎªÀàÌí¼ÓĞÂµÄ·½·¨ºÍÊôĞÔ
-	Ä¿±ê¶ÔÏó£¨Target Object£© ±»Ò»¸ö»òÕß¶à¸öÇĞÃæËùÍ¨ÖªµÄ¶ÔÏó
-	Aop´úÀí£¨AOP Proxy£© AOP¿ò¼Ü´´½¨µÄ¶ÔÏó£¬ÓÃÀ´ÊµÏÖÇĞÃæÆõÔ¼£¨aspect contract£©£¨°üÀ¨·½·¨Ö´ĞĞµÈ£©
-	Ö¯Èë£¨Weaving£©°ÑÇĞÃæÁ¬½Óµ½ÆäËûµÄÓ¦ÓÃ³ÌĞòÀàĞÍ»òÕß¶ÔÏóÉÏ£¬²¢´´½¨Ò»¸ö±»Í¨ÖªµÄ¶ÔÏó£¬·ÕÎ§£º±àÒëÊ±Ö¯Èë£¬Àà¼ÓÔØÊ±Ö¯Èë£¬Ö´ĞĞÊ±Ö¯Èë
-
-
-
-Í¨ÖªÀàĞÍ£¨Advice£©
-	Ç°ÖÃÍ¨Öª£¨before advice£© ÔÚÄ³¸öÁ¬½Óµã£¨jion point£©Ö®Ç°Ö´ĞĞµÄÍ¨Öª£¬µ«²»ÄÜ×èÖ¹Á¬½ÓµãÇ°µÄÖ´ĞĞ£¨³ı·ÇÅ×³öÒ»¸öÒì³££©
-
-	·µ»ØºóÍ¨Öª£¨after returning advice£©ÔÚÄ³¸öÁ¬½Óµã£¨jion point£©Õı³£Ö´ĞĞÍêºóÖ´ĞĞÍ¨Öª
-
-	Å×³öÒì³£Í¨Öª£¨after throwing advice£© ÔÚ·½·¨Òì³£ÍË³öÊ±Ö´ĞĞµÄÍ¨Öª
-
-	ºóÍ¨Öª£¨after(finally) advice£©ÔÚ·½·¨Å×³öÒì³£ÍË³öÊ±ºòµÄÖ´ĞĞÍ¨Öª£¨²»¹ÜÕı³£·µ»Ø»¹ÊÇÒì³£ÍË³ö£©
-
-	»·ÈÆÍ¨Öª£¨around advice) °üÎ§Ò»¸öÁ¬½Óµã£¨jion point)µÄÍ¨Öª
+	åˆ‡é¢ï¼ˆAspectï¼‰ä¸€ä¸ªå…³æ³¨ç‚¹çš„æ¨¡å—åŒ–ï¼Œè¿™ä¸ªå…³æ³¨ç‚¹å¯èƒ½ä¼šæ¨ªåˆ‡å¤šä¸ªå¯¹è±¡
+	è¿æ¥ç‚¹ï¼ˆJoinpointï¼‰ç¨‹åºæ‰§è¡Œè¿‡ç¨‹ä¸­æŸä¸ªç‰¹å®šçš„è¿æ¥ç‚¹
+	é€šçŸ¥ï¼ˆAdviceï¼‰ åœ¨åˆ‡é¢çš„æŸä¸ªç‰¹çš„è¿æ¥ç‚¹ä¸Šæ‰§è¡Œçš„åŠ¨ä½œ
+	åˆ‡å…¥ç‚¹ï¼ˆPointcutï¼‰åŒ¹é…è¿æ¥çš„æ–­è¨€ï¼Œåœ¨Aopä¸­é€šçŸ¥å’Œä¸€ä¸ªåˆ‡å…¥ç‚¹è¡¨è¾¾å¼å…³è”
+	å¼•å…¥ï¼ˆIntruductionï¼‰ åœ¨ä¸ä¿®æ”¹ç±»ä»£ç çš„å‰æä¸‹ï¼Œä¸ºç±»æ·»åŠ æ–°çš„æ–¹æ³•å’Œå±æ€§
+	ç›®æ ‡å¯¹è±¡ï¼ˆTarget Objectï¼‰ è¢«ä¸€ä¸ªæˆ–è€…å¤šä¸ªåˆ‡é¢æ‰€é€šçŸ¥çš„å¯¹è±¡
+	Aopä»£ç†ï¼ˆAOP Proxyï¼‰ AOPæ¡†æ¶åˆ›å»ºçš„å¯¹è±¡ï¼Œç”¨æ¥å®ç°åˆ‡é¢å¥‘çº¦ï¼ˆaspect contractï¼‰ï¼ˆåŒ…æ‹¬æ–¹æ³•æ‰§è¡Œç­‰ï¼‰
+	ç»‡å…¥ï¼ˆWeavingï¼‰æŠŠåˆ‡é¢è¿æ¥åˆ°å…¶ä»–çš„åº”ç”¨ç¨‹åºç±»å‹æˆ–è€…å¯¹è±¡ä¸Šï¼Œå¹¶åˆ›å»ºä¸€ä¸ªè¢«é€šçŸ¥çš„å¯¹è±¡ï¼Œæ°›å›´ï¼šç¼–è¯‘æ—¶ç»‡å…¥ï¼Œç±»åŠ è½½æ—¶ç»‡å…¥ï¼Œæ‰§è¡Œæ—¶ç»‡å…¥
 
 
 
-Spring¿ò¼ÜÖĞµÄAOPÓÃÍ¾
-	Ìá¹©ÁËÉùÃ÷µÄÆóÒµ·şÎñ£¬ÌØ±ğÊÇEJBµÄÌæ´ú·şÎñµÄÉùÃ÷
-	ÔÊĞíÓÃ»§¿ØÖÆ×Ô¼ºµÄ·½Ãæ£¬ÒÔÍê³ÉOOPºÍAOPµÄ»¥²¹Ê¹ÓÃ
+é€šçŸ¥ç±»å‹ï¼ˆAdviceï¼‰
+	å‰ç½®é€šçŸ¥ï¼ˆbefore adviceï¼‰ åœ¨æŸä¸ªè¿æ¥ç‚¹ï¼ˆjion pointï¼‰ä¹‹å‰æ‰§è¡Œçš„é€šçŸ¥ï¼Œä½†ä¸èƒ½é˜»æ­¢è¿æ¥ç‚¹å‰çš„æ‰§è¡Œï¼ˆé™¤éæŠ›å‡ºä¸€ä¸ªå¼‚å¸¸ï¼‰
 
-	OOP£ºÄ£ÄâÕæÊµµÄÊÀ½ç£¬Ò»ÇĞ½ÔÊÇ¶ÔÏó
+	è¿”å›åé€šçŸ¥ï¼ˆafter returning adviceï¼‰åœ¨æŸä¸ªè¿æ¥ç‚¹ï¼ˆjion pointï¼‰æ­£å¸¸æ‰§è¡Œå®Œåæ‰§è¡Œé€šçŸ¥
 
+	æŠ›å‡ºå¼‚å¸¸é€šçŸ¥ï¼ˆafter throwing adviceï¼‰ åœ¨æ–¹æ³•å¼‚å¸¸é€€å‡ºæ—¶æ‰§è¡Œçš„é€šçŸ¥
 
-Spring AopµÄÊµÏÖ
+	åé€šçŸ¥ï¼ˆafter(finally) adviceï¼‰åœ¨æ–¹æ³•æŠ›å‡ºå¼‚å¸¸é€€å‡ºæ—¶å€™çš„æ‰§è¡Œé€šçŸ¥ï¼ˆä¸ç®¡æ­£å¸¸è¿”å›è¿˜æ˜¯å¼‚å¸¸é€€å‡ºï¼‰
 
-	´¿javaÊµÏÖ£¬ÎŞĞèÌØÊâµÄ±àÒë¹ı³Ì£¬²»ĞèÒª¿ØÖÆÀàµÄ¼ÓÔØÆ÷²ã´Î
-	Ä¿Ç°Ö»Ö§³Ö·½·¨µÄÖ´ĞĞµÄÁ¬½Óµã£¨Í¨ÖªSpring BeanÄ³¸ö·½·¨Ö´ĞĞ£©
-	²»ÊÇÎªÁËÌá¹©ÍêÕûAOPÊµÏÖ£»¶øÊÇ²àÖØÓÚÒ»ÖÖAOPÓÚIOCÈİÆ÷Ö®¼äµÄÕûºÏ£¬SpringAOP²»»áAspectJ£¨ÍêÕûµÄAOP½â¾ö·½°¸£©¾ºÕù¡£
-
-
-ÓĞ½Ó¿ÚºÍÎŞ½Ó¿ÚµÄSpring AopÊµÏÖ
-
-	Spring AOP Ä¬ÈÏÊ¹ÓÃ±ê×¼µÄJavaSE¶¯Ì¬´úÀí×÷ÎªAOP´úÀí£¬ÕâÊ¹µÃÈÎºÎ½Ó¿Ú£¨»òÕß¼¯ºÏ£©¶¼¿ÉÒÔ±»´úÀí
-	Spring AOP ÖĞÒ²¿ÉÒÔÊ¹ÓÃCGLIB´úÀí£¨Èç¹ûÒ»¸öÒµÎñ¶ÔÏóÃ»ÓĞÊµÏÖÒ»¸ö½Ó¿Ú£©
-	ÓĞ½Ó¿ÚµÄ£ºÊ¹ÓÃJDKµÄ¶¯Ì¬Àï
-	ÎŞ½Ó¿ÚµÄ£ºÊ¹ÓÃCGLIB´úÀí
+	ç¯ç»•é€šçŸ¥ï¼ˆaround advice) åŒ…å›´ä¸€ä¸ªè¿æ¥ç‚¹ï¼ˆjion point)çš„é€šçŸ¥
 
 
 
+Springæ¡†æ¶ä¸­çš„AOPç”¨é€”
+	æä¾›äº†å£°æ˜çš„ä¼ä¸šæœåŠ¡ï¼Œç‰¹åˆ«æ˜¯EJBçš„æ›¿ä»£æœåŠ¡çš„å£°æ˜
+	å…è®¸ç”¨æˆ·æ§åˆ¶è‡ªå·±çš„æ–¹é¢ï¼Œä»¥å®ŒæˆOOPå’ŒAOPçš„äº’è¡¥ä½¿ç”¨
 
-»ùÓÚÈİÆ÷µÄAOPÊµÏÖ
+	OOPï¼šæ¨¡æ‹ŸçœŸå®çš„ä¸–ç•Œï¼Œä¸€åˆ‡çš†æ˜¯å¯¹è±¡
+
+
+Spring Aopçš„å®ç°
+
+	çº¯javaå®ç°ï¼Œæ— éœ€ç‰¹æ®Šçš„ç¼–è¯‘è¿‡ç¨‹ï¼Œä¸éœ€è¦æ§åˆ¶ç±»çš„åŠ è½½å™¨å±‚æ¬¡
+	ç›®å‰åªæ”¯æŒæ–¹æ³•çš„æ‰§è¡Œçš„è¿æ¥ç‚¹ï¼ˆé€šçŸ¥Spring BeanæŸä¸ªæ–¹æ³•æ‰§è¡Œï¼‰
+	ä¸æ˜¯ä¸ºäº†æä¾›å®Œæ•´AOPå®ç°ï¼›è€Œæ˜¯ä¾§é‡äºä¸€ç§AOPäºIOCå®¹å™¨ä¹‹é—´çš„æ•´åˆï¼ŒSpringAOPä¸ä¼šAspectJï¼ˆå®Œæ•´çš„AOPè§£å†³æ–¹æ¡ˆï¼‰ç«äº‰ã€‚
+
+
+æœ‰æ¥å£å’Œæ— æ¥å£çš„Spring Aopå®ç°
+
+	Spring AOP é»˜è®¤ä½¿ç”¨æ ‡å‡†çš„JavaSEåŠ¨æ€ä»£ç†ä½œä¸ºAOPä»£ç†ï¼Œè¿™ä½¿å¾—ä»»ä½•æ¥å£ï¼ˆæˆ–è€…é›†åˆï¼‰éƒ½å¯ä»¥è¢«ä»£ç†
+	Spring AOP ä¸­ä¹Ÿå¯ä»¥ä½¿ç”¨CGLIBä»£ç†ï¼ˆå¦‚æœä¸€ä¸ªä¸šåŠ¡å¯¹è±¡æ²¡æœ‰å®ç°ä¸€ä¸ªæ¥å£ï¼‰
+	æœ‰æ¥å£çš„ï¼šä½¿ç”¨JDKçš„åŠ¨æ€é‡Œ
+	æ— æ¥å£çš„ï¼šä½¿ç”¨CGLIBä»£ç†
+
+
+
+
+åŸºäºå®¹å™¨çš„AOPå®ç°
 aspect
 
-SpringËùÓĞµÄÇĞÃæÍ¨Öª¶¼±ØĞë·ÅÔÚÒ»¸ö<aop:config>ÄÚ£¨¿ÉÒÔÅäÖÃ¶à¸ö<aop:config>ÔªËØ£©£¬Ã¿Ò»¸ö<aop:config>¿ÉÒÔ°üº¬pointcut,adviso
-ºÍspectÔªËØ£¨×¢ÒâÕâĞ©ÔªËØµÄ³öÏÖÊÇÓÉË³ĞòµÄ£©
+Springæ‰€æœ‰çš„åˆ‡é¢é€šçŸ¥éƒ½å¿…é¡»æ”¾åœ¨ä¸€ä¸ª<aop:config>å†…ï¼ˆå¯ä»¥é…ç½®å¤šä¸ª<aop:config>å…ƒç´ ï¼‰ï¼Œæ¯ä¸€ä¸ª<aop:config>å¯ä»¥åŒ…å«pointcut,adviso
+å’Œspectå…ƒç´ ï¼ˆæ³¨æ„è¿™äº›å…ƒç´ çš„å‡ºç°æ˜¯ç”±é¡ºåºçš„ï¼‰
 
 
 
-ÇĞÈëµãpointcut
+åˆ‡å…¥ç‚¹pointcut
 
-	execution(public * *(..)) ÇĞÈëµãÎªÖ´ĞĞËùÓĞµÄpublic·½Ê½Ê±
-	execution(* set*(..)) ÇĞÈëµãÖ´ĞĞËùÓĞµÄset¿ªÊ¼µÄ·½·¨Ê±
-	execution(* com.xyz.service.Account.*(..)) ÇĞÈëµãÖ´ĞĞAccountÀàµÄËùÓĞ·½·¨Ê±
-	execution(* com.xyz.service..(..))ÇĞÈëµãÖ´ĞĞcom.xyz.service°üÏÂµÄËùÓĞ·½·¨Ê±
-	execution(* com.xyz.service...(..)) ÇĞÈëµãÖ´ĞĞcom.xyz.service°üÒÔ¼°Æä×Ó°üµÄËùÓĞµÄ·½·¨Ê±
-	
-	ÉÏ±ßÕâÖÖ·½Ê½aspectjºÍspringaopÍ¨ÓÃµÄ£¬ÆäËû·½Ê½¿ÉÒÔ×Ô¼º²éÕÒ×ÊÁÏ
+	execution(public * *(..)) åˆ‡å…¥ç‚¹ä¸ºæ‰§è¡Œæ‰€æœ‰çš„publicæ–¹å¼æ—¶
+	execution(* set*(..)) åˆ‡å…¥ç‚¹æ‰§è¡Œæ‰€æœ‰çš„setå¼€å§‹çš„æ–¹æ³•æ—¶
+	execution(* com.xyz.service.Account.*(..)) åˆ‡å…¥ç‚¹æ‰§è¡ŒAccountç±»çš„æ‰€æœ‰æ–¹æ³•æ—¶
+	execution(* com.xyz.service..(..))åˆ‡å…¥ç‚¹æ‰§è¡Œcom.xyz.serviceåŒ…ä¸‹çš„æ‰€æœ‰æ–¹æ³•æ—¶
+	execution(* com.xyz.service...(..)) åˆ‡å…¥ç‚¹æ‰§è¡Œcom.xyz.serviceåŒ…ä»¥åŠå…¶å­åŒ…çš„æ‰€æœ‰çš„æ–¹æ³•æ—¶
 
-°¸Àı£º
+	ä¸Šè¾¹è¿™ç§æ–¹å¼aspectjå’Œspringaopé€šç”¨çš„ï¼Œå…¶ä»–æ–¹å¼å¯ä»¥è‡ªå·±æŸ¥æ‰¾èµ„æ–™
+
+æ¡ˆä¾‹ï¼š
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -1242,32 +1242,32 @@ SpringËùÓĞµÄÇĞÃæÍ¨Öª¶¼±ØĞë·ÅÔÚÒ»¸ö<aop:config>ÄÚ£¨¿ÉÒÔÅäÖÃ¶à¸ö<aop:config>ÔªËØ£©
  xmlns:aop="http://www.springframework.org/schema/aop"
  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
-	
-	<!-- ÇĞÃæÀà -->
+
+	<!-- åˆ‡é¢ç±» -->
 	<bean id="myAspect" class="com.briup.spring.aop.bean.annotation.aop.MyAspect"></bean>
-	
-	<!-- ÒµÎñÀà -->
+
+	<!-- ä¸šåŠ¡ç±» -->
 	<bean id="aspectBiz" class="com.briup.spring.aop.bean.annotation.aop.AspectBiz"></bean>
-	<!-- aopÅäÖÃ ¿ÉÒÔÅäÖÃ¶à¸ö-->
+	<!-- aopé…ç½® å¯ä»¥é…ç½®å¤šä¸ª-->
 	<aop:config>
-	<!-- ÇĞÃæÀà -->
+	<!-- åˆ‡é¢ç±» -->
 		<aop:aspect id="aspectTest" ref="myAspect">
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃû°üº¬BizµÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»ååŒ…å«Bizçš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
-			<!-- Í¨Öª ,Í¨¹ıÇĞÈëµãÇĞÈëÇĞÈëÇĞÃæÀàÖĞµÄbefore·½·¨-->
+			<!-- é€šçŸ¥ ,é€šè¿‡åˆ‡å…¥ç‚¹åˆ‡å…¥åˆ‡å…¥åˆ‡é¢ç±»ä¸­çš„beforeæ–¹æ³•-->
 			<aop:before method="before" pointcut-ref="myPointcut"/>
 		</aop:aspect>
 	</aop:config>
 </beans>
 
 
-ÇĞÃæÀà£º
+åˆ‡é¢ç±»ï¼š
 
 /*
- * ÉùÃ÷Ò»¸öÇĞÃæÀà
+ * å£°æ˜ä¸€ä¸ªåˆ‡é¢ç±»
  * */
 public class MyAspect {
-	
+
 	public void before(){
 		System.out.println("aspect before");
 	}
@@ -1275,11 +1275,11 @@ public class MyAspect {
 }
 
 
-ÒµÎñÀà£º
+ä¸šåŠ¡ç±»ï¼š
 
-//ÒµÎñÀà
+//ä¸šåŠ¡ç±»
 public class AspectBiz {
-	
+
 	public void biz(){
 		System.out.println("Aspect biz");
 	}
@@ -1287,7 +1287,7 @@ public class AspectBiz {
 }
 
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 
 	@Test
 	public void aspectBefore(){
@@ -1295,8 +1295,8 @@ public class AspectBiz {
 		AspectBiz aspectBiz = (AspectBiz) ac.getBean("aspectBiz");
 		aspectBiz.biz();
 	}
-	
-½á¹û£º
+
+ç»“æœï¼š
 
 aspect before
 Aspect biz
@@ -1304,28 +1304,28 @@ Aspect biz
 
 
 
-ÅäÖÃ£»
+é…ç½®ï¼›
 
 <aop:config>
-	<!-- ÇĞÃæÀà -->
+	<!-- åˆ‡é¢ç±» -->
 		<aop:aspect id="aspectTest" ref="myAspect">
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃûÒÔBiz½áÎ²µÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»åä»¥Bizç»“å°¾çš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
-			<!-- Í¨Öª ,Í¨¹ıÇĞÈëµãÇĞÈëÇĞÈëÇĞÃæÀàÖĞµÄbefore·½·¨ ÔÚÖ´ĞĞÇĞÈëµãÖ¸¶¨µÄ·½·¨Ö®Ç°Ö´ĞĞ -->
+			<!-- é€šçŸ¥ ,é€šè¿‡åˆ‡å…¥ç‚¹åˆ‡å…¥åˆ‡å…¥åˆ‡é¢ç±»ä¸­çš„beforeæ–¹æ³• åœ¨æ‰§è¡Œåˆ‡å…¥ç‚¹æŒ‡å®šçš„æ–¹æ³•ä¹‹å‰æ‰§è¡Œ -->
 			<aop:before method="before" pointcut-ref="myPointcut"/>
-			<!-- ·µ»ØÖ®ºóµÄÍ¨Öª -->
+			<!-- è¿”å›ä¹‹åçš„é€šçŸ¥ -->
 			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
 		</aop:aspect>
 	</aop:config>
 
 
-ÇĞÃæÀà£º
+åˆ‡é¢ç±»ï¼š
 
 /*
- * ÉùÃ÷Ò»¸öÇĞÃæÀà
+ * å£°æ˜ä¸€ä¸ªåˆ‡é¢ç±»
  * */
 public class MyAspect {
-	
+
 	public void before(){
 		System.out.println("aspect before");
 	}
@@ -1333,14 +1333,14 @@ public class MyAspect {
 	public void afterReturning(){
 		System.out.println("aspect afterReturning");
 	}
-	
+
 }
 
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 
 
-½á¹û£º
+ç»“æœï¼š
 
 aspect before
 Aspect biz
@@ -1349,17 +1349,17 @@ aspect afterReturning
 
 
 
-ÅäÖÃ£º
+é…ç½®ï¼š
 
-<!-- aopÅäÖÃ ¿ÉÒÔÅäÖÃ¶à¸ö-->
+<!-- aopé…ç½® å¯ä»¥é…ç½®å¤šä¸ª-->
 	<aop:config>
-	<!-- ÇĞÃæÀà -->
+	<!-- åˆ‡é¢ç±» -->
 		<aop:aspect id="aspectTest" ref="myAspect">
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃûÒÔBiz½áÎ²µÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»åä»¥Bizç»“å°¾çš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
-			<!-- Í¨Öª ,Í¨¹ıÇĞÈëµãÇĞÈëÇĞÈëÇĞÃæÀàÖĞµÄbefore·½·¨ ÔÚÖ´ĞĞÇĞÈëµãÖ¸¶¨µÄ·½·¨Ö®Ç°Ö´ĞĞ -->
+			<!-- é€šçŸ¥ ,é€šè¿‡åˆ‡å…¥ç‚¹åˆ‡å…¥åˆ‡å…¥åˆ‡é¢ç±»ä¸­çš„beforeæ–¹æ³• åœ¨æ‰§è¡Œåˆ‡å…¥ç‚¹æŒ‡å®šçš„æ–¹æ³•ä¹‹å‰æ‰§è¡Œ -->
 			<aop:before method="before" pointcut-ref="myPointcut"/>
-			<!-- ·µ»ØÖ®ºóµÄÍ¨Öª -->
+			<!-- è¿”å›ä¹‹åçš„é€šçŸ¥ -->
 			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
 			<!--  -->
 			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
@@ -1367,13 +1367,13 @@ aspect afterReturning
 	</aop:config>
 
 
-ÇĞÃæÀà£º
+åˆ‡é¢ç±»ï¼š
 
 /*
- * ÉùÃ÷Ò»¸öÇĞÃæÀà
+ * å£°æ˜ä¸€ä¸ªåˆ‡é¢ç±»
  * */
 public class MyAspect {
-	
+
 	public void before(){
 		System.out.println("aspect before");
 	}
@@ -1381,55 +1381,55 @@ public class MyAspect {
 	public void afterReturning(){
 		System.out.println("aspect afterReturning");
 	}
-	
+
 	public void afteThrowing(){
 		System.out.println("aspect afteThrowing");
 	}
 }
 
 
-ÒµÎñÀà£º
+ä¸šåŠ¡ç±»ï¼š
 	public void biz(){
 		System.out.println("Aspect biz");
-		throw new RuntimeException(); //³öÏÖÒì³£µÄÊ±ºòafteThrowing²Å»áÖ´ĞĞ
+		throw new RuntimeException(); //å‡ºç°å¼‚å¸¸çš„æ—¶å€™afteThrowingæ‰ä¼šæ‰§è¡Œ
 	}
 
 
-½á¹û£º
+ç»“æœï¼š
 aspect before
 Aspect biz
-aspect afteThrowing 
+aspect afteThrowing
 
-ÉÏ±ßµÄ½á¹ûÓÉÓÚÅ×³öÒì³£ºó£¬²»»áÕı³£µÄ·µ»ØËùÓĞÃ»ÓĞaspect afterReturningÊä³ö
-
-
-after(finally) advice 
+ä¸Šè¾¹çš„ç»“æœç”±äºæŠ›å‡ºå¼‚å¸¸åï¼Œä¸ä¼šæ­£å¸¸çš„è¿”å›æ‰€æœ‰æ²¡æœ‰aspect afterReturningè¾“å‡º
 
 
-<!-- aopÅäÖÃ ¿ÉÒÔÅäÖÃ¶à¸ö-->
+after(finally) advice
+
+
+<!-- aopé…ç½® å¯ä»¥é…ç½®å¤šä¸ª-->
 	<aop:config>
-	<!-- ÇĞÃæÀà -->
+	<!-- åˆ‡é¢ç±» -->
 		<aop:aspect id="aspectTest" ref="myAspect">
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃûÒÔBiz½áÎ²µÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»åä»¥Bizç»“å°¾çš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
-			<!-- Í¨Öª ,Í¨¹ıÇĞÈëµãÇĞÈëÇĞÈëÇĞÃæÀàÖĞµÄbefore·½·¨ ÔÚÖ´ĞĞÇĞÈëµãÖ¸¶¨µÄ·½·¨Ö®Ç°Ö´ĞĞ -->
+			<!-- é€šçŸ¥ ,é€šè¿‡åˆ‡å…¥ç‚¹åˆ‡å…¥åˆ‡å…¥åˆ‡é¢ç±»ä¸­çš„beforeæ–¹æ³• åœ¨æ‰§è¡Œåˆ‡å…¥ç‚¹æŒ‡å®šçš„æ–¹æ³•ä¹‹å‰æ‰§è¡Œ -->
 			<aop:before method="before" pointcut-ref="myPointcut"/>
-			<!-- ·µ»ØÖ®ºóµÄÍ¨Öª -->
+			<!-- è¿”å›ä¹‹åçš„é€šçŸ¥ -->
 			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
 			<!--  -->
 			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
-			<!-- after(finally) advice ²»¹ÜÊÇ·ñÅ×³öÒì³££¬×îºó¶¼»áÖ´ĞĞµÄ·½·¨ -->
+			<!-- after(finally) advice ä¸ç®¡æ˜¯å¦æŠ›å‡ºå¼‚å¸¸ï¼Œæœ€åéƒ½ä¼šæ‰§è¡Œçš„æ–¹æ³• -->
 			<aop:after method="after" pointcut-ref="myPointcut"/>
 		</aop:aspect>
 	</aop:config>
 
 
-ÇĞÃæÀà£º
+åˆ‡é¢ç±»ï¼š
 /*
- * ÉùÃ÷Ò»¸öÇĞÃæÀà
+ * å£°æ˜ä¸€ä¸ªåˆ‡é¢ç±»
  * */
 public class MyAspect {
-	
+
 	public void before(){
 		System.out.println("aspect before");
 	}
@@ -1437,47 +1437,47 @@ public class MyAspect {
 	public void afterReturning(){
 		System.out.println("aspect afterReturning");
 	}
-	
+
 	public void afteThrowing(){
 		System.out.println("aspect afteThrowing");
 	}
-	
+
 	public void after(){
 		System.out.println("aspect after(finally)");
 	}
 }
 
 
-//ÒµÎñÀà
+//ä¸šåŠ¡ç±»
 public class AspectBiz {
-	
+
 	public void biz(){
 		System.out.println("Aspect biz");
 		throw new RuntimeException();
 	}
 }
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 
-½á¹û£º
+ç»“æœï¼š
 aspect before
 Aspect biz
 aspect afteThrowing
 aspect after(finally)
 
 
-Èç¹ûÒµÎñÀàÈçÏÂ£ºÃ»ÓĞÒì³££¬
-//ÒµÎñÀà
+å¦‚æœä¸šåŠ¡ç±»å¦‚ä¸‹ï¼šæ²¡æœ‰å¼‚å¸¸ï¼Œ
+//ä¸šåŠ¡ç±»
 public class AspectBiz {
-	
+
 	public void biz(){
 		System.out.println("Aspect biz");
-		
+
 	}
 
 }
 
-½á¹û£º
+ç»“æœï¼š
 aspect before
 Aspect biz
 aspect after(finally)
@@ -1486,38 +1486,38 @@ aspect after(finally)
 
 
 
-ÅäÖÃ£º
+é…ç½®ï¼š
 
-<!-- aopÅäÖÃ ¿ÉÒÔÅäÖÃ¶à¸ö-->
+<!-- aopé…ç½® å¯ä»¥é…ç½®å¤šä¸ª-->
 	<aop:config>
-	<!-- ÇĞÃæÀà -->
+	<!-- åˆ‡é¢ç±» -->
 		<aop:aspect id="aspectTest" ref="myAspect">
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃûÒÔBiz½áÎ²µÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»åä»¥Bizç»“å°¾çš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
-			<!-- Í¨Öª ,Í¨¹ıÇĞÈëµãÇĞÈëÇĞÈëÇĞÃæÀàÖĞµÄbefore·½·¨ ÔÚÖ´ĞĞÇĞÈëµãÖ¸¶¨µÄ·½·¨Ö®Ç°Ö´ĞĞ -->
+			<!-- é€šçŸ¥ ,é€šè¿‡åˆ‡å…¥ç‚¹åˆ‡å…¥åˆ‡å…¥åˆ‡é¢ç±»ä¸­çš„beforeæ–¹æ³• åœ¨æ‰§è¡Œåˆ‡å…¥ç‚¹æŒ‡å®šçš„æ–¹æ³•ä¹‹å‰æ‰§è¡Œ -->
 			<aop:before method="before" pointcut-ref="myPointcut"/>
-			<!-- ·µ»ØÖ®ºóµÄÍ¨Öª -->
+			<!-- è¿”å›ä¹‹åçš„é€šçŸ¥ -->
 			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
 			<!--  -->
 			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
-			<!-- after(finally) advice ²»¹ÜÊÇ·ñÅ×³öÒì³££¬×îºó¶¼»áÖ´ĞĞµÄ·½·¨ -->
+			<!-- after(finally) advice ä¸ç®¡æ˜¯å¦æŠ›å‡ºå¼‚å¸¸ï¼Œæœ€åéƒ½ä¼šæ‰§è¡Œçš„æ–¹æ³• -->
 			<aop:after method="after" pointcut-ref="myPointcut"/>
-			<!-- adroun advice »·ÈÆÍ¨Öª£¬·½·¨µÄµÚÒ»²ÎÊı±ØĞëÊÇProceedingJjoinPointÀàĞÍ -->
+			<!-- adroun advice ç¯ç»•é€šçŸ¥ï¼Œæ–¹æ³•çš„ç¬¬ä¸€å‚æ•°å¿…é¡»æ˜¯ProceedingJjoinPointç±»å‹ -->
 			<aop:around method="around" pointcut-ref="myPointcut"/>
 		</aop:aspect>
 	</aop:config>
 
 
-ÇĞÃæÀà£º
+åˆ‡é¢ç±»ï¼š
 package com.briup.spring.aop.bean.annotation.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /*
- * ÉùÃ÷Ò»¸öÇĞÃæÀà
+ * å£°æ˜ä¸€ä¸ªåˆ‡é¢ç±»
  * */
 public class MyAspect {
-	
+
 	public void before(){
 		System.out.println("aspect before");
 	}
@@ -1525,21 +1525,21 @@ public class MyAspect {
 	public void afterReturning(){
 		System.out.println("aspect afterReturning");
 	}
-	
+
 	public void afteThrowing(){
 		System.out.println("aspect afteThrowing");
 	}
-	
+
 	public void after(){
 		System.out.println("aspect after(finally)");
 	}
-	
+
 	public void around(ProceedingJoinPoint joinPoint){
 		Object object = null;
 		try{
-			System.out.println("aspect around 1"); //·½·¨Ö´ĞĞÇ°
-			object = joinPoint.proceed();  //´ú±íÒµÎñ·½·¨µÄÖ´ĞĞ
-			System.out.println("aspect around 1"); //·½·¨Ö´ĞĞºó
+			System.out.println("aspect around 1"); //æ–¹æ³•æ‰§è¡Œå‰
+			object = joinPoint.proceed();  //ä»£è¡¨ä¸šåŠ¡æ–¹æ³•çš„æ‰§è¡Œ
+			System.out.println("aspect around 1"); //æ–¹æ³•æ‰§è¡Œå
 		}catch(Throwable e){
 			e.printStackTrace();
 		}
@@ -1547,79 +1547,79 @@ public class MyAspect {
 }
 
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 
-½á¹û£º
+ç»“æœï¼š
 aspect around 1
 Aspect biz
 aspect around 1
 
 
 
-»·ÈÆÍ¨ÖªµÄ²ÎÊı´«µİ£º
+ç¯ç»•é€šçŸ¥çš„å‚æ•°ä¼ é€’ï¼š
 
-ÅäÖÃÎÄ¼ş£º
+é…ç½®æ–‡ä»¶ï¼š
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns:aop="http://www.springframework.org/schema/aop"
  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
-	
-	<!-- ÇĞÃæÀà -->
+
+	<!-- åˆ‡é¢ç±» -->
 	<bean id="myAspect" class="com.briup.spring.aop.bean.annotation.aop.MyAspect"></bean>
-	
-	<!-- ÒµÎñÀà -->
+
+	<!-- ä¸šåŠ¡ç±» -->
 	<bean id="aspectBiz" class="com.briup.spring.aop.bean.annotation.aop.AspectBiz"></bean>
-	<!-- aopÅäÖÃ ¿ÉÒÔÅäÖÃ¶à¸ö-->
+	<!-- aopé…ç½® å¯ä»¥é…ç½®å¤šä¸ª-->
 	<aop:config>
-	<!-- ÇĞÃæÀà -->
+	<!-- åˆ‡é¢ç±» -->
 		<aop:aspect id="aspectTest" ref="myAspect">
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃûÒÔBiz½áÎ²µÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»åä»¥Bizç»“å°¾çš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 			<aop:pointcut expression="execution(* com.briup.spring.aop.bean.annotation.aop.*Biz.*(..))" id="myPointcut"/>
-			<!-- Í¨Öª ,Í¨¹ıÇĞÈëµãÇĞÈëÇĞÈëÇĞÃæÀàÖĞµÄbefore·½·¨ ÔÚÖ´ĞĞÇĞÈëµãÖ¸¶¨µÄ·½·¨Ö®Ç°Ö´ĞĞ -->
+			<!-- é€šçŸ¥ ,é€šè¿‡åˆ‡å…¥ç‚¹åˆ‡å…¥åˆ‡å…¥åˆ‡é¢ç±»ä¸­çš„beforeæ–¹æ³• åœ¨æ‰§è¡Œåˆ‡å…¥ç‚¹æŒ‡å®šçš„æ–¹æ³•ä¹‹å‰æ‰§è¡Œ -->
 			<aop:before method="before" pointcut-ref="myPointcut"/>
-			<!-- ·µ»ØÖ®ºóµÄÍ¨Öª -->
+			<!-- è¿”å›ä¹‹åçš„é€šçŸ¥ -->
 			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
 			<!--  -->
 			<aop:after-throwing method="afteThrowing" pointcut-ref="myPointcut"/>
-			<!-- after(finally) advice ²»¹ÜÊÇ·ñÅ×³öÒì³££¬×îºó¶¼»áÖ´ĞĞµÄ·½·¨ -->
+			<!-- after(finally) advice ä¸ç®¡æ˜¯å¦æŠ›å‡ºå¼‚å¸¸ï¼Œæœ€åéƒ½ä¼šæ‰§è¡Œçš„æ–¹æ³• -->
 			<aop:after method="after" pointcut-ref="myPointcut"/>
-			<!-- adroun advice »·ÈÆÍ¨Öª£¬·½·¨µÄµÚÒ»²ÎÊı±ØĞëÊÇProceedingJjoinPointÀàĞÍ -->
+			<!-- adroun advice ç¯ç»•é€šçŸ¥ï¼Œæ–¹æ³•çš„ç¬¬ä¸€å‚æ•°å¿…é¡»æ˜¯ProceedingJjoinPointç±»å‹ -->
 			<!-- <aop:around method="around" pointcut-ref="myPointcut"/> -->
-			
-			<!-- ²ÎÊı´«µİ  -->
+
+			<!-- å‚æ•°ä¼ é€’  -->
 			<aop:around method="aroundInit" pointcut="execution(* com.briup.spring.aop.bean.annotation.aop.AspectBiz.init(String,int))
 			and args(bizName,times)"/>
 		</aop:aspect>
 	</aop:config>
 </beans>
 
-ÒµÎñÀà:
-//ÒµÎñÀà
+ä¸šåŠ¡ç±»:
+//ä¸šåŠ¡ç±»
 public class AspectBiz {
-	
+
 	public void biz(){
 		System.out.println("Aspect biz");
 	}
-	
+
 	public void init(String bizName,int times){
 		System.out.println("aspectBiz init:"+bizName+"  "+times);
 	}
 
 }
 
-ÇĞÃæÀà£º
+åˆ‡é¢ç±»ï¼š
 
 package com.briup.spring.aop.bean.annotation.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 
 /*
- * ÉùÃ÷Ò»¸öÇĞÃæÀà
+ * å£°æ˜ä¸€ä¸ªåˆ‡é¢ç±»
  * */
 public class MyAspect {
-	
+
 	public void before(){
 		System.out.println("aspect before");
 	}
@@ -1627,41 +1627,41 @@ public class MyAspect {
 	public void afterReturning(){
 		System.out.println("aspect afterReturning");
 	}
-	
+
 	public void afteThrowing(){
 		System.out.println("aspect afteThrowing");
 	}
-	
+
 	public void after(){
 		System.out.println("aspect after(finally)");
 	}
-	
+
 	public void around(ProceedingJoinPoint joinPoint){
 		Object object = null;
 		try{
-			System.out.println("aspect around 1"); //·½·¨Ö´ĞĞÇ°
-			object = joinPoint.proceed();  //´ú±íÒµÎñ·½·¨µÄÖ´ĞĞ
-			System.out.println("aspect around 2"); //·½·¨Ö´ĞĞºó
+			System.out.println("aspect around 1"); //æ–¹æ³•æ‰§è¡Œå‰
+			object = joinPoint.proceed();  //ä»£è¡¨ä¸šåŠ¡æ–¹æ³•çš„æ‰§è¡Œ
+			System.out.println("aspect around 2"); //æ–¹æ³•æ‰§è¡Œå
 		}catch(Throwable e){
 			e.printStackTrace();
 		}
 	}
-	
-	//AOPÖĞ²ÎÊıµÄ´«µİ
+
+	//AOPä¸­å‚æ•°çš„ä¼ é€’
 	public void aroundInit(ProceedingJoinPoint joinPoint,String bizName,int times){
 		System.out.println(bizName+"--"+times);
 		Object object = null;
 		try{
-			System.out.println("aspect around 1"); //·½·¨Ö´ĞĞÇ°
-			object = joinPoint.proceed();  //´ú±íÒµÎñ·½·¨µÄÖ´ĞĞ
-			System.out.println("aspect around 1"); //·½·¨Ö´ĞĞºó
+			System.out.println("aspect around 1"); //æ–¹æ³•æ‰§è¡Œå‰
+			object = joinPoint.proceed();  //ä»£è¡¨ä¸šåŠ¡æ–¹æ³•çš„æ‰§è¡Œ
+			System.out.println("aspect around 1"); //æ–¹æ³•æ‰§è¡Œå
 		}catch(Throwable e){
 			e.printStackTrace();
 		}
 	}
 }
 
-²âÊÔ£º
+æµ‹è¯•ï¼š
 	@Test
 	public void aspectAround(){
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext("com/briup/spring/chap4/spring-aop-schema-advice.xml");
@@ -1669,7 +1669,7 @@ public class MyAspect {
 		aspectBiz.init("init", 3);
 	}
 
-½á¹û£º
+ç»“æœï¼š
 aspect before
 init--3
 aspect around 1
@@ -1677,24 +1677,24 @@ aspectBiz init:init  3
 aspect around 1
 aspect after(finally)
 aspect afterReturning
-AfterClass ±ê×¢µÄ·½·¨ »á×îºóÖ´ĞĞ
+AfterClass æ ‡æ³¨çš„æ–¹æ³• ä¼šæœ€åæ‰§è¡Œ
 
 
 
 
-Advisor  
+Advisor
 
-Advisor¾ÍÏñÒ»¸öĞ¡µÄ×Ô°üº¬£¬Ö»ÓĞÒ»¸öadvice
-ÇĞÃæÖ¨ÉùÍ¨¹ıÒ»¸öbean±êÊ¶£¬²¢ÇÒ±ØĞëÊµÏÖÒ»¸öadvice½Ó¿Ú£¬Í¬Ê±advisorÒ²¿ÉÒÔºÜºÃµÄÀûÓÃaspectJµÄÇĞÈëµã±í´ïÊ½
+Advisorå°±åƒä¸€ä¸ªå°çš„è‡ªåŒ…å«ï¼Œåªæœ‰ä¸€ä¸ªadvice
+åˆ‡é¢å±å£°é€šè¿‡ä¸€ä¸ªbeanæ ‡è¯†ï¼Œå¹¶ä¸”å¿…é¡»å®ç°ä¸€ä¸ªadviceæ¥å£ï¼ŒåŒæ—¶advisorä¹Ÿå¯ä»¥å¾ˆå¥½çš„åˆ©ç”¨aspectJçš„åˆ‡å…¥ç‚¹è¡¨è¾¾å¼
 
-SpringÍ¨¹ıÅäÖÃÎÄ¼şÖĞ <aop:advisor>ÔªËØÖ§³ÖadvisorÊµ¼ÊÊ¹ÓÃÖĞ£¬´ó¶àÊıÇé¿öÏÂËü»áºÍtransactional adviceÅäºÏÊ¹ÓÃ
+Springé€šè¿‡é…ç½®æ–‡ä»¶ä¸­ <aop:advisor>å…ƒç´ æ”¯æŒadvisorå®é™…ä½¿ç”¨ä¸­ï¼Œå¤§å¤šæ•°æƒ…å†µä¸‹å®ƒä¼šå’Œtransactional adviceé…åˆä½¿ç”¨
 
-ÎªÁË¶¨ÒåÒ»¸öadvisorµÄÓÅÏÈ¼¶Ò»±ßÈÃadvice¿ÉÒÔÓĞĞò£¬¿ÉÒÔÊ¹ÓÃorderÊôĞÔ¶¨ÒåadvisorµÄË³Ğò
+ä¸ºäº†å®šä¹‰ä¸€ä¸ªadvisorçš„ä¼˜å…ˆçº§ä¸€è¾¹è®©adviceå¯ä»¥æœ‰åºï¼Œå¯ä»¥ä½¿ç”¨orderå±æ€§å®šä¹‰advisorçš„é¡ºåº
 
 
-Ê¹ÓÃ°¸Àı£º
+ä½¿ç”¨æ¡ˆä¾‹ï¼š
 	<aop:config>
-		<!-- ÇĞÈëµã  ±êÊ¶ÇĞÈëµã aop°üÏÂÀàÃûÒÔBiz½áÎ²µÄÀàµÄËùÓĞ·½·¨-->
+		<!-- åˆ‡å…¥ç‚¹  æ ‡è¯†åˆ‡å…¥ç‚¹ aopåŒ…ä¸‹ç±»åä»¥Bizç»“å°¾çš„ç±»çš„æ‰€æœ‰æ–¹æ³•-->
 		<aop:pointcut expression="execution(* com.xyz.myapp.service..(..))" id="businessService"/>
 		<!-- advisor--->
 		<aop:advisor pointcut-ref="businessService" advice-ref="tx-advice"/>
@@ -1707,7 +1707,7 @@ SpringÍ¨¹ıÅäÖÃÎÄ¼şÖĞ <aop:advisor>ÔªËØÖ§³ÖadvisorÊµ¼ÊÊ¹ÓÃÖĞ£¬´ó¶àÊıÇé¿öÏÂËü»áºÍt
 	</tx:advice>
 
 
-ÊÂÎñµÄÊ¹ÓÃ£º
+äº‹åŠ¡çš„ä½¿ç”¨ï¼š
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -1715,22 +1715,22 @@ SpringÍ¨¹ıÅäÖÃÎÄ¼şÖĞ <aop:advisor>ÔªËØÖ§³ÖadvisorÊµ¼ÊÊ¹ÓÃÖĞ£¬´ó¶àÊıÇé¿öÏÂËü»áºÍt
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	
+
 	 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
-	<!-- É¨Ãè×¢½âÖ§³Ö -->
+	<!-- æ‰«ææ³¨è§£æ”¯æŒ -->
 	<context:component-scan base-package="spring.aop.bean.annotation"></context:component-scan>
-	
+
 	<bean name="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="configLocation">
-			<!-- Â·¾¶Î»ÓÚsrcÏÂ -->
+			<!-- è·¯å¾„ä½äºsrcä¸‹ -->
 			<value>classpath:hibernate.cfg.xml</value>
 		</property>
 	</bean>
-	
-	<!-- ÊÂÎïÅäÖÃ -->
+
+	<!-- äº‹ç‰©é…ç½® -->
 	<bean id="txManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory">
@@ -1738,8 +1738,8 @@ SpringÍ¨¹ıÅäÖÃÎÄ¼şÖĞ <aop:advisor>ÔªËØÖ§³ÖadvisorÊµ¼ÊÊ¹ÓÃÖĞ£¬´ó¶àÊıÇé¿öÏÂËü»áºÍt
 		</property>
 	</bean>
 
-	<!-- advisorÅäÖÃ ÅäÖÃÊÂÎñ´¦ÀíµÄBean,¶¨ÒåÇĞÃæ£¨advice£© 
-		ÓÉÓÚgetxxx,queryxxx,findxxx²»Éæ¼°ÊÂÎñ£¬¿ÉÒÔÉèÖÃread-onlyÎªtrue
+	<!-- advisoré…ç½® é…ç½®äº‹åŠ¡å¤„ç†çš„Bean,å®šä¹‰åˆ‡é¢ï¼ˆadviceï¼‰
+		ç”±äºgetxxx,queryxxx,findxxxä¸æ¶‰åŠäº‹åŠ¡ï¼Œå¯ä»¥è®¾ç½®read-onlyä¸ºtrue
 	-->
 	<tx:advice id="txAdvice" transaction-manager="txManager">
 		<tx:attributes>
@@ -1753,10 +1753,10 @@ SpringÍ¨¹ıÅäÖÃÎÄ¼şÖĞ <aop:advisor>ÔªËØÖ§³ÖadvisorÊµ¼ÊÊ¹ÓÃÖĞ£¬´ó¶àÊıÇé¿öÏÂËü»áºÍt
 			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
 		</tx:attributes>
 	</tx:advice>
-	
-	<!-- aopÅäÖÃ -->
+
+	<!-- aopé…ç½® -->
 	<aop:config>
-	<!-- ¸øimpl°üÏÂµÄËùÓĞµÄ·½·¨ÅäÖÃadivce -->
+	<!-- ç»™implåŒ…ä¸‹çš„æ‰€æœ‰çš„æ–¹æ³•é…ç½®adivce -->
 		<aop:pointcut expression="excution(* com.briup.spring.aop.bean.annotation.service.impl..(..))" id="serviceMethod" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod"  />
 	</aop:config>
