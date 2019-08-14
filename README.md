@@ -7,11 +7,17 @@ learn-java-codes仓库主要用于存放**Java**相关的学习代码，笔记�
 
 提示：由于原仓库learn中包含code、notes两大模块，比较重，现在分为如下两个仓库
 
+**github:**  
 - [learn-java-codes](https://github.com/caojx-git/learn-java-codes) 用于存放相关项目源代码
-- [learn-java-notes](https://github.com/caojx-git/learn-java-notes) 用于存放学习笔记
+- [learn-java-notes](https://github.com/caojx-git/learn-java-notes) 用于存放学习笔记  
+  
+
+**gitee:**  
+  - [learn-java-codes](https://gitee.com/caojx-git/learn-java-codes) 用于存放相关项目源代码
+  - [learn-java-notes](https://gitee.com/caojx-git/learn-java-notes) 用于存放学习笔记
 
 下图是[Markdown](https://www.typora.io/)编辑器本地查看效果，可以很方便的查看到目录结构，我是在mac平台上编辑的，windows平如果显示效果不佳请更换其他Markdown编辑器。  
-![](https://github.com/caojx-git/learn/blob/master/notes/images/markdown/markdown_1.png)  
+![](https://github.com/caojx-git/learn-java-notes/blob/master/images/markdown/markdown_1.png?raw=true)
 
 ## 目录
 - [activiti](https://github.com/caojx-git/learn/tree/master/notes/activiti)  
