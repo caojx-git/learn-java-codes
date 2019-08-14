@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="filemanager-common:war">
-    <output-path>$PROJECT_DIR$/filemanager-common/target</output-path>
-    <root id="archive" name="filemanager-common-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="filemanager-common:war exploded" />
-    </root>
-  </artifact>
-</component>

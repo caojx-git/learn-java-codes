@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="freemark-java:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="freemark-java.war">
-      <element id="artifact" artifact-name="freemark-java:war exploded" />
-    </root>
-  </artifact>
-</component>
