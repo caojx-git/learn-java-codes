@@ -43,7 +43,7 @@ public class MyConsumer {
                 //间隔100ms,拉取一次数据
                 ConsumerRecords<String, String> records = consumer.poll(100);
                 for (ConsumerRecord<String, String> record : records) {
-                    System.out.println(String.format("topic = %s, partition = %s, key = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
+                    System.out.println(String.format("topic = %s, partition = %s, offset = %s, key = %s, value = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
                     if (record.value().equals("done")) {
                         flag = false;
                     }
@@ -70,7 +70,7 @@ public class MyConsumer {
             //间隔100ms,拉取一次数据
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println(String.format("topic = %s, partition = %s, key = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
+                System.out.println(String.format("topic = %s, partition = %s, offset = %s, key = %s, value = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
                 if (record.value().equals("done")) {
                     flag = false;
                 }
@@ -99,7 +99,7 @@ public class MyConsumer {
             //间隔100ms,拉取一次数据
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println(String.format("topic = %s, partition = %s, key = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
+                System.out.println(String.format("topic = %s, partition = %s, offset = %s, key = %s, value = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
                 if (record.value().equals("done")) {
                     flag = false;
                 }
@@ -124,7 +124,7 @@ public class MyConsumer {
             //间隔100ms,拉取一次数据
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
-                System.out.println(String.format("topic = %s, partition = %s, key = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
+                System.out.println(String.format("topic = %s, partition = %s, offset = %s, key = %s, value = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
                 if (record.value().equals("done")) {
                     flag = false;
                 }
@@ -152,7 +152,7 @@ public class MyConsumer {
                 //间隔100ms,拉取一次数据
                 ConsumerRecords<String, String> records = consumer.poll(100);
                 for (ConsumerRecord<String, String> record : records) {
-                    System.out.println(String.format("topic = %s, partition = %s, key = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
+                    System.out.println(String.format("topic = %s, partition = %s, offset = %s, key = %s, value = %s", record.topic(), record.partition(), record.offset(), record.key(), record.value()));
                 }
                 //异步提交
                 consumer.commitAsync();

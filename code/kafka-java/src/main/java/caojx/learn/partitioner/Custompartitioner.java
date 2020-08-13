@@ -13,7 +13,7 @@ import java.util.Map;
  * @author caojx
  * @version 1.0
  * @description 自定义分区分配器
- * @Copyright (c) 2018, Lianjia Group All Rights Reserved.
+ * @Copyright (c) 2018, xxx All Rights Reserved.
  * @date 2018-07-09
  */
 public class Custompartitioner implements Partitioner {
