@@ -14,9 +14,12 @@ import java.lang.reflect.Proxy;
  * @author: caojx
  * @date: 17-7-9 下午6:54
  */
-public class JDKProxyTest {
+public class JdkProxyTest {
 
     public static void main(String[] args){
+        // 保存生成的代理类的字节码文件
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+
         Car car = new Car();
         InvocationHandler handler = new TimeHandler(car);
         Class<?> cls = car.getClass();

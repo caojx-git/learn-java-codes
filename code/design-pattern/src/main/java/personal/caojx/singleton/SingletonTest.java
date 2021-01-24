@@ -1,9 +1,5 @@
 package personal.caojx.singleton;
 
-import junit.framework.TestCase;
-import personal.caojx.singleton.Singleton;
-import personal.caojx.singleton.Singleton2;
-
 /**
  * Copyright: Copyright (c) 2017 Asiainfo
  *
@@ -13,7 +9,7 @@ import personal.caojx.singleton.Singleton2;
  * @author: caojx
  * @date: 2017/6/29 22:11
  */
-public class SingletonTest extends TestCase {
+public class SingletonTest {
 
     public static void main(String[] args){
         //饿汉模式

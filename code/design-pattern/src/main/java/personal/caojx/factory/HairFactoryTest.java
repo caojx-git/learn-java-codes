@@ -1,6 +1,5 @@
 package personal.caojx.factory;
 
-import junit.framework.TestCase;
 
 /**
  * Copyright: Copyright (c) 2017 Asiainfo
@@ -11,7 +10,7 @@ import junit.framework.TestCase;
  * @author: caojx
  * @date: 2017/7/2 21:56
  */
-public class HairFactoryTest extends TestCase {
+public class HairFactoryTest  {
 
     public static void main(String[] args){
 

@@ -1,6 +1,5 @@
 package personal.caojx.factory;
 
-import junit.framework.TestCase;
 
 /**
  * Copyright: Copyright (c) 2017 Asiainfo
@@ -11,7 +10,7 @@ import junit.framework.TestCase;
  * @author: caojx
  * @date: 17-7-8 下午9:55
  */
-public class AbstractFactoryTest extends TestCase {
+public class AbstractFactoryTest {
 
     public static void main(String[] args){
         //聖誕女孩
