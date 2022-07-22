@@ -9,7 +9,7 @@ import java.util.TreeMap;
 public class ConsistentHashing {
 
     public static void main(String[] args) {
-        String[] requestIps = {"192.168.0.15", "192.168.0.30", "192.168.0.45"};
+        String[] requestIps = {"192.168.0.8", "192.168.0.18", "192.168.0.28"};
         for(String requestIp: requestIps){
             String address = getServer(requestIp);
             System.out.println("请求 " + requestIp + " 被分配给服务 " + address);

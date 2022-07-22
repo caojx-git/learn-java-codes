@@ -13,23 +13,23 @@ import java.util.Map;
 public class ServerIps {
 
     /**
-     * A、B、C 假设是三台服务器
+     * 三台服务器的ip地址
      */
     public static final List<String> LIST = Arrays.asList("A", "B", "C");
 
     /**
      * 三台服务器的ip地址
      */
-    public static final List<String> LIST_IP = Arrays.asList("192.168.0.10", "192.168.0.20", "192.168.0.40", "192.168.0.50");
+    public static final List<String> LIST_IP = Arrays.asList("192.168.0.10", "192.168.0.20", "192.168.0.30");
 
     /**
      * A、B、C 服务器，带权重
      * 即假如10次请求，A要请求2次，B要请求3次，C要请求5次
      */
-    public static final Map<String, Integer> WEIGHT_LIST = new LinkedHashMap<>();
+    public static final Map<String, Integer> WEIGHT_MAP = new LinkedHashMap<>();
     static {
-        WEIGHT_LIST.put("A", 2);
-        WEIGHT_LIST.put("B", 3);
-        WEIGHT_LIST.put("C", 5);
+        WEIGHT_MAP.put("A", 2);
+        WEIGHT_MAP.put("B", 3);
+        WEIGHT_MAP.put("C", 5);
     }
 }

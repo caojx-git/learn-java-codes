@@ -28,8 +28,8 @@ public class WeightRoundRobin {
 
         List<String> ips = new ArrayList<>();
 
-        for (String ip : ServerIps.WEIGHT_LIST.keySet()) {
-            Integer weight = ServerIps.WEIGHT_LIST.get(ip);
+        for (String ip : ServerIps.WEIGHT_MAP.keySet()) {
+            Integer weight = ServerIps.WEIGHT_MAP.get(ip);
 
             // weight多少在ips里面存多少  例A权重为2 在ips里面存两个
             for (int i = 0; i < weight; i++) {

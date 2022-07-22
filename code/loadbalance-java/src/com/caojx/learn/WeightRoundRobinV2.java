@@ -14,12 +14,12 @@ public class WeightRoundRobinV2 {
     }
 
     public static String getServer(Integer num) {
-        int totalWeights = ServerIps.WEIGHT_LIST.values().stream().mapToInt(w -> w).sum();
+        int totalWeights = ServerIps.WEIGHT_MAP.values().stream().mapToInt(w -> w).sum();
 
         Integer pos = num % totalWeights;
 
-        for (String ip : ServerIps.WEIGHT_LIST.keySet()) {
-            Integer weight = ServerIps.WEIGHT_LIST.get(ip);
+        for (String ip : ServerIps.WEIGHT_MAP.keySet()) {
+            Integer weight = ServerIps.WEIGHT_MAP.get(ip);
 
             // 坐标小于权重，说明可以由该服务器处理
             if (pos < weight) {

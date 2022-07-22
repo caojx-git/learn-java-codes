@@ -1,5 +1,6 @@
 package com.caojx.learn;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,31 +23,28 @@ public class WeightRoundRobinV3 {
     public static Map<String, Weight> currWeights = new HashMap<>();
 
     public static String getServer() {
-        int totalWeights = ServerIps.WEIGHT_LIST.values().stream().mapToInt(w -> w).sum();
+        int totalWeights = ServerIps.WEIGHT_MAP.values().stream().mapToInt(w -> w).sum();
 
-        // 初始化一个 动态权重，currWeights 默认值 0
+        // 初始化服务器的固定权重、动态权重 currWeights 默认值 0
         if (currWeights.isEmpty()) {
-            ServerIps.WEIGHT_LIST.forEach((ip, weight) -> {
-                currWeights.put(ip, new Weight(ip, weight, 0));
+            ServerIps.WEIGHT_MAP.forEach((ip, weightNum) -> {
+                Weight weight = new Weight(ip, weightNum, 0);
+                currWeights.put(ip, weight);
             });
         }
 
-        // currWeight +weight 动态权重+固定权重
+        // 计算动态权重
+        // 动态权重 = 固定权重 + 动态权重
+        // currWeight = currWeight +weight
         for (Weight weight : currWeights.values()) {
             weight.setCurrentWeight(weight.getCurrentWeight() + weight.getWeight());
         }
 
-        // 找最大值 max(currWeight)
-        Weight maxCurrentWeight = null;
-        for (Weight weight : currWeights.values()) {
-            if (maxCurrentWeight == null || weight.getCurrentWeight() > maxCurrentWeight.getCurrentWeight()) {
-                maxCurrentWeight = weight;
-            }
-        }
+        // 获取权重最大的动态权重
+        Weight maxCurrentWeight = currWeights.values().stream().max(Comparator.comparing(Weight::getCurrentWeight)).get();
 
         // 动态变化的权重：max(currWeight)-=sum(weight)
         maxCurrentWeight.setCurrentWeight(maxCurrentWeight.getCurrentWeight() - totalWeights);
-
 
         return maxCurrentWeight.getIp();
     }
