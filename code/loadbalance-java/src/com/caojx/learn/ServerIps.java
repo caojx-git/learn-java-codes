@@ -18,6 +18,11 @@ public class ServerIps {
     public static final List<String> LIST = Arrays.asList("A", "B", "C");
 
     /**
+     * 三台服务器的ip地址
+     */
+    public static final List<String> LIST_IP = Arrays.asList("192.168.0.10", "192.168.0.20", "192.168.0.40", "192.168.0.50");
+
+    /**
      * A、B、C 服务器，带权重
      * 即假如10次请求，A要请求2次，B要请求3次，C要请求5次
      */

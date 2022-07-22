@@ -15,7 +15,7 @@ public class RandomSelect {
      */
     public static String getServer() {
         Random random = new Random();
-        int rand = random.nextInt(ServerIps.LIST.size());
+        int rand = random.nextInt(ServerIps.LIST_IP.size());
 
         // 随机访问集合中的某一个值即可
         return ServerIps.LIST.get(rand);
