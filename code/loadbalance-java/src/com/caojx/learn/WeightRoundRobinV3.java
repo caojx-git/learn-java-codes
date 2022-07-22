@@ -10,6 +10,12 @@ import java.util.Map;
  */
 public class WeightRoundRobinV3 {
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(getServer());
+        }
+    }
+
     /**
      * 动态权重
      */
@@ -44,13 +50,6 @@ public class WeightRoundRobinV3 {
 
         return maxCurrentWeight.getIp();
     }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            System.out.println(getServer());
-        }
-    }
-
 
     /**
      * 权重

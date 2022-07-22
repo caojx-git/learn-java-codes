@@ -7,6 +7,12 @@ package com.caojx.learn;
  */
 public class RoundRobin {
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(getServer());
+        }
+    }
+
     // 位置
     public static Integer POS = 0;
 

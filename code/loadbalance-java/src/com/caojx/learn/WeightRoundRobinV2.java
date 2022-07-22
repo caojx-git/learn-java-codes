@@ -7,6 +7,12 @@ package com.caojx.learn;
  */
 public class WeightRoundRobinV2 {
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(getServer(i));
+        }
+    }
+
     public static String getServer(Integer num) {
         int totalWeights = ServerIps.WEIGHT_LIST.values().stream().mapToInt(w -> w).sum();
 
@@ -25,11 +31,5 @@ public class WeightRoundRobinV2 {
         }
 
         return "";
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            System.out.println(getServer(i));
-        }
     }
 }

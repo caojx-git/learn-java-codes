@@ -11,6 +11,12 @@ import java.util.Random;
  */
 public class WeightRandom {
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(getServer());
+        }
+    }
+
     /**
      * 缺点权重大ips越大占内存带权重随机
      *
