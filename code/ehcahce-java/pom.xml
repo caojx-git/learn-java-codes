@@ -10,7 +10,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>4.10</junit.version>
+        <junit.version>4.13.1</junit.version>
         <spring.version>4.3.14.RELEASE</spring.version>
     </properties>
 
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <version>4.13.1</version>
         </dependency>
 
 
