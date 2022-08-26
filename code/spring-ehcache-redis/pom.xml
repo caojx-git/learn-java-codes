@@ -17,7 +17,7 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <junit.version>4.10</junit.version>
         <spring.version>4.3.14.RELEASE</spring.version>
-        <jackson.version>2.5.0</jackson.version>
+        <jackson.version>2.12.1</jackson.version>
     </properties>
     
     <dependencies>
