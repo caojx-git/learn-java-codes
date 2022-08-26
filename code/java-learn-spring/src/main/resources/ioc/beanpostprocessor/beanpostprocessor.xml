@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <beans>
+
+        <!--对于ApplicationContext容器来说，事情则方便得多，直接将相应的BeanPostProcessor实现 类通过通常的XML配置文件配置一下即可。ApplicationContext容器会自动识别并加载注册到容器 的BeanPostProcessor，如下配置内容将我们的PasswordDecodePostProcessor注册到容器：-->
+
+        <bean id="passwordDecodePostProcessor" class="caojx.learn.ioc.beanpostprocessor.PasswordDecodePostProcessor">
+            <!--如果需要，注入必要的依赖-->
+        </bean>
+
+    </beans>
+</beans>

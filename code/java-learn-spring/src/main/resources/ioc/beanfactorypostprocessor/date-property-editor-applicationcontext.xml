@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <!--
+                                在配置customEditors属性的时候，spring2.0配置的<entry>的value是一个 bean ，而spring4.0配置的entry的value是类名。
+                -->
+                <entry key="java.util.Date" value="caojx.learn.ioc.beanfactorypostprocessor.DatePropertyEditor"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="datePropertyEditor" class="caojx.learn.ioc.beanfactorypostprocessor.DatePropertyEditor">
+        <property name="datePattern">
+            <value>yyyy/MM/dd</value>
+        </property>
+    </bean>
+
+    <bean id="dateFoo" class="caojx.learn.ioc.beanfactorypostprocessor.DateFoo">
+        <property name="date" value="2019/01/28"></property>
+    </bean>
+</beans>

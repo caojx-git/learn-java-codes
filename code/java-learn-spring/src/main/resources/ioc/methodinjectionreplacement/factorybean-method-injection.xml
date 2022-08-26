@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="newsBean" class="caojx.learn.ioc.methodinjectionreplacement.FXNewsBean" scope="prototype"></bean>
+
+    <!--
+    通过<lookup-method>的name属性指定需要注入的方法名，bean属性指定需要注入的对象，当 getNewsBean方法被调用的时候，容器可以每次返回一个新的FXNewsBean类型的实例。
+    -->
+    <bean id="mockPersister" class="caojx.learn.ioc.methodinjectionreplacement.MockNewsPersister">
+        <lookup-method name="getNewsBean" bean="newsBean"></lookup-method>
+    </bean>
+</beans>

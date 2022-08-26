@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="newsBean" class="caojx.learn.ioc.methodinjectionreplacement.FXNewsBean" scope="prototype"></bean>
+
+    <!--
+        通过 <replaced-method>, 将FXNewsProviderMethodReplacer中的方法替换掉getNewsBean
+    -->
+    <bean id="mockPersister" class="caojx.learn.ioc.methodinjectionreplacement.MockNewsPersister">
+        <replaced-method name="getNewsBean" replacer="providerReplacer"> </replaced-method>
+    </bean>
+
+
+    <bean id="providerReplacer" class="caojx.learn.ioc.methodinjectionreplacement.FXNewsProviderMethodReplacer"> </bean>
+</beans>

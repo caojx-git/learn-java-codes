@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+            <list>
+                <ref bean="datePropertyEditorRegistrar"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="datePropertyEditorRegistrar" class="caojx.learn.ioc.beanfactorypostprocessor.DatePropertyEditorRegistrar">
+        <property name="propertyEditor">
+            <ref bean="datePropertyEditor"/>
+        </property>
+    </bean>
+
+    <bean id="datePropertyEditor" class="caojx.learn.ioc.beanfactorypostprocessor.DatePropertyEditor">
+        <property name="datePattern" value="yyyy/MM/dd"></property>
+    </bean>
+
+    <bean id="dateFoo" class="caojx.learn.ioc.beanfactorypostprocessor.DateFoo">
+        <property name="date" value="2019/01/28"></property>
+    </bean>
+</beans>

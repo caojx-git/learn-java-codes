@@ -1,0 +1,2 @@
+Java SE提供了实现自定义事件发布（Custom Event publication）功能的基础类，即java.util.EventObject类和java.util.EventListener接口。
+所有的自定义事件类型可以通过扩展EventObject 来实现，而事件的监听器则扩展自EventListener。
